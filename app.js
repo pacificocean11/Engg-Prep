@@ -6720,7 +6720,10 @@ window.calcEvaluate = function() {
                 "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
                 "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
                 "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
-                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+                "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$).",
+                      "videoUrl": "assets/videos/OSHA_Permissible_Noise_Exposure_Dose_and_8_Hour_TWA.mp4",
+                      "videoTitle": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA Explainer",
+                      "videoDuration": "10s"
             },
                 {
                 "title": "Chronic Daily Intake Chemical Exposure Formulation",
@@ -9153,7 +9156,10 @@ window.calcEvaluate = function() {
                 "title": "Biot Number vs. Fourier Number in Transient Conduction",
                 "formula": "$$Bi = \\frac{h L_c}{k_{\\text{solid}}} = \\frac{\\text{Convection Resistance}}{\\text{Internal Conduction Resistance}}, \\quad Fo = \\frac{\\alpha t}{L_c^2} = \\frac{\\text{Conduction Rate}}{\\text{Thermal Storage Rate}}$$",
                 "description": "Dimensionless parameters governing transient heat transfer: Biot number evaluates spatial temperature uniformity; Fourier number $Fo$ represents dimensionless time, where thermal diffusivity $\\alpha = k / (\\rho c_p)$.",
-                "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate."
+                "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate.",
+                      "videoUrl": "assets/videos/Biot_Number_vs_Fourier_Number_in_Transient_Conduction.mp4",
+                      "videoTitle": "Biot Number vs Fourier Number in Transient Conduction Explainer",
+                      "videoDuration": "10s"
             },
                 {
                         "title": "Log Mean Temperature Difference (LMTD Heat Exchangers)",
@@ -12364,7 +12370,10 @@ window.calcEvaluate = function() {
                         "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
                         "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
                         "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
-                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$).",
+                              "videoUrl": "assets/videos/OSHA_Permissible_Noise_Exposure_Dose_and_8_Hour_TWA.mp4",
+                              "videoTitle": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Critical Path Method (CPM) Float Equations",
@@ -13728,7 +13737,10 @@ window.calcEvaluate = function() {
                         "title": "Balanced Three-Phase Voltage Relations",
                         "formula": "$$V_{LL} = \\sqrt{3} V_{LN} \\angle +30^\\circ \\quad (\\text{positive ABC sequence})$$",
                         "description": "In a balanced Wye system, line-to-line voltage magnitude is $\\sqrt{3} \\approx 1.732$ times line-to-neutral phase voltage magnitude and leads it by $30^\\circ$.",
-                        "examTip": "Found in Power Systems. In standard US commercial distribution: $V_{LN} = 120\\text{ V} \\implies V_{LL} = 120\\sqrt{3} = 208\\text{ V}$; and $277\\text{ V} \\implies 480\\text{ V}$."
+                        "examTip": "Found in Power Systems. In standard US commercial distribution: $V_{LN} = 120\\text{ V} \\implies V_{LL} = 120\\sqrt{3} = 208\\text{ V}$; and $277\\text{ V} \\implies 480\\text{ V}$.",
+                              "videoUrl": "assets/videos/Balanced_Three_Phase_Voltage_Relations.mp4",
+                              "videoTitle": "Balanced Three-Phase Voltage Relations Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Balanced Three-Phase Delta Current Relations",
@@ -13746,7 +13758,10 @@ window.calcEvaluate = function() {
                         "title": "Two-Wattmeter Method for Three-Phase Power",
                         "formula": "$$P_{3\\phi} = W_1 + W_2, \\quad \\tan\\theta = \\sqrt{3} \\left(\\frac{W_1 - W_2}{W_1 + W_2}\\right)$$",
                         "description": "Measures total real power and determines overall power factor in three-phase three-wire systems using two single-phase wattmeter readings $W_1$ and $W_2$.",
-                        "examTip": "Found in Power Systems. If $W_1 = W_2$, power factor is $1.0$ (purely resistive). If one wattmeter reads zero, $pf = 0.50$."
+                        "examTip": "Found in Power Systems. If $W_1 = W_2$, power factor is $1.0$ (purely resistive). If one wattmeter reads zero, $pf = 0.50$.",
+                              "videoUrl": "assets/videos/Two_Wattmeter_Method_for_Three_Phase_Power.mp4",
+                              "videoTitle": "Two-Wattmeter Method for Three-Phase Power Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "AC Power Triangle: Real, Reactive, Apparent Power and Power Factor",
@@ -13772,7 +13787,10 @@ window.calcEvaluate = function() {
                         "title": "Three-Phase Power Measurement: Two-Wattmeter Method",
                         "formula": "$$P_{3\\phi} = W_1 + W_2, \\quad Q_{3\\phi} = \\sqrt{3}(W_1 - W_2), \\quad \\tan\\theta = \\sqrt{3} \\left(\\frac{W_1 - W_2}{W_1 + W_2}\\right)$$",
                         "description": "Measures total real power and total reactive power in any balanced or unbalanced three-wire three-phase system using two single-phase wattmeter readings $W_1$ and $W_2$.",
-                        "examTip": "Found in Power: Three-Phase Systems. If power factor is less than $0.5$ lagging, one wattmeter will register a negative reading ($W_2 < 0$)."
+                        "examTip": "Found in Power: Three-Phase Systems. If power factor is less than $0.5$ lagging, one wattmeter will register a negative reading ($W_2 < 0$).",
+                              "videoUrl": "assets/videos/Two_Wattmeter_Method_for_Three_Phase_Power.mp4",
+                              "videoTitle": "Two-Wattmeter Method for Three-Phase Power Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Three-Phase Induction Motor Torque-Slip Curve and Breakdown Torque",
@@ -14115,7 +14133,10 @@ window.calcEvaluate = function() {
                         "title": "OSI 7-Layer Reference Model vs. TCP/IP Architecture",
                         "formula": "$$\\text{Application} \\to \\text{Presentation} \\to \\text{Session} \\to \\text{Transport} \\to \\text{Network} \\to \\text{Data Link} \\to \\text{Physical}$$",
                         "description": "Standard networking hierarchy: Physical (bits/cabling), Data Link (MAC framing/switches), Network (IP packets/routers), Transport (TCP/UDP ports), Session/Presentation/Application.",
-                        "examTip": "Found in Computer Networks. Remember the mnemonic: 'All People Seem To Need Data Processing' (Layers 7 down to 1)."
+                        "examTip": "Found in Computer Networks. Remember the mnemonic: 'All People Seem To Need Data Processing' (Layers 7 down to 1).",
+                              "videoUrl": "assets/videos/OSI_7_Layer_Reference_Model_vs_TCPIP_Architecture.mp4",
+                              "videoTitle": "OSI 7-Layer Reference Model vs TCP/IP Architecture Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "IPv4 CIDR Subnetting and Host Calculation",
@@ -14292,7 +14313,10 @@ window.calcEvaluate = function() {
                         "title": "Fundamental Data Structures: Stacks, Queues, and Linked Lists",
                         "formula": "$$\\text{Stack: LIFO (Push/Pop)}, \\quad \\text{Queue: FIFO (Enqueue/Dequeue)}$$",
                         "description": "Core software abstractions: Stacks operate Last-In-First-Out (used for function calls and expression parsing); Queues operate First-In-First-Out (used for buffers and BFS); Linked Lists provide $O(1)$ node insertion/deletion once positioned.",
-                        "examTip": "Found in Software Engineering: Data Structures. Array indexing is $O(1)$, while linked list search is $O(n)$ due to sequential node traversal."
+                        "examTip": "Found in Software Engineering: Data Structures. Array indexing is $O(1)$, while linked list search is $O(n)$ due to sequential node traversal.",
+                              "videoUrl": "assets/videos/Fundamental_Data_Structures_Stacks_Queues_and_Linked_Lists.mp4",
+                              "videoTitle": "Fundamental Data Structures Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Binary Search Tree Properties and Search Time",
@@ -15978,7 +16002,10 @@ window.calcEvaluate = function() {
                         "title": "Biot Number vs. Fourier Number in Transient Conduction",
                         "formula": "$$Bi = \\frac{h L_c}{k_{\\text{solid}}} = \\frac{\\text{Convection Resistance}}{\\text{Internal Conduction Resistance}}, \\quad Fo = \\frac{\\alpha t}{L_c^2} = \\frac{\\text{Conduction Rate}}{\\text{Thermal Storage Rate}}$$",
                         "description": "Dimensionless parameters governing transient heat transfer: Biot number evaluates spatial temperature uniformity; Fourier number $Fo$ represents dimensionless time, where thermal diffusivity $\\alpha = k / (\\rho c_p)$.",
-                        "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate."
+                        "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate.",
+                              "videoUrl": "assets/videos/Biot_Number_vs_Fourier_Number_in_Transient_Conduction.mp4",
+                              "videoTitle": "Biot Number vs Fourier Number in Transient Conduction Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Newton’s Law of Cooling (Convective Heat Transfer)",
@@ -16148,7 +16175,10 @@ window.calcEvaluate = function() {
                         "title": "Fick’s Second Law of Transient Molecular Diffusion",
                         "formula": "$$\\frac{\\partial C_A}{\\partial t} = D_{AB} \\frac{\\partial^2 C_A}{\\partial z^2}, \\quad \\frac{C_A(z,t) - C_{A0}}{C_{As} - C_{A0}} = 1 - \\text{erf}\\left(\\frac{z}{2\\sqrt{D_{AB} t}}\\right)$$",
                         "description": "Governs time-dependent unsteady-state diffusion in stagnant media. For a semi-infinite medium with constant surface concentration $C_{As}$, concentration profiles are governed by the Gaussian error function.",
-                        "examTip": "Found in Mass Transfer. Penetration depth scales with $\\sqrt{D_{AB} t}$."
+                        "examTip": "Found in Mass Transfer. Penetration depth scales with $\\sqrt{D_{AB} t}$.",
+                              "videoUrl": "assets/videos/Ficks_Second_Law_of_Transient_Molecular_Diffusion.mp4",
+                              "videoTitle": "Fick's Second Law of Transient Molecular Diffusion Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Equimolar Counterdiffusion (EMCD) in Binary Gas Mixtures",
@@ -16785,7 +16815,10 @@ window.calcEvaluate = function() {
                         "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
                         "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
                         "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
-                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$).",
+                              "videoUrl": "assets/videos/OSHA_Permissible_Noise_Exposure_Dose_and_8_Hour_TWA.mp4",
+                              "videoTitle": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
@@ -18122,13 +18155,19 @@ window.calcEvaluate = function() {
                         "title": "Center-of-Gravity Facility Location Model",
                         "formula": "$$x^* = \\frac{\\sum_{i=1}^n W_i x_i}{\\sum_{i=1}^n W_i}, \\quad y^* = \\frac{\\sum_{i=1}^n W_i y_i}{\\sum_{i=1}^n W_i}$$",
                         "description": "Finds optimal geographical coordinates $(x^*, y^*)$ for a central warehouse or distribution hub minimizing squared Euclidean transport costs to customer clusters with shipping weights $W_i$.",
-                        "examTip": "Found in Facilities Planning. Weights $W_i$ typically equal annual shipment volume times freight rate."
+                        "examTip": "Found in Facilities Planning. Weights $W_i$ typically equal annual shipment volume times freight rate.",
+                              "videoUrl": "assets/videos/Facility_Location_Center_of_Gravity_Centroid_Method.mp4",
+                              "videoTitle": "Facility Location Center-of-Gravity Method Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Facility Location: Center-of-Gravity (Centroid) Method",
                         "formula": "$$C_x = \\frac{\\sum (d_{ix} \\cdot W_i)}{\\sum W_i}, \\quad C_y = \\frac{\\sum (d_{iy} \\cdot W_i)}{\\sum W_i}$$",
                         "description": "Identifies the optimal geographical coordinates $(C_x, C_y)$ for a centralized distribution center or warehouse to minimize total transportation ton-mileage across $n$ supply/demand nodes with volumes $W_i$ at locations $(d_{ix}, d_{iy})$.",
-                        "examTip": "Found in Facilities Planning: Logistics. Mathematically identical to finding the centroid / center of mass of a system of discrete concentrated loads."
+                        "examTip": "Found in Facilities Planning: Logistics. Mathematically identical to finding the centroid / center of mass of a system of discrete concentrated loads.",
+                              "videoUrl": "assets/videos/Facility_Location_Center_of_Gravity_Centroid_Method.mp4",
+                              "videoTitle": "Facility Location Center-of-Gravity Method Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Facility Layout Rectilinear Load-Distance Score",
@@ -18245,7 +18284,10 @@ window.calcEvaluate = function() {
                         "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
                         "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
                         "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
-                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$).",
+                              "videoUrl": "assets/videos/OSHA_Permissible_Noise_Exposure_Dose_and_8_Hour_TWA.mp4",
+                              "videoTitle": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
@@ -20799,7 +20841,10 @@ window.calcEvaluate = function() {
                         "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
                         "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
                         "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
-                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$).",
+                              "videoUrl": "assets/videos/OSHA_Permissible_Noise_Exposure_Dose_and_8_Hour_TWA.mp4",
+                              "videoTitle": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Coagulation Rapid Mix Velocity Gradient (G-Value)",
@@ -22054,7 +22099,10 @@ window.calcEvaluate = function() {
                         "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
                         "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
                         "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
-                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$)."
+                        "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$).",
+                              "videoUrl": "assets/videos/OSHA_Permissible_Noise_Exposure_Dose_and_8_Hour_TWA.mp4",
+                              "videoTitle": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Engineering Economics Compound Interest Formula",
@@ -24092,7 +24140,10 @@ window.calcEvaluate = function() {
                         "title": "Biot Number vs. Fourier Number in Transient Conduction",
                         "formula": "$$Bi = \\frac{h L_c}{k_{\\text{solid}}} = \\frac{\\text{Convection Resistance}}{\\text{Internal Conduction Resistance}}, \\quad Fo = \\frac{\\alpha t}{L_c^2} = \\frac{\\text{Conduction Rate}}{\\text{Thermal Storage Rate}}$$",
                         "description": "Dimensionless parameters governing transient heat transfer: Biot number evaluates spatial temperature uniformity; Fourier number $Fo$ represents dimensionless time, where thermal diffusivity $\\alpha = k / (\\rho c_p)$.",
-                        "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate."
+                        "examTip": "Found in Heat Transfer. When $Fo > 0.2$, one-term approximations for infinite slabs, cylinders, and spheres become highly accurate.",
+                              "videoUrl": "assets/videos/Biot_Number_vs_Fourier_Number_in_Transient_Conduction.mp4",
+                              "videoTitle": "Biot Number vs Fourier Number in Transient Conduction Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Pool Boiling Curve Regimes and Critical Heat Flux",
