@@ -8070,6 +8070,8 @@ window.calcEvaluate = function() {
             },
                 {
                         "title": "Newton's Law of Viscosity",
+                        "imageUrl": "assets/images/newtons_law_of_viscosity.jpg",
+                        "imageTitle": "Newton's Law of Viscosity Velocity Gradient Schematic",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
                         "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
@@ -8079,6 +8081,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
+                        "imageUrl": "assets/images/newtonian_vs_non_newtonian_fluid.jpg",
+                        "imageTitle": "Newtonian vs Non-Newtonian Fluid Rheology Curves",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
                         "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
@@ -8088,6 +8092,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Surface Tension",
+                        "imageUrl": "assets/images/surface_tension.jpg",
+                        "imageTitle": "Surface Tension and Capillary Rise Schematic",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
                         "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
@@ -8142,8 +8148,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Archimedes’ Principle of Buoyancy",
-			"imageUrl": "assets/images/archimedes_principle_of_buoyancy.jpg",
-			"imageTitle": "Archimedes’ Principle of Buoyancy Blueprint",
+			"imageUrl": "assets/images/buoyancy_force_archimedes.jpg",
+			"imageTitle": "Buoyancy Force and Archimedes Principle Diagram",
                         "formula": "$$F_B = \\rho_f g V_{\\text{displaced}} = \\gamma_f V_d$$",
                         "description": "Any body wholly or partially submerged in a static fluid experiences an upward buoyant force equal to the weight of fluid displaced, acting through the center of buoyancy.",
                         "examTip": "Found in Fluid Mechanics. For a floating body in static equilibrium, $F_B = W_{\\text{body}}$, meaning $\\rho_f V_d = \\rho_{\\text{body}} V_{\\text{total}}$.",
@@ -8179,6 +8185,8 @@ window.calcEvaluate = function() {
             },
                 {
                 "title": "Buoyancy and Metacentric Height for Floating Body Stability",
+                "imageUrl": "assets/images/buoyancy_force_archimedes.jpg",
+                "imageTitle": "Buoyancy Force and Archimedes Principle Diagram",
                 "formula": "$$F_B = \\gamma_{\\text{fluid}} V_{\\text{displaced}}, \\quad \\overline{GM} = \\overline{BM} + \\overline{OB} - \\overline{OG}, \\quad \\overline{BM} = \\frac{I_{oo}}{V_{\\text{sub}}}$$",
                 "description": "Determines rotational stability of ships and floating pontoons: metacentric height $\\overline{GM} > 0$ produces a righting restoring couple (stable equilibrium); $\\overline{GM} < 0$ causes capsizing (unstable).",
                 "examTip": "Found in Fluid Mechanics. $I_{oo}$ is second moment of area of the waterline plane about its tilting axis, and $V_{\\text{sub}}$ is submerged volume."
@@ -8256,6 +8264,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
+                          "imageUrl": "assets/images/modified_fluid_energy_equation.jpg",
+                          "imageTitle": "Modified Fluid Energy Equation Piping Schematic",
                           "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                           "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
                           "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
@@ -8298,6 +8308,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "imageUrl": "assets/images/hagen_poiseuille_equation_laminar_flow.jpg",
+                        "imageTitle": "Hagen-Poiseuille Laminar Pipe Flow Schematic",
                         "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
                         "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
                         "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
@@ -8307,6 +8319,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "imageUrl": "assets/images/moody_darcy_stanton_friction_diagram.jpg",
+                        "imageTitle": "Moody Friction Factor Chart Diagram",
                         "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
                         "videoTitle": "Moody Friction Factor Diagram Explainer",
                         "videoDuration": "10s",
@@ -8325,6 +8339,8 @@ window.calcEvaluate = function() {
                 },
                 {
                           "title": "Laminar Flow Friction Factor in Circular Pipes",
+                          "imageUrl": "assets/images/laminar_flow_friction_factor_circular_pipes.jpg",
+                          "imageTitle": "Laminar Pipe Flow Velocity Profile Diagram",
                           "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                           "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
                           "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
@@ -8369,6 +8385,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "imageUrl": "assets/images/drag_coefficient_and_lift_coefficient.jpg",
+                        "imageTitle": "Aerodynamic Drag and Lift Coefficient Vector Schematic",
                         "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
                         "videoTitle": "Drag and Lift Coefficients Explainer",
                         "videoDuration": "10s",
@@ -8469,6 +8487,8 @@ window.calcEvaluate = function() {
             },
                 {
                         "title": "Pitot Tube",
+                        "imageUrl": "assets/images/pitot_tube.jpg",
+                        "imageTitle": "Pitot-Static Tube Fluid Velocity Measurement Schematic",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
@@ -8478,6 +8498,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Venturi Meter",
+                        "imageUrl": "assets/images/venturi_meter.jpg",
+                        "imageTitle": "Venturi Meter Differential Head Schematic",
                         "videoUrl": "assets/videos/Venturi_Meter.mp4",
                         "videoTitle": "Venturi Meter Explainer",
                         "videoDuration": "10s",
@@ -8487,6 +8509,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice.mp4",
                         "videoTitle": "Orifice Explainer",
                         "videoDuration": "10s",
@@ -8496,6 +8520,8 @@ window.calcEvaluate = function() {
                 },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
                         "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s",
@@ -8505,6 +8531,8 @@ window.calcEvaluate = function() {
                 },
                 {
                 "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                "imageUrl": "assets/images/orifice.jpg",
+                "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                 "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
                 "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
                 "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
@@ -11023,6 +11051,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newton's Law of Viscosity",
+                        "imageUrl": "assets/images/newtons_law_of_viscosity.jpg",
+                        "imageTitle": "Newton's Law of Viscosity Velocity Gradient Schematic",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
                         "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
@@ -11032,6 +11062,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Surface Tension",
+                        "imageUrl": "assets/images/surface_tension.jpg",
+                        "imageTitle": "Surface Tension and Capillary Rise Schematic",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
                         "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
@@ -11113,6 +11145,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "imageUrl": "assets/images/moody_darcy_stanton_friction_diagram.jpg",
+                        "imageTitle": "Moody Friction Factor Chart Diagram",
                         "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
                         "videoTitle": "Moody Friction Factor Diagram Explainer",
                         "videoDuration": "10s",
@@ -11122,6 +11156,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
+                        "imageUrl": "assets/images/modified_fluid_energy_equation.jpg",
+                        "imageTitle": "Modified Fluid Energy Equation Piping Schematic",
                         "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                         "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
                         "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
@@ -11131,6 +11167,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Laminar Flow Friction Factor in Circular Pipes",
+                        "imageUrl": "assets/images/laminar_flow_friction_factor_circular_pipes.jpg",
+                        "imageTitle": "Laminar Pipe Flow Velocity Profile Diagram",
                         "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                         "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
                         "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
@@ -11146,6 +11184,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "imageUrl": "assets/images/hagen_poiseuille_equation_laminar_flow.jpg",
+                        "imageTitle": "Hagen-Poiseuille Laminar Pipe Flow Schematic",
                         "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
                         "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
                         "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
@@ -11155,6 +11195,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
+                        "imageUrl": "assets/images/newtonian_vs_non_newtonian_fluid.jpg",
+                        "imageTitle": "Newtonian vs Non-Newtonian Fluid Rheology Curves",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
                         "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
@@ -11173,6 +11215,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Pitot Tube",
+                        "imageUrl": "assets/images/pitot_tube.jpg",
+                        "imageTitle": "Pitot-Static Tube Fluid Velocity Measurement Schematic",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
@@ -11182,6 +11226,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Venturi Meter",
+                        "imageUrl": "assets/images/venturi_meter.jpg",
+                        "imageTitle": "Venturi Meter Differential Head Schematic",
                         "videoUrl": "assets/videos/Venturi_Meter.mp4",
                         "videoTitle": "Venturi Meter Explainer",
                         "videoDuration": "10s",
@@ -11191,6 +11237,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice.mp4",
                         "videoTitle": "Orifice Explainer",
                         "videoDuration": "10s",
@@ -11200,6 +11248,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "imageUrl": "assets/images/drag_coefficient_and_lift_coefficient.jpg",
+                        "imageTitle": "Aerodynamic Drag and Lift Coefficient Vector Schematic",
                         "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
                         "videoTitle": "Drag and Lift Coefficients Explainer",
                         "videoDuration": "10s",
@@ -11209,6 +11259,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
                         "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s",
@@ -11273,6 +11325,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
                         "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
                         "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
@@ -11545,6 +11599,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Buoyancy and Metacentric Height for Floating Body Stability",
+                        "imageUrl": "assets/images/buoyancy_force_archimedes.jpg",
+                        "imageTitle": "Buoyancy Force and Archimedes Principle Diagram",
                         "formula": "$$F_B = \\gamma_{\\text{fluid}} V_{\\text{displaced}}, \\quad \\overline{GM} = \\overline{BM} + \\overline{OB} - \\overline{OG}, \\quad \\overline{BM} = \\frac{I_{oo}}{V_{\\text{sub}}}$$",
                         "description": "Determines rotational stability of ships and floating pontoons: metacentric height $\\overline{GM} > 0$ produces a righting restoring couple (stable equilibrium); $\\overline{GM} < 0$ causes capsizing (unstable).",
                         "examTip": "Found in Fluid Mechanics. $I_{oo}$ is second moment of area of the waterline plane about its tilting axis, and $V_{\\text{sub}}$ is submerged volume."
@@ -15251,6 +15307,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
+                        "imageUrl": "assets/images/modified_fluid_energy_equation.jpg",
+                        "imageTitle": "Modified Fluid Energy Equation Piping Schematic",
                         "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                         "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
                         "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
@@ -15260,6 +15318,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "imageUrl": "assets/images/hagen_poiseuille_equation_laminar_flow.jpg",
+                        "imageTitle": "Hagen-Poiseuille Laminar Pipe Flow Schematic",
                         "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
                         "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
                         "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
@@ -15291,6 +15351,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "imageUrl": "assets/images/moody_darcy_stanton_friction_diagram.jpg",
+                        "imageTitle": "Moody Friction Factor Chart Diagram",
                         "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
                         "videoTitle": "Moody Friction Factor Diagram Explainer",
                         "videoDuration": "10s",
@@ -15300,6 +15362,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Laminar Flow Friction Factor in Circular Pipes",
+                        "imageUrl": "assets/images/laminar_flow_friction_factor_circular_pipes.jpg",
+                        "imageTitle": "Laminar Pipe Flow Velocity Profile Diagram",
                         "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                         "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
                         "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
@@ -15391,6 +15455,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newton's Law of Viscosity",
+                        "imageUrl": "assets/images/newtons_law_of_viscosity.jpg",
+                        "imageTitle": "Newton's Law of Viscosity Velocity Gradient Schematic",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
                         "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
@@ -15400,6 +15466,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
+                        "imageUrl": "assets/images/newtonian_vs_non_newtonian_fluid.jpg",
+                        "imageTitle": "Newtonian vs Non-Newtonian Fluid Rheology Curves",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
                         "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
@@ -15409,6 +15477,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Surface Tension",
+                        "imageUrl": "assets/images/surface_tension.jpg",
+                        "imageTitle": "Surface Tension and Capillary Rise Schematic",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
                         "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
@@ -15438,6 +15508,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Pitot Tube",
+                        "imageUrl": "assets/images/pitot_tube.jpg",
+                        "imageTitle": "Pitot-Static Tube Fluid Velocity Measurement Schematic",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
@@ -15447,6 +15519,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice.mp4",
                         "videoTitle": "Orifice Explainer",
                         "videoDuration": "10s",
@@ -15456,6 +15530,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "imageUrl": "assets/images/drag_coefficient_and_lift_coefficient.jpg",
+                        "imageTitle": "Aerodynamic Drag and Lift Coefficient Vector Schematic",
                         "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
                         "videoTitle": "Drag and Lift Coefficients Explainer",
                         "videoDuration": "10s",
@@ -15465,6 +15541,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
                         "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s",
@@ -15494,6 +15572,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
                         "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
                         "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
@@ -16263,6 +16343,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Venturi Meter",
+                        "imageUrl": "assets/images/venturi_meter.jpg",
+                        "imageTitle": "Venturi Meter Differential Head Schematic",
                         "videoUrl": "assets/videos/Venturi_Meter.mp4",
                         "videoTitle": "Venturi Meter Explainer",
                         "videoDuration": "10s",
@@ -19778,6 +19860,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newton's Law of Viscosity",
+                        "imageUrl": "assets/images/newtons_law_of_viscosity.jpg",
+                        "imageTitle": "Newton's Law of Viscosity Velocity Gradient Schematic",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
                         "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
@@ -19826,6 +19910,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "imageUrl": "assets/images/hagen_poiseuille_equation_laminar_flow.jpg",
+                        "imageTitle": "Hagen-Poiseuille Laminar Pipe Flow Schematic",
                         "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
                         "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
                         "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
@@ -19835,6 +19921,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "imageUrl": "assets/images/moody_darcy_stanton_friction_diagram.jpg",
+                        "imageTitle": "Moody Friction Factor Chart Diagram",
                         "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
                         "videoTitle": "Moody Friction Factor Diagram Explainer",
                         "videoDuration": "10s",
@@ -19844,6 +19932,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Laminar Flow Friction Factor in Circular Pipes",
+                        "imageUrl": "assets/images/laminar_flow_friction_factor_circular_pipes.jpg",
+                        "imageTitle": "Laminar Pipe Flow Velocity Profile Diagram",
                         "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                         "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
                         "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
@@ -19870,6 +19960,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
+                        "imageUrl": "assets/images/newtonian_vs_non_newtonian_fluid.jpg",
+                        "imageTitle": "Newtonian vs Non-Newtonian Fluid Rheology Curves",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
                         "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
@@ -19879,6 +19971,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Surface Tension",
+                        "imageUrl": "assets/images/surface_tension.jpg",
+                        "imageTitle": "Surface Tension and Capillary Rise Schematic",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
                         "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
@@ -19919,6 +20013,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Pitot Tube",
+                        "imageUrl": "assets/images/pitot_tube.jpg",
+                        "imageTitle": "Pitot-Static Tube Fluid Velocity Measurement Schematic",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
@@ -19928,6 +20024,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Venturi Meter",
+                        "imageUrl": "assets/images/venturi_meter.jpg",
+                        "imageTitle": "Venturi Meter Differential Head Schematic",
                         "videoUrl": "assets/videos/Venturi_Meter.mp4",
                         "videoTitle": "Venturi Meter Explainer",
                         "videoDuration": "10s",
@@ -19937,6 +20035,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice.mp4",
                         "videoTitle": "Orifice Explainer",
                         "videoDuration": "10s",
@@ -19946,6 +20046,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "imageUrl": "assets/images/drag_coefficient_and_lift_coefficient.jpg",
+                        "imageTitle": "Aerodynamic Drag and Lift Coefficient Vector Schematic",
                         "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
                         "videoTitle": "Drag and Lift Coefficients Explainer",
                         "videoDuration": "10s",
@@ -19955,6 +20057,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
                         "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s",
@@ -19982,6 +20086,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
+                        "imageUrl": "assets/images/modified_fluid_energy_equation.jpg",
+                        "imageTitle": "Modified Fluid Energy Equation Piping Schematic",
                         "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                         "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
                         "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
@@ -20029,6 +20135,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Meter Flow Rate and Discharge Coefficient",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "formula": "$$Q = C_d A_2 \\sqrt{\\frac{2 \\Delta P}{\\rho (1 - \\beta^4)}}, \\quad \\beta = \\frac{d_{\\text{orifice}}}{D_{\\text{pipe}}}$$",
                         "description": "Calculates volumetric flow rate $Q$ through an obstruction orifice plate from differential pressure $\\Delta P$, diameter ratio $\\beta$, and discharge coefficient $C_d$ (typically $0.60$ to $0.62$ at high Reynolds numbers).",
                         "examTip": "Found in Fluid Mechanics. Orifice meters incur permanent non-recoverable pressure head loss ($40\\%$ to $80\\%$ of $\\Delta P$) due to downstream eddy dissipation."
@@ -23621,6 +23729,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newton's Law of Viscosity",
+                        "imageUrl": "assets/images/newtons_law_of_viscosity.jpg",
+                        "imageTitle": "Newton's Law of Viscosity Velocity Gradient Schematic",
                         "formula": "$$\\tau = \\mu \\frac{du}{dy}, \\quad \\nu = \\frac{\\mu}{\\rho}$$",
                         "description": "Defines fluid shear stress $\\tau$ as directly proportional to velocity gradient (shear strain rate) $du/dy$ perpendicular to flow direction. The constant of proportionality $\\mu$ is dynamic viscosity (Pa·s); kinematic viscosity is $\\nu = \\mu/\\rho$ ($\\text{m}^2/\\text{s}$).",
                         "examTip": "Found in Fluid Mechanics. For linear velocity profile across gap $h$: $\\tau = \\mu \\frac{V}{h}$, and shear force is $F = \\tau A = \\mu A \\frac{V}{h}$. Dynamic viscosity of liquids decreases with temperature, while for gases it increases.",
@@ -23630,6 +23740,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Surface Tension",
+                        "imageUrl": "assets/images/surface_tension.jpg",
+                        "imageTitle": "Surface Tension and Capillary Rise Schematic",
                         "formula": "$$\\Delta P_{\\text{droplet}} = \\frac{2\\sigma}{R}, \\quad \\Delta P_{\\text{bubble}} = \\frac{4\\sigma}{R}, \\quad F_\\sigma = \\sigma L$$",
                         "description": "Surface tension $\\sigma$ ($\\text{N/m}$) arises from unbalanced cohesive intermolecular forces at liquid interfaces, minimizing surface area. Inside a liquid droplet with one interface $\\Delta P = 2\\sigma/R$; inside a hollow spherical soap bubble with two interfaces $\\Delta P = 4\\sigma/R$.",
                         "examTip": "Found in Fluid Mechanics. Remember soap bubbles have two liquid-gas surfaces (inner and outer), doubling the pressure difference compared to a liquid droplet in air.",
@@ -23639,6 +23751,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Drag Coefficient and Lift coefficient",
+                        "imageUrl": "assets/images/drag_coefficient_and_lift_coefficient.jpg",
+                        "imageTitle": "Aerodynamic Drag and Lift Coefficient Vector Schematic",
                         "videoUrl": "assets/videos/Drag_Coefficient_and_Lift_Coefficient.mp4",
                         "videoTitle": "Drag and Lift Coefficients Explainer",
                         "videoDuration": "10s",
@@ -23693,8 +23807,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Archimedes’ Principle of Buoyant Force",
-                        "imageUrl": "assets/images/archimedes_principle_of_buoyancy.jpg",
-                        "imageTitle": "Archimedes’ Principle of Buoyancy Blueprint",
+                        "imageUrl": "assets/images/buoyancy_force_archimedes.jpg",
+                        "imageTitle": "Buoyancy Force and Archimedes Principle Diagram",
                         "formula": "$$F_B = \\rho_f g V_d = \\gamma_f V_d$$",
                         "description": "Net upward hydrostatic force exerted on a submerged or floating body equals the total weight of the displaced liquid volume $V_d$.",
                         "examTip": "Found in Fluid Mechanics. Line of action of buoyant force passes through the center of buoyancy (centroid of displaced fluid volume).",
@@ -23704,6 +23818,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Buoyancy and Metacentric Height for Floating Body Stability",
+                        "imageUrl": "assets/images/buoyancy_force_archimedes.jpg",
+                        "imageTitle": "Buoyancy Force and Archimedes Principle Diagram",
                         "formula": "$$F_B = \\gamma_{\\text{fluid}} V_{\\text{displaced}}, \\quad \\overline{GM} = \\overline{BM} + \\overline{OB} - \\overline{OG}, \\quad \\overline{BM} = \\frac{I_{oo}}{V_{\\text{sub}}}$$",
                         "description": "Determines rotational stability of ships and floating pontoons: metacentric height $\\overline{GM} > 0$ produces a righting restoring couple (stable equilibrium); $\\overline{GM} < 0$ causes capsizing (unstable).",
                         "examTip": "Found in Fluid Mechanics. $I_{oo}$ is second moment of area of the waterline plane about its tilting axis, and $V_{\\text{sub}}$ is submerged volume."
@@ -23732,6 +23848,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Modified Fluid Energy Equation (Pumps, Turbines, and Head Losses)",
+                        "imageUrl": "assets/images/modified_fluid_energy_equation.jpg",
+                        "imageTitle": "Modified Fluid Energy Equation Piping Schematic",
                         "formula": "$$\\frac{P_1}{\\gamma} + \\alpha_1\\frac{v_1^2}{2g} + z_1 + h_p = \\frac{P_2}{\\gamma} + \\alpha_2\\frac{v_2^2}{2g} + z_2 + h_t + h_L$$",
                         "description": "Extended Bernoulli equation expressing conservation of mechanical energy per unit weight of fluid between two points in pipe flow, incorporating pump added head $h_p$, turbine extracted head $h_t$, and total friction head losses $h_L$.",
                         "examTip": "Found in Fluid Mechanics. Kinetic energy correction factor $\\alpha \\approx 1.0$ for turbulent flow and $\\alpha = 2.0$ for fully developed laminar flow. Watch sign: pump head is on the input side ($+h_p$).",
@@ -23761,6 +23879,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Laminar Flow Friction Factor in Circular Pipes",
+                        "imageUrl": "assets/images/laminar_flow_friction_factor_circular_pipes.jpg",
+                        "imageTitle": "Laminar Pipe Flow Velocity Profile Diagram",
                         "formula": "$$f = \\frac{64}{Re} \\quad (Re = \\frac{\\rho v D}{\\mu} \\le 2100), \\quad h_f = f \\frac{L}{D}\\frac{v^2}{2g} = \\frac{32 \\mu v L}{\\rho g D^2}$$",
                         "description": "Exact analytical solution to Navier-Stokes equations (Hagen-Poiseuille) for Darcy friction factor in fully developed laminar pipe flow. It depends strictly on Reynolds number and is completely independent of surface roughness $\\epsilon$.",
                         "examTip": "Found in Fluid Mechanics. If $Re < 2100$, do NOT waste time looking up the Moody diagram; directly use $f = 64/Re$. Notice pressure drop is proportional to velocity $v^1$, not $v^2$.",
@@ -23779,6 +23899,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Pitot Tube",
+                        "imageUrl": "assets/images/pitot_tube.jpg",
+                        "imageTitle": "Pitot-Static Tube Fluid Velocity Measurement Schematic",
                         "formula": "$$P_0 = P + \\frac{1}{2}\\rho v^2, \\quad v = \\sqrt{\\frac{2(P_0 - P)}{\\rho}} = \\sqrt{2 g \\Delta h \\left(\\frac{\\rho_m}{\\rho} - 1\\right)}$$",
                         "description": "Measures local fluid velocity by converting kinetic energy into pressure at a stagnation point where flow is brought isentropically to rest ($v = 0$). Total stagnation pressure $P_0$ equals static pressure $P$ plus dynamic pressure $\\frac{1}{2}\\rho v^2$.",
                         "examTip": "Found in Fluid Mechanics. Pitot tube measures total pressure; static tap measures static pressure; differential manometer measures $(P_0 - P) = \\frac{1}{2}\\rho v^2$. Ensure density $\\rho$ is the flowing fluid's density!",
@@ -23788,6 +23910,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Venturi Meter",
+                        "imageUrl": "assets/images/venturi_meter.jpg",
+                        "imageTitle": "Venturi Meter Differential Head Schematic",
                         "videoUrl": "assets/videos/Venturi_Meter.mp4",
                         "videoTitle": "Venturi Meter Explainer",
                         "videoDuration": "10s",
@@ -23797,6 +23921,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Discharging Freely into Atmosphere",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice_Discharging_Freely_into_Atmosphere.mp4",
                         "videoTitle": "Orifice Discharging Freely into Atmosphere Explainer",
                         "videoDuration": "10s",
@@ -23815,12 +23941,16 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice Plate Flow Discharge Equation",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "formula": "$$Q = C_d A_o \\sqrt{2 g \\Delta h} = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}}$$",
                         "description": "Measures volumetric discharge through a sharp-edged orifice plate of opening area $A_o$ under differential pressure head $\\Delta h$.",
                         "examTip": "Found in Fluid Mechanics. Discharge coefficient $C_d = C_c \\times C_v \\approx 0.60 - 0.62$ for sharp-edged circular orifices."
                     },
                 {
                         "title": "Hagen-Poiseuille Equation for Laminar Pipe Flow",
+                        "imageUrl": "assets/images/hagen_poiseuille_equation_laminar_flow.jpg",
+                        "imageTitle": "Hagen-Poiseuille Laminar Pipe Flow Schematic",
                         "formula": "$$\\Delta P = \\frac{128 \\mu L Q}{\\pi D^4}$$",
                         "description": "Computes pressure drop for laminar, incompressible, viscous flow through a circular pipe of length $L$ and diameter $D$.",
                         "examTip": "Found in Fluid Mechanics. Notice the fourth power on diameter: reducing pipe diameter by half increases pressure drop by a factor of 16 for constant $Q$.",
@@ -23830,6 +23960,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Newtonian vs Non-Newtonian Fluid",
+                        "imageUrl": "assets/images/newtonian_vs_non_newtonian_fluid.jpg",
+                        "imageTitle": "Newtonian vs Non-Newtonian Fluid Rheology Curves",
                         "formula": "$$\\tau = K \\left(\\frac{du}{dy}\\right)^n, \\quad \\tau = \\tau_y + \\mu_p \\frac{du}{dy} \\text{ (Bingham Plastic)}$$",
                         "description": "Newtonian fluids exhibit constant viscosity ($n = 1$). Non-Newtonian fluids deviate: pseudoplastic (shear-thinning, $n < 1$, e.g. blood, polymer solutions), dilatant (shear-thickening, $n > 1$, e.g. cornstarch slurry), and Bingham plastics requiring yield stress $\\tau_y$ to initiate flow.",
                         "examTip": "Found in Fluid Mechanics and Chemical Engineering. Apparent viscosity for power-law fluids is $\\mu_{\\text{app}} = K \\left(\\frac{du}{dy}\\right)^{n-1}$. For shear-thinning fluids, apparent viscosity drops as shear rate rises.",
@@ -23839,6 +23971,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Orifice",
+                        "imageUrl": "assets/images/orifice.jpg",
+                        "imageTitle": "Orifice Plate and Vena Contracta Flow Schematic",
                         "videoUrl": "assets/videos/Orifice.mp4",
                         "videoTitle": "Orifice Explainer",
                         "videoDuration": "10s",
@@ -23859,6 +23993,8 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Moody, Darcy, or Stanton Friction Factor Diagram",
+                        "imageUrl": "assets/images/moody_darcy_stanton_friction_diagram.jpg",
+                        "imageTitle": "Moody Friction Factor Chart Diagram",
                         "videoUrl": "assets/videos/Moody_Darcy_or_Stanton_Friction_Factor_Diagram.mp4",
                         "videoTitle": "Moody Friction Factor Diagram Explainer",
                         "videoDuration": "10s",
