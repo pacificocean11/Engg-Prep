@@ -6721,7 +6721,10 @@
                         "title": "Mesh Analysis and Supermeshes",
                         "formula": "$$\\sum V_{\\text{around mesh}} = 0, \\quad i_2 - i_1 = I_s$$",
                         "description": "Systematic planar circuit method applying KVL around internal mesh loops. When a current source lies on the boundary between two meshes, create a supermesh by bypassing the branch and writing a single combined KVL loop.",
-                        "examTip": "Found in Circuit Analysis. Mesh analysis is only valid for planar circuits (circuits that can be drawn without crossing wires)."
+                        "examTip": "Found in Circuit Analysis. Mesh analysis is only valid for planar circuits (circuits that can be drawn without crossing wires).",
+                          "videoUrl": "assets/videos/Mesh_Analysis_and_Supermeshes.mp4",
+                          "videoTitle": "Mesh Analysis and Supermeshes Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Source Transformation for Equivalent Generators",
@@ -6756,13 +6759,19 @@
                         "title": "Maximum Power Transfer for AC Complex Impedance",
                         "formula": "$$Z_L = Z_{th}^* = R_{th} - j X_{th}, \\quad P_{\\text{max}} = \\frac{|V_{th}|^2}{4 R_{th}}$$",
                         "description": "Maximum average real power is delivered to a complex load impedance $Z_L$ when $Z_L$ is the complex conjugate of the Thévenin equivalent source impedance $Z_{th}$.",
-                        "examTip": "Found in Circuit Analysis. If the load is constrained to be purely resistive ($Z_L = R_L$), maximum power occurs when $R_L = |Z_{th}| = \\sqrt{R_{th}^2 + X_{th}^2}$."
+                        "examTip": "Found in Circuit Analysis. If the load is constrained to be purely resistive ($Z_L = R_L$), maximum power occurs when $R_L = |Z_{th}| = \\sqrt{R_{th}^2 + X_{th}^2}$.",
+                          "videoUrl": "assets/videos/Maximum_Power_Transfer_for_AC_Complex_Impedance.mp4",
+                          "videoTitle": "Maximum Power Transfer for AC Complex Impedance Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Inductive and Capacitive Reactance and Susceptance",
                         "formula": "$$X_L = \\omega L = 2\\pi f L, \\quad X_C = -\\frac{1}{\\omega C}, \\quad B_L = -\\frac{1}{\\omega L}, \\quad B_C = \\omega C$$",
                         "description": "Impedances in the phasor frequency domain: inductor impedance is $Z_L = j\\omega L = j X_L$; capacitor impedance is $Z_C = 1/(j\\omega C) = -j/(\\omega C) = j X_C$.",
-                        "examTip": "Found in AC Circuits. Inductors oppose rapid changes in current; capacitors oppose rapid changes in voltage."
+                        "examTip": "Found in AC Circuits. Inductors oppose rapid changes in current; capacitors oppose rapid changes in voltage.",
+                          "videoUrl": "assets/videos/Inductive_and_Capacitive_Reactance_and_Susceptance.mp4",
+                          "videoTitle": "Inductive and Capacitive Reactance and Susceptance Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Complex Admittance and Admittance Triangle",
@@ -6840,7 +6849,10 @@
                         "title": "Dirac Delta Impulse and Unit Step Integration",
                         "formula": "$$\\delta(t) = \\frac{d u(t)}{dt}, \\quad u(t) = \\int_{-\\infty}^t \\delta(\\tau) d\\tau, \\quad \\int_{-\\infty}^\\infty f(t) \\delta(t - t_0) dt = f(t_0)$$",
                         "description": "The unit impulse $\\delta(t)$ is the generalized derivative of the Heaviside step $u(t)$. The sifting property extracts signal value $f(t_0)$ at the impulse occurrence instant.",
-                        "examTip": "Found in Signals and Systems. Laplace transform of $\\delta(t)$ is simply $1$; Laplace transform of unit step $u(t)$ is $1/s$."
+                        "examTip": "Found in Signals and Systems. Laplace transform of $\\delta(t)$ is simply $1$; Laplace transform of unit step $u(t)$ is $1/s$.",
+                          "videoUrl": "assets/videos/Dirac_Delta_Impulse_and_Unit_Step_Integration.mp4",
+                          "videoTitle": "Dirac Delta Impulse and Unit Step Integration Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transform Time Differentiation Property",
@@ -6864,19 +6876,28 @@
                         "title": "Laplace Transform Time Delay Property",
                         "formula": "$$\\mathcal{L}\\left\\{f(t - t_0) u(t - t_0)\\right\\} = e^{-s t_0} F(s)$$",
                         "description": "Delaying a signal by time offset $t_0 > 0$ corresponds to multiplying its Laplace transform by the pure dead-time exponential phase term $e^{-s t_0}$.",
-                        "examTip": "Found in Signals / Process Control. Time delays produce phase lag that grows linearly with frequency without altering amplitude."
+                        "examTip": "Found in Signals / Process Control. Time delays produce phase lag that grows linearly with frequency without altering amplitude.",
+                          "videoUrl": "assets/videos/Laplace_Transform_Time_Delay_Property.mp4",
+                          "videoTitle": "Laplace Transform Time Delay Property Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Laplace Transform Initial Value Theorem",
                         "formula": "$$\\lim_{t \\to 0^+} f(t) = \\lim_{s \\to \\infty} s F(s)$$",
                         "description": "Evaluates initial condition of a signal immediately after $t = 0$ directly from its Laplace transform without computing inverse transform, valid when $F(s)$ is strictly proper.",
-                        "examTip": "Found in Linear Systems. Useful for finding initial transient capacitor voltages or inductor currents directly from transfer functions."
+                        "examTip": "Found in Linear Systems. Useful for finding initial transient capacitor voltages or inductor currents directly from transfer functions.",
+                          "videoUrl": "assets/videos/Laplace_Transform_Initial_Value_Theorem.mp4",
+                          "videoTitle": "Laplace Transform Initial Value Theorem Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Transfer Function Poles, Zeros, and BIBO Stability",
                         "formula": "$$H(s) = \\frac{N(s)}{D(s)} = K \\frac{\\prod (s - z_i)}{\\prod (s - p_j)}$$",
                         "description": "System roots of numerator $N(s)$ are transmission zeros; roots of denominator $D(s)$ are poles. A continuous LTI system is Bounded-Input Bounded-Output (BIBO) stable if and only if all poles lie strictly in the open left-half $s$-plane ($\\text{Re}(p_j) < 0$).",
-                        "examTip": "Found in Control Systems. A pole on the imaginary axis produces marginal/undamped sustained oscillations."
+                        "examTip": "Found in Control Systems. A pole on the imaginary axis produces marginal/undamped sustained oscillations.",
+                          "videoUrl": "assets/videos/Transfer_Function_Poles_Zeros_and_BIBO_Stability.mp4",
+                          "videoTitle": "Transfer Function Poles, Zeros, and BIBO Stability Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Discrete-Time Z-Transform and Digital System Stability",
@@ -6978,7 +6999,10 @@
                         "title": "Op-Amp Gain-Bandwidth Product (GBW) Tradeoff",
                         "formula": "$$GBW = A_{CL} \\times f_B = f_t = \\text{constant}$$",
                         "description": "For internally compensated op-amps, the product of closed-loop voltage gain $A_{CL}$ and $-3\\text{ dB}$ closed-loop bandwidth $f_B$ is fixed at unity-gain frequency $f_t$.",
-                        "examTip": "Found in Electronics. Increasing amplifier closed-loop gain from $10$ to $100$ automatically reduces operating bandwidth by a factor of $10$."
+                        "examTip": "Found in Electronics. Increasing amplifier closed-loop gain from $10$ to $100$ automatically reduces operating bandwidth by a factor of $10$.",
+                          "videoUrl": "assets/videos/Op_Amp_Gain_Bandwidth_Product_GBW_Tradeoff.mp4",
+                          "videoTitle": "Op-Amp Gain-Bandwidth Product (GBW) Tradeoff Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Op-Amp Slew Rate Full-Power Bandwidth",
@@ -7002,19 +7026,28 @@
                         "title": "Parallel-Plate Capacitor Capacitance and Energy Density",
                         "formula": "$$C = \\frac{\\epsilon_r \\epsilon_0 A}{d}, \\quad u_E = \\frac{1}{2} \\epsilon |\\vec{E}|^2, \\quad W_E = \\frac{1}{2} C V^2$$",
                         "description": "Capacitance of planar electrodes of area $A$ separated by dielectric distance $d$, storing electrostatic potential energy in the electric field with energy density $u_E$.",
-                        "examTip": "Found in Electromagnetics / Physics. Inserting a dielectric material ($\\epsilon_r > 1$) increases capacitance by factor $\\epsilon_r$."
+                        "examTip": "Found in Electromagnetics / Physics. Inserting a dielectric material ($\\epsilon_r > 1$) increases capacitance by factor $\\epsilon_r$.",
+                          "videoUrl": "assets/videos/Parallel_Plate_Capacitor_Capacitance_and_Energy_Density.mp4",
+                          "videoTitle": "Parallel-Plate Capacitor Capacitance and Energy Density Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Energy Stored in Inductors and Magnetic Field Density",
                         "formula": "$$W_M = \\frac{1}{2} L I^2, \\quad u_B = \\frac{1}{2\\mu} |\\vec{B}|^2 = \\frac{1}{2} \\vec{B} \\cdot \\vec{H}$$",
                         "description": "Total magnetic energy stored in current-carrying inductor of inductance $L$, localized within the surrounding magnetic field volume with volumetric energy density $u_B$.",
-                        "examTip": "Found in Electromagnetics. Inductor current cannot drop to zero instantaneously because magnetic field energy cannot dissipate in zero time."
+                        "examTip": "Found in Electromagnetics. Inductor current cannot drop to zero instantaneously because magnetic field energy cannot dissipate in zero time.",
+                          "videoUrl": "assets/videos/Energy_Stored_in_Inductors_and_Magnetic_Field_Density.mp4",
+                          "videoTitle": "Energy Stored in Inductors and Magnetic Field Density Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Biot-Savart Law for Magnetic Fields",
                         "formula": "$$d\\vec{B} = \\frac{\\mu_0 I}{4\\pi} \\frac{d\\vec{\\ell} \\times \\hat{r}}{r^2}, \\quad B = \\frac{\\mu_0 I}{2\\pi r} \\text{ (Long Straight Wire)}$$",
                         "description": "Fundamental electromagnetic law computing differential magnetic flux density $d\\vec{B}$ generated at a field point by a differential current element $I d\\vec{\\ell}$.",
-                        "examTip": "Found in Electromagnetics. Magnetic field around a straight conductor forms concentric circular loops obeying the right-hand rule."
+                        "examTip": "Found in Electromagnetics. Magnetic field around a straight conductor forms concentric circular loops obeying the right-hand rule.",
+                          "videoUrl": "assets/videos/Biot_Savart_Law_for_Magnetic_Fields.mp4",
+                          "videoTitle": "Biot-Savart Law for Magnetic Fields Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Ampère’s Circuital Law with Maxwell’s Displacement Current",
@@ -7074,13 +7107,19 @@
                         "title": "Second-Order Control System Step Response Overshoot",
                         "formula": "$$\\text{Percent Overshoot (\\%OS)} = 100 \\exp\\left(-\\frac{\\pi \\zeta}{\\sqrt{1 - \\zeta^2}}\\right)$$",
                         "description": "Direct nonlinear relationship between damping ratio $\\zeta$ and peak percentage overshoot of closed-loop second-order step response.",
-                        "examTip": "Found in Control Systems. Benchmark values to memorize: $\\zeta = 0.707 \\implies \\%OS \\approx 4.3\\%$; $\\zeta = 0.50 \\implies \\%OS \\approx 16.3\\%$."
+                        "examTip": "Found in Control Systems. Benchmark values to memorize: $\\zeta = 0.707 \\implies \\%OS \\approx 4.3\\%$; $\\zeta = 0.50 \\implies \\%OS \\approx 16.3\\%$.",
+                          "videoUrl": "assets/videos/Second_Order_Control_System_Step_Response_Overshoot.mp4",
+                          "videoTitle": "Second-Order Control System Step Response Overshoot Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Second-Order Settling Time and Peak Time",
                         "formula": "$$T_s = \\frac{4}{\\zeta \\omega_n} \\quad (2\\% \\text{ criterion}), \\quad T_p = \\frac{\\pi}{\\omega_d} = \\frac{\\pi}{\\omega_n \\sqrt{1 - \\zeta^2}}$$",
                         "description": "Step response transient milestones: $T_s$ is time required for response to permanently settle within $\\pm 2\\%$ of final value; $T_p$ is elapsed time to reach peak maximum overshoot.",
-                        "examTip": "Found in Control Systems. Product $\\zeta \\omega_n = \\sigma$ represents the real part of the complex pole pair (distance from imaginary axis)."
+                        "examTip": "Found in Control Systems. Product $\\zeta \\omega_n = \\sigma$ represents the real part of the complex pole pair (distance from imaginary axis).",
+                          "videoUrl": "assets/videos/Second_Order_Settling_Time_and_Peak_Time.mp4",
+                          "videoTitle": "Second-Order Settling Time and Peak Time Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Bode Plot Gain Margin and Phase Margin",
@@ -7095,7 +7134,10 @@
                         "title": "Karnaugh Map (K-Map) Simplification Rules",
                         "formula": "$$\\text{Group Size} = 2^k \\in \\{1, 2, 4, 8, 16\\}$$",
                         "description": "Graphical tool using Gray code adjacency to identify and eliminate redundant Boolean literal variables by grouping adjacent 1s into powers of two.",
-                        "examTip": "Found in Digital Systems. Always wrap around outside edges (torus topology) and use don't care conditions ($X$) whenever they enlarge group sizes."
+                        "examTip": "Found in Digital Systems. Always wrap around outside edges (torus topology) and use don't care conditions ($X$) whenever they enlarge group sizes.",
+                          "videoUrl": "assets/videos/Karnaugh_Map_K_Map_Simplification_Rules.mp4",
+                          "videoTitle": "Karnaugh Map (K-Map) Simplification Rules Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Binary Full Adder Boolean Logic Expressions",
@@ -7929,7 +7971,10 @@
                 "title": "Full-Wave Bridge Rectifier with Filter Capacitor Ripple Voltage",
                 "formula": "$$V_r = \\frac{I_{dc}}{2 f C} = \\frac{V_{peak}}{2 f R_L C}, \\quad V_{dc} \\approx V_{peak} - \\frac{V_r}{2}$$",
                 "description": "Calculates peak-to-peak AC ripple voltage $V_r$ across a reservoir smoothing capacitor $C$ discharging into load resistance $R_L$ from a full-wave rectifier at supply frequency $f$.",
-                "examTip": "Found in Electronics: Power Supplies. In full-wave rectification, the discharge frequency is $2f$ ($120\\text{ Hz}$ for $60\\text{ Hz}$ line AC), halving ripple compared to half-wave rectification."
+                "examTip": "Found in Electronics: Power Supplies. In full-wave rectification, the discharge frequency is $2f$ ($120\\text{ Hz}$ for $60\\text{ Hz}$ line AC), halving ripple compared to half-wave rectification.",
+                      "videoUrl": "assets/videos/Full_Wave_Bridge_Rectifier_with_Filter_Capacitor_Ripple_Voltage.mp4",
+                      "videoTitle": "Full-Wave Bridge Rectifier with Filter Capacitor Ripple Voltage Explainer",
+                      "videoDuration": "10s"
             },
             {
                 "title": "Quarter-Wave Transformer Impedance Matching",
@@ -11095,7 +11140,10 @@
                         "title": "Statistical Hypothesis Testing: Type I and Type II Errors",
                         "formula": "$$\\alpha = P(\\text{Reject } H_0 \\mid H_0 \\text{ True}), \\quad \\beta = P(\\text{Fail to Reject } H_0 \\mid H_0 \\text{ False}), \\quad \\text{Power} = 1 - \\beta$$",
                         "description": "Formal framework for quality decision errors: $\\alpha$ is producer's risk (false alarm); $\\beta$ is consumer's risk (missed defect); power $1 - \\beta$ is test sensitivity.",
-                        "examTip": "Found in Engineering Statistics. Increasing sample size $n$ allows reducing both $\\alpha$ and $\\beta$ simultaneously."
+                        "examTip": "Found in Engineering Statistics. Increasing sample size $n$ allows reducing both $\\alpha$ and $\\beta$ simultaneously.",
+                          "videoUrl": "assets/videos/Statistical_Hypothesis_Testing_Type_I_and_Type_II_Errors.mp4",
+                          "videoTitle": "Statistical Hypothesis Testing: Type I and Type II Errors Explainer",
+                          "videoDuration": "10s"
                 },
                 {
                         "title": "Sample Size Determination for Estimating Population Means",
@@ -17895,7 +17943,10 @@
                         "title": "Full-Wave Bridge Rectifier with Filter Capacitor Ripple Voltage",
                         "formula": "$$V_r = \\frac{I_{dc}}{2 f C} = \\frac{V_{peak}}{2 f R_L C}, \\quad V_{dc} \\approx V_{peak} - \\frac{V_r}{2}$$",
                         "description": "Calculates peak-to-peak AC ripple voltage $V_r$ across a reservoir smoothing capacitor $C$ discharging into load resistance $R_L$ from a full-wave rectifier at supply frequency $f$.",
-                        "examTip": "Found in Electronics: Power Supplies. In full-wave rectification, the discharge frequency is $2f$ ($120\\text{ Hz}$ for $60\\text{ Hz}$ line AC), halving ripple compared to half-wave rectification."
+                        "examTip": "Found in Electronics: Power Supplies. In full-wave rectification, the discharge frequency is $2f$ ($120\\text{ Hz}$ for $60\\text{ Hz}$ line AC), halving ripple compared to half-wave rectification.",
+                              "videoUrl": "assets/videos/Full_Wave_Bridge_Rectifier_with_Filter_Capacitor_Ripple_Voltage.mp4",
+                              "videoTitle": "Full-Wave Bridge Rectifier with Filter Capacitor Ripple Voltage Explainer",
+                              "videoDuration": "10s"
                     },
                 {
                         "title": "Wheatstone Bridge Circuit Null Balance Condition",
