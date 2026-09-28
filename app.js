@@ -6581,6 +6581,9 @@ window.calcEvaluate = function() {
             },
                 {
                 "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                        "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
+                        "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
+                        "videoDuration": "10s",
                 "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
                 "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
                 "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
@@ -10145,6 +10148,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                        "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
+                        "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
                         "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
                         "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
@@ -13007,6 +13013,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                        "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
+                        "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
                         "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
                         "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
@@ -13978,6 +13987,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Faraday’s Law of Electromagnetic Induction",
+                        "videoUrl": "assets/videos/Faradays_Law_of_Electromagnetic_Induction.mp4",
+                        "videoTitle": "Faraday’s Law of Electromagnetic Induction Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\mathcal{E} = -N \\frac{d\\Phi_B}{dt} = -N \\frac{d}{dt}\\left(\\int \\vec{B} \\cdot d\\vec{A}\\right)$$",
                         "description": "The electromotive force $\\mathcal{E}$ induced in a closed conducting loop is directly proportional to the time rate of change of magnetic flux $\\Phi_B$ threading the loop.",
                         "examTip": "Found in Electromagnetics. The minus sign represents Lenz’s Law: induced current produces a secondary magnetic field opposing the change in original flux."
@@ -14397,6 +14409,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Algorithm Time Complexity: Big-O Asymptotic Upper Bound",
+                        "videoUrl": "assets/videos/Algorithm_Time_Complexity_Big_O_Asymptotic_Upper_Bound.mp4",
+                        "videoTitle": "Algorithm Time Complexity: Big-O Asymptotic Upper Bound Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$f(n) = O(g(n)) \\iff \\exists c > 0, n_0 > 0 \\text{ such that } |f(n)| \\le c |g(n)| \\ \\forall n \\ge n_0$$",
                         "description": "Formal mathematical definition of worst-case algorithmic time/space scaling: standard hierarchy ranges from $O(1) < O(\\log n) < O(n) < O(n \\log n) < O(n^2) < O(2^n)$.",
                         "examTip": "Found in Software Engineering / Computer Systems. Binary search is $O(\\log n)$, merge sort and quicksort average are $O(n \\log n)$, and nested loops are typically $O(n^2)$."
@@ -16423,6 +16438,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                        "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
+                        "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
                         "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
                         "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
@@ -16525,6 +16543,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Arrhenius Temperature Dependency of Rate Constants",
+                        "videoUrl": "assets/videos/Arrhenius_Temperature_Dependency_of_Rate_Constants.mp4",
+                        "videoTitle": "Arrhenius Temperature Dependency of Rate Constants Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$k = A e^{-E_a / (R T)} \\iff \\ln\\left(\\frac{k_2}{k_1}\\right) = \\frac{E_a}{R}\\left(\\frac{1}{T_1} - \\frac{1}{T_2}\\right)$$",
                         "description": "Expresses relationship between absolute temperature $T$ and chemical reaction rate constant $k$ based on activation energy $E_a$.",
                         "examTip": "Found in Chemical Kinetics. Universal gas constant $R = 8.314\\text{ J/(mol}\\cdot\\text{K)}$. Always use absolute Kelvin for temperatures."
@@ -16552,6 +16573,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Batch Chemical Reactor Reaction Time Integral",
+                        "videoUrl": "assets/videos/Batch_Chemical_Reactor_Reaction_Time_Integral.mp4",
+                        "videoTitle": "Batch Chemical Reactor Reaction Time Integral Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$t = C_{A0} \\int_0^X \\frac{dX}{-r_A} = -\\int_{C_{A0}}^{C_A} \\frac{dC_A}{-r_A}$$",
                         "description": "Design equation for ideal isothermal batch reactors calculating holding time $t$ required to achieve conversion $X$ of limiting reactant $A$ with reaction rate $-r_A$.",
                         "examTip": "Found in Chemical Reaction Engineering. For first-order reaction ($-r_A = k C_A$): $t = \\frac{1}{k}\\ln\\left(\\frac{1}{1 - X}\\right) = \\frac{1}{k}\\ln\\left(\\frac{C_{A0}}{C_A}\\right)$."
@@ -18809,6 +18833,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                        "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
+                        "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
                         "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
                         "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
@@ -19385,6 +19412,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                        "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
+                        "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
                         "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
                         "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
@@ -20344,6 +20374,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Clarifier Weir Overflow Loading Rate (WLR)",
+                        "videoUrl": "assets/videos/Clarifier_Weir_Overflow_Loading_Rate_WLR.mp4",
+                        "videoTitle": "Clarifier Weir Overflow Loading Rate (WLR) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$WLR = \\frac{Q}{\\text{Total Weir Length}} = \\frac{Q}{\\pi D} \\quad (\\text{Circular Clarifier})$$",
                         "description": "Discharge rate per unit length of effluent peripheral V-notch weir crest in sedimentation tanks, regulated to prevent high exit velocities that scour settled flocs.",
                         "examTip": "Found in Water Treatment. Typical design standard: $WLR \\le 10{,}000 - 20{,}000\\text{ gpd/ft}$."
@@ -20971,6 +21004,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Logarithmic Sound Pressure Level Decibel Addition",
+                        "videoUrl": "assets/videos/Logarithmic_Sound_Pressure_Level_Decibel_Addition.mp4",
+                        "videoTitle": "Logarithmic Sound Pressure Level Decibel Addition Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$L_{p, \\text{total}} = 10 \\log_{10}\\left(\\sum_{i=1}^n 10^{L_{p, i} / 10}\\right)$$",
                         "description": "Calculates combined sound pressure level from multiple independent noise sources, accounting for the logarithmic decibel scale.",
                         "examTip": "Found in Environmental Noise. Adding two equal noise sources ($L_1 = L_2 = 80\\text{ dB}$) increases sound level by exactly $3\\text{ dB}$ ($83\\text{ dB}$)."
@@ -21731,6 +21767,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
+                        "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
+                        "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
                         "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
                         "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
@@ -21833,6 +21872,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Chemical Equilibrium Constant Expression ($K_c$ and $K_p$)",
+                        "videoUrl": "assets/videos/Chemical_Equilibrium_Constant_Expression_Kc_and_Kp.mp4",
+                        "videoTitle": "Chemical Equilibrium Constant Expression ($K_c$ and $K_p$) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$K_p = K_c (R T)^{\\Delta n}, \\quad \\Delta n = \\sum \\nu_{\\text{gaseous products}} - \\sum \\nu_{\\text{gaseous reactants}}$$",
                         "description": "Relates partial-pressure equilibrium constant $K_p$ to molar-concentration equilibrium constant $K_c$ for ideal gas chemical reactions.",
                         "examTip": "Found in Chemistry. If moles of gas do not change during reaction ($\\Delta n = 0$), then $K_p = K_c$."
