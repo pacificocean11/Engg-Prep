@@ -1052,6 +1052,9 @@
             },
                 {
                 "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                        "videoUrl": "assets/videos/Exponential_Smoothing_Forecasting_with_Smoothing_Constant_alpha.mp4",
+                        "videoTitle": "Exponential Smoothing Forecasting with Smoothing Constant $\alpha$ Explainer",
+                        "videoDuration": "10s",
                 "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
                 "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
                 "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
@@ -4201,6 +4204,9 @@
                     },
                 {
                         "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                        "videoUrl": "assets/videos/Exponential_Smoothing_Forecasting_with_Smoothing_Constant_alpha.mp4",
+                        "videoTitle": "Exponential Smoothing Forecasting with Smoothing Constant $\alpha$ Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
                         "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
                         "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
@@ -6282,6 +6288,9 @@
                     },
                 {
                         "title": "2:1 Stress Distribution Method for Deep Loads",
+                        "videoUrl": "assets/videos/2_to_1_Stress_Distribution_Method_for_Deep_Loads.mp4",
+                        "videoTitle": "2:1 Stress Distribution Method for Deep Loads Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\Delta\\sigma_z = \\frac{P}{(B + z)(L + z)}$$",
                         "description": "Empirical approximation spreading foundation contact load $P$ through a rectangular footprint of dimensions $B \\times L$ outward at a $2$ vertical to $1$ horizontal slope.",
                         "examTip": "Found in Geotechnical Engineering. Quickest method to estimate vertical stress increment $\\Delta\\sigma_z$ at depth $z$ beneath footing center for settlement calculations."
@@ -7859,6 +7868,9 @@
                     },
                 {
                         "title": "Butterworth Low-Pass Filter Frequency Response and Order Selection",
+                        "videoUrl": "assets/videos/Butterworth_Low_Pass_Filter_Frequency_Response_and_Order_Selection.mp4",
+                        "videoTitle": "Butterworth Low-Pass Filter Frequency Response and Order Selection Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$|H(j\\omega)|^2 = \\frac{1}{1 + (\\omega / \\omega_c)^{2n}}, \\quad n \\ge \\frac{\\log_{10}[(10^{0.1 A_s} - 1) / (10^{0.1 A_p} - 1)]}{2 \\log_{10}(\\omega_s / \\omega_p)}$$",
                         "description": "Maximally flat passband response filter with no passband or stopband ripple; filter order $n$ determines the rate of high-frequency attenuation rolloff ($20n\\text{ dB/decade}$).",
                         "examTip": "Found in Electronics: Active Filters. At the cutoff frequency $\\omega = \\omega_c$, magnitude response is down by exactly $3\\text{ dB}$ ($|H| = 1/\\sqrt{2} \\approx 0.707$) regardless of order $n$."
@@ -8300,6 +8312,9 @@
                     },
                 {
                         "title": "Binary Full Adder Boolean Logic Expressions",
+                        "videoUrl": "assets/videos/Binary_Full_Adder_Boolean_Logic_Expressions.mp4",
+                        "videoTitle": "Binary Full Adder Boolean Logic Expressions Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$S = A \\oplus B \\oplus C_{in}, \\quad C_{out} = A B + C_{in}(A \\oplus B) = A B + B C_{in} + A C_{in}$$",
                         "description": "Fundamental building block of arithmetic logic units (ALUs), generating single-bit sum $S$ and carry-out $C_{out}$ from input bits $A, B$ and carry-in $C_{in}$.",
                         "examTip": "Found in Digital Systems. A half-adder only takes two inputs ($A, B$), lacking a carry-in ($S = A \\oplus B, C_{out} = A B$)."
@@ -10452,6 +10467,9 @@
                     },
                 {
                         "title": "Absorption and Stripping Factors and Kremser Equation",
+                        "videoUrl": "assets/videos/Absorption_and_Stripping_Factors_and_Kremser_Equation.mp4",
+                        "videoTitle": "Absorption and Stripping Factors and Kremser Equation Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$A = \\frac{L}{m G}, \\quad S = \\frac{m G}{L} = \\frac{1}{A}, \\quad N = \\frac{\\ln\\left[\\left(\\frac{y_{\\text{in}} - m x_{\\text{in}}}{y_{\\text{out}} - m x_{\\text{in}}}\\right)(1 - \\frac{1}{A}) + \\frac{1}{A}\\right]}{\\ln A}$$",
                         "description": "Calculates number of theoretical stages $N$ in gas absorption/stripping towers with linear equilibrium line $y = m x$, where $A$ is absorption factor and $S$ is stripping factor.",
                         "examTip": "Found in Chemical: Separations. For effective gas absorption, operating absorption factor $A$ is typically engineered between $1.2$ and $2.0$."
@@ -10572,6 +10590,9 @@
                     },
                 {
                         "title": "Continuous Stirred-Tank Reactor (CSTR) Design Equation",
+                        "videoUrl": "assets/videos/Continuous_Stirred_Tank_Reactor_CSTR_Design_Equation.mp4",
+                        "videoTitle": "Continuous Stirred-Tank Reactor (CSTR) Design Equation Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$V = \\frac{F_{A0} X_A}{-r_A}$$",
                         "description": "Governs volume $V$ required for a perfectly mixed steady-state CSTR operating at outlet reactant conversion $X_A$ and reaction rate $-r_A$.",
                         "examTip": "Found in Chemical Reaction Engineering. Because contents are well-mixed, reaction rate is evaluated strictly at the exit concentration."
@@ -12072,6 +12093,9 @@
                     },
                 {
                         "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                        "videoUrl": "assets/videos/Exponential_Smoothing_Forecasting_with_Smoothing_Constant_alpha.mp4",
+                        "videoTitle": "Exponential Smoothing Forecasting with Smoothing Constant $\alpha$ Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
                         "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
                         "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
@@ -14601,6 +14625,9 @@
                     },
                 {
                         "title": "Belt Filter Press Sludge Dewatering Solids Balance",
+                        "videoUrl": "assets/videos/Belt_Filter_Press_Sludge_Dewatering_Solids_Balance.mp4",
+                        "videoTitle": "Belt Filter Press Sludge Dewatering Solids Balance Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Recovery} = \\frac{C_c (C_i - C_f)}{C_i (C_c - C_f)} \\times 100, \\quad M_{\\text{cake}} = \\frac{M_{\\text{dry solids}}}{\\%\\text{ Cake Solids}}$$",
                         "description": "Solids recovery efficiency and dewatered cake mass produced by chemical polymer conditioning followed by gravity drainage and pressure filtration belts.",
                         "examTip": "Found in Sludge Processing. Conditioned municipal sludge dewaters to typical cake dryness of $18\\% - 25\\%$ dry solids."
@@ -16560,6 +16587,9 @@
                     },
                 {
                         "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
+                        "videoUrl": "assets/videos/Exponential_Smoothing_Forecasting_with_Smoothing_Constant_alpha.mp4",
+                        "videoTitle": "Exponential Smoothing Forecasting with Smoothing Constant $\alpha$ Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
                         "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
                         "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
