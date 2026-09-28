@@ -2167,6 +2167,9 @@
                 },
                 {
                 "title": "Capillary Rise Height in Fine-Grained Soils",
+                        "videoUrl": "assets/videos/Capillary_Rise_Height_in_Fine_Grained_Soils.mp4",
+                        "videoTitle": "Capillary Rise Height in Fine-Grained Soils Explainer",
+                        "videoDuration": "10s",
                 "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
                 "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
                 "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
@@ -2473,6 +2476,9 @@
                 },
                 {
                 "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                 "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                 "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                 "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -5503,6 +5509,9 @@
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -5804,6 +5813,9 @@
                     },
                 {
                         "title": "Wind Load Design Velocity Pressure Equation (ASCE 7)",
+                        "videoUrl": "assets/videos/Wind_Load_Design_Velocity_Pressure_Equation_ASCE_7.mp4",
+                        "videoTitle": "Wind Load Design Velocity Pressure Equation (ASCE 7) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$q_z = 0.00256 \\cdot K_z \\cdot K_{zt} \\cdot K_d \\cdot K_e \\cdot V^2 \\quad (\\text{USCS: lb/ft}^2, \\text{mph})$$",
                         "description": "Determines dynamic wind velocity pressure $q_z$ at height $z$ based on basic wind speed $V$, velocity pressure exposure coefficient $K_z$, topographic factor $K_{zt}$, wind directionality factor $K_d$, and ground elevation factor $K_e$.",
                         "examTip": "Found in Structural Design: Wind Loads. Surface design wind pressure is $p = q G C_p - q_i (G C_{pi})$, accounting for both external and internal building pressure coefficients."
@@ -5898,12 +5910,18 @@
                     },
                 {
                         "title": "Balanced Steel Reinforcement Ratio in Concrete",
+                        "videoUrl": "assets/videos/Balanced_Steel_Reinforcement_Ratio_in_Concrete.mp4",
+                        "videoTitle": "Balanced Steel Reinforcement Ratio in Concrete Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\rho_b = 0.85 \\beta_1 \\frac{f'_c}{f_y} \\left(\\frac{87{,}000}{87{,}000 + f_y}\\right)$$",
                         "description": "The theoretical reinforcement ratio where tension steel reaches yield strain $\\epsilon_y = f_y / E_s$ at the exact instant concrete reaches crushing strain $\\epsilon_u = 0.003$.",
                         "examTip": "Found in Reinforced Concrete Design. ACI code requires sections to be tension-controlled ($\\epsilon_t \\ge 0.005$, $\\rho \\le 0.75 \\rho_b$) to ensure ductile warning before failure."
                     },
                 {
                         "title": "ACI 318 Tension-Controlled Flexural Strength Reduction Factor",
+                        "videoUrl": "assets/videos/ACI_318_Tension_Controlled_Flexural_Strength_Reduction_Factor.mp4",
+                        "videoTitle": "ACI 318 Tension-Controlled Flexural Strength Reduction Factor Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\phi = 0.65 + 0.25 \\left(\\frac{\\epsilon_t - \\epsilon_{ty}}{0.005 - \\epsilon_{ty}}\\right), \\quad \\phi = 0.90 \\text{ for } \\epsilon_t \\ge 0.005$$",
                         "description": "Strength reduction factor $\\phi$ transitions linearly from $0.65$ (compression-controlled, $\\epsilon_t \\le 0.002$) to $0.90$ (tension-controlled, $\\epsilon_t \\ge 0.005$) to ensure ductile failure with ample warning.",
                         "examTip": "Found in Reinforced Concrete Design. Always verify net tensile strain in extreme tension steel $\\epsilon_t = 0.003 (d - c)/c \\ge 0.004$ (minimum allowable by ACI)."
@@ -6300,6 +6318,9 @@
                     },
                 {
                         "title": "Capillary Rise Height in Fine-Grained Soils",
+                        "videoUrl": "assets/videos/Capillary_Rise_Height_in_Fine_Grained_Soils.mp4",
+                        "videoTitle": "Capillary Rise Height in Fine-Grained Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
                         "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
                         "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
@@ -6435,6 +6456,9 @@
                     },
                 {
                         "title": "AASHTO Flexible Pavement Structural Number (SN) Equation",
+                        "videoUrl": "assets/videos/AASHTO_Flexible_Pavement_Structural_Number_SN_Equation.mp4",
+                        "videoTitle": "AASHTO Flexible Pavement Structural Number (SN) Equation Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$SN = a_1 D_1 + a_2 D_2 m_2 + a_3 D_3 m_3$$",
                         "description": "Calculates required overall structural number $SN$ of a flexible pavement system from layer thickness $D_i$, structural layer coefficients $a_i$ (asphalt surface, base, subbase), and drainage coefficients $m_i$.",
                         "examTip": "Found in Transportation: Pavement Design. Subgrade resilient modulus $M_r$ governs required total $SN$; layer thicknesses $D_i$ are rounded up to the nearest half-inch."
@@ -6962,6 +6986,9 @@
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -8912,6 +8939,9 @@
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -12608,6 +12638,9 @@
                     },
                 {
                         "title": "Learning Curve Theory: Wright's Log-Linear Model",
+                        "videoUrl": "assets/videos/Learning_Curve_Theory_Wrights_Log_Linear_Model.mp4",
+                        "videoTitle": "Learning Curve Theory: Wright's Log-Linear Model Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$T_N = T_1 \\cdot N^b = T_1 \\cdot N^{\\frac{\\log_{10}(L)}{\\log_{10}(2)}}, \\quad b = \\frac{\\ln(L)}{\\ln(2)}$$",
                         "description": "Models operational productivity gains: every time cumulative production doubles, unit labor time decreases by a constant learning percentage $L$ (e.g., for an $80\\%$ learning curve, $L = 0.80$ and $b = -0.322$).",
                         "examTip": "Found in Industrial: Work Design & Economics. If unit 1 takes $100\\text{ hours}$ under an $80\\%$ curve, unit 2 takes $80\\text{ hours}$, unit 4 takes $64\\text{ hours}$, and unit 8 takes $51.2\\text{ hours}$."
@@ -14268,6 +14301,9 @@
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -14850,6 +14886,9 @@
                     },
                 {
                         "title": "Groundwater Contaminant Retardation Factor ($R$)",
+                        "videoUrl": "assets/videos/Groundwater_Contaminant_Retardation_Factor.mp4",
+                        "videoTitle": "Groundwater Contaminant Retardation Factor ($R$) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R = \\frac{v_s}{v_c} = 1 + \\frac{\\rho_b}{\\theta} K_d$$",
                         "description": "Ratio of groundwater pore water seepage velocity $v_s$ to contaminant migration plume velocity $v_c$, slowed by sorption onto soil matrix with bulk density $\\rho_b$, porosity $\\theta$, and distribution coefficient $K_d$.",
                         "examTip": "Found in Subsurface Contaminant Transport. If $R = 5$, the contaminant plume travels at only $1/5$ the velocity of advancing groundwater."
@@ -17845,6 +17884,9 @@
                     },
                 {
                         "title": "Capillary Rise Height in Fine-Grained Soils",
+                        "videoUrl": "assets/videos/Capillary_Rise_Height_in_Fine_Grained_Soils.mp4",
+                        "videoTitle": "Capillary Rise Height in Fine-Grained Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
                         "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
                         "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
