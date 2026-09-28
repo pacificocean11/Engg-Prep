@@ -622,6 +622,9 @@
             },
                 {
                 "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                "videoUrl": "assets/videos/One_Way_Analysis_of_Variance_ANOVA_F_Statistic.mp4",
+                "videoTitle": "One-Way Analysis of Variance (ANOVA) F-Statistic Explainer",
+                "videoDuration": "10s",
                 "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
                 "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
                 "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
@@ -1031,6 +1034,9 @@
             },
                 {
                 "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                "videoUrl": "assets/videos/Earned_Value_Management_Cost_and_Schedule_Performance_Indices.mp4",
+                "videoTitle": "Earned Value Management: Cost and Schedule Performance Indices Explainer",
+                "videoDuration": "10s",
                 "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
                 "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
                 "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
@@ -1819,6 +1825,9 @@
                 },
                 {
                 "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                "videoUrl": "assets/videos/Cantilever_Sheet_Pile_Wall_Stability_in_Granular_Soils.mp4",
+                "videoTitle": "Cantilever Sheet Pile Wall Stability in Granular Soils Explainer",
+                "videoDuration": "10s",
                 "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
                 "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
                 "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
@@ -4231,6 +4240,9 @@
                     },
                 {
                         "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                        "videoUrl": "assets/videos/One_Way_Analysis_of_Variance_ANOVA_F_Statistic.mp4",
+                        "videoTitle": "One-Way Analysis of Variance (ANOVA) F-Statistic Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
                         "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
                         "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
@@ -6273,6 +6285,9 @@
                     },
                 {
                         "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                        "videoUrl": "assets/videos/Cantilever_Sheet_Pile_Wall_Stability_in_Granular_Soils.mp4",
+                        "videoTitle": "Cantilever Sheet Pile Wall Stability in Granular Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
                         "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
                         "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
@@ -6549,6 +6564,9 @@
                     },
                 {
                         "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                        "videoUrl": "assets/videos/Earned_Value_Management_Cost_and_Schedule_Performance_Indices.mp4",
+                        "videoTitle": "Earned Value Management: Cost and Schedule Performance Indices Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
                         "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
                         "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
@@ -7719,6 +7737,9 @@
                     },
                 {
                         "title": "MOSFET Saturation Region Drain Current",
+                        "videoUrl": "assets/videos/MOSFET_Saturation_Region_Drain_Current.mp4",
+                        "videoTitle": "MOSFET Saturation Region Drain Current Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$I_D = \\frac{1}{2} k'_n \\left(\\frac{W}{L}\\right) (V_{GS} - V_{tn})^2 (1 + \\lambda V_{DS})$$",
                         "description": "Models drain current in an n-channel enhancement MOSFET operating in saturation (pinch-off) region when $V_{GS} > V_{tn}$ and $V_{DS} \\ge V_{GS} - V_{tn}$.",
                         "examTip": "Found in Semiconductor Electronics. Channel-length modulation parameter $\\lambda$ represents finite output resistance: $r_o \\approx 1 / (\\lambda I_D)$."
@@ -8133,6 +8154,9 @@
                     },
                 {
                         "title": "Transmission Line Reflection Coefficient and SWR",
+                        "videoUrl": "assets/videos/Transmission_Line_Reflection_Coefficient_and_SWR.mp4",
+                        "videoTitle": "Transmission Line Reflection Coefficient and SWR Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\Gamma = \\frac{Z_L - Z_0}{Z_L + Z_0}, \\quad SWR = \\frac{1 + |\\Gamma|}{1 - |\\Gamma|}$$",
                         "description": "Measures the fraction of incident electromagnetic wave reflected at the termination of a transmission line with characteristic impedance $Z_0$ and load impedance $Z_L$.",
                         "examTip": "Found in Electromagnetics / RF. Matched load ($Z_L = Z_0$) gives $\\Gamma = 0, SWR = 1$. Open circuit ($Z_L = \\infty$) gives $\\Gamma = +1$; short circuit ($Z_L = 0$) gives $\\Gamma = -1$."
@@ -8342,6 +8366,9 @@
                     },
                 {
                         "title": "Boolean Consensus Theorem",
+                        "videoUrl": "assets/videos/Boolean_Consensus_Theorem.mp4",
+                        "videoTitle": "Boolean Consensus Theorem Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$A B + \\overline{A} C + B C = A B + \\overline{A} C$$",
                         "description": "Enables algebraic elimination of redundant consensus term $BC$ in sum-of-products Boolean expressions.",
                         "examTip": "Found in Digital Systems. The consensus term $BC$ contains variables from two terms where variable $A$ appears inverted in one and non-inverted in the other."
@@ -8495,6 +8522,57 @@
                         "formula": "$$\\text{Invariant: } \\text{Left Subtree} < \\text{Node} < \\text{Right Subtree}, \\quad T_{\\text{avg}} = O(\\log n), \\quad T_{\\text{worst}} = O(n)$$",
                         "description": "Node-based binary tree data structure maintaining sorted ordering: average search, insert, and delete take $O(\\log n)$ time; unbalanced degraded trees degenerate to linear lists with $O(n)$ search time.",
                         "examTip": "Found in Software Engineering: Algorithms. Self-balancing trees (AVL trees, Red-Black trees) guarantee strictly $O(\\log n)$ worst-case operation bounds."
+                    },
+                {
+                        "title": "Von Neumann vs. Harvard Architecture",
+                        "formula": "$$\\text{Von Neumann: Shared Bus (Memory Bottleneck)}, \\quad \\text{Harvard: Separate Instruction \\& Data Buses}$$",
+                        "description": "Von Neumann architecture shares a single physical memory and bus for instructions and data, creating the 'Von Neumann bottleneck' where fetch and data access cannot occur simultaneously. Harvard architecture uses physically separated memories and buses, permitting concurrent instruction fetch and data read/write.",
+                        "examTip": "Found in Computer Systems: Microprocessors. Modern CPUs (like ARM and x86) use a Modified Harvard architecture: separate L1 instruction and data caches coupled to a shared unified main memory."
+                    },
+                {
+                        "title": "CISC vs. RISC Processor Philosophy",
+                        "videoUrl": "assets/videos/CISC_vs_RISC_Processor_Philosophy.mp4",
+                        "videoTitle": "CISC vs. RISC Processor Philosophy Explainer",
+                        "videoDuration": "10s",
+                        "formula": "$$\\text{CISC: Variable-length, Multi-cycle (Complex)}, \\quad \\text{RISC: Fixed-length (32-bit), Single-cycle Load/Store}$$",
+                        "description": "CISC (Complex Instruction Set Computer) focuses on hardware-level instruction density and complex addressing modes with variable execution cycles. RISC (Reduced Instruction Set Computer) emphasizes simple, single-cycle, fixed-width instructions with a load/store architecture where arithmetic operates strictly on registers.",
+                        "examTip": "Found in Computer Systems: Microprocessors. RISC simplifies pipelining and decoding hardware at the expense of needing more instructions (larger code size) to perform equivalent tasks."
+                    },
+                {
+                        "title": "SRAM vs. DRAM Architecture and Dynamic Refresh Cycles",
+                        "formula": "$$\\text{SRAM: 6-Transistor Bistable Latch (Fast, Static)}, \\quad \\text{DRAM: 1T-1C Capacitor (Dense, } t_{\\text{refresh}} \\le 64\\text{ ms})$$",
+                        "description": "SRAM utilizes cross-coupled inverters (typically 6T) to store state statically without refreshing as long as power is applied; it is fast and low-density, ideal for CPU caches. DRAM uses a single transistor and storage capacitor (1T-1C) per cell; leakage requires periodic dynamic refresh cycles, making it high-density and low-cost for main system memory.",
+                        "examTip": "Found in Computer Systems: Memory Technology and Systems. DRAM reads are destructive: discharging the storage capacitor requires an immediate write-back restoration cycle by the sense amplifier."
+                    },
+                {
+                        "title": "Cache Write Policies: Write-Through vs. Write-Back and Dirty Bit",
+                        "formula": "$$\\text{Write-Through: Update Cache \\& Main Memory}, \\quad \\text{Write-Back: Update Cache Only (Dirty Bit = 1)}$$",
+                        "description": "Determines how memory writes update cache hierarchies: Write-Through immediately updates main memory on every write hit (simple, higher memory bus traffic; often paired with write buffers); Write-Back updates only the cache block and marks a 'dirty bit', writing back to main memory only when the dirty block is evicted.",
+                        "examTip": "Found in Computer Systems: Memory Technology and Systems. For write misses, Write-Allocate (fetches missed block into cache) is commonly paired with Write-Back, while No-Write-Allocate is paired with Write-Through."
+                    },
+                {
+                        "title": "Direct Memory Access (DMA) vs. Programmed I/O vs. Interrupt-Driven I/O",
+                        "formula": "$$\\text{DMA: Hardware Controller Transfers Blocks Directly to RAM (Bypassing CPU)}$$",
+                        "description": "I/O data transfer paradigms: Programmed I/O requires continuous CPU polling; Interrupt-Driven I/O frees CPU during wait states but interrupts on each byte/word. DMA delegates bulk data transfers directly between I/O peripherals and RAM via a dedicated DMA controller, operating via Burst Mode (bus locked) or Cycle Stealing (interleaving with CPU clock cycles).",
+                        "examTip": "Found in Computer Systems: Interfacing. DMA requires the CPU to initialize starting memory address, transfer byte count, and direction before asserting bus request/grant handshakes (HOLD/HLDA)."
+                    },
+                {
+                        "title": "Memory-Mapped I/O vs. Isolated (Port-Mapped) I/O",
+                        "formula": "$$\\text{Memory-Mapped: Shared Unified Address Space}, \\quad \\text{Port-Mapped (Isolated): Dedicated I/O Space (IN/OUT)}$$",
+                        "description": "I/O addressing schemes: Memory-Mapped I/O assigns peripheral registers to standard memory address space, allowing all standard memory access instructions (e.g., MOV, LOAD, STORE) to access hardware without extra pins. Isolated (Port-Mapped) I/O uses separate control signals (\\overline{\\text{IOR}}, \\overline{\\text{IOW}}) and specialized assembly instructions (e.g., IN, OUT) to address a distinct I/O port address space.",
+                        "examTip": "Found in Computer Systems: Interfacing. Memory-Mapped I/O reduces available RAM address space but simplifies CPU architecture; Port-Mapped I/O preserves full RAM address space but requires specialized instructions and control lines."
+                    },
+                {
+                        "title": "Serial Communication Interfaces (UART vs. SPI vs. I²C)",
+                        "formula": "$$\\text{UART: Asynch (TX/RX)}, \\quad \\text{SPI: 4-wire Synch (MOSI/MISO/SCK/SS)}, \\quad \\text{I}^2\\text{C: 2-wire Synch (SDA/SCL)}$$",
+                        "description": "Standard embedded serial protocols: UART is asynchronous full-duplex using agreed baud rates with start/stop bits; SPI is synchronous full-duplex master-slave with clock (SCK), data lines (MOSI, MISO), and slave select (SS); I²C is synchronous half-duplex multi-master 2-wire bus using open-drain lines with pull-up resistors and 7-bit device addressing.",
+                        "examTip": "Found in Computer Systems: Interfacing. SPI offers highest data throughput and simplest hardware but requires dedicated SS line per peripheral; I²C minimizes pins (only 2) with built-in ACK/NACK signaling but runs at lower clock speeds."
+                    },
+                {
+                        "title": "Tri-State Bus Architecture and Bus Contention",
+                        "formula": "$$\\text{Output States: } \\{0, 1, Z \\text{ (High-Impedance)}\\}, \\quad \\text{Active-Low Output Enable: } \\overline{\\text{OE}} = 1 \\implies \\text{High-}Z$$",
+                        "description": "Tri-state buffers allow multiple device outputs to connect physically to a shared common data or address bus. When a device is not selected (\\overline{\\text{OE}} de-asserted), its output enters high-impedance mode (Z), electrically disconnecting it from the bus. Bus contention occurs if two or more devices drive opposing logic states (0 and 1) simultaneously, causing high current draw and voltage ambiguity.",
+                        "examTip": "Found in Computer Systems: Interfacing. Bus arbitration logic and mutually exclusive chip select (\\overline{\\text{CS}}) decoders guarantee that at most one bus driver is enabled at any time to prevent contention and thermal damage."
                     }
             ],
         "Chemical": [
@@ -11017,6 +11095,9 @@
                     },
                 {
                         "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                        "videoUrl": "assets/videos/Cantilever_Sheet_Pile_Wall_Stability_in_Granular_Soils.mp4",
+                        "videoTitle": "Cantilever Sheet Pile Wall Stability in Granular Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
                         "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
                         "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
@@ -11768,6 +11849,9 @@
                     },
                 {
                         "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                        "videoUrl": "assets/videos/One_Way_Analysis_of_Variance_ANOVA_F_Statistic.mp4",
+                        "videoTitle": "One-Way Analysis of Variance (ANOVA) F-Statistic Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
                         "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
                         "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
@@ -12081,6 +12165,9 @@
                     },
                 {
                         "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                        "videoUrl": "assets/videos/Earned_Value_Management_Cost_and_Schedule_Performance_Indices.mp4",
+                        "videoTitle": "Earned Value Management: Cost and Schedule Performance Indices Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
                         "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
                         "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
@@ -12596,6 +12683,9 @@
                     },
                 {
                         "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                        "videoUrl": "assets/videos/Cantilever_Sheet_Pile_Wall_Stability_in_Granular_Soils.mp4",
+                        "videoTitle": "Cantilever Sheet Pile Wall Stability in Granular Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
                         "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
                         "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
@@ -14922,6 +15012,9 @@
                     },
                 {
                         "title": "Aquifer Transmissivity and Storage Coefficient",
+                        "videoUrl": "assets/videos/Aquifer_Transmissivity_and_Storage_Coefficient.mp4",
+                        "videoTitle": "Aquifer Transmissivity and Storage Coefficient Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$T = K b, \\quad S = S_s b$$",
                         "description": "Transmissivity $T$ is the rate of groundwater flow through a unit width of vertical aquifer thickness $b$ under unit hydraulic gradient; storativity $S$ is volume of water released per unit area per unit decline in head.",
                         "examTip": "Found in Hydrogeology. For confined aquifers, $S$ is very small ($10^{-5} - 10^{-3}$); for unconfined aquifers, $S \\approx S_y$ (specific yield, $0.1 - 0.3$)."
@@ -15036,6 +15129,9 @@
                     },
                 {
                         "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                        "videoUrl": "assets/videos/Cantilever_Sheet_Pile_Wall_Stability_in_Granular_Soils.mp4",
+                        "videoTitle": "Cantilever Sheet Pile Wall Stability in Granular Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
                         "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
                         "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
@@ -15835,6 +15931,9 @@
                     },
                 {
                         "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
+                        "videoUrl": "assets/videos/One_Way_Analysis_of_Variance_ANOVA_F_Statistic.mp4",
+                        "videoTitle": "One-Way Analysis of Variance (ANOVA) F-Statistic Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
                         "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
                         "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
@@ -16605,6 +16704,9 @@
                     },
                 {
                         "title": "Earned Value Management: Cost and Schedule Performance Indices",
+                        "videoUrl": "assets/videos/Earned_Value_Management_Cost_and_Schedule_Performance_Indices.mp4",
+                        "videoTitle": "Earned Value Management: Cost and Schedule Performance Indices Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
                         "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
                         "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
@@ -17829,6 +17931,9 @@
                     },
                 {
                         "title": "Cantilever Sheet Pile Wall Stability in Granular Soils",
+                        "videoUrl": "assets/videos/Cantilever_Sheet_Pile_Wall_Stability_in_Granular_Soils.mp4",
+                        "videoTitle": "Cantilever Sheet Pile Wall Stability in Granular Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$D^4 - \\left(\\frac{P_a}{p'_p - p'_a}\\right) D^2 - \\dots = 0, \\quad D_{\\text{actual}} = (1.2 \\text{ to } 1.3) D_{\\text{theory}}$$",
                         "description": "Governs embedment depth $D$ for an unsupported cantilever sheet pile wall by establishing static equilibrium ($\\sum F_x = 0$ and $\\sum M = 0$) between active lateral pressure behind the wall and passive resistance ahead of embedment.",
                         "examTip": "Found in Geotechnical: Deep Retaining Structures. Theoretical minimum embedment depth $D_{\\text{theory}}$ is routinely increased by $20\\%$ to $30\\%$ for design safety."
