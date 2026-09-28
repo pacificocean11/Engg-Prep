@@ -64,6 +64,104 @@
         return 1;
     }
 
+    const CIVIL_SUBJECTS = [
+        { id: 1, name: '1. Mathematics & Statistics' },
+        { id: 2, name: '2. Ethics & Professional Practice' },
+        { id: 3, name: '3. Engineering Economics' },
+        { id: 4, name: '4. Statics' },
+        { id: 5, name: '5. Dynamics' },
+        { id: 6, name: '6. Mechanics of Materials' },
+        { id: 7, name: '7. Materials' },
+        { id: 8, name: '8. Fluid Mechanics' },
+        { id: 9, name: '9. Surveying' },
+        { id: 10, name: '10. Water Resources & Environmental' },
+        { id: 11, name: '11. Structural Engineering' },
+        { id: 12, name: '12. Geotechnical Engineering' },
+        { id: 13, name: '13. Transportation Engineering' },
+        { id: 14, name: '14. Construction Engineering' }
+    ];
+
+    function getCivilSubjectId(title, examTip, description) {
+        const lower = (title || '').toLowerCase();
+        const tip = (examTip || '').toLowerCase();
+
+        // Priority overrides
+        if (/plastic section modulus and shape factor/i.test(lower)) return 11;
+        if (/total float and free float in activity networks|bill of materials explosion tree/i.test(lower)) return 14;
+        if (/mass haul diagram|first angle vs\. third angle/i.test(lower)) return 14;
+        if (/osha soil classifications|construction equipment fleet productivity|osha permissible noise/i.test(lower)) return 14;
+        if (/lrfd load combinations|wind load design velocity pressure/i.test(lower)) return 11;
+        if (/standard portland cement types|binary phase diagram lever rule|concrete maturity method/i.test(lower)) return 7;
+        if (/type iii zone settling|solution concentration: molarity/i.test(lower)) return 10;
+        if (/modified goodman fatigue|strain gauge gauge factor|distortion energy theory|coulomb-mohr and modified mohr failure criteria/i.test(lower)) return 6;
+        if (/hierarchy of controls|nfpa 704|hazop study/i.test(lower)) return 2;
+        if (/pressure relief valve sizing/i.test(lower)) return 8;
+        if (/kanban production system/i.test(lower)) return 3;
+        if (/permutations and combinations|bathtub failure curve|exponential smoothing forecasting|forecasting error metrics/i.test(lower)) return 1;
+        if (/integration by parts|calculus|derivative|integral|limit|chain rule|taylor|l’hôpital|homogeneous vs non-homogeneous|order and degree of differential|newton-raphson|trapezoidal rule|simpson’s 1\/3 rule|laplace transforms|newton's method for root|simpson's rule|infinite series convergence/i.test(lower)) return 1;
+        if (/equivalent capacitance and inductance|ohm’s law|kirchhoff|circuit analysis/i.test(lower) || /circuit/i.test(tip)) return 1;
+
+        // 12. Geotechnical Engineering
+        if (/terzaghi|darcy’s law for hydraulic seepage|hydraulic conductivity|effective stress|boussinesq|consolidation|settlement|bearing capacity|rankine|coulomb.*earth pressure|mohr-coulomb.*soil|quick condition|soil boiling|atterberg|plasticity index|void ratio|porosity|proctor|retaining wall|slope stability|flow net|seepage|active lateral|passive lateral|earth pressure|foundation|pile|footing|unconfined compression.*soil|triaxial.*test|cyclic stress ratio|liquefaction|group index|aashto soil classification/i.test(lower) ||
+            /geotechnical|foundation engineering|soil mechanics/i.test(tip)) return 12;
+
+        // 14. Construction Engineering
+        if (/critical path method|cpm|float equation|earliest start|latest finish|earned value management|cost variance and schedule|project delivery|construction safety|excavation safety|trench|earthwork.*haul|mass haul/i.test(lower) || 
+            /construction|project management|project controls/i.test(tip)) return 14;
+
+        // 13. Transportation Engineering
+        if (/traffic|highway|stopping sight distance|sight distance|crest vertical|sag vertical|horizontal curve|horizontal circular curve|superelevation|greenshields|pavement|esal|structural number|peak hour factor|level of service|trip generation|vertical curvature \(\$k\$-value\)|conflict points/i.test(lower) ||
+            /transportation|highway design/i.test(tip)) return 13;
+
+        // 9. Surveying
+        if (/surveying|traverse|leveling|benchmark|azimuth|compass rule|bowditch|curvature and refraction|stadia|prismoidal|end area/i.test(lower) ||
+            /(?<!bearing\s)bearing/i.test(lower) ||
+            /surveying/i.test(tip)) return 9;
+
+        // 10. Water Resources & Environmental Engineering
+        if (/manning|open channel|hazen-williams|rational method|storm runoff|aquifer|dupuit|weir|froude|specific energy|hydraulic jump|hydrology|water treatment|wastewater|bod|biochemical oxygen demand|streeter-phelps|chlorination|coagulation|flocculation|sedimentation basin|filtration|detention basin|runoff|flood|groundwater|well|shields diagram/i.test(lower) ||
+            /hydraulics|hydrology|water resources|environmental/i.test(tip)) return 10;
+
+        // 11. Structural Engineering
+        if (/whitney rectangular|plastic moment capacity of structural steel|aci 318|aisc|structural steel|reinforced concrete|concrete beam|flexural reinforcement|shear stirrup|punching shear|development length|short column.*aci|cracking moment|prestress|influence line|müller-breslau|moment distribution|hardy cross|degree of static indeterminacy|virtual work.*beam|castigliano.*truss|temperature and fabrication deflections in trusses|seismic base shear|equivalent lateral force/i.test(lower) ||
+            /reinforced concrete|concrete design|steel design|structural analysis|prestressed concrete/i.test(tip)) return 11;
+
+        // 7. Materials
+        if (/concrete.*mix|asphalt|aggregate|superpave|marshall|curing|fineness modulus|air entrainment|slump test|compressive strength of concrete|wood design|timber|modulus of elasticity of structural concrete|concrete maturity method/i.test(lower) ||
+            /material properties|concrete technology/i.test(tip)) return 7;
+
+        // 6. Mechanics of Materials
+        if (/flexure formula|torsion formula|shear stress|transverse shear|jourawski|thin-walled.*tube|bredt|shear center|stress and elongation|axial stress|poisson’s ratio|thermal expansion.*stress|mohr’s circle|beam deflection|cantilever beam tip deflection|simply supported beam center|elastic section modulus|elastic strain energy|principal stresses|combined axial and bending|hooke’s law|pressure vessel|torsion of circular shafts|maximum shear stress in rectangular|euler’s critical buckling/i.test(lower) ||
+            /mechanics of materials/i.test(tip)) return 6;
+
+        // 8. Fluid Mechanics
+        if (/bernoulli|darcy-weisbach|reynolds number|continuity equation|viscosity|surface tension|capillarity|buoyancy|archimedes|hydrostatic pressure|center of pressure|manometer|pitot tube|venturi|orifice/i.test(lower) ||
+            /fluid mechanics/i.test(tip)) return 8;
+
+        // 4. Statics
+        if (/concurrent forces|lami's theorem|moments \(couples\)|2d static equilibrium|free body diagram|support reaction|two-force|three-force|truss zero-force|method of joints|method of sections|parallel axis theorem|centroid of composite|area moment of inertia|radius of gyration|product of inertia|static friction|coulomb dry friction/i.test(lower) ||
+            /statics/i.test(tip)) return 4;
+
+        // 5. Dynamics
+        if (/kinematics|constant acceleration|relative motion|curvilinear|normal and tangential|uniform circular|instantaneous center|particle kinetics|equations of motion|mass moment of inertia|linear impulse|angular impulse|momentum|restitution|work-energy|kinetic energy|potential energy|vibration|frequency|damping/i.test(lower) ||
+            /dynamics/i.test(tip)) return 5;
+
+        // 3. Engineering Economics
+        if (/compound interest|nominal vs\. effective|straight-line depreciation|macrs|book value|benefit-cost|break-even|internal rate of return|simple payback|capitalized cost|bonds|sensitivity analysis/i.test(lower) ||
+            /engineering economics|economics/i.test(tip)) return 3;
+
+        // 2. Ethics & Professional Practice
+        if (/ethics|code of ethics|public welfare|pe seal|licensure|conflict of interest|whistleblowing|liability|contract law/i.test(lower) ||
+            /ethics|professional practice/i.test(tip)) return 2;
+
+        // 1. Mathematics & Statistics
+        if (/confidence interval|sample mean|variance|standard deviation|normal distribution|binomial|regression|curve fitting|hypothesis|anova|chi-square/i.test(lower) || /statistics/i.test(tip)) return 1;
+        if (/vector|matrix|linear algebra|determinant|dot product|cross product/i.test(lower)) return 1;
+        if (/calculus|derivative|integral|limit|chain rule|taylor|l’hôpital/i.test(lower)) return 1;
+
+        return 1;
+    }
+
     const OTHER_SUBJECTS = [
         { id: 1, name: '1. Mathematics' },
         { id: 2, name: '2. Probability & Statistics' },
@@ -141,21 +239,495 @@
     }
 
 
+
+// Universal Discipline Definitions and Classifier Functions for ENGG.tv FE Flashcards
+
+const ELECTRICAL_SUBJECTS = [
+    { id: 1, name: '1. Mathematics' },
+    { id: 2, name: '2. Probability & Statistics' },
+    { id: 3, name: '3. Ethics & Professional Practice' },
+    { id: 4, name: '4. Engineering Economics' },
+    { id: 5, name: '5. Properties of Electrical Materials' },
+    { id: 6, name: '6. Circuit Analysis' },
+    { id: 7, name: '7. Linear Systems' },
+    { id: 8, name: '8. Signal Processing' },
+    { id: 9, name: '9. Electronics' },
+    { id: 10, name: '10. Power Systems' },
+    { id: 11, name: '11. Electromagnetics' },
+    { id: 12, name: '12. Control Systems' },
+    { id: 13, name: '13. Communications' },
+    { id: 14, name: '14. Computer Networks' },
+    { id: 15, name: '15. Digital Systems' },
+    { id: 16, name: '16. Computer Systems' },
+    { id: 17, name: '17. Software Engineering' }
+];
+
+function getElectricalSubjectId(title, examTip, description) {
+    const lower = (title || '').toLowerCase();
+    const tip = (examTip || '').toLowerCase();
+
+    // Specific overrides
+    if (/dirac delta impulse and unit step integration/i.test(lower)) return 7;
+    if (/laplace transform time delay property/i.test(lower)) return 7;
+    if (/second-order control system step response overshoot/i.test(lower)) return 12;
+    if (/biot-savart law for magnetic fields/i.test(lower)) return 11;
+    if (/energy stored in inductors and magnetic field density/i.test(lower)) return 11;
+    if (/parallel-plate capacitor capacitance and energy density/i.test(lower)) return 11;
+    if (/inductive and capacitive reactance and susceptance/i.test(lower)) return 6;
+    if (/full-wave bridge rectifier with filter capacitor ripple voltage/i.test(lower)) return 9;
+
+    // 17. Software Engineering
+    if (/software engineering|data structures|algorithms/i.test(tip) ||
+        /big-o|sorting algorithm|binary search tree|stack and queue|hash table|object-oriented|breadth-first|depth-first|dijkstra|linked list|software development life cycle/i.test(lower)) {
+        return 17;
+    }
+
+    // 16. Computer Systems
+    if (/computer systems|computer architecture|microprocessors|processor design|memory architecture|operating systems|parallel computing|embedded systems/i.test(tip) ||
+        /cache memory|hit ratio|pipeline|instruction set|von neumann|harvard architecture|microcontroller|assembly language|interrupt vector|virtual memory|page fault|little-endian|direct memory access|alu /i.test(lower)) {
+        return 16;
+    }
+
+    // 15. Digital Systems
+    if (/digital systems|sequential logic|arithmetic circuits|digital ics/i.test(tip) ||
+        /karnaugh map|k-map|de morgan|boolean algebra|multiplexer|demultiplexer|decoder|priority encoder|flip-flop|jk flip-flop|d flip-flop|sr latch|finite state machine|mealy|moore|setup and hold time|clock skew|propagation delay.*logic|two’s complement|full adder|ripple carry/i.test(lower)) {
+        return 15;
+    }
+
+    // 14. Computer Networks
+    if (/computer networks/i.test(tip) ||
+        /osi model|tcp\/ip|csma\/cd|ethernet|ip addressing|subnet mask|cidr|routing table|distance-vector|link-state|transport layer|flow control|sliding window|network security|firewall/i.test(lower)) {
+        return 14;
+    }
+
+    // 13. Communications
+    if (/communications/i.test(tip) ||
+        /shannon-hartley|channel capacity|amplitude modulation|frequency modulation|phase modulation|am modulation index|frequency deviation|fsk|psk|qam|signal-to-noise|noise figure|friis transmission|multiplexing|tdm|fdm/i.test(lower)) {
+        return 13;
+    }
+
+    // 12. Control Systems
+    if (/control systems|controls|controls: dynamic|controls: frequency/i.test(tip) ||
+        /routh-hurwitz|bode plot|gain margin|phase margin|nyquist stability|root locus|state-space|pid controller|lead-lag compensator|steady-state error|system type number|second-order control system step response overshoot|closed-loop transfer function|block diagram reduction/i.test(lower)) {
+        return 12;
+    }
+
+    // 11. Electromagnetics
+    if (/electromagnetics/i.test(tip) ||
+        /maxwell’s equations|gauss’s law|biot-savart|ampere’s circuital|faraday’s law of induction|lorenz force|poynting vector|skin depth|characteristic impedance.*transmission line|standing wave ratio|vswr|reflection coefficient|smith chart|parallel-plate capacitor capacitance and energy density|energy stored in inductors and magnetic field density|coulomb’s law|electric dipole/i.test(lower)) {
+        return 11;
+    }
+
+    // 10. Power Systems
+    if (/power systems|power engineering|ac power systems|power:|rotating machines|transformers/i.test(tip) ||
+        /power factor correction|synchronous generator|synchronous motor|three-phase induction motor|slip.*induction|per-unit system|symmetrical components|positive sequence|zero sequence|transmission line regulation|complex power|apparent power|transformer turns ratio|short-circuit ratio|dc shunt motor|torque-speed characteristic/i.test(lower)) {
+        return 10;
+    }
+
+    // 9. Electronics
+    if (/electronics|semiconductor electronics|active filters|power supplies|operational amplifiers|bjts|mosfets/i.test(tip) ||
+        /operational amplifier|op-amp|inverting op-amp|non-inverting op-amp|summing amplifier|instrumentation amplifier|bjt|bipolar junction|mosfet|threshold voltage|drain current|small-signal hybrid-pi|zener diode|full-wave bridge rectifier|half-wave rectifier|ripple voltage|pn junction diode equation|clamping circuit|clipper circuit|class a amplifier|class b amplifier|cmos inverter/i.test(lower)) {
+        return 9;
+    }
+
+    // 8. Signal Processing
+    if (/signal processing|digital signal processing/i.test(tip) ||
+        /nyquist-shannon sampling|aliasing|discrete fourier transform|fast fourier transform|dft|fft|z-transform|region of convergence|bilinear transform|convolution integral|continuous-time fourier transform|impulse response|finite impulse response|fir filter|iir filter/i.test(lower)) {
+        return 8;
+    }
+
+    // 7. Linear Systems
+    if (/linear systems|signals and systems/i.test(tip) ||
+        /transfer function|poles and zeros|impulse response and step response|dirac delta impulse and unit step integration|laplace transform time delay property|state-transition matrix|convolution sum|frequency response function/i.test(lower)) {
+        return 7;
+    }
+
+    // 6. Circuit Analysis
+    if (/circuit analysis|electrical circuits|transient circuit|ac circuits|circuit transients/i.test(tip) ||
+        /thevenin|norton|kirchhoff|kcl|kvl|maximum power transfer|superposition|mesh current|node voltage|first-order rc|first-order rl|series rlc resonance|parallel rlc|quality factor.*resonance|resonant frequency|inductive and capacitive reactance and susceptance|balanced three-phase|delta-wye|wye-delta|two-port network|impedance parameters|admittance parameters|joule heating/i.test(lower)) {
+        return 6;
+    }
+
+    // 5. Properties of Electrical Materials
+    if (/properties of electrical materials|materials|semiconductor physics/i.test(tip) ||
+        /intrinsic semiconductor|carrier concentration|band gap|dielectric constant|dielectric breakdown|permittivity|permeability|resistivity and conductivity|temperature coefficient of resistance|fermi level|drift velocity|hall effect/i.test(lower)) {
+        return 5;
+    }
+
+    // 4. Engineering Economics
+    if (/engineering economics|economics/i.test(tip) ||
+        /present worth|future worth|capital recovery|uniform series|benefit-cost|internal rate of return|depreciation|macrs|straight-line depreciation|annual worth/i.test(lower)) {
+        return 4;
+    }
+
+    // 3. Ethics and Professional Practice
+    if (/ethics/i.test(tip) ||
+        /code of ethics|public health|safety.*welfare|licensure|conflict of interest|whistleblowing|contract/i.test(lower)) {
+        return 3;
+    }
+
+    // 2. Probability and Statistics
+    if (/probability|statistics/i.test(tip) ||
+        /central limit|bayes’ theorem|binomial distribution|poisson distribution|normal distribution|standard normal|confidence interval|hypothesis test|linear regression|expected value|variance|standard deviation/i.test(lower)) {
+        return 2;
+    }
+
+    // 1. Mathematics
+    return 1;
+}
+
+const CHEMICAL_SUBJECTS = [
+    { id: 1, name: '1. Mathematics' },
+    { id: 2, name: '2. Probability & Statistics' },
+    { id: 3, name: '3. Engineering Sciences' },
+    { id: 4, name: '4. Materials Science' },
+    { id: 5, name: '5. Chemistry and Biology' },
+    { id: 6, name: '6. Fluid Mechanics/Dynamics' },
+    { id: 7, name: '7. Thermodynamics' },
+    { id: 8, name: '8. Material/Energy Balances' },
+    { id: 9, name: '9. Heat Transfer' },
+    { id: 10, name: '10. Mass Transfer and Separation' },
+    { id: 11, name: '11. Solids Handling' },
+    { id: 12, name: '12. Chemical Reaction Engineering' },
+    { id: 13, name: '13. Economics' },
+    { id: 14, name: '14. Process Design' },
+    { id: 15, name: '15. Process Control' },
+    { id: 16, name: '16. Safety, Health, and Environment' }
+];
+
+function getChemicalSubjectId(title, examTip, description) {
+    const lower = (title || '').toLowerCase();
+    const tip = (examTip || '').toLowerCase();
+
+    // 16. Safety, Health, and Environment
+    if (/pressure relief valve sizing|hazop|flammability limits|lower and upper flammability|threshold limit value|toxic vapor dispersion|nfpa 704|hierarchy of controls|osha|safety/i.test(lower) || /process safety|safety/i.test(tip)) {
+        return 16;
+    }
+
+    // 15. Process Control
+    if (/process control|process dynamics|pid controller|bode plot|routh-hurwitz|nyquist|closed-loop|feedback control|control valve/i.test(tip) ||
+        /transfer function|first-order process|time constant and dead time|pid tuning|ziegler-nichols|control valve sizing/i.test(lower)) {
+        return 15;
+    }
+
+    // 14. Process Design
+    if (/process design|chemical plant design|pinch analysis|composite curve|process flow diagram|piping and instrumentation diagram|p&id|utility heat exchanger network/i.test(tip) ||
+        /pinch analysis|heat exchanger network|minimum hot and cold utility|steam economy in multiple-effect|packed tower flooding velocity|six-tenths rule of cost sizing/i.test(lower)) {
+        return 14;
+    }
+
+    // 13. Economics
+    if (/engineering economics|economics|cost estimation|profitability|depreciation|macrs|payback period|internal rate of return|net present value|bare module cost|cepci/i.test(tip) ||
+        /capital cost|cepci|guthrie bare module|present worth|future worth|break-even|depreciation|benefit-cost/i.test(lower)) {
+        return 13;
+    }
+
+    // 12. Chemical Reaction Engineering
+    if (/reaction engineering|kinetics|cstr|pfr|plug flow|batch reactor|arrhenius|activation energy|michaelis-menten|catalyst|effectiveness factor|thiele modulus|levenspiel/i.test(tip) ||
+        /arrhenius|activation energy|cstr|pfr|plug flow reactor|continuous stirred-tank|batch reactor space time|damköhler number|reaction order|rate law|catalytic effectiveness|thiele modulus|levenspiel plot/i.test(lower)) {
+        return 12;
+    }
+
+    // 11. Solids Handling
+    if (/solids handling|particle|filtration|settling|cyclone|elutriation|fluidization|ergun|packed bed|pneumatic conveying/i.test(tip) ||
+        /ergun equation|minimum fluidization velocity|terminal settling velocity|stokes’ law for particle|cake filtration equation|rotary drum filter|sieve analysis|particle size distribution/i.test(lower)) {
+        return 11;
+    }
+
+    // 10. Mass Transfer and Separation
+    if (/mass transfer|separations|distillation|absorption|stripping|mccabe-thiele|fick’s|diffusion|extraction|membrane|adsorption isotherm|freundlich|langmuir/i.test(tip) ||
+        /fick’s first law|fick’s second law|equimolar counterdiffusion|mccabe-thiele|relative volatility|minimum reflux ratio|underwood equation|fenske equation|absorption factor|kremser equation|height of a transfer unit|number of transfer units|htu|ntu|liquid-liquid extraction|tie line|lever rule.*extraction|langmuir|freundlich/i.test(lower)) {
+        return 10;
+    }
+
+    // 9. Heat Transfer
+    if (/heat transfer|conduction|convection|radiation|heat exchanger|lmtd|ntu|fourier’s law|nusselt|prandtl|stefan-boltzmann|boiling/i.test(tip) ||
+        /fourier’s law of heat conduction|newton’s law of cooling|overall heat transfer coefficient|log mean temperature difference|lmtd|effectiveness-ntu|stefan-boltzmann|view factor|radiation heat transfer|fouling factor|critical radius of insulation|nucleate pool boiling|critical heat flux/i.test(lower)) {
+        return 9;
+    }
+
+    // 8. Material/Energy Balances
+    if (/material and energy balances|material balances|energy balances|recycle|purge|bypass|stoichiometric combustion|excess air/i.test(tip) ||
+        /material balance|mass balance|recycle ratio|purge ratio|bypass stream|extent of reaction|atomic species balance|steady-state energy balance|heat of reaction|hess’s law|latent heat of vaporization|single-pass conversion/i.test(lower)) {
+        return 8;
+    }
+
+    // 7. Thermodynamics
+    if (/thermodynamics|chemical thermodynamics|phase equilibrium|vle|raoult’s|henry’s|antoine|clausius-clapeyron|fugacity|activity coefficient|van der waals|peng-robinson|virial|carnot/i.test(tip) ||
+        /raoult’s law|henry’s law|antoine equation|clausius-clapeyron|van der waals equation|redlich-kwong|compressibility factor|gibbs free energy|chemical potential|joule-thomson|carnot efficiency|rankine cycle|refrigeration cycle|fugacity coefficient|activity coefficient/i.test(lower)) {
+        return 7;
+    }
+
+    // 6. Fluid Mechanics/Dynamics
+    if (/fluid mechanics|transport phenomena|fluid dynamics|pumps|friction factor|darcy-weisbach|bernoulli|hagen-poiseuille/i.test(tip) ||
+        /hagen-poiseuille|bernoulli equation|darcy-weisbach|moody diagram|reynolds number|pump npsh|net positive suction head|system head curve|orifice plate|venturi meter|rotameter|drag coefficient|manometer|fluid statics|choked mass flow/i.test(lower)) {
+        return 6;
+    }
+
+    // 5. Chemistry and Biology
+    if (/chemistry|biology|bioprocessing|organic chemistry|physical chemistry/i.test(tip) ||
+        /le chatelier|equilibrium constant|ph and poh|henderson-hasselbalch|buffer solution|solubility product|ksp|galvanic cell|nernst equation|faraday’s law of electrolysis|organic functional groups|sn1 and sn2|enzyme kinetics|monod cell growth|photosynthesis/i.test(lower)) {
+        return 5;
+    }
+
+    // 4. Materials Science
+    if (/materials science|materials|corrosion/i.test(tip) ||
+        /lever rule|binary phase diagram|bragg’s law|miller indices|eutectic|yield strength|ultimate tensile|hooke’s law.*materials|tarnishing|galvanic corrosion|crevice corrosion/i.test(lower)) {
+        return 4;
+    }
+
+    // 3. Engineering Sciences
+    if (/engineering sciences|statics|dynamics|mechanics of materials|circuits|electricity/i.test(tip) ||
+        /free body diagram|concurrent forces|method of joints|moment of inertia|projectile motion|work-energy|torsion formula|flexure formula|axial stress|shear stress|ohm’s law|kirchhoff/i.test(lower)) {
+        return 3;
+    }
+
+    // 2. Probability and Statistics
+    if (/probability|statistics/i.test(tip) ||
+        /central limit|bayes’ theorem|binomial|poisson|normal distribution|hypothesis testing|student’s t-test|confidence interval|linear regression/i.test(lower)) {
+        return 2;
+    }
+
+    // 1. Mathematics
+    return 1;
+}
+
+const ENVIRONMENTAL_SUBJECTS = [
+    { id: 1, name: '1. Mathematics' },
+    { id: 2, name: '2. Probability & Statistics' },
+    { id: 3, name: '3. Ethics & Professional Practice' },
+    { id: 4, name: '4. Engineering Economics' },
+    { id: 5, name: '5. Materials Science' },
+    { id: 6, name: '6. Environmental Science and Chemistry' },
+    { id: 7, name: '7. Thermodynamics and Phase Equilibrium' },
+    { id: 8, name: '8. Fluid Mechanics' },
+    { id: 9, name: '9. Water Resources' },
+    { id: 10, name: '10. Water and Wastewater Engineering' },
+    { id: 11, name: '11. Air Quality and Control' },
+    { id: 12, name: '12. Solid and Hazardous Waste' },
+    { id: 13, name: '13. Groundwater and Soils' },
+    { id: 14, name: '14. Environmental Health and Safety' }
+];
+
+function getEnvironmentalSubjectId(title, examTip, description) {
+    const lower = (title || '').toLowerCase();
+    const tip = (examTip || '').toLowerCase();
+
+    // 14. Environmental Health and Safety
+    if (/environmental health|industrial hygiene|radiation protection|toxicology|noise|osha/i.test(tip) ||
+        /sound pressure level|decibel addition|noise reduction coefficient|dosimetry|dose-response|ld50|carcinogenic risk|hazard index|hazard quotient|reference dose|radiation half-life|absorbed dose|sievert|gray|rad|rem|osha permissible exposure|time-weighted average twa/i.test(lower)) {
+        return 14;
+    }
+
+    // 13. Groundwater and Soils
+    if (/hydrogeology|groundwater|subsurface|soil remediation|geotechnical/i.test(tip) ||
+        /darcy’s law for groundwater|hydraulic conductivity|transmissivity|theis equation|cooper-jacob|dupuit|unconfined aquifer|confined aquifer|drawdown|well cone of depression|retardation factor|contaminant transport|dispersion coefficient|soil vapor extraction|air sparging|pump and treat|permeable reactive barrier|uscs soil classification/i.test(lower)) {
+        return 13;
+    }
+
+    // 12. Solid and Hazardous Waste
+    if (/solid waste|hazardous waste|landfill|remediation/i.test(tip) ||
+        /municipal solid waste|landfill leachate|landfill gas generation|methane generation|rcra|hazardous waste characteristics|toxicity characteristic leaching procedure|tclp|incineration destruction and removal efficiency|dre|clay liner permeability|geomembrane|composting c:n ratio/i.test(lower)) {
+        return 12;
+    }
+
+    // 11. Air Quality and Control
+    if (/air quality|air pollution|climate/i.test(tip) ||
+        /gaussian plume|atmospheric dispersion|pasquill-gifford|plume rise|holland equation|cyclone separator cut diameter|baghouse fabric filter|electrostatic precipitator|deutsch-anderson|venturi scrubber|flue gas desulfurization|scrubber absorption|ambient air quality standards|naaqs|ppm to mg\/m3|greenhouse gas global warming potential/i.test(lower)) {
+        return 11;
+    }
+
+    // 10. Water and Wastewater Engineering
+    if (/water quality|water treatment|wastewater|drinking water|disinfection|sludge/i.test(tip) ||
+        /streeter-phelps|dissolved oxygen sag|critical deficit|bod|biochemical oxygen demand|ultimate bod|chick-watson disinfection kinetics|chlorine contact chamber|ct concept|sedimentation basin surface overflow rate|rapid mix velocity gradient|g-value|camp-stein|coagulation|flocculation|dual media filtration|carman-kozeny|activated sludge|aeration tank|mean cell residence time|mcrt|food-to-mass ratio|f\/m ratio|sludge volume index|svi|weir overflow rate|break point chlorination|nitrogen removal|nitrification and denitrification|phosphorus removal/i.test(lower)) {
+        return 10;
+    }
+
+    // 9. Water Resources
+    if (/water resources|hydrology|hydraulics and hydrologic|stormwater/i.test(tip) ||
+        /rational method runoff|runoff coefficient|time of concentration|scs curve number|hydrograph|unit hydrograph|manning’s equation for open channel|hydraulic jump|specific energy|froude number|weir equation|sharp-crested weir|v-notch weir|reservoir routing|flood frequency/i.test(lower)) {
+        return 9;
+    }
+
+    // 8. Fluid Mechanics
+    if (/fluid mechanics|hydraulics|fluid statics|pipe flow/i.test(tip) ||
+        /bernoulli equation|darcy-weisbach|friction factor|moody diagram|hazen-williams|pipe network|hardy cross|pump characteristic curve|net positive suction head|npsh|cavitation|fluid viscosity|hydrostatic pressure|buoyancy|continuity equation/i.test(lower)) {
+        return 8;
+    }
+
+    // 7. Thermodynamics and Phase Equilibrium
+    if (/thermodynamics|phase equilibrium/i.test(tip) ||
+        /ideal gas law|partial pressure|dalton’s law|henry’s law for gas solubility|raoult’s law|vapor pressure|antoine equation|latent heat|enthalpy|entropy|first law of thermodynamics|second law of thermodynamics/i.test(lower)) {
+        return 7;
+    }
+
+    // 6. Environmental Science and Chemistry
+    if (/environmental chemistry|chemistry|water chemistry|ecology/i.test(tip) ||
+        /carbonate equilibrium|alkalinity|hardness|calcium carbonate equivalent|ph and poh|henderson-hasselbalch|solubility product constant|ksp|nernst equation|chemical equilibrium constant|freundlich adsorption|langmuir adsorption|monod kinetics|photosynthesis and respiration|nitrogen cycle|phosphorus cycle/i.test(lower)) {
+        return 6;
+    }
+
+    // 5. Materials Science
+    if (/materials science|materials|corrosion/i.test(tip) ||
+        /corrosion rate|galvanic series|passivity|cathodic protection|polymer degradation/i.test(lower)) {
+        return 5;
+    }
+
+    // 4. Engineering Economics
+    if (/engineering economics|economics/i.test(tip) ||
+        /present worth|future worth|annual worth|capital recovery|benefit-cost ratio|internal rate of return|payback period|depreciation|macrs|capitalized cost/i.test(lower)) {
+        return 4;
+    }
+
+    // 3. Ethics and Professional Practice
+    if (/ethics/i.test(tip) ||
+        /code of ethics|public health, safety|licensure|conflict of interest|whistleblowing|environmental ethics/i.test(lower)) {
+        return 3;
+    }
+
+    // 2. Probability and Statistics
+    if (/probability|statistics/i.test(tip) ||
+        /central limit|probability distribution|normal distribution|student’s t|confidence interval|hypothesis test|linear regression|correlation coefficient|variance|standard deviation/i.test(lower)) {
+        return 2;
+    }
+
+    // 1. Mathematics
+    return 1;
+}
+
+const INDUSTRIAL_SUBJECTS = [
+    { id: 1, name: '1. Mathematics' },
+    { id: 2, name: '2. Engineering Sciences' },
+    { id: 3, name: '3. Ethics & Professional Practice' },
+    { id: 4, name: '4. Engineering Economics' },
+    { id: 5, name: '5. Probability & Statistics' },
+    { id: 6, name: '6. Modeling and Computations' },
+    { id: 7, name: '7. Industrial Management' },
+    { id: 8, name: '8. Manufacturing, Production, and Service Systems' },
+    { id: 9, name: '9. Facilities and Logistics' },
+    { id: 10, name: '10. Human Factors, Ergonomics, and Safety' },
+    { id: 11, name: '11. Work Design' },
+    { id: 12, name: '12. Quality' },
+    { id: 13, name: '13. Systems Engineering, Analysis, and Design' }
+];
+
+function getIndustrialSubjectId(title, examTip, description) {
+    const lower = (title || '').trim().toLowerCase();
+    const tip = (examTip || '').toLowerCase();
+
+    // Priority overrides
+    if (/vector cross product|vector dot product|vector magnitude/i.test(lower)) {
+        return 1;
+    }
+    if (/chronic daily intake|excess lifetime cancer|exposure limits|hazard quotient|toxicology|noise pollution|permissible noise/i.test(lower) || /environmental health|hygiene|safety/i.test(tip)) {
+        return 10;
+    }
+    if (/poynting vector|centrifugal pump|retaining wall|engineering stress-strain|modulus of resilience|first angle vs\. third/i.test(lower)) {
+        return 2;
+    }
+    if (/rolling element bearing/i.test(lower)) {
+        return 13;
+    }
+
+    // 13. Systems Engineering, Analysis, and Design
+    if (/systems engineering|reliability engineering|decision analysis|\breliability\b/i.test(tip) ||
+        /fault tree|\bfmea\b|decision tree|monetary value|utility theory|\breliability\b|standby redundancy|k-out-of-n|\bmtbf\b|\bmttf\b|bathtub curve/i.test(lower)) {
+        return 13;
+    }
+
+    // 12. Quality
+    if (/quality|six sigma|statistical process control|\bspc\b/i.test(tip) ||
+        /shewhart|control chart|x-bar|r chart|p-chart|c-chart|u-chart|process capability|\bcp\b|\bcpk\b|\bpp\b|\bppk\b|control limit|\bdmaic\b|operating characteristic|\baql\b|gage r&r/i.test(lower)) {
+        return 12;
+    }
+
+    // 11. Work Design
+    if (/work design|work measurement|methods engineering|time study/i.test(tip) ||
+        /time study|standard time|normal time|observed time|performance rating|allowance factor|predetermined motion|methods-time|\bmtm\b|work sampling|learning curve/i.test(lower)) {
+        return 11;
+    }
+
+    // 10. Human Factors, Ergonomics, and Safety
+    if (/ergonomics|human factors|industrial safety|safety/i.test(tip) ||
+        /niosh|lifting|biomechanic|l5\/s1|anthropometric|\brula\b|metabolic|noise exposure|\bdba\b|hierarchy of controls|osha|hazard/i.test(lower)) {
+        return 10;
+    }
+
+    // 9. Facilities and Logistics
+    if (/facilities|logistics|supply chain|warehouse/i.test(tip) ||
+        /center of gravity|rectilinear|euclidean distance|layout planning|from-to chart|assembly line balancing|cycle time|balance delay|automated guided vehicle|\bagv\b|material handling/i.test(lower)) {
+        return 9;
+    }
+
+    // 8. Manufacturing, Production, and Service Systems
+    if (/production|inventory|manufacturing|forecasting|lean|operations|scheduling/i.test(tip) ||
+        /economic order quantity|\beoq\b|\bepq\b|reorder point|safety stock|exponential smoothing|moving average|tracking signal|\bmrp\b|bill of materials|\bbom\b|johnson’s rule|kanban|takt time|just-in-time|\bsmed\b|setup reduction|overall equipment effectiveness|\boee\b|dispatching rule|available-to-promise|\batp\b|inventory cost/i.test(lower)) {
+        return 8;
+    }
+
+    // 7. Industrial Management
+    if (/project management|\bcpm\b|management|cost accounting/i.test(tip) ||
+        /critical path|\bcpm\b|\bpert\b|crashing|earned value|cost variance|schedule variance|standard costing/i.test(lower)) {
+        return 7;
+    }
+
+    // 6. Modeling and Computations
+    if (/operations research|queueing|queuing|simulation|linear programming|stochastic/i.test(tip) ||
+        /little’s law|m\/m\/|linear programming|simplex|graphical lp|dual problem|shadow price|transportation problem|assignment problem|hungarian|markov|transition matrix|steady-state|monte carlo/i.test(lower)) {
+        return 6;
+    }
+
+    // 5. Probability and Statistics
+    if (/probability|statistics|design of experiments|\bdoe\b/i.test(tip) ||
+        /central limit|bayes|binomial|poisson|exponential distribution|normal distribution|sample mean|sample variance|confidence interval|hypothesis test|student’s t|chi-square|anova|linear regression|factorial design/i.test(lower)) {
+        return 5;
+    }
+
+    // 4. Engineering Economics
+    if (/engineering economics|economics/i.test(tip) ||
+        /present worth|future worth|annual worth|capital recovery|uniform gradient|internal rate|benefit-cost|depreciation|macrs|capitalized cost|breakeven/i.test(lower)) {
+        return 4;
+    }
+
+    // 3. Ethics and Professional Practice
+    if (/ethics/i.test(tip) ||
+        /code of ethics|public safety|licensure|whistleblowing|conflict of interest/i.test(lower)) {
+        return 3;
+    }
+
+    // 2. Engineering Sciences
+    if (/statics|dynamics|mechanics of materials|electricity|circuits|thermodynamics|geotechnical/i.test(tip) ||
+        /rigid bod|free body|truss|centroid|moment of inertia|kinematic|work-energy|stress and strain|hooke|shear and moment|ohm’s law|kirchhoff/i.test(lower)) {
+        return 2;
+    }
+
+    // 1. Mathematics
+    return 1;
+}
+
+const DISCIPLINE_SUBJECT_CONFIG = {
+    'Mechanical': { list: MECHANICAL_SUBJECTS, getSubjectId: getMechanicalSubjectId, defaultName: '1. Mathematics' },
+    'Civil': { list: CIVIL_SUBJECTS, getSubjectId: getCivilSubjectId, defaultName: '1. Mathematics & Statistics' },
+    'Other': { list: OTHER_SUBJECTS, getSubjectId: getOtherSubjectId, defaultName: '1. Mathematics' },
+    'Electrical and Computer': { list: ELECTRICAL_SUBJECTS, getSubjectId: getElectricalSubjectId, defaultName: '1. Mathematics' },
+    'Chemical': { list: CHEMICAL_SUBJECTS, getSubjectId: getChemicalSubjectId, defaultName: '1. Mathematics' },
+    'Environmental': { list: ENVIRONMENTAL_SUBJECTS, getSubjectId: getEnvironmentalSubjectId, defaultName: '1. Mathematics' },
+    'Industrial': { list: INDUSTRIAL_SUBJECTS, getSubjectId: getIndustrialSubjectId, defaultName: '1. Mathematics' }
+};
+
+
     function syncSubjectSelectVisibility() {
         const select = document.getElementById('fc-subject-select');
         if (!select) return;
         const actualDisc = (currentDiscipline === 'current' || !currentDiscipline) 
             ? getActiveDiscipline() 
             : currentDiscipline;
-        const hasSubjects = (actualDisc === 'Mechanical' || actualDisc === 'Other');
-        const isDesktop = window.innerWidth >= 1024; // Desktop and Laptop only
+        const hasSubjects = (actualDisc !== 'all' && Boolean(DISCIPLINE_SUBJECT_CONFIG[actualDisc]));
 
-        if (hasSubjects && isDesktop) {
+        if (hasSubjects) {
             select.classList.remove('hidden');
-            select.classList.add('lg:inline-block');
         } else {
             select.classList.add('hidden');
-            select.classList.remove('lg:inline-block');
         }
     }
 
@@ -163,9 +735,14 @@
         const select = document.getElementById('fc-subject-select');
         if (!select) return;
 
-        const isOther = (actualDisc === 'Other');
-        const subjectList = isOther ? OTHER_SUBJECTS : MECHANICAL_SUBJECTS;
-        const getSubjectFn = isOther ? getOtherSubjectId : getMechanicalSubjectId;
+        const config = DISCIPLINE_SUBJECT_CONFIG[actualDisc];
+        if (!config) {
+            select.classList.add('hidden');
+            return;
+        }
+
+        const subjectList = config.list;
+        const getSubjectFn = config.getSubjectId;
 
         const counts = {};
         fullDeck.forEach(c => {
@@ -210,24 +787,13 @@
             allTheorems = (datasets[actualDisc] || []).map(t => ({ ...t, disc: actualDisc }));
         }
 
-        // Tag Mechanical or Other cards with subject information
-        if (actualDisc === 'Mechanical') {
+        // Tag cards with subject information according to NCEES CBT specifications
+        const config = DISCIPLINE_SUBJECT_CONFIG[actualDisc];
+        if (config) {
             allTheorems.forEach(card => {
-                card.subjectId = getMechanicalSubjectId(card.title, card.examTip);
-                const subObj = MECHANICAL_SUBJECTS.find(s => s.id === card.subjectId);
-                card.subjectName = subObj ? subObj.name : '1. Mathematics';
-            });
-
-            // Apply subject filter if selected
-            if (subjectFilter && subjectFilter !== 'all') {
-                const targetSubId = Number(subjectFilter);
-                allTheorems = allTheorems.filter(card => card.subjectId === targetSubId);
-            }
-        } else if (actualDisc === 'Other') {
-            allTheorems.forEach(card => {
-                card.subjectId = getOtherSubjectId(card.title, card.examTip, card.description);
-                const subObj = OTHER_SUBJECTS.find(s => s.id === card.subjectId);
-                card.subjectName = subObj ? subObj.name : '1. Mathematics';
+                card.subjectId = config.getSubjectId(card.title, card.examTip, card.description);
+                const subObj = config.list.find(s => s.id === card.subjectId);
+                card.subjectName = subObj ? subObj.name : config.defaultName;
             });
 
             // Apply subject filter if selected
@@ -330,7 +896,7 @@
         const frontHint = document.getElementById('fc-front-hint');
 
         if (cardDisc) {
-            if ((card.disc === 'Mechanical' || card.disc === 'Other') && card.subjectName) {
+            if (card.subjectName) {
                 cardDisc.textContent = `${card.disc} FE Focus • ${card.subjectName}`;
             } else {
                 cardDisc.textContent = `${card.disc || getActiveDiscipline()} FE Focus`;
@@ -466,10 +1032,10 @@
         if (hasVideo) {
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
-                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
+                backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
             }
             if (backColPrimary) {
-                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-between lg:space-y-3';
             }
 
             if (backVideo) {
@@ -502,10 +1068,10 @@
             // Blueprint fallback on back only if no video exists
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
-                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
+                backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
             }
             if (backColPrimary) {
-                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-between lg:space-y-3';
             }
             if (mediaSwitcher) {
                 mediaSwitcher.classList.add('hidden');
@@ -965,7 +1531,7 @@
         const actualDisc = (currentDiscipline === 'current' || !currentDiscipline) 
             ? getActiveDiscipline() 
             : currentDiscipline;
-        if (actualDisc !== 'Mechanical' && actualDisc !== 'Other') {
+        if (actualDisc === 'all' || !DISCIPLINE_SUBJECT_CONFIG[actualDisc]) {
             currentSubjectFilter = 'all';
         }
 
@@ -999,7 +1565,7 @@
         if (discSelect) discSelect.value = currentDiscipline;
         if (modeSelect) modeSelect.value = currentMode;
 
-        if (actualDisc === 'Mechanical' || actualDisc === 'Other') {
+        if (actualDisc !== 'all' && DISCIPLINE_SUBJECT_CONFIG[actualDisc]) {
             const datasets = window.THEOREMS_BY_DISCIPLINE || {};
             const fullDeck = (datasets[actualDisc] || []);
             updateSubjectSelectOptions(fullDeck, actualDisc);
