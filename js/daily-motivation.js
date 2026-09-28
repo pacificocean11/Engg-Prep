@@ -5952,6 +5952,9 @@
                     },
                 {
                         "title": "Balanced Reinforcement Ratio in Concrete Beams",
+                        "videoUrl": "assets/videos/Balanced_Reinforcement_Ratio_in_Concrete_Beams.mp4",
+                        "videoTitle": "Balanced Reinforcement Ratio in Concrete Beams Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\rho_b = 0.85 \\beta_1 \\frac{f'_c}{f_y} \\left(\\frac{87{,}000}{87{,}000 + f_y}\\right) \\quad [\\text{USCS}]$$",
                         "description": "Reinforcement ratio where concrete crushing ($\\epsilon_c = 0.003$) and steel yielding ($\\epsilon_s = f_y/E_s$) occur simultaneously.",
                         "examTip": "Found in Concrete Design. Beams are designed with $\\rho \\ll \\rho_b$ (under-reinforced) to ensure tension steel yields first before concrete crushes."
@@ -7797,6 +7800,9 @@
                     },
                 {
                         "title": "Ideal Operational Amplifier Inverting Configuration",
+                        "videoUrl": "assets/videos/Ideal_Operational_Amplifier_Inverting_Configuration.mp4",
+                        "videoTitle": "Ideal Operational Amplifier Inverting Configuration Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$A_v = \\frac{v_{out}}{v_{in}} = -\\frac{R_f}{R_1}, \\quad R_{in} = R_1$$",
                         "description": "Closed-loop voltage gain with negative feedback where the inverting terminal is held at virtual ground ($v^- = 0\\text{ V}$), producing $180^\\circ$ phase inversion.",
                         "examTip": "Found in Electronics. Input impedance is determined strictly by input resistor $R_1$, which can load high-impedance signal sources."
@@ -8519,6 +8525,9 @@
                     },
                 {
                         "title": "Binary Search Tree Properties and Search Time",
+                        "videoUrl": "assets/videos/Binary_Search_Tree_Properties_and_Search_Time.mp4",
+                        "videoTitle": "Binary Search Tree Properties and Search Time Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Invariant: } \\text{Left Subtree} < \\text{Node} < \\text{Right Subtree}, \\quad T_{\\text{avg}} = O(\\log n), \\quad T_{\\text{worst}} = O(n)$$",
                         "description": "Node-based binary tree data structure maintaining sorted ordering: average search, insert, and delete take $O(\\log n)$ time; unbalanced degraded trees degenerate to linear lists with $O(n)$ search time.",
                         "examTip": "Found in Software Engineering: Algorithms. Self-balancing trees (AVL trees, Red-Black trees) guarantee strictly $O(\\log n)$ worst-case operation bounds."
@@ -8546,18 +8555,27 @@
                     },
                 {
                         "title": "Cache Write Policies: Write-Through vs. Write-Back and Dirty Bit",
+                        "videoUrl": "assets/videos/Cache_Write_Policies_Write_Through_vs_Write_Back_and_Dirty_Bit.mp4",
+                        "videoTitle": "Cache Write Policies: Write-Through vs. Write-Back and Dirty Bit Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Write-Through: Update Cache \\& Main Memory}, \\quad \\text{Write-Back: Update Cache Only (Dirty Bit = 1)}$$",
                         "description": "Determines how memory writes update cache hierarchies: Write-Through immediately updates main memory on every write hit (simple, higher memory bus traffic; often paired with write buffers); Write-Back updates only the cache block and marks a 'dirty bit', writing back to main memory only when the dirty block is evicted.",
                         "examTip": "Found in Computer Systems: Memory Technology and Systems. For write misses, Write-Allocate (fetches missed block into cache) is commonly paired with Write-Back, while No-Write-Allocate is paired with Write-Through."
                     },
                 {
                         "title": "Direct Memory Access (DMA) vs. Programmed I/O vs. Interrupt-Driven I/O",
+                        "videoUrl": "assets/videos/Direct_Memory_Access_DMA_vs_Programmed_IO_vs_Interrupt_Driven_IO.mp4",
+                        "videoTitle": "Direct Memory Access (DMA) vs. Programmed I/O vs. Interrupt-Driven I/O Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{DMA: Hardware Controller Transfers Blocks Directly to RAM (Bypassing CPU)}$$",
                         "description": "I/O data transfer paradigms: Programmed I/O requires continuous CPU polling; Interrupt-Driven I/O frees CPU during wait states but interrupts on each byte/word. DMA delegates bulk data transfers directly between I/O peripherals and RAM via a dedicated DMA controller, operating via Burst Mode (bus locked) or Cycle Stealing (interleaving with CPU clock cycles).",
                         "examTip": "Found in Computer Systems: Interfacing. DMA requires the CPU to initialize starting memory address, transfer byte count, and direction before asserting bus request/grant handshakes (HOLD/HLDA)."
                     },
                 {
                         "title": "Memory-Mapped I/O vs. Isolated (Port-Mapped) I/O",
+                        "videoUrl": "assets/videos/Memory_Mapped_IO_vs_Isolated_Port_Mapped_IO.mp4",
+                        "videoTitle": "Memory-Mapped I/O vs. Isolated (Port-Mapped) I/O Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Memory-Mapped: Shared Unified Address Space}, \\quad \\text{Port-Mapped (Isolated): Dedicated I/O Space (IN/OUT)}$$",
                         "description": "I/O addressing schemes: Memory-Mapped I/O assigns peripheral registers to standard memory address space, allowing all standard memory access instructions (e.g., MOV, LOAD, STORE) to access hardware without extra pins. Isolated (Port-Mapped) I/O uses separate control signals (\\overline{\\text{IOR}}, \\overline{\\text{IOW}}) and specialized assembly instructions (e.g., IN, OUT) to address a distinct I/O port address space.",
                         "examTip": "Found in Computer Systems: Interfacing. Memory-Mapped I/O reduces available RAM address space but simplifies CPU architecture; Port-Mapped I/O preserves full RAM address space but requires specialized instructions and control lines."
@@ -9646,6 +9664,9 @@
                     },
                 {
                         "title": "Bingham Plastic Yield Stress Fluids",
+                        "videoUrl": "assets/videos/Bingham_Plastic_Yield_Stress_Fluids.mp4",
+                        "videoTitle": "Bingham Plastic Yield Stress Fluids Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\tau = \\tau_y + \\mu_p \\left(\\frac{du}{dy}\\right) \\quad (|\\tau| \\ge \\tau_y), \\quad \\frac{du}{dy} = 0 \\quad (|\\tau| < \\tau_y)$$",
                         "description": "Models viscoplastic materials (toothpaste, drilling mud, sewage sludge) that behave as rigid solid plugs below yield stress $\\tau_y$ and flow as linear viscous fluids once yield stress is exceeded.",
                         "examTip": "Found in Chemical Fluid Dynamics. In pipe flow, Bingham plastics form a central solid plug zone where shear stress is below $\\tau_y$."
@@ -12901,6 +12922,9 @@
                     },
                 {
                         "title": "Control Chart for Count of Defects ($c$-Chart)",
+                        "videoUrl": "assets/videos/Control_Chart_for_Count_of_Defects_c_Chart.mp4",
+                        "videoTitle": "Control Chart for Count of Defects ($c$-Chart) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$UCL_c = \\bar{c} + 3 \\sqrt{\\bar{c}}, \\quad LCL_c = \\max\\left(0, \\bar{c} - 3 \\sqrt{\\bar{c}}\\right)$$",
                         "description": "Attribute control chart monitoring total Poisson count of localized defects per single inspection unit of fixed size (e.g. blemishes per automobile door panel).",
                         "examTip": "Found in Quality Control. For varying inspection unit sizes, use the $u$-chart instead ($UCL_u = \\bar{u} + 3\\sqrt{\\bar{u}/n}$)."
