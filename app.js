@@ -27753,14 +27753,11 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             ? getActiveDiscipline() 
             : currentDiscipline;
         const hasSubjects = (actualDisc !== 'all' && Boolean(DISCIPLINE_SUBJECT_CONFIG[actualDisc]));
-        const isDesktop = window.innerWidth >= 1024; // Desktop and Laptop only
 
-        if (hasSubjects && isDesktop) {
+        if (hasSubjects) {
             select.classList.remove('hidden');
-            select.classList.add('lg:inline-block');
         } else {
             select.classList.add('hidden');
-            select.classList.remove('lg:inline-block');
         }
     }
 
@@ -28065,10 +28062,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         if (hasVideo) {
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
-                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
+                backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
             }
             if (backColPrimary) {
-                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-between lg:space-y-3';
             }
 
             if (backVideo) {
@@ -28101,10 +28098,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             // Blueprint fallback on back only if no video exists
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
-                backColVideo.className = 'w-full lg:col-span-7 flex flex-col space-y-2 mt-2 lg:mt-0';
+                backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
             }
             if (backColPrimary) {
-                backColPrimary.className = 'w-full lg:col-span-5 flex flex-col justify-between space-y-3';
+                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-between lg:space-y-3';
             }
             if (mediaSwitcher) {
                 mediaSwitcher.classList.add('hidden');
