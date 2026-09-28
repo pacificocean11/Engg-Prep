@@ -8114,6 +8114,9 @@ window.calcEvaluate = function() {
                 },
                 {
                 "title": "Capillary Rise Height in Fine-Grained Soils",
+                        "videoUrl": "assets/videos/Capillary_Rise_Height_in_Fine_Grained_Soils.mp4",
+                        "videoTitle": "Capillary Rise Height in Fine-Grained Soils Explainer",
+                        "videoDuration": "10s",
                 "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
                 "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
                 "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
@@ -8420,6 +8423,9 @@ window.calcEvaluate = function() {
                 },
                 {
                 "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                 "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                 "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                 "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -11450,6 +11456,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -11751,6 +11760,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Wind Load Design Velocity Pressure Equation (ASCE 7)",
+                        "videoUrl": "assets/videos/Wind_Load_Design_Velocity_Pressure_Equation_ASCE_7.mp4",
+                        "videoTitle": "Wind Load Design Velocity Pressure Equation (ASCE 7) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$q_z = 0.00256 \\cdot K_z \\cdot K_{zt} \\cdot K_d \\cdot K_e \\cdot V^2 \\quad (\\text{USCS: lb/ft}^2, \\text{mph})$$",
                         "description": "Determines dynamic wind velocity pressure $q_z$ at height $z$ based on basic wind speed $V$, velocity pressure exposure coefficient $K_z$, topographic factor $K_{zt}$, wind directionality factor $K_d$, and ground elevation factor $K_e$.",
                         "examTip": "Found in Structural Design: Wind Loads. Surface design wind pressure is $p = q G C_p - q_i (G C_{pi})$, accounting for both external and internal building pressure coefficients."
@@ -11845,12 +11857,18 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Balanced Steel Reinforcement Ratio in Concrete",
+                        "videoUrl": "assets/videos/Balanced_Steel_Reinforcement_Ratio_in_Concrete.mp4",
+                        "videoTitle": "Balanced Steel Reinforcement Ratio in Concrete Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\rho_b = 0.85 \\beta_1 \\frac{f'_c}{f_y} \\left(\\frac{87{,}000}{87{,}000 + f_y}\\right)$$",
                         "description": "The theoretical reinforcement ratio where tension steel reaches yield strain $\\epsilon_y = f_y / E_s$ at the exact instant concrete reaches crushing strain $\\epsilon_u = 0.003$.",
                         "examTip": "Found in Reinforced Concrete Design. ACI code requires sections to be tension-controlled ($\\epsilon_t \\ge 0.005$, $\\rho \\le 0.75 \\rho_b$) to ensure ductile warning before failure."
                     },
                 {
                         "title": "ACI 318 Tension-Controlled Flexural Strength Reduction Factor",
+                        "videoUrl": "assets/videos/ACI_318_Tension_Controlled_Flexural_Strength_Reduction_Factor.mp4",
+                        "videoTitle": "ACI 318 Tension-Controlled Flexural Strength Reduction Factor Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\phi = 0.65 + 0.25 \\left(\\frac{\\epsilon_t - \\epsilon_{ty}}{0.005 - \\epsilon_{ty}}\\right), \\quad \\phi = 0.90 \\text{ for } \\epsilon_t \\ge 0.005$$",
                         "description": "Strength reduction factor $\\phi$ transitions linearly from $0.65$ (compression-controlled, $\\epsilon_t \\le 0.002$) to $0.90$ (tension-controlled, $\\epsilon_t \\ge 0.005$) to ensure ductile failure with ample warning.",
                         "examTip": "Found in Reinforced Concrete Design. Always verify net tensile strain in extreme tension steel $\\epsilon_t = 0.003 (d - c)/c \\ge 0.004$ (minimum allowable by ACI)."
@@ -12247,6 +12265,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Capillary Rise Height in Fine-Grained Soils",
+                        "videoUrl": "assets/videos/Capillary_Rise_Height_in_Fine_Grained_Soils.mp4",
+                        "videoTitle": "Capillary Rise Height in Fine-Grained Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
                         "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
                         "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
@@ -12382,6 +12403,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "AASHTO Flexible Pavement Structural Number (SN) Equation",
+                        "videoUrl": "assets/videos/AASHTO_Flexible_Pavement_Structural_Number_SN_Equation.mp4",
+                        "videoTitle": "AASHTO Flexible Pavement Structural Number (SN) Equation Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$SN = a_1 D_1 + a_2 D_2 m_2 + a_3 D_3 m_3$$",
                         "description": "Calculates required overall structural number $SN$ of a flexible pavement system from layer thickness $D_i$, structural layer coefficients $a_i$ (asphalt surface, base, subbase), and drainage coefficients $m_i$.",
                         "examTip": "Found in Transportation: Pavement Design. Subgrade resilient modulus $M_r$ governs required total $SN$; layer thicknesses $D_i$ are rounded up to the nearest half-inch."
@@ -12909,6 +12933,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -13418,6 +13445,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Delta-Wye ($Delta-\\text{Y}$) Resistive Transformation",
+                        "videoUrl": "assets/videos/Delta_Wye_Resistive_Transformation.mp4",
+                        "videoTitle": "Delta-Wye Resistive Transformation Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R_1 = \\frac{R_b R_c}{R_a + R_b + R_c}, \\quad R_2 = \\frac{R_a R_c}{R_a + R_b + R_c}, \\quad R_3 = \\frac{R_a R_b}{R_a + R_b + R_c}$$",
                         "description": "Converts a three-terminal Delta ($\\Delta$) network into an equivalent Wye ($\\text{Y}$) network; each Wye resistor equals the product of adjacent Delta resistors divided by the sum of all three Delta resistors.",
                         "examTip": "Found in Circuit Analysis. If all Delta resistors are equal ($R_\\Delta$), then each Wye resistor is simply $R_\\text{Y} = R_\\Delta / 3$."
@@ -13531,6 +13561,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Discrete-Time Z-Transform and Digital System Stability",
+                        "videoUrl": "assets/videos/Discrete_Time_Z_Transform_and_Digital_System_Stability.mp4",
+                        "videoTitle": "Discrete-Time Z-Transform and Digital System Stability Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$X(z) = \\sum_{n=-\\infty}^\\infty x[n] z^{-n}$$",
                         "description": "Maps discrete-time sequence $x[n]$ into complex $z$-plane ($z = e^{s T}$). A discrete causal LTI system is BIBO stable if and only if all transfer function poles lie strictly inside the unit circle ($|p_k| < 1$).",
                         "examTip": "Found in Digital Signal Processing. The discrete unit circle ($|z| = 1$) corresponds to the continuous imaginary axis ($s = j\\omega$)."
@@ -14853,6 +14886,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -18313,6 +18349,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Anthropometric Design Principles for Ergonomics",
+                        "videoUrl": "assets/videos/Anthropometric_Design_Principles_for_Ergonomics.mp4",
+                        "videoTitle": "Anthropometric Design Principles for Ergonomics Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Design for Extremes: } 5^{\\text{th}} \\% \\text{ (reach/clearance)} \\text{ or } 95^{\\text{th}} \\% \\text{ (headroom/strength)}; \\quad \\text{Adjustability: } 5^{\\text{th}} - 95^{\\text{th}} \\%$$",
                         "description": "Applies human body dimensions to workplace layout: design for clearance accommodates the $95^{\\text{th}}$ percentile (largest users); design for reach accommodates the $5^{\\text{th}}$ percentile (smallest users); adjustable designs (e.g., office chairs) span $5^{\\text{th}}$ to $95^{\\text{th}}$ percentiles.",
                         "examTip": "Found in Ergonomics. Never design for the 'average' human ($50^{\\text{th}}$ percentile) because a person of average stature has individual limbs that deviate significantly from average."
@@ -18546,6 +18585,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Learning Curve Theory: Wright's Log-Linear Model",
+                        "videoUrl": "assets/videos/Learning_Curve_Theory_Wrights_Log_Linear_Model.mp4",
+                        "videoTitle": "Learning Curve Theory: Wright's Log-Linear Model Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$T_N = T_1 \\cdot N^b = T_1 \\cdot N^{\\frac{\\log_{10}(L)}{\\log_{10}(2)}}, \\quad b = \\frac{\\ln(L)}{\\ln(2)}$$",
                         "description": "Models operational productivity gains: every time cumulative production doubles, unit labor time decreases by a constant learning percentage $L$ (e.g., for an $80\\%$ learning curve, $L = 0.80$ and $b = -0.322$).",
                         "examTip": "Found in Industrial: Work Design & Economics. If unit 1 takes $100\\text{ hours}$ under an $80\\%$ curve, unit 2 takes $80\\text{ hours}$, unit 4 takes $64\\text{ hours}$, and unit 8 takes $51.2\\text{ hours}$."
@@ -18770,6 +18812,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Series System Reliability Modeling",
+                        "videoUrl": "assets/videos/Series_System_Reliability_Modeling.mp4",
+                        "videoTitle": "Series System Reliability Modeling Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R_s(t) = \\prod_{i=1}^n R_i(t) = e^{-\\left(\\sum \\lambda_i\\right) t}$$",
                         "description": "Reliability of a non-redundant system where failure of any single component causes total system failure; system reliability is always lower than that of its weakest component.",
                         "examTip": "Found in Reliability Engineering. Failure rates of series components sum directly: $\\lambda_{\\text{system}} = \\sum \\lambda_i$."
@@ -20203,6 +20248,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Froude Number and Hydraulic Flow Regimes",
+                        "videoUrl": "assets/videos/Froude_Number_and_Hydraulic_Flow_Regimes.mp4",
+                        "videoTitle": "Froude Number and Hydraulic Flow Regimes Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$Fr = \\frac{v}{\\sqrt{g D_h}} = \\frac{v}{\\sqrt{g (A / T)}}$$",
                         "description": "Dimensionless ratio of inertial to gravitational forces in open channel flow with hydraulic depth $D_h = A / T$: $Fr < 1.0$ indicates subcritical (tranquil, backwater controlled) flow; $Fr > 1.0$ indicates supercritical (rapid, upstream controlled) flow.",
                         "examTip": "Found in Hydraulics: Open Channel Flow. For rectangular channels, $D_h = y$; surface gravity waves travel at celerity $c = \\sqrt{g y}$."
@@ -20221,6 +20269,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Critical Travel Time in the Streeter-Phelps Model ($t_c$)",
+                        "videoUrl": "assets/videos/Critical_Travel_Time_in_the_Streeter_Phelps_Model.mp4",
+                        "videoTitle": "Critical Travel Time in the Streeter-Phelps Model Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$t_c = \\frac{1}{k_2 - k_1} \\ln\\left[\\frac{k_2}{k_1}\\left(1 - D_0 \\frac{k_2 - k_1}{k_1 L_0}\\right)\\right]$$",
                         "description": "Downstream travel time $t_c$ from waste discharge point to location of minimum dissolved oxygen (maximum oxygen deficit $D_c$) in a receiving river.",
                         "examTip": "Found in Water Quality. Downstream distance to the critical sag point is $x_c = v \\times t_c$, where $v$ is average river velocity."
@@ -20608,6 +20659,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Fabric Filter Baghouse Air-to-Cloth Ratio",
+                        "videoUrl": "assets/videos/Fabric_Filter_Baghouse_Air_to_Cloth_Ratio.mp4",
+                        "videoTitle": "Fabric Filter Baghouse Air-to-Cloth Ratio Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$v_{ac} = \\frac{Q}{A_{\\text{cloth}}}, \\quad \\Delta P = (K_e + K_s W) v_{ac}$$",
                         "description": "Filtration face velocity $v_{ac}$ (typically $2 - 4\\text{ ft/min}$) in industrial baghouses; total pressure drop $\\Delta P$ increases linearly as particulate cake areal density $W$ builds up.",
                         "examTip": "Found in Air Quality Engineering. Baghouses achieve $> 99.9\\%$ capture efficiency across all particle sizes down to submicron levels."
@@ -20644,6 +20698,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Atmospheric Lapse Rates and Plume Behavior",
+                        "videoUrl": "assets/videos/Atmospheric_Lapse_Rates_and_Plume_Behavior.mp4",
+                        "videoTitle": "Atmospheric Lapse Rates and Plume Behavior Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\Gamma_{\\text{dry}} = -9.8^\\circ\\text{C/km}, \\quad -\\frac{dT}{dz} > \\Gamma \\implies \\text{Unstable (Looping)}, \\quad -\\frac{dT}{dz} < 0 \\implies \\text{Inversion (Fanning)}$$",
                         "description": "Governs industrial smoke plume dispersion: Dry Adiabatic Lapse Rate (DALR) vs. Environmental Lapse Rate (ELR); produces distinct plume geometry types: looping (superadiabatic), coning (neutral), fanning (inversion), lofting (inversion below stack), and fumigation (inversion aloft broken by morning sun).",
                         "examTip": "Found in Air Pollution. Fumigation creates dangerous ground-level toxic pollutant concentrations when surface thermal mixing breaks an overnight radiation inversion."
@@ -20776,6 +20833,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Groundwater Contaminant Retardation Factor ($R$)",
+                        "videoUrl": "assets/videos/Groundwater_Contaminant_Retardation_Factor.mp4",
+                        "videoTitle": "Groundwater Contaminant Retardation Factor ($R$) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$R = \\frac{v_s}{v_c} = 1 + \\frac{\\rho_b}{\\theta} K_d$$",
                         "description": "Ratio of groundwater pore water seepage velocity $v_s$ to contaminant migration plume velocity $v_c$, slowed by sorption onto soil matrix with bulk density $\\rho_b$, porosity $\\theta$, and distribution coefficient $K_d$.",
                         "examTip": "Found in Subsurface Contaminant Transport. If $R = 5$, the contaminant plume travels at only $1/5$ the velocity of advancing groundwater."
@@ -21340,6 +21400,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Divergence Theorem (Gauss’s Theorem)",
+                        "videoUrl": "assets/videos/Divergence_Theorem_Gauss_Theorem.mp4",
+                        "videoTitle": "Divergence Theorem (Gauss’s Theorem) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\iint_S \\vec{F} \\cdot d\\vec{A} = \\iiint_V (\\nabla \\cdot \\vec{F}) dV$$",
                         "description": "Converts total outward surface flux of vector field $\\vec{F}$ across closed boundary surface $S$ into a volume integral of field divergence throughout interior volume $V$.",
                         "examTip": "Found in Advanced Engineering Mathematics. Bridges macroscopic field flux with microscopic volume differential equations."
@@ -23768,6 +23831,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Capillary Rise Height in Fine-Grained Soils",
+                        "videoUrl": "assets/videos/Capillary_Rise_Height_in_Fine_Grained_Soils.mp4",
+                        "videoTitle": "Capillary Rise Height in Fine-Grained Soils Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$h_c = \\frac{4 T_s \\cos\\alpha}{\\gamma_w d} \\approx \\frac{C}{e D_{10}}$$",
                         "description": "Estimates height $h_c$ that water rises above the phreatic groundwater table due to surface tension $T_s$ and soil pore void diameter $d$, producing negative pore water pressures (matric suction).",
                         "examTip": "Found in Geotechnical: Soil Water. Capillary rise induces apparent cohesion in unsaturated fine sands and silts, but saturation causes matric suction to disappear."
