@@ -85,6 +85,78 @@
     const ALL_THEOREMS_BY_DISCIPLINE = {
         "Mechanical": [
                 {
+                        "title": "Parallel and Perpendicular Lines",
+                        "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
+                        "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Vertical lines ($x = c$) with undefined slope are perpendicular to horizontal lines ($y = k$) with slope $m = 0$. If a line is given in standard form $Ax + By = C$, a parallel line is $Ax + By = D$ and a perpendicular line is $Bx - Ay = E$.",
+                        "videoUrl": "assets/videos/Parallel_and_Perpendicular_Lines.mp4",
+                        "videoTitle": "Parallel and Perpendicular Lines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight Lines: Slope-Point Form",
+                        "formula": "$$y - y_1 = m(x - x_1), \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
+                        "description": "Equation of a non-vertical straight line passing through a given point $(x_1, y_1)$ with known slope $m$. Directly relates any point $(x, y)$ on the line through the definition of constant rate of change $\\Delta y / \\Delta x$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If given two points $(x_1, y_1)$ and $(x_2, y_2)$, compute $m$ first, then substitute either point. For vertical lines where $\\Delta x = 0$, slope is undefined and equation simplifies to $x = x_1$.",
+                        "videoUrl": "assets/videos/Straight_Lines_Slope_Point_Form.mp4",
+                        "videoTitle": "Straight Lines: Slope-Point Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation: Nature of Roots Based on Discriminant",
+                        "formula": "$$\\Delta = b^2 - 4ac; \\quad \\Delta > 0: 2 \\text{ real distinct}, \\quad \\Delta = 0: 1 \\text{ real repeated}, \\quad \\Delta < 0: 2 \\text{ complex conjugates}$$",
+                        "description": "For quadratic equation $ax^2 + bx + c = 0$, the discriminant $\\Delta = b^2 - 4ac$ governs the nature of the roots: $\\Delta > 0$ yields two distinct real roots, $\\Delta = 0$ yields one real repeated root ($x = -b/(2a)$), and $\\Delta < 0$ yields a conjugate pair of complex roots $x = \\frac{-b \\pm j\\sqrt{4ac - b^2}}{2a}$.",
+                        "examTip": "Found in Mathematics: Algebra. Critical in mechanical vibrations and electrical RLC circuits where the characteristic equation discriminant governs underdamped ($\\Delta < 0$), critically damped ($\\Delta = 0$), or overdamped ($\\Delta > 0$) response.",
+                        "videoUrl": "assets/videos/Quadratic_Equation_Nature_of_Roots_Based_on_Discriminant.mp4",
+                        "videoTitle": "Quadratic Equation: Nature of Roots Based on Discriminant Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Identities",
+                        "formula": "$$\\log_b(xy) = \\log_b x + \\log_b y, \\quad \\log_b\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y, \\quad \\log_b(x^k) = k\\log_b x, \\quad \\log_b x = \\frac{\\ln x}{\\ln b}$$",
+                        "description": "Core algebraic rules for logarithms of base $b > 0, b \\ne 1$: product-to-sum, quotient-to-difference, and power-to-coefficient transformations, along with the change-of-base formula converting to natural logarithms ($\\ln$) or common logarithms ($\\log_{10}$).",
+                        "examTip": "Found in Mathematics: Algebra. Remember $\\ln(e^x) = x$, $e^{\\ln x} = x$, $\\ln(1) = 0$, and $\\log(x + y) \\ne \\log x + \\log y$. Essential in radioactive decay, first-order chemical reaction kinetics, decibel acoustics, and Arrhenius equations.",
+                        "videoUrl": "assets/videos/Logarithmic_Identities.mp4",
+                        "videoTitle": "Logarithmic Identities Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Multiplication and Division of Complex Numbers in Polar Form",
+                        "formula": "$$z_1 z_2 = r_1 r_2 \\angle (\\theta_1 + \\theta_2) = r_1 r_2 e^{j(\\theta_1 + \\theta_2)}, \\quad \\frac{z_1}{z_2} = \\frac{r_1}{r_2} \\angle (\\theta_1 - \\theta_2) = \\frac{r_1}{r_2} e^{j(\\theta_1 - \\theta_2)}$$",
+                        "description": "In polar form $z = r\\angle\\theta = r e^{j\\theta}$, multiplying complex numbers multiplies their magnitudes and adds their phase angles; dividing complex numbers divides their magnitudes and subtracts the denominator's angle from the numerator's angle.",
+                        "examTip": "Found in Mathematics and Electrical Engineering (AC Circuits). Polar form vastly simplifies AC phasor multiplication and division compared to rectangular algebra $(a + jb)(c + jd)$. Add angles for multiplication, subtract for division.",
+                        "videoUrl": "assets/videos/Multiplication_and_Division_of_Complex_Numbers_in_Polar_Form.mp4",
+                        "videoTitle": "Multiplication and Division of Complex Numbers in Polar Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "De Moivre’s Theorem for Complex Powers",
+                        "formula": "$$z^n = [r(\\cos\\theta + j\\sin\\theta)]^n = r^n [\\cos(n\\theta) + j\\sin(n\\theta)] = r^n e^{j n\\theta}$$",
+                        "description": "Extends Euler’s identity to integer and rational powers $n$ of complex numbers: the magnitude is raised to the $n$-th power while the argument (phase angle) is multiplied by $n$.",
+                        "examTip": "Found in Mathematics: Complex Variables. Useful for raising complex numbers to large integer exponents ($z^{10}$) without expanding binomially, and for deriving multiple-angle trigonometric identities like $\\cos(3\\theta)$ and $\\sin(3\\theta)$.",
+                        "videoUrl": "assets/videos/De_Moivres_Theorem.mp4",
+                        "videoTitle": "De Moivre’s Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Roots of a Complex Number",
+                        "formula": "$$z_k = \\sqrt[n]{r} \\left[ \\cos\\left(\\frac{\\theta + 2\\pi k}{n}\\right) + j\\sin\\left(\\frac{\\theta + 2\\pi k}{n}\\right) \\right] = \\sqrt[n]{r} e^{j\\frac{\\theta + 2\\pi k}{n}}, \\quad k = 0, 1, \\dots, n-1$$",
+                        "description": "Every non-zero complex number $z = r e^{j\\theta}$ has exactly $n$ distinct complex $n$-th roots. All roots have identical magnitude $\\sqrt[n]{r}$ and are spaced uniformly at angular intervals of $2\\pi/n$ radians ($360^\\circ / n$) around a circle of radius $\\sqrt[n]{r}$ centered at the origin in the complex plane.",
+                        "examTip": "Found in Mathematics: Complex Numbers. The roots form vertices of a regular $n$-sided polygon inscribed in a circle. Setting $k=0$ gives the principal root.",
+                        "videoUrl": "assets/videos/Roots_of_a_Complex_Number.mp4",
+                        "videoTitle": "Roots of a Complex Number Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Surface Areas of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$A_{\\text{cyl}} = 2\\pi r h + 2\\pi r^2, \\quad A_{\\text{cube}} = 6s^2, \\quad A_{\\text{cone}} = \\pi r s + \\pi r^2 = \\pi r \\sqrt{r^2 + h^2} + \\pi r^2, \\quad A_{\\text{sphere}} = 4\\pi r^2$$",
+                        "description": "Total surface area formulas combining lateral and base surfaces: closed cylinder with radius $r$ and height $h$; cube with side $s$; right circular cone with slant height $s = \\sqrt{r^2 + h^2}$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Watch out for open vs. closed containers: an open-top cylinder excludes one base area ($\\pi r^2$), giving $A = 2\\pi rh + \\pi r^2$. For heat transfer and drag, surface area governs convection and radiation rates.",
+                        "videoUrl": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Surface Areas of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Distance Formula",
                         "imageUrl": "assets/images/distance_formula.jpg",
                         "imageTitle": "Distance Formula on Cartesian Plane Diagram",
@@ -3641,6 +3713,78 @@
         ],
         "Civil": [
                 {
+                        "title": "Parallel and Perpendicular Lines",
+                        "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
+                        "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Vertical lines ($x = c$) with undefined slope are perpendicular to horizontal lines ($y = k$) with slope $m = 0$. If a line is given in standard form $Ax + By = C$, a parallel line is $Ax + By = D$ and a perpendicular line is $Bx - Ay = E$.",
+                        "videoUrl": "assets/videos/Parallel_and_Perpendicular_Lines.mp4",
+                        "videoTitle": "Parallel and Perpendicular Lines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight Lines: Slope-Point Form",
+                        "formula": "$$y - y_1 = m(x - x_1), \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
+                        "description": "Equation of a non-vertical straight line passing through a given point $(x_1, y_1)$ with known slope $m$. Directly relates any point $(x, y)$ on the line through the definition of constant rate of change $\\Delta y / \\Delta x$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If given two points $(x_1, y_1)$ and $(x_2, y_2)$, compute $m$ first, then substitute either point. For vertical lines where $\\Delta x = 0$, slope is undefined and equation simplifies to $x = x_1$.",
+                        "videoUrl": "assets/videos/Straight_Lines_Slope_Point_Form.mp4",
+                        "videoTitle": "Straight Lines: Slope-Point Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation: Nature of Roots Based on Discriminant",
+                        "formula": "$$\\Delta = b^2 - 4ac; \\quad \\Delta > 0: 2 \\text{ real distinct}, \\quad \\Delta = 0: 1 \\text{ real repeated}, \\quad \\Delta < 0: 2 \\text{ complex conjugates}$$",
+                        "description": "For quadratic equation $ax^2 + bx + c = 0$, the discriminant $\\Delta = b^2 - 4ac$ governs the nature of the roots: $\\Delta > 0$ yields two distinct real roots, $\\Delta = 0$ yields one real repeated root ($x = -b/(2a)$), and $\\Delta < 0$ yields a conjugate pair of complex roots $x = \\frac{-b \\pm j\\sqrt{4ac - b^2}}{2a}$.",
+                        "examTip": "Found in Mathematics: Algebra. Critical in mechanical vibrations and electrical RLC circuits where the characteristic equation discriminant governs underdamped ($\\Delta < 0$), critically damped ($\\Delta = 0$), or overdamped ($\\Delta > 0$) response.",
+                        "videoUrl": "assets/videos/Quadratic_Equation_Nature_of_Roots_Based_on_Discriminant.mp4",
+                        "videoTitle": "Quadratic Equation: Nature of Roots Based on Discriminant Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Identities",
+                        "formula": "$$\\log_b(xy) = \\log_b x + \\log_b y, \\quad \\log_b\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y, \\quad \\log_b(x^k) = k\\log_b x, \\quad \\log_b x = \\frac{\\ln x}{\\ln b}$$",
+                        "description": "Core algebraic rules for logarithms of base $b > 0, b \\ne 1$: product-to-sum, quotient-to-difference, and power-to-coefficient transformations, along with the change-of-base formula converting to natural logarithms ($\\ln$) or common logarithms ($\\log_{10}$).",
+                        "examTip": "Found in Mathematics: Algebra. Remember $\\ln(e^x) = x$, $e^{\\ln x} = x$, $\\ln(1) = 0$, and $\\log(x + y) \\ne \\log x + \\log y$. Essential in radioactive decay, first-order chemical reaction kinetics, decibel acoustics, and Arrhenius equations.",
+                        "videoUrl": "assets/videos/Logarithmic_Identities.mp4",
+                        "videoTitle": "Logarithmic Identities Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Multiplication and Division of Complex Numbers in Polar Form",
+                        "formula": "$$z_1 z_2 = r_1 r_2 \\angle (\\theta_1 + \\theta_2) = r_1 r_2 e^{j(\\theta_1 + \\theta_2)}, \\quad \\frac{z_1}{z_2} = \\frac{r_1}{r_2} \\angle (\\theta_1 - \\theta_2) = \\frac{r_1}{r_2} e^{j(\\theta_1 - \\theta_2)}$$",
+                        "description": "In polar form $z = r\\angle\\theta = r e^{j\\theta}$, multiplying complex numbers multiplies their magnitudes and adds their phase angles; dividing complex numbers divides their magnitudes and subtracts the denominator's angle from the numerator's angle.",
+                        "examTip": "Found in Mathematics and Electrical Engineering (AC Circuits). Polar form vastly simplifies AC phasor multiplication and division compared to rectangular algebra $(a + jb)(c + jd)$. Add angles for multiplication, subtract for division.",
+                        "videoUrl": "assets/videos/Multiplication_and_Division_of_Complex_Numbers_in_Polar_Form.mp4",
+                        "videoTitle": "Multiplication and Division of Complex Numbers in Polar Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "De Moivre’s Theorem for Complex Powers",
+                        "formula": "$$z^n = [r(\\cos\\theta + j\\sin\\theta)]^n = r^n [\\cos(n\\theta) + j\\sin(n\\theta)] = r^n e^{j n\\theta}$$",
+                        "description": "Extends Euler’s identity to integer and rational powers $n$ of complex numbers: the magnitude is raised to the $n$-th power while the argument (phase angle) is multiplied by $n$.",
+                        "examTip": "Found in Mathematics: Complex Variables. Useful for raising complex numbers to large integer exponents ($z^{10}$) without expanding binomially, and for deriving multiple-angle trigonometric identities like $\\cos(3\\theta)$ and $\\sin(3\\theta)$.",
+                        "videoUrl": "assets/videos/De_Moivres_Theorem.mp4",
+                        "videoTitle": "De Moivre’s Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Roots of a Complex Number",
+                        "formula": "$$z_k = \\sqrt[n]{r} \\left[ \\cos\\left(\\frac{\\theta + 2\\pi k}{n}\\right) + j\\sin\\left(\\frac{\\theta + 2\\pi k}{n}\\right) \\right] = \\sqrt[n]{r} e^{j\\frac{\\theta + 2\\pi k}{n}}, \\quad k = 0, 1, \\dots, n-1$$",
+                        "description": "Every non-zero complex number $z = r e^{j\\theta}$ has exactly $n$ distinct complex $n$-th roots. All roots have identical magnitude $\\sqrt[n]{r}$ and are spaced uniformly at angular intervals of $2\\pi/n$ radians ($360^\\circ / n$) around a circle of radius $\\sqrt[n]{r}$ centered at the origin in the complex plane.",
+                        "examTip": "Found in Mathematics: Complex Numbers. The roots form vertices of a regular $n$-sided polygon inscribed in a circle. Setting $k=0$ gives the principal root.",
+                        "videoUrl": "assets/videos/Roots_of_a_Complex_Number.mp4",
+                        "videoTitle": "Roots of a Complex Number Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Surface Areas of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$A_{\\text{cyl}} = 2\\pi r h + 2\\pi r^2, \\quad A_{\\text{cube}} = 6s^2, \\quad A_{\\text{cone}} = \\pi r s + \\pi r^2 = \\pi r \\sqrt{r^2 + h^2} + \\pi r^2, \\quad A_{\\text{sphere}} = 4\\pi r^2$$",
+                        "description": "Total surface area formulas combining lateral and base surfaces: closed cylinder with radius $r$ and height $h$; cube with side $s$; right circular cone with slant height $s = \\sqrt{r^2 + h^2}$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Watch out for open vs. closed containers: an open-top cylinder excludes one base area ($\\pi r^2$), giving $A = 2\\pi rh + \\pi r^2$. For heat transfer and drag, surface area governs convection and radiation rates.",
+                        "videoUrl": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Surface Areas of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Angle between Two Non-Vertical Lines",
                         "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
                         "imageTitle": "Angle between Two Non-Vertical Intersecting Lines Diagram",
@@ -6643,6 +6787,78 @@
             ],
         "Electrical and Computer": [
                 {
+                        "title": "Parallel and Perpendicular Lines",
+                        "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
+                        "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Vertical lines ($x = c$) with undefined slope are perpendicular to horizontal lines ($y = k$) with slope $m = 0$. If a line is given in standard form $Ax + By = C$, a parallel line is $Ax + By = D$ and a perpendicular line is $Bx - Ay = E$.",
+                        "videoUrl": "assets/videos/Parallel_and_Perpendicular_Lines.mp4",
+                        "videoTitle": "Parallel and Perpendicular Lines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight Lines: Slope-Point Form",
+                        "formula": "$$y - y_1 = m(x - x_1), \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
+                        "description": "Equation of a non-vertical straight line passing through a given point $(x_1, y_1)$ with known slope $m$. Directly relates any point $(x, y)$ on the line through the definition of constant rate of change $\\Delta y / \\Delta x$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If given two points $(x_1, y_1)$ and $(x_2, y_2)$, compute $m$ first, then substitute either point. For vertical lines where $\\Delta x = 0$, slope is undefined and equation simplifies to $x = x_1$.",
+                        "videoUrl": "assets/videos/Straight_Lines_Slope_Point_Form.mp4",
+                        "videoTitle": "Straight Lines: Slope-Point Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation: Nature of Roots Based on Discriminant",
+                        "formula": "$$\\Delta = b^2 - 4ac; \\quad \\Delta > 0: 2 \\text{ real distinct}, \\quad \\Delta = 0: 1 \\text{ real repeated}, \\quad \\Delta < 0: 2 \\text{ complex conjugates}$$",
+                        "description": "For quadratic equation $ax^2 + bx + c = 0$, the discriminant $\\Delta = b^2 - 4ac$ governs the nature of the roots: $\\Delta > 0$ yields two distinct real roots, $\\Delta = 0$ yields one real repeated root ($x = -b/(2a)$), and $\\Delta < 0$ yields a conjugate pair of complex roots $x = \\frac{-b \\pm j\\sqrt{4ac - b^2}}{2a}$.",
+                        "examTip": "Found in Mathematics: Algebra. Critical in mechanical vibrations and electrical RLC circuits where the characteristic equation discriminant governs underdamped ($\\Delta < 0$), critically damped ($\\Delta = 0$), or overdamped ($\\Delta > 0$) response.",
+                        "videoUrl": "assets/videos/Quadratic_Equation_Nature_of_Roots_Based_on_Discriminant.mp4",
+                        "videoTitle": "Quadratic Equation: Nature of Roots Based on Discriminant Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Identities",
+                        "formula": "$$\\log_b(xy) = \\log_b x + \\log_b y, \\quad \\log_b\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y, \\quad \\log_b(x^k) = k\\log_b x, \\quad \\log_b x = \\frac{\\ln x}{\\ln b}$$",
+                        "description": "Core algebraic rules for logarithms of base $b > 0, b \\ne 1$: product-to-sum, quotient-to-difference, and power-to-coefficient transformations, along with the change-of-base formula converting to natural logarithms ($\\ln$) or common logarithms ($\\log_{10}$).",
+                        "examTip": "Found in Mathematics: Algebra. Remember $\\ln(e^x) = x$, $e^{\\ln x} = x$, $\\ln(1) = 0$, and $\\log(x + y) \\ne \\log x + \\log y$. Essential in radioactive decay, first-order chemical reaction kinetics, decibel acoustics, and Arrhenius equations.",
+                        "videoUrl": "assets/videos/Logarithmic_Identities.mp4",
+                        "videoTitle": "Logarithmic Identities Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Multiplication and Division of Complex Numbers in Polar Form",
+                        "formula": "$$z_1 z_2 = r_1 r_2 \\angle (\\theta_1 + \\theta_2) = r_1 r_2 e^{j(\\theta_1 + \\theta_2)}, \\quad \\frac{z_1}{z_2} = \\frac{r_1}{r_2} \\angle (\\theta_1 - \\theta_2) = \\frac{r_1}{r_2} e^{j(\\theta_1 - \\theta_2)}$$",
+                        "description": "In polar form $z = r\\angle\\theta = r e^{j\\theta}$, multiplying complex numbers multiplies their magnitudes and adds their phase angles; dividing complex numbers divides their magnitudes and subtracts the denominator's angle from the numerator's angle.",
+                        "examTip": "Found in Mathematics and Electrical Engineering (AC Circuits). Polar form vastly simplifies AC phasor multiplication and division compared to rectangular algebra $(a + jb)(c + jd)$. Add angles for multiplication, subtract for division.",
+                        "videoUrl": "assets/videos/Multiplication_and_Division_of_Complex_Numbers_in_Polar_Form.mp4",
+                        "videoTitle": "Multiplication and Division of Complex Numbers in Polar Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "De Moivre’s Theorem for Complex Powers",
+                        "formula": "$$z^n = [r(\\cos\\theta + j\\sin\\theta)]^n = r^n [\\cos(n\\theta) + j\\sin(n\\theta)] = r^n e^{j n\\theta}$$",
+                        "description": "Extends Euler’s identity to integer and rational powers $n$ of complex numbers: the magnitude is raised to the $n$-th power while the argument (phase angle) is multiplied by $n$.",
+                        "examTip": "Found in Mathematics: Complex Variables. Useful for raising complex numbers to large integer exponents ($z^{10}$) without expanding binomially, and for deriving multiple-angle trigonometric identities like $\\cos(3\\theta)$ and $\\sin(3\\theta)$.",
+                        "videoUrl": "assets/videos/De_Moivres_Theorem.mp4",
+                        "videoTitle": "De Moivre’s Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Roots of a Complex Number",
+                        "formula": "$$z_k = \\sqrt[n]{r} \\left[ \\cos\\left(\\frac{\\theta + 2\\pi k}{n}\\right) + j\\sin\\left(\\frac{\\theta + 2\\pi k}{n}\\right) \\right] = \\sqrt[n]{r} e^{j\\frac{\\theta + 2\\pi k}{n}}, \\quad k = 0, 1, \\dots, n-1$$",
+                        "description": "Every non-zero complex number $z = r e^{j\\theta}$ has exactly $n$ distinct complex $n$-th roots. All roots have identical magnitude $\\sqrt[n]{r}$ and are spaced uniformly at angular intervals of $2\\pi/n$ radians ($360^\\circ / n$) around a circle of radius $\\sqrt[n]{r}$ centered at the origin in the complex plane.",
+                        "examTip": "Found in Mathematics: Complex Numbers. The roots form vertices of a regular $n$-sided polygon inscribed in a circle. Setting $k=0$ gives the principal root.",
+                        "videoUrl": "assets/videos/Roots_of_a_Complex_Number.mp4",
+                        "videoTitle": "Roots of a Complex Number Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Surface Areas of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$A_{\\text{cyl}} = 2\\pi r h + 2\\pi r^2, \\quad A_{\\text{cube}} = 6s^2, \\quad A_{\\text{cone}} = \\pi r s + \\pi r^2 = \\pi r \\sqrt{r^2 + h^2} + \\pi r^2, \\quad A_{\\text{sphere}} = 4\\pi r^2$$",
+                        "description": "Total surface area formulas combining lateral and base surfaces: closed cylinder with radius $r$ and height $h$; cube with side $s$; right circular cone with slant height $s = \\sqrt{r^2 + h^2}$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Watch out for open vs. closed containers: an open-top cylinder excludes one base area ($\\pi r^2$), giving $A = 2\\pi rh + \\pi r^2$. For heat transfer and drag, surface area governs convection and radiation rates.",
+                        "videoUrl": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Surface Areas of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Slope-Intercept Form of a Linear Equation",
                         "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
                         "imageTitle": "Slope-Intercept Form of a Linear Equation Diagram",
@@ -8642,6 +8858,78 @@
                     }
             ],
         "Chemical": [
+                {
+                        "title": "Parallel and Perpendicular Lines",
+                        "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
+                        "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Vertical lines ($x = c$) with undefined slope are perpendicular to horizontal lines ($y = k$) with slope $m = 0$. If a line is given in standard form $Ax + By = C$, a parallel line is $Ax + By = D$ and a perpendicular line is $Bx - Ay = E$.",
+                        "videoUrl": "assets/videos/Parallel_and_Perpendicular_Lines.mp4",
+                        "videoTitle": "Parallel and Perpendicular Lines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight Lines: Slope-Point Form",
+                        "formula": "$$y - y_1 = m(x - x_1), \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
+                        "description": "Equation of a non-vertical straight line passing through a given point $(x_1, y_1)$ with known slope $m$. Directly relates any point $(x, y)$ on the line through the definition of constant rate of change $\\Delta y / \\Delta x$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If given two points $(x_1, y_1)$ and $(x_2, y_2)$, compute $m$ first, then substitute either point. For vertical lines where $\\Delta x = 0$, slope is undefined and equation simplifies to $x = x_1$.",
+                        "videoUrl": "assets/videos/Straight_Lines_Slope_Point_Form.mp4",
+                        "videoTitle": "Straight Lines: Slope-Point Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation: Nature of Roots Based on Discriminant",
+                        "formula": "$$\\Delta = b^2 - 4ac; \\quad \\Delta > 0: 2 \\text{ real distinct}, \\quad \\Delta = 0: 1 \\text{ real repeated}, \\quad \\Delta < 0: 2 \\text{ complex conjugates}$$",
+                        "description": "For quadratic equation $ax^2 + bx + c = 0$, the discriminant $\\Delta = b^2 - 4ac$ governs the nature of the roots: $\\Delta > 0$ yields two distinct real roots, $\\Delta = 0$ yields one real repeated root ($x = -b/(2a)$), and $\\Delta < 0$ yields a conjugate pair of complex roots $x = \\frac{-b \\pm j\\sqrt{4ac - b^2}}{2a}$.",
+                        "examTip": "Found in Mathematics: Algebra. Critical in mechanical vibrations and electrical RLC circuits where the characteristic equation discriminant governs underdamped ($\\Delta < 0$), critically damped ($\\Delta = 0$), or overdamped ($\\Delta > 0$) response.",
+                        "videoUrl": "assets/videos/Quadratic_Equation_Nature_of_Roots_Based_on_Discriminant.mp4",
+                        "videoTitle": "Quadratic Equation: Nature of Roots Based on Discriminant Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Identities",
+                        "formula": "$$\\log_b(xy) = \\log_b x + \\log_b y, \\quad \\log_b\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y, \\quad \\log_b(x^k) = k\\log_b x, \\quad \\log_b x = \\frac{\\ln x}{\\ln b}$$",
+                        "description": "Core algebraic rules for logarithms of base $b > 0, b \\ne 1$: product-to-sum, quotient-to-difference, and power-to-coefficient transformations, along with the change-of-base formula converting to natural logarithms ($\\ln$) or common logarithms ($\\log_{10}$).",
+                        "examTip": "Found in Mathematics: Algebra. Remember $\\ln(e^x) = x$, $e^{\\ln x} = x$, $\\ln(1) = 0$, and $\\log(x + y) \\ne \\log x + \\log y$. Essential in radioactive decay, first-order chemical reaction kinetics, decibel acoustics, and Arrhenius equations.",
+                        "videoUrl": "assets/videos/Logarithmic_Identities.mp4",
+                        "videoTitle": "Logarithmic Identities Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Multiplication and Division of Complex Numbers in Polar Form",
+                        "formula": "$$z_1 z_2 = r_1 r_2 \\angle (\\theta_1 + \\theta_2) = r_1 r_2 e^{j(\\theta_1 + \\theta_2)}, \\quad \\frac{z_1}{z_2} = \\frac{r_1}{r_2} \\angle (\\theta_1 - \\theta_2) = \\frac{r_1}{r_2} e^{j(\\theta_1 - \\theta_2)}$$",
+                        "description": "In polar form $z = r\\angle\\theta = r e^{j\\theta}$, multiplying complex numbers multiplies their magnitudes and adds their phase angles; dividing complex numbers divides their magnitudes and subtracts the denominator's angle from the numerator's angle.",
+                        "examTip": "Found in Mathematics and Electrical Engineering (AC Circuits). Polar form vastly simplifies AC phasor multiplication and division compared to rectangular algebra $(a + jb)(c + jd)$. Add angles for multiplication, subtract for division.",
+                        "videoUrl": "assets/videos/Multiplication_and_Division_of_Complex_Numbers_in_Polar_Form.mp4",
+                        "videoTitle": "Multiplication and Division of Complex Numbers in Polar Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "De Moivre’s Theorem for Complex Powers",
+                        "formula": "$$z^n = [r(\\cos\\theta + j\\sin\\theta)]^n = r^n [\\cos(n\\theta) + j\\sin(n\\theta)] = r^n e^{j n\\theta}$$",
+                        "description": "Extends Euler’s identity to integer and rational powers $n$ of complex numbers: the magnitude is raised to the $n$-th power while the argument (phase angle) is multiplied by $n$.",
+                        "examTip": "Found in Mathematics: Complex Variables. Useful for raising complex numbers to large integer exponents ($z^{10}$) without expanding binomially, and for deriving multiple-angle trigonometric identities like $\\cos(3\\theta)$ and $\\sin(3\\theta)$.",
+                        "videoUrl": "assets/videos/De_Moivres_Theorem.mp4",
+                        "videoTitle": "De Moivre’s Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Roots of a Complex Number",
+                        "formula": "$$z_k = \\sqrt[n]{r} \\left[ \\cos\\left(\\frac{\\theta + 2\\pi k}{n}\\right) + j\\sin\\left(\\frac{\\theta + 2\\pi k}{n}\\right) \\right] = \\sqrt[n]{r} e^{j\\frac{\\theta + 2\\pi k}{n}}, \\quad k = 0, 1, \\dots, n-1$$",
+                        "description": "Every non-zero complex number $z = r e^{j\\theta}$ has exactly $n$ distinct complex $n$-th roots. All roots have identical magnitude $\\sqrt[n]{r}$ and are spaced uniformly at angular intervals of $2\\pi/n$ radians ($360^\\circ / n$) around a circle of radius $\\sqrt[n]{r}$ centered at the origin in the complex plane.",
+                        "examTip": "Found in Mathematics: Complex Numbers. The roots form vertices of a regular $n$-sided polygon inscribed in a circle. Setting $k=0$ gives the principal root.",
+                        "videoUrl": "assets/videos/Roots_of_a_Complex_Number.mp4",
+                        "videoTitle": "Roots of a Complex Number Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Surface Areas of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$A_{\\text{cyl}} = 2\\pi r h + 2\\pi r^2, \\quad A_{\\text{cube}} = 6s^2, \\quad A_{\\text{cone}} = \\pi r s + \\pi r^2 = \\pi r \\sqrt{r^2 + h^2} + \\pi r^2, \\quad A_{\\text{sphere}} = 4\\pi r^2$$",
+                        "description": "Total surface area formulas combining lateral and base surfaces: closed cylinder with radius $r$ and height $h$; cube with side $s$; right circular cone with slant height $s = \\sqrt{r^2 + h^2}$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Watch out for open vs. closed containers: an open-top cylinder excludes one base area ($\\pi r^2$), giving $A = 2\\pi rh + \\pi r^2$. For heat transfer and drag, surface area governs convection and radiation rates.",
+                        "videoUrl": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Surface Areas of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
                         "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
@@ -11213,6 +11501,78 @@
             ],
         "Industrial": [
                 {
+                        "title": "Parallel and Perpendicular Lines",
+                        "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
+                        "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Vertical lines ($x = c$) with undefined slope are perpendicular to horizontal lines ($y = k$) with slope $m = 0$. If a line is given in standard form $Ax + By = C$, a parallel line is $Ax + By = D$ and a perpendicular line is $Bx - Ay = E$.",
+                        "videoUrl": "assets/videos/Parallel_and_Perpendicular_Lines.mp4",
+                        "videoTitle": "Parallel and Perpendicular Lines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight Lines: Slope-Point Form",
+                        "formula": "$$y - y_1 = m(x - x_1), \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
+                        "description": "Equation of a non-vertical straight line passing through a given point $(x_1, y_1)$ with known slope $m$. Directly relates any point $(x, y)$ on the line through the definition of constant rate of change $\\Delta y / \\Delta x$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If given two points $(x_1, y_1)$ and $(x_2, y_2)$, compute $m$ first, then substitute either point. For vertical lines where $\\Delta x = 0$, slope is undefined and equation simplifies to $x = x_1$.",
+                        "videoUrl": "assets/videos/Straight_Lines_Slope_Point_Form.mp4",
+                        "videoTitle": "Straight Lines: Slope-Point Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation: Nature of Roots Based on Discriminant",
+                        "formula": "$$\\Delta = b^2 - 4ac; \\quad \\Delta > 0: 2 \\text{ real distinct}, \\quad \\Delta = 0: 1 \\text{ real repeated}, \\quad \\Delta < 0: 2 \\text{ complex conjugates}$$",
+                        "description": "For quadratic equation $ax^2 + bx + c = 0$, the discriminant $\\Delta = b^2 - 4ac$ governs the nature of the roots: $\\Delta > 0$ yields two distinct real roots, $\\Delta = 0$ yields one real repeated root ($x = -b/(2a)$), and $\\Delta < 0$ yields a conjugate pair of complex roots $x = \\frac{-b \\pm j\\sqrt{4ac - b^2}}{2a}$.",
+                        "examTip": "Found in Mathematics: Algebra. Critical in mechanical vibrations and electrical RLC circuits where the characteristic equation discriminant governs underdamped ($\\Delta < 0$), critically damped ($\\Delta = 0$), or overdamped ($\\Delta > 0$) response.",
+                        "videoUrl": "assets/videos/Quadratic_Equation_Nature_of_Roots_Based_on_Discriminant.mp4",
+                        "videoTitle": "Quadratic Equation: Nature of Roots Based on Discriminant Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Identities",
+                        "formula": "$$\\log_b(xy) = \\log_b x + \\log_b y, \\quad \\log_b\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y, \\quad \\log_b(x^k) = k\\log_b x, \\quad \\log_b x = \\frac{\\ln x}{\\ln b}$$",
+                        "description": "Core algebraic rules for logarithms of base $b > 0, b \\ne 1$: product-to-sum, quotient-to-difference, and power-to-coefficient transformations, along with the change-of-base formula converting to natural logarithms ($\\ln$) or common logarithms ($\\log_{10}$).",
+                        "examTip": "Found in Mathematics: Algebra. Remember $\\ln(e^x) = x$, $e^{\\ln x} = x$, $\\ln(1) = 0$, and $\\log(x + y) \\ne \\log x + \\log y$. Essential in radioactive decay, first-order chemical reaction kinetics, decibel acoustics, and Arrhenius equations.",
+                        "videoUrl": "assets/videos/Logarithmic_Identities.mp4",
+                        "videoTitle": "Logarithmic Identities Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Multiplication and Division of Complex Numbers in Polar Form",
+                        "formula": "$$z_1 z_2 = r_1 r_2 \\angle (\\theta_1 + \\theta_2) = r_1 r_2 e^{j(\\theta_1 + \\theta_2)}, \\quad \\frac{z_1}{z_2} = \\frac{r_1}{r_2} \\angle (\\theta_1 - \\theta_2) = \\frac{r_1}{r_2} e^{j(\\theta_1 - \\theta_2)}$$",
+                        "description": "In polar form $z = r\\angle\\theta = r e^{j\\theta}$, multiplying complex numbers multiplies their magnitudes and adds their phase angles; dividing complex numbers divides their magnitudes and subtracts the denominator's angle from the numerator's angle.",
+                        "examTip": "Found in Mathematics and Electrical Engineering (AC Circuits). Polar form vastly simplifies AC phasor multiplication and division compared to rectangular algebra $(a + jb)(c + jd)$. Add angles for multiplication, subtract for division.",
+                        "videoUrl": "assets/videos/Multiplication_and_Division_of_Complex_Numbers_in_Polar_Form.mp4",
+                        "videoTitle": "Multiplication and Division of Complex Numbers in Polar Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "De Moivre’s Theorem for Complex Powers",
+                        "formula": "$$z^n = [r(\\cos\\theta + j\\sin\\theta)]^n = r^n [\\cos(n\\theta) + j\\sin(n\\theta)] = r^n e^{j n\\theta}$$",
+                        "description": "Extends Euler’s identity to integer and rational powers $n$ of complex numbers: the magnitude is raised to the $n$-th power while the argument (phase angle) is multiplied by $n$.",
+                        "examTip": "Found in Mathematics: Complex Variables. Useful for raising complex numbers to large integer exponents ($z^{10}$) without expanding binomially, and for deriving multiple-angle trigonometric identities like $\\cos(3\\theta)$ and $\\sin(3\\theta)$.",
+                        "videoUrl": "assets/videos/De_Moivres_Theorem.mp4",
+                        "videoTitle": "De Moivre’s Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Roots of a Complex Number",
+                        "formula": "$$z_k = \\sqrt[n]{r} \\left[ \\cos\\left(\\frac{\\theta + 2\\pi k}{n}\\right) + j\\sin\\left(\\frac{\\theta + 2\\pi k}{n}\\right) \\right] = \\sqrt[n]{r} e^{j\\frac{\\theta + 2\\pi k}{n}}, \\quad k = 0, 1, \\dots, n-1$$",
+                        "description": "Every non-zero complex number $z = r e^{j\\theta}$ has exactly $n$ distinct complex $n$-th roots. All roots have identical magnitude $\\sqrt[n]{r}$ and are spaced uniformly at angular intervals of $2\\pi/n$ radians ($360^\\circ / n$) around a circle of radius $\\sqrt[n]{r}$ centered at the origin in the complex plane.",
+                        "examTip": "Found in Mathematics: Complex Numbers. The roots form vertices of a regular $n$-sided polygon inscribed in a circle. Setting $k=0$ gives the principal root.",
+                        "videoUrl": "assets/videos/Roots_of_a_Complex_Number.mp4",
+                        "videoTitle": "Roots of a Complex Number Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Surface Areas of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$A_{\\text{cyl}} = 2\\pi r h + 2\\pi r^2, \\quad A_{\\text{cube}} = 6s^2, \\quad A_{\\text{cone}} = \\pi r s + \\pi r^2 = \\pi r \\sqrt{r^2 + h^2} + \\pi r^2, \\quad A_{\\text{sphere}} = 4\\pi r^2$$",
+                        "description": "Total surface area formulas combining lateral and base surfaces: closed cylinder with radius $r$ and height $h$; cube with side $s$; right circular cone with slant height $s = \\sqrt{r^2 + h^2}$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Watch out for open vs. closed containers: an open-top cylinder excludes one base area ($\\pi r^2$), giving $A = 2\\pi rh + \\pi r^2$. For heat transfer and drag, surface area governs convection and radiation rates.",
+                        "videoUrl": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Surface Areas of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Product and Quotient Rules for Derivatives",
                         "formula": "$$\\frac{d}{dx}[u \\cdot v] = u'v + uv', \\quad \\frac{d}{dx}\\left[\\frac{u}{v}\\right] = \\frac{u'v - uv'}{v^2}$$",
                         "description": "Fundamental differentiation rules for products and ratios of differentiable functions $u(x)$ and $v(x)$.",
@@ -13123,6 +13483,78 @@
                     }
             ],
         "Environmental": [
+                {
+                        "title": "Parallel and Perpendicular Lines",
+                        "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
+                        "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Vertical lines ($x = c$) with undefined slope are perpendicular to horizontal lines ($y = k$) with slope $m = 0$. If a line is given in standard form $Ax + By = C$, a parallel line is $Ax + By = D$ and a perpendicular line is $Bx - Ay = E$.",
+                        "videoUrl": "assets/videos/Parallel_and_Perpendicular_Lines.mp4",
+                        "videoTitle": "Parallel and Perpendicular Lines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight Lines: Slope-Point Form",
+                        "formula": "$$y - y_1 = m(x - x_1), \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
+                        "description": "Equation of a non-vertical straight line passing through a given point $(x_1, y_1)$ with known slope $m$. Directly relates any point $(x, y)$ on the line through the definition of constant rate of change $\\Delta y / \\Delta x$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If given two points $(x_1, y_1)$ and $(x_2, y_2)$, compute $m$ first, then substitute either point. For vertical lines where $\\Delta x = 0$, slope is undefined and equation simplifies to $x = x_1$.",
+                        "videoUrl": "assets/videos/Straight_Lines_Slope_Point_Form.mp4",
+                        "videoTitle": "Straight Lines: Slope-Point Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation: Nature of Roots Based on Discriminant",
+                        "formula": "$$\\Delta = b^2 - 4ac; \\quad \\Delta > 0: 2 \\text{ real distinct}, \\quad \\Delta = 0: 1 \\text{ real repeated}, \\quad \\Delta < 0: 2 \\text{ complex conjugates}$$",
+                        "description": "For quadratic equation $ax^2 + bx + c = 0$, the discriminant $\\Delta = b^2 - 4ac$ governs the nature of the roots: $\\Delta > 0$ yields two distinct real roots, $\\Delta = 0$ yields one real repeated root ($x = -b/(2a)$), and $\\Delta < 0$ yields a conjugate pair of complex roots $x = \\frac{-b \\pm j\\sqrt{4ac - b^2}}{2a}$.",
+                        "examTip": "Found in Mathematics: Algebra. Critical in mechanical vibrations and electrical RLC circuits where the characteristic equation discriminant governs underdamped ($\\Delta < 0$), critically damped ($\\Delta = 0$), or overdamped ($\\Delta > 0$) response.",
+                        "videoUrl": "assets/videos/Quadratic_Equation_Nature_of_Roots_Based_on_Discriminant.mp4",
+                        "videoTitle": "Quadratic Equation: Nature of Roots Based on Discriminant Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Identities",
+                        "formula": "$$\\log_b(xy) = \\log_b x + \\log_b y, \\quad \\log_b\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y, \\quad \\log_b(x^k) = k\\log_b x, \\quad \\log_b x = \\frac{\\ln x}{\\ln b}$$",
+                        "description": "Core algebraic rules for logarithms of base $b > 0, b \\ne 1$: product-to-sum, quotient-to-difference, and power-to-coefficient transformations, along with the change-of-base formula converting to natural logarithms ($\\ln$) or common logarithms ($\\log_{10}$).",
+                        "examTip": "Found in Mathematics: Algebra. Remember $\\ln(e^x) = x$, $e^{\\ln x} = x$, $\\ln(1) = 0$, and $\\log(x + y) \\ne \\log x + \\log y$. Essential in radioactive decay, first-order chemical reaction kinetics, decibel acoustics, and Arrhenius equations.",
+                        "videoUrl": "assets/videos/Logarithmic_Identities.mp4",
+                        "videoTitle": "Logarithmic Identities Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Multiplication and Division of Complex Numbers in Polar Form",
+                        "formula": "$$z_1 z_2 = r_1 r_2 \\angle (\\theta_1 + \\theta_2) = r_1 r_2 e^{j(\\theta_1 + \\theta_2)}, \\quad \\frac{z_1}{z_2} = \\frac{r_1}{r_2} \\angle (\\theta_1 - \\theta_2) = \\frac{r_1}{r_2} e^{j(\\theta_1 - \\theta_2)}$$",
+                        "description": "In polar form $z = r\\angle\\theta = r e^{j\\theta}$, multiplying complex numbers multiplies their magnitudes and adds their phase angles; dividing complex numbers divides their magnitudes and subtracts the denominator's angle from the numerator's angle.",
+                        "examTip": "Found in Mathematics and Electrical Engineering (AC Circuits). Polar form vastly simplifies AC phasor multiplication and division compared to rectangular algebra $(a + jb)(c + jd)$. Add angles for multiplication, subtract for division.",
+                        "videoUrl": "assets/videos/Multiplication_and_Division_of_Complex_Numbers_in_Polar_Form.mp4",
+                        "videoTitle": "Multiplication and Division of Complex Numbers in Polar Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "De Moivre’s Theorem for Complex Powers",
+                        "formula": "$$z^n = [r(\\cos\\theta + j\\sin\\theta)]^n = r^n [\\cos(n\\theta) + j\\sin(n\\theta)] = r^n e^{j n\\theta}$$",
+                        "description": "Extends Euler’s identity to integer and rational powers $n$ of complex numbers: the magnitude is raised to the $n$-th power while the argument (phase angle) is multiplied by $n$.",
+                        "examTip": "Found in Mathematics: Complex Variables. Useful for raising complex numbers to large integer exponents ($z^{10}$) without expanding binomially, and for deriving multiple-angle trigonometric identities like $\\cos(3\\theta)$ and $\\sin(3\\theta)$.",
+                        "videoUrl": "assets/videos/De_Moivres_Theorem.mp4",
+                        "videoTitle": "De Moivre’s Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Roots of a Complex Number",
+                        "formula": "$$z_k = \\sqrt[n]{r} \\left[ \\cos\\left(\\frac{\\theta + 2\\pi k}{n}\\right) + j\\sin\\left(\\frac{\\theta + 2\\pi k}{n}\\right) \\right] = \\sqrt[n]{r} e^{j\\frac{\\theta + 2\\pi k}{n}}, \\quad k = 0, 1, \\dots, n-1$$",
+                        "description": "Every non-zero complex number $z = r e^{j\\theta}$ has exactly $n$ distinct complex $n$-th roots. All roots have identical magnitude $\\sqrt[n]{r}$ and are spaced uniformly at angular intervals of $2\\pi/n$ radians ($360^\\circ / n$) around a circle of radius $\\sqrt[n]{r}$ centered at the origin in the complex plane.",
+                        "examTip": "Found in Mathematics: Complex Numbers. The roots form vertices of a regular $n$-sided polygon inscribed in a circle. Setting $k=0$ gives the principal root.",
+                        "videoUrl": "assets/videos/Roots_of_a_Complex_Number.mp4",
+                        "videoTitle": "Roots of a Complex Number Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Surface Areas of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$A_{\\text{cyl}} = 2\\pi r h + 2\\pi r^2, \\quad A_{\\text{cube}} = 6s^2, \\quad A_{\\text{cone}} = \\pi r s + \\pi r^2 = \\pi r \\sqrt{r^2 + h^2} + \\pi r^2, \\quad A_{\\text{sphere}} = 4\\pi r^2$$",
+                        "description": "Total surface area formulas combining lateral and base surfaces: closed cylinder with radius $r$ and height $h$; cube with side $s$; right circular cone with slant height $s = \\sqrt{r^2 + h^2}$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Watch out for open vs. closed containers: an open-top cylinder excludes one base area ($\\pi r^2$), giving $A = 2\\pi rh + \\pi r^2$. For heat transfer and drag, surface area governs convection and radiation rates.",
+                        "videoUrl": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Surface Areas of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
                 {
                         "title": "Slope-Intercept Form of a Linear Equation",
                         "imageUrl": "assets/images/slope_intercept_form_of_a_linear_equation.jpg",
@@ -15452,6 +15884,78 @@
                     }
             ],
         "Other": [
+                {
+                        "title": "Parallel and Perpendicular Lines",
+                        "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
+                        "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
+                        "examTip": "Found in Mathematics: Analytic Geometry. Vertical lines ($x = c$) with undefined slope are perpendicular to horizontal lines ($y = k$) with slope $m = 0$. If a line is given in standard form $Ax + By = C$, a parallel line is $Ax + By = D$ and a perpendicular line is $Bx - Ay = E$.",
+                        "videoUrl": "assets/videos/Parallel_and_Perpendicular_Lines.mp4",
+                        "videoTitle": "Parallel and Perpendicular Lines Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Straight Lines: Slope-Point Form",
+                        "formula": "$$y - y_1 = m(x - x_1), \\quad m = \\frac{y_2 - y_1}{x_2 - x_1}$$",
+                        "description": "Equation of a non-vertical straight line passing through a given point $(x_1, y_1)$ with known slope $m$. Directly relates any point $(x, y)$ on the line through the definition of constant rate of change $\\Delta y / \\Delta x$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry. If given two points $(x_1, y_1)$ and $(x_2, y_2)$, compute $m$ first, then substitute either point. For vertical lines where $\\Delta x = 0$, slope is undefined and equation simplifies to $x = x_1$.",
+                        "videoUrl": "assets/videos/Straight_Lines_Slope_Point_Form.mp4",
+                        "videoTitle": "Straight Lines: Slope-Point Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Quadratic Equation: Nature of Roots Based on Discriminant",
+                        "formula": "$$\\Delta = b^2 - 4ac; \\quad \\Delta > 0: 2 \\text{ real distinct}, \\quad \\Delta = 0: 1 \\text{ real repeated}, \\quad \\Delta < 0: 2 \\text{ complex conjugates}$$",
+                        "description": "For quadratic equation $ax^2 + bx + c = 0$, the discriminant $\\Delta = b^2 - 4ac$ governs the nature of the roots: $\\Delta > 0$ yields two distinct real roots, $\\Delta = 0$ yields one real repeated root ($x = -b/(2a)$), and $\\Delta < 0$ yields a conjugate pair of complex roots $x = \\frac{-b \\pm j\\sqrt{4ac - b^2}}{2a}$.",
+                        "examTip": "Found in Mathematics: Algebra. Critical in mechanical vibrations and electrical RLC circuits where the characteristic equation discriminant governs underdamped ($\\Delta < 0$), critically damped ($\\Delta = 0$), or overdamped ($\\Delta > 0$) response.",
+                        "videoUrl": "assets/videos/Quadratic_Equation_Nature_of_Roots_Based_on_Discriminant.mp4",
+                        "videoTitle": "Quadratic Equation: Nature of Roots Based on Discriminant Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Logarithmic Identities",
+                        "formula": "$$\\log_b(xy) = \\log_b x + \\log_b y, \\quad \\log_b\\left(\\frac{x}{y}\\right) = \\log_b x - \\log_b y, \\quad \\log_b(x^k) = k\\log_b x, \\quad \\log_b x = \\frac{\\ln x}{\\ln b}$$",
+                        "description": "Core algebraic rules for logarithms of base $b > 0, b \\ne 1$: product-to-sum, quotient-to-difference, and power-to-coefficient transformations, along with the change-of-base formula converting to natural logarithms ($\\ln$) or common logarithms ($\\log_{10}$).",
+                        "examTip": "Found in Mathematics: Algebra. Remember $\\ln(e^x) = x$, $e^{\\ln x} = x$, $\\ln(1) = 0$, and $\\log(x + y) \\ne \\log x + \\log y$. Essential in radioactive decay, first-order chemical reaction kinetics, decibel acoustics, and Arrhenius equations.",
+                        "videoUrl": "assets/videos/Logarithmic_Identities.mp4",
+                        "videoTitle": "Logarithmic Identities Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Multiplication and Division of Complex Numbers in Polar Form",
+                        "formula": "$$z_1 z_2 = r_1 r_2 \\angle (\\theta_1 + \\theta_2) = r_1 r_2 e^{j(\\theta_1 + \\theta_2)}, \\quad \\frac{z_1}{z_2} = \\frac{r_1}{r_2} \\angle (\\theta_1 - \\theta_2) = \\frac{r_1}{r_2} e^{j(\\theta_1 - \\theta_2)}$$",
+                        "description": "In polar form $z = r\\angle\\theta = r e^{j\\theta}$, multiplying complex numbers multiplies their magnitudes and adds their phase angles; dividing complex numbers divides their magnitudes and subtracts the denominator's angle from the numerator's angle.",
+                        "examTip": "Found in Mathematics and Electrical Engineering (AC Circuits). Polar form vastly simplifies AC phasor multiplication and division compared to rectangular algebra $(a + jb)(c + jd)$. Add angles for multiplication, subtract for division.",
+                        "videoUrl": "assets/videos/Multiplication_and_Division_of_Complex_Numbers_in_Polar_Form.mp4",
+                        "videoTitle": "Multiplication and Division of Complex Numbers in Polar Form Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "De Moivre’s Theorem for Complex Powers",
+                        "formula": "$$z^n = [r(\\cos\\theta + j\\sin\\theta)]^n = r^n [\\cos(n\\theta) + j\\sin(n\\theta)] = r^n e^{j n\\theta}$$",
+                        "description": "Extends Euler’s identity to integer and rational powers $n$ of complex numbers: the magnitude is raised to the $n$-th power while the argument (phase angle) is multiplied by $n$.",
+                        "examTip": "Found in Mathematics: Complex Variables. Useful for raising complex numbers to large integer exponents ($z^{10}$) without expanding binomially, and for deriving multiple-angle trigonometric identities like $\\cos(3\\theta)$ and $\\sin(3\\theta)$.",
+                        "videoUrl": "assets/videos/De_Moivres_Theorem.mp4",
+                        "videoTitle": "De Moivre’s Theorem Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Roots of a Complex Number",
+                        "formula": "$$z_k = \\sqrt[n]{r} \\left[ \\cos\\left(\\frac{\\theta + 2\\pi k}{n}\\right) + j\\sin\\left(\\frac{\\theta + 2\\pi k}{n}\\right) \\right] = \\sqrt[n]{r} e^{j\\frac{\\theta + 2\\pi k}{n}}, \\quad k = 0, 1, \\dots, n-1$$",
+                        "description": "Every non-zero complex number $z = r e^{j\\theta}$ has exactly $n$ distinct complex $n$-th roots. All roots have identical magnitude $\\sqrt[n]{r}$ and are spaced uniformly at angular intervals of $2\\pi/n$ radians ($360^\\circ / n$) around a circle of radius $\\sqrt[n]{r}$ centered at the origin in the complex plane.",
+                        "examTip": "Found in Mathematics: Complex Numbers. The roots form vertices of a regular $n$-sided polygon inscribed in a circle. Setting $k=0$ gives the principal root.",
+                        "videoUrl": "assets/videos/Roots_of_a_Complex_Number.mp4",
+                        "videoTitle": "Roots of a Complex Number Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Surface Areas of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$A_{\\text{cyl}} = 2\\pi r h + 2\\pi r^2, \\quad A_{\\text{cube}} = 6s^2, \\quad A_{\\text{cone}} = \\pi r s + \\pi r^2 = \\pi r \\sqrt{r^2 + h^2} + \\pi r^2, \\quad A_{\\text{sphere}} = 4\\pi r^2$$",
+                        "description": "Total surface area formulas combining lateral and base surfaces: closed cylinder with radius $r$ and height $h$; cube with side $s$; right circular cone with slant height $s = \\sqrt{r^2 + h^2}$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Watch out for open vs. closed containers: an open-top cylinder excludes one base area ($\\pi r^2$), giving $A = 2\\pi rh + \\pi r^2$. For heat transfer and drag, surface area governs convection and radiation rates.",
+                        "videoUrl": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Surface Areas of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
                 {
                         "title": "Angle between Two Non-Vertical Lines",
                         "imageUrl": "assets/images/angle_between_two_non_vertical_lines.jpg",
