@@ -13729,6 +13729,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "BJT Common-Emitter DC Load Line and Operating Point",
+                        "videoUrl": "assets/videos/BJT_Common_Emitter_DC_Load_Line_and_Operating_Point.mp4",
+                        "videoTitle": "BJT Common-Emitter DC Load Line and Operating Point Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$I_C = -\\frac{1}{R_C} V_{CE} + \\frac{V_{CC}}{R_C}, \\quad V_{CE} = V_{CC} - I_C R_C$$",
                         "description": "Linear constraint line superimposed on BJT collector output characteristics; intersection with base current curve $I_B$ establishes the DC quiescent operating Q-point $(V_{CEQ}, I_{CQ})$.",
                         "examTip": "Found in Electronics. To achieve maximum unclipped symmetrical AC output voltage swing, design Q-point at midpoint: $V_{CEQ} = V_{CC} / 2$."
@@ -14328,6 +14331,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "TCP vs. UDP Transport Layer Protocol Characteristics",
+                        "videoUrl": "assets/videos/TCP_vs_UDP_Transport_Layer_Protocol_Characteristics.mp4",
+                        "videoTitle": "TCP vs. UDP Transport Layer Protocol Characteristics Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{TCP: Connection-Oriented, Reliable, Byte Stream; } \\quad \\text{UDP: Connectionless, Unreliable, Datagram}$$",
                         "description": "Core transport protocols: TCP utilizes 3-way handshakes (SYN, SYN-ACK, ACK), sequence numbers, acknowledgments, and flow control; UDP delivers minimal header overhead ($8\\text{ bytes}$) for real-time streaming and DNS.",
                         "examTip": "Found in Computer Networks. TCP guarantees delivery and in-order packet arrival via sliding window retransmission, while UDP provides best-effort datagram delivery."
@@ -14484,6 +14490,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Comparison-Based Sorting: Quicksort, Mergesort, and Heapsort",
+                        "videoUrl": "assets/videos/Comparison_Based_Sorting_Quicksort_Mergesort_and_Heapsort.mp4",
+                        "videoTitle": "Comparison-Based Sorting: Quicksort, Mergesort, and Heapsort Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Mergesort: } O(n \\log n) \\text{ guaranteed}, \\quad \\text{Quicksort: } O(n \\log n) \\text{ avg, } O(n^2) \\text{ worst}$$",
                         "description": "Standard sorting algorithms: Mergesort is a stable divide-and-conquer algorithm with $O(n)$ auxiliary memory; Quicksort sorts in-place with low constant factors; Heapsort guarantees $O(n \\log n)$ time in-place using a binary heap.",
                         "examTip": "Found in Software Engineering: Algorithms. No comparison-based sort can exceed the theoretical lower bound of $\\Omega(n \\log n)$ worst-case time."
@@ -18214,6 +18223,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Forecast Error Tracking Signal (TS)",
+                        "videoUrl": "assets/videos/Forecast_Error_Tracking_Signal_TS.mp4",
+                        "videoTitle": "Forecast Error Tracking Signal (TS) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$TS = \\frac{RSFE}{MAD} = \\frac{\\sum_{i=1}^t (A_i - F_i)}{\\frac{1}{t}\\sum_{i=1}^t |A_i - F_i|}$$",
                         "description": "Monitors demand forecasting models for persistent bias (consistent over-forecasting or under-forecasting); acceptable operating range is typically within $\\pm 4$ to $\\pm 5$.",
                         "examTip": "Found in Forecasting. If $|TS| > 4$, the forecasting model is biased and must be recalibrated."
