@@ -7291,6 +7291,9 @@ window.calcEvaluate = function() {
             },
                 {
                 "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                "videoUrl": "assets/videos/Gravity_Retaining_Wall_Sliding_Factor_of_Safety.mp4",
+                "videoTitle": "Gravity Retaining Wall Sliding Factor of Safety Explainer",
+                "videoDuration": "10s",
                 "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
                 "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
                 "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
@@ -8197,6 +8200,9 @@ window.calcEvaluate = function() {
                 },
                 {
                 "title": "Hydrostatic Force on Submerged Curved Surfaces",
+                "videoUrl": "assets/videos/Hydrostatic_Force_on_Submerged_Curved_Surfaces.mp4",
+                "videoTitle": "Hydrostatic Force on Submerged Curved Surfaces Explainer",
+                "videoDuration": "10s",
                 "formula": "$$F_H = \\gamma \\bar{h} A_{\\text{proj}}, \\quad F_V = \\gamma V_{\\text{fluid above surface}}, \\quad F_R = \\sqrt{F_H^2 + F_V^2}$$",
                 "description": "Calculates resultant water pressure force $F_R$ on curved gates: horizontal component $F_H$ equals force on vertical projection of surface; vertical component $F_V$ equals weight of fluid volume directly above the curved surface.",
                 "examTip": "Found in Fluid Mechanics. The line of action of resultant hydrostatic force $F_R$ on any circular arc surface must pass directly through the center of curvature."
@@ -11051,6 +11057,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Concrete Maturity Method for Estimating In-Situ Strength",
+                        "videoUrl": "assets/videos/Concrete_Maturity_Method_for_Estimating_In_Situ_Strength.mp4",
+                        "videoTitle": "Concrete Maturity Method for Estimating In-Situ Strength Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$M(t) = \\sum (T - T_0) \\Delta t \\quad (\\text{Nurse-Saul Equation})$$",
                         "description": "Estimates real-time compressive strength gain of cast-in-place concrete by integrating the time-temperature hydration history, where $T_0$ is datum temperature (typically $-10^\\circ\\text{C}$ or $14^\\circ\\text{F}$).",
                         "examTip": "Found in Construction: Concrete Curing. Used to safely determine exact timing for formwork stripping, post-tensioning tendon stressing, or opening highway pavements to traffic."
@@ -11125,6 +11134,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Hydrostatic Force on Submerged Curved Surfaces",
+                        "videoUrl": "assets/videos/Hydrostatic_Force_on_Submerged_Curved_Surfaces.mp4",
+                        "videoTitle": "Hydrostatic Force on Submerged Curved Surfaces Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_H = \\gamma \\bar{h} A_{\\text{proj}}, \\quad F_V = \\gamma V_{\\text{fluid above surface}}, \\quad F_R = \\sqrt{F_H^2 + F_V^2}$$",
                         "description": "Calculates resultant water pressure force $F_R$ on curved gates: horizontal component $F_H$ equals force on vertical projection of surface; vertical component $F_V$ equals weight of fluid volume directly above the curved surface.",
                         "examTip": "Found in Fluid Mechanics. The line of action of resultant hydrostatic force $F_R$ on any circular arc surface must pass directly through the center of curvature."
@@ -11390,6 +11402,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Differential Leveling: Height of Instrument and Benchmark Elevations",
+                        "videoUrl": "assets/videos/Differential_Leveling_Height_of_Instrument_and_Benchmark_Elevations.mp4",
+                        "videoTitle": "Differential Leveling: Height of Instrument and Benchmark Elevations Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$HI = \\text{Elev}_{BM} + BS, \\quad \\text{Elev}_{TP} = HI - FS$$",
                         "description": "Fundamental surveying leveling loop equations: Height of Instrument ($HI$) is established by adding a backsight ($BS$, plus sight) to a known elevation; new elevation is computed by subtracting a foresight ($FS$, minus sight).",
                         "examTip": "Found in Surveying: Leveling. Mathematical check for leveling field notes: $\\sum BS - \\sum FS = \\text{Final Elev} - \\text{Initial Elev}$."
@@ -11766,6 +11781,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry",
+                        "videoUrl": "assets/videos/Ion_Exchange_Softening_Capacity_and_Brine_Regeneration_Stoichiometry.mp4",
+                        "videoTitle": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Resin Capacity: eq/L or grains/ft}^3, \\quad 2\\text{R-Na} + \\text{Ca}^{2+} \\to \\text{R}_2\\text{-Ca} + 2\\text{Na}^+$$",
                         "description": "Replaces divalent calcium and magnesium ions with monovalent sodium ions using strong acid cation resin; exhausted resin beds are regenerated by reversing equilibrium with concentrated ($10\\%-15\\%$) $\\text{NaCl}$ brine solution.",
                         "examTip": "Found in Environmental: Water Softening. Unit conversion: $1\\text{ grain of hardness per gallon (gpg)} = 17.1\\text{ mg/L as }\\text{CaCO}_3$."
@@ -11840,6 +11858,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "AISC Column Critical Stress (Elastic vs. Inelastic Buckling)",
+                        "videoUrl": "assets/videos/AISC_Column_Critical_Stress_Elastic_vs_Inelastic_Buckling.mp4",
+                        "videoTitle": "AISC Column Critical Stress (Elastic vs. Inelastic Buckling) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_{cr} = [0.658^{F_y / F_e}] F_y \\quad (\\text{for } \\frac{KL}{r} \\le 4.71\\sqrt{E/F_y}), \\quad F_{cr} = 0.877 F_e \\quad (\\text{for } \\frac{KL}{r} > 4.71\\sqrt{E/F_y})$$",
                         "description": "Determines compressive design stress $F_{cr}$ for structural steel columns accounting for geometric imperfections and residual stresses in inelastic buckling vs. Euler elastic buckling stress $F_e = \\pi^2 E / (KL/r)^2$.",
                         "examTip": "Found in Structural Steel Design (AISC). In inelastic buckling, $F_e \\ge 0.44 F_y$; remember nominal column compressive strength is $P_n = F_{cr} A_g$ with $\\phi_c = 0.90$."
@@ -12010,6 +12031,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Equivalent Lateral Force Procedure: Equivalent Seismic Base Shear",
+                        "videoUrl": "assets/videos/Equivalent_Lateral_Force_Procedure_Equivalent_Seismic_Base_Shear.mp4",
+                        "videoTitle": "Equivalent Lateral Force Procedure: Equivalent Seismic Base Shear Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$V = C_s \\cdot W, \\quad C_s = \\frac{S_{DS}}{\\left(\\frac{R}{I_e}\\right)}$$",
                         "description": "Calculates total design lateral seismic base shear force $V$ acting at the foundation of a building structure from seismic response coefficient $C_s$, effective seismic weight $W$, response modification coefficient $R$, and importance factor $I_e$.",
                         "examTip": "Found in Structural Design: Seismic (ASCE 7). $C_s$ has upper and lower bounds based on the fundamental building period $T$ and long-period transition period $T_L$."
@@ -12205,6 +12229,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                        "videoUrl": "assets/videos/Gravity_Retaining_Wall_Sliding_Factor_of_Safety.mp4",
+                        "videoTitle": "Gravity Retaining Wall Sliding Factor of Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
                         "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
                         "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
@@ -12340,6 +12367,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Crest Vertical Curve Length for Sight Distance",
+                        "videoUrl": "assets/videos/Crest_Vertical_Curve_Length_for_Sight_Distance.mp4",
+                        "videoTitle": "Crest Vertical Curve Length for Sight Distance Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$L = \\frac{A S^2}{200\\left(\\sqrt{h_1} + \\sqrt{h_2}\\right)^2} \\quad (S < L)$$",
                         "description": "Calculates required crest vertical curve length $L$ for algebraic grade difference $A = |g_2 - g_1|$, driver eye height $h_1 = 3.5\\text{ ft}$, and object height $h_2 = 2.0\\text{ ft}$.",
                         "examTip": "Found in Transportation. With standard AASHTO heights ($h_1 = 3.5, h_2 = 2.0$), the denominator simplifies to $2158$: $L = \\frac{A S^2}{2158}$ or $L = K A$."
@@ -12475,6 +12505,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Construction Equipment Fleet Productivity: Scraper Cycle Time",
+                        "videoUrl": "assets/videos/Construction_Equipment_Fleet_Productivity_Scraper_Cycle_Time.mp4",
+                        "videoTitle": "Construction Equipment Fleet Productivity: Scraper Cycle Time Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$T_{\\text{cycle}} = T_{\\text{load}} + T_{\\text{haul}} + T_{\\text{dump}} + T_{\\text{return}} + T_{\\text{wait}}$$",
                         "description": "Models heavy equipment earthmoving productivity: production equals payload volume divided by total round-trip cycle time, modified by job efficiency factors ($50\\text{ min/hr}$ or $83\\%$ working efficiency).",
                         "examTip": "Found in Construction: Equipment Operations. Balance pusher tractors with scrapers to minimize scraper waiting time and maximize earthmoving yardage per shift."
@@ -14496,6 +14529,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "SRAM vs. DRAM Architecture and Dynamic Refresh Cycles",
+                        "videoUrl": "assets/videos/SRAM_vs_DRAM_Architecture_and_Dynamic_Refresh_Cycles.mp4",
+                        "videoTitle": "SRAM vs. DRAM Architecture and Dynamic Refresh Cycles Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{SRAM: 6-Transistor Bistable Latch (Fast, Static)}, \\quad \\text{DRAM: 1T-1C Capacitor (Dense, } t_{\\text{refresh}} \\le 64\\text{ ms})$$",
                         "description": "SRAM utilizes cross-coupled inverters (typically 6T) to store state statically without refreshing as long as power is applied; it is fast and low-density, ideal for CPU caches. DRAM uses a single transistor and storage capacitor (1T-1C) per cell; leakage requires periodic dynamic refresh cycles, making it high-density and low-cost for main system memory.",
                         "examTip": "Found in Computer Systems: Memory Technology and Systems. DRAM reads are destructive: discharging the storage capacitor requires an immediate write-back restoration cycle by the sense amplifier."
@@ -14535,6 +14571,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Tri-State Bus Architecture and Bus Contention",
+                        "videoUrl": "assets/videos/Tri_State_Bus_Architecture_and_Bus_Contention.mp4",
+                        "videoTitle": "Tri-State Bus Architecture and Bus Contention Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Output States: } \\{0, 1, Z \\text{ (High-Impedance)}\\}, \\quad \\text{Active-Low Output Enable: } \\overline{\\text{OE}} = 1 \\implies \\text{High-}Z$$",
                         "description": "Tri-state buffers allow multiple device outputs to connect physically to a shared common data or address bus. When a device is not selected (\\overline{\\text{OE}} de-asserted), its output enters high-impedance mode (Z), electrically disconnecting it from the bus. Bus contention occurs if two or more devices drive opposing logic states (0 and 1) simultaneously, causing high current draw and voltage ambiguity.",
                         "examTip": "Found in Computer Systems: Interfacing. Bus arbitration logic and mutually exclusive chip select (\\overline{\\text{CS}}) decoders guarantee that at most one bus driver is enabled at any time to prevent contention and thermal damage."
@@ -15108,6 +15147,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry",
+                        "videoUrl": "assets/videos/Ion_Exchange_Softening_Capacity_and_Brine_Regeneration_Stoichiometry.mp4",
+                        "videoTitle": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Resin Capacity: eq/L or grains/ft}^3, \\quad 2\\text{R-Na} + \\text{Ca}^{2+} \\to \\text{R}_2\\text{-Ca} + 2\\text{Na}^+$$",
                         "description": "Replaces divalent calcium and magnesium ions with monovalent sodium ions using strong acid cation resin; exhausted resin beds are regenerated by reversing equilibrium with concentrated ($10\\%-15\\%$) $\\text{NaCl}$ brine solution.",
                         "examTip": "Found in Environmental: Water Softening. Unit conversion: $1\\text{ grain of hardness per gallon (gpg)} = 17.1\\text{ mg/L as }\\text{CaCO}_3$."
@@ -17057,6 +17099,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                        "videoUrl": "assets/videos/Gravity_Retaining_Wall_Sliding_Factor_of_Safety.mp4",
+                        "videoTitle": "Gravity Retaining Wall Sliding Factor of Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
                         "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
                         "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
@@ -17385,6 +17430,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                        "videoUrl": "assets/videos/Gravity_Retaining_Wall_Sliding_Factor_of_Safety.mp4",
+                        "videoTitle": "Gravity Retaining Wall Sliding Factor of Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
                         "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
                         "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
@@ -19502,6 +19550,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry",
+                        "videoUrl": "assets/videos/Ion_Exchange_Softening_Capacity_and_Brine_Regeneration_Stoichiometry.mp4",
+                        "videoTitle": "Ion Exchange Softening Capacity and Brine Regeneration Stoichiometry Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Resin Capacity: eq/L or grains/ft}^3, \\quad 2\\text{R-Na} + \\text{Ca}^{2+} \\to \\text{R}_2\\text{-Ca} + 2\\text{Na}^+$$",
                         "description": "Replaces divalent calcium and magnesium ions with monovalent sodium ions using strong acid cation resin; exhausted resin beds are regenerated by reversing equilibrium with concentrated ($10\\%-15\\%$) $\\text{NaCl}$ brine solution.",
                         "examTip": "Found in Environmental: Water Softening. Unit conversion: $1\\text{ grain of hardness per gallon (gpg)} = 17.1\\text{ mg/L as }\\text{CaCO}_3$."
@@ -20563,6 +20614,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Activated Sludge Daily Biomass Waste Production ($P_x$)",
+                        "videoUrl": "assets/videos/Activated_Sludge_Daily_Biomass_Waste_Production_Px.mp4",
+                        "videoTitle": "Activated Sludge Daily Biomass Waste Production ($P_x$) Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$P_x = Y_{\\text{obs}} Q (S_0 - S) = \\frac{Y Q (S_0 - S)}{1 + k_d \\theta_c}$$",
                         "description": "Daily dry mass of waste biological sludge (VSS) produced per day in secondary activated sludge, requiring solids handling and digestion disposal.",
                         "examTip": "Found in Wastewater Engineering. To convert VSS to Total Suspended Solids (TSS), divide by volatile fraction (typically $VSS/TSS \\approx 0.80$)."
@@ -21094,6 +21148,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                        "videoUrl": "assets/videos/Gravity_Retaining_Wall_Sliding_Factor_of_Safety.mp4",
+                        "videoTitle": "Gravity Retaining Wall Sliding Factor of Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
                         "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
                         "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
@@ -21244,6 +21301,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Bioconcentration Factor from Octanol-Water Partitioning",
+                        "videoUrl": "assets/videos/Bioconcentration_Factor_from_Octanol_Water_Partitioning.mp4",
+                        "videoTitle": "Bioconcentration Factor from Octanol-Water Partitioning Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\log BCF = 0.76 \\log K_{ow} - 0.23, \\quad BCF = \\frac{C_{\\text{biota}}}{C_{\\text{water}}}$$",
                         "description": "Predicts equilibrium bioaccumulation of persistent organic pollutants in aquatic organisms (fish fat tissue) relative to ambient water concentration based on hydrophobicity $K_{ow}$.",
                         "examTip": "Found in Environmental Toxicology. Compounds with $\\log K_{ow} > 4$ exhibit significant food-chain bioaccumulation potential."
@@ -21285,12 +21345,18 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Confined vs. Unconfined Aquifer Steady Radial Drawdown",
+                        "videoUrl": "assets/videos/Confined_vs_Unconfined_Aquifer_Steady_Radial_Drawdown.mp4",
+                        "videoTitle": "Confined vs. Unconfined Aquifer Steady Radial Drawdown Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$\\text{Confined (Thiem): } Q = \\frac{2\\pi T (h_2 - h_1)}{\\ln(r_2 / r_1)}, \\quad \\text{Unconfined (Dupuit): } Q = \\frac{\\pi K (h_2^2 - h_1^2)}{\\ln(r_2 / r_1)}$$",
                         "description": "Calculates steady-state radial well pumping discharge $Q$ from two observation wells: in confined aquifers, transmissivity $T = K b$ is constant; in unconfined aquifers, water table drop thins saturated aquifer thickness ($h^2$ terms).",
                         "examTip": "Found in Groundwater: Well Hydraulics. Ensure radii $r_1, r_2$ and piezometric heads $h_1, h_2$ correspond to matching observation wells."
                     },
                 {
                         "title": "Capture Zone Analysis for Groundwater Remediation Pumping Wells",
+                        "videoUrl": "assets/videos/Capture_Zone_Analysis_for_Groundwater_Remediation_Pumping_Wells.mp4",
+                        "videoTitle": "Capture Zone Analysis for Groundwater Remediation Pumping Wells Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$y_{\\max} = \\pm \\frac{Q}{2 B U}, \\quad x_0 = -\\frac{Q}{2\\pi B U}$$",
                         "description": "Defines the 2D capture envelope of a pump-and-treat recovery well pumping at rate $Q$ in a uniform regional groundwater flow field of specific discharge $U$ in an aquifer of thickness $B$; $x_0$ is the stagnation point distance downgradient.",
                         "examTip": "Found in Environmental: Groundwater Remediation. Any contaminant plume located within the capture zone boundaries ($|y| < y_{\\max}$) is successfully intercepted and drawn into the extraction well."
@@ -22801,6 +22867,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Gravity Retaining Wall Sliding Factor of Safety",
+                        "videoUrl": "assets/videos/Gravity_Retaining_Wall_Sliding_Factor_of_Safety.mp4",
+                        "videoTitle": "Gravity Retaining Wall Sliding Factor of Safety Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
                         "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
                         "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
@@ -24289,6 +24358,9 @@ window.calcEvaluate = function() {
                     },
                 {
                         "title": "Hydrostatic Force on Submerged Curved Surfaces",
+                        "videoUrl": "assets/videos/Hydrostatic_Force_on_Submerged_Curved_Surfaces.mp4",
+                        "videoTitle": "Hydrostatic Force on Submerged Curved Surfaces Explainer",
+                        "videoDuration": "10s",
                         "formula": "$$F_H = \\gamma \\bar{h} A_{\\text{proj}}, \\quad F_V = \\gamma V_{\\text{fluid above surface}}, \\quad F_R = \\sqrt{F_H^2 + F_V^2}$$",
                         "description": "Calculates resultant water pressure force $F_R$ on curved gates: horizontal component $F_H$ equals force on vertical projection of surface; vertical component $F_V$ equals weight of fluid volume directly above the curved surface.",
                         "examTip": "Found in Fluid Mechanics. The line of action of resultant hydrostatic force $F_R$ on any circular arc surface must pass directly through the center of curvature."
