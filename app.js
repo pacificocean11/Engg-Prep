@@ -6032,6 +6032,69 @@ window.calcEvaluate = function() {
     const ALL_THEOREMS_BY_DISCIPLINE = {
         "Mechanical": [
                 {
+                        "title": "Volumes of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$V_{\\text{cyl}} = \\pi r^2 h, \\quad V_{\\text{cube}} = s^3, \\quad V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h, \\quad V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3$$",
+                        "description": "Fundamental volume formulas for standard geometric solids: right circular cylinder with radius $r$ and height $h$; cube with edge length $s$; right circular cone with base radius $r$ and height $h$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Notice that a cone occupies exactly one-third ($1/3$) the volume of a cylinder with identical base radius and height. Sphere volume is the integral of spherical shells ($dV = 4\\pi r^2 dr$).",
+                        "videoUrl": "assets/videos/Volumes_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Volumes of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coordinates of Foci and Equation of Directrix of an Ellipse",
+                        "formula": "$$\\text{Ellipse: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b); \\quad c = \\sqrt{a^2 - b^2}, \\ e = \\frac{c}{a}; \\quad \\text{Foci: } (\\pm c, 0), \\quad \\text{Directrices: } x = \\pm \\frac{a}{e} = \\pm \\frac{a^2}{c}$$",
+                        "description": "For an ellipse centered at the origin with semi-major axis $a$ and semi-minor axis $b$ ($a > b$), the focal distance is $c = \\sqrt{a^2 - b^2}$, yielding foci at $(\\pm c, 0)$, eccentricity $e = c/a < 1$, and directrices vertical lines at $x = \\pm a/e$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). For any point $P$ on the ellipse, the sum of distances to both foci is constant: $d_1 + d_2 = 2a$. The ratio of distance to focus over distance to directrix equals eccentricity $e$. For vertical major axis ($b > a$), interchange $x$ and $y$.",
+                        "videoUrl": "assets/videos/Coordinates_of_Foci_and_Equation_of_Directrix_of_an_Ellipse.mp4",
+                        "videoTitle": "Coordinates of Foci and Equation of Directrix of an Ellipse Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First and Second Derivatives of Maxima and Minima Points",
+                        "formula": "$$\\text{Stationary Point: } f'(x_0) = 0; \\quad f''(x_0) < 0 \\implies \\text{Local Maximum}, \\quad f''(x_0) > 0 \\implies \\text{Local Minimum}, \\quad f''(x_0) = 0 \\implies \\text{Inconclusive}$$",
+                        "description": "Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined. The Second Derivative Test classifies stationary points: concave down ($f'' < 0$) indicates a local maximum, concave up ($f'' > 0$) indicates a local minimum, and $f'' = 0$ requires higher-order derivatives or the first derivative sign test.",
+                        "examTip": "Found in Mathematics: Calculus. Critical in engineering optimization (e.g., minimum material cost, peak heat flux, maximum power transfer). Always check domain boundary endpoints for absolute (global) extrema.",
+                        "videoUrl": "assets/videos/First_and_Second_Derivatives_of_Maxima_and_Minima_Points.mp4",
+                        "videoTitle": "First and Second Derivatives of Maxima and Minima Points Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Partial Derivatives",
+                        "formula": "$$\\frac{\\partial f}{\\partial x} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x, y) - f(x, y)}{\\Delta x}, \\quad df = \\frac{\\partial f}{\\partial x} dx + \\frac{\\partial f}{\\partial y} dy, \\quad \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial^2 f}{\\partial y \\partial x}$$",
+                        "description": "The partial derivative of a multivariable function $f(x, y)$ with respect to $x$ measures the rate of change of $f$ in the $x$-direction while treating all other variables ($y, z, \\dots$) as constant parameters. Clairaut's theorem guarantees equality of mixed partials for continuous second derivatives.",
+                        "examTip": "Found in Mathematics: Calculus and Thermodynamics. When taking $\\partial / \\partial x$, hold $y$ strictly constant. The total differential $df$ is the basis for error and uncertainty propagation in experimental measurements: $\\sigma_f^2 = (\\frac{\\partial f}{\\partial x})^2 \\sigma_x^2 + (\\frac{\\partial f}{\\partial y})^2 \\sigma_y^2$.",
+                        "videoUrl": "assets/videos/Partial_Derivatives.mp4",
+                        "videoTitle": "Partial Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curvature of Any Curve in Terms of Derivatives",
+                        "formula": "$$\\kappa = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}}, \\quad \\rho = \\frac{1}{\\kappa} = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|}$$",
+                        "description": "Curvature $\\kappa$ measures the rate of change of direction of the curve with respect to arc length ($|d\\phi / ds|$). The radius of curvature $\\rho = 1/\\kappa$ is the radius of the osculating circle that best fits the curve at that point.",
+                        "examTip": "Found in Mathematics: Calculus and Mechanics of Materials. In Euler-Bernoulli beam theory under small deflections where $(y')^2 \\ll 1$, curvature simplifies to $\\kappa \\approx |y''| = M / (EI)$, yielding the governing beam bending equation $EI \\, d^2y/dx^2 = M(x)$. Also critical in highway curve design.",
+                        "videoUrl": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+                        "videoTitle": "Curvature of Any Curve in Terms of Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties of Identity Matrix",
+                        "formula": "$$I_n = \\begin{bmatrix} 1 & 0 & \\cdots & 0 \\\\ 0 & 1 & \\cdots & 0 \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 0 & 0 & \\cdots & 1 \\end{bmatrix}; \\quad A I = I A = A, \\quad I^{-1} = I, \\quad \\det(I) = 1, \\quad \\text{Tr}(I_n) = n, \\quad I^k = I$$",
+                        "description": "The identity matrix $I_n$ is the $n \\times n$ diagonal matrix with ones along the main diagonal and zeros elsewhere. It serves as the multiplicative identity in matrix algebra: $A I = I A = A$. It is symmetric ($I^T = I$), idempotent ($I^2 = I$), and orthogonal ($I^T I = I$) with determinant $1$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. An invertible matrix satisfies $A A^{-1} = A^{-1} A = I$. The characteristic equation for eigenvalues is $\\det(A - \\lambda I) = 0$. For scalar $c$, the trace of $c I_n$ is $c \\cdot n$ and $\\det(c I_n) = c^n$.",
+                        "videoUrl": "assets/videos/Properties_of_Identity_Matrix.mp4",
+                        "videoTitle": "Properties of Identity Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complementary Function and Particular Integral of a Differential Equation",
+                        "formula": "$$y(x) = y_c(x) + y_p(x); \\quad L[y_c] = 0 \\quad (\\text{Homogeneous Solution}), \\quad L[y_p] = f(x) \\quad (\\text{Particular Solution})$$",
+                        "description": "The general solution to a linear non-homogeneous differential equation $L[y] = f(x)$ is the linear superposition of the complementary function $y_c(x)$ (general solution of $L[y] = 0$ containing $n$ arbitrary constants) and any particular integral $y_p(x)$ satisfying the driving force $f(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. In mechanical vibrations and electrical RLC circuits, the complementary function $y_c(x)$ corresponds to the transient response (natural response which dies out with damping), while the particular integral $y_p(x)$ corresponds to the steady-state forced response.",
+                        "videoUrl": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+                        "videoTitle": "Complementary Function and Particular Integral Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Parallel and Perpendicular Lines",
                         "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
                         "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
@@ -9660,6 +9723,69 @@ window.calcEvaluate = function() {
         ],
         "Civil": [
                 {
+                        "title": "Volumes of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$V_{\\text{cyl}} = \\pi r^2 h, \\quad V_{\\text{cube}} = s^3, \\quad V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h, \\quad V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3$$",
+                        "description": "Fundamental volume formulas for standard geometric solids: right circular cylinder with radius $r$ and height $h$; cube with edge length $s$; right circular cone with base radius $r$ and height $h$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Notice that a cone occupies exactly one-third ($1/3$) the volume of a cylinder with identical base radius and height. Sphere volume is the integral of spherical shells ($dV = 4\\pi r^2 dr$).",
+                        "videoUrl": "assets/videos/Volumes_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Volumes of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coordinates of Foci and Equation of Directrix of an Ellipse",
+                        "formula": "$$\\text{Ellipse: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b); \\quad c = \\sqrt{a^2 - b^2}, \\ e = \\frac{c}{a}; \\quad \\text{Foci: } (\\pm c, 0), \\quad \\text{Directrices: } x = \\pm \\frac{a}{e} = \\pm \\frac{a^2}{c}$$",
+                        "description": "For an ellipse centered at the origin with semi-major axis $a$ and semi-minor axis $b$ ($a > b$), the focal distance is $c = \\sqrt{a^2 - b^2}$, yielding foci at $(\\pm c, 0)$, eccentricity $e = c/a < 1$, and directrices vertical lines at $x = \\pm a/e$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). For any point $P$ on the ellipse, the sum of distances to both foci is constant: $d_1 + d_2 = 2a$. The ratio of distance to focus over distance to directrix equals eccentricity $e$. For vertical major axis ($b > a$), interchange $x$ and $y$.",
+                        "videoUrl": "assets/videos/Coordinates_of_Foci_and_Equation_of_Directrix_of_an_Ellipse.mp4",
+                        "videoTitle": "Coordinates of Foci and Equation of Directrix of an Ellipse Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First and Second Derivatives of Maxima and Minima Points",
+                        "formula": "$$\\text{Stationary Point: } f'(x_0) = 0; \\quad f''(x_0) < 0 \\implies \\text{Local Maximum}, \\quad f''(x_0) > 0 \\implies \\text{Local Minimum}, \\quad f''(x_0) = 0 \\implies \\text{Inconclusive}$$",
+                        "description": "Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined. The Second Derivative Test classifies stationary points: concave down ($f'' < 0$) indicates a local maximum, concave up ($f'' > 0$) indicates a local minimum, and $f'' = 0$ requires higher-order derivatives or the first derivative sign test.",
+                        "examTip": "Found in Mathematics: Calculus. Critical in engineering optimization (e.g., minimum material cost, peak heat flux, maximum power transfer). Always check domain boundary endpoints for absolute (global) extrema.",
+                        "videoUrl": "assets/videos/First_and_Second_Derivatives_of_Maxima_and_Minima_Points.mp4",
+                        "videoTitle": "First and Second Derivatives of Maxima and Minima Points Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Partial Derivatives",
+                        "formula": "$$\\frac{\\partial f}{\\partial x} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x, y) - f(x, y)}{\\Delta x}, \\quad df = \\frac{\\partial f}{\\partial x} dx + \\frac{\\partial f}{\\partial y} dy, \\quad \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial^2 f}{\\partial y \\partial x}$$",
+                        "description": "The partial derivative of a multivariable function $f(x, y)$ with respect to $x$ measures the rate of change of $f$ in the $x$-direction while treating all other variables ($y, z, \\dots$) as constant parameters. Clairaut's theorem guarantees equality of mixed partials for continuous second derivatives.",
+                        "examTip": "Found in Mathematics: Calculus and Thermodynamics. When taking $\\partial / \\partial x$, hold $y$ strictly constant. The total differential $df$ is the basis for error and uncertainty propagation in experimental measurements: $\\sigma_f^2 = (\\frac{\\partial f}{\\partial x})^2 \\sigma_x^2 + (\\frac{\\partial f}{\\partial y})^2 \\sigma_y^2$.",
+                        "videoUrl": "assets/videos/Partial_Derivatives.mp4",
+                        "videoTitle": "Partial Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curvature of Any Curve in Terms of Derivatives",
+                        "formula": "$$\\kappa = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}}, \\quad \\rho = \\frac{1}{\\kappa} = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|}$$",
+                        "description": "Curvature $\\kappa$ measures the rate of change of direction of the curve with respect to arc length ($|d\\phi / ds|$). The radius of curvature $\\rho = 1/\\kappa$ is the radius of the osculating circle that best fits the curve at that point.",
+                        "examTip": "Found in Mathematics: Calculus and Mechanics of Materials. In Euler-Bernoulli beam theory under small deflections where $(y')^2 \\ll 1$, curvature simplifies to $\\kappa \\approx |y''| = M / (EI)$, yielding the governing beam bending equation $EI \\, d^2y/dx^2 = M(x)$. Also critical in highway curve design.",
+                        "videoUrl": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+                        "videoTitle": "Curvature of Any Curve in Terms of Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties of Identity Matrix",
+                        "formula": "$$I_n = \\begin{bmatrix} 1 & 0 & \\cdots & 0 \\\\ 0 & 1 & \\cdots & 0 \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 0 & 0 & \\cdots & 1 \\end{bmatrix}; \\quad A I = I A = A, \\quad I^{-1} = I, \\quad \\det(I) = 1, \\quad \\text{Tr}(I_n) = n, \\quad I^k = I$$",
+                        "description": "The identity matrix $I_n$ is the $n \\times n$ diagonal matrix with ones along the main diagonal and zeros elsewhere. It serves as the multiplicative identity in matrix algebra: $A I = I A = A$. It is symmetric ($I^T = I$), idempotent ($I^2 = I$), and orthogonal ($I^T I = I$) with determinant $1$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. An invertible matrix satisfies $A A^{-1} = A^{-1} A = I$. The characteristic equation for eigenvalues is $\\det(A - \\lambda I) = 0$. For scalar $c$, the trace of $c I_n$ is $c \\cdot n$ and $\\det(c I_n) = c^n$.",
+                        "videoUrl": "assets/videos/Properties_of_Identity_Matrix.mp4",
+                        "videoTitle": "Properties of Identity Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complementary Function and Particular Integral of a Differential Equation",
+                        "formula": "$$y(x) = y_c(x) + y_p(x); \\quad L[y_c] = 0 \\quad (\\text{Homogeneous Solution}), \\quad L[y_p] = f(x) \\quad (\\text{Particular Solution})$$",
+                        "description": "The general solution to a linear non-homogeneous differential equation $L[y] = f(x)$ is the linear superposition of the complementary function $y_c(x)$ (general solution of $L[y] = 0$ containing $n$ arbitrary constants) and any particular integral $y_p(x)$ satisfying the driving force $f(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. In mechanical vibrations and electrical RLC circuits, the complementary function $y_c(x)$ corresponds to the transient response (natural response which dies out with damping), while the particular integral $y_p(x)$ corresponds to the steady-state forced response.",
+                        "videoUrl": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+                        "videoTitle": "Complementary Function and Particular Integral Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Parallel and Perpendicular Lines",
                         "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
                         "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
@@ -12734,6 +12860,69 @@ window.calcEvaluate = function() {
             ],
         "Electrical and Computer": [
                 {
+                        "title": "Volumes of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$V_{\\text{cyl}} = \\pi r^2 h, \\quad V_{\\text{cube}} = s^3, \\quad V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h, \\quad V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3$$",
+                        "description": "Fundamental volume formulas for standard geometric solids: right circular cylinder with radius $r$ and height $h$; cube with edge length $s$; right circular cone with base radius $r$ and height $h$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Notice that a cone occupies exactly one-third ($1/3$) the volume of a cylinder with identical base radius and height. Sphere volume is the integral of spherical shells ($dV = 4\\pi r^2 dr$).",
+                        "videoUrl": "assets/videos/Volumes_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Volumes of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coordinates of Foci and Equation of Directrix of an Ellipse",
+                        "formula": "$$\\text{Ellipse: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b); \\quad c = \\sqrt{a^2 - b^2}, \\ e = \\frac{c}{a}; \\quad \\text{Foci: } (\\pm c, 0), \\quad \\text{Directrices: } x = \\pm \\frac{a}{e} = \\pm \\frac{a^2}{c}$$",
+                        "description": "For an ellipse centered at the origin with semi-major axis $a$ and semi-minor axis $b$ ($a > b$), the focal distance is $c = \\sqrt{a^2 - b^2}$, yielding foci at $(\\pm c, 0)$, eccentricity $e = c/a < 1$, and directrices vertical lines at $x = \\pm a/e$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). For any point $P$ on the ellipse, the sum of distances to both foci is constant: $d_1 + d_2 = 2a$. The ratio of distance to focus over distance to directrix equals eccentricity $e$. For vertical major axis ($b > a$), interchange $x$ and $y$.",
+                        "videoUrl": "assets/videos/Coordinates_of_Foci_and_Equation_of_Directrix_of_an_Ellipse.mp4",
+                        "videoTitle": "Coordinates of Foci and Equation of Directrix of an Ellipse Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First and Second Derivatives of Maxima and Minima Points",
+                        "formula": "$$\\text{Stationary Point: } f'(x_0) = 0; \\quad f''(x_0) < 0 \\implies \\text{Local Maximum}, \\quad f''(x_0) > 0 \\implies \\text{Local Minimum}, \\quad f''(x_0) = 0 \\implies \\text{Inconclusive}$$",
+                        "description": "Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined. The Second Derivative Test classifies stationary points: concave down ($f'' < 0$) indicates a local maximum, concave up ($f'' > 0$) indicates a local minimum, and $f'' = 0$ requires higher-order derivatives or the first derivative sign test.",
+                        "examTip": "Found in Mathematics: Calculus. Critical in engineering optimization (e.g., minimum material cost, peak heat flux, maximum power transfer). Always check domain boundary endpoints for absolute (global) extrema.",
+                        "videoUrl": "assets/videos/First_and_Second_Derivatives_of_Maxima_and_Minima_Points.mp4",
+                        "videoTitle": "First and Second Derivatives of Maxima and Minima Points Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Partial Derivatives",
+                        "formula": "$$\\frac{\\partial f}{\\partial x} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x, y) - f(x, y)}{\\Delta x}, \\quad df = \\frac{\\partial f}{\\partial x} dx + \\frac{\\partial f}{\\partial y} dy, \\quad \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial^2 f}{\\partial y \\partial x}$$",
+                        "description": "The partial derivative of a multivariable function $f(x, y)$ with respect to $x$ measures the rate of change of $f$ in the $x$-direction while treating all other variables ($y, z, \\dots$) as constant parameters. Clairaut's theorem guarantees equality of mixed partials for continuous second derivatives.",
+                        "examTip": "Found in Mathematics: Calculus and Thermodynamics. When taking $\\partial / \\partial x$, hold $y$ strictly constant. The total differential $df$ is the basis for error and uncertainty propagation in experimental measurements: $\\sigma_f^2 = (\\frac{\\partial f}{\\partial x})^2 \\sigma_x^2 + (\\frac{\\partial f}{\\partial y})^2 \\sigma_y^2$.",
+                        "videoUrl": "assets/videos/Partial_Derivatives.mp4",
+                        "videoTitle": "Partial Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curvature of Any Curve in Terms of Derivatives",
+                        "formula": "$$\\kappa = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}}, \\quad \\rho = \\frac{1}{\\kappa} = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|}$$",
+                        "description": "Curvature $\\kappa$ measures the rate of change of direction of the curve with respect to arc length ($|d\\phi / ds|$). The radius of curvature $\\rho = 1/\\kappa$ is the radius of the osculating circle that best fits the curve at that point.",
+                        "examTip": "Found in Mathematics: Calculus and Mechanics of Materials. In Euler-Bernoulli beam theory under small deflections where $(y')^2 \\ll 1$, curvature simplifies to $\\kappa \\approx |y''| = M / (EI)$, yielding the governing beam bending equation $EI \\, d^2y/dx^2 = M(x)$. Also critical in highway curve design.",
+                        "videoUrl": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+                        "videoTitle": "Curvature of Any Curve in Terms of Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties of Identity Matrix",
+                        "formula": "$$I_n = \\begin{bmatrix} 1 & 0 & \\cdots & 0 \\\\ 0 & 1 & \\cdots & 0 \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 0 & 0 & \\cdots & 1 \\end{bmatrix}; \\quad A I = I A = A, \\quad I^{-1} = I, \\quad \\det(I) = 1, \\quad \\text{Tr}(I_n) = n, \\quad I^k = I$$",
+                        "description": "The identity matrix $I_n$ is the $n \\times n$ diagonal matrix with ones along the main diagonal and zeros elsewhere. It serves as the multiplicative identity in matrix algebra: $A I = I A = A$. It is symmetric ($I^T = I$), idempotent ($I^2 = I$), and orthogonal ($I^T I = I$) with determinant $1$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. An invertible matrix satisfies $A A^{-1} = A^{-1} A = I$. The characteristic equation for eigenvalues is $\\det(A - \\lambda I) = 0$. For scalar $c$, the trace of $c I_n$ is $c \\cdot n$ and $\\det(c I_n) = c^n$.",
+                        "videoUrl": "assets/videos/Properties_of_Identity_Matrix.mp4",
+                        "videoTitle": "Properties of Identity Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complementary Function and Particular Integral of a Differential Equation",
+                        "formula": "$$y(x) = y_c(x) + y_p(x); \\quad L[y_c] = 0 \\quad (\\text{Homogeneous Solution}), \\quad L[y_p] = f(x) \\quad (\\text{Particular Solution})$$",
+                        "description": "The general solution to a linear non-homogeneous differential equation $L[y] = f(x)$ is the linear superposition of the complementary function $y_c(x)$ (general solution of $L[y] = 0$ containing $n$ arbitrary constants) and any particular integral $y_p(x)$ satisfying the driving force $f(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. In mechanical vibrations and electrical RLC circuits, the complementary function $y_c(x)$ corresponds to the transient response (natural response which dies out with damping), while the particular integral $y_p(x)$ corresponds to the steady-state forced response.",
+                        "videoUrl": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+                        "videoTitle": "Complementary Function and Particular Integral Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Parallel and Perpendicular Lines",
                         "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
                         "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
@@ -14805,6 +14994,69 @@ window.calcEvaluate = function() {
                     }
             ],
         "Chemical": [
+                {
+                        "title": "Volumes of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$V_{\\text{cyl}} = \\pi r^2 h, \\quad V_{\\text{cube}} = s^3, \\quad V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h, \\quad V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3$$",
+                        "description": "Fundamental volume formulas for standard geometric solids: right circular cylinder with radius $r$ and height $h$; cube with edge length $s$; right circular cone with base radius $r$ and height $h$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Notice that a cone occupies exactly one-third ($1/3$) the volume of a cylinder with identical base radius and height. Sphere volume is the integral of spherical shells ($dV = 4\\pi r^2 dr$).",
+                        "videoUrl": "assets/videos/Volumes_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Volumes of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coordinates of Foci and Equation of Directrix of an Ellipse",
+                        "formula": "$$\\text{Ellipse: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b); \\quad c = \\sqrt{a^2 - b^2}, \\ e = \\frac{c}{a}; \\quad \\text{Foci: } (\\pm c, 0), \\quad \\text{Directrices: } x = \\pm \\frac{a}{e} = \\pm \\frac{a^2}{c}$$",
+                        "description": "For an ellipse centered at the origin with semi-major axis $a$ and semi-minor axis $b$ ($a > b$), the focal distance is $c = \\sqrt{a^2 - b^2}$, yielding foci at $(\\pm c, 0)$, eccentricity $e = c/a < 1$, and directrices vertical lines at $x = \\pm a/e$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). For any point $P$ on the ellipse, the sum of distances to both foci is constant: $d_1 + d_2 = 2a$. The ratio of distance to focus over distance to directrix equals eccentricity $e$. For vertical major axis ($b > a$), interchange $x$ and $y$.",
+                        "videoUrl": "assets/videos/Coordinates_of_Foci_and_Equation_of_Directrix_of_an_Ellipse.mp4",
+                        "videoTitle": "Coordinates of Foci and Equation of Directrix of an Ellipse Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First and Second Derivatives of Maxima and Minima Points",
+                        "formula": "$$\\text{Stationary Point: } f'(x_0) = 0; \\quad f''(x_0) < 0 \\implies \\text{Local Maximum}, \\quad f''(x_0) > 0 \\implies \\text{Local Minimum}, \\quad f''(x_0) = 0 \\implies \\text{Inconclusive}$$",
+                        "description": "Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined. The Second Derivative Test classifies stationary points: concave down ($f'' < 0$) indicates a local maximum, concave up ($f'' > 0$) indicates a local minimum, and $f'' = 0$ requires higher-order derivatives or the first derivative sign test.",
+                        "examTip": "Found in Mathematics: Calculus. Critical in engineering optimization (e.g., minimum material cost, peak heat flux, maximum power transfer). Always check domain boundary endpoints for absolute (global) extrema.",
+                        "videoUrl": "assets/videos/First_and_Second_Derivatives_of_Maxima_and_Minima_Points.mp4",
+                        "videoTitle": "First and Second Derivatives of Maxima and Minima Points Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Partial Derivatives",
+                        "formula": "$$\\frac{\\partial f}{\\partial x} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x, y) - f(x, y)}{\\Delta x}, \\quad df = \\frac{\\partial f}{\\partial x} dx + \\frac{\\partial f}{\\partial y} dy, \\quad \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial^2 f}{\\partial y \\partial x}$$",
+                        "description": "The partial derivative of a multivariable function $f(x, y)$ with respect to $x$ measures the rate of change of $f$ in the $x$-direction while treating all other variables ($y, z, \\dots$) as constant parameters. Clairaut's theorem guarantees equality of mixed partials for continuous second derivatives.",
+                        "examTip": "Found in Mathematics: Calculus and Thermodynamics. When taking $\\partial / \\partial x$, hold $y$ strictly constant. The total differential $df$ is the basis for error and uncertainty propagation in experimental measurements: $\\sigma_f^2 = (\\frac{\\partial f}{\\partial x})^2 \\sigma_x^2 + (\\frac{\\partial f}{\\partial y})^2 \\sigma_y^2$.",
+                        "videoUrl": "assets/videos/Partial_Derivatives.mp4",
+                        "videoTitle": "Partial Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curvature of Any Curve in Terms of Derivatives",
+                        "formula": "$$\\kappa = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}}, \\quad \\rho = \\frac{1}{\\kappa} = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|}$$",
+                        "description": "Curvature $\\kappa$ measures the rate of change of direction of the curve with respect to arc length ($|d\\phi / ds|$). The radius of curvature $\\rho = 1/\\kappa$ is the radius of the osculating circle that best fits the curve at that point.",
+                        "examTip": "Found in Mathematics: Calculus and Mechanics of Materials. In Euler-Bernoulli beam theory under small deflections where $(y')^2 \\ll 1$, curvature simplifies to $\\kappa \\approx |y''| = M / (EI)$, yielding the governing beam bending equation $EI \\, d^2y/dx^2 = M(x)$. Also critical in highway curve design.",
+                        "videoUrl": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+                        "videoTitle": "Curvature of Any Curve in Terms of Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties of Identity Matrix",
+                        "formula": "$$I_n = \\begin{bmatrix} 1 & 0 & \\cdots & 0 \\\\ 0 & 1 & \\cdots & 0 \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 0 & 0 & \\cdots & 1 \\end{bmatrix}; \\quad A I = I A = A, \\quad I^{-1} = I, \\quad \\det(I) = 1, \\quad \\text{Tr}(I_n) = n, \\quad I^k = I$$",
+                        "description": "The identity matrix $I_n$ is the $n \\times n$ diagonal matrix with ones along the main diagonal and zeros elsewhere. It serves as the multiplicative identity in matrix algebra: $A I = I A = A$. It is symmetric ($I^T = I$), idempotent ($I^2 = I$), and orthogonal ($I^T I = I$) with determinant $1$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. An invertible matrix satisfies $A A^{-1} = A^{-1} A = I$. The characteristic equation for eigenvalues is $\\det(A - \\lambda I) = 0$. For scalar $c$, the trace of $c I_n$ is $c \\cdot n$ and $\\det(c I_n) = c^n$.",
+                        "videoUrl": "assets/videos/Properties_of_Identity_Matrix.mp4",
+                        "videoTitle": "Properties of Identity Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complementary Function and Particular Integral of a Differential Equation",
+                        "formula": "$$y(x) = y_c(x) + y_p(x); \\quad L[y_c] = 0 \\quad (\\text{Homogeneous Solution}), \\quad L[y_p] = f(x) \\quad (\\text{Particular Solution})$$",
+                        "description": "The general solution to a linear non-homogeneous differential equation $L[y] = f(x)$ is the linear superposition of the complementary function $y_c(x)$ (general solution of $L[y] = 0$ containing $n$ arbitrary constants) and any particular integral $y_p(x)$ satisfying the driving force $f(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. In mechanical vibrations and electrical RLC circuits, the complementary function $y_c(x)$ corresponds to the transient response (natural response which dies out with damping), while the particular integral $y_p(x)$ corresponds to the steady-state forced response.",
+                        "videoUrl": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+                        "videoTitle": "Complementary Function and Particular Integral Explainer",
+                        "videoDuration": "10s"
+                },
                 {
                         "title": "Parallel and Perpendicular Lines",
                         "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
@@ -17448,6 +17700,69 @@ window.calcEvaluate = function() {
             ],
         "Industrial": [
                 {
+                        "title": "Volumes of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$V_{\\text{cyl}} = \\pi r^2 h, \\quad V_{\\text{cube}} = s^3, \\quad V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h, \\quad V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3$$",
+                        "description": "Fundamental volume formulas for standard geometric solids: right circular cylinder with radius $r$ and height $h$; cube with edge length $s$; right circular cone with base radius $r$ and height $h$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Notice that a cone occupies exactly one-third ($1/3$) the volume of a cylinder with identical base radius and height. Sphere volume is the integral of spherical shells ($dV = 4\\pi r^2 dr$).",
+                        "videoUrl": "assets/videos/Volumes_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Volumes of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coordinates of Foci and Equation of Directrix of an Ellipse",
+                        "formula": "$$\\text{Ellipse: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b); \\quad c = \\sqrt{a^2 - b^2}, \\ e = \\frac{c}{a}; \\quad \\text{Foci: } (\\pm c, 0), \\quad \\text{Directrices: } x = \\pm \\frac{a}{e} = \\pm \\frac{a^2}{c}$$",
+                        "description": "For an ellipse centered at the origin with semi-major axis $a$ and semi-minor axis $b$ ($a > b$), the focal distance is $c = \\sqrt{a^2 - b^2}$, yielding foci at $(\\pm c, 0)$, eccentricity $e = c/a < 1$, and directrices vertical lines at $x = \\pm a/e$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). For any point $P$ on the ellipse, the sum of distances to both foci is constant: $d_1 + d_2 = 2a$. The ratio of distance to focus over distance to directrix equals eccentricity $e$. For vertical major axis ($b > a$), interchange $x$ and $y$.",
+                        "videoUrl": "assets/videos/Coordinates_of_Foci_and_Equation_of_Directrix_of_an_Ellipse.mp4",
+                        "videoTitle": "Coordinates of Foci and Equation of Directrix of an Ellipse Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First and Second Derivatives of Maxima and Minima Points",
+                        "formula": "$$\\text{Stationary Point: } f'(x_0) = 0; \\quad f''(x_0) < 0 \\implies \\text{Local Maximum}, \\quad f''(x_0) > 0 \\implies \\text{Local Minimum}, \\quad f''(x_0) = 0 \\implies \\text{Inconclusive}$$",
+                        "description": "Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined. The Second Derivative Test classifies stationary points: concave down ($f'' < 0$) indicates a local maximum, concave up ($f'' > 0$) indicates a local minimum, and $f'' = 0$ requires higher-order derivatives or the first derivative sign test.",
+                        "examTip": "Found in Mathematics: Calculus. Critical in engineering optimization (e.g., minimum material cost, peak heat flux, maximum power transfer). Always check domain boundary endpoints for absolute (global) extrema.",
+                        "videoUrl": "assets/videos/First_and_Second_Derivatives_of_Maxima_and_Minima_Points.mp4",
+                        "videoTitle": "First and Second Derivatives of Maxima and Minima Points Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Partial Derivatives",
+                        "formula": "$$\\frac{\\partial f}{\\partial x} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x, y) - f(x, y)}{\\Delta x}, \\quad df = \\frac{\\partial f}{\\partial x} dx + \\frac{\\partial f}{\\partial y} dy, \\quad \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial^2 f}{\\partial y \\partial x}$$",
+                        "description": "The partial derivative of a multivariable function $f(x, y)$ with respect to $x$ measures the rate of change of $f$ in the $x$-direction while treating all other variables ($y, z, \\dots$) as constant parameters. Clairaut's theorem guarantees equality of mixed partials for continuous second derivatives.",
+                        "examTip": "Found in Mathematics: Calculus and Thermodynamics. When taking $\\partial / \\partial x$, hold $y$ strictly constant. The total differential $df$ is the basis for error and uncertainty propagation in experimental measurements: $\\sigma_f^2 = (\\frac{\\partial f}{\\partial x})^2 \\sigma_x^2 + (\\frac{\\partial f}{\\partial y})^2 \\sigma_y^2$.",
+                        "videoUrl": "assets/videos/Partial_Derivatives.mp4",
+                        "videoTitle": "Partial Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curvature of Any Curve in Terms of Derivatives",
+                        "formula": "$$\\kappa = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}}, \\quad \\rho = \\frac{1}{\\kappa} = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|}$$",
+                        "description": "Curvature $\\kappa$ measures the rate of change of direction of the curve with respect to arc length ($|d\\phi / ds|$). The radius of curvature $\\rho = 1/\\kappa$ is the radius of the osculating circle that best fits the curve at that point.",
+                        "examTip": "Found in Mathematics: Calculus and Mechanics of Materials. In Euler-Bernoulli beam theory under small deflections where $(y')^2 \\ll 1$, curvature simplifies to $\\kappa \\approx |y''| = M / (EI)$, yielding the governing beam bending equation $EI \\, d^2y/dx^2 = M(x)$. Also critical in highway curve design.",
+                        "videoUrl": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+                        "videoTitle": "Curvature of Any Curve in Terms of Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties of Identity Matrix",
+                        "formula": "$$I_n = \\begin{bmatrix} 1 & 0 & \\cdots & 0 \\\\ 0 & 1 & \\cdots & 0 \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 0 & 0 & \\cdots & 1 \\end{bmatrix}; \\quad A I = I A = A, \\quad I^{-1} = I, \\quad \\det(I) = 1, \\quad \\text{Tr}(I_n) = n, \\quad I^k = I$$",
+                        "description": "The identity matrix $I_n$ is the $n \\times n$ diagonal matrix with ones along the main diagonal and zeros elsewhere. It serves as the multiplicative identity in matrix algebra: $A I = I A = A$. It is symmetric ($I^T = I$), idempotent ($I^2 = I$), and orthogonal ($I^T I = I$) with determinant $1$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. An invertible matrix satisfies $A A^{-1} = A^{-1} A = I$. The characteristic equation for eigenvalues is $\\det(A - \\lambda I) = 0$. For scalar $c$, the trace of $c I_n$ is $c \\cdot n$ and $\\det(c I_n) = c^n$.",
+                        "videoUrl": "assets/videos/Properties_of_Identity_Matrix.mp4",
+                        "videoTitle": "Properties of Identity Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complementary Function and Particular Integral of a Differential Equation",
+                        "formula": "$$y(x) = y_c(x) + y_p(x); \\quad L[y_c] = 0 \\quad (\\text{Homogeneous Solution}), \\quad L[y_p] = f(x) \\quad (\\text{Particular Solution})$$",
+                        "description": "The general solution to a linear non-homogeneous differential equation $L[y] = f(x)$ is the linear superposition of the complementary function $y_c(x)$ (general solution of $L[y] = 0$ containing $n$ arbitrary constants) and any particular integral $y_p(x)$ satisfying the driving force $f(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. In mechanical vibrations and electrical RLC circuits, the complementary function $y_c(x)$ corresponds to the transient response (natural response which dies out with damping), while the particular integral $y_p(x)$ corresponds to the steady-state forced response.",
+                        "videoUrl": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+                        "videoTitle": "Complementary Function and Particular Integral Explainer",
+                        "videoDuration": "10s"
+                },
+                {
                         "title": "Parallel and Perpendicular Lines",
                         "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
                         "description": "Two non-vertical lines are parallel if and only if they share identical slopes ($m_1 = m_2$). Two non-vertical lines are perpendicular (orthogonal) if and only if their slopes are negative reciprocals ($m_1 m_2 = -1$).",
@@ -19430,6 +19745,69 @@ window.calcEvaluate = function() {
                     }
             ],
         "Environmental": [
+                {
+                        "title": "Volumes of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$V_{\\text{cyl}} = \\pi r^2 h, \\quad V_{\\text{cube}} = s^3, \\quad V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h, \\quad V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3$$",
+                        "description": "Fundamental volume formulas for standard geometric solids: right circular cylinder with radius $r$ and height $h$; cube with edge length $s$; right circular cone with base radius $r$ and height $h$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Notice that a cone occupies exactly one-third ($1/3$) the volume of a cylinder with identical base radius and height. Sphere volume is the integral of spherical shells ($dV = 4\\pi r^2 dr$).",
+                        "videoUrl": "assets/videos/Volumes_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Volumes of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coordinates of Foci and Equation of Directrix of an Ellipse",
+                        "formula": "$$\\text{Ellipse: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b); \\quad c = \\sqrt{a^2 - b^2}, \\ e = \\frac{c}{a}; \\quad \\text{Foci: } (\\pm c, 0), \\quad \\text{Directrices: } x = \\pm \\frac{a}{e} = \\pm \\frac{a^2}{c}$$",
+                        "description": "For an ellipse centered at the origin with semi-major axis $a$ and semi-minor axis $b$ ($a > b$), the focal distance is $c = \\sqrt{a^2 - b^2}$, yielding foci at $(\\pm c, 0)$, eccentricity $e = c/a < 1$, and directrices vertical lines at $x = \\pm a/e$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). For any point $P$ on the ellipse, the sum of distances to both foci is constant: $d_1 + d_2 = 2a$. The ratio of distance to focus over distance to directrix equals eccentricity $e$. For vertical major axis ($b > a$), interchange $x$ and $y$.",
+                        "videoUrl": "assets/videos/Coordinates_of_Foci_and_Equation_of_Directrix_of_an_Ellipse.mp4",
+                        "videoTitle": "Coordinates of Foci and Equation of Directrix of an Ellipse Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First and Second Derivatives of Maxima and Minima Points",
+                        "formula": "$$\\text{Stationary Point: } f'(x_0) = 0; \\quad f''(x_0) < 0 \\implies \\text{Local Maximum}, \\quad f''(x_0) > 0 \\implies \\text{Local Minimum}, \\quad f''(x_0) = 0 \\implies \\text{Inconclusive}$$",
+                        "description": "Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined. The Second Derivative Test classifies stationary points: concave down ($f'' < 0$) indicates a local maximum, concave up ($f'' > 0$) indicates a local minimum, and $f'' = 0$ requires higher-order derivatives or the first derivative sign test.",
+                        "examTip": "Found in Mathematics: Calculus. Critical in engineering optimization (e.g., minimum material cost, peak heat flux, maximum power transfer). Always check domain boundary endpoints for absolute (global) extrema.",
+                        "videoUrl": "assets/videos/First_and_Second_Derivatives_of_Maxima_and_Minima_Points.mp4",
+                        "videoTitle": "First and Second Derivatives of Maxima and Minima Points Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Partial Derivatives",
+                        "formula": "$$\\frac{\\partial f}{\\partial x} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x, y) - f(x, y)}{\\Delta x}, \\quad df = \\frac{\\partial f}{\\partial x} dx + \\frac{\\partial f}{\\partial y} dy, \\quad \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial^2 f}{\\partial y \\partial x}$$",
+                        "description": "The partial derivative of a multivariable function $f(x, y)$ with respect to $x$ measures the rate of change of $f$ in the $x$-direction while treating all other variables ($y, z, \\dots$) as constant parameters. Clairaut's theorem guarantees equality of mixed partials for continuous second derivatives.",
+                        "examTip": "Found in Mathematics: Calculus and Thermodynamics. When taking $\\partial / \\partial x$, hold $y$ strictly constant. The total differential $df$ is the basis for error and uncertainty propagation in experimental measurements: $\\sigma_f^2 = (\\frac{\\partial f}{\\partial x})^2 \\sigma_x^2 + (\\frac{\\partial f}{\\partial y})^2 \\sigma_y^2$.",
+                        "videoUrl": "assets/videos/Partial_Derivatives.mp4",
+                        "videoTitle": "Partial Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curvature of Any Curve in Terms of Derivatives",
+                        "formula": "$$\\kappa = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}}, \\quad \\rho = \\frac{1}{\\kappa} = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|}$$",
+                        "description": "Curvature $\\kappa$ measures the rate of change of direction of the curve with respect to arc length ($|d\\phi / ds|$). The radius of curvature $\\rho = 1/\\kappa$ is the radius of the osculating circle that best fits the curve at that point.",
+                        "examTip": "Found in Mathematics: Calculus and Mechanics of Materials. In Euler-Bernoulli beam theory under small deflections where $(y')^2 \\ll 1$, curvature simplifies to $\\kappa \\approx |y''| = M / (EI)$, yielding the governing beam bending equation $EI \\, d^2y/dx^2 = M(x)$. Also critical in highway curve design.",
+                        "videoUrl": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+                        "videoTitle": "Curvature of Any Curve in Terms of Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties of Identity Matrix",
+                        "formula": "$$I_n = \\begin{bmatrix} 1 & 0 & \\cdots & 0 \\\\ 0 & 1 & \\cdots & 0 \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 0 & 0 & \\cdots & 1 \\end{bmatrix}; \\quad A I = I A = A, \\quad I^{-1} = I, \\quad \\det(I) = 1, \\quad \\text{Tr}(I_n) = n, \\quad I^k = I$$",
+                        "description": "The identity matrix $I_n$ is the $n \\times n$ diagonal matrix with ones along the main diagonal and zeros elsewhere. It serves as the multiplicative identity in matrix algebra: $A I = I A = A$. It is symmetric ($I^T = I$), idempotent ($I^2 = I$), and orthogonal ($I^T I = I$) with determinant $1$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. An invertible matrix satisfies $A A^{-1} = A^{-1} A = I$. The characteristic equation for eigenvalues is $\\det(A - \\lambda I) = 0$. For scalar $c$, the trace of $c I_n$ is $c \\cdot n$ and $\\det(c I_n) = c^n$.",
+                        "videoUrl": "assets/videos/Properties_of_Identity_Matrix.mp4",
+                        "videoTitle": "Properties of Identity Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complementary Function and Particular Integral of a Differential Equation",
+                        "formula": "$$y(x) = y_c(x) + y_p(x); \\quad L[y_c] = 0 \\quad (\\text{Homogeneous Solution}), \\quad L[y_p] = f(x) \\quad (\\text{Particular Solution})$$",
+                        "description": "The general solution to a linear non-homogeneous differential equation $L[y] = f(x)$ is the linear superposition of the complementary function $y_c(x)$ (general solution of $L[y] = 0$ containing $n$ arbitrary constants) and any particular integral $y_p(x)$ satisfying the driving force $f(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. In mechanical vibrations and electrical RLC circuits, the complementary function $y_c(x)$ corresponds to the transient response (natural response which dies out with damping), while the particular integral $y_p(x)$ corresponds to the steady-state forced response.",
+                        "videoUrl": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+                        "videoTitle": "Complementary Function and Particular Integral Explainer",
+                        "videoDuration": "10s"
+                },
                 {
                         "title": "Parallel and Perpendicular Lines",
                         "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
@@ -21831,6 +22209,69 @@ window.calcEvaluate = function() {
                     }
             ],
         "Other": [
+                {
+                        "title": "Volumes of Basic Shapes (Cylinder, Cube, Cone, Sphere)",
+                        "formula": "$$V_{\\text{cyl}} = \\pi r^2 h, \\quad V_{\\text{cube}} = s^3, \\quad V_{\\text{cone}} = \\frac{1}{3}\\pi r^2 h, \\quad V_{\\text{sphere}} = \\frac{4}{3}\\pi r^3$$",
+                        "description": "Fundamental volume formulas for standard geometric solids: right circular cylinder with radius $r$ and height $h$; cube with edge length $s$; right circular cone with base radius $r$ and height $h$; and sphere with radius $r$.",
+                        "examTip": "Found in Mathematics: Mensuration (Geometry). Notice that a cone occupies exactly one-third ($1/3$) the volume of a cylinder with identical base radius and height. Sphere volume is the integral of spherical shells ($dV = 4\\pi r^2 dr$).",
+                        "videoUrl": "assets/videos/Volumes_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+                        "videoTitle": "Volumes of Basic Shapes Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Coordinates of Foci and Equation of Directrix of an Ellipse",
+                        "formula": "$$\\text{Ellipse: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\ (a > b); \\quad c = \\sqrt{a^2 - b^2}, \\ e = \\frac{c}{a}; \\quad \\text{Foci: } (\\pm c, 0), \\quad \\text{Directrices: } x = \\pm \\frac{a}{e} = \\pm \\frac{a^2}{c}$$",
+                        "description": "For an ellipse centered at the origin with semi-major axis $a$ and semi-minor axis $b$ ($a > b$), the focal distance is $c = \\sqrt{a^2 - b^2}$, yielding foci at $(\\pm c, 0)$, eccentricity $e = c/a < 1$, and directrices vertical lines at $x = \\pm a/e$.",
+                        "examTip": "Found in Mathematics: Analytic Geometry (Conic Sections). For any point $P$ on the ellipse, the sum of distances to both foci is constant: $d_1 + d_2 = 2a$. The ratio of distance to focus over distance to directrix equals eccentricity $e$. For vertical major axis ($b > a$), interchange $x$ and $y$.",
+                        "videoUrl": "assets/videos/Coordinates_of_Foci_and_Equation_of_Directrix_of_an_Ellipse.mp4",
+                        "videoTitle": "Coordinates of Foci and Equation of Directrix of an Ellipse Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "First and Second Derivatives of Maxima and Minima Points",
+                        "formula": "$$\\text{Stationary Point: } f'(x_0) = 0; \\quad f''(x_0) < 0 \\implies \\text{Local Maximum}, \\quad f''(x_0) > 0 \\implies \\text{Local Minimum}, \\quad f''(x_0) = 0 \\implies \\text{Inconclusive}$$",
+                        "description": "Critical points occur where $f'(x) = 0$ or $f'(x)$ is undefined. The Second Derivative Test classifies stationary points: concave down ($f'' < 0$) indicates a local maximum, concave up ($f'' > 0$) indicates a local minimum, and $f'' = 0$ requires higher-order derivatives or the first derivative sign test.",
+                        "examTip": "Found in Mathematics: Calculus. Critical in engineering optimization (e.g., minimum material cost, peak heat flux, maximum power transfer). Always check domain boundary endpoints for absolute (global) extrema.",
+                        "videoUrl": "assets/videos/First_and_Second_Derivatives_of_Maxima_and_Minima_Points.mp4",
+                        "videoTitle": "First and Second Derivatives of Maxima and Minima Points Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Partial Derivatives",
+                        "formula": "$$\\frac{\\partial f}{\\partial x} = \\lim_{\\Delta x \\to 0} \\frac{f(x + \\Delta x, y) - f(x, y)}{\\Delta x}, \\quad df = \\frac{\\partial f}{\\partial x} dx + \\frac{\\partial f}{\\partial y} dy, \\quad \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial^2 f}{\\partial y \\partial x}$$",
+                        "description": "The partial derivative of a multivariable function $f(x, y)$ with respect to $x$ measures the rate of change of $f$ in the $x$-direction while treating all other variables ($y, z, \\dots$) as constant parameters. Clairaut's theorem guarantees equality of mixed partials for continuous second derivatives.",
+                        "examTip": "Found in Mathematics: Calculus and Thermodynamics. When taking $\\partial / \\partial x$, hold $y$ strictly constant. The total differential $df$ is the basis for error and uncertainty propagation in experimental measurements: $\\sigma_f^2 = (\\frac{\\partial f}{\\partial x})^2 \\sigma_x^2 + (\\frac{\\partial f}{\\partial y})^2 \\sigma_y^2$.",
+                        "videoUrl": "assets/videos/Partial_Derivatives.mp4",
+                        "videoTitle": "Partial Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Curvature of Any Curve in Terms of Derivatives",
+                        "formula": "$$\\kappa = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}}, \\quad \\rho = \\frac{1}{\\kappa} = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|}$$",
+                        "description": "Curvature $\\kappa$ measures the rate of change of direction of the curve with respect to arc length ($|d\\phi / ds|$). The radius of curvature $\\rho = 1/\\kappa$ is the radius of the osculating circle that best fits the curve at that point.",
+                        "examTip": "Found in Mathematics: Calculus and Mechanics of Materials. In Euler-Bernoulli beam theory under small deflections where $(y')^2 \\ll 1$, curvature simplifies to $\\kappa \\approx |y''| = M / (EI)$, yielding the governing beam bending equation $EI \\, d^2y/dx^2 = M(x)$. Also critical in highway curve design.",
+                        "videoUrl": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+                        "videoTitle": "Curvature of Any Curve in Terms of Derivatives Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Properties of Identity Matrix",
+                        "formula": "$$I_n = \\begin{bmatrix} 1 & 0 & \\cdots & 0 \\\\ 0 & 1 & \\cdots & 0 \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 0 & 0 & \\cdots & 1 \\end{bmatrix}; \\quad A I = I A = A, \\quad I^{-1} = I, \\quad \\det(I) = 1, \\quad \\text{Tr}(I_n) = n, \\quad I^k = I$$",
+                        "description": "The identity matrix $I_n$ is the $n \\times n$ diagonal matrix with ones along the main diagonal and zeros elsewhere. It serves as the multiplicative identity in matrix algebra: $A I = I A = A$. It is symmetric ($I^T = I$), idempotent ($I^2 = I$), and orthogonal ($I^T I = I$) with determinant $1$.",
+                        "examTip": "Found in Mathematics: Linear Algebra. An invertible matrix satisfies $A A^{-1} = A^{-1} A = I$. The characteristic equation for eigenvalues is $\\det(A - \\lambda I) = 0$. For scalar $c$, the trace of $c I_n$ is $c \\cdot n$ and $\\det(c I_n) = c^n$.",
+                        "videoUrl": "assets/videos/Properties_of_Identity_Matrix.mp4",
+                        "videoTitle": "Properties of Identity Matrix Explainer",
+                        "videoDuration": "10s"
+                },
+                {
+                        "title": "Complementary Function and Particular Integral of a Differential Equation",
+                        "formula": "$$y(x) = y_c(x) + y_p(x); \\quad L[y_c] = 0 \\quad (\\text{Homogeneous Solution}), \\quad L[y_p] = f(x) \\quad (\\text{Particular Solution})$$",
+                        "description": "The general solution to a linear non-homogeneous differential equation $L[y] = f(x)$ is the linear superposition of the complementary function $y_c(x)$ (general solution of $L[y] = 0$ containing $n$ arbitrary constants) and any particular integral $y_p(x)$ satisfying the driving force $f(x)$.",
+                        "examTip": "Found in Mathematics: Differential Equations. In mechanical vibrations and electrical RLC circuits, the complementary function $y_c(x)$ corresponds to the transient response (natural response which dies out with damping), while the particular integral $y_p(x)$ corresponds to the steady-state forced response.",
+                        "videoUrl": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+                        "videoTitle": "Complementary Function and Particular Integral Explainer",
+                        "videoDuration": "10s"
+                },
                 {
                         "title": "Parallel and Perpendicular Lines",
                         "formula": "$$\\text{Parallel: } m_1 = m_2, \\quad \\text{Perpendicular: } m_1 \\cdot m_2 = -1 \\iff m_2 = -\\frac{1}{m_1}$$",
@@ -27780,7 +28221,7 @@ window.calcEvaluate = function() {
     function getMechanicalSubjectId(title, examTip) {
         const lower = (title || '').toLowerCase();
         // 1. Mathematics
-        if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|l’hôpital|gradient vector|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|laplace transforms|laplace transform definition|matrix multiplication|inverse of a square matrix|inverse of a matrix|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|algorithm|flowchart|pseudocode|quadratic equation|complex numbers:|law of sines|double-angle|arithmetic vs geometric/i.test(lower)) return 1;
+        if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|l’hôpital|gradient vector|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|laplace transforms|laplace transform definition|matrix multiplication|inverse of a square matrix|inverse of a matrix|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|algorithm|flowchart|pseudocode|quadratic equation|complex numbers:|law of sines|double-angle|arithmetic vs geometric|volumes of basic shapes|coordinates of foci and equation of directrix|maxima and minima|partial derivatives|curvature of any curve|properties of identity matrix|complementary function and particular integral/i.test(lower)) return 1;
         // 2. Probability and Statistics
         if (/binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
         // 3. Ethics and Professional Practice
