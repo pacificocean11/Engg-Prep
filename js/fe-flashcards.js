@@ -7,7 +7,7 @@
 
     let currentDeck = [];
     let currentIndex = 0;
-    let isFlipped = false;
+    let isFlipped = true;
     let currentMode = 'recall'; // 'recall' or 'identify'
     let currentDiscipline = 'current';
     let currentSubjectFilter = 'all'; // 'all' or 1..14
@@ -35,31 +35,31 @@
         // 1. Mathematics
         if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|l’hôpital|gradient vector|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|laplace transforms|laplace transform definition|matrix multiplication|inverse of a square matrix|inverse of a matrix|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|algorithm|flowchart|pseudocode|quadratic equation|complex numbers:|law of sines|double-angle|arithmetic vs geometric|volumes of basic shapes|coordinates of foci and equation of directrix|maxima and minima|partial derivatives|curvature of any curve|properties of identity matrix|complementary function and particular integral/i.test(lower)) return 1;
         // 2. Probability and Statistics
-        if (/binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
+        if (/properties of normal distribution|when to use normal distribution|general character of probability|type i and type ii|binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
         // 3. Ethics and Professional Practice
         if (/paramount duty|pe seal integrity|code of ethics|safety data sheet|signal words|flammability, lfl and ufl|confined space safety|noise pollution measurements|osha|hazard quotient|excess lifetime cancer|chronic daily intake|hierarchy of controls|nfpa 704|electrical safety: gfci|hazop study|lower and upper flammability|intellectual property: patents|conflicts of interest|whistleblowing|ergonomic posture assessment/i.test(lower)) return 3;
         // 4. Engineering Economics
         if (/compound interest|nominal vs\. effective annual|capitalized cost|straight-line depreciation|book value|macrs|bonds|benefit-cost|break-even production volume|internal rate of return|simple payback period|break-even analysis for make-or-buy|payback period:|sensitivity analysis|critical path method|economic order quantity|earned value management|predetermined motion time|kanban production|bill of materials|exponential smoothing|forecasting error|total productive maintenance/i.test(lower)) return 4;
         // 5. Electricity and Magnetism
-        if (/ohm’s law and joule|poynting vector|kirchhoff|thevenin|wheatstone bridge|first-order rc transient|first-order rc circuit time|operational amplifier|ideal operational amplifier|instrumentation amplifier|schmitt trigger|equivalent resistance in series|series rlc resonance|equivalent capacitance and inductance|ac power triangle|three-phase induction motor|synchronous machine|dc shunt motor|ideal transformer|dc motor back-emf/i.test(lower)) return 5;
+        if (/ohm’s law and joule|poynting vector|kirchhoff|thevenin|wheatstone bridge|first-order rc transient|first-order rc circuit time|operational amplifier|ideal operational amplifier|instrumentation amplifier|schmitt trigger|equivalent resistance in series|series rlc resonance|equivalent capacitance and inductance|ac power triangle|three-phase induction motor|synchronous machine|dc shunt motor|ideal transformer|dc motor back-emf|specific resistance of a conductor/i.test(lower)) return 5;
         // 6. Statics
         if (/resolution of a force|lami's theorem|2d static equilibrium|moments \(couples\)|gravity retaining wall|free body diagram support|two-force and three-force|truss zero-force|method of joints|method of sections|parallel axis theorem \(second moment|centroid of composite|area moment of inertia|radius of gyration|product of inertia|centroid and moment of inertia for composite|centroids and area moments of inertia for standard shapes|coulomb dry friction|limiting friction/i.test(lower)) return 6;
         // 7. Dynamics, Kinematics, and Vibrations
-        if (/coriolis|normal and tangential acceleration in curvilinear|rectilinear kinematics|constant acceleration motion|variable acceleration motion|relative motion|projectile motion|kinematics of particles: normal|uniform circular motion|kinetic friction|particle kinetics: direct|potential energy in many|kinetic energy|linear impulse and momentum|coefficient of restitution|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|work-energy principle \(rigid body|rotational kinetic energy|mass moment of inertia of common|mass moment of inertia parallel axis|angular impulse and momentum|planar rigid body equations of motion|conservation of linear and angular momentum for colliding|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility/i.test(lower)) return 7;
+        if (/underdamped|critically damped|overdamped|coriolis|normal and tangential acceleration in curvilinear|rectilinear kinematics|constant acceleration motion|variable acceleration motion|relative motion|projectile motion|kinematics of particles: normal|uniform circular motion|kinetic friction|particle kinetics: direct|potential energy in many|kinetic energy|linear impulse and momentum|coefficient of restitution|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|work-energy principle \(rigid body|rotational kinetic energy|mass moment of inertia of common|mass moment of inertia parallel axis|angular impulse and momentum|planar rigid body equations of motion|conservation of linear and angular momentum for colliding|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility/i.test(lower)) return 7;
         // 8. Mechanics of Materials
-        if (/differential relationships between load, shear|mohr’s circle for plane stress|analytical in-plane principal stresses|generalized hooke’s law|isotropic elastic constants|elastic strain energy|cantilever sheet pile|triaxial shear|vertical stress increase beneath point loads|axial stress and elongation|poisson’s ratio|elastic flexure formula|elastic section modulus|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|maximum shear stress in rectangular cross-section|thermal expansion deformation and thermal stress|combined axial and bending|moment-area first theorem|moment-area second theorem|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel/i.test(lower)) return 8;
+        if (/differential relationships between load, shear|mohr’s circle for plane stress|analytical in-plane principal stresses|generalized hooke’s law|isotropic elastic constants|elastic strain energy|cantilever sheet pile|triaxial shear|vertical stress increase beneath point loads|axial stress and elongation|poisson’s ratio|elastic flexure formula|elastic section modulus|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|maximum shear stress in rectangular cross-section|thermal expansion deformation and thermal stress|combined axial and bending|moment-area first theorem|moment-area second theorem|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modulus of elasticity vs\. modulus of rigidity|transformation of composite section|theoretical effective-length factors/i.test(lower)) return 8;
         // 9. Material Properties and Processing
-        if (/standard portland cement|bragg's law|engineering stress-strain vs|modulus of resilience vs|cubic crystal structures|binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|eutectic and eutectoid|gibbs phase rule|fick’s first law|fick's first law|first-order chemical reaction half-life/i.test(lower)) return 9;
+        if (/standard portland cement|bragg's law|engineering stress-strain vs|modulus of resilience vs|cubic crystal structures|binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|eutectic and eutectoid|gibbs phase rule|fick’s first law|fick's first law|first-order chemical reaction half-life|malleability and ductility|hardness of a material|charpy and izod|thermoplastics vs|peritectic vs|failure by creep|failure by fracture/i.test(lower)) return 9;
         // 10. Fluid Mechanics
-        if (/newton's law of viscosity|newtonian vs non-newtonian|surface tension|capillarity|capillary rise height|hydrostatic pressure distribution|manometers|bouyancy force|hydrostatic force on submerged curved|buoyancy and metacentric|hydrostatic center of pressure|archimedes’ principle|bernoulli’s principle|continuity equation|modified fluid energy equation|darcy-weisbach|reynolds number|hagen-poiseuille|moody, darcy|hydraulic diameter for non-circular|laminar flow friction factor|rapid sand filter|storm sewer gravity|hazen-williams|hardy cross|minor head losses in pipe|drag coefficient and lift|stokes' law|boundary layer displacement|speed of sound & mach|stagnation temperature|froude number and hydraulic|net positive suction head|pump hydraulic power|centrifugal pump cavitation|centrifugal pump affinity laws|pump specific speed|pitot tube|venturi meter|orifice meter|orifice discharging freely|orifice$|coagulation velocity gradient|camp-stein rapid mixing/i.test(lower)) return 10;
+        if (/newton's law of viscosity|newtonian vs non-newtonian|surface tension|capillarity|capillary rise height|hydrostatic pressure distribution|manometers|bouyancy force|hydrostatic force on submerged curved|buoyancy and metacentric|hydrostatic center of pressure|archimedes’ principle|bernoulli’s principle|continuity equation|modified fluid energy equation|darcy-weisbach|reynolds number|hagen-poiseuille|moody, darcy|hydraulic diameter for non-circular|laminar flow friction factor|rapid sand filter|storm sewer gravity|hazen-williams|hardy cross|minor head losses in pipe|drag coefficient and lift|stokes' law|boundary layer displacement|speed of sound & mach|stagnation temperature|froude number and hydraulic|net positive suction head|pump hydraulic power|centrifugal pump cavitation|centrifugal pump affinity laws|pump specific speed|pitot tube|venturi meter|orifice meter|orifice discharging freely|orifice$|coagulation velocity gradient|camp-stein rapid mixing|viscosity of a fluid|impulse turbine vs/i.test(lower)) return 10;
         // 11. Thermodynamics
-        if (/ideal gas law equation|van der waals|compressibility factor|properties for two-phase|mole fraction vs\. mass fraction|zeroth law of thermodynamics|mollier chart|clausius-clapeyron|first law of thermodynamics \(closed|steady-flow energy equation|enthalpy$|carnot thermal efficiency|entropy$|exergy|clausius inequality|entropy change of ideal gases|isothermal process|le chatelier’s principle|isentropic relations for ideal|polytropic process boundary|enthalpy definition and specific heat|ideal rankine cycle|ideal otto cycle|isentropic efficiencies of turbines|gas turbine regenerator|ideal diesel cycle|ideal brayton cycle|refrigeration cycles|coefficient of performance \(cop\)|cop of refrigeration vs|vapor-compression refrigeration|psychrometric humidity ratio|psychrometric chart|dry-bulb, wet-bulb|absolute humidity vs\.|hvac processes|indoor air quality single-compartment|combustion theoretical air|excess air and theoretical/i.test(lower)) return 11;
+        if (/ideal gas law equation|van der waals|compressibility factor|properties for two-phase|mole fraction vs\. mass fraction|zeroth law of thermodynamics|mollier chart|clausius-clapeyron|first law of thermodynamics \(closed|steady-flow energy equation|enthalpy$|carnot thermal efficiency|entropy$|exergy|clausius inequality|entropy change of ideal gases|isothermal process|le chatelier’s principle|isentropic relations for ideal|polytropic process boundary|enthalpy definition and specific heat|ideal rankine cycle|ideal otto cycle|isentropic efficiencies of turbines|gas turbine regenerator|ideal diesel cycle|ideal brayton cycle|refrigeration cycles|coefficient of performance \(cop\)|cop of refrigeration vs|vapor-compression refrigeration|psychrometric humidity ratio|psychrometric chart|dry-bulb, wet-bulb|absolute humidity vs\.|hvac processes|indoor air quality single-compartment|combustion theoretical air|excess air and theoretical|intensive vs\. extensive|universal vs\. specific gas constant|combustion of methane|steam tables|superheated water/i.test(lower)) return 11;
         // 12. Heat Transfer
         if (/fourier’s law of thermal conduction|critical radius of thermal insulation|extended surface fin efficiency|conduction through a plain|conduction through a cylindrical|thermal resistance of an object|newton’s law of cooling|natural convection rayleigh|pool boiling curve|condensation heat transfer|stefan-boltzmann law|radiation view factor|radiation heat exchange|black body vs\. grey|net energy exchange by radiation|biot number for transient|lumped capacitance method|biot number vs\. fourier|log mean temperature difference|overall heat transfer coefficient|effectiveness-ntu method|heat exchanger fouling/i.test(lower)) return 12;
         // 13. Measurements, Instrumentation, and Controls
         if (/strain gauge gauge factor|temperature sensors: thermocouple|first-order sensor dynamic step|second-order sensor natural frequency|open-loop step response method|laplace transform final value|closed-loop feedback control|steady-state error constants|bode plot gain margin|routh-hurwitz stability|root locus construction|pid controller time-domain|process control: first-order|process control: ziegler-nichols|ratio control strategy|cascade control architecture|uncertainty/i.test(lower)) return 13;
         // 14. Mechanical Design and Analysis
-        if (/modified goodman fatigue criterion|modified goodman fatigue failure|soderberg theory|s-n fatigue curve|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|marin factors for fatigue|helical compression spring|equivalent spring stiffness for springs in parallel and series|rolling element bearing rated|equivalent dynamic radial load|power screws lifting torque|flat belt friction|agma lewis bending|asme transmission shaft|spur gear geometry|bolted joint preload|pressure relief valve sizing|types of fits|first angle vs\. third|geometric dimensioning and tolerancing/i.test(lower)) return 14;
+        if (/modified goodman fatigue criterion|modified goodman fatigue failure|soderberg theory|s-n fatigue curve|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|marin factors for fatigue|helical compression spring|equivalent spring stiffness for springs in parallel and series|rolling element bearing rated|equivalent dynamic radial load|power screws lifting torque|flat belt friction|agma lewis bending|asme transmission shaft|spur gear geometry|bolted joint preload|pressure relief valve sizing|types of fits|first angle vs\. third|geometric dimensioning and tolerancing|failure by fatigue/i.test(lower)) return 14;
 
         return 1;
     }
@@ -91,7 +91,7 @@
         if (/mass haul diagram|first angle vs\. third angle/i.test(lower)) return 14;
         if (/osha soil classifications|construction equipment fleet productivity|osha permissible noise/i.test(lower)) return 14;
         if (/lrfd load combinations|wind load design velocity pressure/i.test(lower)) return 11;
-        if (/standard portland cement types|binary phase diagram lever rule|concrete maturity method/i.test(lower)) return 7;
+        if (/standard portland cement types|binary phase diagram lever rule|concrete maturity method|hardness of a material/i.test(lower)) return 7;
         if (/type iii zone settling|solution concentration: molarity/i.test(lower)) return 10;
         if (/modified goodman fatigue|strain gauge gauge factor|distortion energy theory|coulomb-mohr and modified mohr failure criteria/i.test(lower)) return 6;
         if (/hierarchy of controls|nfpa 704|hazop study/i.test(lower)) return 2;
@@ -123,19 +123,19 @@
             /hydraulics|hydrology|water resources|environmental/i.test(tip)) return 10;
 
         // 11. Structural Engineering
-        if (/whitney rectangular|plastic moment capacity of structural steel|aci 318|aisc|structural steel|reinforced concrete|concrete beam|flexural reinforcement|shear stirrup|punching shear|development length|short column.*aci|cracking moment|prestress|influence line|müller-breslau|moment distribution|hardy cross|degree of static indeterminacy|virtual work.*beam|castigliano.*truss|temperature and fabrication deflections in trusses|seismic base shear|equivalent lateral force/i.test(lower) ||
+        if (/whitney rectangular|plastic moment capacity of structural steel|aci 318|aisc|structural steel|reinforced concrete|concrete beam|flexural reinforcement|shear stirrup|punching shear|development length|short column.*aci|cracking moment|prestress|influence line|müller-breslau|moment distribution|hardy cross|degree of static indeterminacy|virtual work.*beam|castigliano.*truss|temperature and fabrication deflections in trusses|seismic base shear|equivalent lateral force|theoretical effective-length factors/i.test(lower) ||
             /reinforced concrete|concrete design|steel design|structural analysis|prestressed concrete/i.test(tip)) return 11;
 
         // 7. Materials
-        if (/concrete.*mix|asphalt|aggregate|superpave|marshall|curing|fineness modulus|air entrainment|slump test|compressive strength of concrete|wood design|timber|modulus of elasticity of structural concrete|concrete maturity method/i.test(lower) ||
+        if (/concrete.*mix|asphalt|aggregate|superpave|marshall|curing|fineness modulus|air entrainment|slump test|compressive strength of concrete|wood design|timber|modulus of elasticity of structural concrete|concrete maturity method|malleability and ductility|charpy and izod|hardness of a material/i.test(lower) ||
             /material properties|concrete technology/i.test(tip)) return 7;
 
         // 6. Mechanics of Materials
-        if (/flexure formula|torsion formula|shear stress|transverse shear|jourawski|thin-walled.*tube|bredt|shear center|stress and elongation|axial stress|poisson’s ratio|thermal expansion.*stress|mohr’s circle|beam deflection|cantilever beam tip deflection|simply supported beam center|elastic section modulus|elastic strain energy|principal stresses|combined axial and bending|hooke’s law|pressure vessel|torsion of circular shafts|maximum shear stress in rectangular|euler’s critical buckling/i.test(lower) ||
+        if (/flexure formula|torsion formula|shear stress|transverse shear|jourawski|thin-walled.*tube|bredt|shear center|stress and elongation|axial stress|poisson’s ratio|thermal expansion.*stress|mohr’s circle|beam deflection|cantilever beam tip deflection|simply supported beam center|elastic section modulus|elastic strain energy|principal stresses|combined axial and bending|hooke’s law|pressure vessel|torsion of circular shafts|maximum shear stress in rectangular|euler’s critical buckling|modulus of elasticity vs\. modulus of rigidity|failure by fatigue|failure by fracture|transformation of composite section/i.test(lower) ||
             /mechanics of materials/i.test(tip)) return 6;
 
         // 8. Fluid Mechanics
-        if (/bernoulli|darcy-weisbach|reynolds number|continuity equation|viscosity|surface tension|capillarity|buoyancy|archimedes|hydrostatic pressure|center of pressure|manometer|pitot tube|venturi|orifice/i.test(lower) ||
+        if (/bernoulli|darcy-weisbach|reynolds number|continuity equation|viscosity|surface tension|capillarity|buoyancy|archimedes|hydrostatic pressure|center of pressure|manometer|pitot tube|venturi|orifice|impulse turbine vs|universal vs\. specific gas constant/i.test(lower) ||
             /fluid mechanics/i.test(tip)) return 8;
 
         // 4. Statics
@@ -218,22 +218,22 @@
         if (/resolution of a force|concurrent forces|lami's theorem|moments \(couples\)|2d static equilibrium|free body diagram support|two-force and three-force|truss zero-force|method of joints|method of sections|gravity retaining wall|parallel axis theorem|centroid of composite|area moment of inertia|radius of gyration|product of inertia|centroids and area moments|coulomb dry friction|angle of static friction|flat belt friction|power screws lifting|weight and mass/i.test(lower) || /statics/i.test(tip)) return 8;
 
         // 9. Dynamics
-        if (/rectilinear kinematics|constant acceleration motion|relative motion|normal and tangential acceleration|uniform circular motion|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|particle kinetics: direct|kinetic friction|planar rigid body equations of motion|newton’s second law for rigid|mass moment of inertia|linear impulse and momentum|angular impulse and momentum|coefficient of restitution|conservation of linear and angular momentum|work-energy principle|kinetic energy|rotational kinetic energy|dynamic friction|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility|vibration/i.test(lower) || /dynamics/i.test(tip)) return 9;
+        if (/rectilinear kinematics|constant acceleration motion|relative motion|normal and tangential acceleration|uniform circular motion|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|particle kinetics: direct|kinetic friction|planar rigid body equations of motion|newton’s second law for rigid|mass moment of inertia|linear impulse and momentum|angular impulse and momentum|coefficient of restitution|conservation of linear and angular momentum|work-energy principle|kinetic energy|rotational kinetic energy|dynamic friction|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility|vibration/i.test(lower) || (/\bdynamics\b/i.test(tip) && !/thermodynamics/i.test(tip))) return 9;
 
         // 10. Strength of Materials
-        if (/differential relationships between load, shear|axial stress and elongation|poisson’s ratio|elastic flexure formula|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|maximum shear stress in rectangular|thermal expansion deformation and thermal stress|elastic section modulus|helical compression spring|agma lewis bending|combined axial and bending|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|moment-area first theorem|moment-area second theorem|elastic strain energy|analytical in-plane principal stresses|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modified goodman|soderberg|s-n fatigue curve|marin factor|rolling element bearing|cantilever sheet pile/i.test(lower) || /mechanics of materials|mechanical design/i.test(tip)) return 10;
+        if (/differential relationships between load, shear|axial stress and elongation|poisson’s ratio|elastic flexure formula|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|maximum shear stress in rectangular|thermal expansion deformation and thermal stress|elastic section modulus|helical compression spring|agma lewis bending|combined axial and bending|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|moment-area first theorem|moment-area second theorem|elastic strain energy|analytical in-plane principal stresses|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modified goodman|soderberg|s-n fatigue curve|marin factor|rolling element bearing|cantilever sheet pile|modulus of elasticity vs\. modulus of rigidity|transformation of composite section|theoretical effective-length factors|failure by fatigue/i.test(lower) || (/mechanics of materials|mechanical design/i.test(tip) && !/hardness of a material|failure by creep|failure by fracture/i.test(lower))) return 10;
 
         // 11. Materials
-        if (/binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|engineering stress-strain vs|modulus of resilience vs|factor of safety definition|cubic crystal structures|types of fits|first angle vs\. third angle/i.test(lower) || /material/i.test(tip)) return 11;
+        if (/binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|engineering stress-strain vs|modulus of resilience vs|factor of safety definition|cubic crystal structures|types of fits|first angle vs\. third angle|malleability and ductility|charpy and izod|hardness of a material|thermoplastics vs|peritectic vs|failure by creep|failure by fracture/i.test(lower) || /material/i.test(tip)) return 11;
 
         // 12. Fluid Mechanics
-        if (/newton's law of viscosity|surface tension|capillarity|capillary rise height|drag coefficient and lift|reynolds number|speed of sound & mach|hydrostatic pressure distribution|buoyancy and metacentric|hydrostatic center of pressure|archimedes’ principle|bernoulli’s principle|continuity equation|linear impulse-momentum for fluid|modified fluid energy equation|darcy-weisbach|hydraulic diameter for non-circular|laminar flow friction factor|minor head losses in pipe|manning’s equation|pitot tube|venturi meter|orifice meter|orifice discharging freely|net positive suction head|pump hydraulic power|centrifugal pump affinity laws|pump specific speed/i.test(lower) || /fluid/i.test(tip)) return 12;
+        if (/newton's law of viscosity|surface tension|capillarity|capillary rise height|drag coefficient and lift|reynolds number|speed of sound & mach|hydrostatic pressure distribution|buoyancy and metacentric|hydrostatic center of pressure|archimedes’ principle|bernoulli’s principle|continuity equation|linear impulse-momentum for fluid|modified fluid energy equation|darcy-weisbach|hydraulic diameter for non-circular|laminar flow friction factor|minor head losses in pipe|manning’s equation|pitot tube|venturi meter|orifice meter|orifice discharging freely|net positive suction head|pump hydraulic power|centrifugal pump affinity laws|pump specific speed|viscosity of a fluid|impulse turbine vs/i.test(lower) || (/fluid/i.test(tip) && !/universal vs\. specific gas constant/i.test(lower))) return 12;
 
         // 13. Basic Electrical Engineering
-        if (/ohm’s law and joule|kirchhoff|first-order rc transient|equivalent resistance in series|series rlc resonance|equivalent capacitance and inductance|ac power triangle|wheatstone bridge|thevenin’s equivalent|poynting vector|ideal transformer|three-phase induction motor|dc motor back-emf/i.test(lower) || /electrical/i.test(tip)) return 13;
+        if (/ohm’s law and joule|kirchhoff|first-order rc transient|equivalent resistance in series|series rlc resonance|equivalent capacitance and inductance|ac power triangle|wheatstone bridge|thevenin’s equivalent|poynting vector|ideal transformer|three-phase induction motor|dc motor back-emf|specific resistance of a conductor/i.test(lower) || /electrical/i.test(tip)) return 13;
 
         // 14. Thermodynamics and Heat Transfer
-        if (/zeroth law of thermodynamics|first law of thermodynamics \(closed|second law of thermodynamics \(carnot|ideal gas law equation|van der waals|compressibility factor|mole fraction vs\. mass fraction|isothermal process|steady-flow energy equation|ideal rankine cycle|ideal otto cycle|coefficient of performance \(cop\)|fourier’s law of thermal conduction|critical radius of thermal insulation|newton’s law of cooling|stefan-boltzmann law|biot number vs\. fourier|log mean temperature difference|overall heat transfer coefficient|effectiveness-ntu method|conduction through a plain|conduction through a cylindrical|thermal resistance of an object|pool boiling curve|condensation heat transfer|dry-bulb, wet-bulb|absolute humidity vs\.|psychrometric chart|hvac processes|combustion theoretical air|excess air and theoretical/i.test(lower) || /thermodynamics|heat transfer/i.test(tip)) return 14;
+        if (/zeroth law of thermodynamics|first law of thermodynamics \(closed|second law of thermodynamics \(carnot|ideal gas law equation|van der waals|compressibility factor|mole fraction vs\. mass fraction|isothermal process|steady-flow energy equation|ideal rankine cycle|ideal otto cycle|coefficient of performance \(cop\)|fourier’s law of thermal conduction|critical radius of thermal insulation|newton’s law of cooling|stefan-boltzmann law|biot number vs\. fourier|log mean temperature difference|overall heat transfer coefficient|effectiveness-ntu method|conduction through a plain|conduction through a cylindrical|thermal resistance of an object|pool boiling curve|condensation heat transfer|dry-bulb, wet-bulb|absolute humidity vs\.|psychrometric chart|hvac processes|combustion theoretical air|excess air and theoretical|intensive vs\. extensive|universal vs\. specific gas constant|combustion of methane|steam tables|superheated water/i.test(lower) || /thermodynamics|heat transfer/i.test(tip)) return 14;
 
         return 1;
     }
@@ -350,7 +350,7 @@ function getElectricalSubjectId(title, examTip, description) {
 
     // 5. Properties of Electrical Materials
     if (/properties of electrical materials|materials|semiconductor physics/i.test(tip) ||
-        /intrinsic semiconductor|carrier concentration|band gap|dielectric constant|dielectric breakdown|permittivity|permeability|resistivity and conductivity|temperature coefficient of resistance|fermi level|drift velocity|hall effect/i.test(lower)) {
+        /intrinsic semiconductor|carrier concentration|band gap|dielectric constant|dielectric breakdown|permittivity|permeability|resistivity and conductivity|temperature coefficient of resistance|fermi level|drift velocity|hall effect|specific resistance of a conductor/i.test(lower)) {
         return 5;
     }
 
@@ -448,19 +448,19 @@ function getChemicalSubjectId(title, examTip, description) {
 
     // 8. Material/Energy Balances
     if (/material and energy balances|material balances|energy balances|recycle|purge|bypass|stoichiometric combustion|excess air/i.test(tip) ||
-        /material balance|mass balance|recycle ratio|purge ratio|bypass stream|extent of reaction|atomic species balance|steady-state energy balance|heat of reaction|hess’s law|latent heat of vaporization|single-pass conversion/i.test(lower)) {
+        /material balance|mass balance|recycle ratio|purge ratio|bypass stream|extent of reaction|atomic species balance|steady-state energy balance|heat of reaction|hess’s law|latent heat of vaporization|single-pass conversion|combustion of methane/i.test(lower)) {
         return 8;
     }
 
     // 7. Thermodynamics
     if (/thermodynamics|chemical thermodynamics|phase equilibrium|vle|raoult’s|henry’s|antoine|clausius-clapeyron|fugacity|activity coefficient|van der waals|peng-robinson|virial|carnot/i.test(tip) ||
-        /raoult’s law|henry’s law|antoine equation|clausius-clapeyron|van der waals equation|redlich-kwong|compressibility factor|gibbs free energy|chemical potential|joule-thomson|carnot efficiency|rankine cycle|refrigeration cycle|fugacity coefficient|activity coefficient/i.test(lower)) {
+        /raoult’s law|henry’s law|antoine equation|clausius-clapeyron|van der waals equation|redlich-kwong|compressibility factor|gibbs free energy|chemical potential|joule-thomson|carnot efficiency|rankine cycle|refrigeration cycle|fugacity coefficient|activity coefficient|intensive vs\. extensive|universal vs\. specific gas constant|steam tables|superheated water/i.test(lower)) {
         return 7;
     }
 
     // 6. Fluid Mechanics/Dynamics
     if (/fluid mechanics|transport phenomena|fluid dynamics|pumps|friction factor|darcy-weisbach|bernoulli|hagen-poiseuille/i.test(tip) ||
-        /hagen-poiseuille|bernoulli equation|darcy-weisbach|moody diagram|reynolds number|pump npsh|net positive suction head|system head curve|orifice plate|venturi meter|rotameter|drag coefficient|manometer|fluid statics|choked mass flow/i.test(lower)) {
+        /hagen-poiseuille|bernoulli equation|darcy-weisbach|moody diagram|reynolds number|pump npsh|net positive suction head|system head curve|orifice plate|venturi meter|rotameter|drag coefficient|manometer|fluid statics|choked mass flow|viscosity of a fluid/i.test(lower)) {
         return 6;
     }
 
@@ -472,7 +472,7 @@ function getChemicalSubjectId(title, examTip, description) {
 
     // 4. Materials Science
     if (/materials science|materials|corrosion/i.test(tip) ||
-        /lever rule|binary phase diagram|bragg’s law|miller indices|eutectic|yield strength|ultimate tensile|hooke’s law.*materials|tarnishing|galvanic corrosion|crevice corrosion/i.test(lower)) {
+        /lever rule|binary phase diagram|bragg’s law|miller indices|eutectic|yield strength|ultimate tensile|hooke’s law.*materials|tarnishing|galvanic corrosion|crevice corrosion|malleability and ductility|failure by creep|thermoplastics vs|peritectic vs/i.test(lower)) {
         return 4;
     }
 
@@ -550,20 +550,20 @@ function getEnvironmentalSubjectId(title, examTip, description) {
     }
 
     // 8. Fluid Mechanics
-    if (/fluid mechanics|hydraulics|fluid statics|pipe flow/i.test(tip) ||
-        /bernoulli equation|darcy-weisbach|friction factor|moody diagram|hazen-williams|pipe network|hardy cross|pump characteristic curve|net positive suction head|npsh|cavitation|fluid viscosity|hydrostatic pressure|buoyancy|continuity equation/i.test(lower)) {
+    if ((/fluid mechanics|hydraulics|fluid statics|pipe flow/i.test(tip) && !/universal vs\. specific gas constant/i.test(lower)) ||
+        /bernoulli equation|darcy-weisbach|friction factor|moody diagram|hazen-williams|pipe network|hardy cross|pump characteristic curve|net positive suction head|npsh|cavitation|fluid viscosity|viscosity of a fluid|hydrostatic pressure|buoyancy|continuity equation/i.test(lower)) {
         return 8;
     }
 
     // 7. Thermodynamics and Phase Equilibrium
-    if (/thermodynamics|phase equilibrium/i.test(tip) ||
-        /ideal gas law|partial pressure|dalton’s law|henry’s law for gas solubility|raoult’s law|vapor pressure|antoine equation|latent heat|enthalpy|entropy|first law of thermodynamics|second law of thermodynamics/i.test(lower)) {
+    if ((/thermodynamics|phase equilibrium/i.test(tip) && !/combustion of methane/i.test(lower)) ||
+        /ideal gas law|partial pressure|dalton’s law|henry’s law for gas solubility|raoult’s law|vapor pressure|antoine equation|latent heat|enthalpy|entropy|first law of thermodynamics|second law of thermodynamics|intensive vs\. extensive|universal vs\. specific gas constant/i.test(lower)) {
         return 7;
     }
 
     // 6. Environmental Science and Chemistry
     if (/environmental chemistry|chemistry|water chemistry|ecology/i.test(tip) ||
-        /carbonate equilibrium|alkalinity|hardness|calcium carbonate equivalent|ph and poh|henderson-hasselbalch|solubility product constant|ksp|nernst equation|chemical equilibrium constant|freundlich adsorption|langmuir adsorption|monod kinetics|photosynthesis and respiration|nitrogen cycle|phosphorus cycle/i.test(lower)) {
+        /carbonate equilibrium|alkalinity|hardness|calcium carbonate equivalent|ph and poh|henderson-hasselbalch|solubility product constant|ksp|nernst equation|chemical equilibrium constant|freundlich adsorption|langmuir adsorption|monod kinetics|photosynthesis and respiration|nitrogen cycle|phosphorus cycle|combustion of methane/i.test(lower)) {
         return 6;
     }
 
@@ -697,7 +697,7 @@ function getIndustrialSubjectId(title, examTip, description) {
 
     // 2. Engineering Sciences
     if (/statics|dynamics|mechanics of materials|electricity|circuits|thermodynamics|geotechnical/i.test(tip) ||
-        /rigid bod|free body|truss|centroid|moment of inertia|kinematic|work-energy|stress and strain|hooke|shear and moment|ohm’s law|kirchhoff/i.test(lower)) {
+        /rigid bod|free body|truss|centroid|moment of inertia|kinematic|work-energy|stress and strain|hooke|shear and moment|ohm’s law|kirchhoff|malleability and ductility|failure by fatigue|failure by creep|charpy and izod|hardness of a material|thermoplastics vs/i.test(lower)) {
         return 2;
     }
 
@@ -787,6 +787,9 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             allTheorems = (datasets[actualDisc] || []).map(t => ({ ...t, disc: actualDisc }));
         }
 
+        // Only include flashcards that have videos associated with them
+        allTheorems = allTheorems.filter(card => Boolean(card && card.videoUrl));
+
         // Tag cards with subject information according to NCEES CBT specifications
         const config = DISCIPLINE_SUBJECT_CONFIG[actualDisc];
         if (config) {
@@ -845,6 +848,132 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
     }
 
+    // Format flashcard formula into stacked lines if excessive, preserving full font size and expanding vertically
+    function formatFlashcardFormula(formulaStr) {
+        if (!formulaStr) return '';
+        let inner = String(formulaStr).trim();
+        if (inner.startsWith('$$') && inner.endsWith('$$')) {
+            inner = inner.slice(2, -2).trim();
+        } else if (inner.startsWith('$') && inner.endsWith('$')) {
+            inner = inner.slice(1, -1).trim();
+        }
+
+        // If concise and lacks top-level multi-statement delimiters, render as single row
+        if (inner.length <= 50 && !inner.includes('; \\quad') && !inner.includes(';\\quad') && !inner.includes('\\\\')) {
+            return '<div class="fc-formula-row">$$' + inner + '$$</div>';
+        }
+
+        const rawParts = [];
+        let cur = '';
+        let envDepth = 0;
+        let braceDepth = 0;
+        let i = 0;
+
+        while (i < inner.length) {
+            if (inner.startsWith('\\begin{', i)) {
+                envDepth++;
+                cur += '\\begin{';
+                i += 7;
+                continue;
+            }
+            if (inner.startsWith('\\end{', i)) {
+                envDepth = Math.max(0, envDepth - 1);
+                cur += '\\end{';
+                i += 5;
+                continue;
+            }
+            if (inner[i] === '{') {
+                braceDepth++;
+                cur += '{';
+                i++;
+                continue;
+            }
+            if (inner[i] === '}') {
+                braceDepth = Math.max(0, braceDepth - 1);
+                cur += '}';
+                i++;
+                continue;
+            }
+
+            // At top level (outside matrix, cases, aligned, and braces)
+            if (envDepth === 0 && braceDepth === 0) {
+                // Semicolon separator
+                if (inner.startsWith('; \\quad', i)) {
+                    cur += ';';
+                    rawParts.push(cur.trim());
+                    cur = '';
+                    i += 7;
+                    continue;
+                }
+                if (inner.startsWith(';\\quad', i)) {
+                    cur += ';';
+                    rawParts.push(cur.trim());
+                    cur = '';
+                    i += 6;
+                    continue;
+                }
+                // Explicit top-level newline
+                if (inner.startsWith('\\\\', i)) {
+                    rawParts.push(cur.trim());
+                    cur = '';
+                    i += 2;
+                    continue;
+                }
+                // Comma quad separator
+                if (inner.startsWith(', \\quad', i) || inner.startsWith(',\\quad', i)) {
+                    const advance = inner.startsWith(', \\quad', i) ? 7 : 6;
+                    cur += ',';
+                    if (cur.length > 25 || inner.length > 70) {
+                        rawParts.push(cur.trim());
+                        cur = '';
+                    } else {
+                        cur += ' \\quad ';
+                    }
+                    i += advance;
+                    continue;
+                }
+            }
+
+            cur += inner[i];
+            i++;
+        }
+
+        if (cur.trim().length > 0) {
+            rawParts.push(cur.trim());
+        }
+
+        const validParts = rawParts.map(p => {
+            let s = p.trim();
+            if (s.endsWith(',')) s = s.slice(0, -1).trim();
+            return s;
+        }).filter(p => p.length > 0);
+
+        if (validParts.length <= 1) {
+            return '<div class="fc-formula-row">$$' + inner + '$$</div>';
+        }
+
+        // Group parts so we don't produce tiny fragments (group consecutive short parts <= 55 chars)
+        const grouped = [];
+        let accum = '';
+
+        for (let pIdx = 0; pIdx < validParts.length; pIdx++) {
+            const part = validParts[pIdx];
+            if (!accum) {
+                accum = part;
+            } else {
+                if (accum.length + part.length < 55 && !accum.endsWith(';') && !accum.includes('\\begin{') && !part.includes('\\begin{')) {
+                    accum += ', \\quad ' + part;
+                } else {
+                    grouped.push(accum);
+                    accum = part;
+                }
+            }
+        }
+        if (accum) grouped.push(accum);
+
+        return grouped.map(g => '<div class="fc-formula-row">$$' + g + '$$</div>').join('');
+    }
+
     function renderCard() {
         const modal = document.getElementById('fe-flashcards-modal');
         if (!modal || modal.classList.contains('hidden')) return;
@@ -869,13 +998,9 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const card = currentDeck[currentIndex];
         // Lookahead Preloader: Warm up upcoming card images in the background
         preloadAdjacentCardImages(currentIndex, 6);
-        isFlipped = false;
+        isFlipped = true;
         const inner = document.getElementById('fc-flip-inner');
         if (inner) inner.classList.remove('flipped');
-
-        // Update flip button text
-        const flipBtnText = document.getElementById('fc-flip-btn-text');
-        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
 
         // Update Header Progress
         const progressText = document.getElementById('fc-progress-text');
@@ -912,7 +1037,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             if (frontTitle) frontTitle.classList.add('hidden');
             if (frontFormulaView) {
                 frontFormulaView.classList.remove('hidden');
-                frontFormulaView.innerHTML = card.formula || '';
+                frontFormulaView.innerHTML = formatFlashcardFormula(card.formula);
             }
             if (frontHint) {
                 frontHint.innerHTML = 'What is the name of this theorem, and what FE topic does it govern?';
@@ -1006,16 +1131,17 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const backTip = document.getElementById('fc-back-tip');
 
         if (backTitle) backTitle.innerHTML = card.title || '';
-        if (backFormula) backFormula.innerHTML = card.formula || '';
+        if (backFormula) backFormula.innerHTML = formatFlashcardFormula(card.formula);
         if (backDesc) backDesc.innerHTML = card.description || '';
         if (backTip) backTip.innerHTML = card.examTip || '';
 
-        // If card is currently flipped, typeset back math now
-        if (isFlipped) {
-            triggerMathTypeset([backFormula, backDesc, backTip, backTitle]);
-        }
+        // Typeset back math directly on every card render
+        const backEls = [backFormula, backDesc, backTip, backTitle].filter(Boolean);
+        triggerMathTypeset(backEls);
+        setTimeout(() => triggerMathTypeset(backEls), 50);
+        setTimeout(() => triggerMathTypeset(backEls), 200);
 
-        // Responsive Media Layout on Back (Video prominent; Blueprint moved to front face)
+        // Responsive Media Layout on Back
         const hasVideo = Boolean(card.videoUrl);
         const backColVideo = document.getElementById('fc-back-col-video');
         const backColPrimary = document.getElementById('fc-back-col-primary');
@@ -1029,13 +1155,52 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const backVideoContainer = document.getElementById('fc-back-video-container');
         const backImgContainer = document.getElementById('fc-back-image-container');
 
-        if (hasVideo) {
+        if (hasVideo && hasImage) {
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
                 backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
             }
             if (backColPrimary) {
-                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-between lg:space-y-3';
+                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-start lg:space-y-3';
+            }
+
+            if (backVideo) {
+                backVideo.src = card.videoUrl;
+                backVideo.load();
+            }
+
+            if (backImg) {
+                backImg.alt = card.imageTitle || card.title || 'Technical Blueprint Diagram';
+                backImg.decoding = 'async';
+                backImg.loading = 'eager';
+                backImg.src = card.imageUrl;
+            }
+            if (backImgContainer) {
+                backImgContainer.onclick = openBlueprintLightbox;
+            }
+
+            if (mediaSwitcher) {
+                mediaSwitcher.classList.remove('hidden');
+                mediaSwitcher.classList.add('flex');
+            }
+            if (mediaStaticHeader) mediaStaticHeader.classList.add('hidden');
+
+            const btnVid = document.getElementById('fc-toggle-btn-video');
+            const btnBp = document.getElementById('fc-toggle-btn-blueprint');
+            if (btnVid) btnVid.onclick = (e) => { if (e && e.stopPropagation) e.stopPropagation(); setMediaTab('video'); };
+            if (btnBp) btnBp.onclick = (e) => { if (e && e.stopPropagation) e.stopPropagation(); setMediaTab('blueprint'); };
+
+            if (videoDur) {
+                videoDur.textContent = card.videoDuration || '10s';
+            }
+            setMediaTab('video');
+        } else if (hasVideo) {
+            if (backColVideo) {
+                backColVideo.classList.remove('hidden');
+                backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
+            }
+            if (backColPrimary) {
+                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-start lg:space-y-3';
             }
 
             if (backVideo) {
@@ -1046,7 +1211,6 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             if (backVideoContainer) backVideoContainer.classList.remove('hidden');
             if (backImgContainer) backImgContainer.classList.add('hidden');
 
-            // Hide tab switcher - technical blueprint image is now prominently displayed on the front side of the card!
             if (mediaSwitcher) {
                 mediaSwitcher.classList.add('hidden');
                 mediaSwitcher.classList.remove('flex');
@@ -1071,7 +1235,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
             }
             if (backColPrimary) {
-                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-between lg:space-y-3';
+                backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-start lg:space-y-3';
             }
             if (mediaSwitcher) {
                 mediaSwitcher.classList.add('hidden');
@@ -1125,9 +1289,419 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             }
         }
 
+        // Solved Example Handling on Card Back (Video Side - Floating on Video)
+        const btnVideoExample = document.getElementById('fc-btn-video-example');
+        const exampleOverlay = document.getElementById('fc-video-example-overlay');
+        const exampleQuestion = document.getElementById('fc-video-example-question');
+        const exampleSolution = document.getElementById('fc-video-example-solution');
+        const solutionBtnLabel = document.getElementById('fc-solution-btn-label');
+
+        if (card.solvedExample) {
+            if (btnVideoExample) btnVideoExample.classList.remove('hidden');
+            if (exampleOverlay) exampleOverlay.classList.add('hidden');
+            if (exampleSolution) exampleSolution.classList.add('hidden');
+            if (solutionBtnLabel) solutionBtnLabel.textContent = 'Show me the Solution';
+
+            if (exampleQuestion) {
+                exampleQuestion.innerHTML = formatSolvedExampleQuestion(card.solvedExample.question || '');
+            }
+            if (exampleSolution) {
+                exampleSolution.innerHTML = formatSolvedExampleSolution(card.solvedExample.solution || '');
+            }
+
+            // Ensure media column is displayed on the back face so solved example is visible
+            if (!hasVideo && !hasImage) {
+                if (backColVideo) {
+                    backColVideo.classList.remove('hidden');
+                    backColVideo.className = 'order-2 lg:order-none w-full lg:col-span-7 flex flex-col space-y-2 mt-1 sm:mt-2 lg:mt-0';
+                }
+                if (backColPrimary) {
+                    backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-start lg:space-y-3';
+                }
+                if (backVideoContainer) {
+                    backVideoContainer.classList.remove('hidden');
+                    backVideoContainer.style.background = 'radial-gradient(circle at center, #1e293b 0%, #020617 100%)';
+                }
+                const mediaStaticHeader = document.getElementById('fc-media-static-header');
+                const mediaSubtext = document.getElementById('fc-media-subtext');
+                const videoDurationBadge = document.getElementById('fc-back-video-duration');
+                if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
+                if (videoDurationBadge) videoDurationBadge.classList.add('hidden');
+                const headerIcon = document.getElementById('fc-media-header-icon');
+                const headerLabel = document.getElementById('fc-media-header-label');
+                if (headerIcon) {
+                    headerIcon.textContent = 'school';
+                    headerIcon.className = 'material-symbols-outlined text-[15px] text-emerald-400';
+                }
+                if (headerLabel) {
+                    headerLabel.textContent = 'FE Practice Problem';
+                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-emerald-400';
+                }
+                if (mediaSubtext) mediaSubtext.classList.add('hidden');
+            } else {
+                if (backVideoContainer) backVideoContainer.style.background = '';
+                const videoDurationBadge = document.getElementById('fc-back-video-duration');
+                if (videoDurationBadge) videoDurationBadge.classList.remove('hidden');
+                const mediaSubtext = document.getElementById('fc-media-subtext');
+                if (mediaSubtext) mediaSubtext.classList.remove('hidden');
+            }
+        } else {
+            if (btnVideoExample) btnVideoExample.classList.add('hidden');
+            if (exampleOverlay) exampleOverlay.classList.add('hidden');
+            if (exampleSolution) exampleSolution.classList.add('hidden');
+            if (backVideoContainer) backVideoContainer.style.background = '';
+            const videoDurationBadge = document.getElementById('fc-back-video-duration');
+            if (videoDurationBadge) videoDurationBadge.classList.remove('hidden');
+        }
+
         // Initialize In-Video Karaoke Captions
         initKaraokeCues(card);
         wireKaraokeVideoEvents();
+    }
+
+    // Helper to format solved example questions, ensuring LaTeX delimiters on math options
+    function formatSolvedExampleQuestion(html) {
+        if (!html || typeof html !== 'string') return '';
+        let processed = html.replace(/\bfont-mono\b/g, 'font-sans font-medium');
+
+        processed = processed.replace(/(<div class="[^"]*p-2[^"]*">\s*\(([A-D])\)\s*)([\s\S]*?)(<\/div>)/g, (fullMatch, prefix, letter, content, suffix) => {
+            let trimmed = content.trim();
+            if (trimmed.includes('$')) return fullMatch;
+
+            const englishWords = (trimmed.match(/\b[a-zA-Z]{3,}\b/g) || []).filter(w => !/^(rad|rpm|sec|min|deg|avg|max|min|solid|hollow|sync|gauge|abs|amp)$/i.test(w));
+            if (englishWords.length >= 4) return fullMatch;
+
+            if (!/[=\^_×⁻²³ζωστδαθλρμΩ°]/.test(trimmed) && !/^\s*[-+]?\d+(?:\.\d+)?\s*[a-zA-Z/°Ω·%]*\s*$/.test(trimmed) && !/[a-zA-Z]_[a-zA-Z0-9]/.test(trimmed)) {
+                return fullMatch;
+            }
+
+            let latex = trimmed
+                .replace(/ζ/g, '\\zeta')
+                .replace(/ω_d/g, '\\omega_d')
+                .replace(/ω_0/g, '\\omega_0')
+                .replace(/ω/g, '\\omega')
+                .replace(/σ_avg/g, '\\sigma_{\\text{avg}}')
+                .replace(/σ_max/g, '\\sigma_{\\max}')
+                .replace(/σ_min/g, '\\sigma_{\\min}')
+                .replace(/σ_h/g, '\\sigma_h')
+                .replace(/σ_l/g, '\\sigma_l')
+                .replace(/σ_1/g, '\\sigma_1')
+                .replace(/σ_2/g, '\\sigma_2')
+                .replace(/σ_T/g, '\\sigma_T')
+                .replace(/σ_E/g, '\\sigma_E')
+                .replace(/σ/g, '\\sigma')
+                .replace(/τ_max/g, '\\tau_{\\max}')
+                .replace(/τ_y/g, '\\tau_y')
+                .replace(/τ/g, '\\tau')
+                .replace(/δ/g, '\\delta')
+                .replace(/Δd/g, '\\Delta d')
+                .replace(/ΔM/g, '\\Delta M')
+                .replace(/Δh/g, '\\Delta h')
+                .replace(/ΔP_f/g, '\\Delta P_f')
+                .replace(/ΔP/g, '\\Delta P')
+                .replace(/Δ/g, '\\Delta ')
+                .replace(/α/g, '\\alpha')
+                .replace(/θ/g, '\\theta')
+                .replace(/λ/g, '\\lambda')
+                .replace(/ρ/g, '\\rho')
+                .replace(/μ_app/g, '\\mu_{\\text{app}}')
+                .replace(/μ_p/g, '\\mu_p')
+                .replace(/με/g, '\\ \\mu\\epsilon')
+                .replace(/μ/g, '\\mu')
+                .replace(/ε_T/g, '\\epsilon_T')
+                .replace(/ε_E/g, '\\epsilon_E')
+                .replace(/×/g, '\\times ')
+                .replace(/≈/g, '\\approx ')
+                .replace(/·/g, '\\cdot ')
+                .replace(/\bI_solid\b/g, 'I_{\\text{solid}}')
+                .replace(/\bI_hollow\b/g, 'I_{\\text{hollow}}')
+                .replace(/\bI_G\b/g, 'I_G')
+                .replace(/\bI_O\b/g, 'I_O')
+                .replace(/\bI_x\b/g, 'I_x')
+                .replace(/\bI_y\b/g, 'I_y')
+                .replace(/\bI_xy\b/g, 'I_{xy}')
+                .replace(/\bV_th\b/g, 'V_{\\text{th}}')
+                .replace(/\bR_th\b/g, 'R_{\\text{th}}')
+                .replace(/\bC_eq\b/g, 'C_{\\text{eq}}')
+                .replace(/\bL_eq\b/g, 'L_{\\text{eq}}')
+                .replace(/\bV_s\b/g, 'V_s')
+                .replace(/\bI_s\b/g, 'I_s')
+                .replace(/\bZ_in\b/g, 'Z_{\\text{in}}')
+                .replace(/\bE_b\b/g, 'E_b')
+                .replace(/\bn_sync\b/g, 'n_{\\text{sync}}')
+                .replace(/\bF_x\b/g, 'F_x')
+                .replace(/\bF_y\b/g, 'F_y')
+                .replace(/\bF_n\b/g, 'F_n')
+                .replace(/\bF_c\b/g, 'F_c')
+                .replace(/\bF_R\b/g, 'F_R')
+                .replace(/\bF_H\b/g, 'F_H')
+                .replace(/\bF_V\b/g, 'F_V')
+                .replace(/\bR_Ax\b/g, 'R_{Ax}')
+                .replace(/\bR_Ay\b/g, 'R_{Ay}')
+                .replace(/\bR_By\b/g, 'R_{By}')
+                .replace(/\ba_t\b/g, 'a_t')
+                .replace(/\ba_n\b/g, 'a_n')
+                .replace(/\ba_c\b/g, 'a_c')
+                .replace(/\bv_A2\b/g, 'v_{A2}')
+                .replace(/\bv_B2\b/g, 'v_{B2}')
+                .replace(/\bv_1'\b/g, "v_1'")
+                .replace(/\bv_2'\b/g, "v_2'")
+                .replace(/\bv_A\b/g, 'v_A')
+                .replace(/\bv_B\b/g, 'v_B')
+                .replace(/\bv_1\b/g, 'v_1')
+                .replace(/\bv_2\b/g, 'v_2')
+                .replace(/\bQ_1\b/g, 'Q_1')
+                .replace(/\bQ_2\b/g, 'Q_2')
+                .replace(/\bP_gauge\b/g, 'P_{\\text{gauge}}')
+                .replace(/\bP_abs\b/g, 'P_{\\text{abs}}')
+                .replace(/\bP_1\b/g, 'P_1')
+                .replace(/\bP_2\b/g, 'P_2')
+                .replace(/\bh_p\b/g, 'h_p')
+                .replace(/\bh_f\b/g, 'h_f')
+                .replace(/\bh_c\b/g, 'h_c')
+                .replace(/\by_cp\b/g, 'y_{cp}')
+                .replace(/\bW_L\b/g, 'W_L')
+                .replace(/\bW_α\b/g, 'W_\\alpha')
+                .replace(/\bt_1\/2\b/g, 't_{1/2}')
+                .replace(/10\^([0-9\-]+)/g, '10^{$1}')
+                .replace(/(?<=\d|\))\s*m\/s\^2\b/g, '\\text{ m/s}^2')
+                .replace(/(?<=\d|\))\s*rad\/s\^2\b/g, '\\text{ rad/s}^2')
+                .replace(/(?<=\d|\))\s*rad\/s\b/g, '\\text{ rad/s}')
+                .replace(/(?<=\d|\))\s*m\/s\b/g, '\\text{ m/s}')
+                .replace(/(?<=\d|\))\s*m\^3\/s\b/g, '\\text{ m}^3/\\text{s}')
+                .replace(/(?<=\d|\))\s*m\^4\b/g, '\\text{ m}^4')
+                .replace(/(?<=\d|\))\s*mm\^4\b/g, '\\text{ mm}^4')
+                .replace(/(?<=\d|\))\s*mm\^3\b/g, '\\text{ mm}^3')
+                .replace(/(?<=\d|\))\s*kJ\/m³\b/g, '\\text{ kJ/m}^3')
+                .replace(/(?<=\d|\))\s*MJ\/m³\b/g, '\\text{ MJ/m}^3')
+                .replace(/(?<=\d|\))\s*kg\/m³\b/g, '\\text{ kg/m}^3')
+                .replace(/(?<=\d|\))\s*kg\/m\^3\b/g, '\\text{ kg/m}^3')
+                .replace(/(?<=\d|\))\s*kg·m\^2\b/g, '\\text{ kg}\\cdot\\text{m}^2')
+                .replace(/(?<=\d|\))\s*kN·m\b/g, '\\text{ kN}\\cdot\\text{m}')
+                .replace(/(?<=\d|\))\s*N·m\b/g, '\\text{ N}\\cdot\\text{m}')
+                .replace(/(?<=\d|\))\s*kN\/m\b/g, '\\text{ kN/m}')
+                .replace(/(?<=\d|\))\s*N\/m\b/g, '\\text{ N/m}')
+                .replace(/(?<=\d|\))\s*kN\b/g, '\\text{ kN}')
+                .replace(/(?<=\d|\))\s*MN\b/g, '\\text{ MN}')
+                .replace(/(?<=\d|\))\s*MPa\b/g, '\\text{ MPa}')
+                .replace(/(?<=\d|\))\s*kPa\b/g, '\\text{ kPa}')
+                .replace(/(?<=\d|\))\s*GPa\b/g, '\\text{ GPa}')
+                .replace(/(?<=\d|\))\s*Pa·s\b/g, '\\text{ Pa}\\cdot\\text{s}')
+                .replace(/(?<=\d|\))\s*Pa\b/g, '\\text{ Pa}')
+                .replace(/(?<=\d|\))\s*mm\b/g, '\\text{ mm}')
+                .replace(/(?<=\d|\))\s*km\/h\b/g, '\\text{ km/h}')
+                .replace(/(?<=\d|\))\s*Hz\b/g, '\\text{ Hz}')
+                .replace(/(?<=\d|\))\s*rpm\b/g, '\\text{ rpm}')
+                .replace(/(?<=\d|\))\s*kJ\b/g, '\\text{ kJ}')
+                .replace(/(?<=\d|\))\s*MJ\b/g, '\\text{ MJ}')
+                .replace(/(?<=\d|\))\s*J\b/g, '\\text{ J}')
+                .replace(/(?<=\d|\))\s*kW\b/g, '\\text{ kW}')
+                .replace(/(?<=\d|\))\s*MW\b/g, '\\text{ MW}')
+                .replace(/(?<=\d|\))\s*W\b/g, '\\text{ W}')
+                .replace(/(?<=\d|\))\s*μF\b/g, '\\mu\\text{F}')
+                .replace(/(?<=\d|\))\s*mH\b/g, '\\text{mH}')
+                .replace(/(?<=\d|\))\s*Ω\b/g, '\\ \\Omega')
+                .replace(/(?<=\d)°/g, '^\\circ')
+                .replace(/,\s+/g, ',\\quad ');
+
+            return `${prefix}$${latex}$${suffix}`;
+        });
+
+        return processed;
+    }
+
+    // Helper to format solved example solution text
+    function formatSolvedExampleSolution(html) {
+        if (!html || typeof html !== 'string') return '';
+        return html.replace(/(<span class="[^"]*text-emerald-300 font-bold[^"]*">\s*\(([A-D])\)\s*)([^<]+)(<\/span>)/g, (fullMatch, prefix, letter, content, suffix) => {
+            let trimmed = content.trim();
+            if (trimmed.includes('$')) return fullMatch;
+            const englishWords = (trimmed.match(/\b[a-zA-Z]{3,}\b/g) || []).filter(w => !/^(rad|rpm|sec|min|deg|avg|max|min|solid|hollow|sync|gauge|abs|amp)$/i.test(w));
+            if (englishWords.length >= 4) return fullMatch;
+            if (!/[=\^_×⁻²³ζωστδαθλρμΩ°]/.test(trimmed) && !/^\s*[-+]?\d+(?:\.\d+)?\s*[a-zA-Z/°Ω·%]*\s*$/.test(trimmed) && !/[a-zA-Z]_[a-zA-Z0-9]/.test(trimmed)) {
+                return fullMatch;
+            }
+            let latex = trimmed
+                .replace(/ζ/g, '\\zeta')
+                .replace(/ω_d/g, '\\omega_d')
+                .replace(/ω_0/g, '\\omega_0')
+                .replace(/ω/g, '\\omega')
+                .replace(/σ_avg/g, '\\sigma_{\\text{avg}}')
+                .replace(/σ_max/g, '\\sigma_{\\max}')
+                .replace(/σ_min/g, '\\sigma_{\\min}')
+                .replace(/σ_h/g, '\\sigma_h')
+                .replace(/σ_l/g, '\\sigma_l')
+                .replace(/σ_1/g, '\\sigma_1')
+                .replace(/σ_2/g, '\\sigma_2')
+                .replace(/σ_T/g, '\\sigma_T')
+                .replace(/σ_E/g, '\\sigma_E')
+                .replace(/σ/g, '\\sigma')
+                .replace(/τ_max/g, '\\tau_{\\max}')
+                .replace(/τ_y/g, '\\tau_y')
+                .replace(/τ/g, '\\tau')
+                .replace(/δ/g, '\\delta')
+                .replace(/Δd/g, '\\Delta d')
+                .replace(/ΔM/g, '\\Delta M')
+                .replace(/Δh/g, '\\Delta h')
+                .replace(/ΔP_f/g, '\\Delta P_f')
+                .replace(/ΔP/g, '\\Delta P')
+                .replace(/Δ/g, '\\Delta ')
+                .replace(/α/g, '\\alpha')
+                .replace(/θ/g, '\\theta')
+                .replace(/λ/g, '\\lambda')
+                .replace(/ρ/g, '\\rho')
+                .replace(/μ_app/g, '\\mu_{\\text{app}}')
+                .replace(/μ_p/g, '\\mu_p')
+                .replace(/με/g, '\\ \\mu\\epsilon')
+                .replace(/μ/g, '\\mu')
+                .replace(/ε_T/g, '\\epsilon_T')
+                .replace(/ε_E/g, '\\epsilon_E')
+                .replace(/×/g, '\\times ')
+                .replace(/≈/g, '\\approx ')
+                .replace(/·/g, '\\cdot ')
+                .replace(/\bI_solid\b/g, 'I_{\\text{solid}}')
+                .replace(/\bI_hollow\b/g, 'I_{\\text{hollow}}')
+                .replace(/\bI_G\b/g, 'I_G')
+                .replace(/\bI_O\b/g, 'I_O')
+                .replace(/\bI_x\b/g, 'I_x')
+                .replace(/\bI_y\b/g, 'I_y')
+                .replace(/\bI_xy\b/g, 'I_{xy}')
+                .replace(/\bV_th\b/g, 'V_{\\text{th}}')
+                .replace(/\bR_th\b/g, 'R_{\\text{th}}')
+                .replace(/\bC_eq\b/g, 'C_{\\text{eq}}')
+                .replace(/\bL_eq\b/g, 'L_{\\text{eq}}')
+                .replace(/\bV_s\b/g, 'V_s')
+                .replace(/\bI_s\b/g, 'I_s')
+                .replace(/\bZ_in\b/g, 'Z_{\\text{in}}')
+                .replace(/\bE_b\b/g, 'E_b')
+                .replace(/\bn_sync\b/g, 'n_{\\text{sync}}')
+                .replace(/\bF_x\b/g, 'F_x')
+                .replace(/\bF_y\b/g, 'F_y')
+                .replace(/\bF_n\b/g, 'F_n')
+                .replace(/\bF_c\b/g, 'F_c')
+                .replace(/\bF_R\b/g, 'F_R')
+                .replace(/\bF_H\b/g, 'F_H')
+                .replace(/\bF_V\b/g, 'F_V')
+                .replace(/\bR_Ax\b/g, 'R_{Ax}')
+                .replace(/\bR_Ay\b/g, 'R_{Ay}')
+                .replace(/\bR_By\b/g, 'R_{By}')
+                .replace(/\ba_t\b/g, 'a_t')
+                .replace(/\ba_n\b/g, 'a_n')
+                .replace(/\ba_c\b/g, 'a_c')
+                .replace(/\bv_A2\b/g, 'v_{A2}')
+                .replace(/\bv_B2\b/g, 'v_{B2}')
+                .replace(/\bv_1'\b/g, "v_1'")
+                .replace(/\bv_2'\b/g, "v_2'")
+                .replace(/\bv_A\b/g, 'v_A')
+                .replace(/\bv_B\b/g, 'v_B')
+                .replace(/\bv_1\b/g, 'v_1')
+                .replace(/\bv_2\b/g, 'v_2')
+                .replace(/\bQ_1\b/g, 'Q_1')
+                .replace(/\bQ_2\b/g, 'Q_2')
+                .replace(/\bP_gauge\b/g, 'P_{\\text{gauge}}')
+                .replace(/\bP_abs\b/g, 'P_{\\text{abs}}')
+                .replace(/\bP_1\b/g, 'P_1')
+                .replace(/\bP_2\b/g, 'P_2')
+                .replace(/\bh_p\b/g, 'h_p')
+                .replace(/\bh_f\b/g, 'h_f')
+                .replace(/\bh_c\b/g, 'h_c')
+                .replace(/\by_cp\b/g, 'y_{cp}')
+                .replace(/\bW_L\b/g, 'W_L')
+                .replace(/\bW_α\b/g, 'W_\\alpha')
+                .replace(/\bt_1\/2\b/g, 't_{1/2}')
+                .replace(/10\^([0-9\-]+)/g, '10^{$1}')
+                .replace(/(?<=\d|\))\s*m\/s\^2\b/g, '\\text{ m/s}^2')
+                .replace(/(?<=\d|\))\s*rad\/s\^2\b/g, '\\text{ rad/s}^2')
+                .replace(/(?<=\d|\))\s*rad\/s\b/g, '\\text{ rad/s}')
+                .replace(/(?<=\d|\))\s*m\/s\b/g, '\\text{ m/s}')
+                .replace(/(?<=\d|\))\s*m\^3\/s\b/g, '\\text{ m}^3/\\text{s}')
+                .replace(/(?<=\d|\))\s*m\^4\b/g, '\\text{ m}^4')
+                .replace(/(?<=\d|\))\s*mm\^4\b/g, '\\text{ mm}^4')
+                .replace(/(?<=\d|\))\s*mm\^3\b/g, '\\text{ mm}^3')
+                .replace(/(?<=\d|\))\s*kJ\/m³\b/g, '\\text{ kJ/m}^3')
+                .replace(/(?<=\d|\))\s*MJ\/m³\b/g, '\\text{ MJ/m}^3')
+                .replace(/(?<=\d|\))\s*kg\/m³\b/g, '\\text{ kg/m}^3')
+                .replace(/(?<=\d|\))\s*kg\/m\^3\b/g, '\\text{ kg/m}^3')
+                .replace(/(?<=\d|\))\s*kg·m\^2\b/g, '\\text{ kg}\\cdot\\text{m}^2')
+                .replace(/(?<=\d|\))\s*kN·m\b/g, '\\text{ kN}\\cdot\\text{m}')
+                .replace(/(?<=\d|\))\s*N·m\b/g, '\\text{ N}\\cdot\\text{m}')
+                .replace(/(?<=\d|\))\s*kN\/m\b/g, '\\text{ kN/m}')
+                .replace(/(?<=\d|\))\s*N\/m\b/g, '\\text{ N/m}')
+                .replace(/(?<=\d|\))\s*kN\b/g, '\\text{ kN}')
+                .replace(/(?<=\d|\))\s*MN\b/g, '\\text{ MN}')
+                .replace(/(?<=\d|\))\s*MPa\b/g, '\\text{ MPa}')
+                .replace(/(?<=\d|\))\s*kPa\b/g, '\\text{ kPa}')
+                .replace(/(?<=\d|\))\s*GPa\b/g, '\\text{ GPa}')
+                .replace(/(?<=\d|\))\s*Pa·s\b/g, '\\text{ Pa}\\cdot\\text{s}')
+                .replace(/(?<=\d|\))\s*Pa\b/g, '\\text{ Pa}')
+                .replace(/(?<=\d|\))\s*mm\b/g, '\\text{ mm}')
+                .replace(/(?<=\d|\))\s*km\/h\b/g, '\\text{ km/h}')
+                .replace(/(?<=\d|\))\s*Hz\b/g, '\\text{ Hz}')
+                .replace(/(?<=\d|\))\s*rpm\b/g, '\\text{ rpm}')
+                .replace(/(?<=\d|\))\s*kJ\b/g, '\\text{ kJ}')
+                .replace(/(?<=\d|\))\s*MJ\b/g, '\\text{ MJ}')
+                .replace(/(?<=\d|\))\s*J\b/g, '\\text{ J}')
+                .replace(/(?<=\d|\))\s*kW\b/g, '\\text{ kW}')
+                .replace(/(?<=\d|\))\s*MW\b/g, '\\text{ MW}')
+                .replace(/(?<=\d|\))\s*W\b/g, '\\text{ W}')
+                .replace(/(?<=\d|\))\s*μF\b/g, '\\mu\\text{F}')
+                .replace(/(?<=\d|\))\s*mH\b/g, '\\text{mH}')
+                .replace(/(?<=\d|\))\s*Ω\b/g, '\\ \\Omega')
+                .replace(/(?<=\d)°/g, '^\\circ')
+                .replace(/,\s+/g, ',\\quad ');
+
+            return `${prefix}$${latex}$${suffix}`;
+        });
+    }
+
+    function toggleSolvedExample(e) {
+        if (e && e.stopPropagation) e.stopPropagation();
+        const overlay = document.getElementById('fc-video-example-overlay');
+        const questionEl = document.getElementById('fc-video-example-question');
+        const video = document.getElementById('fc-back-video');
+        const karaokeBox = document.getElementById('fc-karaoke-box');
+
+        if (!overlay) return;
+        const isHidden = overlay.classList.contains('hidden');
+
+        if (isHidden) {
+            overlay.classList.remove('hidden');
+            // Pause video and hide captions if playing
+            if (video && !video.paused) {
+                video.pause();
+            }
+            if (karaokeBox) karaokeBox.classList.add('hidden');
+            triggerMathTypeset([questionEl]);
+            setTimeout(() => triggerMathTypeset([questionEl]), 60);
+            setTimeout(() => triggerMathTypeset([questionEl]), 220);
+        } else {
+            overlay.classList.add('hidden');
+        }
+    }
+
+    function toggleSolvedExampleSolution(e) {
+        if (e && e.stopPropagation) e.stopPropagation();
+        const solution = document.getElementById('fc-video-example-solution');
+        const btnLabel = document.getElementById('fc-solution-btn-label');
+
+        if (!solution) return;
+        const isHidden = solution.classList.contains('hidden');
+
+        if (isHidden) {
+            solution.classList.remove('hidden');
+            if (btnLabel) btnLabel.textContent = 'Hide Solution';
+            triggerMathTypeset([solution]);
+            setTimeout(() => triggerMathTypeset([solution]), 60);
+            setTimeout(() => triggerMathTypeset([solution]), 220);
+            setTimeout(() => {
+                if (solution && typeof solution.scrollIntoView === 'function') {
+                    solution.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }, 50);
+        } else {
+            solution.classList.add('hidden');
+            if (btnLabel) btnLabel.textContent = 'Show me the Solution';
+        }
     }
 
     // Typeset math helper
@@ -1422,54 +1996,9 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
     }
 
-    // Flip action
+    // Flip action (Direct view: no-op)
     function flipCard() {
-        if (currentDeck.length === 0) return;
-        const inner = document.getElementById('fc-flip-inner');
-        if (!inner) return;
-
-        isFlipped = !isFlipped;
-        const flipBtnText = document.getElementById('fc-flip-btn-text');
-        if (flipBtnText) flipBtnText.textContent = isFlipped ? 'View Front' : 'Flip Card';
-
-        if (isFlipped) {
-            inner.classList.add('flipped');
-
-            const card = currentDeck[currentIndex];
-            const backFormula = document.getElementById('fc-back-formula');
-            const backDesc = document.getElementById('fc-back-desc');
-            const backTip = document.getElementById('fc-back-tip');
-            const backTitle = document.getElementById('fc-back-title');
-
-            if (card) {
-                if (backTitle) backTitle.innerHTML = card.title || '';
-                if (backFormula) backFormula.innerHTML = card.formula || '';
-                if (backDesc) backDesc.innerHTML = card.description || '';
-                if (backTip) backTip.innerHTML = card.examTip || '';
-            }
-
-            const backEls = [backFormula, backDesc, backTip, backTitle].filter(Boolean);
-            // Trigger typeset immediately and staggered across 3D rotation
-            triggerMathTypeset(backEls);
-            setTimeout(() => triggerMathTypeset(backEls), 120);
-            setTimeout(() => triggerMathTypeset(backEls), 320);
-
-            // Auto-play explainer video if present
-            if (card && card.videoUrl && activeMediaTab === 'video') {
-                setTimeout(() => {
-                    const video = document.getElementById('fc-back-video');
-                    if (video) {
-                        video.currentTime = 0;
-                        const p = video.play();
-                        if (p !== undefined) p.catch(() => {});
-                    }
-                }, 180);
-            }
-        } else {
-            inner.classList.remove('flipped');
-            const video = document.getElementById('fc-back-video');
-            if (video) video.pause();
-        }
+        // Direct back-side view: no flip action needed
     }
 
     // Previous card action
@@ -1477,13 +2006,6 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         if (currentDeck.length === 0) return;
         const video = document.getElementById('fc-back-video');
         if (video) video.pause();
-
-        // Always return to front face when navigating cards
-        isFlipped = false;
-        const inner = document.getElementById('fc-flip-inner');
-        if (inner) inner.classList.remove('flipped');
-        const flipBtnText = document.getElementById('fc-flip-btn-text');
-        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
 
         currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
         renderCard();
@@ -1494,13 +2016,6 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         if (currentDeck.length === 0) return;
         const video = document.getElementById('fc-back-video');
         if (video) video.pause();
-
-        // Always return to front face when navigating cards
-        isFlipped = false;
-        const inner = document.getElementById('fc-flip-inner');
-        if (inner) inner.classList.remove('flipped');
-        const flipBtnText = document.getElementById('fc-flip-btn-text');
-        if (flipBtnText) flipBtnText.textContent = 'Flip Card';
 
         currentIndex = (currentIndex + 1) % currentDeck.length;
         renderCard();
@@ -1537,7 +2052,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 
         currentDeck = buildSessionQueue(currentDiscipline, currentMode, currentSubjectFilter);
         currentIndex = 0;
-        isFlipped = false;
+        isFlipped = true;
 
         // Immediately preload first 8 cards in this session
         if (currentDeck && currentDeck.length > 0) {
@@ -1567,7 +2082,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 
         if (actualDisc !== 'all' && DISCIPLINE_SUBJECT_CONFIG[actualDisc]) {
             const datasets = window.THEOREMS_BY_DISCIPLINE || {};
-            const fullDeck = (datasets[actualDisc] || []);
+            const fullDeck = (datasets[actualDisc] || []).filter(card => Boolean(card && card.videoUrl));
             updateSubjectSelectOptions(fullDeck, actualDisc);
         }
         syncSubjectSelectVisibility();
@@ -1612,7 +2127,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             closeFlashcardStudio();
         } else if (e.code === 'Space' || e.code === 'Enter') {
             e.preventDefault();
-            flipCard();
+            nextCard();
         } else if (e.code === 'ArrowLeft') {
             e.preventDefault();
             prevCard();
@@ -1681,6 +2196,8 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     window.shuffleFlashcards = shuffleCards;
     window.toggleKaraokeCaptions = toggleKaraokeCaptions;
     window.toggleTeleprompter = toggleKaraokeCaptions;
+    window.toggleSolvedExample = toggleSolvedExample;
+    window.toggleSolvedExampleSolution = toggleSolvedExampleSolution;
     // Backwards compatibility aliases
     window.rateFlashcard = nextCard;
     window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
