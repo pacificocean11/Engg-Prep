@@ -35,7 +35,7 @@
         // 1. Mathematics
         if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|l’hôpital|gradient vector|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|laplace transforms|laplace transform definition|matrix multiplication|inverse of a square matrix|inverse of a matrix|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|algorithm|flowchart|pseudocode|quadratic equation|complex numbers:|law of sines|double-angle|arithmetic vs geometric|volumes of basic shapes|coordinates of foci and equation of directrix|maxima and minima|partial derivatives|curvature of any curve|properties of identity matrix|complementary function and particular integral/i.test(lower)) return 1;
         // 2. Probability and Statistics
-        if (/properties of normal distribution|when to use normal distribution|general character of probability|type i and type ii|binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
+        if (/expected value and variance of a linear combination of variables|properties of normal distribution|when to use normal distribution|general character of probability|type i and type ii|binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
         // 3. Ethics and Professional Practice
         if (/paramount duty|pe seal integrity|code of ethics|safety data sheet|signal words|flammability, lfl and ufl|confined space safety|noise pollution measurements|osha|hazard quotient|excess lifetime cancer|chronic daily intake|hierarchy of controls|nfpa 704|electrical safety: gfci|hazop study|lower and upper flammability|intellectual property: patents|conflicts of interest|whistleblowing|ergonomic posture assessment/i.test(lower)) return 3;
         // 4. Engineering Economics
@@ -45,7 +45,7 @@
         // 6. Statics
         if (/resolution of a force|lami's theorem|2d static equilibrium|moments \(couples\)|gravity retaining wall|free body diagram support|two-force and three-force|truss zero-force|method of joints|method of sections|parallel axis theorem \(second moment|centroid of composite|area moment of inertia|radius of gyration|product of inertia|centroid and moment of inertia for composite|centroids and area moments of inertia for standard shapes|coulomb dry friction|limiting friction/i.test(lower)) return 6;
         // 7. Dynamics, Kinematics, and Vibrations
-        if (/constant acceleration rotational motion equations|instantaneous centers of various types of links|rotational motion|underdamped|critically damped|overdamped|coriolis|normal and tangential acceleration in curvilinear|rectilinear kinematics|constant acceleration motion|variable acceleration motion|relative motion|projectile motion|kinematics of particles: normal|uniform circular motion|kinetic friction|particle kinetics: direct|potential energy in many|kinetic energy|linear impulse and momentum|coefficient of restitution|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|work-energy principle \(rigid body|rotational kinetic energy|mass moment of inertia of common|mass moment of inertia parallel axis|angular impulse and momentum|planar rigid body equations of motion|conservation of linear and angular momentum for colliding|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility/i.test(lower)) return 7;
+        if (/variable acceleration rotational motion equations|constant acceleration rotational motion equations|instantaneous centers of various types of links|rotational motion|underdamped|critically damped|overdamped|coriolis|normal and tangential acceleration in curvilinear|rectilinear kinematics|constant acceleration motion|variable acceleration motion|relative motion|projectile motion|kinematics of particles: normal|uniform circular motion|kinetic friction|particle kinetics: direct|potential energy in many|kinetic energy|linear impulse and momentum|coefficient of restitution|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|work-energy principle \(rigid body|rotational kinetic energy|mass moment of inertia of common|mass moment of inertia parallel axis|angular impulse and momentum|planar rigid body equations of motion|conservation of linear and angular momentum for colliding|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility/i.test(lower)) return 7;
         // 8. Mechanics of Materials
         if (/differential relationships between load, shear|mohr’s circle for plane stress|analytical in-plane principal stresses|generalized hooke’s law|isotropic elastic constants|elastic strain energy|cantilever sheet pile|triaxial shear|vertical stress increase beneath point loads|axial stress and elongation|poisson’s ratio|elastic flexure formula|elastic section modulus|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|maximum shear stress in rectangular cross-section|thermal expansion deformation and thermal stress|combined axial and bending|moment-area first theorem|moment-area second theorem|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modulus of elasticity vs\. modulus of rigidity|transformation of composite section|theoretical effective-length factors/i.test(lower)) return 8;
         // 9. Material Properties and Processing
@@ -1228,6 +1228,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 videoDur.textContent = card.videoDuration || '10s';
             }
             activeMediaTab = 'video';
+            playBackVideo();
         } else if (hasImage) {
             // Blueprint fallback on back only if no video exists
             if (backColVideo) {
@@ -1722,6 +1723,37 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     
+    // Autoplay flashcard video with robust browser policy fallback
+    function playBackVideo() {
+        const video = document.getElementById('fc-back-video');
+        if (!video) return;
+
+        const card = currentDeck && currentDeck[currentIndex];
+        if (!card || !card.videoUrl) return;
+        if (activeMediaTab !== 'video') return;
+
+        const attemptPlay = () => {
+            const modal = document.getElementById('fe-flashcards-modal');
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(err => {
+                    // Browser prevented unmuted autoplay; mute and retry playback
+                    video.muted = true;
+                    video.play().catch(() => {});
+                });
+            }
+        };
+
+        if (video.readyState >= 2) {
+            attemptPlay();
+        } else {
+            video.addEventListener('canplay', attemptPlay, { once: true });
+            attemptPlay();
+        }
+    }
+
     // Set active media tab (Option A: Switch between Video and Blueprint Diagram)
     function setMediaTab(tab) {
         activeMediaTab = tab;
@@ -1749,7 +1781,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         } else {
             if (imageContainer) imageContainer.classList.add('hidden');
             if (videoContainer) videoContainer.classList.remove('hidden');
-            if (subtext) subtext.textContent = 'Auto-plays on flip • Tap for controls';
+            if (subtext) subtext.textContent = 'Autoplays instantly • Tap for controls';
 
             const card = currentDeck[currentIndex];
             if (badge) badge.textContent = (card && card.videoDuration) || '10s';
@@ -1760,10 +1792,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             if (btnBlueprint) {
                 btnBlueprint.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 text-slate-400 hover:text-slate-200';
             }
-            if (isFlipped && video && card && card.videoUrl) {
-                const p = video.play();
-                if (p !== undefined) p.catch(() => {});
-            }
+            playBackVideo();
         }
         updateKaraokeUI();
     }
@@ -2095,7 +2124,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const modal = document.getElementById('fe-flashcards-modal');
         const card = document.getElementById('flashcard-studio-card');
         const video = document.getElementById('fc-back-video');
-        if (video) video.pause();
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
 
         if (modal) {
             modal.classList.add('opacity-0');
