@@ -7210,48 +7210,10 @@ window.calcEvaluate = function() {
                     }
                 },
             {
-                    "title": "Chi-Square Goodness-of-Fit Test for Discrete Distributions",
-                    "formula": "$$\\chi^2 = \\sum_{i=1}^k \\frac{(O_i - E_i)^2}{E_i}, \\quad \\nu = k - 1 - p$$",
-                    "description": "Tests hypothesis that sample observations $O_i$ originate from a theoretical population distribution with expected frequencies $E_i$; degrees of freedom $\\nu$ subtracts 1 plus number of parameters $p$ estimated from sample data.",
-                    "examTip": "Found in Probability & Statistics. Valid rule of thumb: expected frequency $E_i$ in every bin must be at least 5; pool adjacent bins if necessary."
-                },
-            {
-                    "title": "One-Way Analysis of Variance (ANOVA) F-Statistic",
-                    "videoUrl": "assets/videos/One_Way_Analysis_of_Variance_ANOVA_F_Statistic.mp4",
-                    "videoTitle": "One-Way Analysis of Variance (ANOVA) F-Statistic Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A materials engineer performs a one-way ANOVA to compare the yield strength of $k = 3$ heat treatment alloy batches with $n = 5$ specimens each (total $N = 15$).</p>\n<p>The between-treatments sum of squares is $SSB = 120$ and the within-treatments error sum of squares is $SSW = 240$. The calculated test statistic $F$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.00$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $4.50$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Mean Square Between ($MSB$)</strong></p>\n$$\\text{df}_{\\text{between}} = k - 1 = 3 - 1 = 2$$\n$$MSB = \\frac{SSB}{k - 1} = \\frac{120}{2} = 60$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Mean Square Within ($MSW$)</strong></p>\n$$\\text{df}_{\\text{within}} = N - k = 15 - 3 = 12$$\n$$MSW = \\frac{SSW}{N - k} = \\frac{240}{12} = 20$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate $F$-Statistic</strong></p>\n$$F = \\frac{MSB}{MSW} = \\frac{60}{20} = 3.00$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $3.00$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The ANOVA null hypothesis tests $H_0: \\mu_1 = \\mu_2 = \\mu_3$. An $F$-ratio significantly greater than 1 suggests at least one treatment mean differs.</p>"
-                    },
-                    "formula": "$$F = \\frac{MS_{\\text{between}}}{MS_{\\text{within}}} = \\frac{SSB / (k - 1)}{SSW / (N - k)}$$",
-                    "description": "Tests null hypothesis $H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_k$ that $k$ treatment group population means are identical by comparing variance between treatment groups to variance within treatment groups.",
-                    "examTip": "Found in Applied Statistics. If computed $F > F_{\\alpha, k-1, N-k}$, reject $H_0$; this indicates at least one group mean is statistically significantly different from the others."
-                },
-            {
                     "title": "Student's t-Distribution Two-Sample Hypothesis Test",
                     "formula": "$$t = \\frac{(\\bar{X}_1 - \\bar{X}_2) - \\Delta_0}{s_p \\sqrt{\\frac{1}{n_1} + \\frac{1}{n_2}}}, \\quad s_p^2 = \\frac{(n_1 - 1) s_1^2 + (n_2 - 1) s_2^2}{n_1 + n_2 - 2}$$",
                     "description": "Tests difference between two independent population means when population variances are unknown but assumed equal, pooling sample variances $s_1^2$ and $s_2^2$ with degrees of freedom $\\nu = n_1 + n_2 - 2$.",
                     "examTip": "Found in Probability & Statistics: Hypothesis Testing. For large samples ($n_1 + n_2 > 30$), the $t$-distribution converges to standard normal $z$."
-                },
-            {
-                    "title": "Bathtub Failure Curve and Life Cycle Hazard Rate",
-                    "videoUrl": "assets/videos/Bathtub_Failure_Curve_and_Life_Cycle_Hazard_Rate.mp4",
-                    "videoTitle": "Bathtub Failure Curve and Life Cycle Hazard Rate Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>In reliability engineering, the classical \"bathtub curve\" models product failure rate $Z(t)$ over its life cycle.</p>\n<p>During the normal operational useful life phase (between infant mortality and wear-out), the hazard failure rate $Z(t)$ is characterized by:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) A constant failure rate (exponential distribution)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) A strictly decreasing failure rate (burn-in)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) A sharply increasing failure rate (wear-out)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) A hazard rate of zero</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: The Three Bathtub Curve Phases</strong></p>\n<ol>\n  <li><strong>Infant Mortality (Early Life):</strong> Decreasing failure rate ($Z'(t) < 0$) due to manufacturing defects.</li>\n  <li><strong>Useful Life (Normal Operation):</strong> Approximately <strong>constant failure rate</strong> ($Z(t) = \\lambda$), dominated by random environmental shocks.</li>\n  <li><strong>Wear-Out Phase:</strong> Increasing failure rate ($Z'(t) > 0$) due to mechanical fatigue, erosion, and aging.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Reliability Distribution during Useful Life</strong></p>\n<p>When the hazard rate is constant ($Z(t) = \\lambda$), component reliability follows the exponential distribution $R(t) = e^{-\\lambda t}$, having Mean Time Between Failures $\\text{MTBF} = 1/\\lambda$.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) A constant failure rate governed by random, chance failures (exponential distribution)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The exponential distribution is unique in possessing the \"memoryless\" property: $P(T > t + s \\mid T > s) = P(T > t)$.</p>"
-                    },
-                    "formula": "$$Z(t) = \\frac{f(t)}{R(t)} = \\begin{cases} \\text{Decreasing} & \\text{(Infant Mortality / Burn-in)} \\\\ \\lambda = \\text{Constant} & \\text{(Useful Life / Random Failures)} \\\\ \\text{Increasing} & \\text{(Wear-out Period)} \\end{cases}$$",
-                    "description": "Characterizes equipment reliability across product lifetime: infant mortality from manufacturing flaws; constant failure rate $\\lambda$ during useful operating life; increasing hazard rate from fatigue and aging.",
-                    "examTip": "Found in Industrial: Quality & Reliability. The exponential distribution models strictly the constant failure rate portion of the bathtub curve."
-                },
-            {
-                    "title": "Mean Time Between Failures and System Availability",
-                    "formula": "$$\\text{MTBF} = \\frac{1}{\\lambda} = \\text{MTTF} + \\text{MTTR}, \\quad A = \\frac{\\text{MTBF}}{\\text{MTBF} + \\text{MTTR}} = \\frac{\\text{Uptime}}{\\text{Uptime} + \\text{Downtime}}$$",
-                    "description": "Quantifies operational readiness: Mean Time Between Failures ($\text{MTBF}$) measures operating reliability, while Mean Time To Repair ($\text{MTTR}$) measures maintainability; steady-state availability $A$ is the fraction of time the system is operational.",
-                    "examTip": "Found in Reliability Engineering. An availability of 'three nines' ($99.9\\%$) permits only $8.76\\text{ hours}$ of total downtime per year."
                 },
             {
                     "title": "Parallel System Reliability Formulation",
@@ -7264,30 +7226,6 @@ window.calcEvaluate = function() {
                     "formula": "$$R_s(t) = e^{-\\lambda t} \\sum_{k=0}^{n-1} \\frac{(\\lambda t)^k}{k!} = e^{-\\lambda t} \\left( 1 + \\lambda t + \\frac{(\\lambda t)^2}{2!} + \\dots \\right)$$",
                     "description": "Reliability of a cold standby system where redundant backup units remain idle until the primary unit fails, assuming an ideal sensing and switching mechanism with identical constant failure rates $\\lambda$.",
                     "examTip": "Found in Industrial: Reliability. Standby redundancy provides longer expected lifetime than active parallel redundancy because backup units do not experience operational wear while idling."
-                },
-            {
-                    "title": "Statistical Process Control $p$-Chart for Fraction Defective",
-                    "formula": "$$\\bar{p} = \\frac{\\sum d_i}{\\sum n_i}, \\quad UCL, LCL = \\bar{p} \\pm 3 \\sqrt{\\frac{\\bar{p}(1 - \\bar{p})}{n}}$$",
-                    "description": "Attributes control chart monitoring fraction defective in inspection samples of size $n$, based on the binomial distribution approximation; lower control limit is set to zero if calculated $LCL < 0$.",
-                    "examTip": "Found in Quality Control. Sample size $n$ should be large enough so that $n \\bar{p} \\ge 5$ to satisfy the normal approximation to the binomial distribution."
-                },
-            {
-                    "title": "Statistical Process Control $c$-Chart and $u$-Chart for Defects per Unit",
-                    "formula": "$$c\\text{-Chart: } \\bar{c} \\pm 3\\sqrt{\\bar{c}} \\quad (\\text{Constant Area}), \\quad u\\text{-Chart: } \\bar{u} \\pm 3\\sqrt{\\frac{\\bar{u}}{n}} \\quad (\\text{Variable Area})$$",
-                    "description": "Poisson-based control charts monitoring counts of nonconformities (defects): $c$-chart is used when inspection unit size is constant; $u$-chart monitors average defects per unit when sample size $n$ varies.",
-                    "examTip": "Found in Quality Control. A defect ($c$ or $u$) is a specific nonconformance, whereas a defective item ($p$ or $np$) is an entire unit containing one or more defects."
-                },
-            {
-                    "title": "Western Electric Rules for Special Cause Variation",
-                    "formula": "$$\\text{Rule 1: } 1 \\text{ pt beyond } 3\\sigma; \\quad \\text{Rule 2: } 2 \\text{ of } 3 \\text{ pts beyond } 2\\sigma; \\quad \\text{Rule 3: } 4 \\text{ of } 5 \\text{ pts beyond } 1\\sigma; \\quad \\text{Rule 4: } 8 \\text{ consecutive pts on one side of center}$$",
-                    "description": "Statistical decision rules detecting out-of-control conditions and non-random patterns (shifts, drifts, trends) on Shewhart control charts prior to an individual point breaching the $3\\sigma$ control limits.",
-                    "examTip": "Found in Quality Control: SPC. All rules evaluate points on the same side of the centerline (except Rule 1, which applies to either limit)."
-                },
-            {
-                    "title": "Six Sigma DMAIC Framework Steps and Tollgates",
-                    "formula": "$$\\text{Define} \\to \\text{Measure} \\to \\text{Analyze} \\to \\text{Improve} \\to \\text{Control} \\quad (3.4 \\text{ DPMO at } 6\\sigma \\text{ with } 1.5\\sigma \\text{ shift})$$",
-                    "description": "Structured data-driven problem-solving roadmap for process improvement: project charter & VOC (Define); baseline capability & MSA (Measure); root cause Ishikawa/regression (Analyze); DOE & pilot (Improve); SPC & poke-yoke (Control).",
-                    "examTip": "Found in Quality: Six Sigma. A Six Sigma process allows a $1.5\\sigma$ long-term mean drift, resulting in exactly $3.4$ defects per million opportunities (DPMO)."
                 },
             {
                     "title": "NCEES Model Rules: Paramount Duty to Public Welfare",
@@ -7313,167 +7251,6 @@ window.calcEvaluate = function() {
                     "solvedExample": {
                         "question": "<p>Under the NCEES Model Rules of Professional Conduct, a licensed Professional Engineer is legally and ethically permitted to affix their official PE seal and signature to engineering documents ONLY when:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) The review fees are paid in full</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Prepared personally or under direct supervision</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Prepared by trusted unlicensed drafter</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) State board approved the contract</div>\n</div>",
                         "solution": "<p><strong class=\"text-emerald-400\">Step 1: NCEES Seal Rule Requirement</strong></p>\n<p>Under NCEES Model Rules Section 240.20:</p>\n<blockquote>\"The application of a licensee's seal and signature shall indicate that the licensee has exercised direct supervisory control over the preparation of the work or that the work was prepared personally by the licensee.\"</blockquote>\n<p><strong class=\"text-emerald-400\">Step 2: Prohibition of \"Plan Stamping\"</strong></p>\n<p>Sealing documents not prepared by the engineer or under their direct supervisory control (\"plan stamping\") is a severe ethical and statutory violation resulting in revocation of the professional license.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) The documents were prepared personally by the licensee or under the licensee's direct supervisory control</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Direct supervisory control means personal knowledge and technical direction over each design decision.</p>"
-                    }
-                },
-            {
-                    "title": "Safety Data Sheet (SDS)",
-                    "videoUrl": "assets/videos/Safety_Data_Sheet_SDS.mp4",
-                    "videoTitle": "Safety Data Sheet (SDS) Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>Under the OSHA Hazard Communication Standard (GHS format), Safety Data Sheets (SDSs) follow a standardized 16-section sequence.</p>\n<p>In which section of an SDS will an engineer find required Personal Protective Equipment (PPE), engineering ventilation controls, and Permissible Exposure Limits (PELs)?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Section 2: Hazard Identification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Section 4: First-Aid Measures</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Section 8: Exposure Controls/Personal Protection</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Section 11: Toxicological Information</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review Standard GHS SDS Sections</strong></p>\n<ul>\n  <li>Section 1: Identification</li>\n  <li>Section 2: Hazard(s) Identification</li>\n  <li>Section 4: First-Aid Measures</li>\n  <li><strong>Section 8: Exposure Controls/Personal Protection</strong> (OSHA PELs, ACGIH TLVs, engineering controls, PPE)</li>\n  <li>Section 9: Physical and Chemical Properties</li>\n  <li>Section 11: Toxicological Information</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Confirm Section 8 Contents</strong></p>\n<p>Section 8 specifies respiratory protection, protective gloves, eye gear, and ventilation threshold values.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) Section 8: Exposure Controls/Personal Protection</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Section 8 is critical for workplace industrial hygiene and chemical process plant safety audits.</p>"
-                    },
-                    "formula": "$$\\text{GHS Format: 16 Standardized Sections (1: Identification } \\dots \\text{ 8: Exposure/PPE } \\dots \\text{ 16: Other)}$$",
-                    "description": "Standardized technical document aligned with the Globally Harmonized System (GHS) of Classification and Labelling of Chemicals mandated by OSHA. Contains 16 mandatory sections detailing chemical properties, physical/health/environmental hazards, protective safety measures, storage handling, accidental release measures, and exposure control standards.",
-                    "examTip": "Found in Safety and Ethics across all disciplines. Key sections tested on FE: Section 2 (Hazard Identification / Pictograms), Section 4 (First-Aid Measures), Section 8 (Exposure Controls / Personal Protection), and Section 9 (Physical and Chemical Properties such as flash point, LFL/UFL)."
-                },
-            {
-                    "title": "Signal Words",
-                    "imageUrl": "assets/images/safety_signal_words_danger_warning.jpg",
-                    "imageTitle": "OSHA and ANSI Safety Signal Word Severity Hierarchy",
-                    "videoUrl": "assets/videos/Signal_Words.mp4",
-                    "videoTitle": "Signal Words Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>According to OSHA and ANSI Z535 hazard communication standards, which signal word indicates an imminently hazardous situation which, if not avoided, WILL result in death or serious injury?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) CAUTION</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) NOTICE</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) WARNING</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) DANGER</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: ANSI Z535 / OSHA Signal Word Hierarchy</strong></p>\n<ol>\n  <li><strong>DANGER:</strong> Indicates an <em>imminently hazardous</em> situation which, if not avoided, <strong>will</strong> result in death or serious injury (highest severity, red header).</li>\n  <li><strong>WARNING:</strong> Indicates a <em>potentially hazardous</em> situation which, if not avoided, <strong>could</strong> result in death or serious injury (orange header).</li>\n  <li><strong>CAUTION:</strong> Indicates a potentially hazardous situation which, if not avoided, may result in minor or moderate injury (yellow header).</li>\n  <li><strong>NOTICE:</strong> States a company policy or property damage information (blue header).</li>\n</ol>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(D) DANGER</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The distinction between \"will\" (DANGER) and \"could\" (WARNING) is a frequent FE safety exam question.</p>"
-                    },
-                    "formula": "$$\\text{Signal Words: } \\text{\\textbf{DANGER}} \\text{ (Severe Hazard)} > \\text{\\textbf{WARNING}} \\text{ (Less Severe Hazard)}$$",
-                    "description": "Prominent GHS and OSHA standardized alert words utilized on chemical hazard labels and Safety Data Sheets to indicate the relative severity of hazard. Exactly two official signal words exist: \"DANGER\" indicates severe hazard categories (e.g. fatal if swallowed, highly flammable); \"WARNING\" indicates less severe hazard categories (e.g. harmful if swallowed, combustible liquid).",
-                    "examTip": "Found in Safety: Hazard Communication. Exactly one signal word may appear on any GHS label. If a chemical has multiple hazards warranting both \"Danger\" and \"Warning\", \"DANGER\" takes legal precedence and \"Warning\" is omitted."
-                },
-            {
-                    "title": "Flammability, LFL and UFL",
-                    "formula": "$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL} \\text{ (Flammable Zone)}, \\quad \\text{LFL}_{\\text{mix}} = \\frac{1}{\\sum \\frac{y_i}{\\text{LFL}_i}}$$",
-                    "description": "The Lower Flammability Limit (LFL) is the minimum volumetric concentration of combustible gas or vapor in air below which flame propagation cannot occur (fuel-lean mixture). The Upper Flammability Limit (UFL) is the maximum concentration above which the mixture is too rich in fuel and oxygen-deficient to ignite. Le Chatelier's mixing rule predicts the flammability limits of multi-component gas mixtures.",
-                    "examTip": "Found in Chemical, Industrial, and Environmental: Safety. Below LFL is \"too lean\"; above UFL is \"too rich\". OSHA requires confined spaces to maintain atmospheric vapor concentrations below $10\\%$ of LFL ($< 0.10 \\times \\text{LFL}$) before hot work or human entry is permitted.",
-                    "videoUrl": "assets/videos/Flammability_LFL_and_UFL.mp4",
-                    "videoTitle": "Flammability, LFL and UFL Video Guide",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>Methane gas has a Lower Flammability Limit $\\text{LFL} = 5.0\\%$ by volume and an Upper Flammability Limit $\\text{UFL} = 15.0\\%$ by volume in air.</p>\n<p>An air quality sensor in a boiler room measures a methane concentration of $3.2\\%$ by volume. The state of this gas mixture is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Too rich to burn (exceeds UFL)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Flammable and within explosive range</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Too lean to burn (below LFL)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) At ideal stoichiometric proportions</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Flammability Range Definition</strong></p>\n<p>Combustion can occur only within the flammable limits:</p>\n$$\\text{LFL} \\le C_{\\text{vapor}} \\le \\text{UFL}$$\n$$\\text{Flammable Zone: } 5.0\\% \\le C \\le 15.0\\%$$\n<p><strong class=\"text-emerald-400\">Step 2: Compare Measured Concentration</strong></p>\n<p>The measured concentration is $C = 3.2\\% < 5.0\\% = \\text{LFL}$.</p>\n<p>Because fuel concentration is below the lower limit, there is insufficient fuel vapor relative to air, making the mixture <strong>too lean to burn</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) Too lean to burn (fuel concentration is below LFL)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If $C > \\text{UFL}$, the mixture is \"too rich\" (insufficient oxygen). In industrial safety, concentrations must be kept below $10\\% - 25\\%$ of the LFL.</p>"
-                    }
-                },
-            {
-                    "title": "Confined Space Safety",
-                    "videoUrl": "assets/videos/Confined_Space_Safety.mp4",
-                    "videoTitle": "Confined Space Safety Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>Prior to worker entry into a permit-required confined space (such as a pressure vessel or reactor drum), OSHA standards mandate atmospheric testing in which exact sequential order?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Toxics, Flammables, Oxygen</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Oxygen, Flammables, Toxics</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Flammables, CO, H2S</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Any order is acceptable</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: OSHA 29 CFR 1910.146 Testing Order</strong></p>\n<p>Atmospheric testing in confined spaces must strictly follow this sequence:</p>\n<ol>\n  <li><strong>Oxygen Content:</strong> Required range is $19.5\\%$ to $23.5\\%$. Most combustible gas sensors require adequate oxygen ($> 16\\%$) to function accurately!</li>\n  <li><strong>Flammable Gases and Vapors:</strong> Must be less than $10\\%$ of the Lower Flammability Limit ($< 10\\%\\text{ LFL}$).</li>\n  <li><strong>Toxic Contaminants:</strong> Must remain below OSHA Permissible Exposure Limits (PELs) (e.g., $\\text{CO}, \\text{H}_2\\text{S}$).</li>\n</ol>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 1. Oxygen content, 2. Flammable gases and vapors, 3. Toxic contaminants</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always test oxygen first because sensor instrumentation for flammable vapors relies on catalytic bead reaction requiring oxygen.</p>"
-                    },
-                    "formula": "$$\\text{Atmospheric Test Order: } 1.\\, \\text{Oxygen } (19.5\\% - 23.5\\%) \\to 2.\\, \\text{Combustibles } (<10\\% \\, \\text{LFL}) \\to 3.\\, \\text{Toxics } (<\\text{PEL})$$",
-                    "description": "OSHA defines a confined space as an area large enough for bodily entry, with limited or restricted means for entry or exit, and not designed for continuous employee occupancy (e.g. storage tanks, manholes, pipelines, silos). A permit-required confined space (PRCS) contains or has potential to contain a hazardous atmosphere, engulfment hazards, inward-converging walls, or other serious recognized safety risks.",
-                    "examTip": "Found in Safety and Environmental / Industrial Engineering. Atmospheric testing MUST be conducted in strict chronological sequence: Oxygen first, then Flammable/Combustible vapors, then Toxic contaminants. Safe oxygen range is strictly $19.5\\%$ to $23.5\\%$."
-                },
-            {
-                    "title": "Noise Pollution Measurements",
-                    "formula": "$$\\text{SPL} = 10 \\log_{10}\\left(\\frac{p^2}{p_0^2}\\right) = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right) \\text{ [dB]}, \\quad D = 100 \\sum \\frac{C_i}{T_i} \\%, \\quad T = \\frac{8}{2^{(L - 90)/5}}$$",
-                    "description": "Sound Pressure Level ($\\text{SPL}$) is measured in decibels ($\\text{dB}$) relative to reference threshold of human hearing $p_0 = 20 \\, \\mu\\text{Pa}$. OSHA occupational noise standard enforces an 8-hour permissible exposure limit of $90\\text{ dBA}$ with a $5\\text{ dBA}$ exchange rate (halving allowable exposure time $T$ for every $5\\text{ dBA}$ sound level increase). Cumulative noise dose $D$ must not exceed $100\\%$.",
-                    "examTip": "Found in Industrial and Environmental Engineering: Acoustics and Safety. A-weighting ($\\text{dBA}$) adjusts for human ear frequency response. Two identical independent sound sources of $80\\text{ dB}$ combine logarithmically to $80 + 10\\log_{10}(2) = 83\\text{ dB}$, NOT $160\\text{ dB}$!",
-                    "videoUrl": "assets/videos/Noise_Pollution_Measurements.mp4",
-                    "videoTitle": "Noise Pollution Measurements Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>An industrial exhaust fan emits an acoustic root-mean-square (RMS) sound pressure $p = 0.20\\text{ Pa}$ measured at an operator workstation. The reference threshold of hearing is $p_0 = 20\\ \\mu\\text{Pa}$ ($2.0 \\times 10^{-5}\\text{ Pa}$).</p>\n<p>The sound pressure level (SPL) in decibels is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60\\text{ dB}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $70\\text{ dB}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $80\\text{ dB}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $90\\text{ dB}$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: NCEES Sound Pressure Level Formula</strong></p>\n$$\\text{SPL} = 20 \\log_{10}\\left(\\frac{p}{p_0}\\right)$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Pressure Ratio</strong></p>\n$$\\frac{p}{p_0} = \\frac{0.20\\text{ Pa}}{2.0 \\times 10^{-5}\\text{ Pa}} = \\frac{2.0 \\times 10^{-1}}{2.0 \\times 10^{-5}} = 10^4 = 10{,}000$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Decibel Level</strong></p>\n$$\\text{SPL} = 20 \\log_{10}(10^4) = 20 \\times 4 = 80\\text{ dB}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $80\\text{ dB}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Doubling sound pressure adds $+6\\text{ dB}$ ($20 \\log_{10}(2) \\approx 6.02$). Doubling acoustic sound power adds $+3\\text{ dB}$ ($10 \\log_{10}(2) \\approx 3.01$).</p>"
-                    }
-                },
-            {
-                    "title": "OSHA Soil Classifications (Type A, B, C) and Maximum Sloping Angles",
-                    "formula": "$$\\text{Type A: } 3/4:1 \\ (53^\\circ), \\quad \\text{Type B: } 1:1 \\ (45^\\circ), \\quad \\text{Type C: } 1.5:1 \\ (34^\\circ)$$",
-                    "description": "OSHA standard excavation sloping ratios (horizontal : vertical) for trenches $\\le 20\\text{ ft}$ deep: Type A ($q_u \\ge 1.5\\text{ tsf}$, cohesive), Type B ($0.5 < q_u < 1.5\\text{ tsf}$), and Type C ($q_u \\le 0.5\\text{ tsf}$, granular/submerged).",
-                    "examTip": "Found in Construction Safety: Excavations. Any soil in which water is freely seeping or that has been previously disturbed is automatically downgraded to Type C."
-                },
-            {
-                    "title": "OSHA Excavation Safety: Trench Shielding and Trench Boxes",
-                    "formula": "$$H_{\\text{box}} \\ge H_{\\text{trench}} + 18\\text{ inches}$$",
-                    "description": "Specifies that protective trench boxes or shields must extend at least $18\\text{ inches}$ ($0.45\\text{ m}$) above the top of the vertical trench wall when the ground slopes away from the trench.",
-                    "examTip": "Found in Construction Safety: OSHA. A stairway, ladder, ramp, or other safe means of egress must be located in trench excavations that are $4\\text{ ft}$ or more in depth, requiring no more than $25\\text{ ft}$ of lateral travel."
-                },
-            {
-                    "title": "HAZOP Study Methodology and Standard Guide Words",
-                    "formula": "$$\\text{Guide Word} + \\text{Process Parameter} = \\text{Deviation} \\implies \\text{Cause} \\to \\text{Consequence} \\to \\text{Safeguard}$$",
-                    "description": "Systematic process hazard analysis using standardized guide words (NO/NOT, MORE, LESS, AS WELL AS, PART OF, REVERSE, OTHER THAN) applied to process variables (Flow, Temperature, Pressure, Level).",
-                    "examTip": "Found in Chemical: Process Safety. Example: 'MORE' + 'PRESSURE' = high pressure deviation caused by blocked discharge valve, leading to reactor rupture."
-                },
-            {
-                    "title": "Lower and Upper Flammability Limits (LFL / UFL) Le Chatelier Rule",
-                    "formula": "$$LFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{LFL_i}\\right)}, \\quad UFL_{\\text{mix}} = \\frac{1}{\\sum_{i=1}^n \\left(\\frac{y_i}{UFL_i}\\right)}$$",
-                    "description": "Calculates overall lower and upper flammability limits in air for a gas mixture with combustible component volume/mole fractions $y_i$ having individual limits $LFL_i$ and $UFL_i$.",
-                    "examTip": "Found in Chemical: Process Safety. Mixtures with fuel concentration below LFL are too lean to burn; concentrations above UFL are too rich to burn."
-                },
-            {
-                    "title": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA",
-                    "formula": "$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%, \\quad T_i = \\frac{8}{2^{(L_i - 90)/5}}, \\quad TWA = 16.61 \\log_{10}\\left(\\frac{D}{100}\\right) + 90$$",
-                    "description": "OSHA noise regulations using a $5\\text{ dB}$ exchange rate: reference duration $T_i$ is $8\\text{ hours}$ at $90\\text{ dBA}$, $4\\text{ hours}$ at $95\\text{ dBA}$, and $2\\text{ hours}$ at $100\\text{ dBA}$; daily noise dose $D$ must not exceed $100\\%$ ($TWA \\le 90\\text{ dBA}$).",
-                    "examTip": "Found in Industrial Safety: Noise. OSHA Action Level triggering mandatory hearing conservation programs is an 8-hour TWA of $85\\text{ dBA}$ ($D = 50\\%$).",
-                    "videoUrl": "assets/videos/OSHA_Permissible_Noise_Exposure_Dose_and_8_Hour_TWA.mp4",
-                    "videoTitle": "OSHA Permissible Noise Exposure Dose and 8-Hour TWA Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>Under OSHA noise exposure regulations, permissible durations are $T = 8\\text{ hours}$ at 90 dBA and $T = 4\\text{ hours}$ at 95 dBA (5-dB exchange rate).</p>\n<p>A technician spends $C_1 = 2\\text{ hours}$ in a 95 dBA compressor area ($T_1 = 4\\text{ h}$) and $C_2 = 3\\text{ hours}$ in a 90 dBA machining area ($T_2 = 8\\text{ h}$). The total daily noise dose $D$ received by the technician is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $62.5\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $75.0\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $87.5\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $100.0\\%$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: NCEES / OSHA Daily Noise Dose Formula</strong></p>\n$$D = 100 \\sum_{i=1}^n \\left(\\frac{C_i}{T_i}\\right) \\%$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Exposure Times</strong></p>\n$$D = 100 \\left(\\frac{2\\text{ h}}{4\\text{ h}} + \\frac{3\\text{ h}}{8\\text{ h}}\\right) = 100 (0.500 + 0.375)$$\n$$D = 100 \\times 0.875 = 87.5\\%$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $87.5\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If $D > 100\\%$, the OSHA Permissible Exposure Limit (PEL) is exceeded. If $D > 50\\%$, the OSHA Action Level is triggered.</p>"
-                    }
-                },
-            {
-                    "title": "Chronic Daily Intake Chemical Exposure Formulation",
-                    "formula": "$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT} = \\frac{C \\cdot CR \\cdot EF \\cdot ED}{BW \\cdot AT} \\quad (\\text{mg/(kg}\\cdot\\text{day)})$$",
-                    "description": "Quantifies human toxicant exposure via oral drinking, inhalation, or dermal contact, where $C$ is contaminant concentration, $CR$ is contact rate, $EF$ is exposure frequency, $ED$ is exposure duration, $BW$ is body weight, and $AT$ is averaging time.",
-                    "examTip": "Found in Environmental: Health Risk Assessment. For carcinogens, averaging time is lifetime ($AT = 70\\text{ yr} \\times 365\\text{ days/yr} = 25,550\\text{ days}$); for non-carcinogens, $AT = ED \\times 365$.",
-                    "videoUrl": "assets/videos/Chronic_Daily_Intake_Chemical_Exposure_Formulation.mp4",
-                    "videoTitle": "Chronic Daily Intake Chemical Exposure Formulation Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>An environmental risk assessment evaluates the Chronic Daily Intake (CDI) of a drinking water contaminant with concentration $C = 0.05\\text{ mg/L}$.</p>\n<p>A resident consumes contact rate $CR = 2.0\\text{ L/day}$ with exposure factor $EFD = 1.0$, body weight $BW = 70\\text{ kg}$, and averaging time factor $AT = 1.0$. The chronic daily intake CDI is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.71 \\times 10^{-3}\\text{ mg/(kg}\\cdot\\text{day)}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.43 \\times 10^{-3}\\text{ mg/(kg}\\cdot\\text{day)}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.86 \\times 10^{-3}\\text{ mg/(kg}\\cdot\\text{day)}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $5.00 \\times 10^{-3}\\text{ mg/(kg}\\cdot\\text{day)}$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: NCEES Formula for Chronic Daily Intake</strong></p>\n$$CDI = \\frac{C \\cdot CR \\cdot EFD}{BW \\cdot AT}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$CDI = \\frac{(0.05\\text{ mg/L})(2.0\\text{ L/day})(1.0)}{(70\\text{ kg})(1.0)} = \\frac{0.10\\text{ mg/day}}{70\\text{ kg}}$$\n$$CDI = 0.0014286\\text{ mg/(kg}\\cdot\\text{day)} \\approx 1.43 \\times 10^{-3}\\text{ mg/(kg}\\cdot\\text{day)}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.43 \\times 10^{-3}\\text{ mg/(kg}\\cdot\\text{day)}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For carcinogens, averaging time $AT = 70\\text{ years} \\times 365\\text{ days/yr}$. For non-carcinogens, $AT$ equals the exposure duration.</p>"
-                    }
-                },
-            {
-                    "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
-                    "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
-                    "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
-                    "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
-                },
-            {
-                    "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
-                    "formula": "$$\\text{Risk} = CDI \\times CSF \\le 10^{-6} \\text{ to } 10^{-4}$$",
-                    "description": "Estimates incremental probability of an individual developing cancer over a lifetime due to toxic chemical exposure, using the linearized multistage Cancer Slope Factor ($CSF$ in $(\\text{mg/kg}\\cdot\\text{day})^{-1}$).",
-                    "examTip": "Found in Environmental: Health Risk Assessment. EPA acceptable remediation risk range spans $10^{-6}$ (one in a million) to $10^{-4}$ (one in ten thousand)."
-                },
-            {
-                    "title": "Hierarchy of Controls for Workplace Hazard Mitigation",
-                    "formula": "$$\\text{1. Elimination} > \\text{2. Substitution} > \\text{3. Engineering Controls} > \\text{4. Administrative Controls} > \\text{5. PPE}$$",
-                    "description": "Standard occupational safety hierarchy ranked from most effective to least effective: Elimination physically removes the hazard; Engineering Controls isolate people from the hazard; PPE is the last line of defense with lowest reliability.",
-                    "examTip": "Found in Safety, Health, and Environment. PPE is always ranked as the least effective control because it relies completely on individual worker compliance and proper fit."
-                },
-            {
-                    "title": "NFPA 704 Standard System for Hazard Identification (Fire Diamond)",
-                    "formula": "$$\\text{Blue (Health: 0-4)}, \\ \\text{Red (Flammability: 0-4)}, \\ \\text{Yellow (Instability: 0-4)}, \\ \\text{White (Special)}$$",
-                    "description": "Standardized hazardous materials labeling: severity rated 0 (minimal hazard) to 4 (extreme hazard); special symbols in white quadrant comprise $W$ with horizontal line (reacts with water), $OX$ (oxidizer), and $SA$ (simple asphyxiant).",
-                    "examTip": "Found in Safety: Hazardous Materials. Red quadrant rating 4 denotes flammable gases and volatile liquids with flash points below $73^\\circ\\text{F}$ ($22.8^\\circ\\text{C}$).",
-                    "videoUrl": "assets/videos/NFPA_704_Standard_System_for_Hazard_Identification_Fire_Diamond.mp4",
-                    "videoTitle": "NFPA 704 Standard System for Hazard Identification (Fire Diamond) Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>An emergency response team observes an NFPA 704 standard hazard identification \"fire diamond\" on a bulk storage tank with ratings:</p>\n<ul>\n  <li>Blue (Left) = 3</li>\n  <li>Red (Top) = 4</li>\n  <li>Yellow (Right) = 0</li>\n  <li>White (Bottom) = Blank</li>\n</ul>\n<p>According to NFPA 704 rating definitions, this material possesses:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Extreme health (3), Non-flammable (4), Stable (0)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Serious health (3), Extreme flammability (4), Stable (0)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Moderate health (3), Combustible (4), Water-reactive (0)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Corrosive acid hazard with explosive instability</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: NFPA 704 Color Codes and Severity Scale (0 to 4)</strong></p>\n<ul>\n  <li><strong>Blue (Health):</strong> 0 = Normal, 1 = Slightly hazardous, 2 = Hazardous, <strong>3 = Serious / Extreme danger (full protective gear required)</strong>, 4 = Deadly.</li>\n  <li><strong>Red (Flammability):</strong> 0 = Will not burn, 1 = Flash point $> 200^\\circ\\text{F}$, 2 = Flash point $100 - 200^\\circ\\text{F}$, 3 = Flash point $< 100^\\circ\\text{F}$, <strong>4 = Extremely flammable gas or volatile liquid (flash point $< 73^\\circ\\text{F}$)</strong>.</li>\n  <li><strong>Yellow (Instability/Reactivity):</strong> <strong>0 = Normally stable</strong>, 1 = Unstable if heated, 2 = Violent chemical change, 3 = Shock/heat detonate, 4 = May detonate.</li>\n  <li><strong>White (Special Hazards):</strong> $\\text{W}$ with line through (water reactive), $\\text{OX}$ (oxidizer), $\\text{SA}$ (simple asphyxiant).</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Serious health hazard (3), extreme flammability with flash point below 73°F (4), normally stable (0)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The scale always runs from 0 (minimal hazard) to 4 (maximum danger) for all three colored categories.</p>"
-                    }
-                },
-            {
-                    "title": "Electrical Safety: GFCI Operation and Electrical Shock Hazards",
-                    "formula": "$$I_{\\text{trip}} = 4 - 6\\text{ mA}, \\quad \\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| > 5\\text{ mA} \\implies \\text{Trip in } < 25\\text{ ms}$$",
-                    "description": "Ground Fault Circuit Interrupters (GFCI) protect human life by sensing current imbalance between ungrounded (hot) and grounded (neutral) conductors using a differential current sensing transformer.",
-                    "examTip": "Found in Safety: Electrical. Ventricular fibrillation in humans occurs at currents as low as $50-100\\text{ mA}$; standard circuit breakers ($15-20\\text{ A}$) protect equipment and wiring from fires, not humans from electrocution.",
-                    "videoUrl": "assets/videos/Electrical_Safety_GFCI_Operation_and_Electrical_Shock_Hazards.mp4",
-                    "videoTitle": "Electrical Safety: GFCI Operation and Electrical Shock Hazards Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A Ground Fault Circuit Interrupter (GFCI) monitors current balance between ungrounded (hot) and neutral conductors. The hot line delivers $I_{\\text{hot}} = 12.000\\text{ A}$, but due to internal casing leakage to ground, the neutral return conducts $I_{\\text{neutral}} = 11.993\\text{ A}$.</p>\n<p>Will a standard Class A GFCI interrupt the circuit?</p>\n<div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Yes, because the 7 mA current differential exceeds the 4–6 mA Class A trip threshold</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) No, because GFCIs only trip when current exceeds the 15 A branch breaker rating</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) No, because leakage current remains below the 30 mA equipment ground fault threshold</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Yes, but only after a mandatory 10-minute thermal delay</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Ground Fault Current Differential</strong></p>\n$$\\Delta I = |I_{\\text{hot}} - I_{\\text{neutral}}| = |12.000\\text{ A} - 11.993\\text{ A}| = 0.007\\text{ A} = 7\\text{ mA}$$\n<p><strong class=\"text-emerald-400\">Step 2: NCEES / UL 943 Class A GFCI Standard</strong></p>\n<p>Under National Electrical Code (NEC) and UL 943 standards, a Class A GFCI is designed to trip when a fault current to ground exceeds $4\\text{ to }6\\text{ mA}$ within 25 milliseconds to prevent human ventricular fibrillation.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Conclusion</strong></p>\n<p>Because $\\Delta I = 7\\text{ mA} > 6\\text{ mA}$, the differential current sensing transformer senses the imbalance and immediately interrupts the circuit.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) Yes, because the 7 mA current differential exceeds the 4–6 mA Class A trip threshold</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Standard circuit breakers protect branch wiring from fire caused by overload (amperes); GFCIs protect humans from fatal electric shock (milliamperes).</p>"
                     }
                 },
             {
@@ -7703,107 +7480,6 @@ window.calcEvaluate = function() {
                     "examTip": "Found in Engineering Economics. Major shortcoming of payback period is that it completely ignores cash flows occurring after the payback horizon."
                 },
             {
-                    "title": "Sensitivity Analysis and Spider Diagrams in Engineering Economics",
-                    "formula": "$$\\text{Sensitivity} = \\frac{\\% \\Delta \\text{PW}}{\\% \\Delta \\text{Parameter}} = \\frac{\\partial \\text{PW}}{\\partial X} \\left(\\frac{X}{\\text{PW}}\\right)$$",
-                    "description": "Evaluates project financial vulnerability to uncertainties (interest rate, initial cost, annual revenues, project life); on a spider plot, the parameter with the steepest curve is the most critical risk variable.",
-                    "examTip": "Found in Engineering Economics. Steep curves indicate high project sensitivity; horizontal lines indicate parameters having virtually no impact on project feasibility."
-                },
-            {
-                    "title": "Critical Path Method (CPM) Float Equations",
-                    "formula": "$$TF = LS - ES = LF - EF, \\quad FF = \\min(ES_{\\text{succ}}) - EF$$",
-                    "description": "Calculates total float $TF$ and free float $FF$ for project activities; activities on the critical path have $TF = 0$.",
-                    "examTip": "Found in Project Management. Earliest Start $ES = \\max(EF_{\\text{pred}})$; Latest Finish $LF = \\min(LS_{\\text{succ}})$. Delaying critical path delays project completion.",
-                    "videoUrl": "assets/videos/Critical_Path_Method_CPM_Float_Equations.mp4",
-                    "videoTitle": "Critical Path Method (CPM) Float Equations Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>In a project CPM schedule network, an activity has a duration $D = 6\\text{ days}$, Early Start $ES = 4$, Early Finish $EF = 10$, Late Start $LS = 9$, and Late Finish $LF = 15$. The earliest start of its only immediate successor is Day 10.</p>\n<p>What are the activity's Total Float ($TF$) and Free Float ($FF$)?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $TF = 5 days,\\quad FF = 0 days$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $TF = 5 days,\\quad FF = 5 days$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $TF = 11 days,\\quad FF = 6 days$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $TF = 0 days,\\quad FF = 0 days$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Total Float (TF)</strong></p>\n$$TF = LS - ES = LF - EF = 9 - 4 = 15 - 10 = 5\\text{ days}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Free Float (FF)</strong></p>\n$$FF = ES_{\\text{successor}} - EF = 10 - 10 = 0\\text{ days}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $TF = 5 days,\\quad FF = 0 days$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Total Float delay affects project completion date; Free Float delay affects immediate successor starts without affecting project completion.</p>"
-                    }
-                },
-            {
-                    "title": "Economic Order Quantity (EOQ)",
-                    "formula": "$$Q^* = \\sqrt{\\frac{2 D S}{H}}$$",
-                    "description": "Optimal batch order quantity minimizing annual total inventory costs by balancing fixed order cost $S$ against annual unit holding cost $H$.",
-                    "examTip": "Found under Inventory Control. $D$ is annual demand. Total annual cost curve is flat near the minimum, making EOQ robust to estimation errors.",
-                    "videoUrl": "assets/videos/Economic_Order_Quantity_EOQ.mp4",
-                    "videoTitle": "Economic Order Quantity (EOQ) Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A maintenance depot uses $D = 8,000\\text{ bearings/year}$. The ordering and setup cost is $S = \\$50/\\text{order}$, and the annual inventory holding cost per bearing is $H = \\$2.00/\\text{unit-year}$.</p>\n<p>The optimal Economic Order Quantity ($Q^*$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $400 units$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $632 units$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $800 units$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 1,600 units</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Wilson EOQ Formula</strong></p>\n$$Q^* = \\sqrt{\\frac{2 D S}{H}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Parameters</strong></p>\n$$Q^* = \\sqrt{\\frac{2 \\times 8,000 \\times 50}{2.00}} = \\sqrt{\\frac{800,000}{2.00}} = \\sqrt{400,000} \\approx 632.45 \\approx 632\\text{ units}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $632 units$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> At $Q^*$, total annual holding costs exactly balance total annual ordering costs.</p>"
-                    }
-                },
-            {
-                    "title": "Earned Value Management: Cost Variance and Schedule Variance",
-                    "formula": "$$CV = EV - AC, \\quad SV = EV - PV$$",
-                    "description": "Measures project financial and schedule tracking: Cost Variance ($CV$) is Earned Value minus Actual Cost; Schedule Variance ($SV$) is Earned Value minus Planned Value; positive values denote under budget and ahead of schedule.",
-                    "examTip": "Found in Construction: Project Controls. $EV$ is the budgeted cost of work performed ($BCWP$), $PV$ is budgeted cost of work scheduled ($BCWS$), and $AC$ is actual cost of work performed ($ACWP$).",
-                    "videoUrl": "assets/videos/Earned_Value_Management_Cost_Variance_and_Schedule_Variance.mp4",
-                    "videoTitle": "Earned Value Management: Cost Variance and Schedule Variance Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A project milestone report shows the following EVM metrics:</p>\n<ul class=\"list-disc pl-5 my-1 text-xs\">\n  <li>Planned Value: $PV = \\$50,000$</li>\n  <li>Earned Value: $EV = \\$42,000$</li>\n  <li>Actual Cost: $AC = \\$46,000$</li>\n</ul>\n<p>The Cost Variance ($CV$) and Schedule Variance ($SV$) are:</p>\n<div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) CV = -$4,000,  SV = -$8,000</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) CV = +$4,000,  SV = -$8,000</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) CV = -$8,000,  SV = -$4,000</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) CV = -$4,000,  SV = +$8,000</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Cost Variance Formula</strong></p>\n$$CV = EV - AC = \\$42,000 - \\$46,000 = -\\$4,000 \\quad (\\text{over budget})$$\n<p><strong class=\"text-emerald-400\">Step 2: Schedule Variance Formula</strong></p>\n$$SV = EV - PV = \\$42,000 - \\$50,000 = -\\$8,000 \\quad (\\text{behind schedule})$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) CV = -$4,000,  SV = -$8,000</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Both formulas lead with $EV$. A negative variance is always unfavorable.</p>"
-                    }
-                },
-            {
-                    "title": "Earned Value Management: Cost and Schedule Performance Indices",
-                    "videoUrl": "assets/videos/Earned_Value_Management_Cost_and_Schedule_Performance_Indices.mp4",
-                    "videoTitle": "Earned Value Management: Cost and Schedule Performance Indices Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A project has an Earned Value $EV = \\$90,000$, an Actual Cost $AC = \\$100,000$, and a Planned Value $PV = \\$75,000$.</p>\n<p>The Cost Performance Index ($CPI$) and Schedule Performance Index ($SPI$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $CPI = 0.90,\\quad SPI = 1.20$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $CPI = 1.11,\\quad SPI = 0.83$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $CPI = 0.90,\\quad SPI = 0.83$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $CPI = 1.20,\\quad SPI = 0.90$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Cost Performance Index (CPI)</strong></p>\n$$CPI = \\frac{EV}{AC} = \\frac{\\$90,000}{\\$100,000} = 0.90 \\quad (< 1.0 \\implies \\text{over budget})$$\n<p><strong class=\"text-emerald-400\">Step 2: Schedule Performance Index (SPI)</strong></p>\n$$SPI = \\frac{EV}{PV} = \\frac{\\$90,000}{\\$75,000} = 1.20 \\quad (> 1.0 \\implies \\text{ahead of schedule})$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $CPI = 0.90,\\quad SPI = 1.20$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> $EV$ is in the numerator for both ratios: $CPI = EV/AC$ and $SPI = EV/PV$. Index $> 1$ is good; $< 1$ is poor.</p>"
-                    },
-                    "formula": "$$CPI = \\frac{EV}{AC}, \\quad SPI = \\frac{EV}{PV}$$",
-                    "description": "Project performance efficiency indicators: $CPI > 1.0$ indicates cost efficiency (earning more than spending); $SPI > 1.0$ indicates schedule progression efficiency faster than planned.",
-                    "examTip": "Found in Construction: Project Controls. Estimate at Completion: $EAC = BAC / CPI$, where $BAC$ is the original total project Budget at Completion."
-                },
-            {
-                    "title": "Predetermined Motion Time Systems (PMTS / MTM-1)",
-                    "formula": "$$1\\text{ TMU} = 0.00001\\text{ hour} = 0.0006\\text{ minute} = 0.036\\text{ second}, \\quad 1\\text{ second} = 27.8\\text{ TMU}$$",
-                    "description": "Establishes standard task times by decomposing manual work into basic elemental motions (Reach, Grasp, Move, Position, Release) quantified in Time Measurement Units (TMU) without requiring stopwatch timing.",
-                    "examTip": "Found in Industrial: Work Measurement. Memorize the direct conversion factor: $1\\text{ TMU} = 0.036\\text{ seconds}$ for rapid calculation on the FE exam."
-                },
-            {
-                    "title": "Kanban Production System Container Sizing Equation",
-                    "formula": "$$k = \\frac{D \\cdot L (1 + \\alpha)}{C}$$",
-                    "description": "Determines number of Kanban cards/containers $k$ required in a lean pull production system, where $D$ is demand rate, $L$ is lead time, $\\alpha$ is safety policy factor (contingency buffer), and $C$ is container capacity.",
-                    "examTip": "Found in Industrial: Lean Manufacturing. Ensure demand rate $D$ and lead time $L$ are expressed in matching time units (e.g., units/hour and hours)."
-                },
-            {
-                    "title": "Bill of Materials Explosion Tree and Component Offsetting",
-                    "formula": "$$\\text{Net Requirements} = \\max(0, \\text{Gross Requirements} - \\text{On-Hand} - \\text{Scheduled Receipts} + \\text{Safety Stock})$$",
-                    "description": "MRP hierarchical product structure explosion: calculates net component requirements by traversing multi-level parent-component relationships and backward-scheduling planned order releases by component lead times.",
-                    "examTip": "Found in Production Planning: MRP. Planned Order Release is simply Planned Order Receipt offset backward in time by the item lead time."
-                },
-            {
-                    "title": "Exponential Smoothing Forecasting with Smoothing Constant $\\alpha$",
-                    "videoUrl": "assets/videos/Exponential_Smoothing_Forecasting_with_Smoothing_Constant_alpha.mp4",
-                    "videoTitle": "Exponential Smoothing Forecasting with Smoothing Constant $alpha$ Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>An assembly plant forecasts component demand using single exponential smoothing. For the current month, the forecast was $F_t = 240\\text{ units}$, but actual recorded demand was $A_t = 270\\text{ units}$.</p>\n<p>With a smoothing constant $\\alpha = 0.30$, what is the forecast for next month ($F_{t+1}$)?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $240 units$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $249 units$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $261 units$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $270 units$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Exponential Smoothing Equation</strong></p>\n$$F_{t+1} = F_t + \\alpha(A_t - F_t) = \\alpha A_t + (1 - \\alpha)F_t$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Knowns</strong></p>\n$$F_{t+1} = 240 + 0.30(270 - 240) = 240 + 0.30(30) = 240 + 9 = 249\\text{ units}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $249 units$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Higher values of $\\alpha$ place more weight on recent actual demand; lower values produce smoother, more stable forecasts.</p>"
-                    },
-                    "formula": "$$F_t = \\alpha A_{t-1} + (1 - \\alpha) F_{t-1} = F_{t-1} + \\alpha (A_{t-1} - F_{t-1})$$",
-                    "description": "Short-term time-series forecasting weighting past data with geometrically decreasing weights: a high smoothing constant $\\alpha$ (e.g., $0.7-0.9$) reacts quickly to recent demand changes; a low $\\alpha$ ($0.1-0.2$) smooths random noise.",
-                    "examTip": "Found in Production Planning: Forecasting. Notice the error-correction form: new forecast equals old forecast plus fraction $\\alpha$ of the forecast error ($A_{t-1} - F_{t-1}$)."
-                },
-            {
-                    "title": "Forecasting Error Metrics: MAD, MSE, and Tracking Signal",
-                    "formula": "$$MAD = \\frac{\\sum |e_t|}{n}, \\quad MSE = \\frac{\\sum e_t^2}{n}, \\quad TS = \\frac{\\sum e_t}{MAD} = \\frac{RSFE}{MAD}$$",
-                    "description": "Quantifies forecasting accuracy and bias: Mean Absolute Deviation ($MAD$) measures average magnitude of errors; Mean Squared Error ($MSE$) penalizes large outliers; Tracking Signal ($TS$, typically bounded within $\\pm 4$) detects persistent bias.",
-                    "examTip": "Found in Industrial: Forecasting. For a normal error distribution, standard deviation of forecast error relates to MAD: $\\sigma \\approx 1.25 \\times MAD$."
-                },
-            {
-                    "title": "Total Productive Maintenance: Overall Equipment Effectiveness",
-                    "formula": "$$OEE = \\text{Availability} \\times \\text{Performance} \\times \\text{Quality} = \\left(\\frac{\\text{Operating Time}}{\\text{Planned Time}}\\right) \\left(\\frac{\\text{Total Output}}{\\text{Target Output}}\\right) \\left(\\frac{\\text{Good Units}}{\\text{Total Output}}\\right)$$",
-                    "description": "Comprehensive manufacturing productivity KPI accounting for the 'Six Big Losses': equipment breakdowns & setups (Availability); minor stoppages & reduced speed (Performance); startup rejects & production scrap (Quality).",
-                    "examTip": "Found in Industrial: TPM & Lean. A benchmark world-class OEE is considered $85\\%$ ($90\\% \\text{ Availability} \\times 95\\% \\text{ Performance} \\times 99.9\\% \\text{ Quality}$)."
-                },
-            {
                     "title": "Ohm’s Law and Joule Heating Law",
                     "imageUrl": "assets/images/ohms_law_joule_heating.jpg",
                     "imageTitle": "Ohm’s Law and Joule Heating Electrical Circuit Schematic Blueprint",
@@ -7855,51 +7531,6 @@ window.calcEvaluate = function() {
                     }
                 },
             {
-                    "title": "First-Order RC Transient Response",
-                    "imageUrl": "assets/images/first_order_rc_transient_response.jpg",
-                    "imageTitle": "First-Order RC Transient Response Curves",
-                    "formula": "$$v_C(t) = v_C(\\infty) + [v_C(0^+) - v_C(\\infty)] e^{-t / \\tau}, \\quad \\tau = R C$$",
-                    "description": "Expresses time-domain capacitor voltage charging or discharging through equivalent resistance $R$, where $\\tau = RC$ is circuit time constant.",
-                    "examTip": "Found in Transient Circuit Analysis. Capacitor voltage cannot change instantaneously ($v_C(0^+) = v_C(0^-)$). Steady state is reached in approximately $5\\tau$.",
-                    "videoUrl": "assets/videos/First_Order_RC_Transient_Response.mp4",
-                    "videoTitle": "First-Order RC Transient Response Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>An uncharged capacitor ($v_C(0) = 0\\text{ V}$) with capacitance $C = 50\\ \\mu\\text{F}$ is charged through a resistor $R = 40\\text{ k}\\Omega$ by a DC source $V_s = 20\\text{ V}$.</p>\n<p>The circuit time constant $\\tau$ and the capacitor voltage at time $t = 2.0\\text{ s}$ are most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\tau = 2.0 s,\\quad v_C = 12.6 V$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\tau = 2.0 s,\\quad v_C = 7.4 V$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\tau = 0.5 s,\\quad v_C = 19.6 V$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\tau = 4.0 s,\\quad v_C = 7.9 V$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Circuit Time Constant ($\\tau$)</strong></p>\n$$\\tau = R \\cdot C = (40 \\times 10^3\\ \\Omega) \\times (50 \\times 10^{-6}\\text{ F}) = 2.0\\text{ s}$$\n<p><strong class=\"text-emerald-400\">Step 2: First-Order Charging Voltage Transient</strong></p>\n$$v_C(t) = V_s \\left(1 - e^{-t/\\tau}\\right)$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $t = 2.0\\text{ s} = 1\\tau$</strong></p>\n$$v_C(2.0\\text{ s}) = 20\\left(1 - e^{-1}\\right) \\approx 20(1 - 0.36788) = 20 \\times 0.63212 = 12.64\\text{ V} \\approx 12.6\\text{ V}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\tau = 2.0 s,\\quad v_C = 12.6 V$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> A capacitor charges to $63.2\\%$ of its final voltage in $1\\tau$, and reaches $> 99\\%$ after $5\\tau$.</p>"
-                    }
-                },
-            {
-                    "title": "Thevenin’s Equivalent Circuit Theorem",
-                    "imageUrl": "assets/images/thevenins_equivalent_circuit.jpg",
-                    "imageTitle": "Thevenin's Equivalent Circuit with Series Source and Load",
-                    "formula": "$$V_{Th} = V_{oc}, \\quad R_{Th} = \\frac{V_{oc}}{I_{sc}}$$",
-                    "description": "Any linear two-terminal circuit containing independent/dependent sources and resistors can be replaced by a single ideal voltage source $V_{Th}$ in series with equivalent resistance $R_{Th}$.",
-                    "examTip": "Found under Circuit Analysis. When finding $R_{Th}$ with dependent sources, connect a 1V test source at output terminals and calculate $R_{Th} = 1\\text{V} / I_{\\text{test}}$.",
-                    "videoUrl": "assets/videos/Thevenin_Theorem.mp4",
-                    "videoTitle": "Thévenin's Theorem Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A linear DC circuit connected to terminals A-B has an open-circuit voltage $V_{oc} = 24\\text{ V}$. When a short circuit is connected across A-B, the measured current is $I_{sc} = 4.0\\text{ A}$.</p>\n<p>The Thevenin equivalent voltage $V_{\\text{Th}}$ and Thevenin equivalent resistance $R_{\\text{Th}}$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $V_Th = 24 V,\\quad R_Th = 6.0 Ω$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $V_Th = 24 V,\\quad R_Th = 96.0 Ω$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $V_Th = 6 V,\\quad R_Th = 4.0 Ω$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $V_Th = 12 V,\\quad R_Th = 6.0 Ω$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Thevenin Equivalent Voltage</strong></p>\n$$V_{\\text{Th}} = V_{oc} = 24\\text{ V}$$\n<p><strong class=\"text-emerald-400\">Step 2: Thevenin Equivalent Resistance</strong></p>\n$$R_{\\text{Th}} = \\frac{V_{oc}}{I_{sc}} = \\frac{24\\text{ V}}{4.0\\text{ A}} = 6.0\\ \\Omega$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $V_Th = 24 V,\\quad R_Th = 6.0 Ω$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The Norton equivalent circuit uses current source $I_N = I_{sc} = V_{\\text{Th}}/R_{\\text{Th}}$ in parallel with $R_{\\text{Th}}$.</p>"
-                    }
-                },
-            {
-                    "title": "Ideal Operational Amplifier Golden Rules",
-                    "imageUrl": "assets/images/ideal_op_amp_golden_rules.jpg",
-                    "imageTitle": "Ideal Operational Amplifier Golden Rules and Virtual Short",
-                    "formula": "$$i^+ = i^- = 0, \\quad v^+ = v^- \\quad (\\text{with negative feedback})$$",
-                    "description": "Fundamental rules of ideal op-amp circuit analysis: zero input current due to infinite input impedance, and virtual short (equal terminal voltages) maintained by negative feedback.",
-                    "examTip": "Found in Electronics / Instrumentation. Open-loop gain is modeled as infinite ($A_{OL} = \\infty$), driving differential input voltage to zero.",
-                    "videoUrl": "assets/videos/Ideal_Operational_Amplifier_Golden_Rules.mp4",
-                    "videoTitle": "Ideal Operational Amplifier Golden Rules Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>An inverting op-amp amplifier circuit has an input resistor $R_{\\text{in}} = 10\\text{ k}\\Omega$, a feedback resistor $R_f = 50\\text{ k}\\Omega$, and its non-inverting terminal connected to ground ($v^+ = 0\\text{ V}$). An input signal $v_{\\text{in}} = 1.2\\text{ V}$ is applied to the circuit.</p>\n<p>Assuming ideal op-amp behavior, the output voltage $v_{\\text{out}}$ and the current drawn from the input source $i_{\\text{in}}$ are:</p>\n<div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $v_out = -6.0 V,\\quad i_in = 0.12 mA$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $v_out = +6.0 V,\\quad i_in = 0.12 mA$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $v_out = -5.0 V,\\quad i_in = 0.00 mA$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $v_out = -1.2 V,\\quad i_in = 0.24 mA$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Op-Amp Golden Rules</strong></p>\n<p>1. Virtual Short: With negative feedback, $v^- = v^+ = 0\\text{ V}$ (virtual ground).</p>\n<p>2. Zero Input Current: $i^- = i^+ = 0\\text{ A}$ (infinite input impedance).</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Input Current ($i_{\\text{in}}$)</strong></p>\n$$i_{\\text{in}} = \\frac{v_{\\text{in}} - v^-}{R_{\\text{in}}} = \\frac{1.2\\text{ V} - 0\\text{ V}}{10\\text{ k}\\Omega} = 0.12\\text{ mA}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Output Voltage ($v_{\\text{out}}$)</strong></p>\n<p>Since $i^- = 0$, all current flows through feedback resistor $R_f$:</p>\n$$v_{\\text{out}} = -i_{\\text{in}} R_f = -(0.12\\text{ mA})(50\\text{ k}\\Omega) = -6.0\\text{ V}$$\n$$\\text{Equivalently, } v_{\\text{out}} = -\\left(\\frac{R_f}{R_{\\text{in}}}\\right) v_{\\text{in}} = -\\left(\\frac{50}{10}\\right)(1.2\\text{ V}) = -6.0\\text{ V}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $v_out = -6.0 V,\\quad i_in = 0.12 mA$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The inverting amplifier closed-loop gain is $A_v = -R_f / R_{\\text{in}}$. Virtual ground occurs at the inverting node only when $v^+$ is grounded.</p>"
-                    }
-                },
-            {
                     "title": "Equivalent Resistance in Series and Parallel Networks",
                     "imageUrl": "assets/images/equivalent_resistance_series_parallel.jpg",
                     "imageTitle": "Equivalent Resistance in Series and Parallel Networks Blueprint",
@@ -7913,43 +7544,6 @@ window.calcEvaluate = function() {
                         "question": "<p>A DC circuit network consists of two parallel resistors $R_1 = 30\\ \\Omega$ and $R_2 = 60\\ \\Omega$ connected in series with a third resistor $R_3 = 20\\ \\Omega$.</p>\n<p>The total equivalent resistance $R_{\\text{eq}}$ across the circuit terminals is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $20 Ω$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $40 Ω$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $55 Ω$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $110 Ω$</div>\n</div>",
                         "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Parallel Resistors ($R_1 \\parallel R_2$)</strong></p>\n$$R_{12} = \\frac{R_1 R_2}{R_1 + R_2} = \\frac{30 \\times 60}{30 + 60} = \\frac{1,800}{90} = 20\\ \\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Add Series Resistor ($R_3$)</strong></p>\n$$R_{\\text{eq}} = R_{12} + R_3 = 20\\ \\Omega + 20\\ \\Omega = 40\\ \\Omega$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $40 Ω$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Parallel resistance is always smaller than the smallest branch resistor ($20 < 30$). Series resistances add linearly.</p>"
                     }
-                },
-            {
-                    "title": "Operational Amplifier Summing and Difference Amplifiers",
-                    "formula": "$$v_o^{\\text{sum}} = -R_f \\sum \\frac{v_i}{R_i}, \\quad v_o^{\\text{diff}} = \\frac{R_2}{R_1}(v_2 - v_1) \\quad (\\text{when } \\frac{R_4}{R_3} = \\frac{R_2}{R_1})$$",
-                    "description": "Standard linear op-amp analog building blocks: inverting summing amplifier produces a weighted sum of inputs; balanced difference amplifier rejects common-mode signals while amplifying the differential voltage $(v_2 - v_1)$.",
-                    "examTip": "Found in Electronics: Operational Amplifiers. In ideal op-amps, apply the golden rules: differential input voltage $v^+ - v^- = 0$ (virtual short) and input currents $i^+ = i^- = 0$."
-                },
-            {
-                    "title": "Instrumentation Amplifier Three-Op-Amp Architecture and CMRR",
-                    "formula": "$$A_d = \\left(1 + \\frac{2 R_1}{R_G}\\right) \\left(\\frac{R_3}{R_2}\\right), \\quad v_o = A_d (v_2 - v_1)$$",
-                    "description": "High-precision instrumentation circuit providing exceptionally high differential gain, extremely high input impedance on both inputs, and very high common-mode rejection ratio (CMRR).",
-                    "examTip": "Found in Electronics / Instrumentation. A single external gain resistor $R_G$ sets the overall amplifier gain without upsetting internal resistor bridge matching."
-                },
-            {
-                    "title": "Schmitt Trigger Inverting Comparator and Hysteresis Bandwidth",
-                    "formula": "$$V_{TH} = \\frac{R_1}{R_1 + R_2} V_{sat}^+, \\quad V_{TL} = \\frac{R_1}{R_1 + R_2} V_{sat}^-, \\quad V_H = V_{TH} - V_{TL}$$",
-                    "description": "Positive feedback comparator circuit providing noise immunity by establishing two distinct threshold voltages ($V_{TH}$ upper and $V_{TL}$ lower); prevents chatter caused by noisy input signals.",
-                    "examTip": "Found in Electronics: Non-Linear Op-Amp Circuits. Switching occurs only when the input crosses the opposing threshold, creating a clean square wave from slow or noisy inputs."
-                },
-            {
-                    "title": "Operational Amplifier Common-Mode Rejection Ratio (CMRR)",
-                    "formula": "$$\\text{CMRR} = \\left| \\frac{A_d}{A_{cm}} \\right|, \\quad \\text{CMRR}_{\\text{dB}} = 20 \\log_{10}\\left| \\frac{A_d}{A_{cm}} \\right|$$",
-                    "description": "Measures an amplifier's ability to amplify desired differential signals $A_d$ while rejecting unwanted common-mode noise voltages $A_{cm}$ present on both inputs.",
-                    "examTip": "Found in Electronics: Operational Amplifiers. For an ideal op-amp, common-mode gain $A_{cm} = 0$, giving an infinite CMRR ($\\infty\\text{ dB}$).",
-                    "videoUrl": "assets/videos/Operational_Amplifier_Common_Mode_Rejection_Ratio_CMRR.mp4",
-                    "videoTitle": "Operational Amplifier Common-Mode Rejection Ratio (CMRR) Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>An instrumentation amplifier op-amp stage has an open-loop differential gain $A_d = 4,000$ and a common-mode gain $A_{cm} = 0.04$.</p>\n<p>The Common-Mode Rejection Ratio expressed in decibels ($\\text{CMRR}_{\\text{dB}}$) is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $50 dB$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $80 dB$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $100 dB$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $120 dB$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Linear CMRR</strong></p>\n$$\\text{CMRR} = \\left| \\frac{A_d}{A_{cm}} \\right| = \\frac{4,000}{0.04} = 100,000 = 10^5$$\n<p><strong class=\"text-emerald-400\">Step 2: Convert to Decibels (dB)</strong></p>\n$$\\text{CMRR}_{\\text{dB}} = 20 \\log_{10}(\\text{CMRR}) = 20 \\log_{10}(10^5) = 20 \\times 5 = 100\\text{ dB}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $100 dB$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For voltage gains, the decibel multiplier is 20 ($20\\log_{10}$), not 10. A high CMRR indicates superior rejection of electrical line noise.</p>"
-                    }
-                },
-            {
-                    "title": "First-Order RC Circuit Time Constant and Transient Response",
-                    "formula": "$$\\tau = R C, \\quad v(t) = v(\\infty) + [v(0) - v(\\infty)] e^{-t / \\tau}$$",
-                    "description": "Governs transient charging and discharging of capacitors through resistors: time constant $\\tau = RC$ is elapsed time for response to reach $63.2\\%$ of its step change; steady state is reached after approx. $5\\tau$ ($99.3\\%$).",
-                    "examTip": "Found in Electrical Circuits. The capacitor acts as an open circuit ($i_C = 0$) at steady state ($t \\to \\infty$) and as a short circuit / constant voltage source immediately after switching ($t = 0^+$)."
                 },
             {
                     "title": "Series RLC Resonance and Bandwidth",
@@ -8138,25 +7732,6 @@ window.calcEvaluate = function() {
                         "question": "<p>A structural link AB in an articulated deployment mechanism is connected by smooth frictionless pins at end A and end B. No intermediate forces, couples, or lateral distributed loads act along the length of link AB.</p>\n<p>According to the two-force member equilibrium principle, the forces exerted on link AB at pins A and B must be:</p>\n<div class=\"grid grid-cols-1 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Perpendicular to the longitudinal axis AB and unequal in magnitude</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Equal in magnitude, opposite in direction, and collinear along the straight line connecting pins A and B</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Always compressive with line of action oriented at 45° to the axis</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Indeterminate without knowledge of the member cross-sectional area</div>\n</div>",
                         "solution": "<p><strong class=\"text-emerald-400\">Step 1: Two-Force Member Definition</strong></p>\n<p>A two-force member has forces applied at only two points, with no intermediate external forces or moments.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Static Equilibrium Requirements</strong></p>\n$$\\sum \\mathbf{F} = \\mathbf{0} \\implies \\mathbf{F}_A = -\\mathbf{F}_B \\quad (\\text{equal in magnitude, opposite in sense})$$\n$$\\sum \\mathbf{M} = \\mathbf{0} \\implies \\text{forces must share the identical line of action (collinear along } AB)$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Equal in magnitude, opposite in direction, and collinear along the straight line connecting pins A and B</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> All ideal pin-connected truss members are two-force members carrying purely axial tension or compression.</p>"
                     }
-                },
-            {
-                    "title": "Gravity Retaining Wall Overturning Factor of Safety",
-                    "formula": "$$FS_{\\text{ot}} = \\frac{\\sum M_R}{\\sum M_O} = \\frac{\\sum (W_i \\cdot x_i)}{\\sum (P_{ah} \\cdot y_i)} \\ge 1.5 - 2.0$$",
-                    "description": "Verifies retaining wall rotational stability by taking moments about the toe: resisting moments $\\sum M_R$ from wall self-weight and soil surcharge must exceed overturning moments $\\sum M_O$ from lateral active earth pressure.",
-                    "examTip": "Found in Geotechnical: Retaining Walls. Passive earth pressure in front of the toe is often ignored or reduced by $50\\%$ as an added factor of safety against overturning."
-                },
-            {
-                    "title": "Gravity Retaining Wall Sliding Factor of Safety",
-                    "videoUrl": "assets/videos/Gravity_Retaining_Wall_Sliding_Factor_of_Safety.mp4",
-                    "videoTitle": "Gravity Retaining Wall Sliding Factor of Safety Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A concrete gravity retaining wall has a total vertical weight $\\sum V = 300\\text{ kN/m}$ of wall length. The friction angle between the concrete base slab and underlying foundation soil is $\\delta = 30^\\circ$ ($\\tan 30^\\circ = 0.5774$). Neglecting passive earth resistance ($P_p = 0$) and base adhesion ($c_a = 0$), the active lateral soil thrust driving the wall is $P_{ah} = 100\\text{ kN/m}$.</p>\n<p>The factor of safety against sliding ($FS_{\\text{sl}}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.15$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.50$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $1.73$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $2.31$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Resisting Frictional Force ($F_R$)</strong></p>\n$$F_R = (\\sum V) \\tan\\delta = (300\\text{ kN/m}) \\times \\tan(30^\\circ) = 300 \\times 0.57735 = 173.2\\text{ kN/m}$$\n<p><strong class=\"text-emerald-400\">Step 2: Factor of Safety Against Sliding</strong></p>\n$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{173.2\\text{ kN/m}}{100\\text{ kN/m}} = 1.732 \\approx 1.73$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $1.73$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Standard design codes require $FS_{\\text{sl}} \\ge 1.50$. Since $1.73 \\ge 1.50$, the retaining wall is structurally adequate against sliding failure.</p>"
-                    },
-                    "formula": "$$FS_{\\text{sl}} = \\frac{\\sum F_R}{\\sum F_d} = \\frac{(\\sum V) \\tan\\delta + c_a B + P_p}{P_{ah}} \\ge 1.5$$",
-                    "description": "Evaluates horizontal sliding stability along the base of a retaining wall, where resisting forces include base friction $(\\sum V)\\tan\\delta$, base adhesion $c_a B$, and passive earth resistance $P_p$, opposing driving horizontal active force $P_{ah}$.",
-                    "examTip": "Found in Geotechnical: Retaining Walls. Base friction angle $\\delta$ is typically assumed to be $(2/3) \\phi'$ to $(3/4) \\phi'$ of the foundation soil."
                 },
             {
                     "title": "Truss Zero-Force Member Inspection Rules",
@@ -9083,18 +8658,6 @@ window.calcEvaluate = function() {
                     "examTip": "Found in Mechanics of Materials. For a thin-walled spherical vessel, stress in all tangential directions is uniform: $\\sigma = P r / (2 t)$."
                 },
             {
-                    "title": "Standard Portland Cement Types (ASTM C150 Types I through V)",
-                    "formula": "$$\\text{I: General, II: Mod Sulfate, III: High Early, IV: Low Heat, V: High Sulfate}$$",
-                    "description": "Standardizes Portland cement chemistry: Type III achieves high early strength via fine grinding and high $C_3S$; Type IV limits heat of hydration for massive gravity dams; Type V resists aggressive soil sulfate attack with low $C_3A$.",
-                    "examTip": "Found in Materials: Concrete. Tricalcium aluminate ($C_3A$) is the compound primarily responsible for vulnerability to sulfate expansion and rapid initial hydration heat."
-                },
-            {
-                    "title": "Bragg's Law of X-Ray Diffraction for Crystal Lattices",
-                    "formula": "$$n \\lambda = 2 d_{hkl} \\sin\\theta, \\quad d_{hkl} = \\frac{a}{\\sqrt{h^2 + k^2 + l^2}} \\quad (\\text{Cubic})$$",
-                    "description": "Governs constructive interference of monochromatic X-rays diffracted by parallel crystal lattice planes with Miller indices $(h k l)$, interplanar spacing $d_{hkl}$, and incident angle $\\theta$.",
-                    "examTip": "Found in Materials Science. Ensure angle $\\theta$ is the Bragg diffraction angle measured relative to the crystal plane, NOT the total $2\\theta$ detector angle."
-                },
-            {
                     "title": "Engineering Stress-Strain vs. True Stress-Strain Relations",
                     "formula": "$$\\sigma_T = \\sigma_E(1 + \\epsilon_E), \\quad \\epsilon_T = \\ln(1 + \\epsilon_E) \\quad (\\text{valid up to necking})$$",
                     "description": "Engineering stress and strain are referenced to initial undeformed cross-sectional area $A_0$ and gauge length $L_0$, while true stress and strain account for instantaneous area $A$ and length $L$.",
@@ -9119,12 +8682,6 @@ window.calcEvaluate = function() {
                         "question": "<p>A high-strength alloy steel has a yield strength $S_y = 400\\text{ MPa}$, ultimate tensile strength $S_{ut} = 650\\text{ MPa}$, modulus of elasticity $E = 200\\text{ GPa}$, and fracture strain $\\epsilon_f = 0.160$.</p>\n<p>The modulus of resilience $u_r$ of the material is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $400\\text{ kJ/m}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $800\\text{ kJ/m}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $200\\text{ kJ/m}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52.0\\text{ MJ/m}^3$</div>\n</div>",
                         "solution": "<p><strong class=\"text-emerald-400\">Step 1: Understand Modulus of Resilience ($u_r$)</strong></p>\n<p>The modulus of resilience represents the maximum elastic strain energy absorbed per unit volume without permanent deformation (area under the elastic region of the stress-strain curve):</p>\n$$u_r = \\frac{S_y^2}{2E}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate $u_r$</strong></p>\n$$u_r = \\frac{(400 \\times 10^6\\text{ Pa})^2}{2(200 \\times 10^9\\text{ Pa})} = \\frac{1.60 \\times 10^{17}}{4.00 \\times 10^{11}} = 4.00 \\times 10^5\\text{ J/m}^3 = 400\\text{ kJ/m}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $400\\text{ kJ/m}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Resilience ($u_r$) is the area under the elastic limit ($S_y^2 / 2E$), while toughness ($u_t$) is the total area under the entire stress-strain curve up to fracture (elastic + plastic).</p>"
                     }
-                },
-            {
-                    "title": "Cubic Crystal Structures: FCC vs. BCC Atomic Packing Factor",
-                    "formula": "$$APF = \\frac{V_{\\text{atoms}}}{V_{\\text{unit cell}}}, \\quad APF_{\\text{FCC}} = 0.74 \\ (a = 2\\sqrt{2}R), \\quad APF_{\\text{BCC}} = 0.68 \\ (a = 4R/\\sqrt{3})$$",
-                    "description": "Quantifies atomic packing efficiency: Face-Centered Cubic (FCC) has 4 atoms/unit cell with coordination number 12 and close-packed $APF = 0.74$; Body-Centered Cubic (BCC) has 2 atoms/unit cell with coordination number 8 and $APF = 0.68$.",
-                    "examTip": "Found in Materials Science: Crystallography. FCC metals (copper, aluminum, austenitic steel) exhibit superior ductility across low temperatures compared to BCC metals which experience ductile-to-brittle transitions."
                 },
             {
                     "title": "Binary Phase Diagram Lever Rule",
@@ -9191,32 +8748,6 @@ window.calcEvaluate = function() {
                     "formula": "$$L \\xrightarrow{\\text{cooling}} \\alpha + \\beta \\quad (\\text{Zero Degrees of Freedom: } F = C - P + 1 = 2 - 3 + 1 = 0)$$",
                     "description": "Invariant three-phase equilibrium reaction where liquid of eutectic composition freezes into an intimate two-phase solid lamellar microstructure $(\\alpha + \\beta)$ at constant eutectic temperature and composition.",
                     "examTip": "Found in Materials Science: Phase Diagrams. Gibbs Phase Rule at constant atmospheric pressure: $P + F = C + 1$; at the invariant eutectic point, $F = 0$, meaning freezing occurs at an exact fixed temperature."
-                },
-            {
-                    "title": "Fick’s First Law of Molecular Diffusion",
-                    "formula": "$$J_A = -D_{AB} \\frac{dC_A}{dz}$$",
-                    "description": "Defines molar diffusive flux $J_A$ as proportional to negative concentration gradient $dC_A / dz$ and binary molecular diffusivity $D_{AB}$.",
-                    "examTip": "Found in Mass Transfer. In bulk flow, total flux is $N_A = J_A + x_A (N_A + N_B)$. For equimolar counterdiffusion (EMD), $N_A = -N_B$.",
-                    "videoUrl": "assets/videos/Ficks_First_Law_of_Molecular_Diffusion.mp4",
-                    "videoTitle": "Fick’s First Law of Molecular Diffusion Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A steel carburization process is operating at steady state through an iron sheet of thickness $\\Delta z = 2.0\\text{ mm} = 0.0020\\text{ m}$ at $1000^\\circ\\text{C}$. The diffusion coefficient of carbon in FCC iron is $D = 3.0 \\times 10^{-11}\\text{ m}^2/\\text{s}$. The carbon concentration is maintained at $C_1 = 1.20\\text{ kg/m}^3$ at the carburizing surface and $C_2 = 0.20\\text{ kg/m}^3$ at the interior surface.</p>\n<p>The steady-state mass diffusion flux $J$ of carbon through the sheet is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50 \\times 10^{-8}\\text{ kg}/(\\text{m}^2\\cdot\\text{s})$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $3.00 \\times 10^{-8}\\text{ kg}/(\\text{m}^2\\cdot\\text{s})$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $7.50 \\times 10^{-9}\\text{ kg}/(\\text{m}^2\\cdot\\text{s})$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $1.50 \\times 10^{-5}\\text{ kg}/(\\text{m}^2\\cdot\\text{s})$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Fick's First Law (Steady-State Diffusion)</strong></p>\n$$J = -D \\frac{dC}{dz} = -D \\frac{C_2 - C_1}{z_2 - z_1}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Concentration Gradient and Flux</strong></p>\n$$\\frac{\\Delta C}{\\Delta z} = \\frac{0.20 - 1.20\\text{ kg/m}^3}{0.0020\\text{ m}} = \\frac{-1.00}{0.0020} = -500\\text{ kg/m}^4$$\n$$J = -(3.0 \\times 10^{-11}\\text{ m}^2/\\text{s})(-500\\text{ kg/m}^4) = 1.50 \\times 10^{-8}\\text{ kg}/(\\text{m}^2\\cdot\\text{s})$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.50 \\times 10^{-8}\\text{ kg}/(\\text{m}^2\\cdot\\text{s})$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Fick's 1st Law ($J = -D \\, dC/dz$) applies to steady-state diffusion ($partial C / partial t = 0$). Fick's 2nd Law ($\\partial C / \\partial t = D \\, \\partial^2 C / \\partial z^2$) applies to transient diffusion solved using error functions ($\text{erf}$).</p>"
-                    }
-                },
-            {
-                    "title": "First-Order Chemical Reaction Half-Life",
-                    "formula": "$$t_{1/2} = \\frac{\\ln 2}{k} \\approx \\frac{0.693}{k}, \\quad C(t) = C_0 e^{-k t} = C_0 \\left(\\frac{1}{2}\\right)^{t / t_{1/2}}$$",
-                    "description": "Time required for reactant concentration or radioactive isotope activity to decay to half of its initial value in a first-order kinetic process; half-life is completely independent of initial concentration $C_0$.",
-                    "examTip": "Found in Chemistry / Physics / Environmental. For a second-order reaction, $t_{1/2} = 1 / (k C_0)$, which DOES depend on initial concentration.",
-                    "videoUrl": "assets/videos/First_Order_Chemical_Reaction_Half_Life.mp4",
-                    "videoTitle": "First-Order Chemical Reaction Half-Life Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "<p>A volatile environmental contaminant decomposes in a groundwater remediation reactor according to a first-order reaction with rate constant $k = 0.1386\\text{ day}^{-1}$.</p>\n<p>The reaction half-life $t_{1/2}$ and the time required for the contaminant concentration to decrease from $120.0\\text{ mg/L}$ to $15.0\\text{ mg/L}$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $t_{1/2} = 5.0\\text{ days}, \\quad \\text{Total Time} = 15.0\\text{ days}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $t_{1/2} = 7.2\\text{ days}, \\quad \\text{Total Time} = 21.6\\text{ days}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $t_{1/2} = 5.0\\text{ days}, \\quad \\text{Total Time} = 10.0\\text{ days}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $t_{1/2} = 2.5\\text{ days}, \\quad \\text{Total Time} = 7.5\\text{ days}$</div>\n</div>",
-                        "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Half-Life ($t_{1/2}$)</strong></p>\n<p>For a first-order reaction:</p>\n$$t_{1/2} = \\frac{\\ln 2}{k} = \\frac{0.69315}{0.1386\\text{ day}^{-1}} = 5.0\\text{ days}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Number of Half-Lives</strong></p>\n<p>The fraction of pollutant remaining is:</p>\n$$\\frac{C(t)}{C_0} = \\frac{15.0}{120.0} = \\frac{1}{8} = \\left(\\frac{1}{2}\\right)^3$$\n<p>This corresponds to exactly 3 half-lives ($n = 3$):</p>\n$$t = n \\times t_{1/2} = 3 \\times 5.0\\text{ days} = 15.0\\text{ days}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $t_{1/2} = 5.0\\text{ days}, \\quad \\text{Total Time} = 15.0\\text{ days}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For first-order kinetics, half-life is completely independent of initial concentration ($t_{1/2} = 0.693 / k$).</p>"
-                    }
                 },
             {
                     "title": "Newton's Law of Viscosity",
@@ -9679,12 +9210,6 @@ window.calcEvaluate = function() {
                         "question": "<p>Glycerin ($\\rho = 1{,}260\\text{ kg/m}^3$, $\\mu = 0.950\\text{ Pa}\\cdot\\text{s}$) flows through a horizontal steel pipe of inner diameter $D = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 40.0\\text{ m}$ at an average velocity $v = 0.80\\text{ m/s}$ ($g = 9.81\\text{ m/s}^2$).</p>\n<p>The flow Reynolds number $Re$, Darcy friction factor $f$, and head loss $h_f$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $Re = 53.1, \\quad f = 1.21, \\quad h_f = 31.5\\text{ m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $Re = 53.1, \\quad f = 0.032, \\quad h_f = 0.83\\text{ m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $Re = 106.1, \\quad f = 0.603, \\quad h_f = 15.7\\text{ m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $Re = 53.1, \\quad f = 1.21, \\quad h_f = 62.9\\text{ m}$</div>\n</div>",
                         "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Reynolds Number ($Re$)</strong></p>\n$$Re = \\frac{\\rho v D}{\\mu} = \\frac{(1{,}260\\text{ kg/m}^3)(0.80\\text{ m/s})(0.050\\text{ m})}{0.950\\text{ Pa}\\cdot\\text{s}} = \\frac{50.4}{0.950} \\approx 53.05 \\le 2{,}100 \\quad (\\text{Laminar})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Darcy Friction Factor ($f$)</strong></p>\n$$f = \\frac{64}{Re} = \\frac{64}{53.05} \\approx 1.206 \\approx 1.21$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Head Loss ($h_f$)</strong></p>\n$$h_f = f \\left(\\frac{L}{D}\\right) \\frac{v^2}{2g} = (1.206) \\left(\\frac{40.0\\text{ m}}{0.050\\text{ m}}\\right) \\frac{(0.80\\text{ m/s})^2}{2(9.81\\text{ m/s}^2)}$$\n$$h_f = (1.206)(800)(0.03262\\text{ m}) \\approx 31.47\\text{ m} \\approx 31.5\\text{ m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $Re = 53.1, \\quad f = 1.21, \\quad h_f = 31.5\\text{ m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> In laminar flow, friction factor $f$ can be much greater than $1.0$ at very low Reynolds numbers ($f = 64 / Re$). It is independent of pipe roughness.</p>"
                     }
-                },
-            {
-                    "title": "Rapid Sand Filter Hydraulics and Carman-Kozeny Head Loss",
-                    "formula": "$$h_L = \\frac{f_k (1 - \\epsilon)}{\\epsilon^3} \\frac{L}{d} \\frac{v_a^2}{g}$$",
-                    "description": "Calculates clean bed head loss $h_L$ through a granular media filter bed of depth $L$, porosity $\\epsilon$, grain diameter $d$, and approach velocity $v_a$, where $f_k$ is the Kozeny friction factor.",
-                    "examTip": "Found in Environmental: Water Treatment. Note the strong sensitivity to porosity: head loss is inversely proportional to $\\epsilon^3$."
                 },
             {
                     "title": "Storm Sewer Gravity Pipe Design via Manning's and Rational Formula",
@@ -11038,61 +10563,6 @@ window.calcEvaluate = function() {
                         "question": "A unity negative feedback control system has the open-loop transfer function:\n$$G(s) = \\frac{50(s + 2)}{s(s + 5)(s + 10)}$$\nWhat are the system type number, the velocity error constant $K_v$, and the steady-state tracking error $e_{ss}$ for a unit ramp input $r(t) = t u(t)$?",
                         "solution": "<p><strong>Step 1: Determine System Type</strong></p>\n<p>The system type is the number of pure integrators (poles at the origin $s = 0$) in the open-loop transfer function $G(s)$. Since the denominator has a single factor $s^1$, this is a <strong>Type 1</strong> system.</p>\n<p><strong>Step 2: Calculate Velocity Error Constant ($K_v$)</strong></p>\n<p>$$K_v = \\lim_{s \\to 0} s G(s) = \\lim_{s \\to 0} s \\left[ \\frac{50(s + 2)}{s(s + 5)(s + 10)} \\right] = \\lim_{s \\to 0} \\frac{50(s + 2)}{(s + 5)(s + 10)}$$</p>\n<p>$$K_v = \\frac{50(0 + 2)}{(0 + 5)(0 + 10)} = \\frac{100}{50} = 2.00\\text{ s}^{-1}$$</p>\n<p><strong>Step 3: Calculate Steady-State Error ($e_{ss}$) for Unit Ramp</strong></p>\n<p>$$e_{ss} = \\frac{1}{K_v} = \\frac{1}{2.00\\text{ s}^{-1}} = 0.500$$</p>\n<p><strong>Correct Answer:</strong> (A) $\\text{Type } 1, \\quad K_v = 2.00\\text{ s}^{-1}, \\quad e_{ss} = 0.500$</p>\n<p><strong>FE Exam Tip:</strong> Type 1 systems achieve zero steady-state error for step inputs ($e_{ss} = 0$), finite steady-state error for ramp inputs ($e_{ss} = 1/K_v$), and infinite error for parabolic inputs ($e_{ss} = \\infty$).</p>"
                     }
-                },
-            {
-                    "title": "Bode Plot Gain Margin and Phase Margin Stability Criteria",
-                    "formula": "$$GM = -20\\log_{10}|G(j\\omega_{180})| \\text{ dB}, \\quad PM = 180^\\circ + \\angle G(j\\omega_{0\\text{dB}}); \\quad \\text{Stable if } GM > 0, PM > 0$$",
-                    "description": "Frequency-response stability criteria. Phase margin $PM$ measures additional phase lag required at gain crossover frequency (where magnitude is $0\\text{ dB}$) to cause instability. Gain margin $GM$ is the factor by which open-loop gain can increase before instability at phase crossover ($-180^\\circ$).",
-                    "examTip": "Found in Controls: Frequency Response. For typical minimum-phase systems, both $GM > 0\\text{ dB}$ and $PM > 0^\\circ$ are required for closed-loop stability. Higher margins indicate more damped, robust response.",
-                    "videoUrl": "assets/videos/Bode_Plot_Gain_Margin_and_Phase_Margin_Stability_Criteria.mp4",
-                    "videoTitle": "Bode Plot Gain Margin and Phase Margin Stability Criteria Explainer",
-                    "videoDuration": "10s",
-                    "solvedExample": {
-                        "question": "A unity-feedback control system has the following open-loop frequency response characteristics:\n- Gain crossover frequency $\\omega_{gc} = 5.00\\text{ rad/s}$ where $|G(j\\omega_{gc})| = 1.00$ ($0.0\\text{ dB}$) and $\\angle G(j\\omega_{gc}) = -135.0^\\circ$\n- Phase crossover frequency $\\omega_{pc} = 12.0\\text{ rad/s}$ where $\\angle G(j\\omega_{pc}) = -180.0^\\circ$ and $|G(j\\omega_{pc})| = 0.250$ ($-12.04\\text{ dB}$)\nWhat are the Phase Margin ($PM$), Gain Margin ($GM$), and the stability of the closed-loop system?",
-                        "solution": "<p><strong>Step 1: Calculate Phase Margin ($PM$)</strong></p>\n<p>The Phase Margin is evaluated at the gain crossover frequency $\\omega_{gc}$ (where magnitude $= 0\\text{ dB}$):</p>\n<p>$$PM = 180.0^\\circ + \\angle G(j\\omega_{gc}) = 180.0^\\circ + (-135.0^\\circ) = +45.0^\\circ$$</p>\n<p><strong>Step 2: Calculate Gain Margin ($GM$)</strong></p>\n<p>The Gain Margin is evaluated at the phase crossover frequency $\\omega_{pc}$ (where phase angle $= -180^\\circ$):</p>\n<p>$$GM = -20 \\log_{10} |G(j\\omega_{pc})| = -20 \\log_{10}(0.250) = -(-12.04\\text{ dB}) = +12.04\\text{ dB} \\approx +12.0\\text{ dB}$$</p>\n<p><strong>Step 3: Evaluate Stability</strong></p>\n<p>For a standard minimum-phase open-loop system, stability requires both $PM \\gt 0^\\circ$ and $GM \\gt 0\\text{ dB}$. Since $PM = +45.0^\\circ \\gt 0^\\circ$ and $GM = +12.0\\text{ dB} \\gt 0\\text{ dB}$, the closed-loop system is <strong>stable</strong>.</p>\n<p><strong>Correct Answer:</strong> (A) $PM = +45.0^\\circ, \\quad GM = +12.0\\text{ dB}, \\quad \\text{Stable}$</p>\n<p><strong>FE Exam Tip:</strong> A positive gain margin in dB indicates that the system gain can be increased by that number of decibels before reaching the threshold of instability.</p>"
-                    }
-                },
-            {
-                    "title": "Routh-Hurwitz Stability Criterion and Routh Array",
-                    "formula": "$$a_n s^n + a_{n-1} s^{n-1} + \\dots + a_0 = 0, \\quad b_1 = \\frac{a_{n-1} a_{n-2} - a_n a_{n-3}}{a_{n-1}}$$",
-                    "description": "Determines dynamic closed-loop linear system stability without factoring characteristic roots; a system is strictly stable if and only if all elements in the first column of the Routh array are strictly positive.",
-                    "examTip": "Found in Control Systems. The number of sign changes in the first column of the Routh array equals the exact number of right-half-plane (unstable) poles."
-                },
-            {
-                    "title": "Root Locus Construction Rules: Real Axis Branches and Asymptotes",
-                    "formula": "$$\\sigma_a = \\frac{\\sum p_i - \\sum z_i}{n - m}, \\quad \\phi_a = \\frac{(2k + 1)180^\\circ}{n - m}$$",
-                    "description": "Plots trajectory of closed-loop poles as loop gain $K$ varies: a point on the real axis lies on the locus if the total number of real open-loop poles and zeros to its right is odd; branches radiate toward asymptotes centered at $\\sigma_a$.",
-                    "examTip": "Found in Control Systems: Root Locus. $n$ is number of poles, $m$ is number of zeros; root locus branches always begin at open-loop poles ($K=0$) and end at open-loop zeros ($K\\to\\infty$)."
-                },
-            {
-                    "title": "PID Controller Time-Domain Equation and Laplace Transfer Function",
-                    "formula": "$$u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) d\\tau + K_d \\frac{de(t)}{dt}, \\quad G_c(s) = K_p + \\frac{K_i}{s} + K_d s$$",
-                    "description": "Standard industrial three-term feedback controller: proportional action ($K_p$) accelerates response, integral action ($K_i$) eliminates steady-state tracking error, and derivative action ($K_d$) adds damping to reduce overshoot.",
-                    "examTip": "Found in Control Systems. Adding an integrator ($1/s$) increases system type by 1, eliminating steady-state error to step inputs, but tends to destabilize phase margin."
-                },
-            {
-                    "title": "Process Control: First-Order Plus Dead Time (FOPDT) Model",
-                    "formula": "$$G_p(s) = \\frac{K_p e^{-\\theta s}}{\\tau s + 1}$$",
-                    "description": "Standard empirical industrial approximation for chemical processes: steady-state process gain $K_p = \\Delta y / \\Delta u$, apparent time constant $\\tau$, and transport delay / dead time $\\theta$.",
-                    "examTip": "Found in Chemical: Process Dynamics & Control. Higher dead-time-to-time-constant ratios ($\\theta / \\tau > 0.5$) make feedback control significantly more difficult and require conservative tuning."
-                },
-            {
-                    "title": "Process Control: Ziegler-Nichols Closed-Loop Tuning Rules",
-                    "formula": "$$K_c = 0.60 K_u, \\quad \\tau_I = 0.50 P_u, \\quad \\tau_D = 0.125 P_u \\quad (\\text{PID})$$",
-                    "description": "Sets PID controller parameters by increasing proportional gain with integral and derivative actions turned off until the closed-loop system reaches continuous sustained oscillation at ultimate gain $K_u$ and ultimate period $P_u$.",
-                    "examTip": "Found in Process Control. Ziegler-Nichols tuning targets a quarter-amplitude decay ratio ($1/4$ decay), which tends to be somewhat oscillatory."
-                },
-            {
-                    "title": "Ratio Control Strategy for Blending and Reactant Feed Streams",
-                    "formula": "$$u_B(t) = R_d \\cdot u_A(t)$$",
-                    "description": "Maintains a fixed stoichiometric or blending ratio $R_d$ between two flowing streams by measuring uncontrolled wild flow $A$ and adjusting controlled slave stream $B$ in direct proportion.",
-                    "examTip": "Found in Process Control. Widely employed in combustion air-to-fuel ratio control and stoichiometric feed balancing for chemical reactors."
-                },
-            {
-                    "title": "Cascade Control Architecture for Secondary Disturbance Rejection",
-                    "formula": "$$\\text{Primary (Master) Controller} \\to \\text{Secondary (Slave) Setpoint} \\to \\text{Control Valve}$$",
-                    "description": "Nests a fast secondary inner feedback loop (e.g., fuel flow) inside a slower primary outer loop (e.g., furnace temperature), attenuating secondary disturbances before they affect the primary process variable.",
-                    "examTip": "Found in Process Control. The secondary slave loop must be tuned first and must respond significantly faster than the primary master loop."
                 },
             {
                     "title": "Modified Goodman Fatigue Criterion (Fluctuating Stresses)",
@@ -32558,6 +32028,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 videoDur.textContent = card.videoDuration || '10s';
             }
             activeMediaTab = 'video';
+            playBackVideo();
         } else if (hasImage) {
             // Blueprint fallback on back only if no video exists
             if (backColVideo) {
@@ -33052,6 +32523,37 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     
+    // Autoplay flashcard video with robust browser policy fallback
+    function playBackVideo() {
+        const video = document.getElementById('fc-back-video');
+        if (!video) return;
+
+        const card = currentDeck && currentDeck[currentIndex];
+        if (!card || !card.videoUrl) return;
+        if (activeMediaTab !== 'video') return;
+
+        const attemptPlay = () => {
+            const modal = document.getElementById('fe-flashcards-modal');
+            if (!modal || modal.classList.contains('hidden')) return;
+
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(err => {
+                    // Browser prevented unmuted autoplay; mute and retry playback
+                    video.muted = true;
+                    video.play().catch(() => {});
+                });
+            }
+        };
+
+        if (video.readyState >= 2) {
+            attemptPlay();
+        } else {
+            video.addEventListener('canplay', attemptPlay, { once: true });
+            attemptPlay();
+        }
+    }
+
     // Set active media tab (Option A: Switch between Video and Blueprint Diagram)
     function setMediaTab(tab) {
         activeMediaTab = tab;
@@ -33079,7 +32581,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         } else {
             if (imageContainer) imageContainer.classList.add('hidden');
             if (videoContainer) videoContainer.classList.remove('hidden');
-            if (subtext) subtext.textContent = 'Auto-plays on flip • Tap for controls';
+            if (subtext) subtext.textContent = 'Autoplays instantly • Tap for controls';
 
             const card = currentDeck[currentIndex];
             if (badge) badge.textContent = (card && card.videoDuration) || '10s';
@@ -33090,10 +32592,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             if (btnBlueprint) {
                 btnBlueprint.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 text-slate-400 hover:text-slate-200';
             }
-            if (isFlipped && video && card && card.videoUrl) {
-                const p = video.play();
-                if (p !== undefined) p.catch(() => {});
-            }
+            playBackVideo();
         }
         updateKaraokeUI();
     }
@@ -33425,7 +32924,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const modal = document.getElementById('fe-flashcards-modal');
         const card = document.getElementById('flashcard-studio-card');
         const video = document.getElementById('fc-back-video');
-        if (video) video.pause();
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
 
         if (modal) {
             modal.classList.add('opacity-0');
