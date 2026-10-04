@@ -28864,6 +28864,7 @@ window.calcEvaluate = function() {
     ]
 };
 
+    const THEOREMS_BY_DISCIPLINE = {};
     for (const [disc, list] of Object.entries(ALL_THEOREMS_BY_DISCIPLINE)) {
         THEOREMS_BY_DISCIPLINE[disc] = list.filter(card => Boolean(card.videoUrl));
     }
