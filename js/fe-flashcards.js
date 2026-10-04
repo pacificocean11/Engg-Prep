@@ -94,6 +94,7 @@
         if (/standard portland cement types|binary phase diagram lever rule|concrete maturity method|hardness of a material/i.test(lower)) return 7;
         if (/type iii zone settling|solution concentration: molarity/i.test(lower)) return 10;
         if (/modified goodman fatigue|strain gauge gauge factor|distortion energy theory|coulomb-mohr and modified mohr failure criteria/i.test(lower)) return 6;
+        if (/hazard quotient|hazard index/i.test(lower)) return 10;
         if (/hierarchy of controls|nfpa 704|hazop study/i.test(lower)) return 2;
         if (/pressure relief valve sizing/i.test(lower)) return 8;
         if (/kanban production system/i.test(lower)) return 3;
@@ -267,6 +268,7 @@ function getElectricalSubjectId(title, examTip, description) {
     const tip = (examTip || '').toLowerCase();
 
     // Specific overrides
+    if (/attenuation constant and phase constant/i.test(lower)) return 11;
     if (/dirac delta impulse and unit step integration/i.test(lower)) return 7;
     if (/laplace transform time delay property/i.test(lower)) return 7;
     if (/second-order control system step response overshoot/i.test(lower)) return 12;
@@ -400,7 +402,7 @@ function getChemicalSubjectId(title, examTip, description) {
     const tip = (examTip || '').toLowerCase();
 
     // 16. Safety, Health, and Environment
-    if (/pressure relief valve sizing|hazop|flammability limits|lower and upper flammability|threshold limit value|toxic vapor dispersion|nfpa 704|hierarchy of controls|osha|safety/i.test(lower) || /process safety|safety/i.test(tip)) {
+    if (/hazard quotient|hazard index|pressure relief valve sizing|hazop|flammability limits|lower and upper flammability|threshold limit value|toxic vapor dispersion|nfpa 704|hierarchy of controls|osha|safety/i.test(lower) || /process safety|safety/i.test(tip)) {
         return 16;
     }
 
@@ -527,7 +529,7 @@ function getEnvironmentalSubjectId(title, examTip, description) {
 
     // 12. Solid and Hazardous Waste
     if (/solid waste|hazardous waste|landfill|remediation/i.test(tip) ||
-        /municipal solid waste|landfill leachate|landfill gas generation|methane generation|rcra|hazardous waste characteristics|toxicity characteristic leaching procedure|tclp|incineration destruction and removal efficiency|dre|clay liner permeability|geomembrane|composting c:n ratio/i.test(lower)) {
+        /landfill|municipal solid waste|landfill leachate|landfill gas generation|methane generation|rcra|hazardous waste characteristics|toxicity characteristic leaching procedure|tclp|incineration destruction and removal efficiency|dre|clay liner permeability|geomembrane|composting c:n ratio/i.test(lower)) {
         return 12;
     }
 
@@ -2094,14 +2096,18 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const card = document.getElementById('flashcard-studio-card');
         if (!modal) return;
 
-        modal.classList.remove('hidden');
-        requestAnimationFrame(() => {
-            modal.classList.remove('opacity-0');
-            if (card) {
-                card.classList.remove('scale-95', 'opacity-0');
-                card.classList.add('scale-100', 'opacity-100');
-            }
-        });
+        modal.classList.remove('hidden', 'opacity-0');
+        modal.classList.add('opacity-100');
+        modal.style.display = 'flex';
+        modal.style.opacity = '1';
+        modal.style.visibility = 'visible';
+        modal.style.pointerEvents = 'auto';
+        if (card) {
+            card.classList.remove('scale-95', 'opacity-0');
+            card.classList.add('scale-100', 'opacity-100');
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+        }
 
         // Set select values
         const discSelect = document.getElementById('fc-discipline-select');
@@ -2198,6 +2204,13 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
 
         window.addEventListener('resize', syncSubjectSelectVisibility);
+        const reviseNavBtn = document.getElementById('bottom-nav-revise');
+        if (reviseNavBtn) {
+            reviseNavBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openFlashcardStudio();
+            });
+        }
     });
 
     // Re-typeset active flashcard when MathJax finishes loading asynchronously
