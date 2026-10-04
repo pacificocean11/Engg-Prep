@@ -1134,6 +1134,13 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         const allNavItems = document.querySelectorAll('.nav-links li, #bottom-nav li');
         allNavItems.forEach(item => {
             item.addEventListener('click', (e) => {
+                if (item.id === 'bottom-nav-revise') {
+                    e.preventDefault();
+                    if (typeof window.openFlashcardStudio === 'function') {
+                        window.openFlashcardStudio();
+                    }
+                    return;
+                }
                 const pageId = item.getAttribute('data-page');
                 if (pageId) {
                     navigateTo(pageId);
@@ -13493,8 +13500,16 @@ window.calcEvaluate = function() {
         {
             "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
             "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
-            "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
-            "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            "description": "Standard US EPA Human Health Risk Assessment (HHRA) methodology evaluating systemic toxic hazards of non-carcinogenic chemical contaminants. The Hazard Quotient ($HQ$) is the dimensionless ratio of estimated Chronic Daily Intake ($CDI$, $\\text{mg/(kg}\\cdot\\text{day)}$) to the chemical-specific Reference Dose ($RfD$, $\\text{mg/(kg}\\cdot\\text{day)}$), representing an intake threshold below which no adverse health effects are anticipated over a lifetime. The cumulative Hazard Index ($HI$) sums individual $HQ$ values across multiple contaminants affecting the same target organ or physiological mechanism; $HI \\le 1.0$ indicates acceptable exposure, while $HI > 1.0$ indicates potential adverse human health risk.",
+            "examTip": "Found in Environmental / Civil / Chemical / Industrial / Other: Health, Safety & Environmental Risk Assessment. Critical distinction: Unlike excess lifetime cancer risk ($Risk = CDI \\times CSF$, a dimensionless probability $\\le 1.0$), $HQ$ and $HI$ are benchmark safety ratios and CAN exceed $1.0$. When evaluating mixtures with $HI > 1.0$, individual chemical hazard quotients should be segregated by specific biological target organ (e.g., hepatotoxicity, nephrotoxicity, neurotoxicity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Hazard_Quotient_and_Hazard_Index_for_Non_Carcinogenic_Toxicants.mp4",
+            "videoTitle": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A baseline environmental health risk assessment evaluates chronic drinking water exposure for a residential community located downgradient of an industrial site. Groundwater sampling identified two toxic contaminants exhibiting systemic non-carcinogenic hepatotoxicity (liver toxicity):</p>\n<p>• Trichloroethylene (TCE): $CDI_1 = 0.0035\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_1 = 0.0050\\text{ mg/(kg}\\cdot\\text{day)}$<br>\n• Tetrachloroethylene (PCE): $CDI_2 = 0.0048\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_2 = 0.0060\\text{ mg/(kg}\\cdot\\text{day)}$</p>\n<p>The individual Hazard Quotients ($HQ_1, HQ_2$) and the combined Hazard Index ($HI$) for this exposure route are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 0.80$ (Acceptable)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $HQ_1 = 1.43, \\ HQ_2 = 1.25, \\ HI = 2.68$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $HQ_1 = 0.35, \\ HQ_2 = 0.48, \\ HI = 0.83$ (Acceptable)</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Individual Hazard Quotients ($HQ$)</strong></p>\n$$HQ_1 = \\frac{CDI_1}{RfD_1} = \\frac{0.0035\\text{ mg/(kg}\\cdot\\text{day)}}{0.0050\\text{ mg/(kg}\\cdot\\text{day)}} = 0.70$$\n$$HQ_2 = \\frac{CDI_2}{RfD_2} = \\frac{0.0048\\text{ mg/(kg}\\cdot\\text{day)}}{0.0060\\text{ mg/(kg}\\cdot\\text{day)}} = 0.80$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Cumulative Hazard Index ($HI$)</strong></p>\n<p>Because both volatile solvents target the same physiological organ (liver), their hazard quotients are additive:</p>\n$$HI = \\sum_{i=1}^2 HQ_i = HQ_1 + HQ_2 = 0.70 + 0.80 = 1.50$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Health Risk Criterion</strong></p>\n<p>Since $HI = 1.50 > 1.0$, the combined toxic exposure exceeds the EPA threshold of safety, indicating potential adverse non-carcinogenic health effects.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that each individual compound has $HQ < 1.0$ ($0.70 < 1.0$ and $0.80 < 1.0$), but their mixture Hazard Index exceeds unity ($HI = 1.50 > 1.0$). Always sum all $HQ_i$ affecting common target organs before making an acceptability determination!</p>"
+            }
         },
         {
             "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
@@ -16335,9 +16350,17 @@ window.calcEvaluate = function() {
         },
         {
             "title": "Attenuation Constant and Phase Constant for Lossy Dielectrics",
-            "formula": "$$\\gamma = \\alpha + j\\beta = \\sqrt{j\\omega\\mu(\\sigma + j\\omega\\epsilon)}$$",
-            "description": "Complex propagation constant $\\gamma$: attenuation constant $\\alpha$ (Np/m) governs exponential wave decay $e^{-\\alpha z}$, while phase constant $\\beta$ (rad/m) dictates phase velocity $v_p = \\omega / \\beta$ and wavelength $\\lambda = 2\\pi / \\beta$.",
-            "examTip": "Found in Electromagnetics. In a lossless medium ($\\sigma = 0$), attenuation $\\alpha = 0$ and $\\beta = \\omega \\sqrt{\\mu \\epsilon}$."
+            "formula": "$$\\gamma = \\alpha + j\\beta = \\sqrt{j\\omega\\mu(\\sigma + j\\omega\\epsilon)} = j\\omega\\sqrt{\\mu\\epsilon}\\sqrt{1 - j\\frac{\\sigma}{\\omega\\epsilon}}$$ \n$$\\alpha = \\omega\\sqrt{\\frac{\\mu\\epsilon}{2}}\\left[\\sqrt{1 + \\left(\\frac{\\sigma}{\\omega\\epsilon}\\right)^2} - 1\\right]^{1/2}, \\quad \\beta = \\omega\\sqrt{\\frac{\\mu\\epsilon}{2}}\\left[\\sqrt{1 + \\left(\\frac{\\sigma}{\\omega\\epsilon}\\right)^2} + 1\\right]^{1/2}$$",
+            "description": "Defines the complex electromagnetic wave propagation constant $\\gamma = \\alpha + j\\beta$ in a lossy dielectric material characterized by conductivity $\\sigma$, permeability $\\mu$, and permittivity $\\epsilon$ at angular frequency $\\omega = 2\\pi f$. Attenuation constant $\\alpha$ ($\\text{Np/m}$, or $\\text{dB/m}$ via $8.686\\,\\alpha$) quantifies exponential field damping ($e^{-\\alpha z}$) caused by ohmic dissipation and dielectric relaxation. Phase constant $\\beta$ ($\\text{rad/m}$) dictates spatial phase progression, defining wave phase velocity $v_p = \\omega / \\beta$ and wavelength $\\lambda = 2\\pi / \\beta$.",
+            "examTip": "Found in Electrical & Computer: Electromagnetics. Key limiting cases: (1) Lossless dielectric ($\\sigma = 0$): $\\alpha = 0$, $\\beta = \\omega\\sqrt{\\mu\\epsilon} = 2\\pi/\\lambda$. (2) Good conductor ($\\sigma / (\\omega\\epsilon) \\gg 1$): $\\alpha = \\beta = \\sqrt{\\pi f \\mu \\sigma} = 1/\\delta$ (where $\\delta$ is skin depth). (3) Loss tangent is $\\tan\\theta = \\sigma / (\\omega\\epsilon)$; low-loss approximation applies when $\\tan\\theta \\ll 1$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Attenuation_Constant_and_Phase_Constant_for_Lossy_Dielectrics.mp4",
+            "videoTitle": "Attenuation Constant and Phase Constant for Lossy Dielectrics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A uniform plane wave propagating at frequency $f = 2.50\\text{ GHz}$ ($2.50 \\times 10^9\\text{ Hz}$) travels through a low-loss dielectric with relative permittivity $\\epsilon_r = 4.0$, relative permeability $\\mu_r = 1.0$, and conductivity $\\sigma = 0.0030\\text{ S/m}$.</p>\n<p>Given $\\epsilon_0 = 8.854 \\times 10^{-12}\\text{ F/m}$ and speed of light $c = 3.00 \\times 10^8\\text{ m/s}$, the loss tangent $\\tan\\theta = \\sigma / (\\omega\\epsilon)$ and phase constant $\\beta$ are most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\tan\\theta = 0.0054, \\ \\beta = 52.4\\text{ rad/m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\tan\\theta = 0.0054, \\ \\beta = 104.7\\text{ rad/m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\tan\\theta = 0.0540, \\ \\beta = 104.7\\text{ rad/m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\tan\\theta = 0.0054, \\ \\beta = 209.4\\text{ rad/m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Angular Frequency ($\\omega$) and Permittivity ($\\epsilon$)</strong></p>\n$$\\omega = 2\\pi f = 2\\pi (2.50 \\times 10^9\\text{ s}^{-1}) = 1.5708 \\times 10^{10}\\text{ rad/s}$$\n$$\\epsilon = \\epsilon_r \\epsilon_0 = 4.0 \\times (8.854 \\times 10^{-12}\\text{ F/m}) = 3.5416 \\times 10^{-11}\\text{ F/m}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Loss Tangent ($\\tan\\theta$)</strong></p>\n$$\\tan\\theta = \\frac{\\sigma}{\\omega\\epsilon} = \\frac{0.0030\\text{ S/m}}{(1.5708 \\times 10^{10})(3.5416 \\times 10^{-11})} = \\frac{0.0030}{0.5563} = 0.00539 \\ll 1$$\n<p>Since $\\tan\\theta = 0.0054 \\ll 1$, the medium behaves as a low-loss dielectric.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Phase Constant ($\\beta$)</strong></p>\n<p>Using the low-loss approximation $\\beta \\approx \\omega \\sqrt{\\mu\\epsilon} = \\frac{\\omega \\sqrt{\\epsilon_r}}{c}$:</p>\n$$\\beta \\approx \\frac{(1.5708 \\times 10^{10}\\text{ rad/s})\\sqrt{4.0}}{3.00 \\times 10^8\\text{ m/s}} = \\frac{3.1416 \\times 10^{10}}{3.00 \\times 10^8} = 104.72\\text{ rad/m} \\approx 104.7\\text{ rad/m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\tan\\theta = 0.0054, \\ \\beta = 104.7\\text{ rad/m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> In low-loss media ($\\tan\\theta < 0.1$), $\\beta$ depends almost entirely on $\\omega\\sqrt{\\mu\\epsilon}$, while attenuation is $\\alpha \\approx \\frac{\\sigma}{2}\\sqrt{\\frac{\\mu}{\\epsilon}} = \\frac{0.0030}{2} \\times \\frac{377}{\\sqrt{4}} = 0.283\\text{ Np/m}$.</p>"
+            }
         },
         {
             "title": "Transmission Line Propagation Velocity and Time Delay",
@@ -17895,8 +17918,16 @@ window.calcEvaluate = function() {
         {
             "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
             "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
-            "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
-            "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            "description": "Standard US EPA Human Health Risk Assessment (HHRA) methodology evaluating systemic toxic hazards of non-carcinogenic chemical contaminants. The Hazard Quotient ($HQ$) is the dimensionless ratio of estimated Chronic Daily Intake ($CDI$, $\\text{mg/(kg}\\cdot\\text{day)}$) to the chemical-specific Reference Dose ($RfD$, $\\text{mg/(kg}\\cdot\\text{day)}$), representing an intake threshold below which no adverse health effects are anticipated over a lifetime. The cumulative Hazard Index ($HI$) sums individual $HQ$ values across multiple contaminants affecting the same target organ or physiological mechanism; $HI \\le 1.0$ indicates acceptable exposure, while $HI > 1.0$ indicates potential adverse human health risk.",
+            "examTip": "Found in Environmental / Civil / Chemical / Industrial / Other: Health, Safety & Environmental Risk Assessment. Critical distinction: Unlike excess lifetime cancer risk ($Risk = CDI \\times CSF$, a dimensionless probability $\\le 1.0$), $HQ$ and $HI$ are benchmark safety ratios and CAN exceed $1.0$. When evaluating mixtures with $HI > 1.0$, individual chemical hazard quotients should be segregated by specific biological target organ (e.g., hepatotoxicity, nephrotoxicity, neurotoxicity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Hazard_Quotient_and_Hazard_Index_for_Non_Carcinogenic_Toxicants.mp4",
+            "videoTitle": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A baseline environmental health risk assessment evaluates chronic drinking water exposure for a residential community located downgradient of an industrial site. Groundwater sampling identified two toxic contaminants exhibiting systemic non-carcinogenic hepatotoxicity (liver toxicity):</p>\n<p>• Trichloroethylene (TCE): $CDI_1 = 0.0035\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_1 = 0.0050\\text{ mg/(kg}\\cdot\\text{day)}$<br>\n• Tetrachloroethylene (PCE): $CDI_2 = 0.0048\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_2 = 0.0060\\text{ mg/(kg}\\cdot\\text{day)}$</p>\n<p>The individual Hazard Quotients ($HQ_1, HQ_2$) and the combined Hazard Index ($HI$) for this exposure route are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 0.80$ (Acceptable)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $HQ_1 = 1.43, \\ HQ_2 = 1.25, \\ HI = 2.68$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $HQ_1 = 0.35, \\ HQ_2 = 0.48, \\ HI = 0.83$ (Acceptable)</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Individual Hazard Quotients ($HQ$)</strong></p>\n$$HQ_1 = \\frac{CDI_1}{RfD_1} = \\frac{0.0035\\text{ mg/(kg}\\cdot\\text{day)}}{0.0050\\text{ mg/(kg}\\cdot\\text{day)}} = 0.70$$\n$$HQ_2 = \\frac{CDI_2}{RfD_2} = \\frac{0.0048\\text{ mg/(kg}\\cdot\\text{day)}}{0.0060\\text{ mg/(kg}\\cdot\\text{day)}} = 0.80$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Cumulative Hazard Index ($HI$)</strong></p>\n<p>Because both volatile solvents target the same physiological organ (liver), their hazard quotients are additive:</p>\n$$HI = \\sum_{i=1}^2 HQ_i = HQ_1 + HQ_2 = 0.70 + 0.80 = 1.50$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Health Risk Criterion</strong></p>\n<p>Since $HI = 1.50 > 1.0$, the combined toxic exposure exceeds the EPA threshold of safety, indicating potential adverse non-carcinogenic health effects.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that each individual compound has $HQ < 1.0$ ($0.70 < 1.0$ and $0.80 < 1.0$), but their mixture Hazard Index exceeds unity ($HI = 1.50 > 1.0$). Always sum all $HQ_i$ affecting common target organs before making an acceptability determination!</p>"
+            }
         },
         {
             "title": "Vector Dot Product and Orthogonality Condition",
@@ -19168,9 +19199,17 @@ window.calcEvaluate = function() {
         },
         {
             "title": "Continuous Packed Column Height of a Transfer Unit",
-            "formula": "$$Z = HTU \\times NTU = \\left(\\frac{L}{K_L a A}\\right) \\int_{x_2}^{x_1} \\frac{dx}{x - x^*}$$",
-            "description": "Determines required packing depth $Z$ in continuous absorption or stripping columns; $HTU$ measures equipment efficiency, while $NTU$ measures separation difficulty.",
-            "examTip": "Found in Separation Processes. $a$ is specific surface area of packing per unit tower volume ($A_s/V$)."
+            "formula": "$$Z = HTU \\times NTU = H_{OG} \\times N_{OG} = \\left(\\frac{G}{K_y a A}\\right) \\int_{y_2}^{y_1} \\frac{dy}{y - y^*}$$",
+            "description": "Determines the total packed bed depth $Z$ required for continuous gas absorption, stripping, or distillation in a packed column. The method decouples kinetic transfer rates from thermodynamic driving forces: Height of a Transfer Unit ($HTU$ or $H_{OG}$) measures contactor mass transfer efficiency (lower $HTU$ indicates more compact, efficient packing), while Number of Transfer Units ($NTU$ or $N_{OG}$) characterizes the overall separation difficulty based on vapor-liquid equilibrium and the operating driving force $(y - y^*)$.",
+            "examTip": "Found in Chemical: Mass Transfer & Separation. Shortcut formulas: For dilute systems where both the equilibrium line ($y^* = m x$) and operating line are straight, $N_{OG}$ simplifies to log-mean driving force: $N_{OG} = \\frac{y_1 - y_2}{\\Delta y_{LM}}$, where $\\Delta y_{LM} = \\frac{(y_1 - y_1^*) - (y_2 - y_2^*)}{\\ln[(y_1 - y_1^*)/(y_2 - y_2^*)]}$. Packed depth is simply $Z = H_{OG} \\cdot N_{OG}$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Continuous_Packed_Column_Height_of_a_Transfer_Unit.mp4",
+            "videoTitle": "Continuous Packed Column Height of a Transfer Unit Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A packed absorption tower is designed to remove ammonia ($NH_3$) from an industrial exhaust airstream using countercurrent water scrubbing.</p>\n<p>Process design calculations for this dilute gas-liquid system yield:</p>\n<p>• Height of an overall gas transfer unit: $H_{OG} = 0.65\\text{ m}$<br>\n• Log-mean gas mole fraction driving force: $\\Delta y_{LM} = 0.0042$<br>\n• Inlet gas solute mole fraction: $y_1 = 0.0380$<br>\n• Desired outlet gas solute mole fraction: $y_2 = 0.0044$</p>\n<p>The number of overall gas transfer units ($N_{OG}$) and required depth of column packing ($Z$) are most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $N_{OG} = 6.5, \\ Z = 4.23\\text{ m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $N_{OG} = 8.0, \\ Z = 5.20\\text{ m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $N_{OG} = 8.0, \\ Z = 6.50\\text{ m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $N_{OG} = 9.2, \\ Z = 5.98\\text{ m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Number of Transfer Units ($N_{OG}$)</strong></p>\n<p>Using the dilute log-mean driving force expression:</p>\n$$N_{OG} = \\frac{y_1 - y_2}{\\Delta y_{LM}} = \\frac{0.0380 - 0.0044}{0.0042} = \\frac{0.0336}{0.0042} = 8.00$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Required Packing Height ($Z$)</strong></p>\n$$Z = H_{OG} \\times N_{OG} = 0.65\\text{ m} \\times 8.00 = 5.20\\text{ m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $N_{OG} = 8.0, \\ Z = 5.20\\text{ m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> $N_{OG}$ is dimensionless and represents the separation difficulty. Multiplying $N_{OG}$ by the height of one transfer unit $H_{OG}$ (units of length) directly yields the total bed depth $Z$.</p>"
+            }
         },
         {
             "title": "Kremser-Brown-Souders Absorption Factor Equation",
@@ -19353,9 +19392,17 @@ window.calcEvaluate = function() {
         },
         {
             "title": "Constant-Volume Batch Reactor Design Equation",
-            "formula": "$$t = N_{A0} \\int_0^{X_A} \\frac{dX_A}{(-r_A) V} = C_{A0} \\int_0^{X_A} \\frac{dX_A}{(-r_A)}$$",
-            "description": "Calculates reaction time $t$ required to reach fractional conversion $X_A$ of limiting reactant $A$ in a constant-volume, perfectly mixed isothermal batch reactor with reaction rate $(-r_A)$.",
-            "examTip": "Found in Chemical Reaction Engineering. For a first-order reaction $(-r_A = k C_A)$, the integral evaluates to $t = \\frac{1}{k} \\ln\\left(\\frac{1}{1 - X_A}\\right)$."
+            "formula": "$$t = N_{A0} \\int_0^{X_A} \\frac{dX_A}{(-r_A) V} = C_{A0} \\int_0^{X_A} \\frac{dX_A}{(-r_A)}, \\quad C_A = C_{A0}(1 - X_A)$$",
+            "description": "Fundamental mole balance design equation determining the reaction holding time $t$ required to reach fractional conversion $X_A$ of limiting reactant $A$ in a closed, well-mixed, constant-volume isothermal batch reactor. Because fluid volume $V$ is constant ($V = V_0$), the mole balance simplifies directly to concentration rate $dC_A/dt = r_A = -(-r_A)$, which integrates directly to calculate active cycle reaction time.",
+            "examTip": "Found in Chemical: Chemical Reaction Engineering. Crucial integration shortcuts: (1) First-order irreversible reaction ($-r_A = k C_A$): $t = \\frac{1}{k}\\ln\\left(\\frac{1}{1 - X_A}\\right) = \\frac{1}{k}\\ln\\left(\\frac{C_{A0}}{C_A}\\right)$. (2) Second-order reaction ($-r_A = k C_A^2$): $t = \\frac{1}{k C_{A0}}\\left(\\frac{X_A}{1 - X_A}\\right)$. Remember that total production cycle time includes auxiliary turnaround time: $t_{\\text{cycle}} = t + t_{\\text{auxiliary}}$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Constant_Volume_Batch_Reactor_Design_Equation.mp4",
+            "videoTitle": "Constant-Volume Batch Reactor Design Equation Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A liquid-phase decomposition reaction $A \\to B + C$ is conducted in an isothermal, constant-volume batch reactor. The reaction follows first-order kinetics with reaction rate constant $k = 0.045\\text{ min}^{-1}$.</p>\n<p>The initial concentration of reactant $A$ charged into the vessel is $C_{A0} = 2.0\\text{ mol/L}$.</p>\n<p>The required reaction time ($t$) to achieve $85\\%$ conversion of reactant $A$ ($X_A = 0.85$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $18.9\\text{ minutes}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $33.3\\text{ minutes}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $42.2\\text{ minutes}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $51.6\\text{ minutes}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Set Up First-Order Batch Design Equation</strong></p>\n<p>For a first-order reaction with constant density (constant volume), the rate law is $-r_A = k C_A = k C_{A0}(1 - X_A)$:</p>\n$$t = C_{A0} \\int_0^{X_A} \\frac{dX_A}{k C_{A0}(1 - X_A)} = \\frac{1}{k} \\int_0^{X_A} \\frac{dX_A}{1 - X_A} = \\frac{1}{k} \\ln\\left(\\frac{1}{1 - X_A}\\right)$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Parameters</strong></p>\n<p>At $X_A = 0.85$, the remaining unreacted fraction is $1 - X_A = 0.15$:</p>\n$$t = \\frac{1}{0.045\\text{ min}^{-1}} \\ln\\left(\\frac{1}{0.15}\\right) = \\frac{1}{0.045} \\ln(6.6667)$$\n$$t = \\frac{1.8971}{0.045} = 42.158\\text{ minutes} \\approx 42.2\\text{ minutes}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $42.2\\text{ minutes}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For first-order reactions, reaction time $t$ is independent of initial concentration $C_{A0}$. Notice that Option (A) is $1.897 / 0.10$, Option (B) is based on simple reciprocal $1/k$, while Option (C) is the exact logarithmic integration.</p>"
+            }
         },
         {
             "title": "Equal-Sized CSTRs in Series for First-Order Reactions",
@@ -21568,15 +21615,31 @@ window.calcEvaluate = function() {
         },
         {
             "title": "Assembly Line Balancing Efficiency & Balance Delay",
-            "formula": "$$E = \\frac{\\sum t_i}{n \\cdot C_{\\text{cycle}}}, \\quad d = 1 - E$$",
-            "description": "Evaluates assembly line productivity as ratio of total work content $\\sum t_i$ to product of number of workstations $n$ and cycle time $C_{\\text{cycle}}$.",
-            "examTip": "Found in Manufacturing Systems. Cycle time is $C_{\\text{cycle}} = T_{\\text{operating}} / Q_{\\text{demand}}$. Theoretical minimum stations is $n_{\\text{min}} = \\lceil \\sum t_i / C \\rceil$."
+            "formula": "$$E = \\frac{\\sum_{i=1}^k t_i}{n \\cdot C_{\\text{cycle}}}, \\quad d = 1 - E = \\frac{n \\cdot C_{\\text{cycle}} - \\sum_{i=1}^k t_i}{n \\cdot C_{\\text{cycle}}}$$",
+            "description": "Evaluates manual or paced assembly line productivity as the ratio of total product work content time ($\\sum t_i$) to total available workstation capacity ($n \\cdot C_{\\text{cycle}}$), where $n$ is the actual number of assigned workstations and $C_{\\text{cycle}}$ is the station cycle time. Line balancing efficiency $E$ measures overall workstation utilization, while balance delay $d = 1 - E$ quantifies the fractional unproductive idle time incurred across all stations due to precedence constraints and indivisible work element durations.",
+            "examTip": "Found in Industrial: Manufacturing Systems / Work Design. Key FE exam relations: (1) Cycle time $C_{\\text{cycle}} = T_{\\text{operating}} / Q_{\\text{demand}}$. (2) Total line idle time is $I = n C_{\\text{cycle}} - \\sum t_i$. (3) Balance delay $d$ and line efficiency $E$ always sum to $1.0$ (or $100\\%$). Note: cycle time must be greater than or equal to the longest single task time ($C_{\\text{cycle}} \\ge \\max(t_i)$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Assembly_Line_Balancing_Efficiency_and_Balance_Delay.mp4",
+            "videoTitle": "Assembly Line Balancing Efficiency & Balance Delay Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An appliance assembly line operates $T = 8.0\\text{ hours/shift}$ ($480\\text{ minutes}$) with a required production output of $Q = 120\\text{ units/shift}$.</p>\n<p>The total work content of the product is $\\sum t_i = 38.4\\text{ minutes}$, partitioned across $n = 11$ sequential workstations.</p>\n<p>The workstation cycle time ($C_{\\text{cycle}}$), line efficiency ($E$), and balance delay ($d$) for this line are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $C = 4.0\\text{ min}, \\ E = 80.0\\%, \\ d = 20.0\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $C = 4.0\\text{ min}, \\ E = 87.3\\%, \\ d = 12.7\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $C = 4.0\\text{ min}, \\ E = 92.5\\%, \\ d = 7.5\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $C = 4.5\\text{ min}, \\ E = 87.3\\%, \\ d = 14.2\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Station Cycle Time ($C_{\\text{cycle}}$)</strong></p>\n$$C_{\\text{cycle}} = \\frac{T_{\\text{operating}}}{Q} = \\frac{480\\text{ minutes}}{120\\text{ units}} = 4.0\\text{ minutes/unit}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Line Balancing Efficiency ($E$)</strong></p>\n<p>Total available line capacity across $n = 11$ workstations is $n \\cdot C_{\\text{cycle}} = 11 \\times 4.0 = 44.0\\text{ minutes}$:</p>\n$$E = \\frac{\\sum t_i}{n \\cdot C_{\\text{cycle}}} = \\frac{38.4\\text{ min}}{11 \\times 4.0\\text{ min}} = \\frac{38.4}{44.0} = 0.8727 = 87.27\\% \\approx 87.3\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Determine Balance Delay ($d$)</strong></p>\n$$d = 1 - E = 1 - 0.8727 = 0.1273 = 12.73\\% \\approx 12.7\\%$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $C = 4.0\\text{ min}, \\ E = 87.3\\%, \\ d = 12.7\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> You can verify balance delay directly by dividing total line idle time $I = 44.0 - 38.4 = 5.6\\text{ minutes}$ by total station time: $d = 5.6 / 44.0 = 12.7\\%$. Line efficiency and balance delay always sum exactly to $100\\%$.</p>"
+            }
         },
         {
             "title": "Assembly Line Balancing Minimum Number of Workstations",
-            "formula": "$$N_{\\text{min}} = \\left\\lceil \\frac{\\sum_{i=1}^k t_i}{C} \\right\\rceil, \\quad C = \\frac{T_{\\text{available}}}{D}$$",
-            "description": "Calculates theoretical lower bound on workstations $N_{\\text{min}}$ required to assemble a product with total work content $\\sum t_i$ at cycle time $C$ to satisfy demand $D$.",
-            "examTip": "Found in Manufacturing Systems. Always round up to the next integer (ceiling function $\\lceil \\dots \\rceil$)."
+            "formula": "$$N_{\\min} = \\left\\lceil \\frac{\\sum_{i=1}^k t_i}{C_{\\text{cycle}}} \\right\\rceil, \\quad C_{\\text{cycle}} = \\frac{T_{\\text{available}}}{D}$$",
+            "description": "Calculates the theoretical minimum number of sequential workstations ($N_{\\min}$) required to balance an assembly line and satisfy customer demand $D$ during available production time $T_{\\text{available}}$. It divides total product work content ($\\sum t_i$) by the required workstation cycle time $C_{\\text{cycle}}$, applying the ceiling mathematical operator ($\\lceil \\cdot \\rceil$) to round strictly up to the next whole integer, since fractional physical workstations cannot exist in practice.",
+            "examTip": "Found in Industrial: Facilities & Logistics / Manufacturing Systems. Crucial FE rule: Always round UP (ceiling function $\\lceil \\dots \\rceil$), never down, even for minute decimal fractions (e.g., $\\lceil 6.12 \\rceil = 7$). If the largest individual task duration exceeds cycle time ($t_{\\max} > C_{\\text{cycle}}$), parallel workstations or element splitting are mandatory before line balancing.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Assembly_Line_Balancing_Minimum_Number_of_Workstations.mp4",
+            "videoTitle": "Assembly Line Balancing Minimum Number of Workstations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing plant operates a dedicated assembly line for $7.5\\text{ hours}$ of effective production time per shift ($450\\text{ minutes}$). Customer orders require a daily production quota of $D = 180\\text{ units/shift}$.</p>\n<p>The product assembly sequence consists of 14 discrete tasks with total work content $\\sum t_i = 16.2\\text{ minutes}$, where the longest single task duration is $t_{\\max} = 2.1\\text{ minutes}$.</p>\n<p>The maximum allowable cycle time ($C_{\\text{cycle}}$) and theoretical minimum number of workstations ($N_{\\min}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $C = 2.50\\text{ min}, \\ N_{\\min} = 6\\text{ workstations}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $C = 2.50\\text{ min}, \\ N_{\\min} = 7\\text{ workstations}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $C = 2.25\\text{ min}, \\ N_{\\min} = 7\\text{ workstations}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $C = 2.50\\text{ min}, \\ N_{\\min} = 8\\text{ workstations}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Allowable Cycle Time ($C_{\\text{cycle}}$)</strong></p>\n$$C_{\\text{cycle}} = \\frac{T_{\\text{available}}}{D} = \\frac{450\\text{ minutes}}{180\\text{ units}} = 2.50\\text{ minutes/unit}$$\n<p>Check feasibility: $t_{\\max} = 2.10\\text{ min} \\le C_{\\text{cycle}} = 2.50\\text{ min}$, which confirms feasibility for single-station layout.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Theoretical Minimum Workstations ($N_{\\min}$)</strong></p>\n$$\\frac{\\sum t_i}{C_{\\text{cycle}}} = \\frac{16.2\\text{ minutes}}{2.50\\text{ minutes/station}} = 6.48\\text{ stations}$$\n$$N_{\\min} = \\lceil 6.48 \\rceil = 7\\text{ workstations}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $C = 2.50\\text{ min}, \\ N_{\\min} = 7\\text{ workstations}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> With 6 workstations, maximum line output would only be $6 \\times (450 / 16.2) = 166.7\\text{ units}$, falling short of demand ($180$). Hence rounding down to 6 is physically impossible; 7 workstations are required.</p>"
+            }
         },
         {
             "title": "Inventory Reorder Point with Safety Stock",
@@ -21650,8 +21713,16 @@ window.calcEvaluate = function() {
         {
             "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
             "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
-            "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
-            "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            "description": "Standard US EPA Human Health Risk Assessment (HHRA) methodology evaluating systemic toxic hazards of non-carcinogenic chemical contaminants. The Hazard Quotient ($HQ$) is the dimensionless ratio of estimated Chronic Daily Intake ($CDI$, $\\text{mg/(kg}\\cdot\\text{day)}$) to the chemical-specific Reference Dose ($RfD$, $\\text{mg/(kg}\\cdot\\text{day)}$), representing an intake threshold below which no adverse health effects are anticipated over a lifetime. The cumulative Hazard Index ($HI$) sums individual $HQ$ values across multiple contaminants affecting the same target organ or physiological mechanism; $HI \\le 1.0$ indicates acceptable exposure, while $HI > 1.0$ indicates potential adverse human health risk.",
+            "examTip": "Found in Environmental / Civil / Chemical / Industrial / Other: Health, Safety & Environmental Risk Assessment. Critical distinction: Unlike excess lifetime cancer risk ($Risk = CDI \\times CSF$, a dimensionless probability $\\le 1.0$), $HQ$ and $HI$ are benchmark safety ratios and CAN exceed $1.0$. When evaluating mixtures with $HI > 1.0$, individual chemical hazard quotients should be segregated by specific biological target organ (e.g., hepatotoxicity, nephrotoxicity, neurotoxicity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Hazard_Quotient_and_Hazard_Index_for_Non_Carcinogenic_Toxicants.mp4",
+            "videoTitle": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A baseline environmental health risk assessment evaluates chronic drinking water exposure for a residential community located downgradient of an industrial site. Groundwater sampling identified two toxic contaminants exhibiting systemic non-carcinogenic hepatotoxicity (liver toxicity):</p>\n<p>• Trichloroethylene (TCE): $CDI_1 = 0.0035\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_1 = 0.0050\\text{ mg/(kg}\\cdot\\text{day)}$<br>\n• Tetrachloroethylene (PCE): $CDI_2 = 0.0048\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_2 = 0.0060\\text{ mg/(kg}\\cdot\\text{day)}$</p>\n<p>The individual Hazard Quotients ($HQ_1, HQ_2$) and the combined Hazard Index ($HI$) for this exposure route are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 0.80$ (Acceptable)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $HQ_1 = 1.43, \\ HQ_2 = 1.25, \\ HI = 2.68$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $HQ_1 = 0.35, \\ HQ_2 = 0.48, \\ HI = 0.83$ (Acceptable)</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Individual Hazard Quotients ($HQ$)</strong></p>\n$$HQ_1 = \\frac{CDI_1}{RfD_1} = \\frac{0.0035\\text{ mg/(kg}\\cdot\\text{day)}}{0.0050\\text{ mg/(kg}\\cdot\\text{day)}} = 0.70$$\n$$HQ_2 = \\frac{CDI_2}{RfD_2} = \\frac{0.0048\\text{ mg/(kg}\\cdot\\text{day)}}{0.0060\\text{ mg/(kg}\\cdot\\text{day)}} = 0.80$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Cumulative Hazard Index ($HI$)</strong></p>\n<p>Because both volatile solvents target the same physiological organ (liver), their hazard quotients are additive:</p>\n$$HI = \\sum_{i=1}^2 HQ_i = HQ_1 + HQ_2 = 0.70 + 0.80 = 1.50$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Health Risk Criterion</strong></p>\n<p>Since $HI = 1.50 > 1.0$, the combined toxic exposure exceeds the EPA threshold of safety, indicating potential adverse non-carcinogenic health effects.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that each individual compound has $HQ < 1.0$ ($0.70 < 1.0$ and $0.80 < 1.0$), but their mixture Hazard Index exceeds unity ($HI = 1.50 > 1.0$). Always sum all $HQ_i$ affecting common target organs before making an acceptability determination!</p>"
+            }
         },
         {
             "title": "NIOSH Manual Lifting Equation Recommended Weight Limit (RWL)",
@@ -24420,9 +24491,17 @@ window.calcEvaluate = function() {
         },
         {
             "title": "Landfill Water Balance Leachate Generation (HELP Model)",
-            "formula": "$$\\text{Leachate} = \\text{Precipitation} - \\text{Surface Runoff} - \\text{Evapotranspiration} - \\Delta S_{\\text{soil}}$$",
-            "description": "Hydrologic Evaluation of Landfill Performance (HELP) water budget estimating volume of percolating contaminated leachate generated annually inside municipal solid waste landfills.",
-            "examTip": "Found in Solid Waste Management. Impermeable final composite covers minimize infiltration, starving the landfill of moisture and halting leachate production."
+            "formula": "$$\\text{Leachate } (L) = P - R - ET - \\Delta S$$",
+            "description": "Hydrologic Evaluation of Landfill Performance (HELP) water balance model developed by the US EPA and USACE to estimate the annual volume of contaminated leachate percolating into the bottom collection sump of a municipal solid waste (MSW) landfill. The water budget accounts for incident precipitation ($P$), surface runoff ($R$), actual evapotranspiration from vegetative cover ($ET$), and net change in moisture storage ($\\Delta S$) within the waste and soil cover layers.",
+            "examTip": "Found in Environmental: Solid and Hazardous Waste Management. Remember: In long-term steady-state conditions after waste reaches field capacity, moisture storage change $\\Delta S \\approx 0$. Engineered composite final covers (geomembrane + low-permeability clay) maximize surface runoff $R$ and prevent precipitation infiltration, driving leachate generation $L \\to 0$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Landfill_Water_Balance_Leachate_Generation_HELP_Model.mp4",
+            "videoTitle": "Landfill Water Balance Leachate Generation (HELP Model) Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A closed municipal solid waste (MSW) landfill occupies a surface footprint area of $A = 20.0\\text{ hectares}$ ($200{,}000\\text{ m}^2$). Site hydrological records over a 1-year monitoring period indicate:</p>\n<p>• Annual precipitation: $P = 1{,}050\\text{ mm/year}$<br>\n• Surface runoff from final cover: $R = 210\\text{ mm/year}$<br>\n• Actual evapotranspiration: $ET = 640\\text{ mm/year}$<br>\n• Change in soil and waste moisture storage: $\\Delta S = +20\\text{ mm/year}$</p>\n<p>Assuming all infiltrating water reaches the primary bottom liner collection system, the total annual leachate volume generated by the landfill is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $28{,}000\\text{ m}^3\\text{/year}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $36{,}000\\text{ m}^3\\text{/year}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40{,}000\\text{ m}^3\\text{/year}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $44{,}000\\text{ m}^3\\text{/year}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Unit Depth of Leachate Generation ($L$)</strong></p>\n<p>Applying the HELP hydrologic water balance equation:</p>\n$$L = P - R - ET - \\Delta S = 1050 - 210 - 640 - 20 = 180\\text{ mm/year}$$\n$$L = 180\\text{ mm/year} \\times \\frac{1\\text{ m}}{1000\\text{ mm}} = 0.180\\text{ m/year}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Total Annual Leachate Volume ($V$)</strong></p>\n$$V = L \\times A = 0.180\\text{ m/year} \\times 200{,}000\\text{ m}^2 = 36{,}000\\text{ m}^3\\text{/year}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $36{,}000\\text{ m}^3\\text{/year}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always verify units when converting from $\\text{mm/year}$ to total volumetric flow ($\\text{m}^3\\text{/year}$): $1\\text{ mm}$ over $1\\text{ m}^2$ equals $1\\text{ liter} = 0.001\\text{ m}^3$. For $20\\text{ hectares} = 200{,}000\\text{ m}^2$, $180\\text{ mm} \\times 200{,}000\\text{ m}^2 = 36{,}000\\text{ m}^3$.</p>"
+            }
         },
         {
             "title": "RCRA Subtitle C Hazardous Waste Landfill Liner System",
@@ -24631,8 +24710,16 @@ window.calcEvaluate = function() {
         {
             "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
             "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
-            "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
-            "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            "description": "Standard US EPA Human Health Risk Assessment (HHRA) methodology evaluating systemic toxic hazards of non-carcinogenic chemical contaminants. The Hazard Quotient ($HQ$) is the dimensionless ratio of estimated Chronic Daily Intake ($CDI$, $\\text{mg/(kg}\\cdot\\text{day)}$) to the chemical-specific Reference Dose ($RfD$, $\\text{mg/(kg}\\cdot\\text{day)}$), representing an intake threshold below which no adverse health effects are anticipated over a lifetime. The cumulative Hazard Index ($HI$) sums individual $HQ$ values across multiple contaminants affecting the same target organ or physiological mechanism; $HI \\le 1.0$ indicates acceptable exposure, while $HI > 1.0$ indicates potential adverse human health risk.",
+            "examTip": "Found in Environmental / Civil / Chemical / Industrial / Other: Health, Safety & Environmental Risk Assessment. Critical distinction: Unlike excess lifetime cancer risk ($Risk = CDI \\times CSF$, a dimensionless probability $\\le 1.0$), $HQ$ and $HI$ are benchmark safety ratios and CAN exceed $1.0$. When evaluating mixtures with $HI > 1.0$, individual chemical hazard quotients should be segregated by specific biological target organ (e.g., hepatotoxicity, nephrotoxicity, neurotoxicity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Hazard_Quotient_and_Hazard_Index_for_Non_Carcinogenic_Toxicants.mp4",
+            "videoTitle": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A baseline environmental health risk assessment evaluates chronic drinking water exposure for a residential community located downgradient of an industrial site. Groundwater sampling identified two toxic contaminants exhibiting systemic non-carcinogenic hepatotoxicity (liver toxicity):</p>\n<p>• Trichloroethylene (TCE): $CDI_1 = 0.0035\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_1 = 0.0050\\text{ mg/(kg}\\cdot\\text{day)}$<br>\n• Tetrachloroethylene (PCE): $CDI_2 = 0.0048\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_2 = 0.0060\\text{ mg/(kg}\\cdot\\text{day)}$</p>\n<p>The individual Hazard Quotients ($HQ_1, HQ_2$) and the combined Hazard Index ($HI$) for this exposure route are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 0.80$ (Acceptable)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $HQ_1 = 1.43, \\ HQ_2 = 1.25, \\ HI = 2.68$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $HQ_1 = 0.35, \\ HQ_2 = 0.48, \\ HI = 0.83$ (Acceptable)</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Individual Hazard Quotients ($HQ$)</strong></p>\n$$HQ_1 = \\frac{CDI_1}{RfD_1} = \\frac{0.0035\\text{ mg/(kg}\\cdot\\text{day)}}{0.0050\\text{ mg/(kg}\\cdot\\text{day)}} = 0.70$$\n$$HQ_2 = \\frac{CDI_2}{RfD_2} = \\frac{0.0048\\text{ mg/(kg}\\cdot\\text{day)}}{0.0060\\text{ mg/(kg}\\cdot\\text{day)}} = 0.80$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Cumulative Hazard Index ($HI$)</strong></p>\n<p>Because both volatile solvents target the same physiological organ (liver), their hazard quotients are additive:</p>\n$$HI = \\sum_{i=1}^2 HQ_i = HQ_1 + HQ_2 = 0.70 + 0.80 = 1.50$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Health Risk Criterion</strong></p>\n<p>Since $HI = 1.50 > 1.0$, the combined toxic exposure exceeds the EPA threshold of safety, indicating potential adverse non-carcinogenic health effects.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that each individual compound has $HQ < 1.0$ ($0.70 < 1.0$ and $0.80 < 1.0$), but their mixture Hazard Index exceeds unity ($HI = 1.50 > 1.0$). Always sum all $HQ_i$ affecting common target organs before making an acceptability determination!</p>"
+            }
         },
         {
             "title": "Logarithmic Sound Pressure Level Decibel Addition",
@@ -26417,8 +26504,16 @@ window.calcEvaluate = function() {
         {
             "title": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants",
             "formula": "$$HQ = \\frac{CDI}{RfD}, \\quad HI = \\sum_{i=1}^n HQ_i = \\sum_{i=1}^n \\frac{CDI_i}{RfD_i} \\le 1.0$$",
-            "description": "Evaluates systemic non-cancer toxic risk by comparing Chronic Daily Intake ($CDI$) to EPA Reference Dose ($RfD$); $HQ > 1.0$ or cumulative Hazard Index $HI > 1.0$ indicates potential adverse human health effects.",
-            "examTip": "Found in Environmental: Risk Assessment. Unlike cancer risk, $HQ$ is not a probability; it is a dimensionless ratio benchmarked against safe threshold dose $RfD$."
+            "description": "Standard US EPA Human Health Risk Assessment (HHRA) methodology evaluating systemic toxic hazards of non-carcinogenic chemical contaminants. The Hazard Quotient ($HQ$) is the dimensionless ratio of estimated Chronic Daily Intake ($CDI$, $\\text{mg/(kg}\\cdot\\text{day)}$) to the chemical-specific Reference Dose ($RfD$, $\\text{mg/(kg}\\cdot\\text{day)}$), representing an intake threshold below which no adverse health effects are anticipated over a lifetime. The cumulative Hazard Index ($HI$) sums individual $HQ$ values across multiple contaminants affecting the same target organ or physiological mechanism; $HI \\le 1.0$ indicates acceptable exposure, while $HI > 1.0$ indicates potential adverse human health risk.",
+            "examTip": "Found in Environmental / Civil / Chemical / Industrial / Other: Health, Safety & Environmental Risk Assessment. Critical distinction: Unlike excess lifetime cancer risk ($Risk = CDI \\times CSF$, a dimensionless probability $\\le 1.0$), $HQ$ and $HI$ are benchmark safety ratios and CAN exceed $1.0$. When evaluating mixtures with $HI > 1.0$, individual chemical hazard quotients should be segregated by specific biological target organ (e.g., hepatotoxicity, nephrotoxicity, neurotoxicity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Hazard_Quotient_and_Hazard_Index_for_Non_Carcinogenic_Toxicants.mp4",
+            "videoTitle": "Hazard Quotient and Hazard Index for Non-Carcinogenic Toxicants Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A baseline environmental health risk assessment evaluates chronic drinking water exposure for a residential community located downgradient of an industrial site. Groundwater sampling identified two toxic contaminants exhibiting systemic non-carcinogenic hepatotoxicity (liver toxicity):</p>\n<p>• Trichloroethylene (TCE): $CDI_1 = 0.0035\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_1 = 0.0050\\text{ mg/(kg}\\cdot\\text{day)}$<br>\n• Tetrachloroethylene (PCE): $CDI_2 = 0.0048\\text{ mg/(kg}\\cdot\\text{day)}$, $RfD_2 = 0.0060\\text{ mg/(kg}\\cdot\\text{day)}$</p>\n<p>The individual Hazard Quotients ($HQ_1, HQ_2$) and the combined Hazard Index ($HI$) for this exposure route are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 0.80$ (Acceptable)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $HQ_1 = 1.43, \\ HQ_2 = 1.25, \\ HI = 2.68$ (Potential Adverse Risk)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $HQ_1 = 0.35, \\ HQ_2 = 0.48, \\ HI = 0.83$ (Acceptable)</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Individual Hazard Quotients ($HQ$)</strong></p>\n$$HQ_1 = \\frac{CDI_1}{RfD_1} = \\frac{0.0035\\text{ mg/(kg}\\cdot\\text{day)}}{0.0050\\text{ mg/(kg}\\cdot\\text{day)}} = 0.70$$\n$$HQ_2 = \\frac{CDI_2}{RfD_2} = \\frac{0.0048\\text{ mg/(kg}\\cdot\\text{day)}}{0.0060\\text{ mg/(kg}\\cdot\\text{day)}} = 0.80$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Cumulative Hazard Index ($HI$)</strong></p>\n<p>Because both volatile solvents target the same physiological organ (liver), their hazard quotients are additive:</p>\n$$HI = \\sum_{i=1}^2 HQ_i = HQ_1 + HQ_2 = 0.70 + 0.80 = 1.50$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Health Risk Criterion</strong></p>\n<p>Since $HI = 1.50 > 1.0$, the combined toxic exposure exceeds the EPA threshold of safety, indicating potential adverse non-carcinogenic health effects.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $HQ_1 = 0.70, \\ HQ_2 = 0.80, \\ HI = 1.50$ (Potential Adverse Risk)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that each individual compound has $HQ < 1.0$ ($0.70 < 1.0$ and $0.80 < 1.0$), but their mixture Hazard Index exceeds unity ($HI = 1.50 > 1.0$). Always sum all $HQ_i$ affecting common target organs before making an acceptability determination!</p>"
+            }
         },
         {
             "title": "Excess Lifetime Cancer Risk Model and Cancer Slope Factor",
@@ -28414,8 +28509,16 @@ window.calcEvaluate = function() {
         {
             "title": "Magnetic Force on a Straight Current-Carrying Conductor",
             "formula": "$$\\mathbf{F} = I (\\mathbf{L} \\times \\mathbf{B}), \\quad F = I L B \\sin\\theta$$",
-            "description": "Lorentz force exerted on a conductor carrying electric current $I$ of length vector $\\mathbf{L}$ immersed in an external magnetic flux density $\\mathbf{B}$; direction is governed by the right-hand rule.",
-            "examTip": "Found in Electricity and Magnetism. Maximum force occurs when conductor is perpendicular to magnetic field ($\\theta = 90^\\circ$); force is zero if current is parallel to field lines."
+            "description": "Quantifies the Lorentz magnetic force $\\mathbf{F}$ exerted on a straight conductor of length vector $\\mathbf{L}$ carrying steady direct electric current $I$ immersed in a uniform external magnetic flux density field $\\mathbf{B}$. The force vector direction is governed by the right-hand rule (fingers point along current vector $\\mathbf{L}$, curl toward magnetic field $\\mathbf{B}$, thumb points in force direction $\\mathbf{F}$). The scalar force magnitude depends on the angle $\\theta$ between the conductor axis and the magnetic flux lines.",
+            "examTip": "Found in Other Disciplines: Basic Electrical Engineering / Electricity & Magnetism. Key exam rules: (1) When the conductor is parallel to the magnetic field ($\\theta = 0^\\circ$ or $180^\\circ$), $\\sin\\theta = 0$, so magnetic force is ZERO. (2) Maximum force occurs when conductor is perpendicular to the field ($\\theta = 90^\\circ$, $F_{\\max} = ILB$). (3) For 3D vector problems, evaluate the vector cross product $\\mathbf{L} \\times \\mathbf{B}$ directly.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Magnetic_Force_on_a_Straight_Current_Carrying_Conductor.mp4",
+            "videoTitle": "Magnetic Force on a Straight Current-Carrying Conductor Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A straight rigid copper conductor of length $L = 0.75\\text{ m}$ is aligned horizontally along the $x$-axis and carries a direct current $I = 16.0\\text{ A}$ directed toward the east ($+\\mathbf{\\hat{i}}$).</p>\n<p>A uniform magnetic field of flux density $B = 0.40\\text{ T}$ is oriented horizontally toward the north ($+\\mathbf{\\hat{j}}$).</p>\n<p>The magnitude and physical direction of the magnetic force exerted on the conductor are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $F = 3.60\\text{ N}$, vertically downward ($-\\mathbf{\\hat{k}}$)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $F = 4.80\\text{ N}$, vertically upward ($+\\mathbf{\\hat{k}}$)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $F = 4.80\\text{ N}$, directed south ($-\\mathbf{\\hat{j}}$)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $F = 6.40\\text{ N}$, vertically upward ($+\\mathbf{\\hat{k}}$)</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Magnetic Force Magnitude</strong></p>\n<p>Because the current ($+\\mathbf{\\hat{i}}$) and magnetic field ($+\\mathbf{\\hat{j}}$) are mutually perpendicular, $\\theta = 90^\\circ$ and $\\sin(90^\\circ) = 1.0$:</p>\n$$F = I L B \\sin\\theta = (16.0\\text{ A})(0.75\\text{ m})(0.40\\text{ T})(1.0) = 4.80\\text{ N}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Force Vector Direction via Vector Cross Product</strong></p>\n$$\\mathbf{L} = 0.75\\mathbf{\\hat{i}}\\text{ m}, \\quad \\mathbf{B} = 0.40\\mathbf{\\hat{j}}\\text{ T}$$\n$$\\mathbf{F} = I (\\mathbf{L} \\times \\mathbf{B}) = 16.0 (0.75\\mathbf{\\hat{i}} \\times 0.40\\mathbf{\\hat{j}}) = 16.0 (0.30\\mathbf{\\hat{k}}) = +4.80\\mathbf{\\hat{k}}\\text{ N}$$\n<p>The vector $+\\mathbf{\\hat{k}}$ corresponds to vertically upward out of the horizontal plane.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $F = 4.80\\text{ N}$, vertically upward ($+\\mathbf{\\hat{k}}$)</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The right-hand rule gives the same result: point right fingers east ($+\\mathbf{\\hat{i}}$), curl toward north ($+\\mathbf{\\hat{j}}$), thumb points vertically upward ($+\\mathbf{\\hat{k}}$).</p>"
+            }
         },
         {
             "title": "Equivalent Resistance in Series and Parallel Networks",
@@ -31489,6 +31592,7 @@ window.calcEvaluate = function() {
         if (/standard portland cement types|binary phase diagram lever rule|concrete maturity method|hardness of a material/i.test(lower)) return 7;
         if (/type iii zone settling|solution concentration: molarity/i.test(lower)) return 10;
         if (/modified goodman fatigue|strain gauge gauge factor|distortion energy theory|coulomb-mohr and modified mohr failure criteria/i.test(lower)) return 6;
+        if (/hazard quotient|hazard index/i.test(lower)) return 10;
         if (/hierarchy of controls|nfpa 704|hazop study/i.test(lower)) return 2;
         if (/pressure relief valve sizing/i.test(lower)) return 8;
         if (/kanban production system/i.test(lower)) return 3;
@@ -31662,6 +31766,7 @@ function getElectricalSubjectId(title, examTip, description) {
     const tip = (examTip || '').toLowerCase();
 
     // Specific overrides
+    if (/attenuation constant and phase constant/i.test(lower)) return 11;
     if (/dirac delta impulse and unit step integration/i.test(lower)) return 7;
     if (/laplace transform time delay property/i.test(lower)) return 7;
     if (/second-order control system step response overshoot/i.test(lower)) return 12;
@@ -31795,7 +31900,7 @@ function getChemicalSubjectId(title, examTip, description) {
     const tip = (examTip || '').toLowerCase();
 
     // 16. Safety, Health, and Environment
-    if (/pressure relief valve sizing|hazop|flammability limits|lower and upper flammability|threshold limit value|toxic vapor dispersion|nfpa 704|hierarchy of controls|osha|safety/i.test(lower) || /process safety|safety/i.test(tip)) {
+    if (/hazard quotient|hazard index|pressure relief valve sizing|hazop|flammability limits|lower and upper flammability|threshold limit value|toxic vapor dispersion|nfpa 704|hierarchy of controls|osha|safety/i.test(lower) || /process safety|safety/i.test(tip)) {
         return 16;
     }
 
@@ -31922,7 +32027,7 @@ function getEnvironmentalSubjectId(title, examTip, description) {
 
     // 12. Solid and Hazardous Waste
     if (/solid waste|hazardous waste|landfill|remediation/i.test(tip) ||
-        /municipal solid waste|landfill leachate|landfill gas generation|methane generation|rcra|hazardous waste characteristics|toxicity characteristic leaching procedure|tclp|incineration destruction and removal efficiency|dre|clay liner permeability|geomembrane|composting c:n ratio/i.test(lower)) {
+        /landfill|municipal solid waste|landfill leachate|landfill gas generation|methane generation|rcra|hazardous waste characteristics|toxicity characteristic leaching procedure|tclp|incineration destruction and removal efficiency|dre|clay liner permeability|geomembrane|composting c:n ratio/i.test(lower)) {
         return 12;
     }
 
@@ -33489,14 +33594,18 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const card = document.getElementById('flashcard-studio-card');
         if (!modal) return;
 
-        modal.classList.remove('hidden');
-        requestAnimationFrame(() => {
-            modal.classList.remove('opacity-0');
-            if (card) {
-                card.classList.remove('scale-95', 'opacity-0');
-                card.classList.add('scale-100', 'opacity-100');
-            }
-        });
+        modal.classList.remove('hidden', 'opacity-0');
+        modal.classList.add('opacity-100');
+        modal.style.display = 'flex';
+        modal.style.opacity = '1';
+        modal.style.visibility = 'visible';
+        modal.style.pointerEvents = 'auto';
+        if (card) {
+            card.classList.remove('scale-95', 'opacity-0');
+            card.classList.add('scale-100', 'opacity-100');
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+        }
 
         // Set select values
         const discSelect = document.getElementById('fc-discipline-select');
@@ -33593,6 +33702,13 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
 
         window.addEventListener('resize', syncSubjectSelectVisibility);
+        const reviseNavBtn = document.getElementById('bottom-nav-revise');
+        if (reviseNavBtn) {
+            reviseNavBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openFlashcardStudio();
+            });
+        }
     });
 
     // Re-typeset active flashcard when MathJax finishes loading asynchronously
