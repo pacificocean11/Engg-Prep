@@ -978,7 +978,8 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 
     function renderCard() {
         const modal = document.getElementById('fe-flashcards-modal');
-        if (!modal || modal.classList.contains('hidden')) return;
+        if (!modal) return;
+        if (modal.classList.contains('hidden') && modal.style.display !== 'flex') return;
 
         const summaryView = document.getElementById('fc-summary-view');
         const cardTrigger = document.getElementById('fc-card-trigger');
@@ -2131,18 +2132,27 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const card = document.getElementById('flashcard-studio-card');
         const video = document.getElementById('fc-back-video');
         if (video) {
-            video.pause();
-            video.currentTime = 0;
+            try {
+                video.pause();
+                video.currentTime = 0;
+            } catch (err) {}
         }
 
         if (modal) {
+            modal.classList.remove('opacity-100');
             modal.classList.add('opacity-0');
+            modal.style.opacity = '0';
+            modal.style.pointerEvents = 'none';
             if (card) {
                 card.classList.remove('scale-100', 'opacity-100');
                 card.classList.add('scale-95', 'opacity-0');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
             }
             setTimeout(() => {
                 modal.classList.add('hidden');
+                modal.style.display = 'none';
+                modal.style.visibility = 'hidden';
             }, 250);
         }
     }
@@ -2150,7 +2160,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     // Attach Keyboard Hotkeys
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('fe-flashcards-modal');
-        if (!modal || modal.classList.contains('hidden')) return;
+        if (!modal || modal.classList.contains('hidden') || modal.style.display === 'none') return;
 
         if (e.target && (e.target.tagName === 'SELECT' || e.target.tagName === 'INPUT')) return;
 
@@ -2175,13 +2185,14 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
     });
 
-    // Wire dropdown change events
-    document.addEventListener('DOMContentLoaded', () => {
+    // Wire studio controls and button click events (idempotent)
+    function wireStudioControls() {
         const discSelect = document.getElementById('fc-discipline-select');
         const modeSelect = document.getElementById('fc-mode-select');
         const subjectSelect = document.getElementById('fc-subject-select');
 
-        if (discSelect) {
+        if (discSelect && !discSelect.dataset.wired) {
+            discSelect.dataset.wired = 'true';
             discSelect.addEventListener('change', (e) => {
                 currentDiscipline = e.target.value;
                 currentSubjectFilter = 'all';
@@ -2189,29 +2200,84 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             });
         }
 
-        if (modeSelect) {
+        if (modeSelect && !modeSelect.dataset.wired) {
+            modeSelect.dataset.wired = 'true';
             modeSelect.addEventListener('change', (e) => {
                 currentMode = e.target.value;
                 openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
             });
         }
 
-        if (subjectSelect) {
+        if (subjectSelect && !subjectSelect.dataset.wired) {
+            subjectSelect.dataset.wired = 'true';
             subjectSelect.addEventListener('change', (e) => {
                 currentSubjectFilter = e.target.value;
                 openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
             });
         }
 
-        window.addEventListener('resize', syncSubjectSelectVisibility);
+        // Top-right Close Button
+        const closeBtn = document.getElementById('fc-close-btn');
+        if (closeBtn) {
+            closeBtn.onclick = (e) => {
+                if (e) { e.preventDefault(); e.stopPropagation(); }
+                closeFlashcardStudio();
+            };
+        }
+
+        // Bottom-right Next Button
+        const nextBtn = document.getElementById('fc-btn-next');
+        if (nextBtn) {
+            nextBtn.onclick = (e) => {
+                if (e) { e.preventDefault(); e.stopPropagation(); }
+                nextCard();
+            };
+        }
+
+        // Bottom-left Previous Button
+        const prevBtn = document.getElementById('fc-btn-prev');
+        if (prevBtn) {
+            prevBtn.onclick = (e) => {
+                if (e) { e.preventDefault(); e.stopPropagation(); }
+                prevCard();
+            };
+        }
+
+        // Top Shuffle Button
+        const shuffleBtn = document.getElementById('fc-shuffle-btn');
+        if (shuffleBtn) {
+            shuffleBtn.onclick = (e) => {
+                if (e) { e.preventDefault(); e.stopPropagation(); }
+                shuffleCards();
+            };
+        }
+
+        // Bottom Nav Revise Tab
         const reviseNavBtn = document.getElementById('bottom-nav-revise');
         if (reviseNavBtn) {
-            reviseNavBtn.addEventListener('click', (e) => {
-                e.preventDefault();
+            reviseNavBtn.onclick = (e) => {
+                if (e) { e.preventDefault(); e.stopPropagation(); }
                 openFlashcardStudio();
-            });
+            };
         }
-    });
+
+        // Backdrop click to close (click outside flashcard container)
+        const modal = document.getElementById('fe-flashcards-modal');
+        if (modal) {
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    closeFlashcardStudio();
+                }
+            };
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireStudioControls);
+    } else {
+        wireStudioControls();
+    }
+    window.addEventListener('resize', syncSubjectSelectVisibility);
 
     // Re-typeset active flashcard when MathJax finishes loading asynchronously
     window.addEventListener('mathjax-ready', () => {
