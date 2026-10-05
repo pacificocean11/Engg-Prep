@@ -2022,7 +2022,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="exam_questions.js?v=3"></script>
     <script src="js/particles.js"></script>
     <script src="js/scratchpad.js"></script>
-    <script src="app.js?v=141"></script>
+    <script src="app.js?v=145"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -3116,7 +3116,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                     </button>
 
                     <!-- Close Button -->
-                    <button id="fc-close-btn" onclick="window.closeFlashcardStudio && window.closeFlashcardStudio()" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer" title="Close Studio (Esc)">
+                    <button id="fc-close-btn" type="button" onclick="window.closeFlashcardStudio && window.closeFlashcardStudio()" class="w-8 h-8 rounded-full bg-slate-800/80 hover:bg-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer shrink-0 z-10" title="Close Studio (Esc)">
                         <span class="material-symbols-outlined text-[18px]">close</span>
                     </button>
                 </div>
@@ -3366,13 +3366,13 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
             <!-- Footer Action Dock (Navigation: Previous / Next) -->
             <div id="fc-rating-dock" class="px-5 sm:px-8 py-3.5 bg-slate-950/90 border-t border-purple-500/20 shrink-0 flex items-center justify-between gap-3">
                 <!-- Left: Previous Button -->
-                <button id="fc-btn-prev" onclick="window.prevFlashcard && window.prevFlashcard()" class="px-5 sm:px-7 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80 font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 group" title="Previous Card (Left Arrow)">
+                <button id="fc-btn-prev" type="button" onclick="window.prevFlashcard && window.prevFlashcard()" class="px-5 sm:px-7 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80 font-bold text-xs shadow-sm active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 group shrink-0" title="Previous Card (Left Arrow)">
                     <span class="material-symbols-outlined text-[18px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
                     <span>Previous</span>
                 </button>
 
                 <!-- Right: Next Button -->
-                <button id="fc-btn-next" onclick="window.nextFlashcard && window.nextFlashcard()" class="px-6 sm:px-8 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-extrabold text-xs shadow-md shadow-cyan-500/25 active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 group" title="Next Card (Right Arrow)">
+                <button id="fc-btn-next" type="button" onclick="window.nextFlashcard && window.nextFlashcard()" class="px-6 sm:px-8 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-extrabold text-xs shadow-md shadow-cyan-500/25 active:scale-95 transition-all cursor-pointer flex items-center justify-center gap-2 group shrink-0" title="Next Card (Right Arrow)">
                     <span>Next</span>
                     <span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
                 </button>
