@@ -621,23 +621,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     }
 
     function initTilt() {
-        if (typeof VanillaTilt === 'undefined') return;
-        
-        // Do not initialize tilt effects on touchscreens to prevent double-click issues
-        const isTouch = window.matchMedia("(pointer: coarse)").matches || 'ontouchstart' in window;
-        if (isTouch) return;
-        
-        // Target specific cards for 3D tilt effect
-        const tiltElements = document.querySelectorAll('.glass-card, .tilt-card, #announcement-section, .subject-card-tilt');
-        
-        VanillaTilt.init(tiltElements, {
-            max: 10,
-            speed: 400,
-            glare: true,
-            "max-glare": 0.3,
-            gyroscope: true,
-            scale: 1.02
-        });
+        // Disabled: 3D tilt removed for minimalistic experience
     }
 
     function initMagneticButtons() {
@@ -1150,7 +1134,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     }
 
     window.navigateTo = function(pageId) {
-        if (typeof stopSpeech === 'function') stopSpeech();
         state.currentPage = pageId;
         
         // Reset theme to default when navigating between main pages
@@ -1163,16 +1146,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             document.body.classList.add('nav-hidden');
         } else {
             document.body.classList.remove('nav-hidden');
-        }
-
-        // Toggle Scratchpad FAB
-        const btnScratch = document.getElementById('btn-open-scratchpad');
-        if (btnScratch) {
-            if (pageId === 'quiz-view') {
-                btnScratch.classList.remove('hidden');
-            } else {
-                btnScratch.classList.add('hidden');
-            }
         }
 
         // Update Title
@@ -2442,7 +2415,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     }
 
     function loadQuestion() {
-        if (typeof stopSpeech === 'function') stopSpeech();
         // Record time spent on previous question before loading new one
         if (state.questionEnteredAt && !state.isFinished) {
             // We don't record here because time is recorded on submit; just reset the entry timestamp
@@ -4172,9 +4144,6 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (typeof renderNotes === 'function') renderNotes();
             updateDashboardStats();
             updateGamificationUI();
-            if (typeof window.updateMotivationWidgets === 'function') {
-                window.updateMotivationWidgets();
-            }
             if (typeof window.updateAlumniWidget === 'function') {
                 window.updateAlumniWidget();
             }
@@ -5319,185 +5288,6 @@ if (document.readyState === 'loading') {
     startApp();
 }
 
-// Floating ENGG.tv Calculator & Scratchpad Controller
-let is2ndActive = false;
-let calcAngleMode = 'DEG'; // 'DEG' or 'RAD'
-let calcLastAns = 0;
-
-window.toggleCalcAngleMode = function() {
-    calcAngleMode = (calcAngleMode === 'DEG') ? 'RAD' : 'DEG';
-    const btn = document.getElementById('calc-angle-mode-btn');
-    if (btn) btn.innerText = calcAngleMode;
-};
-
-window.toggleCalc2nd = function() {
-    is2ndActive = !is2ndActive;
-    const btn2nd = document.getElementById('calc-2nd-btn');
-    const badge = document.getElementById('calc-2nd-badge');
-    const sinBtn = document.getElementById('calc-btn-sin');
-    const cosBtn = document.getElementById('calc-btn-cos');
-    const tanBtn = document.getElementById('calc-btn-tan');
-    const logBtn = document.getElementById('calc-btn-log');
-    const lnBtn = document.getElementById('calc-btn-ln');
-
-    if (is2ndActive) {
-        if (btn2nd) btn2nd.className = 'p-2.5 rounded-xl bg-[#EC4899] text-white text-xs font-black border border-pink-400 shadow-md shadow-pink-500/40 active:scale-95 transition-all cursor-pointer';
-        if (badge) badge.classList.remove('hidden');
-        if (sinBtn) sinBtn.innerText = 'sin⁻¹';
-        if (cosBtn) cosBtn.innerText = 'cos⁻¹';
-        if (tanBtn) tanBtn.innerText = 'tan⁻¹';
-        if (logBtn) logBtn.innerText = '10^x';
-        if (lnBtn) lnBtn.innerText = 'e^x';
-    } else {
-        if (btn2nd) btn2nd.className = 'p-2.5 rounded-xl bg-[#2E1E12] hover:bg-[#3D2919] text-xs font-bold text-amber-400 border border-[#F59E0B]/25 active:scale-95 transition-all cursor-pointer';
-        if (badge) badge.classList.add('hidden');
-        if (sinBtn) sinBtn.innerText = 'sin';
-        if (cosBtn) cosBtn.innerText = 'cos';
-        if (tanBtn) tanBtn.innerText = 'tan';
-        if (logBtn) logBtn.innerText = 'log';
-        if (lnBtn) lnBtn.innerText = 'ln';
-    }
-};
-
-window.calcTrig = function(func) {
-    if (is2ndActive) {
-        if (func === 'sin') window.calcInput('asin(');
-        else if (func === 'cos') window.calcInput('acos(');
-        else if (func === 'tan') window.calcInput('atan(');
-        window.toggleCalc2nd();
-    } else {
-        window.calcInput(func + '(');
-    }
-};
-
-window.calcLog = function(type) {
-    if (is2ndActive) {
-        if (type === 'log') window.calcInput('10^(');
-        else if (type === 'ln') window.calcInput('e^(');
-        window.toggleCalc2nd();
-    } else {
-        window.calcInput(type + '(');
-    }
-};
-
-window.toggleCalcModal = function() {
-    const modal = document.getElementById('calc-scratchpad-modal');
-    if (!modal) return;
-    if (modal.classList.contains('hidden')) {
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-            modal.classList.remove('scale-95', 'opacity-0');
-            modal.classList.add('scale-100', 'opacity-100');
-        }, 10);
-    } else {
-        modal.classList.remove('scale-100', 'opacity-100');
-        modal.classList.add('scale-95', 'opacity-0');
-        setTimeout(() => {
-            modal.classList.add('hidden');
-        }, 200);
-    }
-};
-
-window.setCalcTab = function(tab) {
-    const calcPanel = document.getElementById('calc-panel');
-    const scratchPanel = document.getElementById('scratch-panel');
-    const calcTabBtn = document.getElementById('calc-tab-btn');
-    const scratchTabBtn = document.getElementById('scratch-tab-btn');
-
-    if (tab === 'calc') {
-        calcPanel.classList.remove('hidden');
-        scratchPanel.classList.add('hidden');
-        calcTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-slate-950 shadow-md shadow-[#F59E0B]/30 transition-colors cursor-pointer';
-        scratchTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold text-amber-300/70 hover:text-white transition-colors cursor-pointer';
-    } else {
-        calcPanel.classList.add('hidden');
-        scratchPanel.classList.remove('hidden');
-        scratchTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-slate-950 shadow-md shadow-[#F59E0B]/30 transition-colors cursor-pointer';
-        calcTabBtn.className = 'px-2.5 py-1 rounded-lg text-xs font-bold text-amber-300/70 hover:text-white transition-colors cursor-pointer';
-    }
-};
-
-let currentCalcExpr = '';
-window.calcInput = function(val) {
-    currentCalcExpr += val;
-    const exprEl = document.getElementById('calc-expression');
-    if (exprEl) exprEl.innerText = currentCalcExpr;
-};
-
-window.calcClear = function() {
-    currentCalcExpr = '';
-    const exprEl = document.getElementById('calc-expression');
-    const dispEl = document.getElementById('calc-display');
-    if (exprEl) exprEl.innerText = '';
-    if (dispEl) dispEl.innerText = '0';
-};
-
-window.calcBackspace = function() {
-    currentCalcExpr = currentCalcExpr.slice(0, -1);
-    const exprEl = document.getElementById('calc-expression');
-    const dispEl = document.getElementById('calc-display');
-    if (exprEl) exprEl.innerText = currentCalcExpr;
-    if (!currentCalcExpr && dispEl) dispEl.innerText = '0';
-};
-
-window.calcEvaluate = function() {
-    if (!currentCalcExpr) return;
-    const dispEl = document.getElementById('calc-display');
-    try {
-        let expr = currentCalcExpr;
-
-        // Replace ANS
-        expr = expr.replace(/ANS/g, calcLastAns);
-        // Replace e^( or e^x
-        expr = expr.replace(/e\^\(/g, 'Math.exp(');
-        // Replace 10^(
-        expr = expr.replace(/10\^\(/g, 'Math.pow(10,');
-
-        // Angle conversions
-        const degFactor = (calcAngleMode === 'DEG') ? (180 / Math.PI) : 1;
-        const toRadFactor = (calcAngleMode === 'DEG') ? (Math.PI / 180) : 1;
-
-        // Create global wrapper functions for trig evaluation
-        window._c_asin = (x) => Math.asin(x) * degFactor;
-        window._c_acos = (x) => Math.acos(x) * degFactor;
-        window._c_atan = (x) => Math.atan(x) * degFactor;
-
-        window._c_sin = (x) => Math.sin(x * toRadFactor);
-        window._c_cos = (x) => Math.cos(x * toRadFactor);
-        window._c_tan = (x) => Math.tan(x * toRadFactor);
-
-        // Sanitize trig and math expressions
-        let sanitized = expr
-            .replace(/asin\(/g, '_c_asin(')
-            .replace(/acos\(/g, '_c_acos(')
-            .replace(/atan\(/g, '_c_atan(')
-            .replace(/arcsin\(/g, '_c_asin(')
-            .replace(/arccos\(/g, '_c_acos(')
-            .replace(/arctan\(/g, '_c_atan(')
-            .replace(/sin⁻¹\(/g, '_c_asin(')
-            .replace(/cos⁻¹\(/g, '_c_acos(')
-            .replace(/tan⁻¹\(/g, '_c_atan(')
-            .replace(/(?<![a-zA-Z_])sin\(/g, '_c_sin(')
-            .replace(/(?<![a-zA-Z_])cos\(/g, '_c_cos(')
-            .replace(/(?<![a-zA-Z_])tan\(/g, '_c_tan(')
-            .replace(/sqrt\(/g, 'Math.sqrt(')
-            .replace(/log\(/g, 'Math.log10(')
-            .replace(/ln\(/g, 'Math.log(')
-            .replace(/\^/g, '**');
-
-        let result = eval(sanitized);
-        if (typeof result === 'number' && !isNaN(result)) {
-            result = Number.isInteger(result) ? result : parseFloat(result.toFixed(6));
-            calcLastAns = result;
-            if (dispEl) dispEl.innerText = result;
-        } else {
-            if (dispEl) dispEl.innerText = 'ERROR';
-        }
-    } catch (err) {
-        if (dispEl) dispEl.innerText = 'ERROR';
-    }
-};
-
 // =========================================================================
 // ENGG.tv DASHBOARD ENGINES (Tabs, Calendar, Motivation, Alumni, Video, Peer Ticker, Zen Mode)
 // Bundled into app.js to guarantee live-site compatibility
@@ -5514,11 +5304,10 @@ window.calcEvaluate = function() {
  */
 
 (function() {
-    const TABS = ['overview', 'analytics', 'history', 'motivation', 'peers'];
+    const TABS = ['overview', 'analytics', 'history'];
     let currentTab = 'overview';
 
     function switchDashboardTab(tabId, persist = true) {
-        if (tabId === 'theory') tabId = 'motivation';
         if (!TABS.includes(tabId)) tabId = 'overview';
         currentTab = tabId;
 
@@ -5558,31 +5347,14 @@ window.calcEvaluate = function() {
         });
 
         // 3. Tab-specific triggers / re-renders
-        if (tabId === 'motivation') {
-            const formulaEl = document.getElementById('daily-theorem-formula');
-            const descEl = document.getElementById('daily-theorem-desc');
-            const tipEl = document.getElementById('daily-theorem-tip');
-            const titleEl = document.getElementById('daily-theorem-title');
-            const mathElements = [formulaEl, descEl, tipEl, titleEl].filter(Boolean);
-            if (window.safeTypesetMath) {
-                window.safeTypesetMath(mathElements);
-            } else if (window.MathJax && window.MathJax.typesetPromise) {
-                if (typeof window.MathJax.typesetClear === 'function') {
-                    window.MathJax.typesetClear(mathElements);
-                }
-                window.MathJax.typesetPromise(mathElements).catch(err => console.warn('MathJax render:', err));
-            }
-            if (typeof window.initFeaturedMechanismVideo === 'function') {
-                window.initFeaturedMechanismVideo();
-            }
-        } else if (tabId === 'history') {
+        if (tabId === 'history') {
             // Trigger calendar day re-render if available
             if (typeof window.renderStudyCalendar === 'function') {
                 window.renderStudyCalendar();
             }
-        } else if (tabId === 'peers') {
-            if (typeof window.refreshPeerTicker === 'function') {
-                window.refreshPeerTicker();
+        } else if (tabId === 'analytics') {
+            if (typeof window.updateDashboardStats === 'function') {
+                window.updateDashboardStats();
             }
         }
     }
@@ -5951,92 +5723,1013 @@ window.calcEvaluate = function() {
 
 // --- END js/study-calendar.js ---
 
-// --- BEGIN js/daily-motivation.js ---
+// --- BEGIN js/alumni-spotlight.js ---
 /**
- * ENGG.tv - Daily Motivation & Discipline FE Theorem Module
- * Displays daily inspiring engineering quotes and discipline-specific FE exam theorems.
+ * ENGG.tv - Alumni Passer Spotlight Module
+ * Displays verified FE Exam passers, their discipline-specific journey, strategy takeaways, and custom avatars.
+ * Implements Option B: Discipline-Smart Prioritization with interactive shuffle.
  */
 
 (function() {
-    const QUOTES = [
+    const ALUMNI_PASSERS = [
         {
-            quote: "Scientists study the world as it is; engineers create the world that has never been.",
-            author: "Theodore von Kármán",
-            role: "Aerospace Pioneer & Mathematician"
+            id: 'sabrish',
+            name: 'Sabrish M.',
+            discipline: 'Mechanical',
+            badge: 'FE Mechanical Passed',
+            avatar: 'assets/avatars/sabrish.jpg',
+            initials: 'SM',
+            journeyQuote: 'Focusing on timed drills for Thermodynamics and Fluid Mechanics gave me the exact pacing I needed on exam day. Trust the practice repetition.',
+            takeaway: 'Practice timed quizzes daily to lock in your exam pacing.'
         },
         {
-            quote: "Genius is one percent inspiration, and ninety-nine percent perspiration. Keep grinding your practice problems.",
-            author: "Thomas Edison",
-            role: "Prolific Inventor"
+            id: 'nainish',
+            name: 'Nainish M.',
+            discipline: 'Civil',
+            badge: 'FE Civil Passed',
+            avatar: 'assets/avatars/nainish.jpg',
+            initials: 'NM',
+            journeyQuote: 'Structural analysis and Geotech used to slow me down. Reviewing the step-by-step solutions daily turned my weakest topics into my highest scoring sections.',
+            takeaway: 'Review step-by-step solutions to convert weak areas into high scores.'
         },
         {
-            quote: "The present is theirs; the future, for which I really worked, is mine.",
-            author: "Nikola Tesla",
-            role: "Father of Alternating Current"
+            id: 'shariff',
+            name: 'Mr. H. Shariff',
+            discipline: 'Other Disciplines',
+            badge: 'FE Other Disciplines Passed',
+            avatar: 'assets/avatars/shariff.jpg',
+            initials: 'HS',
+            journeyQuote: 'Staying disciplined with the core fundamentals—especially Statics, Dynamics, and Materials—carried me across the finish line. ENGG.tv gave me the exact structure I needed.',
+            takeaway: 'Master statics and dynamics fundamentals before advancing to complex topics.'
         },
         {
-            quote: "What I cannot create, I do not understand. Work the equations until the physics clicks.",
-            author: "Richard Feynman",
-            role: "Nobel Laureate in Physics"
+            id: 'linjo',
+            name: 'Linjo J.',
+            discipline: 'Other Disciplines',
+            badge: 'FE Other Disciplines Passed',
+            avatar: 'assets/avatars/linjo.jpg',
+            initials: 'LJ',
+            journeyQuote: 'The breadth of the Other Disciplines exam felt overwhelming at first, but doing 20 practice questions every morning on ENGG.tv made passing inevitable.',
+            takeaway: 'Consistency beats cramming: complete 15-20 practice questions every day.'
         },
         {
-            quote: "Failure is simply the opportunity to begin again, this time more intelligently.",
-            author: "Henry Ford",
-            role: "Industrialist & Engineer"
-        },
-        {
-            quote: "Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.",
-            author: "Marie Curie",
-            role: "Pioneer in Radioactivity"
-        },
-        {
-            quote: "Simplicity is the ultimate sophistication in engineering design.",
-            author: "Leonardo da Vinci",
-            role: "Renaissance Polymath & Engineer"
-        },
-        {
-            quote: "Give me a place to stand, and a lever long enough, and I will move the world.",
-            author: "Archimedes",
-            role: "Classical Greek Mathematician & Engineer"
-        },
-        {
-            quote: "An engineer is someone who can do for a nickel what any fool can do for a dollar.",
-            author: "Arthur Mellen Wellington",
-            role: "Civil Engineer"
-        },
-        {
-            quote: "Information is the resolution of uncertainty. Every practice question reduces your test-day uncertainty.",
-            author: "Claude Shannon",
-            role: "Father of Information Theory"
-        },
-        {
-            quote: "One small step for a man, one giant leap for mankind. Focus on completing one topic at a time.",
-            author: "Neil Armstrong",
-            role: "Aerospace Engineer & Astronaut"
-        },
-        {
-            quote: "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
-            author: "Antoine de Saint-Exupéry",
-            role: "Aviation Pioneer"
-        },
-        {
-            quote: "Small disciplines repeated with consistency every day lead to great achievements gained slowly over time.",
-            author: "John C. Maxwell",
-            role: "Leadership Author"
-        },
-        {
-            quote: "You don't have to be great to start, but you have to start to be great. Open your notes and begin.",
-            author: "Zig Ziglar",
-            role: "Performance Author"
-        },
-        {
-            quote: "The best way to predict the future is to design and build it yourself.",
-            author: "Alan Kay",
-            role: "Computer Scientist"
+            id: 'adarsh',
+            name: 'Adarsh',
+            discipline: 'Other Disciplines',
+            badge: 'FE Other Disciplines Passed',
+            avatar: 'assets/avatars/adarsh.jpg',
+            initials: 'A',
+            journeyQuote: 'Mastering the NCEES Handbook search shortcuts during daily quizzes was the ultimate turning point. If you stay consistent with the app, you will pass.',
+            takeaway: 'Practice fast electronic searching in the official NCEES Reference Handbook.'
         }
     ];
 
-    const ALL_THEOREMS_BY_DISCIPLINE = {
+    let currentIndex = 0;
+
+    function getActiveDiscipline() {
+        return localStorage.getItem('enggtv_discipline') || 
+               (window.state && window.state.user && window.state.user.discipline) || 
+               'Mechanical';
+    }
+
+    function getSmartDefaultIndex() {
+        const disc = getActiveDiscipline().toLowerCase();
+        
+        if (disc.includes('mech')) {
+            const idx = ALUMNI_PASSERS.findIndex(a => a.id === 'sabrish');
+            if (idx !== -1) return idx;
+        } else if (disc.includes('civil')) {
+            const idx = ALUMNI_PASSERS.findIndex(a => a.id === 'nainish');
+            if (idx !== -1) return idx;
+        } else if (disc.includes('other')) {
+            // Pick between Shariff, Linjo, Adarsh
+            const otherIndices = [2, 3, 4];
+            return otherIndices[Math.floor(Math.random() * otherIndices.length)];
+        }
+        
+        // Fallback random
+        return Math.floor(Math.random() * ALUMNI_PASSERS.length);
+    }
+
+    function renderAlumnus(index, animate = false) {
+        currentIndex = (index + ALUMNI_PASSERS.length) % ALUMNI_PASSERS.length;
+        const person = ALUMNI_PASSERS[currentIndex];
+
+        const cardEl = document.getElementById('alumni-spotlight-card');
+        const nameEl = document.getElementById('alumni-name');
+        const disciplineEl = document.getElementById('alumni-discipline');
+        const quoteEl = document.getElementById('alumni-quote');
+        const takeawayEl = document.getElementById('alumni-takeaway');
+        const avatarImgEl = document.getElementById('alumni-avatar-img');
+        const avatarInitialsEl = document.getElementById('alumni-avatar-initials');
+
+        if (!cardEl) return;
+
+        if (animate) {
+            const contentContainer = document.getElementById('alumni-content-container');
+            if (contentContainer) {
+                contentContainer.style.opacity = '0';
+                contentContainer.style.transform = 'translateY(4px)';
+                setTimeout(() => {
+                    updateContent();
+                    contentContainer.style.transition = 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)';
+                    contentContainer.style.opacity = '1';
+                    contentContainer.style.transform = 'translateY(0)';
+                }, 120);
+                return;
+            }
+        }
+
+        updateContent();
+
+        function updateContent() {
+            if (nameEl) nameEl.textContent = person.name;
+            if (disciplineEl) disciplineEl.textContent = person.badge;
+            if (quoteEl) quoteEl.textContent = `“${person.journeyQuote}”`;
+            if (takeawayEl) takeawayEl.textContent = person.takeaway;
+
+            if (avatarImgEl) {
+                avatarImgEl.src = person.avatar;
+                avatarImgEl.alt = `${person.name} - ${person.badge}`;
+                avatarImgEl.style.display = 'block';
+                if (avatarInitialsEl) avatarInitialsEl.style.display = 'none';
+
+                avatarImgEl.onerror = function() {
+                    // Fallback to initials if image fails to load
+                    avatarImgEl.style.display = 'none';
+                    if (avatarInitialsEl) {
+                        avatarInitialsEl.textContent = person.initials;
+                        avatarInitialsEl.style.display = 'flex';
+                    }
+                };
+            }
+        }
+    }
+
+    function shuffle() {
+        renderAlumnus(currentIndex + 1, true);
+    }
+
+    function init() {
+        currentIndex = getSmartDefaultIndex();
+        renderAlumnus(currentIndex, false);
+
+        const shuffleBtn = document.getElementById('btn-shuffle-alumni');
+        if (shuffleBtn) {
+            shuffleBtn.onclick = shuffle;
+        }
+    }
+
+    // Global hooks
+    window.shuffleAlumni = shuffle;
+    window.updateAlumniWidget = () => {
+        currentIndex = getSmartDefaultIndex();
+        renderAlumnus(currentIndex, true);
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 60);
+    }
+})();
+
+// --- END js/alumni-spotlight.js ---
+
+// --- BEGIN js/featured-video.js ---
+/**
+ * ENGG.tv - Featured Engineering Mechanism & Video Showcase Module
+ * Displays interactive 3D CAD/kinematic mechanism demonstrations.
+ * Configured as a modular developer placeholder that can easily be swapped
+ * with custom video content anytime.
+ */
+
+(function() {
+    'use strict';
+
+    // Global Configuration Object - High-yield FE Exam explainer
+    window.ENGGTV_FEATURED_VIDEO = {
+        id: 'transformers-fe-explainer',
+        title: 'FE Exam Core: Electrical Transformers Masterclass',
+        subtitle: 'Ideal Relations, Dot Convention & Impedance Reflection',
+        badge: 'FE Exam Core • Electrical & General',
+        srcMp4: 'assets/videos/placeholder_video.mp4',
+        srcWebm: 'assets/videos/transformers_fe_explainer.webm',
+        poster: 'assets/videos/transformers_poster.jpg',
+        attribution: {
+            creator: 'EnggPrep NCEES FE Review',
+            license: 'NCEES Exam Prep Curriculum (Educational)',
+            source: 'EnggPrep Studio'
+        },
+        description: 'Comprehensive high-yield walkthrough of single-phase ideal and real transformers for the FE Exam. Covers turns ratio a = N1/N2, dot convention polarity, impedance reflection (Zin = a² ZL), core vs copper losses, condition for maximum efficiency, and worked numerical FE problems.',
+        keyTakeaways: [
+            { icon: 'bolt', text: 'Turns Ratio: a = N₁/N₂ = V₁/V₂ = I₂/I₁. Voltages transform directly; currents inversely. Apparent power is conserved: S₁ = S₂.' },
+            { icon: 'alt_route', text: 'Dot Convention: If currents both enter (or both leave) dotted terminals, use +a. If one enters and one leaves, insert a negative sign: V₁/V₂ = -a.' },
+            { icon: 'memory', text: 'Impedance Reflection: Secondary impedance reflected to primary scales by a²: Zin = a² · ZL. Always square the turns ratio!' },
+            { icon: 'offline_bolt', text: 'Losses & Max Efficiency: Copper losses Pcu ∝ I²; Core losses Pcore ≈ const. Maximum efficiency occurs when Pcu = Pcore.' }
+        ],
+        developerNote: 'Active FE Video: assets/videos/transformers_fe_explainer.webm (HD 720p Explainer Video)'
+    };
+
+    let videoEl = null;
+    let playBtn = null;
+    let isPlaying = false;
+
+    function initVideoShowcase() {
+        const container = document.getElementById('featured-mechanism-video-card');
+        if (!container) return;
+
+        videoEl = document.getElementById('mechanism-video-player');
+        playBtn = document.getElementById('btn-mechanism-play-toggle');
+
+        if (!videoEl) return;
+
+        // Ensure proper attributes
+        videoEl.playsInline = true;
+        videoEl.loop = true;
+        videoEl.muted = true; // Required for reliable autoplay compliance
+
+        // Update UI when video state changes
+        videoEl.addEventListener('play', () => {
+            isPlaying = true;
+            updatePlayButtonUI(true);
+        });
+
+        videoEl.addEventListener('pause', () => {
+            isPlaying = false;
+            updatePlayButtonUI(false);
+        });
+
+        if (playBtn) {
+            playBtn.onclick = togglePlay;
+        }
+
+        // Click directly on video or overlay to toggle play/pause
+        const videoWrapper = document.getElementById('mechanism-video-wrapper');
+        if (videoWrapper) {
+            videoWrapper.onclick = (e) => {
+                // If clicked on controls buttons, ignore
+                if (e.target.closest('button') && e.target.closest('button') !== playBtn) return;
+                togglePlay();
+            };
+        }
+
+        // Setup sound toggle button
+        const soundBtn = document.getElementById('btn-mechanism-sound-toggle');
+        if (soundBtn) {
+            soundBtn.onclick = (e) => {
+                e.stopPropagation();
+                if (!videoEl) return;
+                videoEl.muted = !videoEl.muted;
+                const icon = soundBtn.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.textContent = videoEl.muted ? 'volume_off' : 'volume_up';
+                }
+            };
+        }
+
+        // Setup fullscreen button
+        const fsBtn = document.getElementById('btn-mechanism-fullscreen');
+        if (fsBtn) {
+            fsBtn.onclick = (e) => {
+                e.stopPropagation();
+                if (!videoEl) return;
+                if (videoEl.requestFullscreen) {
+                    videoEl.requestFullscreen();
+                } else if (videoEl.webkitRequestFullscreen) {
+                    videoEl.webkitRequestFullscreen();
+                }
+            };
+        }
+
+        // Setup developer copy button
+        const copyBtn = document.getElementById('btn-copy-video-path');
+        if (copyBtn) {
+            copyBtn.onclick = (e) => {
+                e.stopPropagation();
+                const pathText = 'assets/videos/transformers_fe_explainer.webm';
+                const originalHtml = copyBtn.innerHTML;
+                const setSuccess = () => {
+                    copyBtn.innerHTML = '<span class="material-symbols-outlined text-[12px] text-emerald-400">check</span><span class="text-emerald-400">Copied!</span>';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHtml;
+                    }, 2000);
+                };
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(pathText).then(setSuccess).catch(setSuccess);
+                } else {
+                    setSuccess();
+                }
+            };
+        }
+    }
+
+    function togglePlay() {
+        if (!videoEl) return;
+        if (videoEl.paused) {
+            videoEl.play().catch(err => {
+                console.warn('Playback error:', err);
+            });
+        } else {
+            videoEl.pause();
+        }
+    }
+
+    function updatePlayButtonUI(playing) {
+        const overlay = document.getElementById('mechanism-play-overlay');
+        const icon = playBtn ? playBtn.querySelector('.material-symbols-outlined') : null;
+
+        if (overlay) {
+            if (playing) {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        if (icon) {
+            icon.textContent = playing ? 'pause' : 'play_arrow';
+        }
+    }
+
+    // Expose helpers globally
+    window.initFeaturedMechanismVideo = initVideoShowcase;
+    window.toggleFeaturedMechanismPlay = togglePlay;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVideoShowcase);
+    } else {
+        setTimeout(initVideoShowcase, 60);
+    }
+})();
+
+// --- END js/featured-video.js ---
+
+// --- BEGIN js/zen-study.js ---
+/**
+ * ENGG.tv - Simplistic Study Mode (Zen Focus Mode)
+ * Distraction-free 2-tab micro-learning tool:
+ * Tab 1: Single discipline FE Theorem/Formula with shuffle icon
+ * Tab 2: Single discipline FE Practice Question with shuffle icon, hidden explanation, and +1 score integration
+ */
+
+(function() {
+    'use strict';
+
+    let currentDiscipline = 'Mechanical';
+    let currentTheoremIndex = 0;
+    let currentQuestion = null;
+    let hasAnswered = false;
+    let hasRevealedExplanation = false;
+    let activeZenTab = 'theorem';
+
+    // Map discipline names to standard keys
+    function normalizeDiscipline(disc) {
+        if (!disc) return 'Mechanical';
+        if (disc === 'Civil Engineering') return 'Civil';
+        if (disc === 'Electrical') return 'Electrical and Computer';
+        if (disc === 'Other Disciplines' || disc === 'FE_Other Discipline' || disc.toLowerCase().includes('other')) return 'Other';
+        return disc;
+    }
+
+    function getActiveDiscipline() {
+        if (window.getActiveMotivationDiscipline) {
+            return window.getActiveMotivationDiscipline();
+        }
+        const disc = localStorage.getItem('enggtv_discipline') || 
+                     (window.state && window.state.user && window.state.user.discipline) || 
+                     'Mechanical';
+        return normalizeDiscipline(disc);
+    }
+
+    function getTheoremsList() {
+        const disc = getActiveDiscipline();
+        const theoremsMap = window.THEOREMS_BY_DISCIPLINE || {};
+        if (theoremsMap[disc] && theoremsMap[disc].length > 0) {
+            return theoremsMap[disc];
+        }
+        return theoremsMap['Mechanical'] || [];
+    }
+
+    function getAllDisciplineQuestions() {
+        const disc = getActiveDiscipline();
+        const source = window.getQuestionsSource ? window.getQuestionsSource() : (typeof QUESTIONS !== 'undefined' ? QUESTIONS : {});
+        const allQuestions = [];
+
+        // 1. Try to use window.state.subjects if populated
+        let subjects = (window.state && window.state.subjects) || [];
+
+        // 2. If state subjects are empty or don't match current discipline, retrieve from global arrays
+        if (!subjects || subjects.length === 0) {
+            if (disc === 'Mechanical' && typeof MECHANICAL_SUBJECTS !== 'undefined') subjects = MECHANICAL_SUBJECTS;
+            else if (disc === 'Civil' && typeof CIVIL_SUBJECTS !== 'undefined') subjects = CIVIL_SUBJECTS;
+            else if (disc === 'Chemical' && typeof CHEMICAL_SUBJECTS !== 'undefined') subjects = CHEMICAL_SUBJECTS;
+            else if (disc === 'Industrial' && typeof INDUSTRIAL_SUBJECTS !== 'undefined') subjects = INDUSTRIAL_SUBJECTS;
+            else if (disc === 'Environmental' && typeof ENVIRONMENTAL_SUBJECTS !== 'undefined') subjects = ENVIRONMENTAL_SUBJECTS;
+            else if (disc === 'Electrical and Computer' && typeof ELECTRICAL_COMPUTER_SUBJECTS !== 'undefined') subjects = ELECTRICAL_COMPUTER_SUBJECTS;
+            else if (typeof OTHER_SUBJECTS !== 'undefined') subjects = OTHER_SUBJECTS;
+        }
+
+        if (subjects && subjects.length > 0) {
+            subjects.forEach(sub => {
+                if (source[sub.id] && Array.isArray(source[sub.id])) {
+                    source[sub.id].forEach(q => {
+                        allQuestions.push({
+                            ...q,
+                            subjectId: sub.id,
+                            subjectName: sub.name || sub.id
+                        });
+                    });
+                }
+            });
+        }
+
+        // Fallback: If still empty, collect all questions in source
+        if (allQuestions.length === 0 && source) {
+            Object.keys(source).forEach(key => {
+                if (Array.isArray(source[key])) {
+                    source[key].forEach(q => {
+                        allQuestions.push({
+                            ...q,
+                            subjectId: key,
+                            subjectName: key
+                        });
+                    });
+                }
+            });
+        }
+
+        return allQuestions;
+    }
+
+    // --- Tab 1: Theorem Logic ---
+    function renderTheorem() {
+        const theorems = getTheoremsList();
+        if (!theorems || theorems.length === 0) return;
+
+        if (currentTheoremIndex >= theorems.length) {
+            currentTheoremIndex = 0;
+        }
+
+        const th = theorems[currentTheoremIndex];
+        const titleEl = document.getElementById('zen-theorem-title');
+        const formulaEl = document.getElementById('zen-theorem-formula');
+        const descEl = document.getElementById('zen-theorem-desc');
+        const tipEl = document.getElementById('zen-theorem-tip');
+        const countEl = document.getElementById('zen-theorem-count');
+
+        if (titleEl) titleEl.textContent = th.title;
+        if (formulaEl) formulaEl.innerHTML = th.formula;
+        if (descEl) descEl.textContent = th.description;
+        if (tipEl) tipEl.textContent = th.examTip;
+        if (countEl) countEl.textContent = `Formula ${currentTheoremIndex + 1} of ${theorems.length}`;
+
+        // Typeset LaTeX equation
+        const panel = document.getElementById('zen-theorem-panel');
+        if (panel) {
+            if (window.safeTypesetMath) {
+                window.safeTypesetMath([panel]);
+            } else if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([panel]).catch(e => console.warn('MathJax zen render:', e));
+            }
+        }
+    }
+
+    function shuffleTheorem() {
+        const theorems = getTheoremsList();
+        if (theorems.length <= 1) return;
+
+        let nextIndex = Math.floor(Math.random() * theorems.length);
+        while (nextIndex === currentTheoremIndex && theorems.length > 1) {
+            nextIndex = Math.floor(Math.random() * theorems.length);
+        }
+        currentTheoremIndex = nextIndex;
+
+        // Visual feedback on shuffle button
+        const shuffleBtn = document.getElementById('zen-shuffle-theorem-btn');
+        if (shuffleBtn) {
+            shuffleBtn.classList.add('rotate-180');
+            setTimeout(() => shuffleBtn.classList.remove('rotate-180'), 300);
+        }
+
+        renderTheorem();
+    }
+
+    function nextTheorem() {
+        const theorems = getTheoremsList();
+        if (!theorems || theorems.length === 0) return;
+        currentTheoremIndex = (currentTheoremIndex + 1) % theorems.length;
+        renderTheorem();
+    }
+
+    function prevTheorem() {
+        const theorems = getTheoremsList();
+        if (!theorems || theorems.length === 0) return;
+        currentTheoremIndex = (currentTheoremIndex - 1 + theorems.length) % theorems.length;
+        renderTheorem();
+    }
+
+    // --- Tab 2: Question Logic ---
+    function loadRandomQuestion() {
+        const questions = getAllDisciplineQuestions();
+        if (!questions || questions.length === 0) {
+            const qPrompt = document.getElementById('zen-question-prompt');
+            if (qPrompt) qPrompt.textContent = 'No questions found for this discipline.';
+            return;
+        }
+
+        let nextQ = questions[Math.floor(Math.random() * questions.length)];
+        if (currentQuestion && questions.length > 1) {
+            while (nextQ.id === currentQuestion.id) {
+                nextQ = questions[Math.floor(Math.random() * questions.length)];
+            }
+        }
+        currentQuestion = nextQ;
+        hasAnswered = false;
+        hasRevealedExplanation = false;
+
+        renderCurrentQuestion();
+    }
+
+    function renderCurrentQuestion() {
+        if (!currentQuestion) return;
+
+        const topicEl = document.getElementById('zen-question-topic');
+        const promptEl = document.getElementById('zen-question-prompt');
+        const imageContainer = document.getElementById('zen-question-image-container');
+        const optionsContainer = document.getElementById('zen-options-container');
+        const explanationContainer = document.getElementById('zen-explanation-container');
+        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+        const feedbackBanner = document.getElementById('zen-feedback-banner');
+
+        if (topicEl) {
+            topicEl.textContent = `${currentQuestion.subjectName || 'FE Practice'} • ${currentQuestion.topic || 'Core Problem'}`;
+        }
+        if (promptEl) {
+            promptEl.innerHTML = currentQuestion.question || '';
+        }
+
+        // Image Handling
+        if (imageContainer) {
+            const qImg = currentQuestion.local_image || currentQuestion.image;
+            if (qImg) {
+                const src = window.toDriveImgUrl ? window.toDriveImgUrl(qImg) : qImg;
+                imageContainer.innerHTML = `<img src="${src}" alt="Problem Diagram" class="max-h-56 mx-auto rounded-xl border border-slate-700/60 shadow-md my-3 object-contain">`;
+                imageContainer.classList.remove('hidden');
+            } else {
+                imageContainer.innerHTML = '';
+                imageContainer.classList.add('hidden');
+            }
+        }
+
+        // Reset Feedback Banner
+        if (feedbackBanner) {
+            feedbackBanner.innerHTML = '';
+            feedbackBanner.className = 'hidden mb-4 p-3.5 rounded-2xl text-xs font-bold transition-all';
+        }
+
+        // Render Options A, B, C, D
+        if (optionsContainer) {
+            optionsContainer.innerHTML = '';
+            const letters = ['A', 'B', 'C', 'D'];
+            (currentQuestion.options || []).forEach((opt, idx) => {
+                const optBtn = document.createElement('button');
+                optBtn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-slate-800/80 hover:bg-slate-750 border border-slate-700/80 hover:border-indigo-500/60 transition-all flex items-start gap-3.5 text-left text-sm text-slate-200 cursor-pointer group active:scale-[0.99]';
+                optBtn.setAttribute('data-index', idx);
+                optBtn.innerHTML = `
+                    <span class="zen-opt-letter w-7 h-7 rounded-xl bg-slate-700/80 text-slate-300 text-xs font-black flex items-center justify-center shrink-0 border border-slate-600 group-hover:border-indigo-400 group-hover:text-white transition-colors">
+                        ${letters[idx] || (idx + 1)}
+                    </span>
+                    <span class="zen-opt-text flex-1 pt-0.5 leading-relaxed">${opt.text || ''}</span>
+                `;
+                optBtn.onclick = () => handleOptionSelect(idx);
+                optionsContainer.appendChild(optBtn);
+            });
+        }
+
+        // Reset & Populate Explanation (Hidden Initially)
+        if (explanationContainer) {
+            explanationContainer.classList.add('hidden');
+            populateExplanationContent(explanationContainer);
+        }
+
+        // Reset Explanation Toggle Button
+        if (toggleExpBtn) {
+            toggleExpBtn.innerHTML = `
+                <span class="material-symbols-outlined text-[18px]">visibility</span>
+                <span>Explain Solution (Hidden)</span>
+            `;
+            toggleExpBtn.className = 'px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-300 hover:text-white text-xs font-bold border border-indigo-500/30 flex items-center gap-2 transition-all cursor-pointer shadow-sm';
+        }
+
+        // Typeset MathJax in Question Prompt and Options
+        const panel = document.getElementById('zen-question-panel');
+        if (panel) {
+            if (window.safeTypesetMath) {
+                window.safeTypesetMath([panel]);
+            } else if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([panel]).catch(e => console.warn('MathJax zen question render:', e));
+            }
+        }
+    }
+
+    function populateExplanationContent(container) {
+        if (!currentQuestion) return;
+
+        let stepsHtml = '';
+        if (currentQuestion.solution && currentQuestion.solution.steps && Array.isArray(currentQuestion.solution.steps)) {
+            stepsHtml = currentQuestion.solution.steps.map((st, i) => `
+                <div class="p-3.5 rounded-xl bg-slate-800/90 border border-slate-700/60 mb-2.5">
+                    <span class="text-xs font-black text-indigo-300 block mb-1 uppercase tracking-wider">Step ${i + 1}: ${st.title || ''}</span>
+                    <p class="text-xs text-slate-300 leading-relaxed">${st.content || ''}</p>
+                </div>
+            `).join('');
+        }
+
+        // NCEES reference box
+        let nceesHtml = '';
+        if (currentQuestion.ncees_reference) {
+            const ref = currentQuestion.ncees_reference;
+            nceesHtml = `
+                <div class="mt-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3 text-xs text-amber-200">
+                    <span class="material-symbols-outlined text-amber-400 text-lg shrink-0 mt-0.5">menu_book</span>
+                    <div>
+                        <span class="font-bold text-amber-300 block mb-0.5 uppercase tracking-wide text-[10px]">NCEES Reference Handbook • ${ref.section || 'General'}</span>
+                        <p class="text-amber-100/90 leading-tight">Topic: <strong>${ref.topic || ''}</strong> ${ref.page_number ? `• Page ${ref.page_number}` : ''} ${ref.search_term ? `• Search: <em>"${ref.search_term}"</em>` : ''}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Engg.tv AI Big Idea / Pitfalls
+        let copilotHtml = '';
+        if (currentQuestion.copilot_explanation) {
+            const copilot = currentQuestion.copilot_explanation;
+            if (copilot.big_idea) {
+                copilotHtml += `
+                    <div class="mt-3 p-3.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-xs text-indigo-200 leading-relaxed">
+                        <strong class="text-indigo-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">💡 The Big Idea:</strong>
+                        ${copilot.big_idea}
+                    </div>
+                `;
+            }
+        }
+
+        const finalAnswer = (currentQuestion.solution && currentQuestion.solution.final_answer) || '';
+
+        container.innerHTML = `
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-3 mt-4 shadow-xl">
+                <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-indigo-400 text-xl">auto_stories</span>
+                        <span class="text-xs font-black uppercase tracking-wider text-indigo-200">Step-by-Step Explanation</span>
+                    </div>
+                    ${finalAnswer ? `<span class="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 text-xs font-bold">Final: ${finalAnswer}</span>` : ''}
+                </div>
+
+                <div class="space-y-2 pt-1">
+                    ${stepsHtml}
+                </div>
+
+                ${nceesHtml}
+                ${copilotHtml}
+            </div>
+        `;
+    }
+
+    function handleOptionSelect(selectedIndex) {
+        if (hasAnswered || !currentQuestion) return;
+        hasAnswered = true;
+
+        const options = currentQuestion.options || [];
+        const selectedOpt = options[selectedIndex];
+        const isCorrect = !!(selectedOpt && selectedOpt.is_correct);
+
+        const optionButtons = document.querySelectorAll('#zen-options-container .zen-option-btn');
+        optionButtons.forEach((btn, idx) => {
+            const opt = options[idx];
+            btn.classList.remove('hover:bg-slate-750', 'hover:border-indigo-500/60', 'cursor-pointer');
+            btn.classList.add('cursor-default');
+
+            if (opt && opt.is_correct) {
+                btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-emerald-950/60 border-2 border-emerald-500 text-emerald-200 transition-all flex items-start gap-3.5 text-left text-sm shadow-[0_0_20px_rgba(16,185,129,0.2)]';
+                const letterEl = btn.querySelector('.zen-opt-letter');
+                if (letterEl) letterEl.className = 'zen-opt-letter w-7 h-7 rounded-xl bg-emerald-500 text-slate-950 text-xs font-black flex items-center justify-center shrink-0';
+            } else if (idx === selectedIndex) {
+                btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-rose-950/60 border-2 border-rose-500 text-rose-200 transition-all flex items-start gap-3.5 text-left text-sm shadow-[0_0_20px_rgba(244,63,94,0.2)]';
+                const letterEl = btn.querySelector('.zen-opt-letter');
+                if (letterEl) letterEl.className = 'zen-opt-letter w-7 h-7 rounded-xl bg-rose-500 text-white text-xs font-black flex items-center justify-center shrink-0';
+            } else {
+                btn.classList.add('opacity-40');
+            }
+        });
+
+        // Feedback Banner & Points Award
+        const feedbackBanner = document.getElementById('zen-feedback-banner');
+        if (feedbackBanner) {
+            feedbackBanner.classList.remove('hidden');
+            if (isCorrect) {
+                feedbackBanner.className = 'mb-4 p-3.5 rounded-2xl text-xs font-bold bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 flex items-center justify-between';
+                
+                // Award 1 point if not previously revealed
+                if (!hasRevealedExplanation) {
+                    if (window.addPoints) {
+                        window.addPoints(1, 'Simplistic Study Mode Correct Answer!');
+                    }
+                    if (typeof window.publishPeerMilestone === 'function' && currentQuestion) {
+                        const disc = getActiveDiscipline();
+                        window.publishPeerMilestone({
+                            type: 'zen_solved',
+                            title: `Solved ${currentQuestion.topic || 'FE Practice'} Problem in Simplistic Study`,
+                            detail: `FE ${disc} Focus • +1 Point awarded`,
+                            discipline: disc
+                        });
+                    }
+                    feedbackBanner.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                            <span>Correct! +1 point added to your score.</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-black uppercase tracking-wider">+1 PT</span>
+                    `;
+                } else {
+                    feedbackBanner.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                            <span>Correct! (Solution was previously revealed)</span>
+                        </div>
+                    `;
+                }
+            } else {
+                feedbackBanner.className = 'mb-4 p-3.5 rounded-2xl text-xs font-bold bg-rose-500/20 border border-rose-500/50 text-rose-300 flex items-center gap-2';
+                feedbackBanner.innerHTML = `
+                    <span class="material-symbols-outlined text-rose-400">cancel</span>
+                    <span>Incorrect. Review the step-by-step solution below.</span>
+                `;
+            }
+        }
+
+        // Auto-reveal explanation upon answering
+        revealExplanation(true);
+    }
+
+    function toggleExplanation() {
+        const expContainer = document.getElementById('zen-explanation-container');
+        if (!expContainer) return;
+
+        const isHidden = expContainer.classList.contains('hidden');
+        if (isHidden) {
+            hasRevealedExplanation = true;
+            revealExplanation(false);
+        } else {
+            expContainer.classList.add('hidden');
+            const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+            if (toggleExpBtn) {
+                toggleExpBtn.innerHTML = `
+                    <span class="material-symbols-outlined text-[18px]">visibility</span>
+                    <span>Explain Solution (Hidden)</span>
+                `;
+            }
+        }
+    }
+
+    function revealExplanation(isAfterAnswering) {
+        const expContainer = document.getElementById('zen-explanation-container');
+        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+        if (!expContainer) return;
+
+        expContainer.classList.remove('hidden');
+
+        setTimeout(() => {
+            expContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 60);
+
+        if (toggleExpBtn) {
+            toggleExpBtn.innerHTML = `
+                <span class="material-symbols-outlined text-[18px]">visibility_off</span>
+                <span>Hide Explanation</span>
+            `;
+            toggleExpBtn.className = 'px-4 py-2.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/40 text-indigo-200 text-xs font-bold border border-indigo-500/50 flex items-center gap-2 transition-all cursor-pointer shadow-sm';
+        }
+
+        // If revealed before answering, highlight correct option so user learns immediately
+        if (!hasAnswered && currentQuestion && currentQuestion.options) {
+            const optionButtons = document.querySelectorAll('#zen-options-container .zen-option-btn');
+            optionButtons.forEach((btn, idx) => {
+                const opt = currentQuestion.options[idx];
+                if (opt && opt.is_correct) {
+                    btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/60 text-emerald-200 transition-all flex items-start gap-3.5 text-left text-sm';
+                }
+            });
+        }
+
+        // Typeset MathJax inside explanation container
+        if (window.safeTypesetMath) {
+            window.safeTypesetMath([expContainer]);
+        } else if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([expContainer]).catch(e => console.warn('MathJax exp render:', e));
+        }
+    }
+
+    function shuffleQuestion() {
+        const shuffleBtn = document.getElementById('zen-shuffle-question-btn');
+        if (shuffleBtn) {
+            shuffleBtn.classList.add('rotate-180');
+            setTimeout(() => shuffleBtn.classList.remove('rotate-180'), 300);
+        }
+        loadRandomQuestion();
+    }
+
+    // --- Tab Switching ---
+    function setZenTab(tab) {
+        activeZenTab = tab;
+        const theoremPanel = document.getElementById('zen-theorem-panel');
+        const questionPanel = document.getElementById('zen-question-panel');
+        const tabTheoremBtn = document.getElementById('zen-tab-theorem-btn');
+        const tabQuestionBtn = document.getElementById('zen-tab-question-btn');
+
+        if (tab === 'theorem') {
+            if (theoremPanel) theoremPanel.classList.remove('hidden');
+            if (questionPanel) questionPanel.classList.add('hidden');
+
+            if (tabTheoremBtn) {
+                tabTheoremBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/30 transition-all cursor-pointer';
+            }
+            if (tabQuestionBtn) {
+                tabQuestionBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition-all cursor-pointer';
+            }
+
+            renderTheorem();
+        } else {
+            if (theoremPanel) theoremPanel.classList.add('hidden');
+            if (questionPanel) questionPanel.classList.remove('hidden');
+
+            if (tabQuestionBtn) {
+                tabQuestionBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/30 transition-all cursor-pointer';
+            }
+            if (tabTheoremBtn) {
+                tabTheoremBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition-all cursor-pointer';
+            }
+
+            if (!currentQuestion) {
+                loadRandomQuestion();
+            } else {
+                if (questionPanel) {
+                    if (window.safeTypesetMath) {
+                        window.safeTypesetMath([questionPanel]);
+                    } else if (window.MathJax && window.MathJax.typesetPromise) {
+                        window.MathJax.typesetPromise([questionPanel]).catch(e => console.warn(e));
+                    }
+                }
+            }
+        }
+    }
+
+    // --- Modal Lifecycle ---
+    function openModal() {
+        const modal = document.getElementById('simplistic-study-modal');
+        if (!modal) return;
+
+        currentDiscipline = getActiveDiscipline();
+        const discBadge = document.getElementById('zen-discipline-badge');
+        if (discBadge) {
+            discBadge.textContent = currentDiscipline;
+        }
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            const sheet = document.getElementById('zen-modal-card');
+            if (sheet) {
+                sheet.classList.remove('scale-95', 'opacity-0');
+                sheet.classList.add('scale-100', 'opacity-100');
+            }
+        }, 10);
+
+        setZenTab(activeZenTab);
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('simplistic-study-modal');
+        const sheet = document.getElementById('zen-modal-card');
+        if (!modal) return;
+
+        if (sheet) {
+            sheet.classList.remove('scale-100', 'opacity-100');
+            sheet.classList.add('scale-95', 'opacity-0');
+        }
+        modal.classList.add('opacity-0');
+
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 250);
+    }
+
+    function toggleModal() {
+        const modal = document.getElementById('simplistic-study-modal');
+        if (!modal) return;
+        if (modal.classList.contains('hidden')) {
+            openModal();
+        } else {
+            closeModal();
+        }
+    }
+
+    function init() {
+        // Wire up tab buttons
+        const tabTheoremBtn = document.getElementById('zen-tab-theorem-btn');
+        if (tabTheoremBtn) {
+            tabTheoremBtn.onclick = () => setZenTab('theorem');
+        }
+
+        const tabQuestionBtn = document.getElementById('zen-tab-question-btn');
+        if (tabQuestionBtn) {
+            tabQuestionBtn.onclick = () => setZenTab('question');
+        }
+
+        // Shuffle buttons
+        const shuffleThBtn = document.getElementById('zen-shuffle-theorem-btn');
+        if (shuffleThBtn) {
+            shuffleThBtn.onclick = shuffleTheorem;
+        }
+
+        const prevThBtn = document.getElementById('zen-prev-theorem-btn');
+        if (prevThBtn) {
+            prevThBtn.onclick = prevTheorem;
+        }
+
+        const nextThBtn = document.getElementById('zen-next-theorem-btn');
+        if (nextThBtn) {
+            nextThBtn.onclick = nextTheorem;
+        }
+
+        const shuffleQBtn = document.getElementById('zen-shuffle-question-btn');
+        if (shuffleQBtn) {
+            shuffleQBtn.onclick = shuffleQuestion;
+        }
+
+        const nextQBtn = document.getElementById('zen-next-q-btn');
+        if (nextQBtn) {
+            nextQBtn.onclick = shuffleQuestion;
+        }
+
+        // Toggle Explanation Button
+        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
+        if (toggleExpBtn) {
+            toggleExpBtn.onclick = toggleExplanation;
+        }
+
+        // Close Modal button & backdrop
+        const closeBtn = document.getElementById('zen-modal-close-btn');
+        if (closeBtn) {
+            closeBtn.onclick = closeModal;
+        }
+
+        const modal = document.getElementById('simplistic-study-modal');
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    }
+
+    // Expose globally
+    window.openSimplisticStudyModal = openModal;
+    window.closeSimplisticStudyModal = closeModal;
+    window.toggleSimplisticStudyModal = toggleModal;
+    window.setZenTab = setZenTab;
+    window.shuffleZenTheorem = shuffleTheorem;
+    window.nextZenTheorem = nextTheorem;
+    window.prevZenTheorem = prevTheorem;
+    window.shuffleZenQuestion = shuffleQuestion;
+    window.handleZenOptionSelect = handleOptionSelect;
+    window.toggleZenExplanation = toggleExplanation;
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        setTimeout(init, 50);
+    }
+})();
+
+// --- END js/zen-study.js ---
+
+// --- BEGIN js/fe-theorems-data.js ---
+/**
+ * ENGG.tv - FE Exam Theorems & Flashcards Dataset
+ * High-yield formulas, video explainers, and worked solutions across all primary FE engineering disciplines.
+ */
+
+(function() {
+const ALL_THEOREMS_BY_DISCIPLINE = {
     "Mechanical": [
         {
             "title": "Impulse Turbine vs. Reaction Turbine",
@@ -11386,6 +12079,188 @@ window.calcEvaluate = function() {
                 "question": "<p>A linear time-invariant (LTI) control system has the step response:</p>\n<p>$$y_{\\text{step}}(t) = \\left(1 - e^{-4t}\\right) u(t)$$</p>\n<p>The unit impulse response $h(t)$ of this system and its response $y_{\\text{ramp}}(t)$ to a unit ramp input $r(t) = t \\cdot u(t)$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $h(t) = -4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $h(t) = e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(\\frac{t^2}{2} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Impulse Response ($h(t)$)</strong></p>\n$$h(t) = \\frac{d}{dt}[y_{\\text{step}}(t)] = \\frac{d}{dt}\\left[1 - e^{-4t}\\right] u(t) = 4 e^{-4t} u(t)$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Ramp Response ($y_{\\text{ramp}}(t)$)</strong></p>\n<p>Integrating step response yields the ramp response:</p>\n$$y_{\\text{ramp}}(t) = \\int_0^t (1 - e^{-4\\tau}) d\\tau = \\left[ \\tau + \\frac{1}{4} e^{-4\\tau} \\right]_0^t = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The transfer function is $H(s) = \\mathcal{L}\\{h(t)\\} = \\frac{4}{s + 4}$. Multiplying by $1/s^2$ (ramp) gives $Y(s) = \\frac{4}{s^2(s + 4)} = \\frac{1}{s^2} - \\frac{1/4}{s} + \\frac{1/4}{s + 4}$.</p>"
             }
+        },
+        {
+            "title": "Three Equilibrium Equations in Statics",
+            "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad (\\text{2D Coplanar Statics});$$\n$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum F_z = 0, \\quad \\sum M_x = 0, \\quad \\sum M_y = 0, \\quad \\sum M_z = 0 \\quad (\\text{3D Space Statics})$$",
+            "description": "Statics investigates rigid bodies at rest or in uniform constant-velocity motion where net external forces and moments vanish. For general 2D coplanar force systems, exactly three independent scalar equations of equilibrium are available: (1) Summation of forces in x-direction equals zero (\\sum F_x = 0), (2) Summation of forces in y-direction equals zero (\\sum F_y = 0), and (3) Summation of moments about any arbitrary reference point O in the plane equals zero (\\sum M_O = 0). In concurrent 2D force systems where lines of action intersect at a single point, the moment equation is trivially satisfied, leaving only two independent equations (\\sum F_x = 0, \\sum F_y = 0). For 2D parallel force systems, one force equation and one moment equation apply. In 3D space, a body provides six independent equations of equilibrium (three translational and three rotational). If unknown support reactions exceed the number of independent equilibrium equations, the structure is statically indeterminate.",
+            "examTip": "Found in Statics & Mechanics of Materials. When solving 2D beams or frames: Always sum moments about the support with the greatest number of unknowns (typically a pin or hinge with 2 reactions). This eliminates those unknowns and lets you solve directly for the remaining reaction in a single equation. Watch sign conventions: counter-clockwise moments are conventionally positive (+CCW).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Three_Equilibrium_Equations_in_Statics.mp4",
+            "videoTitle": "Three Equilibrium Equations in Statics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A simply supported horizontal beam of span $L = 6.0\\text{ m}$ is pinned at support A and rests on a roller at support B. It carries a concentrated vertical load $P = 18.0\\text{ kN}$ at $x = 2.0\\text{ m}$ from A.</p>\n<p>Using the equilibrium equations, the vertical reaction forces $R_A$ and $R_B$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $R_A = 9.0\\text{ kN}, \\quad R_B = 9.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $R_A = 6.0\\text{ kN}, \\quad R_B = 12.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $R_A = 18.0\\text{ kN}, \\quad R_B = 0.0\\text{ kN}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Sum Moments About Support A ($\\sum M_A = 0$)</strong></p>\n$$\\sum M_A = 0 \\implies R_B(6.0\\text{ m}) - (18.0\\text{ kN})(2.0\\text{ m}) = 0$$\n$$6.0 R_B = 36.0 \\implies R_B = 6.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Sum Vertical Forces ($\\sum F_y = 0$)</strong></p>\n$$\\sum F_y = 0 \\implies R_A + R_B - 18.0 = 0 \\implies R_A = 18.0 - 6.0 = 12.0\\text{ kN}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The load is closer to support A (one-third of the span), so support A carries two-thirds of the load ($12\\text{ kN}$) and support B carries one-third ($6\\text{ kN}$).</p>"
+            }
+        },
+        {
+            "title": "Centroids of Common Objects",
+            "formula": "$$\\bar{x} = \\frac{\\sum \\bar{x}_i A_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum \\bar{y}_i A_i}{\\sum A_i}; \\quad \\text{Rectangle: } \\bar{y} = \\frac{h}{2}; \\quad \\text{Triangle: } \\bar{y} = \\frac{h}{3} \\text{ (from base)};$$\n$$\\text{Semicircle: } \\bar{y} = \\frac{4r}{3\\pi} \\approx 0.4244 r; \\quad \\text{Quarter Circle: } \\bar{x} = \\bar{y} = \\frac{4r}{3\\pi}; \\quad \\text{Circular Sector: } \\bar{x} = \\frac{2r\\sin\\alpha}{3\\alpha}$$",
+            "description": "The centroid of a planar area represents its geometric center, corresponding to the center of gravity of a thin plate with homogeneous density. For composite planar shapes constructed from common geometric sub-elements (rectangles, triangles, circles, and semicircles), the composite centroid coordinates (\\bar{x}, \\bar{y}) are determined by taking first moments of area divided by total area (\\sum \\bar{y}_i A_i / \\sum A_i). For holes or cutouts, their area is treated as negative (A_i < 0). Standard handbook centroid elevations measured from the flat base: Rectangle of height h has \\bar{y} = h/2; right or general triangle of height h has \\bar{y} = h/3 measured from base (2h/3 from vertex); semicircle of radius r has its centroid located along the line of symmetry at distance \\bar{y} = 4r/(3\\pi) \\approx 0.4244r from the diametral base.",
+            "examTip": "Found in Statics & Mechanics of Materials. The centroid location directly defines the neutral axis for bending stress (\\sigma = -M y / I) and the point of action for resultant hydrostatic fluid pressure forces (F_R = \\gamma \\bar{y} A). The classic trap is measuring the triangle centroid from the top vertex (h/3) instead of from the base (h/3 from flat base, 2h/3 from pointed vertex)! For a semicircle of radius r, memorizing 4r/(3\\pi) \\approx 0.4244r saves time.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Centroids_of_Common_Objects.mp4",
+            "videoTitle": "Centroids of Common Objects Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A composite cross-section consists of a rectangular web of width $b_1 = 20\\text{ mm}$ and height $h_1 = 100\\text{ mm}$, topped by a horizontal flange of width $b_2 = 120\\text{ mm}$ and thickness $t_2 = 20\\text{ mm}$.</p>\n<p>The centroid elevation $\\bar{y}$ measured from the bottom edge of the web is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $72.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $82.7\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $95.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Areas and Centroids of Sub-Components</strong></p>\n<p>Web (Component 1): $A_1 = 20 \\times 100 = 2000\\text{ mm}^2$, $y_1 = 100 / 2 = 50\\text{ mm}$.</p>\n<p>Flange (Component 2): $A_2 = 120 \\times 20 = 2400\\text{ mm}^2$, $y_2 = 100 + (20 / 2) = 110\\text{ mm}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Apply Composite Centroid Formula</strong></p>\n$$\\bar{y} = \\frac{A_1 y_1 + A_2 y_2}{A_1 + A_2} = \\frac{(2000)(50) + (2400)(110)}{2000 + 2400} = \\frac{100000 + 264000}{4400} = \\frac{364000}{4400} \\approx 82.73\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $82.7\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always measure individual centroids from the SAME global reference datum (the bottom edge in this problem).</p>"
+            }
+        },
+        {
+            "title": "Free Body Diagrams",
+            "formula": "$$\\text{Isolate Body } \\implies \\text{Active Forces } (\\text{Applied Loads, Weight}) + \\text{Reactive Support Forces } = \\mathbf{0}$$\n$$\\text{Cable / Rope: } 1 \\text{ unknown (Tension along cable)}; \\quad \\text{Roller / Rocker: } 1 \\text{ unknown (Normal force } N \\perp \\text{surface});$$\n$$\\text{Pin / Hinge: } 2 \\text{ unknowns } (R_x, R_y); \\quad \\text{Fixed / Built-in Support: } 3 \\text{ unknowns } (R_x, R_y, M_z)$$\n$$\\text{Two-Force Member: Equal, opposite, and collinear forces along line connecting the two pins}$$",
+            "description": "A Free Body Diagram (FBD) is the essential foundational tool of engineering mechanics. It consists of a sketch of the isolated structural component or system completely separated from its surroundings and supporting environment, depicting all applied active external loads, distributed pressures, body forces (weight W = mg acting at the center of gravity), and reactive forces and moments exerted by the removed supports. Support reaction rules: (1) Cables, ropes, and short links transmit only tensile or axial force along their centerline (1 unknown). (2) Smooth surfaces and rollers prevent translation perpendicular to the supporting guide plane, exerting a single normal force reaction N (1 unknown). (3) Rough surfaces add tangential friction force F_f \\le \\mu_s N (2 unknowns). (4) Pin joints prevent translational motion in two orthogonal directions, producing reaction components R_x and R_y but allowing free rotation (2 unknowns, no moment). (5) Fixed (clamped/cantilever) supports prevent both linear translation and angular rotation, producing vertical shear, axial horizontal force, and a resisting bending moment M (3 unknowns in 2D).",
+            "examTip": "Found in Statics, Dynamics & Structural Analysis. Drawing a correct FBD is step 1 for at least 30% of mechanics questions. Rules for 2-force members: If a member has pins at both ends and NO intermediate loads applied along its span, the reaction forces at the two ends MUST be equal in magnitude, opposite in direction, and collinear along the line connecting the two pins! Recognizing 2-force members simplifies trusses and mechanisms from 4 unknowns to 1 unknown.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Free_Body_Diagrams.mp4",
+            "videoTitle": "Free Body Diagrams Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A cantilever beam of length $L = 4.0\\text{ m}$ is rigidly clamped at wall A. It carries a distributed load that varies linearly from $w = 0$ at wall A to $w_0 = 12.0\\text{ kN/m}$ at the free tip B.</p>\n<p>From the Free Body Diagram, the clamping reaction moment $M_A$ at wall A required for static equilibrium is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $24.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $48.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $96.0\\text{ kN}\\cdot\\text{m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Replace Triangular Load by Equivalent Concentrated Load</strong></p>\n$$W = \\frac{1}{2} w_0 L = \\frac{1}{2}(12.0\\text{ kN/m})(4.0\\text{ m}) = 24.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Location of Resultant Force from Wall A</strong></p>\n<p>The centroid of the triangular load is at distance $\\frac{2}{3} L$ from the zero-load end (wall A):</p>\n$$x_{\\text{res}} = \\frac{2}{3}(4.0\\text{ m}) = \\frac{8.0}{3}\\text{ m} \\approx 2.667\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Sum Moments at Wall A ($\\sum M_A = 0$)</strong></p>\n$$M_A - W \\cdot x_{\\text{res}} = 0 \\implies M_A = (24.0\\text{ kN})\\left(\\frac{8.0}{3}\\text{ m}\\right) = 64.0\\text{ kN}\\cdot\\text{m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If the triangle were reversed (maximum load at A, zero at B), the centroid would be at $L/3 = 1.333\\text{ m}$ from A, yielding $M_A = 32.0\\text{ kN}\\cdot\\text{m}$. Always verify which end has the peak load!</p>"
+            }
+        },
+        {
+            "title": "Instantaneous Velocity and Acceleration",
+            "formula": "$$\\mathbf{v}(t) = \\frac{d\\mathbf{r}}{dt} = \\dot{x}\\mathbf{i} + \\dot{y}\\mathbf{j} + \\dot{z}\\mathbf{k}; \\quad \\mathbf{a}(t) = \\frac{d\\mathbf{v}}{dt} = \\frac{d^2\\mathbf{r}}{dt^2} = \\ddot{x}\\mathbf{i} + \\ddot{y}\\mathbf{j} + \\ddot{z}\\mathbf{k}$$\n$$a = v \\frac{dv}{ds} = \\frac{1}{2}\\frac{d(v^2)}{ds} \\quad (\\text{Differential Form when } a = f(s)); \\quad v(t) = v_0 + \\int_0^t a(t') dt'$$\n$$\\text{Normal-Tangential Coordinates: } \\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right)\\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right)\\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+            "description": "Instantaneous velocity \\mathbf{v}(t) defines the time rate of change of position vector \\mathbf{r}(t), and is always strictly tangent to the curved path of motion. Instantaneous acceleration \\mathbf{a}(t) is the second time derivative of position, describing changes in both velocity magnitude (speed) and velocity direction. For 1D rectilinear motion with position-dependent acceleration a(s), the chain rule yields a = v(dv/ds) \\implies \\int a \\, ds = \\int v \\, dv. In planar curvilinear motion resolved into intrinsic path (normal-tangential) coordinates: the tangential component a_t = \\dot{v} = dv/dt measures the rate of speeding up or slowing down; the normal component a_n = v^2/\\rho (where \\rho is the radius of curvature) is directed perpendicular toward the center of curvature, accounting purely for directional turning. Total magnitude is a = \\sqrt{a_t^2 + a_n^2}.",
+            "examTip": "Found in Dynamics: Kinematics of Particles. When acceleration is a function of position a(s) rather than time t, DO NOT try to use constant acceleration formulas (v = v_0 + at)! Instead, integrate using a \\, ds = v \\, dv. When an object moves along a curve at constant speed (v = \\text{const}), tangential acceleration a_t = 0, but normal acceleration a_n = v^2/\\rho \\ne 0!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4",
+            "videoTitle": "Instantaneous Velocity and Acceleration Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A vehicle travels on a curved horizontal highway track having a local radius of curvature $\\rho = 200\\text{ m}$. At a given instant, the car has a speed $v = 20.0\\text{ m/s}$ and is decelerating at a constant rate along the path of $a_t = -1.50\\text{ m/s}^2$.</p>\n<p>The magnitude of the total instantaneous acceleration vector is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $3.50\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(20.0\\text{ m/s})^2}{200\\text{ m}} = \\frac{400}{200} = 2.00\\text{ m/s}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Combine Orthogonal Components</strong></p>\n<p>The tangential acceleration is $a_t = -1.50\\text{ m/s}^2$. Because tangential and normal directions are perpendicular:</p>\n$$a = \\sqrt{a_t^2 + a_n^2} = \\sqrt{(-1.50)^2 + (2.00)^2} = \\sqrt{2.25 + 4.00} = \\sqrt{6.25} = 2.50\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $2.50\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Normal acceleration $a_n = v^2/\\rho$ is always positive and directed toward the center of curvature. Tangential acceleration $a_t$ can be positive (accelerating), zero (constant speed), or negative (braking).</p>"
+            }
+        },
+        {
+            "title": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+            "formula": "$$\\rho = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|} = \\frac{\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2}}{\\left|\\frac{d^2y}{dx^2}\\right|}; \\quad \\kappa = \\frac{1}{\\rho} = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}} \\quad (\\text{Curvature})$$\n$$\\text{At Extrema / Inflection Points where } y' = 0 \\implies \\rho = \\frac{1}{|y''|}, \\quad \\kappa = |y''|$$\n$$\\text{Small Slope Approximation in Beams: } \\frac{1}{\\rho} \\approx \\frac{d^2y}{dx^2} = \\frac{M(x)}{E I}$$",
+            "description": "The radius of curvature \\rho of a plane curve y = f(x) at any given point is the radius of the osculating (tangent) circle that best approximates the curve locally. The reciprocal of radius of curvature is curvature \\kappa = 1/\\rho, measuring the rate of turning of the tangent vector per unit arc length (d\\phi/ds). The general Cartesian formula computes \\rho = [1 + (y')^2]^{3/2} / |y''|. In dynamic trajectory analysis, normal acceleration depends inversely on radius of curvature (a_n = v^2/\\rho). In structural beam deflection theory, for small slopes (y' = dy/dx \\ll 1), (y')^2 \\approx 0, simplifying the relation to 1/\\rho \\approx d^2y/dx^2 = M/(EI), which forms the governing Euler-Bernoulli beam differential equation.",
+            "examTip": "Found in Mathematics & Dynamics (Path Kinematics). Common FE exam application: A particle or roller coaster car moves along a parabolic track y = c x^2. To find normal acceleration a_n = v^2/\\rho at the bottom (x = 0): y' = 2cx = 0 at x = 0, so \\rho = 1 / |y''| = 1 / (2c). Then a_n = v^2 / \\rho = 2 c v^2!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+            "videoTitle": "Radius of Curvature Formula Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A skateboarder rides through a parabolic bowl modeled by the curve $y = 0.05 x^2$ (where $x$ and $y$ are in meters). At the lowest point ($x = 0$), the skateboarder travels at a speed of $v = 8.0\\text{ m/s}$.</p>\n<p>The radius of curvature $\\rho$ at $x = 0$ and the corresponding normal acceleration $a_n$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\rho = 5.0\\text{ m}, \\quad a_n = 12.8\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\rho = 20.0\\text{ m}, \\quad a_n = 3.2\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\rho = 10.0\\text{ m}, \\quad a_n = 0.8\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute First and Second Derivatives</strong></p>\n$$y = 0.05 x^2 \\implies y' = \\frac{dy}{dx} = 0.10 x, \\quad y'' = \\frac{d^2y}{dx^2} = 0.10\\text{ m}^{-1}$$\n<p>At the bottom point ($x = 0$): $y'(0) = 0$ and $y''(0) = 0.10$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Radius of Curvature ($\\rho$)</strong></p>\n$$\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|} = \\frac{[1 + 0]^{3/2}}{0.10} = \\frac{1}{0.10} = 10.0\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(8.0\\text{ m/s})^2}{10.0\\text{ m}} = \\frac{64.0}{10.0} = 6.40\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The total normal force exerted on the skateboarder at the bottom is $N = m(g + a_n) = m(9.81 + 6.4) = 16.21 m\\text{ N}$, meaning the rider experiences $1.65\\text{ g}$'s!</p>"
+            }
+        },
+        {
+            "title": "Difference between Absolute and Gage Pressure",
+            "formula": "$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}}; \\quad P_{\\text{vac}} = P_{\\text{atm}} - P_{\\text{abs}} = -P_{\\text{gage}}$$\n$$P_{\\text{atm, standard}} = 101.325\\text{ kPa} = 1.01325\\text{ bar} = 14.696\\text{ psia} \\approx 14.7\\text{ psi} = 29.92\\text{ in. Hg} = 760\\text{ mmHg}$$\n$$\\text{Hydrostatic Pressure Variation: } P(h) = P_0 + \\rho g h = P_0 + \\gamma h$$",
+            "description": "Pressure is the compressive normal force per unit contact area (P = F/A). Fluid pressure is measured relative to two distinct reference baselines: (1) Absolute Pressure (P_abs) is measured relative to a perfect absolute vacuum (zero pressure datum where no molecular collisions exist). Absolute pressure can never be negative (P_abs \\ge 0). (2) Gage Pressure (P_gage) is measured relative to local atmospheric pressure (P_atm), which represents the ambient zero datum on standard pressure gages, Bourdon tubes, and tire gauges. When pressure drops below local atmospheric, it is termed vacuum pressure (P_vac = P_atm - P_abs = -P_gage). In all thermodynamic state equations (such as ideal gas law P V = m R T and steam tables), ABSOLUTE pressure MUST be used; substituting gage pressure produces erroneous results.",
+            "examTip": "Found in Fluid Mechanics & Thermodynamics. CRITICAL FE EXAM RULE: Whenever you use ideal gas equations (P v = R T, P V = n \\bar{R} T) or evaluate thermodynamic enthalpies and isentropic relations, pressure MUST be in absolute units! If the prompt states 'a tank is pressurized to 250 kPa gage under atmospheric pressure 101.3 kPa', absolute pressure is P = 250 + 101.3 = 351.3 kPa. In US Customary: psia = psig + 14.7.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Absolute_and_Gage_Pressure.mp4",
+            "videoTitle": "Absolute vs. Gage Pressure Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A Bourdon pressure gage attached to a compressed air receiver reads $P_{\\text{gage}} = 45.0\\text{ psig}$. The local atmospheric pressure is $P_{\\text{atm}} = 14.7\\text{ psia}$. The air inside the tank is at temperature $T = 70.0^\\circ\\text{F}$ ($T = 530.0\\text{ R}$).</p>\n<p>Given the specific gas constant for air $R = 53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot^\\circ\\text{R})$, the air density $\\rho$ inside the receiver is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.075\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.229\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.304\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.412\\text{ lbm/ft}^3$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Convert Gage Pressure to Absolute Pressure</strong></p>\n$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}} = 45.0\\text{ psig} + 14.7\\text{ psia} = 59.7\\text{ psia}$$\n<p>Convert $\\text{psia}$ ($\\text{lbf/in}^2$) to $\\text{lbf/ft}^2$:</p>\n$$P = 59.7 \\times 144 = 8596.8\\text{ lbf/ft}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Ideal Gas Law on Mass Basis ($P = \\rho R T$)</strong></p>\n$$\\rho = \\frac{P}{R T} = \\frac{8596.8\\text{ lbf/ft}^2}{(53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot\\text{R}))(530.0\\text{ R})} = \\frac{8596.8}{28275.5} \\approx 0.304\\text{ lbm/ft}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $0.304\\text{ lbm/ft}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Trap:</em> If you incorrectly use gage pressure ($45\\text{ psig}$), you obtain $\\rho = 0.229\\text{ lbm/ft}^3$ (Option B), which is the most common distractor answer on this type of question!</p>"
+            }
+        },
+        {
+            "title": "Newton's Second Law for a Particle",
+            "formula": "$$\\sum \\mathbf{F} = m \\mathbf{a} = m \\frac{d\\mathbf{v}}{dt} = \\frac{d\\mathbf{p}}{dt} \\quad (\\text{Inertial Equation of Motion});$$\n$$\\text{Rectangular: } \\sum F_x = m a_x, \\quad \\sum F_y = m a_y, \\quad \\sum F_z = m a_z;$$\n$$\\text{Normal-Tangential: } \\sum F_t = m \\frac{dv}{dt}, \\quad \\sum F_n = m \\frac{v^2}{\\rho}, \\quad \\sum F_b = 0;$$\n$$\\text{Polar / Cylindrical: } \\sum F_r = m(\\ddot{r} - r\\dot{\\theta}^2), \\quad \\sum F_\\theta = m(r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta})$$",
+            "description": "Newton's Second Law of Motion forms the central cornerstone of kinetics, stating that the vector sum of all external forces acting on a particle of constant mass m equals the particle's mass multiplied by its instantaneous acceleration vector relative to an inertial reference frame: \\sum \\mathbf{F} = m \\mathbf{a}. This can also be expressed as the time rate of change of linear momentum \\mathbf{p} = m \\mathbf{v}. To apply Newton's second law: (1) Construct a Free Body Diagram (FBD) showing all external forces (\\sum \\mathbf{F}), (2) Construct a Kinetic Diagram (KD) showing inertial mass-acceleration vectors (m\\mathbf{a}), (3) Choose the most convenient coordinate frame (rectangular for linear trajectories, path/normal-tangential for curved trajectories with known curvature \\rho, polar for radial/central force problems), and (4) Formulate scalar component equations.",
+            "examTip": "Found in Dynamics: Kinetics of Particles. In normal-tangential problems (e.g., car on banked curve, pendulum, loop-the-loop): \\sum F_n = m v^2/\\rho. The normal acceleration vector points inward toward the center of curvature; never draw centrifugal force on an inertial FBD—centrifugal force is an apparent fictitious force observed only in rotating non-inertial frames. Stick to real forces (N, W, F_f) and set their inward sum equal to m v^2/\\rho.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+            "videoTitle": "Newton's Second Law for a Particle Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A $1200\\text{ kg}$ automobile navigates a flat (unbanked, $\\theta = 0^\\circ$) horizontal circular curve of radius $\\rho = 150\\text{ m}$ at a constant speed of $v = 25.0\\text{ m/s}$.</p>\n<p>Assuming gravity $g = 9.81\\text{ m/s}^2$, the minimum coefficient of static friction $\\mu_s$ between tires and road required to prevent the vehicle from skidding outward is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.28$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.42$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.55$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.68$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Write Normal and Vertical Equations of Motion</strong></p>\n<p>Vertical equilibrium: $\\sum F_y = 0 \\implies N - mg = 0 \\implies N = mg$.</p>\n<p>Inward normal direction: The only horizontal force acting toward the center of the curve is static friction $F_f$:</p>\n$$\\sum F_n = m a_n \\implies F_f = m \\frac{v^2}{\\rho}$$\n<p><strong class=\"text-emerald-400\">Step 2: Relate Friction to Maximum Available Static Friction</strong></p>\n$$F_f \\le \\mu_s N \\implies m \\frac{v^2}{\\rho} \\le \\mu_s mg \\implies \\mu_s \\ge \\frac{v^2}{g \\rho}$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Minimum Friction Coefficient</strong></p>\n$$\\mu_{s,\\min} = \\frac{(25.0\\text{ m/s})^2}{(9.81\\text{ m/s}^2)(150\\text{ m})} = \\frac{625.0}{1471.5} \\approx 0.4247 \\approx 0.42$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $0.42$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that vehicle mass $m$ cancels out completely! A heavy truck and a lightweight sports car require the exact same minimum coefficient of friction to make the turn without sliding.</p>"
+            }
+        },
+        {
+            "title": "Conservation of Angular Momentum",
+            "formula": "$$\\mathbf{H}_O = \\mathbf{r} \\times m\\mathbf{v} \\quad (\\text{Particle about Point } O); \\quad H_G = I_G \\omega \\quad (\\text{Planar Rigid Body about Centroid } G)$$\n$$\\sum \\mathbf{M}_O = \\dot{\\mathbf{H}}_O = \\frac{d\\mathbf{H}_O}{dt}; \\quad \\text{When } \\sum \\mathbf{M}_O = \\mathbf{0} \\implies \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2} = \\text{constant}$$\n$$m r_1 v_{\\theta, 1} = m r_2 v_{\\theta, 2} \\quad (\\text{Central Force / Orbital Motion}); \\quad I_1 \\omega_1 = I_2 \\omega_2 \\quad (\\text{Rigid Body System})$$",
+            "description": "Angular momentum (moment of momentum) \\mathbf{H}_O describes the rotational momentum of a particle or rigid body about a fixed reference point O. The angular impulse-momentum theorem dictates that the time rate of change of angular momentum about point O equals the sum of external moments acting about O: \\sum \\mathbf{M}_O = d\\mathbf{H}_O/dt. When the resultant external moment about point O is zero (\\sum \\mathbf{M}_O = \\mathbf{0}), angular momentum about that point is strictly conserved: \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2}. Primary engineering conditions where angular momentum is conserved: (1) Central force motion (such as gravitation or orbiting satellites) where the line of action of the attraction force passes directly through the origin O (\\mathbf{r} \\times \\mathbf{F} = \\mathbf{0}); (2) Spinning mechanical systems undergoing internal mass redistribution (e.g., folding/extending solar panels, centrifugal clutches, figure skaters drawing in their limbs); and (3) Impact/collision of rotating bodies about fixed pivot joints where reaction impulses at the pivot produce zero moment.",
+            "examTip": "Found in Dynamics: Kinetics of Particles & Planar Rigid Bodies. Classic FE problem: Satellite in elliptical orbit around Earth. Since gravity is a central force pointing directly at Earth's center, angular momentum is conserved: r_p v_p = r_a v_a, where r_p, v_p are perigee distance and speed, and r_a, v_a are apogee distance and speed. Another classic problem: A spinning turntable of moment of inertia I_1 and angular velocity \\omega_1 has a stationary disk of inertia I_2 dropped onto it: \\omega_2 = \\frac{I_1 \\omega_1}{I_1 + I_2}.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Conservation_of_Angular_Momentum.mp4",
+            "videoTitle": "Conservation of Angular Momentum Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A scientific research satellite travels in an elliptical Earth orbit. At perigee (closest point of approach), its orbital radius is $r_p = 7000\\text{ km}$ and its orbital velocity is $v_p = 8.40\\text{ km/s}$.</p>\n<p>At apogee (farthest point), the orbital radius increases to $r_a = 35000\\text{ km}$. Because gravity is a central force with zero moment about the center of Earth, angular momentum is conserved. The satellite speed at apogee $v_a$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.68\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.10\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $4.20\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $16.8\\text{ km/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Conservation of Angular Momentum</strong></p>\n<p>At perigee and apogee, the velocity vectors are strictly perpendicular to the position vector from the center of Earth ($v_r = 0, v = v_\\theta$):</p>\n$$H_O = m r_p v_p = m r_a v_a$$\n<p><strong class=\"text-emerald-400\">Step 2: Solve for Apogee Speed ($v_a$)</strong></p>\n$$v_a = v_p \\left(\\frac{r_p}{r_a}\\right) = (8.40\\text{ km/s}) \\left(\\frac{7000\\text{ km}}{35000\\text{ km}}\\right) = 8.40 \\times \\frac{1}{5} = 1.68\\text{ km/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.68\\text{ km/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> As orbital radius increases by a factor of 5, velocity drops inversely by a factor of 5 to preserve angular momentum.</p>"
+            }
+        },
+        {
+            "title": "Difference between Free and Forced Vibrations",
+            "formula": "$$\\text{Free Vibration: } m \\ddot{x} + c \\dot{x} + k x = 0 \\implies \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\text{Forced Vibration: } m \\ddot{x} + c \\dot{x} + k x = F_0 \\cos(\\omega t) \\implies x(t) = x_{\\text{transient}}(t) + x_{\\text{steady-state}}(t)$$\n$$X = \\frac{F_0 / k}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}} = X_{\\text{static}} \\cdot M, \\quad r = \\frac{\\omega}{\\omega_n} \\ (\\text{Frequency Ratio}), \\quad M = \\frac{1}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}}$$",
+            "description": "Mechanical vibrations represent oscillating motions of physical bodies about an equilibrium position: (1) Free Vibration occurs when an elastic system is disturbed from its equilibrium state by an initial displacement x(0) or velocity \\dot{x}(0) and allowed to oscillate in the absence of ongoing external dynamic driving forces (F(t) = 0). The system oscillates at its natural frequency \\omega_n = \\sqrt{k/m} (or damped natural frequency \\omega_d = \\omega_n\\sqrt{1-\\zeta^2}), with amplitude decaying exponentially due to damping (c). (2) Forced Vibration occurs when an external time-dependent driving excitation force or base motion F(t) = F_0\\cos(\\omega t) continually acts upon the system. The total response consists of a decaying transient free response plus a persistent harmonic steady-state response that oscillates at the excitation frequency \\omega (NOT the natural frequency \\omega_n). When the excitation frequency matches the system natural frequency (r = \\omega/\\omega_n \\approx 1), Resonance occurs, causing magnification factor M \\approx 1/(2\\zeta) to surge, generating catastrophic oscillation amplitudes in lightly damped systems.",
+            "examTip": "Found in Mechanical Engineering: Mechanical Design and Dynamic Systems. Key comparison table for FE: (1) Free: Frequency is \\omega_n or \\omega_d, driven by initial conditions, decays to zero if damped. (2) Forced: Steady-state frequency is excitation frequency \\omega, driven by external load, persists indefinitely. (3) Resonance happens when \\omega \\approx \\omega_n (r = 1). If damping \\zeta = 0.05 (5%), the resonance magnification factor is M = 1/(2\\zeta) = 1/(2 \\times 0.05) = 10 times the static deflection!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Free_and_Forced_Vibrations.mp4",
+            "videoTitle": "Free vs. Forced Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A factory machine of total mass $m = 250\\text{ kg}$ is mounted on elastic isolators having equivalent total stiffness $k = 100\\text{ kN/m} = 100000\\text{ N/m}$ and damping ratio $\\zeta = 0.040$. The machine generates a harmonic rotating unbalance force of amplitude $F_0 = 500\\text{ N}$ operating at an excitation frequency $\\omega = 20.0\\text{ rad/s}$.</p>\n<p>The steady-state vibration amplitude $X$ of the machine is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $5.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $62.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $125.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Natural Frequency ($\\omega_n$) and Frequency Ratio ($r$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{100000\\text{ N/m}}{250\\text{ kg}}} = \\sqrt{400} = 20.0\\text{ rad/s}$$\n$$r = \\frac{\\omega}{\\omega_n} = \\frac{20.0}{20.0} = 1.00 \\quad (\\text{System operates at exact resonance})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Static Deflection ($X_{\\text{static}}$) and Dynamic Magnifier ($M$)</strong></p>\n$$X_{\\text{static}} = \\frac{F_0}{k} = \\frac{500\\text{ N}}{100000\\text{ N/m}} = 0.0050\\text{ m} = 5.0\\text{ mm}$$\n<p>At exact resonance ($r = 1$):</p>\n$$M = \\frac{1}{2\\zeta} = \\frac{1}{2(0.040)} = \\frac{1}{0.080} = 12.5$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Steady-State Amplitude ($X$)</strong></p>\n$$X = X_{\\text{static}} \\cdot M = (5.0\\text{ mm})(12.5) = 62.5\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $62.5\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The factor $1/(2\\zeta)$ is the classic resonant peak multiplier for any single degree of freedom system with light damping.</p>"
+            }
+        },
+        {
+            "title": "Governing Equation of Vibrations",
+            "formula": "$$m \\ddot{x}(t) + c \\dot{x}(t) + k x(t) = F(t) \\quad \\longleftrightarrow \\quad \\ddot{x} + 2\\zeta \\omega_n \\dot{x} + \\omega_n^2 x = \\frac{F(t)}{m}$$\n$$\\omega_n = \\sqrt{\\frac{k}{m}} \\quad (\\text{Undamped Natural Frequency [rad/s]}), \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\quad (\\text{Frequency [Hz]})$$\n$$c_c = 2\\sqrt{km} = 2m\\omega_n \\quad (\\text{Critical Damping Coefficient}), \\quad \\zeta = \\frac{c}{c_c} = \\frac{c}{2\\sqrt{km}} \\quad (\\text{Damping Ratio})$$\n$$\\text{Underdamped Response } (\\zeta < 1): \\quad x(t) = X_0 e^{-\\zeta \\omega_n t} \\sin(\\omega_d t + \\phi), \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+            "description": "The fundamental governing equation of motion for a linear Single Degree of Freedom (SDOF) vibratory system is derived from Newton's second law or D'Alembert's dynamic equilibrium: m\\ddot{x} + c\\dot{x} + kx = F(t), where m is equivalent mass, c is viscous damping coefficient, and k is equivalent elastic spring stiffness. Dividing across by mass m yields the standard canonical form \\ddot{x} + 2\\zeta\\omega_n\\dot{x} + \\omega_n^2 x = f(t). The damping ratio \\zeta = c / (2\\sqrt{km}) governs the physical behavior of free response: (1) Underdamped (\\zeta < 1): Oscillatory motion with exponentially decaying envelope e^{-\\zeta\\omega_n t}\\sin(\\omega_d t + \\phi); (2) Critically Damped (\\zeta = 1): Fastest non-oscillatory return to equilibrium with no overshoot; (3) Overdamped (\\zeta > 1): Sluggish exponential return without oscillation.",
+            "examTip": "Found in Mechanical & Civil Engineering: Vibrations and Dynamics. The three essential equations to memorize: \\omega_n = \\sqrt{k/m} in rad/s, f_n = \\omega_n/(2\\pi) in Hz (cycles/s), and c_c = 2\\sqrt{km}. To find equivalent stiffness k_eq: springs in parallel add directly (k_1 + k_2); springs in series add reciprocally (1/k_eq = 1/k_1 + 1/k_2). Cantilever beam end stiffness is k = 3EI/L^3.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Governing_Equation_of_Vibrations.mp4",
+            "videoTitle": "Governing Equation of Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A precision measuring instrument of mass $m = 4.0\\text{ kg}$ is mounted on a vibration isolator having spring stiffness $k = 3600\\text{ N/m}$ and viscous damping coefficient $c = 48.0\\text{ N}\\cdot\\text{s/m}$.</p>\n<p>The undamped natural frequency $\\omega_n$, damping ratio $\\zeta$, and damped natural frequency $\\omega_d$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.40, \\quad \\omega_d = 27.5\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 900\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 882\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 1.00, \\quad \\omega_d = 0.0\\text{ rad/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Undamped Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{3600\\text{ N/m}}{4.0\\text{ kg}}} = \\sqrt{900} = 30.0\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Critical Damping Coefficient ($c_c$) and Damping Ratio ($\\zeta$)</strong></p>\n$$c_c = 2 m \\omega_n = 2(4.0\\text{ kg})(30.0\\text{ rad/s}) = 240.0\\text{ N}\\cdot\\text{s/m}$$\n$$\\zeta = \\frac{c}{c_c} = \\frac{48.0\\text{ N}\\cdot\\text{s/m}}{240.0\\text{ N}\\cdot\\text{s/m}} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Compute Damped Natural Frequency ($\\omega_d$)</strong></p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 30.0 \\sqrt{1 - (0.20)^2} = 30.0 \\sqrt{0.96} \\approx 30.0(0.9798) \\approx 29.39\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For light damping ($zeta < 0.2$), the damped natural frequency $omega_d$ is very close to the undamped natural frequency $omega_n$ (within $2%$).</p>"
+            }
+        },
+        {
+            "title": "Examples of Torsional Vibrations",
+            "formula": "$$J \\ddot{\\theta} + c_t \\dot{\\theta} + k_t \\theta = T(t); \\quad k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{G \\pi d^4}{32 L} \\quad (\\text{Shaft Torsional Stiffness [N}\\cdot\\text{m/rad]})$$\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{G J_{\\text{polar}}}{J L}} \\quad (\\text{rad/s}), \\quad f_n = \\frac{\\omega_n}{2\\pi} \\quad (\\text{Hz})$$\n$$J = \\frac{1}{2} m r^2 \\quad (\\text{Solid Cylindrical Disk Polar Mass Moment of Inertia [kg}\\cdot\\text{m}^2])$$\n$$\\text{Two-Rotor System: } \\omega_n = \\sqrt{\\frac{k_t(J_1 + J_2)}{J_1 J_2}}, \\quad \\text{Nodal Point: } \\frac{L_1}{L_2} = \\frac{J_2}{J_1}$$",
+            "description": "Torsional vibration consists of angular oscillatory twisting of rotational mechanical components about their axis of rotation, governed by J\\ddot{\\theta} + k_t\\theta = 0, where J is the mass moment of inertia ([J] = \\text{kg}\\cdot\\text{m}^2) and k_t is torsional spring stiffness ([k_t] = \\text{N}\\cdot\\text{m/rad}). For a uniform cylindrical elastic shaft of shear modulus G, diameter d, length L, and polar second moment of area J_polar = \\pi d^4/32, torsional stiffness is k_t = G J_polar/L. Prominent real-world engineering examples: (1) Internal Combustion Engine Crankshafts subjected to cyclic gas pressure pulses and reciprocating piston inertia torques; (2) Marine propulsion propeller drive shafts; (3) Turbogenerator rotor trains linking steam turbines to electrical generators; (4) Helical drill strings in petroleum drilling; and (5) Centrifugal pump motor couplings. Severe torsional resonance creates excessive shear stresses that can cause fatigue shaft shearing without visible lateral vibration.",
+            "examTip": "Found in Mechanical Engineering: Machine Design and Vibrations. Watch out for the two distinct J's! J_polar in k_t = G J_polar/L is the polar moment of area of the shaft cross-section (J_polar = \\pi d^4 / 32, in m^4), whereas J (or I) in \\omega_n = \\sqrt{k_t / J} is the polar mass moment of inertia of the rotating rotor/flywheel (J = \\frac{1}{2}m r^2, in kg\\cdot m^2). If the shaft diameter doubles (2d), torsional stiffness k_t increases by 2^4 = 16 times!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Examples_of_Torsional_Vibrations.mp4",
+            "videoTitle": "Examples of Torsional Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A solid steel drive shaft ($G = 80.0\\text{ GPa} = 80.0 \\times 10^9\\text{ Pa}$) of diameter $d = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 1.20\\text{ m}$ is fixed at one end and attached to a heavy turbine rotor with polar mass moment of inertia $J = 2.50\\text{ kg}\\cdot\\text{m}^2$ at the other end.</p>\n<p>The torsional natural frequency $f_n$ (in $\\text{Hz}$) of the system is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $10.2\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $20.4\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40.8\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $128.0\\text{ Hz}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Polar Moment of Area of the Shaft ($J_{\\text{polar}}$)</strong></p>\n$$J_{\\text{polar}} = \\frac{\\pi d^4}{32} = \\frac{\\pi (0.050\\text{ m})^4}{32} = \\frac{\\pi (6.25 \\times 10^{-6})}{32} \\approx 6.136 \\times 10^{-7}\\text{ m}^4$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Torsional Spring Stiffness ($k_t$)</strong></p>\n$$k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{(80.0 \\times 10^9\\text{ Pa})(6.136 \\times 10^{-7}\\text{ m}^4)}{1.20\\text{ m}} = \\frac{49088}{1.20} \\approx 40907\\text{ N}\\cdot\\text{m/rad}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Torsional Natural Frequency ($omega_n$ and $f_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{40907\\text{ N}\\cdot\\text{m/rad}}{2.50\\text{ kg}\\cdot\\text{m}^2}} = \\sqrt{16363} \\approx 127.92\\text{ rad/s}$$\n$$f_n = \\frac{\\omega_n}{2\\pi} = \\frac{127.92}{2\\pi} \\approx 20.36\\text{ Hz} \\approx 20.4\\text{ Hz}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $20.4\\text{ Hz}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Be careful to divide $omega_n$ ($128\text{ rad/s}$) by $2pi$ to get cyclic frequency $f_n$ in $\text{Hz}$. Option (D) $128\text{ Hz}$ is the angular frequency trap!</p>"
+            }
+        },
+        {
+            "title": "Corrosion Terminology",
+            "formula": "$$\\text{Anode (Oxidation / Metal Loss): } M \\to M^{n+} + n e^-; \\quad \\text{Cathode (Reduction / Protection): } 2\\text{H}^+ + 2e^- \\to \\text{H}_2 \\ (\\text{Acid}), \\ \\text{O}_2 + 2\\text{H}_2\\text{O} + 4e^- \\to 4\\text{OH}^- \\ (\\text{Aerated})$$\n$$\\Delta E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} > 0; \\quad \\text{Faraday's Law of Electrolysis: } m = \\frac{I \\cdot t \\cdot M}{n \\cdot F} \\quad (F = 96485\\text{ C/mol})$$\n$$\\text{Cathodic Protection: Sacrificial Anode (Zn, Mg, Al on Fe) or Impressed Current (ICCP)}$$",
+            "description": "Corrosion is the electrochemical deterioration of an engineering metal resulting from chemical reaction with its surrounding environment. An electrochemical corrosion cell requires four essential elements: (1) Anode: metal undergoes oxidation, losing electrons and dissolving (M \\to M^{n+} + ne^-); (2) Cathode: consumes electrons via reduction reaction (e.g., hydrogen reduction in acid or oxygen reduction in aerated neutral water); (3) Metallic pathway: conducts electrons from anode to cathode; and (4) Electrolyte: liquid conducting ions between electrodes. Common corrosion types: (a) Galvanic Corrosion: two dissimilar metals in electrical contact in an electrolyte; the more active metal (higher on galvanic series, more negative standard reduction potential) corrodes preferentially; (b) Pitting Corrosion: localized, highly destructive cavity formation in passive alloys (stainless steels in chlorides); (c) Crevice Corrosion: localized attack occurring in shielded, stagnant recesses with depleted oxygen; (d) Intergranular Corrosion: preferential attack along grain boundaries (e.g., chromium carbide precipitation in sensitized stainless steel); (e) Stress Corrosion Cracking (SCC): brittle cracking from combined tensile stress and corrosive environment; and (f) Passivation: spontaneous formation of a thin, protective oxide film (e.g., Cr_2O_3 on stainless steel, Al_2O_3 on aluminum).",
+            "examTip": "Found in Materials Science, Chemical, Civil & Environmental Engineering. Essential FE Galvanic Series memory rule: When two metals couple together, the ANODE is the one that gets consumed/corroded. The metal that is MORE ACTIVE (less noble, lower potential) becomes the anode. Example: In galvanized steel (Zinc coating on Iron), Zinc is more active than Iron (E^\\circ_{Zn^{2+}/Zn} = -0.76 V vs. E^\\circ_{Fe^{2+}/Fe} = -0.44 V), so Zinc acts as a sacrificial anode, sacrificing itself to protect the underlying iron even if scratched!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Corrosion_Terminology.mp4",
+            "videoTitle": "Corrosion Terminology Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A buried carbon steel pipeline is cathodically protected by an external sacrificial magnesium anode ($M_{\\text{Mg}} = 24.31\\text{ g/mol}, n = 2$). The system delivers a continuous protective galvanic current of $I = 0.50\\text{ A}$.</p>\n<p>Using Faraday's constant $F = 96485\\text{ C/mol}$, the mass of magnesium consumed over $t = 1.0\\text{ year}$ ($365\\text{ days} = 3.1536 \\times 10^7\\text{ s}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.97\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $7.94\\text{ kg}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Total Electric Charge Transferred ($Q$)</strong></p>\n$$Q = I \\cdot t = (0.50\\text{ A})(3.1536 \\times 10^7\\text{ s}) = 1.5768 \\times 10^7\\text{ C}$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Faraday's Law of Electrolysis</strong></p>\n$$m = \\frac{Q \\cdot M}{n \\cdot F} = \\frac{(1.5768 \\times 10^7\\text{ C})(24.31\\text{ g/mol})}{(2)(96485\\text{ C/mol})} = \\frac{3.8332 \\times 10^8}{192970} \\approx 1986.4\\text{ g} \\approx 1.99\\text{ kg}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.99\\text{ kg}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Remember $n = 2$ for $\\text{Mg} \\to \\text{Mg}^{2+} + 2e^-$. If you forget $n = 2$, you get $3.97\\text{ kg}$ (Option C).</p>"
+            }
+        },
+        {
+            "title": "Difference between Ionic and Covalent Bonding",
+            "formula": "$$\\Delta EN = |EN_A - EN_B|; \\quad \\Delta EN > 1.7 \\implies \\text{Ionic Bond } (>50\\% \\text{ ionic character}); \\quad \\Delta EN < 1.7 \\implies \\text{Covalent Bond}$$\n$$\\% \\text{ Ionic Character} = \\left[1 - \\exp\\left(-0.25 (\\Delta EN)^2\\right)\\right] \\times 100\\% \\quad (\\text{Pauling's Equation})$$\n$$\\text{Ionic: } \\text{NaCl, MgO, } \\text{Al}_2\\text{O}_3 \\quad (\\text{Brittle, High } T_m, \\text{ Nondirectional, Insulator as solid, Conducts in liquid/melt});$$\n$$\\text{Covalent: } \\text{Diamond, } \\text{SiO}_2, \\text{ Si, } \\text{CH}_4, \\text{ H}_2\\text{O} \\quad (\\text{Directional orbital overlap, High bond strength, Low conductivity})$$",
+            "description": "Primary atomic chemical bonding is classified by how valence electrons are redistributed between interacting atoms to achieve stable outer octet configurations: (1) Ionic Bonding forms between atoms with large differences in electronegativity (\\Delta EN > 1.7, typically a metal and a non-metal, e.g., Na^+ and Cl^-). Valence electrons are completely transferred from the electropositive metal cation to the electronegative non-metal anion, creating nondirectional electrostatic Coulombic attraction forces. Characteristics: high melting and boiling points, hard but brittle crystal structures (cleaving along like-charge repelling planes), electrically insulating in solid state, but electrically and ionically conductive when melted or dissolved in aqueous solution. (2) Covalent Bonding forms between atoms with small or zero electronegativity differences (\\Delta EN < 1.7, typically between non-metals, e.g., C-C, Si, SiO_2, H_2O). Atoms share pairs of valence electrons in localized, highly directional hybrid orbitals. Characteristics: strong directional bonds, high hardness and melting points in 3D network covalent solids (diamond, quartz), but weak intermolecular forces between discrete covalent molecules (CH_4, CO_2), and poor electrical conductivity (except graphite).",
+            "examTip": "Found in Chemistry & Materials Science. Quick FE memory criteria: (1) Ionic: Metal + Non-metal (e.g., NaCl, MgO, CaO); nondirectional electrostatic; conducts in molten/solution state. (2) Covalent: Non-metal + Non-metal (e.g., Diamond, SiC, SiO_2, H_2O); directional orbital sharing; poor electrical conductors. (3) Metallic: Metal + Metal (delocalized electron sea; ductile, high electrical and thermal conductivity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Ionic_and_Covalent_Bonding.mp4",
+            "videoTitle": "Ionic vs. Covalent Bonding Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>The Pauling electronegativities of magnesium and oxygen are $EN_{\\text{Mg}} = 1.2$ and $EN_{\\text{O}} = 3.5$.</p>\n<p>Using Pauling's formula $\\%\\text{IC} = [1 - \\exp(-0.25 (\\Delta EN)^2)] \\times 100\\%$, the predominant bond type and approximate percent ionic character of magnesium oxide ($\\text{MgO}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Covalent bond with $\\%\\text{IC} \\approx 27\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Metallic bond with $\\%\\text{IC} \\approx 50\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Pure covalent bond with $\\%\\text{IC} \\approx 5\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Electronegativity Difference ($\\Delta EN$)</strong></p>\n$$\\Delta EN = |EN_{\\text{O}} - EN_{\\text{Mg}}| = |3.5 - 1.2| = 2.3$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Pauling's Percent Ionic Character Formula</strong></p>\n$$\\%\\text{IC} = \\left[1 - \\exp\\left(-0.25 (2.3)^2\\right)\\right] \\times 100\\% = \\left[1 - \\exp\\left(-0.25 \\times 5.29\\right)\\right] \\times 100\\%$$\n$$\\%\\text{IC} = \\left[1 - \\exp(-1.3225)\\right] \\times 100\\% = [1 - 0.2665] \\times 100\\% \\approx 73.35\\% \\approx 73\\%$$\n<p>Because $\\Delta EN = 2.3 > 1.7$ and $\\%\\text{IC} > 50\\%$, $\\text{MgO}$ is classified as an <strong>ionic bond</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Any bond with $Delta EN > 1.7$ has $> 50%$ ionic character and is classified predominantly as ionic.</p>"
+            }
         }
     ],
     "Civil": [
@@ -15588,6 +16463,188 @@ window.calcEvaluate = function() {
                 "question": "<p>A series RLC circuit has resistance $R = 20 ; \\Omega$, inductance $L = 0.50\\text{ H}$, and capacitance $C = 200 ; \\mu\\text{F}$.</p>\n<p>The un-damped natural frequency $\\omega_n$, the damping ratio $\\zeta$, the damping classification, and the damped natural frequency $\\omega_d$ (if applicable) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 0.20$ (Underdamped), $\\ \\omega_d = 97.98\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 1.00$ (Critically Damped)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 50\\text{ rad/s}, \\ \\zeta = 0.40$ (Underdamped), $\\ \\omega_d = 45.8\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 1.25$ (Overdamped)</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0.50 \\times 200 \\times 10^{-6}}} = \\frac{1}{\\sqrt{10^{-4}}} = 100\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Damping Ratio ($\\zeta$)</strong></p>\n$$\\zeta = \\frac{R}{2\\omega_n L} = \\frac{20}{2(100)(0.50)} = \\frac{20}{100} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Classify Regime and Calculate $\\omega_d$</strong></p>\n<p>Since $0 < \\zeta = 0.20 < 1$, the response is <strong>Underdamped</strong> (oscillatory transient with overshoot).</p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 100 \\sqrt{1 - 0.04} = 100 \\sqrt{0.96} \\approx 97.98\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 0.20$ (Underdamped), $\\ \\omega_d = 97.98\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Percentage overshoot for $\\zeta = 0.20$ is $M_p = e^{-\\pi(0.20)/\\sqrt{0.96}} \\times 100\\% \\approx 52.7\\%$.</p>"
             }
+        },
+        {
+            "title": "Three Equilibrium Equations in Statics",
+            "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad (\\text{2D Coplanar Statics});$$\n$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum F_z = 0, \\quad \\sum M_x = 0, \\quad \\sum M_y = 0, \\quad \\sum M_z = 0 \\quad (\\text{3D Space Statics})$$",
+            "description": "Statics investigates rigid bodies at rest or in uniform constant-velocity motion where net external forces and moments vanish. For general 2D coplanar force systems, exactly three independent scalar equations of equilibrium are available: (1) Summation of forces in x-direction equals zero (\\sum F_x = 0), (2) Summation of forces in y-direction equals zero (\\sum F_y = 0), and (3) Summation of moments about any arbitrary reference point O in the plane equals zero (\\sum M_O = 0). In concurrent 2D force systems where lines of action intersect at a single point, the moment equation is trivially satisfied, leaving only two independent equations (\\sum F_x = 0, \\sum F_y = 0). For 2D parallel force systems, one force equation and one moment equation apply. In 3D space, a body provides six independent equations of equilibrium (three translational and three rotational). If unknown support reactions exceed the number of independent equilibrium equations, the structure is statically indeterminate.",
+            "examTip": "Found in Statics & Mechanics of Materials. When solving 2D beams or frames: Always sum moments about the support with the greatest number of unknowns (typically a pin or hinge with 2 reactions). This eliminates those unknowns and lets you solve directly for the remaining reaction in a single equation. Watch sign conventions: counter-clockwise moments are conventionally positive (+CCW).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Three_Equilibrium_Equations_in_Statics.mp4",
+            "videoTitle": "Three Equilibrium Equations in Statics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A simply supported horizontal beam of span $L = 6.0\\text{ m}$ is pinned at support A and rests on a roller at support B. It carries a concentrated vertical load $P = 18.0\\text{ kN}$ at $x = 2.0\\text{ m}$ from A.</p>\n<p>Using the equilibrium equations, the vertical reaction forces $R_A$ and $R_B$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $R_A = 9.0\\text{ kN}, \\quad R_B = 9.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $R_A = 6.0\\text{ kN}, \\quad R_B = 12.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $R_A = 18.0\\text{ kN}, \\quad R_B = 0.0\\text{ kN}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Sum Moments About Support A ($\\sum M_A = 0$)</strong></p>\n$$\\sum M_A = 0 \\implies R_B(6.0\\text{ m}) - (18.0\\text{ kN})(2.0\\text{ m}) = 0$$\n$$6.0 R_B = 36.0 \\implies R_B = 6.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Sum Vertical Forces ($\\sum F_y = 0$)</strong></p>\n$$\\sum F_y = 0 \\implies R_A + R_B - 18.0 = 0 \\implies R_A = 18.0 - 6.0 = 12.0\\text{ kN}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The load is closer to support A (one-third of the span), so support A carries two-thirds of the load ($12\\text{ kN}$) and support B carries one-third ($6\\text{ kN}$).</p>"
+            }
+        },
+        {
+            "title": "Centroids of Common Objects",
+            "formula": "$$\\bar{x} = \\frac{\\sum \\bar{x}_i A_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum \\bar{y}_i A_i}{\\sum A_i}; \\quad \\text{Rectangle: } \\bar{y} = \\frac{h}{2}; \\quad \\text{Triangle: } \\bar{y} = \\frac{h}{3} \\text{ (from base)};$$\n$$\\text{Semicircle: } \\bar{y} = \\frac{4r}{3\\pi} \\approx 0.4244 r; \\quad \\text{Quarter Circle: } \\bar{x} = \\bar{y} = \\frac{4r}{3\\pi}; \\quad \\text{Circular Sector: } \\bar{x} = \\frac{2r\\sin\\alpha}{3\\alpha}$$",
+            "description": "The centroid of a planar area represents its geometric center, corresponding to the center of gravity of a thin plate with homogeneous density. For composite planar shapes constructed from common geometric sub-elements (rectangles, triangles, circles, and semicircles), the composite centroid coordinates (\\bar{x}, \\bar{y}) are determined by taking first moments of area divided by total area (\\sum \\bar{y}_i A_i / \\sum A_i). For holes or cutouts, their area is treated as negative (A_i < 0). Standard handbook centroid elevations measured from the flat base: Rectangle of height h has \\bar{y} = h/2; right or general triangle of height h has \\bar{y} = h/3 measured from base (2h/3 from vertex); semicircle of radius r has its centroid located along the line of symmetry at distance \\bar{y} = 4r/(3\\pi) \\approx 0.4244r from the diametral base.",
+            "examTip": "Found in Statics & Mechanics of Materials. The centroid location directly defines the neutral axis for bending stress (\\sigma = -M y / I) and the point of action for resultant hydrostatic fluid pressure forces (F_R = \\gamma \\bar{y} A). The classic trap is measuring the triangle centroid from the top vertex (h/3) instead of from the base (h/3 from flat base, 2h/3 from pointed vertex)! For a semicircle of radius r, memorizing 4r/(3\\pi) \\approx 0.4244r saves time.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Centroids_of_Common_Objects.mp4",
+            "videoTitle": "Centroids of Common Objects Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A composite cross-section consists of a rectangular web of width $b_1 = 20\\text{ mm}$ and height $h_1 = 100\\text{ mm}$, topped by a horizontal flange of width $b_2 = 120\\text{ mm}$ and thickness $t_2 = 20\\text{ mm}$.</p>\n<p>The centroid elevation $\\bar{y}$ measured from the bottom edge of the web is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $72.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $82.7\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $95.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Areas and Centroids of Sub-Components</strong></p>\n<p>Web (Component 1): $A_1 = 20 \\times 100 = 2000\\text{ mm}^2$, $y_1 = 100 / 2 = 50\\text{ mm}$.</p>\n<p>Flange (Component 2): $A_2 = 120 \\times 20 = 2400\\text{ mm}^2$, $y_2 = 100 + (20 / 2) = 110\\text{ mm}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Apply Composite Centroid Formula</strong></p>\n$$\\bar{y} = \\frac{A_1 y_1 + A_2 y_2}{A_1 + A_2} = \\frac{(2000)(50) + (2400)(110)}{2000 + 2400} = \\frac{100000 + 264000}{4400} = \\frac{364000}{4400} \\approx 82.73\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $82.7\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always measure individual centroids from the SAME global reference datum (the bottom edge in this problem).</p>"
+            }
+        },
+        {
+            "title": "Free Body Diagrams",
+            "formula": "$$\\text{Isolate Body } \\implies \\text{Active Forces } (\\text{Applied Loads, Weight}) + \\text{Reactive Support Forces } = \\mathbf{0}$$\n$$\\text{Cable / Rope: } 1 \\text{ unknown (Tension along cable)}; \\quad \\text{Roller / Rocker: } 1 \\text{ unknown (Normal force } N \\perp \\text{surface});$$\n$$\\text{Pin / Hinge: } 2 \\text{ unknowns } (R_x, R_y); \\quad \\text{Fixed / Built-in Support: } 3 \\text{ unknowns } (R_x, R_y, M_z)$$\n$$\\text{Two-Force Member: Equal, opposite, and collinear forces along line connecting the two pins}$$",
+            "description": "A Free Body Diagram (FBD) is the essential foundational tool of engineering mechanics. It consists of a sketch of the isolated structural component or system completely separated from its surroundings and supporting environment, depicting all applied active external loads, distributed pressures, body forces (weight W = mg acting at the center of gravity), and reactive forces and moments exerted by the removed supports. Support reaction rules: (1) Cables, ropes, and short links transmit only tensile or axial force along their centerline (1 unknown). (2) Smooth surfaces and rollers prevent translation perpendicular to the supporting guide plane, exerting a single normal force reaction N (1 unknown). (3) Rough surfaces add tangential friction force F_f \\le \\mu_s N (2 unknowns). (4) Pin joints prevent translational motion in two orthogonal directions, producing reaction components R_x and R_y but allowing free rotation (2 unknowns, no moment). (5) Fixed (clamped/cantilever) supports prevent both linear translation and angular rotation, producing vertical shear, axial horizontal force, and a resisting bending moment M (3 unknowns in 2D).",
+            "examTip": "Found in Statics, Dynamics & Structural Analysis. Drawing a correct FBD is step 1 for at least 30% of mechanics questions. Rules for 2-force members: If a member has pins at both ends and NO intermediate loads applied along its span, the reaction forces at the two ends MUST be equal in magnitude, opposite in direction, and collinear along the line connecting the two pins! Recognizing 2-force members simplifies trusses and mechanisms from 4 unknowns to 1 unknown.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Free_Body_Diagrams.mp4",
+            "videoTitle": "Free Body Diagrams Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A cantilever beam of length $L = 4.0\\text{ m}$ is rigidly clamped at wall A. It carries a distributed load that varies linearly from $w = 0$ at wall A to $w_0 = 12.0\\text{ kN/m}$ at the free tip B.</p>\n<p>From the Free Body Diagram, the clamping reaction moment $M_A$ at wall A required for static equilibrium is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $24.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $48.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $96.0\\text{ kN}\\cdot\\text{m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Replace Triangular Load by Equivalent Concentrated Load</strong></p>\n$$W = \\frac{1}{2} w_0 L = \\frac{1}{2}(12.0\\text{ kN/m})(4.0\\text{ m}) = 24.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Location of Resultant Force from Wall A</strong></p>\n<p>The centroid of the triangular load is at distance $\\frac{2}{3} L$ from the zero-load end (wall A):</p>\n$$x_{\\text{res}} = \\frac{2}{3}(4.0\\text{ m}) = \\frac{8.0}{3}\\text{ m} \\approx 2.667\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Sum Moments at Wall A ($\\sum M_A = 0$)</strong></p>\n$$M_A - W \\cdot x_{\\text{res}} = 0 \\implies M_A = (24.0\\text{ kN})\\left(\\frac{8.0}{3}\\text{ m}\\right) = 64.0\\text{ kN}\\cdot\\text{m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If the triangle were reversed (maximum load at A, zero at B), the centroid would be at $L/3 = 1.333\\text{ m}$ from A, yielding $M_A = 32.0\\text{ kN}\\cdot\\text{m}$. Always verify which end has the peak load!</p>"
+            }
+        },
+        {
+            "title": "Instantaneous Velocity and Acceleration",
+            "formula": "$$\\mathbf{v}(t) = \\frac{d\\mathbf{r}}{dt} = \\dot{x}\\mathbf{i} + \\dot{y}\\mathbf{j} + \\dot{z}\\mathbf{k}; \\quad \\mathbf{a}(t) = \\frac{d\\mathbf{v}}{dt} = \\frac{d^2\\mathbf{r}}{dt^2} = \\ddot{x}\\mathbf{i} + \\ddot{y}\\mathbf{j} + \\ddot{z}\\mathbf{k}$$\n$$a = v \\frac{dv}{ds} = \\frac{1}{2}\\frac{d(v^2)}{ds} \\quad (\\text{Differential Form when } a = f(s)); \\quad v(t) = v_0 + \\int_0^t a(t') dt'$$\n$$\\text{Normal-Tangential Coordinates: } \\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right)\\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right)\\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+            "description": "Instantaneous velocity \\mathbf{v}(t) defines the time rate of change of position vector \\mathbf{r}(t), and is always strictly tangent to the curved path of motion. Instantaneous acceleration \\mathbf{a}(t) is the second time derivative of position, describing changes in both velocity magnitude (speed) and velocity direction. For 1D rectilinear motion with position-dependent acceleration a(s), the chain rule yields a = v(dv/ds) \\implies \\int a \\, ds = \\int v \\, dv. In planar curvilinear motion resolved into intrinsic path (normal-tangential) coordinates: the tangential component a_t = \\dot{v} = dv/dt measures the rate of speeding up or slowing down; the normal component a_n = v^2/\\rho (where \\rho is the radius of curvature) is directed perpendicular toward the center of curvature, accounting purely for directional turning. Total magnitude is a = \\sqrt{a_t^2 + a_n^2}.",
+            "examTip": "Found in Dynamics: Kinematics of Particles. When acceleration is a function of position a(s) rather than time t, DO NOT try to use constant acceleration formulas (v = v_0 + at)! Instead, integrate using a \\, ds = v \\, dv. When an object moves along a curve at constant speed (v = \\text{const}), tangential acceleration a_t = 0, but normal acceleration a_n = v^2/\\rho \\ne 0!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4",
+            "videoTitle": "Instantaneous Velocity and Acceleration Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A vehicle travels on a curved horizontal highway track having a local radius of curvature $\\rho = 200\\text{ m}$. At a given instant, the car has a speed $v = 20.0\\text{ m/s}$ and is decelerating at a constant rate along the path of $a_t = -1.50\\text{ m/s}^2$.</p>\n<p>The magnitude of the total instantaneous acceleration vector is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $3.50\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(20.0\\text{ m/s})^2}{200\\text{ m}} = \\frac{400}{200} = 2.00\\text{ m/s}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Combine Orthogonal Components</strong></p>\n<p>The tangential acceleration is $a_t = -1.50\\text{ m/s}^2$. Because tangential and normal directions are perpendicular:</p>\n$$a = \\sqrt{a_t^2 + a_n^2} = \\sqrt{(-1.50)^2 + (2.00)^2} = \\sqrt{2.25 + 4.00} = \\sqrt{6.25} = 2.50\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $2.50\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Normal acceleration $a_n = v^2/\\rho$ is always positive and directed toward the center of curvature. Tangential acceleration $a_t$ can be positive (accelerating), zero (constant speed), or negative (braking).</p>"
+            }
+        },
+        {
+            "title": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+            "formula": "$$\\rho = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|} = \\frac{\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2}}{\\left|\\frac{d^2y}{dx^2}\\right|}; \\quad \\kappa = \\frac{1}{\\rho} = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}} \\quad (\\text{Curvature})$$\n$$\\text{At Extrema / Inflection Points where } y' = 0 \\implies \\rho = \\frac{1}{|y''|}, \\quad \\kappa = |y''|$$\n$$\\text{Small Slope Approximation in Beams: } \\frac{1}{\\rho} \\approx \\frac{d^2y}{dx^2} = \\frac{M(x)}{E I}$$",
+            "description": "The radius of curvature \\rho of a plane curve y = f(x) at any given point is the radius of the osculating (tangent) circle that best approximates the curve locally. The reciprocal of radius of curvature is curvature \\kappa = 1/\\rho, measuring the rate of turning of the tangent vector per unit arc length (d\\phi/ds). The general Cartesian formula computes \\rho = [1 + (y')^2]^{3/2} / |y''|. In dynamic trajectory analysis, normal acceleration depends inversely on radius of curvature (a_n = v^2/\\rho). In structural beam deflection theory, for small slopes (y' = dy/dx \\ll 1), (y')^2 \\approx 0, simplifying the relation to 1/\\rho \\approx d^2y/dx^2 = M/(EI), which forms the governing Euler-Bernoulli beam differential equation.",
+            "examTip": "Found in Mathematics & Dynamics (Path Kinematics). Common FE exam application: A particle or roller coaster car moves along a parabolic track y = c x^2. To find normal acceleration a_n = v^2/\\rho at the bottom (x = 0): y' = 2cx = 0 at x = 0, so \\rho = 1 / |y''| = 1 / (2c). Then a_n = v^2 / \\rho = 2 c v^2!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+            "videoTitle": "Radius of Curvature Formula Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A skateboarder rides through a parabolic bowl modeled by the curve $y = 0.05 x^2$ (where $x$ and $y$ are in meters). At the lowest point ($x = 0$), the skateboarder travels at a speed of $v = 8.0\\text{ m/s}$.</p>\n<p>The radius of curvature $\\rho$ at $x = 0$ and the corresponding normal acceleration $a_n$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\rho = 5.0\\text{ m}, \\quad a_n = 12.8\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\rho = 20.0\\text{ m}, \\quad a_n = 3.2\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\rho = 10.0\\text{ m}, \\quad a_n = 0.8\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute First and Second Derivatives</strong></p>\n$$y = 0.05 x^2 \\implies y' = \\frac{dy}{dx} = 0.10 x, \\quad y'' = \\frac{d^2y}{dx^2} = 0.10\\text{ m}^{-1}$$\n<p>At the bottom point ($x = 0$): $y'(0) = 0$ and $y''(0) = 0.10$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Radius of Curvature ($\\rho$)</strong></p>\n$$\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|} = \\frac{[1 + 0]^{3/2}}{0.10} = \\frac{1}{0.10} = 10.0\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(8.0\\text{ m/s})^2}{10.0\\text{ m}} = \\frac{64.0}{10.0} = 6.40\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The total normal force exerted on the skateboarder at the bottom is $N = m(g + a_n) = m(9.81 + 6.4) = 16.21 m\\text{ N}$, meaning the rider experiences $1.65\\text{ g}$'s!</p>"
+            }
+        },
+        {
+            "title": "Difference between Absolute and Gage Pressure",
+            "formula": "$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}}; \\quad P_{\\text{vac}} = P_{\\text{atm}} - P_{\\text{abs}} = -P_{\\text{gage}}$$\n$$P_{\\text{atm, standard}} = 101.325\\text{ kPa} = 1.01325\\text{ bar} = 14.696\\text{ psia} \\approx 14.7\\text{ psi} = 29.92\\text{ in. Hg} = 760\\text{ mmHg}$$\n$$\\text{Hydrostatic Pressure Variation: } P(h) = P_0 + \\rho g h = P_0 + \\gamma h$$",
+            "description": "Pressure is the compressive normal force per unit contact area (P = F/A). Fluid pressure is measured relative to two distinct reference baselines: (1) Absolute Pressure (P_abs) is measured relative to a perfect absolute vacuum (zero pressure datum where no molecular collisions exist). Absolute pressure can never be negative (P_abs \\ge 0). (2) Gage Pressure (P_gage) is measured relative to local atmospheric pressure (P_atm), which represents the ambient zero datum on standard pressure gages, Bourdon tubes, and tire gauges. When pressure drops below local atmospheric, it is termed vacuum pressure (P_vac = P_atm - P_abs = -P_gage). In all thermodynamic state equations (such as ideal gas law P V = m R T and steam tables), ABSOLUTE pressure MUST be used; substituting gage pressure produces erroneous results.",
+            "examTip": "Found in Fluid Mechanics & Thermodynamics. CRITICAL FE EXAM RULE: Whenever you use ideal gas equations (P v = R T, P V = n \\bar{R} T) or evaluate thermodynamic enthalpies and isentropic relations, pressure MUST be in absolute units! If the prompt states 'a tank is pressurized to 250 kPa gage under atmospheric pressure 101.3 kPa', absolute pressure is P = 250 + 101.3 = 351.3 kPa. In US Customary: psia = psig + 14.7.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Absolute_and_Gage_Pressure.mp4",
+            "videoTitle": "Absolute vs. Gage Pressure Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A Bourdon pressure gage attached to a compressed air receiver reads $P_{\\text{gage}} = 45.0\\text{ psig}$. The local atmospheric pressure is $P_{\\text{atm}} = 14.7\\text{ psia}$. The air inside the tank is at temperature $T = 70.0^\\circ\\text{F}$ ($T = 530.0\\text{ R}$).</p>\n<p>Given the specific gas constant for air $R = 53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot^\\circ\\text{R})$, the air density $\\rho$ inside the receiver is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.075\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.229\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.304\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.412\\text{ lbm/ft}^3$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Convert Gage Pressure to Absolute Pressure</strong></p>\n$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}} = 45.0\\text{ psig} + 14.7\\text{ psia} = 59.7\\text{ psia}$$\n<p>Convert $\\text{psia}$ ($\\text{lbf/in}^2$) to $\\text{lbf/ft}^2$:</p>\n$$P = 59.7 \\times 144 = 8596.8\\text{ lbf/ft}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Ideal Gas Law on Mass Basis ($P = \\rho R T$)</strong></p>\n$$\\rho = \\frac{P}{R T} = \\frac{8596.8\\text{ lbf/ft}^2}{(53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot\\text{R}))(530.0\\text{ R})} = \\frac{8596.8}{28275.5} \\approx 0.304\\text{ lbm/ft}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $0.304\\text{ lbm/ft}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Trap:</em> If you incorrectly use gage pressure ($45\\text{ psig}$), you obtain $\\rho = 0.229\\text{ lbm/ft}^3$ (Option B), which is the most common distractor answer on this type of question!</p>"
+            }
+        },
+        {
+            "title": "Newton's Second Law for a Particle",
+            "formula": "$$\\sum \\mathbf{F} = m \\mathbf{a} = m \\frac{d\\mathbf{v}}{dt} = \\frac{d\\mathbf{p}}{dt} \\quad (\\text{Inertial Equation of Motion});$$\n$$\\text{Rectangular: } \\sum F_x = m a_x, \\quad \\sum F_y = m a_y, \\quad \\sum F_z = m a_z;$$\n$$\\text{Normal-Tangential: } \\sum F_t = m \\frac{dv}{dt}, \\quad \\sum F_n = m \\frac{v^2}{\\rho}, \\quad \\sum F_b = 0;$$\n$$\\text{Polar / Cylindrical: } \\sum F_r = m(\\ddot{r} - r\\dot{\\theta}^2), \\quad \\sum F_\\theta = m(r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta})$$",
+            "description": "Newton's Second Law of Motion forms the central cornerstone of kinetics, stating that the vector sum of all external forces acting on a particle of constant mass m equals the particle's mass multiplied by its instantaneous acceleration vector relative to an inertial reference frame: \\sum \\mathbf{F} = m \\mathbf{a}. This can also be expressed as the time rate of change of linear momentum \\mathbf{p} = m \\mathbf{v}. To apply Newton's second law: (1) Construct a Free Body Diagram (FBD) showing all external forces (\\sum \\mathbf{F}), (2) Construct a Kinetic Diagram (KD) showing inertial mass-acceleration vectors (m\\mathbf{a}), (3) Choose the most convenient coordinate frame (rectangular for linear trajectories, path/normal-tangential for curved trajectories with known curvature \\rho, polar for radial/central force problems), and (4) Formulate scalar component equations.",
+            "examTip": "Found in Dynamics: Kinetics of Particles. In normal-tangential problems (e.g., car on banked curve, pendulum, loop-the-loop): \\sum F_n = m v^2/\\rho. The normal acceleration vector points inward toward the center of curvature; never draw centrifugal force on an inertial FBD—centrifugal force is an apparent fictitious force observed only in rotating non-inertial frames. Stick to real forces (N, W, F_f) and set their inward sum equal to m v^2/\\rho.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+            "videoTitle": "Newton's Second Law for a Particle Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A $1200\\text{ kg}$ automobile navigates a flat (unbanked, $\\theta = 0^\\circ$) horizontal circular curve of radius $\\rho = 150\\text{ m}$ at a constant speed of $v = 25.0\\text{ m/s}$.</p>\n<p>Assuming gravity $g = 9.81\\text{ m/s}^2$, the minimum coefficient of static friction $\\mu_s$ between tires and road required to prevent the vehicle from skidding outward is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.28$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.42$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.55$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.68$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Write Normal and Vertical Equations of Motion</strong></p>\n<p>Vertical equilibrium: $\\sum F_y = 0 \\implies N - mg = 0 \\implies N = mg$.</p>\n<p>Inward normal direction: The only horizontal force acting toward the center of the curve is static friction $F_f$:</p>\n$$\\sum F_n = m a_n \\implies F_f = m \\frac{v^2}{\\rho}$$\n<p><strong class=\"text-emerald-400\">Step 2: Relate Friction to Maximum Available Static Friction</strong></p>\n$$F_f \\le \\mu_s N \\implies m \\frac{v^2}{\\rho} \\le \\mu_s mg \\implies \\mu_s \\ge \\frac{v^2}{g \\rho}$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Minimum Friction Coefficient</strong></p>\n$$\\mu_{s,\\min} = \\frac{(25.0\\text{ m/s})^2}{(9.81\\text{ m/s}^2)(150\\text{ m})} = \\frac{625.0}{1471.5} \\approx 0.4247 \\approx 0.42$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $0.42$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that vehicle mass $m$ cancels out completely! A heavy truck and a lightweight sports car require the exact same minimum coefficient of friction to make the turn without sliding.</p>"
+            }
+        },
+        {
+            "title": "Conservation of Angular Momentum",
+            "formula": "$$\\mathbf{H}_O = \\mathbf{r} \\times m\\mathbf{v} \\quad (\\text{Particle about Point } O); \\quad H_G = I_G \\omega \\quad (\\text{Planar Rigid Body about Centroid } G)$$\n$$\\sum \\mathbf{M}_O = \\dot{\\mathbf{H}}_O = \\frac{d\\mathbf{H}_O}{dt}; \\quad \\text{When } \\sum \\mathbf{M}_O = \\mathbf{0} \\implies \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2} = \\text{constant}$$\n$$m r_1 v_{\\theta, 1} = m r_2 v_{\\theta, 2} \\quad (\\text{Central Force / Orbital Motion}); \\quad I_1 \\omega_1 = I_2 \\omega_2 \\quad (\\text{Rigid Body System})$$",
+            "description": "Angular momentum (moment of momentum) \\mathbf{H}_O describes the rotational momentum of a particle or rigid body about a fixed reference point O. The angular impulse-momentum theorem dictates that the time rate of change of angular momentum about point O equals the sum of external moments acting about O: \\sum \\mathbf{M}_O = d\\mathbf{H}_O/dt. When the resultant external moment about point O is zero (\\sum \\mathbf{M}_O = \\mathbf{0}), angular momentum about that point is strictly conserved: \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2}. Primary engineering conditions where angular momentum is conserved: (1) Central force motion (such as gravitation or orbiting satellites) where the line of action of the attraction force passes directly through the origin O (\\mathbf{r} \\times \\mathbf{F} = \\mathbf{0}); (2) Spinning mechanical systems undergoing internal mass redistribution (e.g., folding/extending solar panels, centrifugal clutches, figure skaters drawing in their limbs); and (3) Impact/collision of rotating bodies about fixed pivot joints where reaction impulses at the pivot produce zero moment.",
+            "examTip": "Found in Dynamics: Kinetics of Particles & Planar Rigid Bodies. Classic FE problem: Satellite in elliptical orbit around Earth. Since gravity is a central force pointing directly at Earth's center, angular momentum is conserved: r_p v_p = r_a v_a, where r_p, v_p are perigee distance and speed, and r_a, v_a are apogee distance and speed. Another classic problem: A spinning turntable of moment of inertia I_1 and angular velocity \\omega_1 has a stationary disk of inertia I_2 dropped onto it: \\omega_2 = \\frac{I_1 \\omega_1}{I_1 + I_2}.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Conservation_of_Angular_Momentum.mp4",
+            "videoTitle": "Conservation of Angular Momentum Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A scientific research satellite travels in an elliptical Earth orbit. At perigee (closest point of approach), its orbital radius is $r_p = 7000\\text{ km}$ and its orbital velocity is $v_p = 8.40\\text{ km/s}$.</p>\n<p>At apogee (farthest point), the orbital radius increases to $r_a = 35000\\text{ km}$. Because gravity is a central force with zero moment about the center of Earth, angular momentum is conserved. The satellite speed at apogee $v_a$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.68\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.10\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $4.20\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $16.8\\text{ km/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Conservation of Angular Momentum</strong></p>\n<p>At perigee and apogee, the velocity vectors are strictly perpendicular to the position vector from the center of Earth ($v_r = 0, v = v_\\theta$):</p>\n$$H_O = m r_p v_p = m r_a v_a$$\n<p><strong class=\"text-emerald-400\">Step 2: Solve for Apogee Speed ($v_a$)</strong></p>\n$$v_a = v_p \\left(\\frac{r_p}{r_a}\\right) = (8.40\\text{ km/s}) \\left(\\frac{7000\\text{ km}}{35000\\text{ km}}\\right) = 8.40 \\times \\frac{1}{5} = 1.68\\text{ km/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.68\\text{ km/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> As orbital radius increases by a factor of 5, velocity drops inversely by a factor of 5 to preserve angular momentum.</p>"
+            }
+        },
+        {
+            "title": "Difference between Free and Forced Vibrations",
+            "formula": "$$\\text{Free Vibration: } m \\ddot{x} + c \\dot{x} + k x = 0 \\implies \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\text{Forced Vibration: } m \\ddot{x} + c \\dot{x} + k x = F_0 \\cos(\\omega t) \\implies x(t) = x_{\\text{transient}}(t) + x_{\\text{steady-state}}(t)$$\n$$X = \\frac{F_0 / k}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}} = X_{\\text{static}} \\cdot M, \\quad r = \\frac{\\omega}{\\omega_n} \\ (\\text{Frequency Ratio}), \\quad M = \\frac{1}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}}$$",
+            "description": "Mechanical vibrations represent oscillating motions of physical bodies about an equilibrium position: (1) Free Vibration occurs when an elastic system is disturbed from its equilibrium state by an initial displacement x(0) or velocity \\dot{x}(0) and allowed to oscillate in the absence of ongoing external dynamic driving forces (F(t) = 0). The system oscillates at its natural frequency \\omega_n = \\sqrt{k/m} (or damped natural frequency \\omega_d = \\omega_n\\sqrt{1-\\zeta^2}), with amplitude decaying exponentially due to damping (c). (2) Forced Vibration occurs when an external time-dependent driving excitation force or base motion F(t) = F_0\\cos(\\omega t) continually acts upon the system. The total response consists of a decaying transient free response plus a persistent harmonic steady-state response that oscillates at the excitation frequency \\omega (NOT the natural frequency \\omega_n). When the excitation frequency matches the system natural frequency (r = \\omega/\\omega_n \\approx 1), Resonance occurs, causing magnification factor M \\approx 1/(2\\zeta) to surge, generating catastrophic oscillation amplitudes in lightly damped systems.",
+            "examTip": "Found in Mechanical Engineering: Mechanical Design and Dynamic Systems. Key comparison table for FE: (1) Free: Frequency is \\omega_n or \\omega_d, driven by initial conditions, decays to zero if damped. (2) Forced: Steady-state frequency is excitation frequency \\omega, driven by external load, persists indefinitely. (3) Resonance happens when \\omega \\approx \\omega_n (r = 1). If damping \\zeta = 0.05 (5%), the resonance magnification factor is M = 1/(2\\zeta) = 1/(2 \\times 0.05) = 10 times the static deflection!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Free_and_Forced_Vibrations.mp4",
+            "videoTitle": "Free vs. Forced Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A factory machine of total mass $m = 250\\text{ kg}$ is mounted on elastic isolators having equivalent total stiffness $k = 100\\text{ kN/m} = 100000\\text{ N/m}$ and damping ratio $\\zeta = 0.040$. The machine generates a harmonic rotating unbalance force of amplitude $F_0 = 500\\text{ N}$ operating at an excitation frequency $\\omega = 20.0\\text{ rad/s}$.</p>\n<p>The steady-state vibration amplitude $X$ of the machine is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $5.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $62.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $125.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Natural Frequency ($\\omega_n$) and Frequency Ratio ($r$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{100000\\text{ N/m}}{250\\text{ kg}}} = \\sqrt{400} = 20.0\\text{ rad/s}$$\n$$r = \\frac{\\omega}{\\omega_n} = \\frac{20.0}{20.0} = 1.00 \\quad (\\text{System operates at exact resonance})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Static Deflection ($X_{\\text{static}}$) and Dynamic Magnifier ($M$)</strong></p>\n$$X_{\\text{static}} = \\frac{F_0}{k} = \\frac{500\\text{ N}}{100000\\text{ N/m}} = 0.0050\\text{ m} = 5.0\\text{ mm}$$\n<p>At exact resonance ($r = 1$):</p>\n$$M = \\frac{1}{2\\zeta} = \\frac{1}{2(0.040)} = \\frac{1}{0.080} = 12.5$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Steady-State Amplitude ($X$)</strong></p>\n$$X = X_{\\text{static}} \\cdot M = (5.0\\text{ mm})(12.5) = 62.5\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $62.5\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The factor $1/(2\\zeta)$ is the classic resonant peak multiplier for any single degree of freedom system with light damping.</p>"
+            }
+        },
+        {
+            "title": "Governing Equation of Vibrations",
+            "formula": "$$m \\ddot{x}(t) + c \\dot{x}(t) + k x(t) = F(t) \\quad \\longleftrightarrow \\quad \\ddot{x} + 2\\zeta \\omega_n \\dot{x} + \\omega_n^2 x = \\frac{F(t)}{m}$$\n$$\\omega_n = \\sqrt{\\frac{k}{m}} \\quad (\\text{Undamped Natural Frequency [rad/s]}), \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\quad (\\text{Frequency [Hz]})$$\n$$c_c = 2\\sqrt{km} = 2m\\omega_n \\quad (\\text{Critical Damping Coefficient}), \\quad \\zeta = \\frac{c}{c_c} = \\frac{c}{2\\sqrt{km}} \\quad (\\text{Damping Ratio})$$\n$$\\text{Underdamped Response } (\\zeta < 1): \\quad x(t) = X_0 e^{-\\zeta \\omega_n t} \\sin(\\omega_d t + \\phi), \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+            "description": "The fundamental governing equation of motion for a linear Single Degree of Freedom (SDOF) vibratory system is derived from Newton's second law or D'Alembert's dynamic equilibrium: m\\ddot{x} + c\\dot{x} + kx = F(t), where m is equivalent mass, c is viscous damping coefficient, and k is equivalent elastic spring stiffness. Dividing across by mass m yields the standard canonical form \\ddot{x} + 2\\zeta\\omega_n\\dot{x} + \\omega_n^2 x = f(t). The damping ratio \\zeta = c / (2\\sqrt{km}) governs the physical behavior of free response: (1) Underdamped (\\zeta < 1): Oscillatory motion with exponentially decaying envelope e^{-\\zeta\\omega_n t}\\sin(\\omega_d t + \\phi); (2) Critically Damped (\\zeta = 1): Fastest non-oscillatory return to equilibrium with no overshoot; (3) Overdamped (\\zeta > 1): Sluggish exponential return without oscillation.",
+            "examTip": "Found in Mechanical & Civil Engineering: Vibrations and Dynamics. The three essential equations to memorize: \\omega_n = \\sqrt{k/m} in rad/s, f_n = \\omega_n/(2\\pi) in Hz (cycles/s), and c_c = 2\\sqrt{km}. To find equivalent stiffness k_eq: springs in parallel add directly (k_1 + k_2); springs in series add reciprocally (1/k_eq = 1/k_1 + 1/k_2). Cantilever beam end stiffness is k = 3EI/L^3.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Governing_Equation_of_Vibrations.mp4",
+            "videoTitle": "Governing Equation of Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A precision measuring instrument of mass $m = 4.0\\text{ kg}$ is mounted on a vibration isolator having spring stiffness $k = 3600\\text{ N/m}$ and viscous damping coefficient $c = 48.0\\text{ N}\\cdot\\text{s/m}$.</p>\n<p>The undamped natural frequency $\\omega_n$, damping ratio $\\zeta$, and damped natural frequency $\\omega_d$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.40, \\quad \\omega_d = 27.5\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 900\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 882\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 1.00, \\quad \\omega_d = 0.0\\text{ rad/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Undamped Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{3600\\text{ N/m}}{4.0\\text{ kg}}} = \\sqrt{900} = 30.0\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Critical Damping Coefficient ($c_c$) and Damping Ratio ($\\zeta$)</strong></p>\n$$c_c = 2 m \\omega_n = 2(4.0\\text{ kg})(30.0\\text{ rad/s}) = 240.0\\text{ N}\\cdot\\text{s/m}$$\n$$\\zeta = \\frac{c}{c_c} = \\frac{48.0\\text{ N}\\cdot\\text{s/m}}{240.0\\text{ N}\\cdot\\text{s/m}} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Compute Damped Natural Frequency ($\\omega_d$)</strong></p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 30.0 \\sqrt{1 - (0.20)^2} = 30.0 \\sqrt{0.96} \\approx 30.0(0.9798) \\approx 29.39\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For light damping ($zeta < 0.2$), the damped natural frequency $omega_d$ is very close to the undamped natural frequency $omega_n$ (within $2%$).</p>"
+            }
+        },
+        {
+            "title": "Examples of Torsional Vibrations",
+            "formula": "$$J \\ddot{\\theta} + c_t \\dot{\\theta} + k_t \\theta = T(t); \\quad k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{G \\pi d^4}{32 L} \\quad (\\text{Shaft Torsional Stiffness [N}\\cdot\\text{m/rad]})$$\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{G J_{\\text{polar}}}{J L}} \\quad (\\text{rad/s}), \\quad f_n = \\frac{\\omega_n}{2\\pi} \\quad (\\text{Hz})$$\n$$J = \\frac{1}{2} m r^2 \\quad (\\text{Solid Cylindrical Disk Polar Mass Moment of Inertia [kg}\\cdot\\text{m}^2])$$\n$$\\text{Two-Rotor System: } \\omega_n = \\sqrt{\\frac{k_t(J_1 + J_2)}{J_1 J_2}}, \\quad \\text{Nodal Point: } \\frac{L_1}{L_2} = \\frac{J_2}{J_1}$$",
+            "description": "Torsional vibration consists of angular oscillatory twisting of rotational mechanical components about their axis of rotation, governed by J\\ddot{\\theta} + k_t\\theta = 0, where J is the mass moment of inertia ([J] = \\text{kg}\\cdot\\text{m}^2) and k_t is torsional spring stiffness ([k_t] = \\text{N}\\cdot\\text{m/rad}). For a uniform cylindrical elastic shaft of shear modulus G, diameter d, length L, and polar second moment of area J_polar = \\pi d^4/32, torsional stiffness is k_t = G J_polar/L. Prominent real-world engineering examples: (1) Internal Combustion Engine Crankshafts subjected to cyclic gas pressure pulses and reciprocating piston inertia torques; (2) Marine propulsion propeller drive shafts; (3) Turbogenerator rotor trains linking steam turbines to electrical generators; (4) Helical drill strings in petroleum drilling; and (5) Centrifugal pump motor couplings. Severe torsional resonance creates excessive shear stresses that can cause fatigue shaft shearing without visible lateral vibration.",
+            "examTip": "Found in Mechanical Engineering: Machine Design and Vibrations. Watch out for the two distinct J's! J_polar in k_t = G J_polar/L is the polar moment of area of the shaft cross-section (J_polar = \\pi d^4 / 32, in m^4), whereas J (or I) in \\omega_n = \\sqrt{k_t / J} is the polar mass moment of inertia of the rotating rotor/flywheel (J = \\frac{1}{2}m r^2, in kg\\cdot m^2). If the shaft diameter doubles (2d), torsional stiffness k_t increases by 2^4 = 16 times!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Examples_of_Torsional_Vibrations.mp4",
+            "videoTitle": "Examples of Torsional Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A solid steel drive shaft ($G = 80.0\\text{ GPa} = 80.0 \\times 10^9\\text{ Pa}$) of diameter $d = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 1.20\\text{ m}$ is fixed at one end and attached to a heavy turbine rotor with polar mass moment of inertia $J = 2.50\\text{ kg}\\cdot\\text{m}^2$ at the other end.</p>\n<p>The torsional natural frequency $f_n$ (in $\\text{Hz}$) of the system is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $10.2\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $20.4\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40.8\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $128.0\\text{ Hz}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Polar Moment of Area of the Shaft ($J_{\\text{polar}}$)</strong></p>\n$$J_{\\text{polar}} = \\frac{\\pi d^4}{32} = \\frac{\\pi (0.050\\text{ m})^4}{32} = \\frac{\\pi (6.25 \\times 10^{-6})}{32} \\approx 6.136 \\times 10^{-7}\\text{ m}^4$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Torsional Spring Stiffness ($k_t$)</strong></p>\n$$k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{(80.0 \\times 10^9\\text{ Pa})(6.136 \\times 10^{-7}\\text{ m}^4)}{1.20\\text{ m}} = \\frac{49088}{1.20} \\approx 40907\\text{ N}\\cdot\\text{m/rad}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Torsional Natural Frequency ($omega_n$ and $f_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{40907\\text{ N}\\cdot\\text{m/rad}}{2.50\\text{ kg}\\cdot\\text{m}^2}} = \\sqrt{16363} \\approx 127.92\\text{ rad/s}$$\n$$f_n = \\frac{\\omega_n}{2\\pi} = \\frac{127.92}{2\\pi} \\approx 20.36\\text{ Hz} \\approx 20.4\\text{ Hz}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $20.4\\text{ Hz}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Be careful to divide $omega_n$ ($128\text{ rad/s}$) by $2pi$ to get cyclic frequency $f_n$ in $\text{Hz}$. Option (D) $128\text{ Hz}$ is the angular frequency trap!</p>"
+            }
+        },
+        {
+            "title": "Corrosion Terminology",
+            "formula": "$$\\text{Anode (Oxidation / Metal Loss): } M \\to M^{n+} + n e^-; \\quad \\text{Cathode (Reduction / Protection): } 2\\text{H}^+ + 2e^- \\to \\text{H}_2 \\ (\\text{Acid}), \\ \\text{O}_2 + 2\\text{H}_2\\text{O} + 4e^- \\to 4\\text{OH}^- \\ (\\text{Aerated})$$\n$$\\Delta E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} > 0; \\quad \\text{Faraday's Law of Electrolysis: } m = \\frac{I \\cdot t \\cdot M}{n \\cdot F} \\quad (F = 96485\\text{ C/mol})$$\n$$\\text{Cathodic Protection: Sacrificial Anode (Zn, Mg, Al on Fe) or Impressed Current (ICCP)}$$",
+            "description": "Corrosion is the electrochemical deterioration of an engineering metal resulting from chemical reaction with its surrounding environment. An electrochemical corrosion cell requires four essential elements: (1) Anode: metal undergoes oxidation, losing electrons and dissolving (M \\to M^{n+} + ne^-); (2) Cathode: consumes electrons via reduction reaction (e.g., hydrogen reduction in acid or oxygen reduction in aerated neutral water); (3) Metallic pathway: conducts electrons from anode to cathode; and (4) Electrolyte: liquid conducting ions between electrodes. Common corrosion types: (a) Galvanic Corrosion: two dissimilar metals in electrical contact in an electrolyte; the more active metal (higher on galvanic series, more negative standard reduction potential) corrodes preferentially; (b) Pitting Corrosion: localized, highly destructive cavity formation in passive alloys (stainless steels in chlorides); (c) Crevice Corrosion: localized attack occurring in shielded, stagnant recesses with depleted oxygen; (d) Intergranular Corrosion: preferential attack along grain boundaries (e.g., chromium carbide precipitation in sensitized stainless steel); (e) Stress Corrosion Cracking (SCC): brittle cracking from combined tensile stress and corrosive environment; and (f) Passivation: spontaneous formation of a thin, protective oxide film (e.g., Cr_2O_3 on stainless steel, Al_2O_3 on aluminum).",
+            "examTip": "Found in Materials Science, Chemical, Civil & Environmental Engineering. Essential FE Galvanic Series memory rule: When two metals couple together, the ANODE is the one that gets consumed/corroded. The metal that is MORE ACTIVE (less noble, lower potential) becomes the anode. Example: In galvanized steel (Zinc coating on Iron), Zinc is more active than Iron (E^\\circ_{Zn^{2+}/Zn} = -0.76 V vs. E^\\circ_{Fe^{2+}/Fe} = -0.44 V), so Zinc acts as a sacrificial anode, sacrificing itself to protect the underlying iron even if scratched!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Corrosion_Terminology.mp4",
+            "videoTitle": "Corrosion Terminology Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A buried carbon steel pipeline is cathodically protected by an external sacrificial magnesium anode ($M_{\\text{Mg}} = 24.31\\text{ g/mol}, n = 2$). The system delivers a continuous protective galvanic current of $I = 0.50\\text{ A}$.</p>\n<p>Using Faraday's constant $F = 96485\\text{ C/mol}$, the mass of magnesium consumed over $t = 1.0\\text{ year}$ ($365\\text{ days} = 3.1536 \\times 10^7\\text{ s}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.97\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $7.94\\text{ kg}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Total Electric Charge Transferred ($Q$)</strong></p>\n$$Q = I \\cdot t = (0.50\\text{ A})(3.1536 \\times 10^7\\text{ s}) = 1.5768 \\times 10^7\\text{ C}$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Faraday's Law of Electrolysis</strong></p>\n$$m = \\frac{Q \\cdot M}{n \\cdot F} = \\frac{(1.5768 \\times 10^7\\text{ C})(24.31\\text{ g/mol})}{(2)(96485\\text{ C/mol})} = \\frac{3.8332 \\times 10^8}{192970} \\approx 1986.4\\text{ g} \\approx 1.99\\text{ kg}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.99\\text{ kg}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Remember $n = 2$ for $\\text{Mg} \\to \\text{Mg}^{2+} + 2e^-$. If you forget $n = 2$, you get $3.97\\text{ kg}$ (Option C).</p>"
+            }
+        },
+        {
+            "title": "Difference between Ionic and Covalent Bonding",
+            "formula": "$$\\Delta EN = |EN_A - EN_B|; \\quad \\Delta EN > 1.7 \\implies \\text{Ionic Bond } (>50\\% \\text{ ionic character}); \\quad \\Delta EN < 1.7 \\implies \\text{Covalent Bond}$$\n$$\\% \\text{ Ionic Character} = \\left[1 - \\exp\\left(-0.25 (\\Delta EN)^2\\right)\\right] \\times 100\\% \\quad (\\text{Pauling's Equation})$$\n$$\\text{Ionic: } \\text{NaCl, MgO, } \\text{Al}_2\\text{O}_3 \\quad (\\text{Brittle, High } T_m, \\text{ Nondirectional, Insulator as solid, Conducts in liquid/melt});$$\n$$\\text{Covalent: } \\text{Diamond, } \\text{SiO}_2, \\text{ Si, } \\text{CH}_4, \\text{ H}_2\\text{O} \\quad (\\text{Directional orbital overlap, High bond strength, Low conductivity})$$",
+            "description": "Primary atomic chemical bonding is classified by how valence electrons are redistributed between interacting atoms to achieve stable outer octet configurations: (1) Ionic Bonding forms between atoms with large differences in electronegativity (\\Delta EN > 1.7, typically a metal and a non-metal, e.g., Na^+ and Cl^-). Valence electrons are completely transferred from the electropositive metal cation to the electronegative non-metal anion, creating nondirectional electrostatic Coulombic attraction forces. Characteristics: high melting and boiling points, hard but brittle crystal structures (cleaving along like-charge repelling planes), electrically insulating in solid state, but electrically and ionically conductive when melted or dissolved in aqueous solution. (2) Covalent Bonding forms between atoms with small or zero electronegativity differences (\\Delta EN < 1.7, typically between non-metals, e.g., C-C, Si, SiO_2, H_2O). Atoms share pairs of valence electrons in localized, highly directional hybrid orbitals. Characteristics: strong directional bonds, high hardness and melting points in 3D network covalent solids (diamond, quartz), but weak intermolecular forces between discrete covalent molecules (CH_4, CO_2), and poor electrical conductivity (except graphite).",
+            "examTip": "Found in Chemistry & Materials Science. Quick FE memory criteria: (1) Ionic: Metal + Non-metal (e.g., NaCl, MgO, CaO); nondirectional electrostatic; conducts in molten/solution state. (2) Covalent: Non-metal + Non-metal (e.g., Diamond, SiC, SiO_2, H_2O); directional orbital sharing; poor electrical conductors. (3) Metallic: Metal + Metal (delocalized electron sea; ductile, high electrical and thermal conductivity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Ionic_and_Covalent_Bonding.mp4",
+            "videoTitle": "Ionic vs. Covalent Bonding Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>The Pauling electronegativities of magnesium and oxygen are $EN_{\\text{Mg}} = 1.2$ and $EN_{\\text{O}} = 3.5$.</p>\n<p>Using Pauling's formula $\\%\\text{IC} = [1 - \\exp(-0.25 (\\Delta EN)^2)] \\times 100\\%$, the predominant bond type and approximate percent ionic character of magnesium oxide ($\\text{MgO}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Covalent bond with $\\%\\text{IC} \\approx 27\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Metallic bond with $\\%\\text{IC} \\approx 50\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Pure covalent bond with $\\%\\text{IC} \\approx 5\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Electronegativity Difference ($\\Delta EN$)</strong></p>\n$$\\Delta EN = |EN_{\\text{O}} - EN_{\\text{Mg}}| = |3.5 - 1.2| = 2.3$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Pauling's Percent Ionic Character Formula</strong></p>\n$$\\%\\text{IC} = \\left[1 - \\exp\\left(-0.25 (2.3)^2\\right)\\right] \\times 100\\% = \\left[1 - \\exp\\left(-0.25 \\times 5.29\\right)\\right] \\times 100\\%$$\n$$\\%\\text{IC} = \\left[1 - \\exp(-1.3225)\\right] \\times 100\\% = [1 - 0.2665] \\times 100\\% \\approx 73.35\\% \\approx 73\\%$$\n<p>Because $\\Delta EN = 2.3 > 1.7$ and $\\%\\text{IC} > 50\\%$, $\\text{MgO}$ is classified as an <strong>ionic bond</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Any bond with $Delta EN > 1.7$ has $> 50%$ ionic character and is classified predominantly as ionic.</p>"
+            }
         }
     ],
     "Electrical and Computer": [
@@ -18327,6 +19384,188 @@ window.calcEvaluate = function() {
             "solvedExample": {
                 "question": "<p>A linear time-invariant (LTI) control system has the step response:</p>\n<p>$$y_{\\text{step}}(t) = \\left(1 - e^{-4t}\\right) u(t)$$</p>\n<p>The unit impulse response $h(t)$ of this system and its response $y_{\\text{ramp}}(t)$ to a unit ramp input $r(t) = t \\cdot u(t)$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $h(t) = -4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $h(t) = e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(\\frac{t^2}{2} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Impulse Response ($h(t)$)</strong></p>\n$$h(t) = \\frac{d}{dt}[y_{\\text{step}}(t)] = \\frac{d}{dt}\\left[1 - e^{-4t}\\right] u(t) = 4 e^{-4t} u(t)$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Ramp Response ($y_{\\text{ramp}}(t)$)</strong></p>\n<p>Integrating step response yields the ramp response:</p>\n$$y_{\\text{ramp}}(t) = \\int_0^t (1 - e^{-4\\tau}) d\\tau = \\left[ \\tau + \\frac{1}{4} e^{-4\\tau} \\right]_0^t = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The transfer function is $H(s) = \\mathcal{L}\\{h(t)\\} = \\frac{4}{s + 4}$. Multiplying by $1/s^2$ (ramp) gives $Y(s) = \\frac{4}{s^2(s + 4)} = \\frac{1}{s^2} - \\frac{1/4}{s} + \\frac{1/4}{s + 4}$.</p>"
+            }
+        },
+        {
+            "title": "Three Equilibrium Equations in Statics",
+            "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad (\\text{2D Coplanar Statics});$$\n$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum F_z = 0, \\quad \\sum M_x = 0, \\quad \\sum M_y = 0, \\quad \\sum M_z = 0 \\quad (\\text{3D Space Statics})$$",
+            "description": "Statics investigates rigid bodies at rest or in uniform constant-velocity motion where net external forces and moments vanish. For general 2D coplanar force systems, exactly three independent scalar equations of equilibrium are available: (1) Summation of forces in x-direction equals zero (\\sum F_x = 0), (2) Summation of forces in y-direction equals zero (\\sum F_y = 0), and (3) Summation of moments about any arbitrary reference point O in the plane equals zero (\\sum M_O = 0). In concurrent 2D force systems where lines of action intersect at a single point, the moment equation is trivially satisfied, leaving only two independent equations (\\sum F_x = 0, \\sum F_y = 0). For 2D parallel force systems, one force equation and one moment equation apply. In 3D space, a body provides six independent equations of equilibrium (three translational and three rotational). If unknown support reactions exceed the number of independent equilibrium equations, the structure is statically indeterminate.",
+            "examTip": "Found in Statics & Mechanics of Materials. When solving 2D beams or frames: Always sum moments about the support with the greatest number of unknowns (typically a pin or hinge with 2 reactions). This eliminates those unknowns and lets you solve directly for the remaining reaction in a single equation. Watch sign conventions: counter-clockwise moments are conventionally positive (+CCW).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Three_Equilibrium_Equations_in_Statics.mp4",
+            "videoTitle": "Three Equilibrium Equations in Statics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A simply supported horizontal beam of span $L = 6.0\\text{ m}$ is pinned at support A and rests on a roller at support B. It carries a concentrated vertical load $P = 18.0\\text{ kN}$ at $x = 2.0\\text{ m}$ from A.</p>\n<p>Using the equilibrium equations, the vertical reaction forces $R_A$ and $R_B$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $R_A = 9.0\\text{ kN}, \\quad R_B = 9.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $R_A = 6.0\\text{ kN}, \\quad R_B = 12.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $R_A = 18.0\\text{ kN}, \\quad R_B = 0.0\\text{ kN}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Sum Moments About Support A ($\\sum M_A = 0$)</strong></p>\n$$\\sum M_A = 0 \\implies R_B(6.0\\text{ m}) - (18.0\\text{ kN})(2.0\\text{ m}) = 0$$\n$$6.0 R_B = 36.0 \\implies R_B = 6.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Sum Vertical Forces ($\\sum F_y = 0$)</strong></p>\n$$\\sum F_y = 0 \\implies R_A + R_B - 18.0 = 0 \\implies R_A = 18.0 - 6.0 = 12.0\\text{ kN}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The load is closer to support A (one-third of the span), so support A carries two-thirds of the load ($12\\text{ kN}$) and support B carries one-third ($6\\text{ kN}$).</p>"
+            }
+        },
+        {
+            "title": "Centroids of Common Objects",
+            "formula": "$$\\bar{x} = \\frac{\\sum \\bar{x}_i A_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum \\bar{y}_i A_i}{\\sum A_i}; \\quad \\text{Rectangle: } \\bar{y} = \\frac{h}{2}; \\quad \\text{Triangle: } \\bar{y} = \\frac{h}{3} \\text{ (from base)};$$\n$$\\text{Semicircle: } \\bar{y} = \\frac{4r}{3\\pi} \\approx 0.4244 r; \\quad \\text{Quarter Circle: } \\bar{x} = \\bar{y} = \\frac{4r}{3\\pi}; \\quad \\text{Circular Sector: } \\bar{x} = \\frac{2r\\sin\\alpha}{3\\alpha}$$",
+            "description": "The centroid of a planar area represents its geometric center, corresponding to the center of gravity of a thin plate with homogeneous density. For composite planar shapes constructed from common geometric sub-elements (rectangles, triangles, circles, and semicircles), the composite centroid coordinates (\\bar{x}, \\bar{y}) are determined by taking first moments of area divided by total area (\\sum \\bar{y}_i A_i / \\sum A_i). For holes or cutouts, their area is treated as negative (A_i < 0). Standard handbook centroid elevations measured from the flat base: Rectangle of height h has \\bar{y} = h/2; right or general triangle of height h has \\bar{y} = h/3 measured from base (2h/3 from vertex); semicircle of radius r has its centroid located along the line of symmetry at distance \\bar{y} = 4r/(3\\pi) \\approx 0.4244r from the diametral base.",
+            "examTip": "Found in Statics & Mechanics of Materials. The centroid location directly defines the neutral axis for bending stress (\\sigma = -M y / I) and the point of action for resultant hydrostatic fluid pressure forces (F_R = \\gamma \\bar{y} A). The classic trap is measuring the triangle centroid from the top vertex (h/3) instead of from the base (h/3 from flat base, 2h/3 from pointed vertex)! For a semicircle of radius r, memorizing 4r/(3\\pi) \\approx 0.4244r saves time.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Centroids_of_Common_Objects.mp4",
+            "videoTitle": "Centroids of Common Objects Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A composite cross-section consists of a rectangular web of width $b_1 = 20\\text{ mm}$ and height $h_1 = 100\\text{ mm}$, topped by a horizontal flange of width $b_2 = 120\\text{ mm}$ and thickness $t_2 = 20\\text{ mm}$.</p>\n<p>The centroid elevation $\\bar{y}$ measured from the bottom edge of the web is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $72.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $82.7\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $95.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Areas and Centroids of Sub-Components</strong></p>\n<p>Web (Component 1): $A_1 = 20 \\times 100 = 2000\\text{ mm}^2$, $y_1 = 100 / 2 = 50\\text{ mm}$.</p>\n<p>Flange (Component 2): $A_2 = 120 \\times 20 = 2400\\text{ mm}^2$, $y_2 = 100 + (20 / 2) = 110\\text{ mm}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Apply Composite Centroid Formula</strong></p>\n$$\\bar{y} = \\frac{A_1 y_1 + A_2 y_2}{A_1 + A_2} = \\frac{(2000)(50) + (2400)(110)}{2000 + 2400} = \\frac{100000 + 264000}{4400} = \\frac{364000}{4400} \\approx 82.73\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $82.7\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always measure individual centroids from the SAME global reference datum (the bottom edge in this problem).</p>"
+            }
+        },
+        {
+            "title": "Free Body Diagrams",
+            "formula": "$$\\text{Isolate Body } \\implies \\text{Active Forces } (\\text{Applied Loads, Weight}) + \\text{Reactive Support Forces } = \\mathbf{0}$$\n$$\\text{Cable / Rope: } 1 \\text{ unknown (Tension along cable)}; \\quad \\text{Roller / Rocker: } 1 \\text{ unknown (Normal force } N \\perp \\text{surface});$$\n$$\\text{Pin / Hinge: } 2 \\text{ unknowns } (R_x, R_y); \\quad \\text{Fixed / Built-in Support: } 3 \\text{ unknowns } (R_x, R_y, M_z)$$\n$$\\text{Two-Force Member: Equal, opposite, and collinear forces along line connecting the two pins}$$",
+            "description": "A Free Body Diagram (FBD) is the essential foundational tool of engineering mechanics. It consists of a sketch of the isolated structural component or system completely separated from its surroundings and supporting environment, depicting all applied active external loads, distributed pressures, body forces (weight W = mg acting at the center of gravity), and reactive forces and moments exerted by the removed supports. Support reaction rules: (1) Cables, ropes, and short links transmit only tensile or axial force along their centerline (1 unknown). (2) Smooth surfaces and rollers prevent translation perpendicular to the supporting guide plane, exerting a single normal force reaction N (1 unknown). (3) Rough surfaces add tangential friction force F_f \\le \\mu_s N (2 unknowns). (4) Pin joints prevent translational motion in two orthogonal directions, producing reaction components R_x and R_y but allowing free rotation (2 unknowns, no moment). (5) Fixed (clamped/cantilever) supports prevent both linear translation and angular rotation, producing vertical shear, axial horizontal force, and a resisting bending moment M (3 unknowns in 2D).",
+            "examTip": "Found in Statics, Dynamics & Structural Analysis. Drawing a correct FBD is step 1 for at least 30% of mechanics questions. Rules for 2-force members: If a member has pins at both ends and NO intermediate loads applied along its span, the reaction forces at the two ends MUST be equal in magnitude, opposite in direction, and collinear along the line connecting the two pins! Recognizing 2-force members simplifies trusses and mechanisms from 4 unknowns to 1 unknown.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Free_Body_Diagrams.mp4",
+            "videoTitle": "Free Body Diagrams Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A cantilever beam of length $L = 4.0\\text{ m}$ is rigidly clamped at wall A. It carries a distributed load that varies linearly from $w = 0$ at wall A to $w_0 = 12.0\\text{ kN/m}$ at the free tip B.</p>\n<p>From the Free Body Diagram, the clamping reaction moment $M_A$ at wall A required for static equilibrium is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $24.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $48.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $96.0\\text{ kN}\\cdot\\text{m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Replace Triangular Load by Equivalent Concentrated Load</strong></p>\n$$W = \\frac{1}{2} w_0 L = \\frac{1}{2}(12.0\\text{ kN/m})(4.0\\text{ m}) = 24.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Location of Resultant Force from Wall A</strong></p>\n<p>The centroid of the triangular load is at distance $\\frac{2}{3} L$ from the zero-load end (wall A):</p>\n$$x_{\\text{res}} = \\frac{2}{3}(4.0\\text{ m}) = \\frac{8.0}{3}\\text{ m} \\approx 2.667\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Sum Moments at Wall A ($\\sum M_A = 0$)</strong></p>\n$$M_A - W \\cdot x_{\\text{res}} = 0 \\implies M_A = (24.0\\text{ kN})\\left(\\frac{8.0}{3}\\text{ m}\\right) = 64.0\\text{ kN}\\cdot\\text{m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If the triangle were reversed (maximum load at A, zero at B), the centroid would be at $L/3 = 1.333\\text{ m}$ from A, yielding $M_A = 32.0\\text{ kN}\\cdot\\text{m}$. Always verify which end has the peak load!</p>"
+            }
+        },
+        {
+            "title": "Instantaneous Velocity and Acceleration",
+            "formula": "$$\\mathbf{v}(t) = \\frac{d\\mathbf{r}}{dt} = \\dot{x}\\mathbf{i} + \\dot{y}\\mathbf{j} + \\dot{z}\\mathbf{k}; \\quad \\mathbf{a}(t) = \\frac{d\\mathbf{v}}{dt} = \\frac{d^2\\mathbf{r}}{dt^2} = \\ddot{x}\\mathbf{i} + \\ddot{y}\\mathbf{j} + \\ddot{z}\\mathbf{k}$$\n$$a = v \\frac{dv}{ds} = \\frac{1}{2}\\frac{d(v^2)}{ds} \\quad (\\text{Differential Form when } a = f(s)); \\quad v(t) = v_0 + \\int_0^t a(t') dt'$$\n$$\\text{Normal-Tangential Coordinates: } \\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right)\\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right)\\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+            "description": "Instantaneous velocity \\mathbf{v}(t) defines the time rate of change of position vector \\mathbf{r}(t), and is always strictly tangent to the curved path of motion. Instantaneous acceleration \\mathbf{a}(t) is the second time derivative of position, describing changes in both velocity magnitude (speed) and velocity direction. For 1D rectilinear motion with position-dependent acceleration a(s), the chain rule yields a = v(dv/ds) \\implies \\int a \\, ds = \\int v \\, dv. In planar curvilinear motion resolved into intrinsic path (normal-tangential) coordinates: the tangential component a_t = \\dot{v} = dv/dt measures the rate of speeding up or slowing down; the normal component a_n = v^2/\\rho (where \\rho is the radius of curvature) is directed perpendicular toward the center of curvature, accounting purely for directional turning. Total magnitude is a = \\sqrt{a_t^2 + a_n^2}.",
+            "examTip": "Found in Dynamics: Kinematics of Particles. When acceleration is a function of position a(s) rather than time t, DO NOT try to use constant acceleration formulas (v = v_0 + at)! Instead, integrate using a \\, ds = v \\, dv. When an object moves along a curve at constant speed (v = \\text{const}), tangential acceleration a_t = 0, but normal acceleration a_n = v^2/\\rho \\ne 0!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4",
+            "videoTitle": "Instantaneous Velocity and Acceleration Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A vehicle travels on a curved horizontal highway track having a local radius of curvature $\\rho = 200\\text{ m}$. At a given instant, the car has a speed $v = 20.0\\text{ m/s}$ and is decelerating at a constant rate along the path of $a_t = -1.50\\text{ m/s}^2$.</p>\n<p>The magnitude of the total instantaneous acceleration vector is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $3.50\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(20.0\\text{ m/s})^2}{200\\text{ m}} = \\frac{400}{200} = 2.00\\text{ m/s}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Combine Orthogonal Components</strong></p>\n<p>The tangential acceleration is $a_t = -1.50\\text{ m/s}^2$. Because tangential and normal directions are perpendicular:</p>\n$$a = \\sqrt{a_t^2 + a_n^2} = \\sqrt{(-1.50)^2 + (2.00)^2} = \\sqrt{2.25 + 4.00} = \\sqrt{6.25} = 2.50\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $2.50\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Normal acceleration $a_n = v^2/\\rho$ is always positive and directed toward the center of curvature. Tangential acceleration $a_t$ can be positive (accelerating), zero (constant speed), or negative (braking).</p>"
+            }
+        },
+        {
+            "title": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+            "formula": "$$\\rho = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|} = \\frac{\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2}}{\\left|\\frac{d^2y}{dx^2}\\right|}; \\quad \\kappa = \\frac{1}{\\rho} = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}} \\quad (\\text{Curvature})$$\n$$\\text{At Extrema / Inflection Points where } y' = 0 \\implies \\rho = \\frac{1}{|y''|}, \\quad \\kappa = |y''|$$\n$$\\text{Small Slope Approximation in Beams: } \\frac{1}{\\rho} \\approx \\frac{d^2y}{dx^2} = \\frac{M(x)}{E I}$$",
+            "description": "The radius of curvature \\rho of a plane curve y = f(x) at any given point is the radius of the osculating (tangent) circle that best approximates the curve locally. The reciprocal of radius of curvature is curvature \\kappa = 1/\\rho, measuring the rate of turning of the tangent vector per unit arc length (d\\phi/ds). The general Cartesian formula computes \\rho = [1 + (y')^2]^{3/2} / |y''|. In dynamic trajectory analysis, normal acceleration depends inversely on radius of curvature (a_n = v^2/\\rho). In structural beam deflection theory, for small slopes (y' = dy/dx \\ll 1), (y')^2 \\approx 0, simplifying the relation to 1/\\rho \\approx d^2y/dx^2 = M/(EI), which forms the governing Euler-Bernoulli beam differential equation.",
+            "examTip": "Found in Mathematics & Dynamics (Path Kinematics). Common FE exam application: A particle or roller coaster car moves along a parabolic track y = c x^2. To find normal acceleration a_n = v^2/\\rho at the bottom (x = 0): y' = 2cx = 0 at x = 0, so \\rho = 1 / |y''| = 1 / (2c). Then a_n = v^2 / \\rho = 2 c v^2!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+            "videoTitle": "Radius of Curvature Formula Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A skateboarder rides through a parabolic bowl modeled by the curve $y = 0.05 x^2$ (where $x$ and $y$ are in meters). At the lowest point ($x = 0$), the skateboarder travels at a speed of $v = 8.0\\text{ m/s}$.</p>\n<p>The radius of curvature $\\rho$ at $x = 0$ and the corresponding normal acceleration $a_n$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\rho = 5.0\\text{ m}, \\quad a_n = 12.8\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\rho = 20.0\\text{ m}, \\quad a_n = 3.2\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\rho = 10.0\\text{ m}, \\quad a_n = 0.8\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute First and Second Derivatives</strong></p>\n$$y = 0.05 x^2 \\implies y' = \\frac{dy}{dx} = 0.10 x, \\quad y'' = \\frac{d^2y}{dx^2} = 0.10\\text{ m}^{-1}$$\n<p>At the bottom point ($x = 0$): $y'(0) = 0$ and $y''(0) = 0.10$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Radius of Curvature ($\\rho$)</strong></p>\n$$\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|} = \\frac{[1 + 0]^{3/2}}{0.10} = \\frac{1}{0.10} = 10.0\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(8.0\\text{ m/s})^2}{10.0\\text{ m}} = \\frac{64.0}{10.0} = 6.40\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The total normal force exerted on the skateboarder at the bottom is $N = m(g + a_n) = m(9.81 + 6.4) = 16.21 m\\text{ N}$, meaning the rider experiences $1.65\\text{ g}$'s!</p>"
+            }
+        },
+        {
+            "title": "Difference between Absolute and Gage Pressure",
+            "formula": "$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}}; \\quad P_{\\text{vac}} = P_{\\text{atm}} - P_{\\text{abs}} = -P_{\\text{gage}}$$\n$$P_{\\text{atm, standard}} = 101.325\\text{ kPa} = 1.01325\\text{ bar} = 14.696\\text{ psia} \\approx 14.7\\text{ psi} = 29.92\\text{ in. Hg} = 760\\text{ mmHg}$$\n$$\\text{Hydrostatic Pressure Variation: } P(h) = P_0 + \\rho g h = P_0 + \\gamma h$$",
+            "description": "Pressure is the compressive normal force per unit contact area (P = F/A). Fluid pressure is measured relative to two distinct reference baselines: (1) Absolute Pressure (P_abs) is measured relative to a perfect absolute vacuum (zero pressure datum where no molecular collisions exist). Absolute pressure can never be negative (P_abs \\ge 0). (2) Gage Pressure (P_gage) is measured relative to local atmospheric pressure (P_atm), which represents the ambient zero datum on standard pressure gages, Bourdon tubes, and tire gauges. When pressure drops below local atmospheric, it is termed vacuum pressure (P_vac = P_atm - P_abs = -P_gage). In all thermodynamic state equations (such as ideal gas law P V = m R T and steam tables), ABSOLUTE pressure MUST be used; substituting gage pressure produces erroneous results.",
+            "examTip": "Found in Fluid Mechanics & Thermodynamics. CRITICAL FE EXAM RULE: Whenever you use ideal gas equations (P v = R T, P V = n \\bar{R} T) or evaluate thermodynamic enthalpies and isentropic relations, pressure MUST be in absolute units! If the prompt states 'a tank is pressurized to 250 kPa gage under atmospheric pressure 101.3 kPa', absolute pressure is P = 250 + 101.3 = 351.3 kPa. In US Customary: psia = psig + 14.7.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Absolute_and_Gage_Pressure.mp4",
+            "videoTitle": "Absolute vs. Gage Pressure Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A Bourdon pressure gage attached to a compressed air receiver reads $P_{\\text{gage}} = 45.0\\text{ psig}$. The local atmospheric pressure is $P_{\\text{atm}} = 14.7\\text{ psia}$. The air inside the tank is at temperature $T = 70.0^\\circ\\text{F}$ ($T = 530.0\\text{ R}$).</p>\n<p>Given the specific gas constant for air $R = 53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot^\\circ\\text{R})$, the air density $\\rho$ inside the receiver is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.075\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.229\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.304\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.412\\text{ lbm/ft}^3$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Convert Gage Pressure to Absolute Pressure</strong></p>\n$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}} = 45.0\\text{ psig} + 14.7\\text{ psia} = 59.7\\text{ psia}$$\n<p>Convert $\\text{psia}$ ($\\text{lbf/in}^2$) to $\\text{lbf/ft}^2$:</p>\n$$P = 59.7 \\times 144 = 8596.8\\text{ lbf/ft}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Ideal Gas Law on Mass Basis ($P = \\rho R T$)</strong></p>\n$$\\rho = \\frac{P}{R T} = \\frac{8596.8\\text{ lbf/ft}^2}{(53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot\\text{R}))(530.0\\text{ R})} = \\frac{8596.8}{28275.5} \\approx 0.304\\text{ lbm/ft}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $0.304\\text{ lbm/ft}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Trap:</em> If you incorrectly use gage pressure ($45\\text{ psig}$), you obtain $\\rho = 0.229\\text{ lbm/ft}^3$ (Option B), which is the most common distractor answer on this type of question!</p>"
+            }
+        },
+        {
+            "title": "Newton's Second Law for a Particle",
+            "formula": "$$\\sum \\mathbf{F} = m \\mathbf{a} = m \\frac{d\\mathbf{v}}{dt} = \\frac{d\\mathbf{p}}{dt} \\quad (\\text{Inertial Equation of Motion});$$\n$$\\text{Rectangular: } \\sum F_x = m a_x, \\quad \\sum F_y = m a_y, \\quad \\sum F_z = m a_z;$$\n$$\\text{Normal-Tangential: } \\sum F_t = m \\frac{dv}{dt}, \\quad \\sum F_n = m \\frac{v^2}{\\rho}, \\quad \\sum F_b = 0;$$\n$$\\text{Polar / Cylindrical: } \\sum F_r = m(\\ddot{r} - r\\dot{\\theta}^2), \\quad \\sum F_\\theta = m(r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta})$$",
+            "description": "Newton's Second Law of Motion forms the central cornerstone of kinetics, stating that the vector sum of all external forces acting on a particle of constant mass m equals the particle's mass multiplied by its instantaneous acceleration vector relative to an inertial reference frame: \\sum \\mathbf{F} = m \\mathbf{a}. This can also be expressed as the time rate of change of linear momentum \\mathbf{p} = m \\mathbf{v}. To apply Newton's second law: (1) Construct a Free Body Diagram (FBD) showing all external forces (\\sum \\mathbf{F}), (2) Construct a Kinetic Diagram (KD) showing inertial mass-acceleration vectors (m\\mathbf{a}), (3) Choose the most convenient coordinate frame (rectangular for linear trajectories, path/normal-tangential for curved trajectories with known curvature \\rho, polar for radial/central force problems), and (4) Formulate scalar component equations.",
+            "examTip": "Found in Dynamics: Kinetics of Particles. In normal-tangential problems (e.g., car on banked curve, pendulum, loop-the-loop): \\sum F_n = m v^2/\\rho. The normal acceleration vector points inward toward the center of curvature; never draw centrifugal force on an inertial FBD—centrifugal force is an apparent fictitious force observed only in rotating non-inertial frames. Stick to real forces (N, W, F_f) and set their inward sum equal to m v^2/\\rho.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+            "videoTitle": "Newton's Second Law for a Particle Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A $1200\\text{ kg}$ automobile navigates a flat (unbanked, $\\theta = 0^\\circ$) horizontal circular curve of radius $\\rho = 150\\text{ m}$ at a constant speed of $v = 25.0\\text{ m/s}$.</p>\n<p>Assuming gravity $g = 9.81\\text{ m/s}^2$, the minimum coefficient of static friction $\\mu_s$ between tires and road required to prevent the vehicle from skidding outward is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.28$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.42$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.55$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.68$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Write Normal and Vertical Equations of Motion</strong></p>\n<p>Vertical equilibrium: $\\sum F_y = 0 \\implies N - mg = 0 \\implies N = mg$.</p>\n<p>Inward normal direction: The only horizontal force acting toward the center of the curve is static friction $F_f$:</p>\n$$\\sum F_n = m a_n \\implies F_f = m \\frac{v^2}{\\rho}$$\n<p><strong class=\"text-emerald-400\">Step 2: Relate Friction to Maximum Available Static Friction</strong></p>\n$$F_f \\le \\mu_s N \\implies m \\frac{v^2}{\\rho} \\le \\mu_s mg \\implies \\mu_s \\ge \\frac{v^2}{g \\rho}$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Minimum Friction Coefficient</strong></p>\n$$\\mu_{s,\\min} = \\frac{(25.0\\text{ m/s})^2}{(9.81\\text{ m/s}^2)(150\\text{ m})} = \\frac{625.0}{1471.5} \\approx 0.4247 \\approx 0.42$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $0.42$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that vehicle mass $m$ cancels out completely! A heavy truck and a lightweight sports car require the exact same minimum coefficient of friction to make the turn without sliding.</p>"
+            }
+        },
+        {
+            "title": "Conservation of Angular Momentum",
+            "formula": "$$\\mathbf{H}_O = \\mathbf{r} \\times m\\mathbf{v} \\quad (\\text{Particle about Point } O); \\quad H_G = I_G \\omega \\quad (\\text{Planar Rigid Body about Centroid } G)$$\n$$\\sum \\mathbf{M}_O = \\dot{\\mathbf{H}}_O = \\frac{d\\mathbf{H}_O}{dt}; \\quad \\text{When } \\sum \\mathbf{M}_O = \\mathbf{0} \\implies \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2} = \\text{constant}$$\n$$m r_1 v_{\\theta, 1} = m r_2 v_{\\theta, 2} \\quad (\\text{Central Force / Orbital Motion}); \\quad I_1 \\omega_1 = I_2 \\omega_2 \\quad (\\text{Rigid Body System})$$",
+            "description": "Angular momentum (moment of momentum) \\mathbf{H}_O describes the rotational momentum of a particle or rigid body about a fixed reference point O. The angular impulse-momentum theorem dictates that the time rate of change of angular momentum about point O equals the sum of external moments acting about O: \\sum \\mathbf{M}_O = d\\mathbf{H}_O/dt. When the resultant external moment about point O is zero (\\sum \\mathbf{M}_O = \\mathbf{0}), angular momentum about that point is strictly conserved: \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2}. Primary engineering conditions where angular momentum is conserved: (1) Central force motion (such as gravitation or orbiting satellites) where the line of action of the attraction force passes directly through the origin O (\\mathbf{r} \\times \\mathbf{F} = \\mathbf{0}); (2) Spinning mechanical systems undergoing internal mass redistribution (e.g., folding/extending solar panels, centrifugal clutches, figure skaters drawing in their limbs); and (3) Impact/collision of rotating bodies about fixed pivot joints where reaction impulses at the pivot produce zero moment.",
+            "examTip": "Found in Dynamics: Kinetics of Particles & Planar Rigid Bodies. Classic FE problem: Satellite in elliptical orbit around Earth. Since gravity is a central force pointing directly at Earth's center, angular momentum is conserved: r_p v_p = r_a v_a, where r_p, v_p are perigee distance and speed, and r_a, v_a are apogee distance and speed. Another classic problem: A spinning turntable of moment of inertia I_1 and angular velocity \\omega_1 has a stationary disk of inertia I_2 dropped onto it: \\omega_2 = \\frac{I_1 \\omega_1}{I_1 + I_2}.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Conservation_of_Angular_Momentum.mp4",
+            "videoTitle": "Conservation of Angular Momentum Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A scientific research satellite travels in an elliptical Earth orbit. At perigee (closest point of approach), its orbital radius is $r_p = 7000\\text{ km}$ and its orbital velocity is $v_p = 8.40\\text{ km/s}$.</p>\n<p>At apogee (farthest point), the orbital radius increases to $r_a = 35000\\text{ km}$. Because gravity is a central force with zero moment about the center of Earth, angular momentum is conserved. The satellite speed at apogee $v_a$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.68\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.10\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $4.20\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $16.8\\text{ km/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Conservation of Angular Momentum</strong></p>\n<p>At perigee and apogee, the velocity vectors are strictly perpendicular to the position vector from the center of Earth ($v_r = 0, v = v_\\theta$):</p>\n$$H_O = m r_p v_p = m r_a v_a$$\n<p><strong class=\"text-emerald-400\">Step 2: Solve for Apogee Speed ($v_a$)</strong></p>\n$$v_a = v_p \\left(\\frac{r_p}{r_a}\\right) = (8.40\\text{ km/s}) \\left(\\frac{7000\\text{ km}}{35000\\text{ km}}\\right) = 8.40 \\times \\frac{1}{5} = 1.68\\text{ km/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.68\\text{ km/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> As orbital radius increases by a factor of 5, velocity drops inversely by a factor of 5 to preserve angular momentum.</p>"
+            }
+        },
+        {
+            "title": "Difference between Free and Forced Vibrations",
+            "formula": "$$\\text{Free Vibration: } m \\ddot{x} + c \\dot{x} + k x = 0 \\implies \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\text{Forced Vibration: } m \\ddot{x} + c \\dot{x} + k x = F_0 \\cos(\\omega t) \\implies x(t) = x_{\\text{transient}}(t) + x_{\\text{steady-state}}(t)$$\n$$X = \\frac{F_0 / k}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}} = X_{\\text{static}} \\cdot M, \\quad r = \\frac{\\omega}{\\omega_n} \\ (\\text{Frequency Ratio}), \\quad M = \\frac{1}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}}$$",
+            "description": "Mechanical vibrations represent oscillating motions of physical bodies about an equilibrium position: (1) Free Vibration occurs when an elastic system is disturbed from its equilibrium state by an initial displacement x(0) or velocity \\dot{x}(0) and allowed to oscillate in the absence of ongoing external dynamic driving forces (F(t) = 0). The system oscillates at its natural frequency \\omega_n = \\sqrt{k/m} (or damped natural frequency \\omega_d = \\omega_n\\sqrt{1-\\zeta^2}), with amplitude decaying exponentially due to damping (c). (2) Forced Vibration occurs when an external time-dependent driving excitation force or base motion F(t) = F_0\\cos(\\omega t) continually acts upon the system. The total response consists of a decaying transient free response plus a persistent harmonic steady-state response that oscillates at the excitation frequency \\omega (NOT the natural frequency \\omega_n). When the excitation frequency matches the system natural frequency (r = \\omega/\\omega_n \\approx 1), Resonance occurs, causing magnification factor M \\approx 1/(2\\zeta) to surge, generating catastrophic oscillation amplitudes in lightly damped systems.",
+            "examTip": "Found in Mechanical Engineering: Mechanical Design and Dynamic Systems. Key comparison table for FE: (1) Free: Frequency is \\omega_n or \\omega_d, driven by initial conditions, decays to zero if damped. (2) Forced: Steady-state frequency is excitation frequency \\omega, driven by external load, persists indefinitely. (3) Resonance happens when \\omega \\approx \\omega_n (r = 1). If damping \\zeta = 0.05 (5%), the resonance magnification factor is M = 1/(2\\zeta) = 1/(2 \\times 0.05) = 10 times the static deflection!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Free_and_Forced_Vibrations.mp4",
+            "videoTitle": "Free vs. Forced Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A factory machine of total mass $m = 250\\text{ kg}$ is mounted on elastic isolators having equivalent total stiffness $k = 100\\text{ kN/m} = 100000\\text{ N/m}$ and damping ratio $\\zeta = 0.040$. The machine generates a harmonic rotating unbalance force of amplitude $F_0 = 500\\text{ N}$ operating at an excitation frequency $\\omega = 20.0\\text{ rad/s}$.</p>\n<p>The steady-state vibration amplitude $X$ of the machine is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $5.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $62.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $125.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Natural Frequency ($\\omega_n$) and Frequency Ratio ($r$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{100000\\text{ N/m}}{250\\text{ kg}}} = \\sqrt{400} = 20.0\\text{ rad/s}$$\n$$r = \\frac{\\omega}{\\omega_n} = \\frac{20.0}{20.0} = 1.00 \\quad (\\text{System operates at exact resonance})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Static Deflection ($X_{\\text{static}}$) and Dynamic Magnifier ($M$)</strong></p>\n$$X_{\\text{static}} = \\frac{F_0}{k} = \\frac{500\\text{ N}}{100000\\text{ N/m}} = 0.0050\\text{ m} = 5.0\\text{ mm}$$\n<p>At exact resonance ($r = 1$):</p>\n$$M = \\frac{1}{2\\zeta} = \\frac{1}{2(0.040)} = \\frac{1}{0.080} = 12.5$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Steady-State Amplitude ($X$)</strong></p>\n$$X = X_{\\text{static}} \\cdot M = (5.0\\text{ mm})(12.5) = 62.5\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $62.5\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The factor $1/(2\\zeta)$ is the classic resonant peak multiplier for any single degree of freedom system with light damping.</p>"
+            }
+        },
+        {
+            "title": "Governing Equation of Vibrations",
+            "formula": "$$m \\ddot{x}(t) + c \\dot{x}(t) + k x(t) = F(t) \\quad \\longleftrightarrow \\quad \\ddot{x} + 2\\zeta \\omega_n \\dot{x} + \\omega_n^2 x = \\frac{F(t)}{m}$$\n$$\\omega_n = \\sqrt{\\frac{k}{m}} \\quad (\\text{Undamped Natural Frequency [rad/s]}), \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\quad (\\text{Frequency [Hz]})$$\n$$c_c = 2\\sqrt{km} = 2m\\omega_n \\quad (\\text{Critical Damping Coefficient}), \\quad \\zeta = \\frac{c}{c_c} = \\frac{c}{2\\sqrt{km}} \\quad (\\text{Damping Ratio})$$\n$$\\text{Underdamped Response } (\\zeta < 1): \\quad x(t) = X_0 e^{-\\zeta \\omega_n t} \\sin(\\omega_d t + \\phi), \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+            "description": "The fundamental governing equation of motion for a linear Single Degree of Freedom (SDOF) vibratory system is derived from Newton's second law or D'Alembert's dynamic equilibrium: m\\ddot{x} + c\\dot{x} + kx = F(t), where m is equivalent mass, c is viscous damping coefficient, and k is equivalent elastic spring stiffness. Dividing across by mass m yields the standard canonical form \\ddot{x} + 2\\zeta\\omega_n\\dot{x} + \\omega_n^2 x = f(t). The damping ratio \\zeta = c / (2\\sqrt{km}) governs the physical behavior of free response: (1) Underdamped (\\zeta < 1): Oscillatory motion with exponentially decaying envelope e^{-\\zeta\\omega_n t}\\sin(\\omega_d t + \\phi); (2) Critically Damped (\\zeta = 1): Fastest non-oscillatory return to equilibrium with no overshoot; (3) Overdamped (\\zeta > 1): Sluggish exponential return without oscillation.",
+            "examTip": "Found in Mechanical & Civil Engineering: Vibrations and Dynamics. The three essential equations to memorize: \\omega_n = \\sqrt{k/m} in rad/s, f_n = \\omega_n/(2\\pi) in Hz (cycles/s), and c_c = 2\\sqrt{km}. To find equivalent stiffness k_eq: springs in parallel add directly (k_1 + k_2); springs in series add reciprocally (1/k_eq = 1/k_1 + 1/k_2). Cantilever beam end stiffness is k = 3EI/L^3.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Governing_Equation_of_Vibrations.mp4",
+            "videoTitle": "Governing Equation of Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A precision measuring instrument of mass $m = 4.0\\text{ kg}$ is mounted on a vibration isolator having spring stiffness $k = 3600\\text{ N/m}$ and viscous damping coefficient $c = 48.0\\text{ N}\\cdot\\text{s/m}$.</p>\n<p>The undamped natural frequency $\\omega_n$, damping ratio $\\zeta$, and damped natural frequency $\\omega_d$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.40, \\quad \\omega_d = 27.5\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 900\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 882\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 1.00, \\quad \\omega_d = 0.0\\text{ rad/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Undamped Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{3600\\text{ N/m}}{4.0\\text{ kg}}} = \\sqrt{900} = 30.0\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Critical Damping Coefficient ($c_c$) and Damping Ratio ($\\zeta$)</strong></p>\n$$c_c = 2 m \\omega_n = 2(4.0\\text{ kg})(30.0\\text{ rad/s}) = 240.0\\text{ N}\\cdot\\text{s/m}$$\n$$\\zeta = \\frac{c}{c_c} = \\frac{48.0\\text{ N}\\cdot\\text{s/m}}{240.0\\text{ N}\\cdot\\text{s/m}} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Compute Damped Natural Frequency ($\\omega_d$)</strong></p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 30.0 \\sqrt{1 - (0.20)^2} = 30.0 \\sqrt{0.96} \\approx 30.0(0.9798) \\approx 29.39\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For light damping ($zeta < 0.2$), the damped natural frequency $omega_d$ is very close to the undamped natural frequency $omega_n$ (within $2%$).</p>"
+            }
+        },
+        {
+            "title": "Examples of Torsional Vibrations",
+            "formula": "$$J \\ddot{\\theta} + c_t \\dot{\\theta} + k_t \\theta = T(t); \\quad k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{G \\pi d^4}{32 L} \\quad (\\text{Shaft Torsional Stiffness [N}\\cdot\\text{m/rad]})$$\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{G J_{\\text{polar}}}{J L}} \\quad (\\text{rad/s}), \\quad f_n = \\frac{\\omega_n}{2\\pi} \\quad (\\text{Hz})$$\n$$J = \\frac{1}{2} m r^2 \\quad (\\text{Solid Cylindrical Disk Polar Mass Moment of Inertia [kg}\\cdot\\text{m}^2])$$\n$$\\text{Two-Rotor System: } \\omega_n = \\sqrt{\\frac{k_t(J_1 + J_2)}{J_1 J_2}}, \\quad \\text{Nodal Point: } \\frac{L_1}{L_2} = \\frac{J_2}{J_1}$$",
+            "description": "Torsional vibration consists of angular oscillatory twisting of rotational mechanical components about their axis of rotation, governed by J\\ddot{\\theta} + k_t\\theta = 0, where J is the mass moment of inertia ([J] = \\text{kg}\\cdot\\text{m}^2) and k_t is torsional spring stiffness ([k_t] = \\text{N}\\cdot\\text{m/rad}). For a uniform cylindrical elastic shaft of shear modulus G, diameter d, length L, and polar second moment of area J_polar = \\pi d^4/32, torsional stiffness is k_t = G J_polar/L. Prominent real-world engineering examples: (1) Internal Combustion Engine Crankshafts subjected to cyclic gas pressure pulses and reciprocating piston inertia torques; (2) Marine propulsion propeller drive shafts; (3) Turbogenerator rotor trains linking steam turbines to electrical generators; (4) Helical drill strings in petroleum drilling; and (5) Centrifugal pump motor couplings. Severe torsional resonance creates excessive shear stresses that can cause fatigue shaft shearing without visible lateral vibration.",
+            "examTip": "Found in Mechanical Engineering: Machine Design and Vibrations. Watch out for the two distinct J's! J_polar in k_t = G J_polar/L is the polar moment of area of the shaft cross-section (J_polar = \\pi d^4 / 32, in m^4), whereas J (or I) in \\omega_n = \\sqrt{k_t / J} is the polar mass moment of inertia of the rotating rotor/flywheel (J = \\frac{1}{2}m r^2, in kg\\cdot m^2). If the shaft diameter doubles (2d), torsional stiffness k_t increases by 2^4 = 16 times!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Examples_of_Torsional_Vibrations.mp4",
+            "videoTitle": "Examples of Torsional Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A solid steel drive shaft ($G = 80.0\\text{ GPa} = 80.0 \\times 10^9\\text{ Pa}$) of diameter $d = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 1.20\\text{ m}$ is fixed at one end and attached to a heavy turbine rotor with polar mass moment of inertia $J = 2.50\\text{ kg}\\cdot\\text{m}^2$ at the other end.</p>\n<p>The torsional natural frequency $f_n$ (in $\\text{Hz}$) of the system is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $10.2\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $20.4\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40.8\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $128.0\\text{ Hz}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Polar Moment of Area of the Shaft ($J_{\\text{polar}}$)</strong></p>\n$$J_{\\text{polar}} = \\frac{\\pi d^4}{32} = \\frac{\\pi (0.050\\text{ m})^4}{32} = \\frac{\\pi (6.25 \\times 10^{-6})}{32} \\approx 6.136 \\times 10^{-7}\\text{ m}^4$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Torsional Spring Stiffness ($k_t$)</strong></p>\n$$k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{(80.0 \\times 10^9\\text{ Pa})(6.136 \\times 10^{-7}\\text{ m}^4)}{1.20\\text{ m}} = \\frac{49088}{1.20} \\approx 40907\\text{ N}\\cdot\\text{m/rad}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Torsional Natural Frequency ($omega_n$ and $f_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{40907\\text{ N}\\cdot\\text{m/rad}}{2.50\\text{ kg}\\cdot\\text{m}^2}} = \\sqrt{16363} \\approx 127.92\\text{ rad/s}$$\n$$f_n = \\frac{\\omega_n}{2\\pi} = \\frac{127.92}{2\\pi} \\approx 20.36\\text{ Hz} \\approx 20.4\\text{ Hz}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $20.4\\text{ Hz}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Be careful to divide $omega_n$ ($128\text{ rad/s}$) by $2pi$ to get cyclic frequency $f_n$ in $\text{Hz}$. Option (D) $128\text{ Hz}$ is the angular frequency trap!</p>"
+            }
+        },
+        {
+            "title": "Corrosion Terminology",
+            "formula": "$$\\text{Anode (Oxidation / Metal Loss): } M \\to M^{n+} + n e^-; \\quad \\text{Cathode (Reduction / Protection): } 2\\text{H}^+ + 2e^- \\to \\text{H}_2 \\ (\\text{Acid}), \\ \\text{O}_2 + 2\\text{H}_2\\text{O} + 4e^- \\to 4\\text{OH}^- \\ (\\text{Aerated})$$\n$$\\Delta E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} > 0; \\quad \\text{Faraday's Law of Electrolysis: } m = \\frac{I \\cdot t \\cdot M}{n \\cdot F} \\quad (F = 96485\\text{ C/mol})$$\n$$\\text{Cathodic Protection: Sacrificial Anode (Zn, Mg, Al on Fe) or Impressed Current (ICCP)}$$",
+            "description": "Corrosion is the electrochemical deterioration of an engineering metal resulting from chemical reaction with its surrounding environment. An electrochemical corrosion cell requires four essential elements: (1) Anode: metal undergoes oxidation, losing electrons and dissolving (M \\to M^{n+} + ne^-); (2) Cathode: consumes electrons via reduction reaction (e.g., hydrogen reduction in acid or oxygen reduction in aerated neutral water); (3) Metallic pathway: conducts electrons from anode to cathode; and (4) Electrolyte: liquid conducting ions between electrodes. Common corrosion types: (a) Galvanic Corrosion: two dissimilar metals in electrical contact in an electrolyte; the more active metal (higher on galvanic series, more negative standard reduction potential) corrodes preferentially; (b) Pitting Corrosion: localized, highly destructive cavity formation in passive alloys (stainless steels in chlorides); (c) Crevice Corrosion: localized attack occurring in shielded, stagnant recesses with depleted oxygen; (d) Intergranular Corrosion: preferential attack along grain boundaries (e.g., chromium carbide precipitation in sensitized stainless steel); (e) Stress Corrosion Cracking (SCC): brittle cracking from combined tensile stress and corrosive environment; and (f) Passivation: spontaneous formation of a thin, protective oxide film (e.g., Cr_2O_3 on stainless steel, Al_2O_3 on aluminum).",
+            "examTip": "Found in Materials Science, Chemical, Civil & Environmental Engineering. Essential FE Galvanic Series memory rule: When two metals couple together, the ANODE is the one that gets consumed/corroded. The metal that is MORE ACTIVE (less noble, lower potential) becomes the anode. Example: In galvanized steel (Zinc coating on Iron), Zinc is more active than Iron (E^\\circ_{Zn^{2+}/Zn} = -0.76 V vs. E^\\circ_{Fe^{2+}/Fe} = -0.44 V), so Zinc acts as a sacrificial anode, sacrificing itself to protect the underlying iron even if scratched!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Corrosion_Terminology.mp4",
+            "videoTitle": "Corrosion Terminology Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A buried carbon steel pipeline is cathodically protected by an external sacrificial magnesium anode ($M_{\\text{Mg}} = 24.31\\text{ g/mol}, n = 2$). The system delivers a continuous protective galvanic current of $I = 0.50\\text{ A}$.</p>\n<p>Using Faraday's constant $F = 96485\\text{ C/mol}$, the mass of magnesium consumed over $t = 1.0\\text{ year}$ ($365\\text{ days} = 3.1536 \\times 10^7\\text{ s}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.97\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $7.94\\text{ kg}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Total Electric Charge Transferred ($Q$)</strong></p>\n$$Q = I \\cdot t = (0.50\\text{ A})(3.1536 \\times 10^7\\text{ s}) = 1.5768 \\times 10^7\\text{ C}$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Faraday's Law of Electrolysis</strong></p>\n$$m = \\frac{Q \\cdot M}{n \\cdot F} = \\frac{(1.5768 \\times 10^7\\text{ C})(24.31\\text{ g/mol})}{(2)(96485\\text{ C/mol})} = \\frac{3.8332 \\times 10^8}{192970} \\approx 1986.4\\text{ g} \\approx 1.99\\text{ kg}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.99\\text{ kg}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Remember $n = 2$ for $\\text{Mg} \\to \\text{Mg}^{2+} + 2e^-$. If you forget $n = 2$, you get $3.97\\text{ kg}$ (Option C).</p>"
+            }
+        },
+        {
+            "title": "Difference between Ionic and Covalent Bonding",
+            "formula": "$$\\Delta EN = |EN_A - EN_B|; \\quad \\Delta EN > 1.7 \\implies \\text{Ionic Bond } (>50\\% \\text{ ionic character}); \\quad \\Delta EN < 1.7 \\implies \\text{Covalent Bond}$$\n$$\\% \\text{ Ionic Character} = \\left[1 - \\exp\\left(-0.25 (\\Delta EN)^2\\right)\\right] \\times 100\\% \\quad (\\text{Pauling's Equation})$$\n$$\\text{Ionic: } \\text{NaCl, MgO, } \\text{Al}_2\\text{O}_3 \\quad (\\text{Brittle, High } T_m, \\text{ Nondirectional, Insulator as solid, Conducts in liquid/melt});$$\n$$\\text{Covalent: } \\text{Diamond, } \\text{SiO}_2, \\text{ Si, } \\text{CH}_4, \\text{ H}_2\\text{O} \\quad (\\text{Directional orbital overlap, High bond strength, Low conductivity})$$",
+            "description": "Primary atomic chemical bonding is classified by how valence electrons are redistributed between interacting atoms to achieve stable outer octet configurations: (1) Ionic Bonding forms between atoms with large differences in electronegativity (\\Delta EN > 1.7, typically a metal and a non-metal, e.g., Na^+ and Cl^-). Valence electrons are completely transferred from the electropositive metal cation to the electronegative non-metal anion, creating nondirectional electrostatic Coulombic attraction forces. Characteristics: high melting and boiling points, hard but brittle crystal structures (cleaving along like-charge repelling planes), electrically insulating in solid state, but electrically and ionically conductive when melted or dissolved in aqueous solution. (2) Covalent Bonding forms between atoms with small or zero electronegativity differences (\\Delta EN < 1.7, typically between non-metals, e.g., C-C, Si, SiO_2, H_2O). Atoms share pairs of valence electrons in localized, highly directional hybrid orbitals. Characteristics: strong directional bonds, high hardness and melting points in 3D network covalent solids (diamond, quartz), but weak intermolecular forces between discrete covalent molecules (CH_4, CO_2), and poor electrical conductivity (except graphite).",
+            "examTip": "Found in Chemistry & Materials Science. Quick FE memory criteria: (1) Ionic: Metal + Non-metal (e.g., NaCl, MgO, CaO); nondirectional electrostatic; conducts in molten/solution state. (2) Covalent: Non-metal + Non-metal (e.g., Diamond, SiC, SiO_2, H_2O); directional orbital sharing; poor electrical conductors. (3) Metallic: Metal + Metal (delocalized electron sea; ductile, high electrical and thermal conductivity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Ionic_and_Covalent_Bonding.mp4",
+            "videoTitle": "Ionic vs. Covalent Bonding Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>The Pauling electronegativities of magnesium and oxygen are $EN_{\\text{Mg}} = 1.2$ and $EN_{\\text{O}} = 3.5$.</p>\n<p>Using Pauling's formula $\\%\\text{IC} = [1 - \\exp(-0.25 (\\Delta EN)^2)] \\times 100\\%$, the predominant bond type and approximate percent ionic character of magnesium oxide ($\\text{MgO}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Covalent bond with $\\%\\text{IC} \\approx 27\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Metallic bond with $\\%\\text{IC} \\approx 50\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Pure covalent bond with $\\%\\text{IC} \\approx 5\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Electronegativity Difference ($\\Delta EN$)</strong></p>\n$$\\Delta EN = |EN_{\\text{O}} - EN_{\\text{Mg}}| = |3.5 - 1.2| = 2.3$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Pauling's Percent Ionic Character Formula</strong></p>\n$$\\%\\text{IC} = \\left[1 - \\exp\\left(-0.25 (2.3)^2\\right)\\right] \\times 100\\% = \\left[1 - \\exp\\left(-0.25 \\times 5.29\\right)\\right] \\times 100\\%$$\n$$\\%\\text{IC} = \\left[1 - \\exp(-1.3225)\\right] \\times 100\\% = [1 - 0.2665] \\times 100\\% \\approx 73.35\\% \\approx 73\\%$$\n<p>Because $\\Delta EN = 2.3 > 1.7$ and $\\%\\text{IC} > 50\\%$, $\\text{MgO}$ is classified as an <strong>ionic bond</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Any bond with $Delta EN > 1.7$ has $> 50%$ ionic character and is classified predominantly as ionic.</p>"
             }
         }
     ],
@@ -21835,6 +23074,188 @@ window.calcEvaluate = function() {
                 "question": "<p>A linear time-invariant (LTI) control system has the step response:</p>\n<p>$$y_{\\text{step}}(t) = \\left(1 - e^{-4t}\\right) u(t)$$</p>\n<p>The unit impulse response $h(t)$ of this system and its response $y_{\\text{ramp}}(t)$ to a unit ramp input $r(t) = t \\cdot u(t)$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $h(t) = -4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $h(t) = e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(\\frac{t^2}{2} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Impulse Response ($h(t)$)</strong></p>\n$$h(t) = \\frac{d}{dt}[y_{\\text{step}}(t)] = \\frac{d}{dt}\\left[1 - e^{-4t}\\right] u(t) = 4 e^{-4t} u(t)$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Ramp Response ($y_{\\text{ramp}}(t)$)</strong></p>\n<p>Integrating step response yields the ramp response:</p>\n$$y_{\\text{ramp}}(t) = \\int_0^t (1 - e^{-4\\tau}) d\\tau = \\left[ \\tau + \\frac{1}{4} e^{-4\\tau} \\right]_0^t = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The transfer function is $H(s) = \\mathcal{L}\\{h(t)\\} = \\frac{4}{s + 4}$. Multiplying by $1/s^2$ (ramp) gives $Y(s) = \\frac{4}{s^2(s + 4)} = \\frac{1}{s^2} - \\frac{1/4}{s} + \\frac{1/4}{s + 4}$.</p>"
             }
+        },
+        {
+            "title": "Three Equilibrium Equations in Statics",
+            "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad (\\text{2D Coplanar Statics});$$\n$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum F_z = 0, \\quad \\sum M_x = 0, \\quad \\sum M_y = 0, \\quad \\sum M_z = 0 \\quad (\\text{3D Space Statics})$$",
+            "description": "Statics investigates rigid bodies at rest or in uniform constant-velocity motion where net external forces and moments vanish. For general 2D coplanar force systems, exactly three independent scalar equations of equilibrium are available: (1) Summation of forces in x-direction equals zero (\\sum F_x = 0), (2) Summation of forces in y-direction equals zero (\\sum F_y = 0), and (3) Summation of moments about any arbitrary reference point O in the plane equals zero (\\sum M_O = 0). In concurrent 2D force systems where lines of action intersect at a single point, the moment equation is trivially satisfied, leaving only two independent equations (\\sum F_x = 0, \\sum F_y = 0). For 2D parallel force systems, one force equation and one moment equation apply. In 3D space, a body provides six independent equations of equilibrium (three translational and three rotational). If unknown support reactions exceed the number of independent equilibrium equations, the structure is statically indeterminate.",
+            "examTip": "Found in Statics & Mechanics of Materials. When solving 2D beams or frames: Always sum moments about the support with the greatest number of unknowns (typically a pin or hinge with 2 reactions). This eliminates those unknowns and lets you solve directly for the remaining reaction in a single equation. Watch sign conventions: counter-clockwise moments are conventionally positive (+CCW).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Three_Equilibrium_Equations_in_Statics.mp4",
+            "videoTitle": "Three Equilibrium Equations in Statics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A simply supported horizontal beam of span $L = 6.0\\text{ m}$ is pinned at support A and rests on a roller at support B. It carries a concentrated vertical load $P = 18.0\\text{ kN}$ at $x = 2.0\\text{ m}$ from A.</p>\n<p>Using the equilibrium equations, the vertical reaction forces $R_A$ and $R_B$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $R_A = 9.0\\text{ kN}, \\quad R_B = 9.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $R_A = 6.0\\text{ kN}, \\quad R_B = 12.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $R_A = 18.0\\text{ kN}, \\quad R_B = 0.0\\text{ kN}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Sum Moments About Support A ($\\sum M_A = 0$)</strong></p>\n$$\\sum M_A = 0 \\implies R_B(6.0\\text{ m}) - (18.0\\text{ kN})(2.0\\text{ m}) = 0$$\n$$6.0 R_B = 36.0 \\implies R_B = 6.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Sum Vertical Forces ($\\sum F_y = 0$)</strong></p>\n$$\\sum F_y = 0 \\implies R_A + R_B - 18.0 = 0 \\implies R_A = 18.0 - 6.0 = 12.0\\text{ kN}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The load is closer to support A (one-third of the span), so support A carries two-thirds of the load ($12\\text{ kN}$) and support B carries one-third ($6\\text{ kN}$).</p>"
+            }
+        },
+        {
+            "title": "Centroids of Common Objects",
+            "formula": "$$\\bar{x} = \\frac{\\sum \\bar{x}_i A_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum \\bar{y}_i A_i}{\\sum A_i}; \\quad \\text{Rectangle: } \\bar{y} = \\frac{h}{2}; \\quad \\text{Triangle: } \\bar{y} = \\frac{h}{3} \\text{ (from base)};$$\n$$\\text{Semicircle: } \\bar{y} = \\frac{4r}{3\\pi} \\approx 0.4244 r; \\quad \\text{Quarter Circle: } \\bar{x} = \\bar{y} = \\frac{4r}{3\\pi}; \\quad \\text{Circular Sector: } \\bar{x} = \\frac{2r\\sin\\alpha}{3\\alpha}$$",
+            "description": "The centroid of a planar area represents its geometric center, corresponding to the center of gravity of a thin plate with homogeneous density. For composite planar shapes constructed from common geometric sub-elements (rectangles, triangles, circles, and semicircles), the composite centroid coordinates (\\bar{x}, \\bar{y}) are determined by taking first moments of area divided by total area (\\sum \\bar{y}_i A_i / \\sum A_i). For holes or cutouts, their area is treated as negative (A_i < 0). Standard handbook centroid elevations measured from the flat base: Rectangle of height h has \\bar{y} = h/2; right or general triangle of height h has \\bar{y} = h/3 measured from base (2h/3 from vertex); semicircle of radius r has its centroid located along the line of symmetry at distance \\bar{y} = 4r/(3\\pi) \\approx 0.4244r from the diametral base.",
+            "examTip": "Found in Statics & Mechanics of Materials. The centroid location directly defines the neutral axis for bending stress (\\sigma = -M y / I) and the point of action for resultant hydrostatic fluid pressure forces (F_R = \\gamma \\bar{y} A). The classic trap is measuring the triangle centroid from the top vertex (h/3) instead of from the base (h/3 from flat base, 2h/3 from pointed vertex)! For a semicircle of radius r, memorizing 4r/(3\\pi) \\approx 0.4244r saves time.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Centroids_of_Common_Objects.mp4",
+            "videoTitle": "Centroids of Common Objects Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A composite cross-section consists of a rectangular web of width $b_1 = 20\\text{ mm}$ and height $h_1 = 100\\text{ mm}$, topped by a horizontal flange of width $b_2 = 120\\text{ mm}$ and thickness $t_2 = 20\\text{ mm}$.</p>\n<p>The centroid elevation $\\bar{y}$ measured from the bottom edge of the web is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $72.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $82.7\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $95.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Areas and Centroids of Sub-Components</strong></p>\n<p>Web (Component 1): $A_1 = 20 \\times 100 = 2000\\text{ mm}^2$, $y_1 = 100 / 2 = 50\\text{ mm}$.</p>\n<p>Flange (Component 2): $A_2 = 120 \\times 20 = 2400\\text{ mm}^2$, $y_2 = 100 + (20 / 2) = 110\\text{ mm}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Apply Composite Centroid Formula</strong></p>\n$$\\bar{y} = \\frac{A_1 y_1 + A_2 y_2}{A_1 + A_2} = \\frac{(2000)(50) + (2400)(110)}{2000 + 2400} = \\frac{100000 + 264000}{4400} = \\frac{364000}{4400} \\approx 82.73\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $82.7\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always measure individual centroids from the SAME global reference datum (the bottom edge in this problem).</p>"
+            }
+        },
+        {
+            "title": "Free Body Diagrams",
+            "formula": "$$\\text{Isolate Body } \\implies \\text{Active Forces } (\\text{Applied Loads, Weight}) + \\text{Reactive Support Forces } = \\mathbf{0}$$\n$$\\text{Cable / Rope: } 1 \\text{ unknown (Tension along cable)}; \\quad \\text{Roller / Rocker: } 1 \\text{ unknown (Normal force } N \\perp \\text{surface});$$\n$$\\text{Pin / Hinge: } 2 \\text{ unknowns } (R_x, R_y); \\quad \\text{Fixed / Built-in Support: } 3 \\text{ unknowns } (R_x, R_y, M_z)$$\n$$\\text{Two-Force Member: Equal, opposite, and collinear forces along line connecting the two pins}$$",
+            "description": "A Free Body Diagram (FBD) is the essential foundational tool of engineering mechanics. It consists of a sketch of the isolated structural component or system completely separated from its surroundings and supporting environment, depicting all applied active external loads, distributed pressures, body forces (weight W = mg acting at the center of gravity), and reactive forces and moments exerted by the removed supports. Support reaction rules: (1) Cables, ropes, and short links transmit only tensile or axial force along their centerline (1 unknown). (2) Smooth surfaces and rollers prevent translation perpendicular to the supporting guide plane, exerting a single normal force reaction N (1 unknown). (3) Rough surfaces add tangential friction force F_f \\le \\mu_s N (2 unknowns). (4) Pin joints prevent translational motion in two orthogonal directions, producing reaction components R_x and R_y but allowing free rotation (2 unknowns, no moment). (5) Fixed (clamped/cantilever) supports prevent both linear translation and angular rotation, producing vertical shear, axial horizontal force, and a resisting bending moment M (3 unknowns in 2D).",
+            "examTip": "Found in Statics, Dynamics & Structural Analysis. Drawing a correct FBD is step 1 for at least 30% of mechanics questions. Rules for 2-force members: If a member has pins at both ends and NO intermediate loads applied along its span, the reaction forces at the two ends MUST be equal in magnitude, opposite in direction, and collinear along the line connecting the two pins! Recognizing 2-force members simplifies trusses and mechanisms from 4 unknowns to 1 unknown.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Free_Body_Diagrams.mp4",
+            "videoTitle": "Free Body Diagrams Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A cantilever beam of length $L = 4.0\\text{ m}$ is rigidly clamped at wall A. It carries a distributed load that varies linearly from $w = 0$ at wall A to $w_0 = 12.0\\text{ kN/m}$ at the free tip B.</p>\n<p>From the Free Body Diagram, the clamping reaction moment $M_A$ at wall A required for static equilibrium is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $24.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $48.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $96.0\\text{ kN}\\cdot\\text{m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Replace Triangular Load by Equivalent Concentrated Load</strong></p>\n$$W = \\frac{1}{2} w_0 L = \\frac{1}{2}(12.0\\text{ kN/m})(4.0\\text{ m}) = 24.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Location of Resultant Force from Wall A</strong></p>\n<p>The centroid of the triangular load is at distance $\\frac{2}{3} L$ from the zero-load end (wall A):</p>\n$$x_{\\text{res}} = \\frac{2}{3}(4.0\\text{ m}) = \\frac{8.0}{3}\\text{ m} \\approx 2.667\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Sum Moments at Wall A ($\\sum M_A = 0$)</strong></p>\n$$M_A - W \\cdot x_{\\text{res}} = 0 \\implies M_A = (24.0\\text{ kN})\\left(\\frac{8.0}{3}\\text{ m}\\right) = 64.0\\text{ kN}\\cdot\\text{m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If the triangle were reversed (maximum load at A, zero at B), the centroid would be at $L/3 = 1.333\\text{ m}$ from A, yielding $M_A = 32.0\\text{ kN}\\cdot\\text{m}$. Always verify which end has the peak load!</p>"
+            }
+        },
+        {
+            "title": "Instantaneous Velocity and Acceleration",
+            "formula": "$$\\mathbf{v}(t) = \\frac{d\\mathbf{r}}{dt} = \\dot{x}\\mathbf{i} + \\dot{y}\\mathbf{j} + \\dot{z}\\mathbf{k}; \\quad \\mathbf{a}(t) = \\frac{d\\mathbf{v}}{dt} = \\frac{d^2\\mathbf{r}}{dt^2} = \\ddot{x}\\mathbf{i} + \\ddot{y}\\mathbf{j} + \\ddot{z}\\mathbf{k}$$\n$$a = v \\frac{dv}{ds} = \\frac{1}{2}\\frac{d(v^2)}{ds} \\quad (\\text{Differential Form when } a = f(s)); \\quad v(t) = v_0 + \\int_0^t a(t') dt'$$\n$$\\text{Normal-Tangential Coordinates: } \\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right)\\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right)\\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+            "description": "Instantaneous velocity \\mathbf{v}(t) defines the time rate of change of position vector \\mathbf{r}(t), and is always strictly tangent to the curved path of motion. Instantaneous acceleration \\mathbf{a}(t) is the second time derivative of position, describing changes in both velocity magnitude (speed) and velocity direction. For 1D rectilinear motion with position-dependent acceleration a(s), the chain rule yields a = v(dv/ds) \\implies \\int a \\, ds = \\int v \\, dv. In planar curvilinear motion resolved into intrinsic path (normal-tangential) coordinates: the tangential component a_t = \\dot{v} = dv/dt measures the rate of speeding up or slowing down; the normal component a_n = v^2/\\rho (where \\rho is the radius of curvature) is directed perpendicular toward the center of curvature, accounting purely for directional turning. Total magnitude is a = \\sqrt{a_t^2 + a_n^2}.",
+            "examTip": "Found in Dynamics: Kinematics of Particles. When acceleration is a function of position a(s) rather than time t, DO NOT try to use constant acceleration formulas (v = v_0 + at)! Instead, integrate using a \\, ds = v \\, dv. When an object moves along a curve at constant speed (v = \\text{const}), tangential acceleration a_t = 0, but normal acceleration a_n = v^2/\\rho \\ne 0!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4",
+            "videoTitle": "Instantaneous Velocity and Acceleration Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A vehicle travels on a curved horizontal highway track having a local radius of curvature $\\rho = 200\\text{ m}$. At a given instant, the car has a speed $v = 20.0\\text{ m/s}$ and is decelerating at a constant rate along the path of $a_t = -1.50\\text{ m/s}^2$.</p>\n<p>The magnitude of the total instantaneous acceleration vector is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $3.50\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(20.0\\text{ m/s})^2}{200\\text{ m}} = \\frac{400}{200} = 2.00\\text{ m/s}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Combine Orthogonal Components</strong></p>\n<p>The tangential acceleration is $a_t = -1.50\\text{ m/s}^2$. Because tangential and normal directions are perpendicular:</p>\n$$a = \\sqrt{a_t^2 + a_n^2} = \\sqrt{(-1.50)^2 + (2.00)^2} = \\sqrt{2.25 + 4.00} = \\sqrt{6.25} = 2.50\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $2.50\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Normal acceleration $a_n = v^2/\\rho$ is always positive and directed toward the center of curvature. Tangential acceleration $a_t$ can be positive (accelerating), zero (constant speed), or negative (braking).</p>"
+            }
+        },
+        {
+            "title": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+            "formula": "$$\\rho = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|} = \\frac{\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2}}{\\left|\\frac{d^2y}{dx^2}\\right|}; \\quad \\kappa = \\frac{1}{\\rho} = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}} \\quad (\\text{Curvature})$$\n$$\\text{At Extrema / Inflection Points where } y' = 0 \\implies \\rho = \\frac{1}{|y''|}, \\quad \\kappa = |y''|$$\n$$\\text{Small Slope Approximation in Beams: } \\frac{1}{\\rho} \\approx \\frac{d^2y}{dx^2} = \\frac{M(x)}{E I}$$",
+            "description": "The radius of curvature \\rho of a plane curve y = f(x) at any given point is the radius of the osculating (tangent) circle that best approximates the curve locally. The reciprocal of radius of curvature is curvature \\kappa = 1/\\rho, measuring the rate of turning of the tangent vector per unit arc length (d\\phi/ds). The general Cartesian formula computes \\rho = [1 + (y')^2]^{3/2} / |y''|. In dynamic trajectory analysis, normal acceleration depends inversely on radius of curvature (a_n = v^2/\\rho). In structural beam deflection theory, for small slopes (y' = dy/dx \\ll 1), (y')^2 \\approx 0, simplifying the relation to 1/\\rho \\approx d^2y/dx^2 = M/(EI), which forms the governing Euler-Bernoulli beam differential equation.",
+            "examTip": "Found in Mathematics & Dynamics (Path Kinematics). Common FE exam application: A particle or roller coaster car moves along a parabolic track y = c x^2. To find normal acceleration a_n = v^2/\\rho at the bottom (x = 0): y' = 2cx = 0 at x = 0, so \\rho = 1 / |y''| = 1 / (2c). Then a_n = v^2 / \\rho = 2 c v^2!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+            "videoTitle": "Radius of Curvature Formula Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A skateboarder rides through a parabolic bowl modeled by the curve $y = 0.05 x^2$ (where $x$ and $y$ are in meters). At the lowest point ($x = 0$), the skateboarder travels at a speed of $v = 8.0\\text{ m/s}$.</p>\n<p>The radius of curvature $\\rho$ at $x = 0$ and the corresponding normal acceleration $a_n$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\rho = 5.0\\text{ m}, \\quad a_n = 12.8\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\rho = 20.0\\text{ m}, \\quad a_n = 3.2\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\rho = 10.0\\text{ m}, \\quad a_n = 0.8\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute First and Second Derivatives</strong></p>\n$$y = 0.05 x^2 \\implies y' = \\frac{dy}{dx} = 0.10 x, \\quad y'' = \\frac{d^2y}{dx^2} = 0.10\\text{ m}^{-1}$$\n<p>At the bottom point ($x = 0$): $y'(0) = 0$ and $y''(0) = 0.10$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Radius of Curvature ($\\rho$)</strong></p>\n$$\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|} = \\frac{[1 + 0]^{3/2}}{0.10} = \\frac{1}{0.10} = 10.0\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(8.0\\text{ m/s})^2}{10.0\\text{ m}} = \\frac{64.0}{10.0} = 6.40\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The total normal force exerted on the skateboarder at the bottom is $N = m(g + a_n) = m(9.81 + 6.4) = 16.21 m\\text{ N}$, meaning the rider experiences $1.65\\text{ g}$'s!</p>"
+            }
+        },
+        {
+            "title": "Difference between Absolute and Gage Pressure",
+            "formula": "$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}}; \\quad P_{\\text{vac}} = P_{\\text{atm}} - P_{\\text{abs}} = -P_{\\text{gage}}$$\n$$P_{\\text{atm, standard}} = 101.325\\text{ kPa} = 1.01325\\text{ bar} = 14.696\\text{ psia} \\approx 14.7\\text{ psi} = 29.92\\text{ in. Hg} = 760\\text{ mmHg}$$\n$$\\text{Hydrostatic Pressure Variation: } P(h) = P_0 + \\rho g h = P_0 + \\gamma h$$",
+            "description": "Pressure is the compressive normal force per unit contact area (P = F/A). Fluid pressure is measured relative to two distinct reference baselines: (1) Absolute Pressure (P_abs) is measured relative to a perfect absolute vacuum (zero pressure datum where no molecular collisions exist). Absolute pressure can never be negative (P_abs \\ge 0). (2) Gage Pressure (P_gage) is measured relative to local atmospheric pressure (P_atm), which represents the ambient zero datum on standard pressure gages, Bourdon tubes, and tire gauges. When pressure drops below local atmospheric, it is termed vacuum pressure (P_vac = P_atm - P_abs = -P_gage). In all thermodynamic state equations (such as ideal gas law P V = m R T and steam tables), ABSOLUTE pressure MUST be used; substituting gage pressure produces erroneous results.",
+            "examTip": "Found in Fluid Mechanics & Thermodynamics. CRITICAL FE EXAM RULE: Whenever you use ideal gas equations (P v = R T, P V = n \\bar{R} T) or evaluate thermodynamic enthalpies and isentropic relations, pressure MUST be in absolute units! If the prompt states 'a tank is pressurized to 250 kPa gage under atmospheric pressure 101.3 kPa', absolute pressure is P = 250 + 101.3 = 351.3 kPa. In US Customary: psia = psig + 14.7.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Absolute_and_Gage_Pressure.mp4",
+            "videoTitle": "Absolute vs. Gage Pressure Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A Bourdon pressure gage attached to a compressed air receiver reads $P_{\\text{gage}} = 45.0\\text{ psig}$. The local atmospheric pressure is $P_{\\text{atm}} = 14.7\\text{ psia}$. The air inside the tank is at temperature $T = 70.0^\\circ\\text{F}$ ($T = 530.0\\text{ R}$).</p>\n<p>Given the specific gas constant for air $R = 53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot^\\circ\\text{R})$, the air density $\\rho$ inside the receiver is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.075\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.229\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.304\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.412\\text{ lbm/ft}^3$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Convert Gage Pressure to Absolute Pressure</strong></p>\n$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}} = 45.0\\text{ psig} + 14.7\\text{ psia} = 59.7\\text{ psia}$$\n<p>Convert $\\text{psia}$ ($\\text{lbf/in}^2$) to $\\text{lbf/ft}^2$:</p>\n$$P = 59.7 \\times 144 = 8596.8\\text{ lbf/ft}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Ideal Gas Law on Mass Basis ($P = \\rho R T$)</strong></p>\n$$\\rho = \\frac{P}{R T} = \\frac{8596.8\\text{ lbf/ft}^2}{(53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot\\text{R}))(530.0\\text{ R})} = \\frac{8596.8}{28275.5} \\approx 0.304\\text{ lbm/ft}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $0.304\\text{ lbm/ft}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Trap:</em> If you incorrectly use gage pressure ($45\\text{ psig}$), you obtain $\\rho = 0.229\\text{ lbm/ft}^3$ (Option B), which is the most common distractor answer on this type of question!</p>"
+            }
+        },
+        {
+            "title": "Newton's Second Law for a Particle",
+            "formula": "$$\\sum \\mathbf{F} = m \\mathbf{a} = m \\frac{d\\mathbf{v}}{dt} = \\frac{d\\mathbf{p}}{dt} \\quad (\\text{Inertial Equation of Motion});$$\n$$\\text{Rectangular: } \\sum F_x = m a_x, \\quad \\sum F_y = m a_y, \\quad \\sum F_z = m a_z;$$\n$$\\text{Normal-Tangential: } \\sum F_t = m \\frac{dv}{dt}, \\quad \\sum F_n = m \\frac{v^2}{\\rho}, \\quad \\sum F_b = 0;$$\n$$\\text{Polar / Cylindrical: } \\sum F_r = m(\\ddot{r} - r\\dot{\\theta}^2), \\quad \\sum F_\\theta = m(r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta})$$",
+            "description": "Newton's Second Law of Motion forms the central cornerstone of kinetics, stating that the vector sum of all external forces acting on a particle of constant mass m equals the particle's mass multiplied by its instantaneous acceleration vector relative to an inertial reference frame: \\sum \\mathbf{F} = m \\mathbf{a}. This can also be expressed as the time rate of change of linear momentum \\mathbf{p} = m \\mathbf{v}. To apply Newton's second law: (1) Construct a Free Body Diagram (FBD) showing all external forces (\\sum \\mathbf{F}), (2) Construct a Kinetic Diagram (KD) showing inertial mass-acceleration vectors (m\\mathbf{a}), (3) Choose the most convenient coordinate frame (rectangular for linear trajectories, path/normal-tangential for curved trajectories with known curvature \\rho, polar for radial/central force problems), and (4) Formulate scalar component equations.",
+            "examTip": "Found in Dynamics: Kinetics of Particles. In normal-tangential problems (e.g., car on banked curve, pendulum, loop-the-loop): \\sum F_n = m v^2/\\rho. The normal acceleration vector points inward toward the center of curvature; never draw centrifugal force on an inertial FBD—centrifugal force is an apparent fictitious force observed only in rotating non-inertial frames. Stick to real forces (N, W, F_f) and set their inward sum equal to m v^2/\\rho.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+            "videoTitle": "Newton's Second Law for a Particle Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A $1200\\text{ kg}$ automobile navigates a flat (unbanked, $\\theta = 0^\\circ$) horizontal circular curve of radius $\\rho = 150\\text{ m}$ at a constant speed of $v = 25.0\\text{ m/s}$.</p>\n<p>Assuming gravity $g = 9.81\\text{ m/s}^2$, the minimum coefficient of static friction $\\mu_s$ between tires and road required to prevent the vehicle from skidding outward is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.28$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.42$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.55$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.68$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Write Normal and Vertical Equations of Motion</strong></p>\n<p>Vertical equilibrium: $\\sum F_y = 0 \\implies N - mg = 0 \\implies N = mg$.</p>\n<p>Inward normal direction: The only horizontal force acting toward the center of the curve is static friction $F_f$:</p>\n$$\\sum F_n = m a_n \\implies F_f = m \\frac{v^2}{\\rho}$$\n<p><strong class=\"text-emerald-400\">Step 2: Relate Friction to Maximum Available Static Friction</strong></p>\n$$F_f \\le \\mu_s N \\implies m \\frac{v^2}{\\rho} \\le \\mu_s mg \\implies \\mu_s \\ge \\frac{v^2}{g \\rho}$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Minimum Friction Coefficient</strong></p>\n$$\\mu_{s,\\min} = \\frac{(25.0\\text{ m/s})^2}{(9.81\\text{ m/s}^2)(150\\text{ m})} = \\frac{625.0}{1471.5} \\approx 0.4247 \\approx 0.42$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $0.42$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that vehicle mass $m$ cancels out completely! A heavy truck and a lightweight sports car require the exact same minimum coefficient of friction to make the turn without sliding.</p>"
+            }
+        },
+        {
+            "title": "Conservation of Angular Momentum",
+            "formula": "$$\\mathbf{H}_O = \\mathbf{r} \\times m\\mathbf{v} \\quad (\\text{Particle about Point } O); \\quad H_G = I_G \\omega \\quad (\\text{Planar Rigid Body about Centroid } G)$$\n$$\\sum \\mathbf{M}_O = \\dot{\\mathbf{H}}_O = \\frac{d\\mathbf{H}_O}{dt}; \\quad \\text{When } \\sum \\mathbf{M}_O = \\mathbf{0} \\implies \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2} = \\text{constant}$$\n$$m r_1 v_{\\theta, 1} = m r_2 v_{\\theta, 2} \\quad (\\text{Central Force / Orbital Motion}); \\quad I_1 \\omega_1 = I_2 \\omega_2 \\quad (\\text{Rigid Body System})$$",
+            "description": "Angular momentum (moment of momentum) \\mathbf{H}_O describes the rotational momentum of a particle or rigid body about a fixed reference point O. The angular impulse-momentum theorem dictates that the time rate of change of angular momentum about point O equals the sum of external moments acting about O: \\sum \\mathbf{M}_O = d\\mathbf{H}_O/dt. When the resultant external moment about point O is zero (\\sum \\mathbf{M}_O = \\mathbf{0}), angular momentum about that point is strictly conserved: \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2}. Primary engineering conditions where angular momentum is conserved: (1) Central force motion (such as gravitation or orbiting satellites) where the line of action of the attraction force passes directly through the origin O (\\mathbf{r} \\times \\mathbf{F} = \\mathbf{0}); (2) Spinning mechanical systems undergoing internal mass redistribution (e.g., folding/extending solar panels, centrifugal clutches, figure skaters drawing in their limbs); and (3) Impact/collision of rotating bodies about fixed pivot joints where reaction impulses at the pivot produce zero moment.",
+            "examTip": "Found in Dynamics: Kinetics of Particles & Planar Rigid Bodies. Classic FE problem: Satellite in elliptical orbit around Earth. Since gravity is a central force pointing directly at Earth's center, angular momentum is conserved: r_p v_p = r_a v_a, where r_p, v_p are perigee distance and speed, and r_a, v_a are apogee distance and speed. Another classic problem: A spinning turntable of moment of inertia I_1 and angular velocity \\omega_1 has a stationary disk of inertia I_2 dropped onto it: \\omega_2 = \\frac{I_1 \\omega_1}{I_1 + I_2}.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Conservation_of_Angular_Momentum.mp4",
+            "videoTitle": "Conservation of Angular Momentum Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A scientific research satellite travels in an elliptical Earth orbit. At perigee (closest point of approach), its orbital radius is $r_p = 7000\\text{ km}$ and its orbital velocity is $v_p = 8.40\\text{ km/s}$.</p>\n<p>At apogee (farthest point), the orbital radius increases to $r_a = 35000\\text{ km}$. Because gravity is a central force with zero moment about the center of Earth, angular momentum is conserved. The satellite speed at apogee $v_a$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.68\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.10\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $4.20\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $16.8\\text{ km/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Conservation of Angular Momentum</strong></p>\n<p>At perigee and apogee, the velocity vectors are strictly perpendicular to the position vector from the center of Earth ($v_r = 0, v = v_\\theta$):</p>\n$$H_O = m r_p v_p = m r_a v_a$$\n<p><strong class=\"text-emerald-400\">Step 2: Solve for Apogee Speed ($v_a$)</strong></p>\n$$v_a = v_p \\left(\\frac{r_p}{r_a}\\right) = (8.40\\text{ km/s}) \\left(\\frac{7000\\text{ km}}{35000\\text{ km}}\\right) = 8.40 \\times \\frac{1}{5} = 1.68\\text{ km/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.68\\text{ km/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> As orbital radius increases by a factor of 5, velocity drops inversely by a factor of 5 to preserve angular momentum.</p>"
+            }
+        },
+        {
+            "title": "Difference between Free and Forced Vibrations",
+            "formula": "$$\\text{Free Vibration: } m \\ddot{x} + c \\dot{x} + k x = 0 \\implies \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\text{Forced Vibration: } m \\ddot{x} + c \\dot{x} + k x = F_0 \\cos(\\omega t) \\implies x(t) = x_{\\text{transient}}(t) + x_{\\text{steady-state}}(t)$$\n$$X = \\frac{F_0 / k}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}} = X_{\\text{static}} \\cdot M, \\quad r = \\frac{\\omega}{\\omega_n} \\ (\\text{Frequency Ratio}), \\quad M = \\frac{1}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}}$$",
+            "description": "Mechanical vibrations represent oscillating motions of physical bodies about an equilibrium position: (1) Free Vibration occurs when an elastic system is disturbed from its equilibrium state by an initial displacement x(0) or velocity \\dot{x}(0) and allowed to oscillate in the absence of ongoing external dynamic driving forces (F(t) = 0). The system oscillates at its natural frequency \\omega_n = \\sqrt{k/m} (or damped natural frequency \\omega_d = \\omega_n\\sqrt{1-\\zeta^2}), with amplitude decaying exponentially due to damping (c). (2) Forced Vibration occurs when an external time-dependent driving excitation force or base motion F(t) = F_0\\cos(\\omega t) continually acts upon the system. The total response consists of a decaying transient free response plus a persistent harmonic steady-state response that oscillates at the excitation frequency \\omega (NOT the natural frequency \\omega_n). When the excitation frequency matches the system natural frequency (r = \\omega/\\omega_n \\approx 1), Resonance occurs, causing magnification factor M \\approx 1/(2\\zeta) to surge, generating catastrophic oscillation amplitudes in lightly damped systems.",
+            "examTip": "Found in Mechanical Engineering: Mechanical Design and Dynamic Systems. Key comparison table for FE: (1) Free: Frequency is \\omega_n or \\omega_d, driven by initial conditions, decays to zero if damped. (2) Forced: Steady-state frequency is excitation frequency \\omega, driven by external load, persists indefinitely. (3) Resonance happens when \\omega \\approx \\omega_n (r = 1). If damping \\zeta = 0.05 (5%), the resonance magnification factor is M = 1/(2\\zeta) = 1/(2 \\times 0.05) = 10 times the static deflection!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Free_and_Forced_Vibrations.mp4",
+            "videoTitle": "Free vs. Forced Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A factory machine of total mass $m = 250\\text{ kg}$ is mounted on elastic isolators having equivalent total stiffness $k = 100\\text{ kN/m} = 100000\\text{ N/m}$ and damping ratio $\\zeta = 0.040$. The machine generates a harmonic rotating unbalance force of amplitude $F_0 = 500\\text{ N}$ operating at an excitation frequency $\\omega = 20.0\\text{ rad/s}$.</p>\n<p>The steady-state vibration amplitude $X$ of the machine is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $5.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $62.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $125.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Natural Frequency ($\\omega_n$) and Frequency Ratio ($r$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{100000\\text{ N/m}}{250\\text{ kg}}} = \\sqrt{400} = 20.0\\text{ rad/s}$$\n$$r = \\frac{\\omega}{\\omega_n} = \\frac{20.0}{20.0} = 1.00 \\quad (\\text{System operates at exact resonance})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Static Deflection ($X_{\\text{static}}$) and Dynamic Magnifier ($M$)</strong></p>\n$$X_{\\text{static}} = \\frac{F_0}{k} = \\frac{500\\text{ N}}{100000\\text{ N/m}} = 0.0050\\text{ m} = 5.0\\text{ mm}$$\n<p>At exact resonance ($r = 1$):</p>\n$$M = \\frac{1}{2\\zeta} = \\frac{1}{2(0.040)} = \\frac{1}{0.080} = 12.5$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Steady-State Amplitude ($X$)</strong></p>\n$$X = X_{\\text{static}} \\cdot M = (5.0\\text{ mm})(12.5) = 62.5\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $62.5\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The factor $1/(2\\zeta)$ is the classic resonant peak multiplier for any single degree of freedom system with light damping.</p>"
+            }
+        },
+        {
+            "title": "Governing Equation of Vibrations",
+            "formula": "$$m \\ddot{x}(t) + c \\dot{x}(t) + k x(t) = F(t) \\quad \\longleftrightarrow \\quad \\ddot{x} + 2\\zeta \\omega_n \\dot{x} + \\omega_n^2 x = \\frac{F(t)}{m}$$\n$$\\omega_n = \\sqrt{\\frac{k}{m}} \\quad (\\text{Undamped Natural Frequency [rad/s]}), \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\quad (\\text{Frequency [Hz]})$$\n$$c_c = 2\\sqrt{km} = 2m\\omega_n \\quad (\\text{Critical Damping Coefficient}), \\quad \\zeta = \\frac{c}{c_c} = \\frac{c}{2\\sqrt{km}} \\quad (\\text{Damping Ratio})$$\n$$\\text{Underdamped Response } (\\zeta < 1): \\quad x(t) = X_0 e^{-\\zeta \\omega_n t} \\sin(\\omega_d t + \\phi), \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+            "description": "The fundamental governing equation of motion for a linear Single Degree of Freedom (SDOF) vibratory system is derived from Newton's second law or D'Alembert's dynamic equilibrium: m\\ddot{x} + c\\dot{x} + kx = F(t), where m is equivalent mass, c is viscous damping coefficient, and k is equivalent elastic spring stiffness. Dividing across by mass m yields the standard canonical form \\ddot{x} + 2\\zeta\\omega_n\\dot{x} + \\omega_n^2 x = f(t). The damping ratio \\zeta = c / (2\\sqrt{km}) governs the physical behavior of free response: (1) Underdamped (\\zeta < 1): Oscillatory motion with exponentially decaying envelope e^{-\\zeta\\omega_n t}\\sin(\\omega_d t + \\phi); (2) Critically Damped (\\zeta = 1): Fastest non-oscillatory return to equilibrium with no overshoot; (3) Overdamped (\\zeta > 1): Sluggish exponential return without oscillation.",
+            "examTip": "Found in Mechanical & Civil Engineering: Vibrations and Dynamics. The three essential equations to memorize: \\omega_n = \\sqrt{k/m} in rad/s, f_n = \\omega_n/(2\\pi) in Hz (cycles/s), and c_c = 2\\sqrt{km}. To find equivalent stiffness k_eq: springs in parallel add directly (k_1 + k_2); springs in series add reciprocally (1/k_eq = 1/k_1 + 1/k_2). Cantilever beam end stiffness is k = 3EI/L^3.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Governing_Equation_of_Vibrations.mp4",
+            "videoTitle": "Governing Equation of Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A precision measuring instrument of mass $m = 4.0\\text{ kg}$ is mounted on a vibration isolator having spring stiffness $k = 3600\\text{ N/m}$ and viscous damping coefficient $c = 48.0\\text{ N}\\cdot\\text{s/m}$.</p>\n<p>The undamped natural frequency $\\omega_n$, damping ratio $\\zeta$, and damped natural frequency $\\omega_d$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.40, \\quad \\omega_d = 27.5\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 900\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 882\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 1.00, \\quad \\omega_d = 0.0\\text{ rad/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Undamped Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{3600\\text{ N/m}}{4.0\\text{ kg}}} = \\sqrt{900} = 30.0\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Critical Damping Coefficient ($c_c$) and Damping Ratio ($\\zeta$)</strong></p>\n$$c_c = 2 m \\omega_n = 2(4.0\\text{ kg})(30.0\\text{ rad/s}) = 240.0\\text{ N}\\cdot\\text{s/m}$$\n$$\\zeta = \\frac{c}{c_c} = \\frac{48.0\\text{ N}\\cdot\\text{s/m}}{240.0\\text{ N}\\cdot\\text{s/m}} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Compute Damped Natural Frequency ($\\omega_d$)</strong></p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 30.0 \\sqrt{1 - (0.20)^2} = 30.0 \\sqrt{0.96} \\approx 30.0(0.9798) \\approx 29.39\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For light damping ($zeta < 0.2$), the damped natural frequency $omega_d$ is very close to the undamped natural frequency $omega_n$ (within $2%$).</p>"
+            }
+        },
+        {
+            "title": "Examples of Torsional Vibrations",
+            "formula": "$$J \\ddot{\\theta} + c_t \\dot{\\theta} + k_t \\theta = T(t); \\quad k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{G \\pi d^4}{32 L} \\quad (\\text{Shaft Torsional Stiffness [N}\\cdot\\text{m/rad]})$$\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{G J_{\\text{polar}}}{J L}} \\quad (\\text{rad/s}), \\quad f_n = \\frac{\\omega_n}{2\\pi} \\quad (\\text{Hz})$$\n$$J = \\frac{1}{2} m r^2 \\quad (\\text{Solid Cylindrical Disk Polar Mass Moment of Inertia [kg}\\cdot\\text{m}^2])$$\n$$\\text{Two-Rotor System: } \\omega_n = \\sqrt{\\frac{k_t(J_1 + J_2)}{J_1 J_2}}, \\quad \\text{Nodal Point: } \\frac{L_1}{L_2} = \\frac{J_2}{J_1}$$",
+            "description": "Torsional vibration consists of angular oscillatory twisting of rotational mechanical components about their axis of rotation, governed by J\\ddot{\\theta} + k_t\\theta = 0, where J is the mass moment of inertia ([J] = \\text{kg}\\cdot\\text{m}^2) and k_t is torsional spring stiffness ([k_t] = \\text{N}\\cdot\\text{m/rad}). For a uniform cylindrical elastic shaft of shear modulus G, diameter d, length L, and polar second moment of area J_polar = \\pi d^4/32, torsional stiffness is k_t = G J_polar/L. Prominent real-world engineering examples: (1) Internal Combustion Engine Crankshafts subjected to cyclic gas pressure pulses and reciprocating piston inertia torques; (2) Marine propulsion propeller drive shafts; (3) Turbogenerator rotor trains linking steam turbines to electrical generators; (4) Helical drill strings in petroleum drilling; and (5) Centrifugal pump motor couplings. Severe torsional resonance creates excessive shear stresses that can cause fatigue shaft shearing without visible lateral vibration.",
+            "examTip": "Found in Mechanical Engineering: Machine Design and Vibrations. Watch out for the two distinct J's! J_polar in k_t = G J_polar/L is the polar moment of area of the shaft cross-section (J_polar = \\pi d^4 / 32, in m^4), whereas J (or I) in \\omega_n = \\sqrt{k_t / J} is the polar mass moment of inertia of the rotating rotor/flywheel (J = \\frac{1}{2}m r^2, in kg\\cdot m^2). If the shaft diameter doubles (2d), torsional stiffness k_t increases by 2^4 = 16 times!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Examples_of_Torsional_Vibrations.mp4",
+            "videoTitle": "Examples of Torsional Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A solid steel drive shaft ($G = 80.0\\text{ GPa} = 80.0 \\times 10^9\\text{ Pa}$) of diameter $d = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 1.20\\text{ m}$ is fixed at one end and attached to a heavy turbine rotor with polar mass moment of inertia $J = 2.50\\text{ kg}\\cdot\\text{m}^2$ at the other end.</p>\n<p>The torsional natural frequency $f_n$ (in $\\text{Hz}$) of the system is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $10.2\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $20.4\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40.8\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $128.0\\text{ Hz}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Polar Moment of Area of the Shaft ($J_{\\text{polar}}$)</strong></p>\n$$J_{\\text{polar}} = \\frac{\\pi d^4}{32} = \\frac{\\pi (0.050\\text{ m})^4}{32} = \\frac{\\pi (6.25 \\times 10^{-6})}{32} \\approx 6.136 \\times 10^{-7}\\text{ m}^4$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Torsional Spring Stiffness ($k_t$)</strong></p>\n$$k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{(80.0 \\times 10^9\\text{ Pa})(6.136 \\times 10^{-7}\\text{ m}^4)}{1.20\\text{ m}} = \\frac{49088}{1.20} \\approx 40907\\text{ N}\\cdot\\text{m/rad}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Torsional Natural Frequency ($omega_n$ and $f_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{40907\\text{ N}\\cdot\\text{m/rad}}{2.50\\text{ kg}\\cdot\\text{m}^2}} = \\sqrt{16363} \\approx 127.92\\text{ rad/s}$$\n$$f_n = \\frac{\\omega_n}{2\\pi} = \\frac{127.92}{2\\pi} \\approx 20.36\\text{ Hz} \\approx 20.4\\text{ Hz}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $20.4\\text{ Hz}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Be careful to divide $omega_n$ ($128\text{ rad/s}$) by $2pi$ to get cyclic frequency $f_n$ in $\text{Hz}$. Option (D) $128\text{ Hz}$ is the angular frequency trap!</p>"
+            }
+        },
+        {
+            "title": "Corrosion Terminology",
+            "formula": "$$\\text{Anode (Oxidation / Metal Loss): } M \\to M^{n+} + n e^-; \\quad \\text{Cathode (Reduction / Protection): } 2\\text{H}^+ + 2e^- \\to \\text{H}_2 \\ (\\text{Acid}), \\ \\text{O}_2 + 2\\text{H}_2\\text{O} + 4e^- \\to 4\\text{OH}^- \\ (\\text{Aerated})$$\n$$\\Delta E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} > 0; \\quad \\text{Faraday's Law of Electrolysis: } m = \\frac{I \\cdot t \\cdot M}{n \\cdot F} \\quad (F = 96485\\text{ C/mol})$$\n$$\\text{Cathodic Protection: Sacrificial Anode (Zn, Mg, Al on Fe) or Impressed Current (ICCP)}$$",
+            "description": "Corrosion is the electrochemical deterioration of an engineering metal resulting from chemical reaction with its surrounding environment. An electrochemical corrosion cell requires four essential elements: (1) Anode: metal undergoes oxidation, losing electrons and dissolving (M \\to M^{n+} + ne^-); (2) Cathode: consumes electrons via reduction reaction (e.g., hydrogen reduction in acid or oxygen reduction in aerated neutral water); (3) Metallic pathway: conducts electrons from anode to cathode; and (4) Electrolyte: liquid conducting ions between electrodes. Common corrosion types: (a) Galvanic Corrosion: two dissimilar metals in electrical contact in an electrolyte; the more active metal (higher on galvanic series, more negative standard reduction potential) corrodes preferentially; (b) Pitting Corrosion: localized, highly destructive cavity formation in passive alloys (stainless steels in chlorides); (c) Crevice Corrosion: localized attack occurring in shielded, stagnant recesses with depleted oxygen; (d) Intergranular Corrosion: preferential attack along grain boundaries (e.g., chromium carbide precipitation in sensitized stainless steel); (e) Stress Corrosion Cracking (SCC): brittle cracking from combined tensile stress and corrosive environment; and (f) Passivation: spontaneous formation of a thin, protective oxide film (e.g., Cr_2O_3 on stainless steel, Al_2O_3 on aluminum).",
+            "examTip": "Found in Materials Science, Chemical, Civil & Environmental Engineering. Essential FE Galvanic Series memory rule: When two metals couple together, the ANODE is the one that gets consumed/corroded. The metal that is MORE ACTIVE (less noble, lower potential) becomes the anode. Example: In galvanized steel (Zinc coating on Iron), Zinc is more active than Iron (E^\\circ_{Zn^{2+}/Zn} = -0.76 V vs. E^\\circ_{Fe^{2+}/Fe} = -0.44 V), so Zinc acts as a sacrificial anode, sacrificing itself to protect the underlying iron even if scratched!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Corrosion_Terminology.mp4",
+            "videoTitle": "Corrosion Terminology Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A buried carbon steel pipeline is cathodically protected by an external sacrificial magnesium anode ($M_{\\text{Mg}} = 24.31\\text{ g/mol}, n = 2$). The system delivers a continuous protective galvanic current of $I = 0.50\\text{ A}$.</p>\n<p>Using Faraday's constant $F = 96485\\text{ C/mol}$, the mass of magnesium consumed over $t = 1.0\\text{ year}$ ($365\\text{ days} = 3.1536 \\times 10^7\\text{ s}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.97\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $7.94\\text{ kg}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Total Electric Charge Transferred ($Q$)</strong></p>\n$$Q = I \\cdot t = (0.50\\text{ A})(3.1536 \\times 10^7\\text{ s}) = 1.5768 \\times 10^7\\text{ C}$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Faraday's Law of Electrolysis</strong></p>\n$$m = \\frac{Q \\cdot M}{n \\cdot F} = \\frac{(1.5768 \\times 10^7\\text{ C})(24.31\\text{ g/mol})}{(2)(96485\\text{ C/mol})} = \\frac{3.8332 \\times 10^8}{192970} \\approx 1986.4\\text{ g} \\approx 1.99\\text{ kg}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.99\\text{ kg}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Remember $n = 2$ for $\\text{Mg} \\to \\text{Mg}^{2+} + 2e^-$. If you forget $n = 2$, you get $3.97\\text{ kg}$ (Option C).</p>"
+            }
+        },
+        {
+            "title": "Difference between Ionic and Covalent Bonding",
+            "formula": "$$\\Delta EN = |EN_A - EN_B|; \\quad \\Delta EN > 1.7 \\implies \\text{Ionic Bond } (>50\\% \\text{ ionic character}); \\quad \\Delta EN < 1.7 \\implies \\text{Covalent Bond}$$\n$$\\% \\text{ Ionic Character} = \\left[1 - \\exp\\left(-0.25 (\\Delta EN)^2\\right)\\right] \\times 100\\% \\quad (\\text{Pauling's Equation})$$\n$$\\text{Ionic: } \\text{NaCl, MgO, } \\text{Al}_2\\text{O}_3 \\quad (\\text{Brittle, High } T_m, \\text{ Nondirectional, Insulator as solid, Conducts in liquid/melt});$$\n$$\\text{Covalent: } \\text{Diamond, } \\text{SiO}_2, \\text{ Si, } \\text{CH}_4, \\text{ H}_2\\text{O} \\quad (\\text{Directional orbital overlap, High bond strength, Low conductivity})$$",
+            "description": "Primary atomic chemical bonding is classified by how valence electrons are redistributed between interacting atoms to achieve stable outer octet configurations: (1) Ionic Bonding forms between atoms with large differences in electronegativity (\\Delta EN > 1.7, typically a metal and a non-metal, e.g., Na^+ and Cl^-). Valence electrons are completely transferred from the electropositive metal cation to the electronegative non-metal anion, creating nondirectional electrostatic Coulombic attraction forces. Characteristics: high melting and boiling points, hard but brittle crystal structures (cleaving along like-charge repelling planes), electrically insulating in solid state, but electrically and ionically conductive when melted or dissolved in aqueous solution. (2) Covalent Bonding forms between atoms with small or zero electronegativity differences (\\Delta EN < 1.7, typically between non-metals, e.g., C-C, Si, SiO_2, H_2O). Atoms share pairs of valence electrons in localized, highly directional hybrid orbitals. Characteristics: strong directional bonds, high hardness and melting points in 3D network covalent solids (diamond, quartz), but weak intermolecular forces between discrete covalent molecules (CH_4, CO_2), and poor electrical conductivity (except graphite).",
+            "examTip": "Found in Chemistry & Materials Science. Quick FE memory criteria: (1) Ionic: Metal + Non-metal (e.g., NaCl, MgO, CaO); nondirectional electrostatic; conducts in molten/solution state. (2) Covalent: Non-metal + Non-metal (e.g., Diamond, SiC, SiO_2, H_2O); directional orbital sharing; poor electrical conductors. (3) Metallic: Metal + Metal (delocalized electron sea; ductile, high electrical and thermal conductivity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Ionic_and_Covalent_Bonding.mp4",
+            "videoTitle": "Ionic vs. Covalent Bonding Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>The Pauling electronegativities of magnesium and oxygen are $EN_{\\text{Mg}} = 1.2$ and $EN_{\\text{O}} = 3.5$.</p>\n<p>Using Pauling's formula $\\%\\text{IC} = [1 - \\exp(-0.25 (\\Delta EN)^2)] \\times 100\\%$, the predominant bond type and approximate percent ionic character of magnesium oxide ($\\text{MgO}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Covalent bond with $\\%\\text{IC} \\approx 27\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Metallic bond with $\\%\\text{IC} \\approx 50\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Pure covalent bond with $\\%\\text{IC} \\approx 5\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Electronegativity Difference ($\\Delta EN$)</strong></p>\n$$\\Delta EN = |EN_{\\text{O}} - EN_{\\text{Mg}}| = |3.5 - 1.2| = 2.3$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Pauling's Percent Ionic Character Formula</strong></p>\n$$\\%\\text{IC} = \\left[1 - \\exp\\left(-0.25 (2.3)^2\\right)\\right] \\times 100\\% = \\left[1 - \\exp\\left(-0.25 \\times 5.29\\right)\\right] \\times 100\\%$$\n$$\\%\\text{IC} = \\left[1 - \\exp(-1.3225)\\right] \\times 100\\% = [1 - 0.2665] \\times 100\\% \\approx 73.35\\% \\approx 73\\%$$\n<p>Because $\\Delta EN = 2.3 > 1.7$ and $\\%\\text{IC} > 50\\%$, $\\text{MgO}$ is classified as an <strong>ionic bond</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Any bond with $Delta EN > 1.7$ has $> 50%$ ionic character and is classified predominantly as ionic.</p>"
+            }
         }
     ],
     "Industrial": [
@@ -24453,6 +25874,188 @@ window.calcEvaluate = function() {
             "solvedExample": {
                 "question": "<p>A series RLC circuit has resistance $R = 20 ; \\Omega$, inductance $L = 0.50\\text{ H}$, and capacitance $C = 200 ; \\mu\\text{F}$.</p>\n<p>The un-damped natural frequency $\\omega_n$, the damping ratio $\\zeta$, the damping classification, and the damped natural frequency $\\omega_d$ (if applicable) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 0.20$ (Underdamped), $\\ \\omega_d = 97.98\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 1.00$ (Critically Damped)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 50\\text{ rad/s}, \\ \\zeta = 0.40$ (Underdamped), $\\ \\omega_d = 45.8\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 1.25$ (Overdamped)</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0.50 \\times 200 \\times 10^{-6}}} = \\frac{1}{\\sqrt{10^{-4}}} = 100\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Damping Ratio ($\\zeta$)</strong></p>\n$$\\zeta = \\frac{R}{2\\omega_n L} = \\frac{20}{2(100)(0.50)} = \\frac{20}{100} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Classify Regime and Calculate $\\omega_d$</strong></p>\n<p>Since $0 < \\zeta = 0.20 < 1$, the response is <strong>Underdamped</strong> (oscillatory transient with overshoot).</p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 100 \\sqrt{1 - 0.04} = 100 \\sqrt{0.96} \\approx 97.98\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 0.20$ (Underdamped), $\\ \\omega_d = 97.98\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Percentage overshoot for $\\zeta = 0.20$ is $M_p = e^{-\\pi(0.20)/\\sqrt{0.96}} \\times 100\\% \\approx 52.7\\%$.</p>"
+            }
+        },
+        {
+            "title": "Three Equilibrium Equations in Statics",
+            "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad (\\text{2D Coplanar Statics});$$\n$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum F_z = 0, \\quad \\sum M_x = 0, \\quad \\sum M_y = 0, \\quad \\sum M_z = 0 \\quad (\\text{3D Space Statics})$$",
+            "description": "Statics investigates rigid bodies at rest or in uniform constant-velocity motion where net external forces and moments vanish. For general 2D coplanar force systems, exactly three independent scalar equations of equilibrium are available: (1) Summation of forces in x-direction equals zero (\\sum F_x = 0), (2) Summation of forces in y-direction equals zero (\\sum F_y = 0), and (3) Summation of moments about any arbitrary reference point O in the plane equals zero (\\sum M_O = 0). In concurrent 2D force systems where lines of action intersect at a single point, the moment equation is trivially satisfied, leaving only two independent equations (\\sum F_x = 0, \\sum F_y = 0). For 2D parallel force systems, one force equation and one moment equation apply. In 3D space, a body provides six independent equations of equilibrium (three translational and three rotational). If unknown support reactions exceed the number of independent equilibrium equations, the structure is statically indeterminate.",
+            "examTip": "Found in Statics & Mechanics of Materials. When solving 2D beams or frames: Always sum moments about the support with the greatest number of unknowns (typically a pin or hinge with 2 reactions). This eliminates those unknowns and lets you solve directly for the remaining reaction in a single equation. Watch sign conventions: counter-clockwise moments are conventionally positive (+CCW).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Three_Equilibrium_Equations_in_Statics.mp4",
+            "videoTitle": "Three Equilibrium Equations in Statics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A simply supported horizontal beam of span $L = 6.0\\text{ m}$ is pinned at support A and rests on a roller at support B. It carries a concentrated vertical load $P = 18.0\\text{ kN}$ at $x = 2.0\\text{ m}$ from A.</p>\n<p>Using the equilibrium equations, the vertical reaction forces $R_A$ and $R_B$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $R_A = 9.0\\text{ kN}, \\quad R_B = 9.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $R_A = 6.0\\text{ kN}, \\quad R_B = 12.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $R_A = 18.0\\text{ kN}, \\quad R_B = 0.0\\text{ kN}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Sum Moments About Support A ($\\sum M_A = 0$)</strong></p>\n$$\\sum M_A = 0 \\implies R_B(6.0\\text{ m}) - (18.0\\text{ kN})(2.0\\text{ m}) = 0$$\n$$6.0 R_B = 36.0 \\implies R_B = 6.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Sum Vertical Forces ($\\sum F_y = 0$)</strong></p>\n$$\\sum F_y = 0 \\implies R_A + R_B - 18.0 = 0 \\implies R_A = 18.0 - 6.0 = 12.0\\text{ kN}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The load is closer to support A (one-third of the span), so support A carries two-thirds of the load ($12\\text{ kN}$) and support B carries one-third ($6\\text{ kN}$).</p>"
+            }
+        },
+        {
+            "title": "Centroids of Common Objects",
+            "formula": "$$\\bar{x} = \\frac{\\sum \\bar{x}_i A_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum \\bar{y}_i A_i}{\\sum A_i}; \\quad \\text{Rectangle: } \\bar{y} = \\frac{h}{2}; \\quad \\text{Triangle: } \\bar{y} = \\frac{h}{3} \\text{ (from base)};$$\n$$\\text{Semicircle: } \\bar{y} = \\frac{4r}{3\\pi} \\approx 0.4244 r; \\quad \\text{Quarter Circle: } \\bar{x} = \\bar{y} = \\frac{4r}{3\\pi}; \\quad \\text{Circular Sector: } \\bar{x} = \\frac{2r\\sin\\alpha}{3\\alpha}$$",
+            "description": "The centroid of a planar area represents its geometric center, corresponding to the center of gravity of a thin plate with homogeneous density. For composite planar shapes constructed from common geometric sub-elements (rectangles, triangles, circles, and semicircles), the composite centroid coordinates (\\bar{x}, \\bar{y}) are determined by taking first moments of area divided by total area (\\sum \\bar{y}_i A_i / \\sum A_i). For holes or cutouts, their area is treated as negative (A_i < 0). Standard handbook centroid elevations measured from the flat base: Rectangle of height h has \\bar{y} = h/2; right or general triangle of height h has \\bar{y} = h/3 measured from base (2h/3 from vertex); semicircle of radius r has its centroid located along the line of symmetry at distance \\bar{y} = 4r/(3\\pi) \\approx 0.4244r from the diametral base.",
+            "examTip": "Found in Statics & Mechanics of Materials. The centroid location directly defines the neutral axis for bending stress (\\sigma = -M y / I) and the point of action for resultant hydrostatic fluid pressure forces (F_R = \\gamma \\bar{y} A). The classic trap is measuring the triangle centroid from the top vertex (h/3) instead of from the base (h/3 from flat base, 2h/3 from pointed vertex)! For a semicircle of radius r, memorizing 4r/(3\\pi) \\approx 0.4244r saves time.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Centroids_of_Common_Objects.mp4",
+            "videoTitle": "Centroids of Common Objects Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A composite cross-section consists of a rectangular web of width $b_1 = 20\\text{ mm}$ and height $h_1 = 100\\text{ mm}$, topped by a horizontal flange of width $b_2 = 120\\text{ mm}$ and thickness $t_2 = 20\\text{ mm}$.</p>\n<p>The centroid elevation $\\bar{y}$ measured from the bottom edge of the web is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $72.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $82.7\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $95.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Areas and Centroids of Sub-Components</strong></p>\n<p>Web (Component 1): $A_1 = 20 \\times 100 = 2000\\text{ mm}^2$, $y_1 = 100 / 2 = 50\\text{ mm}$.</p>\n<p>Flange (Component 2): $A_2 = 120 \\times 20 = 2400\\text{ mm}^2$, $y_2 = 100 + (20 / 2) = 110\\text{ mm}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Apply Composite Centroid Formula</strong></p>\n$$\\bar{y} = \\frac{A_1 y_1 + A_2 y_2}{A_1 + A_2} = \\frac{(2000)(50) + (2400)(110)}{2000 + 2400} = \\frac{100000 + 264000}{4400} = \\frac{364000}{4400} \\approx 82.73\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $82.7\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always measure individual centroids from the SAME global reference datum (the bottom edge in this problem).</p>"
+            }
+        },
+        {
+            "title": "Free Body Diagrams",
+            "formula": "$$\\text{Isolate Body } \\implies \\text{Active Forces } (\\text{Applied Loads, Weight}) + \\text{Reactive Support Forces } = \\mathbf{0}$$\n$$\\text{Cable / Rope: } 1 \\text{ unknown (Tension along cable)}; \\quad \\text{Roller / Rocker: } 1 \\text{ unknown (Normal force } N \\perp \\text{surface});$$\n$$\\text{Pin / Hinge: } 2 \\text{ unknowns } (R_x, R_y); \\quad \\text{Fixed / Built-in Support: } 3 \\text{ unknowns } (R_x, R_y, M_z)$$\n$$\\text{Two-Force Member: Equal, opposite, and collinear forces along line connecting the two pins}$$",
+            "description": "A Free Body Diagram (FBD) is the essential foundational tool of engineering mechanics. It consists of a sketch of the isolated structural component or system completely separated from its surroundings and supporting environment, depicting all applied active external loads, distributed pressures, body forces (weight W = mg acting at the center of gravity), and reactive forces and moments exerted by the removed supports. Support reaction rules: (1) Cables, ropes, and short links transmit only tensile or axial force along their centerline (1 unknown). (2) Smooth surfaces and rollers prevent translation perpendicular to the supporting guide plane, exerting a single normal force reaction N (1 unknown). (3) Rough surfaces add tangential friction force F_f \\le \\mu_s N (2 unknowns). (4) Pin joints prevent translational motion in two orthogonal directions, producing reaction components R_x and R_y but allowing free rotation (2 unknowns, no moment). (5) Fixed (clamped/cantilever) supports prevent both linear translation and angular rotation, producing vertical shear, axial horizontal force, and a resisting bending moment M (3 unknowns in 2D).",
+            "examTip": "Found in Statics, Dynamics & Structural Analysis. Drawing a correct FBD is step 1 for at least 30% of mechanics questions. Rules for 2-force members: If a member has pins at both ends and NO intermediate loads applied along its span, the reaction forces at the two ends MUST be equal in magnitude, opposite in direction, and collinear along the line connecting the two pins! Recognizing 2-force members simplifies trusses and mechanisms from 4 unknowns to 1 unknown.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Free_Body_Diagrams.mp4",
+            "videoTitle": "Free Body Diagrams Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A cantilever beam of length $L = 4.0\\text{ m}$ is rigidly clamped at wall A. It carries a distributed load that varies linearly from $w = 0$ at wall A to $w_0 = 12.0\\text{ kN/m}$ at the free tip B.</p>\n<p>From the Free Body Diagram, the clamping reaction moment $M_A$ at wall A required for static equilibrium is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $24.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $48.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $96.0\\text{ kN}\\cdot\\text{m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Replace Triangular Load by Equivalent Concentrated Load</strong></p>\n$$W = \\frac{1}{2} w_0 L = \\frac{1}{2}(12.0\\text{ kN/m})(4.0\\text{ m}) = 24.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Location of Resultant Force from Wall A</strong></p>\n<p>The centroid of the triangular load is at distance $\\frac{2}{3} L$ from the zero-load end (wall A):</p>\n$$x_{\\text{res}} = \\frac{2}{3}(4.0\\text{ m}) = \\frac{8.0}{3}\\text{ m} \\approx 2.667\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Sum Moments at Wall A ($\\sum M_A = 0$)</strong></p>\n$$M_A - W \\cdot x_{\\text{res}} = 0 \\implies M_A = (24.0\\text{ kN})\\left(\\frac{8.0}{3}\\text{ m}\\right) = 64.0\\text{ kN}\\cdot\\text{m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If the triangle were reversed (maximum load at A, zero at B), the centroid would be at $L/3 = 1.333\\text{ m}$ from A, yielding $M_A = 32.0\\text{ kN}\\cdot\\text{m}$. Always verify which end has the peak load!</p>"
+            }
+        },
+        {
+            "title": "Instantaneous Velocity and Acceleration",
+            "formula": "$$\\mathbf{v}(t) = \\frac{d\\mathbf{r}}{dt} = \\dot{x}\\mathbf{i} + \\dot{y}\\mathbf{j} + \\dot{z}\\mathbf{k}; \\quad \\mathbf{a}(t) = \\frac{d\\mathbf{v}}{dt} = \\frac{d^2\\mathbf{r}}{dt^2} = \\ddot{x}\\mathbf{i} + \\ddot{y}\\mathbf{j} + \\ddot{z}\\mathbf{k}$$\n$$a = v \\frac{dv}{ds} = \\frac{1}{2}\\frac{d(v^2)}{ds} \\quad (\\text{Differential Form when } a = f(s)); \\quad v(t) = v_0 + \\int_0^t a(t') dt'$$\n$$\\text{Normal-Tangential Coordinates: } \\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right)\\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right)\\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+            "description": "Instantaneous velocity \\mathbf{v}(t) defines the time rate of change of position vector \\mathbf{r}(t), and is always strictly tangent to the curved path of motion. Instantaneous acceleration \\mathbf{a}(t) is the second time derivative of position, describing changes in both velocity magnitude (speed) and velocity direction. For 1D rectilinear motion with position-dependent acceleration a(s), the chain rule yields a = v(dv/ds) \\implies \\int a \\, ds = \\int v \\, dv. In planar curvilinear motion resolved into intrinsic path (normal-tangential) coordinates: the tangential component a_t = \\dot{v} = dv/dt measures the rate of speeding up or slowing down; the normal component a_n = v^2/\\rho (where \\rho is the radius of curvature) is directed perpendicular toward the center of curvature, accounting purely for directional turning. Total magnitude is a = \\sqrt{a_t^2 + a_n^2}.",
+            "examTip": "Found in Dynamics: Kinematics of Particles. When acceleration is a function of position a(s) rather than time t, DO NOT try to use constant acceleration formulas (v = v_0 + at)! Instead, integrate using a \\, ds = v \\, dv. When an object moves along a curve at constant speed (v = \\text{const}), tangential acceleration a_t = 0, but normal acceleration a_n = v^2/\\rho \\ne 0!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4",
+            "videoTitle": "Instantaneous Velocity and Acceleration Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A vehicle travels on a curved horizontal highway track having a local radius of curvature $\\rho = 200\\text{ m}$. At a given instant, the car has a speed $v = 20.0\\text{ m/s}$ and is decelerating at a constant rate along the path of $a_t = -1.50\\text{ m/s}^2$.</p>\n<p>The magnitude of the total instantaneous acceleration vector is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $3.50\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(20.0\\text{ m/s})^2}{200\\text{ m}} = \\frac{400}{200} = 2.00\\text{ m/s}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Combine Orthogonal Components</strong></p>\n<p>The tangential acceleration is $a_t = -1.50\\text{ m/s}^2$. Because tangential and normal directions are perpendicular:</p>\n$$a = \\sqrt{a_t^2 + a_n^2} = \\sqrt{(-1.50)^2 + (2.00)^2} = \\sqrt{2.25 + 4.00} = \\sqrt{6.25} = 2.50\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $2.50\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Normal acceleration $a_n = v^2/\\rho$ is always positive and directed toward the center of curvature. Tangential acceleration $a_t$ can be positive (accelerating), zero (constant speed), or negative (braking).</p>"
+            }
+        },
+        {
+            "title": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+            "formula": "$$\\rho = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|} = \\frac{\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2}}{\\left|\\frac{d^2y}{dx^2}\\right|}; \\quad \\kappa = \\frac{1}{\\rho} = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}} \\quad (\\text{Curvature})$$\n$$\\text{At Extrema / Inflection Points where } y' = 0 \\implies \\rho = \\frac{1}{|y''|}, \\quad \\kappa = |y''|$$\n$$\\text{Small Slope Approximation in Beams: } \\frac{1}{\\rho} \\approx \\frac{d^2y}{dx^2} = \\frac{M(x)}{E I}$$",
+            "description": "The radius of curvature \\rho of a plane curve y = f(x) at any given point is the radius of the osculating (tangent) circle that best approximates the curve locally. The reciprocal of radius of curvature is curvature \\kappa = 1/\\rho, measuring the rate of turning of the tangent vector per unit arc length (d\\phi/ds). The general Cartesian formula computes \\rho = [1 + (y')^2]^{3/2} / |y''|. In dynamic trajectory analysis, normal acceleration depends inversely on radius of curvature (a_n = v^2/\\rho). In structural beam deflection theory, for small slopes (y' = dy/dx \\ll 1), (y')^2 \\approx 0, simplifying the relation to 1/\\rho \\approx d^2y/dx^2 = M/(EI), which forms the governing Euler-Bernoulli beam differential equation.",
+            "examTip": "Found in Mathematics & Dynamics (Path Kinematics). Common FE exam application: A particle or roller coaster car moves along a parabolic track y = c x^2. To find normal acceleration a_n = v^2/\\rho at the bottom (x = 0): y' = 2cx = 0 at x = 0, so \\rho = 1 / |y''| = 1 / (2c). Then a_n = v^2 / \\rho = 2 c v^2!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+            "videoTitle": "Radius of Curvature Formula Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A skateboarder rides through a parabolic bowl modeled by the curve $y = 0.05 x^2$ (where $x$ and $y$ are in meters). At the lowest point ($x = 0$), the skateboarder travels at a speed of $v = 8.0\\text{ m/s}$.</p>\n<p>The radius of curvature $\\rho$ at $x = 0$ and the corresponding normal acceleration $a_n$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\rho = 5.0\\text{ m}, \\quad a_n = 12.8\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\rho = 20.0\\text{ m}, \\quad a_n = 3.2\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\rho = 10.0\\text{ m}, \\quad a_n = 0.8\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute First and Second Derivatives</strong></p>\n$$y = 0.05 x^2 \\implies y' = \\frac{dy}{dx} = 0.10 x, \\quad y'' = \\frac{d^2y}{dx^2} = 0.10\\text{ m}^{-1}$$\n<p>At the bottom point ($x = 0$): $y'(0) = 0$ and $y''(0) = 0.10$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Radius of Curvature ($\\rho$)</strong></p>\n$$\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|} = \\frac{[1 + 0]^{3/2}}{0.10} = \\frac{1}{0.10} = 10.0\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(8.0\\text{ m/s})^2}{10.0\\text{ m}} = \\frac{64.0}{10.0} = 6.40\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The total normal force exerted on the skateboarder at the bottom is $N = m(g + a_n) = m(9.81 + 6.4) = 16.21 m\\text{ N}$, meaning the rider experiences $1.65\\text{ g}$'s!</p>"
+            }
+        },
+        {
+            "title": "Difference between Absolute and Gage Pressure",
+            "formula": "$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}}; \\quad P_{\\text{vac}} = P_{\\text{atm}} - P_{\\text{abs}} = -P_{\\text{gage}}$$\n$$P_{\\text{atm, standard}} = 101.325\\text{ kPa} = 1.01325\\text{ bar} = 14.696\\text{ psia} \\approx 14.7\\text{ psi} = 29.92\\text{ in. Hg} = 760\\text{ mmHg}$$\n$$\\text{Hydrostatic Pressure Variation: } P(h) = P_0 + \\rho g h = P_0 + \\gamma h$$",
+            "description": "Pressure is the compressive normal force per unit contact area (P = F/A). Fluid pressure is measured relative to two distinct reference baselines: (1) Absolute Pressure (P_abs) is measured relative to a perfect absolute vacuum (zero pressure datum where no molecular collisions exist). Absolute pressure can never be negative (P_abs \\ge 0). (2) Gage Pressure (P_gage) is measured relative to local atmospheric pressure (P_atm), which represents the ambient zero datum on standard pressure gages, Bourdon tubes, and tire gauges. When pressure drops below local atmospheric, it is termed vacuum pressure (P_vac = P_atm - P_abs = -P_gage). In all thermodynamic state equations (such as ideal gas law P V = m R T and steam tables), ABSOLUTE pressure MUST be used; substituting gage pressure produces erroneous results.",
+            "examTip": "Found in Fluid Mechanics & Thermodynamics. CRITICAL FE EXAM RULE: Whenever you use ideal gas equations (P v = R T, P V = n \\bar{R} T) or evaluate thermodynamic enthalpies and isentropic relations, pressure MUST be in absolute units! If the prompt states 'a tank is pressurized to 250 kPa gage under atmospheric pressure 101.3 kPa', absolute pressure is P = 250 + 101.3 = 351.3 kPa. In US Customary: psia = psig + 14.7.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Absolute_and_Gage_Pressure.mp4",
+            "videoTitle": "Absolute vs. Gage Pressure Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A Bourdon pressure gage attached to a compressed air receiver reads $P_{\\text{gage}} = 45.0\\text{ psig}$. The local atmospheric pressure is $P_{\\text{atm}} = 14.7\\text{ psia}$. The air inside the tank is at temperature $T = 70.0^\\circ\\text{F}$ ($T = 530.0\\text{ R}$).</p>\n<p>Given the specific gas constant for air $R = 53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot^\\circ\\text{R})$, the air density $\\rho$ inside the receiver is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.075\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.229\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.304\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.412\\text{ lbm/ft}^3$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Convert Gage Pressure to Absolute Pressure</strong></p>\n$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}} = 45.0\\text{ psig} + 14.7\\text{ psia} = 59.7\\text{ psia}$$\n<p>Convert $\\text{psia}$ ($\\text{lbf/in}^2$) to $\\text{lbf/ft}^2$:</p>\n$$P = 59.7 \\times 144 = 8596.8\\text{ lbf/ft}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Ideal Gas Law on Mass Basis ($P = \\rho R T$)</strong></p>\n$$\\rho = \\frac{P}{R T} = \\frac{8596.8\\text{ lbf/ft}^2}{(53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot\\text{R}))(530.0\\text{ R})} = \\frac{8596.8}{28275.5} \\approx 0.304\\text{ lbm/ft}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $0.304\\text{ lbm/ft}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Trap:</em> If you incorrectly use gage pressure ($45\\text{ psig}$), you obtain $\\rho = 0.229\\text{ lbm/ft}^3$ (Option B), which is the most common distractor answer on this type of question!</p>"
+            }
+        },
+        {
+            "title": "Newton's Second Law for a Particle",
+            "formula": "$$\\sum \\mathbf{F} = m \\mathbf{a} = m \\frac{d\\mathbf{v}}{dt} = \\frac{d\\mathbf{p}}{dt} \\quad (\\text{Inertial Equation of Motion});$$\n$$\\text{Rectangular: } \\sum F_x = m a_x, \\quad \\sum F_y = m a_y, \\quad \\sum F_z = m a_z;$$\n$$\\text{Normal-Tangential: } \\sum F_t = m \\frac{dv}{dt}, \\quad \\sum F_n = m \\frac{v^2}{\\rho}, \\quad \\sum F_b = 0;$$\n$$\\text{Polar / Cylindrical: } \\sum F_r = m(\\ddot{r} - r\\dot{\\theta}^2), \\quad \\sum F_\\theta = m(r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta})$$",
+            "description": "Newton's Second Law of Motion forms the central cornerstone of kinetics, stating that the vector sum of all external forces acting on a particle of constant mass m equals the particle's mass multiplied by its instantaneous acceleration vector relative to an inertial reference frame: \\sum \\mathbf{F} = m \\mathbf{a}. This can also be expressed as the time rate of change of linear momentum \\mathbf{p} = m \\mathbf{v}. To apply Newton's second law: (1) Construct a Free Body Diagram (FBD) showing all external forces (\\sum \\mathbf{F}), (2) Construct a Kinetic Diagram (KD) showing inertial mass-acceleration vectors (m\\mathbf{a}), (3) Choose the most convenient coordinate frame (rectangular for linear trajectories, path/normal-tangential for curved trajectories with known curvature \\rho, polar for radial/central force problems), and (4) Formulate scalar component equations.",
+            "examTip": "Found in Dynamics: Kinetics of Particles. In normal-tangential problems (e.g., car on banked curve, pendulum, loop-the-loop): \\sum F_n = m v^2/\\rho. The normal acceleration vector points inward toward the center of curvature; never draw centrifugal force on an inertial FBD—centrifugal force is an apparent fictitious force observed only in rotating non-inertial frames. Stick to real forces (N, W, F_f) and set their inward sum equal to m v^2/\\rho.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+            "videoTitle": "Newton's Second Law for a Particle Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A $1200\\text{ kg}$ automobile navigates a flat (unbanked, $\\theta = 0^\\circ$) horizontal circular curve of radius $\\rho = 150\\text{ m}$ at a constant speed of $v = 25.0\\text{ m/s}$.</p>\n<p>Assuming gravity $g = 9.81\\text{ m/s}^2$, the minimum coefficient of static friction $\\mu_s$ between tires and road required to prevent the vehicle from skidding outward is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.28$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.42$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.55$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.68$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Write Normal and Vertical Equations of Motion</strong></p>\n<p>Vertical equilibrium: $\\sum F_y = 0 \\implies N - mg = 0 \\implies N = mg$.</p>\n<p>Inward normal direction: The only horizontal force acting toward the center of the curve is static friction $F_f$:</p>\n$$\\sum F_n = m a_n \\implies F_f = m \\frac{v^2}{\\rho}$$\n<p><strong class=\"text-emerald-400\">Step 2: Relate Friction to Maximum Available Static Friction</strong></p>\n$$F_f \\le \\mu_s N \\implies m \\frac{v^2}{\\rho} \\le \\mu_s mg \\implies \\mu_s \\ge \\frac{v^2}{g \\rho}$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Minimum Friction Coefficient</strong></p>\n$$\\mu_{s,\\min} = \\frac{(25.0\\text{ m/s})^2}{(9.81\\text{ m/s}^2)(150\\text{ m})} = \\frac{625.0}{1471.5} \\approx 0.4247 \\approx 0.42$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $0.42$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that vehicle mass $m$ cancels out completely! A heavy truck and a lightweight sports car require the exact same minimum coefficient of friction to make the turn without sliding.</p>"
+            }
+        },
+        {
+            "title": "Conservation of Angular Momentum",
+            "formula": "$$\\mathbf{H}_O = \\mathbf{r} \\times m\\mathbf{v} \\quad (\\text{Particle about Point } O); \\quad H_G = I_G \\omega \\quad (\\text{Planar Rigid Body about Centroid } G)$$\n$$\\sum \\mathbf{M}_O = \\dot{\\mathbf{H}}_O = \\frac{d\\mathbf{H}_O}{dt}; \\quad \\text{When } \\sum \\mathbf{M}_O = \\mathbf{0} \\implies \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2} = \\text{constant}$$\n$$m r_1 v_{\\theta, 1} = m r_2 v_{\\theta, 2} \\quad (\\text{Central Force / Orbital Motion}); \\quad I_1 \\omega_1 = I_2 \\omega_2 \\quad (\\text{Rigid Body System})$$",
+            "description": "Angular momentum (moment of momentum) \\mathbf{H}_O describes the rotational momentum of a particle or rigid body about a fixed reference point O. The angular impulse-momentum theorem dictates that the time rate of change of angular momentum about point O equals the sum of external moments acting about O: \\sum \\mathbf{M}_O = d\\mathbf{H}_O/dt. When the resultant external moment about point O is zero (\\sum \\mathbf{M}_O = \\mathbf{0}), angular momentum about that point is strictly conserved: \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2}. Primary engineering conditions where angular momentum is conserved: (1) Central force motion (such as gravitation or orbiting satellites) where the line of action of the attraction force passes directly through the origin O (\\mathbf{r} \\times \\mathbf{F} = \\mathbf{0}); (2) Spinning mechanical systems undergoing internal mass redistribution (e.g., folding/extending solar panels, centrifugal clutches, figure skaters drawing in their limbs); and (3) Impact/collision of rotating bodies about fixed pivot joints where reaction impulses at the pivot produce zero moment.",
+            "examTip": "Found in Dynamics: Kinetics of Particles & Planar Rigid Bodies. Classic FE problem: Satellite in elliptical orbit around Earth. Since gravity is a central force pointing directly at Earth's center, angular momentum is conserved: r_p v_p = r_a v_a, where r_p, v_p are perigee distance and speed, and r_a, v_a are apogee distance and speed. Another classic problem: A spinning turntable of moment of inertia I_1 and angular velocity \\omega_1 has a stationary disk of inertia I_2 dropped onto it: \\omega_2 = \\frac{I_1 \\omega_1}{I_1 + I_2}.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Conservation_of_Angular_Momentum.mp4",
+            "videoTitle": "Conservation of Angular Momentum Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A scientific research satellite travels in an elliptical Earth orbit. At perigee (closest point of approach), its orbital radius is $r_p = 7000\\text{ km}$ and its orbital velocity is $v_p = 8.40\\text{ km/s}$.</p>\n<p>At apogee (farthest point), the orbital radius increases to $r_a = 35000\\text{ km}$. Because gravity is a central force with zero moment about the center of Earth, angular momentum is conserved. The satellite speed at apogee $v_a$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.68\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.10\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $4.20\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $16.8\\text{ km/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Conservation of Angular Momentum</strong></p>\n<p>At perigee and apogee, the velocity vectors are strictly perpendicular to the position vector from the center of Earth ($v_r = 0, v = v_\\theta$):</p>\n$$H_O = m r_p v_p = m r_a v_a$$\n<p><strong class=\"text-emerald-400\">Step 2: Solve for Apogee Speed ($v_a$)</strong></p>\n$$v_a = v_p \\left(\\frac{r_p}{r_a}\\right) = (8.40\\text{ km/s}) \\left(\\frac{7000\\text{ km}}{35000\\text{ km}}\\right) = 8.40 \\times \\frac{1}{5} = 1.68\\text{ km/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.68\\text{ km/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> As orbital radius increases by a factor of 5, velocity drops inversely by a factor of 5 to preserve angular momentum.</p>"
+            }
+        },
+        {
+            "title": "Difference between Free and Forced Vibrations",
+            "formula": "$$\\text{Free Vibration: } m \\ddot{x} + c \\dot{x} + k x = 0 \\implies \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\text{Forced Vibration: } m \\ddot{x} + c \\dot{x} + k x = F_0 \\cos(\\omega t) \\implies x(t) = x_{\\text{transient}}(t) + x_{\\text{steady-state}}(t)$$\n$$X = \\frac{F_0 / k}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}} = X_{\\text{static}} \\cdot M, \\quad r = \\frac{\\omega}{\\omega_n} \\ (\\text{Frequency Ratio}), \\quad M = \\frac{1}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}}$$",
+            "description": "Mechanical vibrations represent oscillating motions of physical bodies about an equilibrium position: (1) Free Vibration occurs when an elastic system is disturbed from its equilibrium state by an initial displacement x(0) or velocity \\dot{x}(0) and allowed to oscillate in the absence of ongoing external dynamic driving forces (F(t) = 0). The system oscillates at its natural frequency \\omega_n = \\sqrt{k/m} (or damped natural frequency \\omega_d = \\omega_n\\sqrt{1-\\zeta^2}), with amplitude decaying exponentially due to damping (c). (2) Forced Vibration occurs when an external time-dependent driving excitation force or base motion F(t) = F_0\\cos(\\omega t) continually acts upon the system. The total response consists of a decaying transient free response plus a persistent harmonic steady-state response that oscillates at the excitation frequency \\omega (NOT the natural frequency \\omega_n). When the excitation frequency matches the system natural frequency (r = \\omega/\\omega_n \\approx 1), Resonance occurs, causing magnification factor M \\approx 1/(2\\zeta) to surge, generating catastrophic oscillation amplitudes in lightly damped systems.",
+            "examTip": "Found in Mechanical Engineering: Mechanical Design and Dynamic Systems. Key comparison table for FE: (1) Free: Frequency is \\omega_n or \\omega_d, driven by initial conditions, decays to zero if damped. (2) Forced: Steady-state frequency is excitation frequency \\omega, driven by external load, persists indefinitely. (3) Resonance happens when \\omega \\approx \\omega_n (r = 1). If damping \\zeta = 0.05 (5%), the resonance magnification factor is M = 1/(2\\zeta) = 1/(2 \\times 0.05) = 10 times the static deflection!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Free_and_Forced_Vibrations.mp4",
+            "videoTitle": "Free vs. Forced Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A factory machine of total mass $m = 250\\text{ kg}$ is mounted on elastic isolators having equivalent total stiffness $k = 100\\text{ kN/m} = 100000\\text{ N/m}$ and damping ratio $\\zeta = 0.040$. The machine generates a harmonic rotating unbalance force of amplitude $F_0 = 500\\text{ N}$ operating at an excitation frequency $\\omega = 20.0\\text{ rad/s}$.</p>\n<p>The steady-state vibration amplitude $X$ of the machine is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $5.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $62.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $125.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Natural Frequency ($\\omega_n$) and Frequency Ratio ($r$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{100000\\text{ N/m}}{250\\text{ kg}}} = \\sqrt{400} = 20.0\\text{ rad/s}$$\n$$r = \\frac{\\omega}{\\omega_n} = \\frac{20.0}{20.0} = 1.00 \\quad (\\text{System operates at exact resonance})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Static Deflection ($X_{\\text{static}}$) and Dynamic Magnifier ($M$)</strong></p>\n$$X_{\\text{static}} = \\frac{F_0}{k} = \\frac{500\\text{ N}}{100000\\text{ N/m}} = 0.0050\\text{ m} = 5.0\\text{ mm}$$\n<p>At exact resonance ($r = 1$):</p>\n$$M = \\frac{1}{2\\zeta} = \\frac{1}{2(0.040)} = \\frac{1}{0.080} = 12.5$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Steady-State Amplitude ($X$)</strong></p>\n$$X = X_{\\text{static}} \\cdot M = (5.0\\text{ mm})(12.5) = 62.5\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $62.5\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The factor $1/(2\\zeta)$ is the classic resonant peak multiplier for any single degree of freedom system with light damping.</p>"
+            }
+        },
+        {
+            "title": "Governing Equation of Vibrations",
+            "formula": "$$m \\ddot{x}(t) + c \\dot{x}(t) + k x(t) = F(t) \\quad \\longleftrightarrow \\quad \\ddot{x} + 2\\zeta \\omega_n \\dot{x} + \\omega_n^2 x = \\frac{F(t)}{m}$$\n$$\\omega_n = \\sqrt{\\frac{k}{m}} \\quad (\\text{Undamped Natural Frequency [rad/s]}), \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\quad (\\text{Frequency [Hz]})$$\n$$c_c = 2\\sqrt{km} = 2m\\omega_n \\quad (\\text{Critical Damping Coefficient}), \\quad \\zeta = \\frac{c}{c_c} = \\frac{c}{2\\sqrt{km}} \\quad (\\text{Damping Ratio})$$\n$$\\text{Underdamped Response } (\\zeta < 1): \\quad x(t) = X_0 e^{-\\zeta \\omega_n t} \\sin(\\omega_d t + \\phi), \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+            "description": "The fundamental governing equation of motion for a linear Single Degree of Freedom (SDOF) vibratory system is derived from Newton's second law or D'Alembert's dynamic equilibrium: m\\ddot{x} + c\\dot{x} + kx = F(t), where m is equivalent mass, c is viscous damping coefficient, and k is equivalent elastic spring stiffness. Dividing across by mass m yields the standard canonical form \\ddot{x} + 2\\zeta\\omega_n\\dot{x} + \\omega_n^2 x = f(t). The damping ratio \\zeta = c / (2\\sqrt{km}) governs the physical behavior of free response: (1) Underdamped (\\zeta < 1): Oscillatory motion with exponentially decaying envelope e^{-\\zeta\\omega_n t}\\sin(\\omega_d t + \\phi); (2) Critically Damped (\\zeta = 1): Fastest non-oscillatory return to equilibrium with no overshoot; (3) Overdamped (\\zeta > 1): Sluggish exponential return without oscillation.",
+            "examTip": "Found in Mechanical & Civil Engineering: Vibrations and Dynamics. The three essential equations to memorize: \\omega_n = \\sqrt{k/m} in rad/s, f_n = \\omega_n/(2\\pi) in Hz (cycles/s), and c_c = 2\\sqrt{km}. To find equivalent stiffness k_eq: springs in parallel add directly (k_1 + k_2); springs in series add reciprocally (1/k_eq = 1/k_1 + 1/k_2). Cantilever beam end stiffness is k = 3EI/L^3.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Governing_Equation_of_Vibrations.mp4",
+            "videoTitle": "Governing Equation of Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A precision measuring instrument of mass $m = 4.0\\text{ kg}$ is mounted on a vibration isolator having spring stiffness $k = 3600\\text{ N/m}$ and viscous damping coefficient $c = 48.0\\text{ N}\\cdot\\text{s/m}$.</p>\n<p>The undamped natural frequency $\\omega_n$, damping ratio $\\zeta$, and damped natural frequency $\\omega_d$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.40, \\quad \\omega_d = 27.5\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 900\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 882\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 1.00, \\quad \\omega_d = 0.0\\text{ rad/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Undamped Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{3600\\text{ N/m}}{4.0\\text{ kg}}} = \\sqrt{900} = 30.0\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Critical Damping Coefficient ($c_c$) and Damping Ratio ($\\zeta$)</strong></p>\n$$c_c = 2 m \\omega_n = 2(4.0\\text{ kg})(30.0\\text{ rad/s}) = 240.0\\text{ N}\\cdot\\text{s/m}$$\n$$\\zeta = \\frac{c}{c_c} = \\frac{48.0\\text{ N}\\cdot\\text{s/m}}{240.0\\text{ N}\\cdot\\text{s/m}} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Compute Damped Natural Frequency ($\\omega_d$)</strong></p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 30.0 \\sqrt{1 - (0.20)^2} = 30.0 \\sqrt{0.96} \\approx 30.0(0.9798) \\approx 29.39\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For light damping ($zeta < 0.2$), the damped natural frequency $omega_d$ is very close to the undamped natural frequency $omega_n$ (within $2%$).</p>"
+            }
+        },
+        {
+            "title": "Examples of Torsional Vibrations",
+            "formula": "$$J \\ddot{\\theta} + c_t \\dot{\\theta} + k_t \\theta = T(t); \\quad k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{G \\pi d^4}{32 L} \\quad (\\text{Shaft Torsional Stiffness [N}\\cdot\\text{m/rad]})$$\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{G J_{\\text{polar}}}{J L}} \\quad (\\text{rad/s}), \\quad f_n = \\frac{\\omega_n}{2\\pi} \\quad (\\text{Hz})$$\n$$J = \\frac{1}{2} m r^2 \\quad (\\text{Solid Cylindrical Disk Polar Mass Moment of Inertia [kg}\\cdot\\text{m}^2])$$\n$$\\text{Two-Rotor System: } \\omega_n = \\sqrt{\\frac{k_t(J_1 + J_2)}{J_1 J_2}}, \\quad \\text{Nodal Point: } \\frac{L_1}{L_2} = \\frac{J_2}{J_1}$$",
+            "description": "Torsional vibration consists of angular oscillatory twisting of rotational mechanical components about their axis of rotation, governed by J\\ddot{\\theta} + k_t\\theta = 0, where J is the mass moment of inertia ([J] = \\text{kg}\\cdot\\text{m}^2) and k_t is torsional spring stiffness ([k_t] = \\text{N}\\cdot\\text{m/rad}). For a uniform cylindrical elastic shaft of shear modulus G, diameter d, length L, and polar second moment of area J_polar = \\pi d^4/32, torsional stiffness is k_t = G J_polar/L. Prominent real-world engineering examples: (1) Internal Combustion Engine Crankshafts subjected to cyclic gas pressure pulses and reciprocating piston inertia torques; (2) Marine propulsion propeller drive shafts; (3) Turbogenerator rotor trains linking steam turbines to electrical generators; (4) Helical drill strings in petroleum drilling; and (5) Centrifugal pump motor couplings. Severe torsional resonance creates excessive shear stresses that can cause fatigue shaft shearing without visible lateral vibration.",
+            "examTip": "Found in Mechanical Engineering: Machine Design and Vibrations. Watch out for the two distinct J's! J_polar in k_t = G J_polar/L is the polar moment of area of the shaft cross-section (J_polar = \\pi d^4 / 32, in m^4), whereas J (or I) in \\omega_n = \\sqrt{k_t / J} is the polar mass moment of inertia of the rotating rotor/flywheel (J = \\frac{1}{2}m r^2, in kg\\cdot m^2). If the shaft diameter doubles (2d), torsional stiffness k_t increases by 2^4 = 16 times!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Examples_of_Torsional_Vibrations.mp4",
+            "videoTitle": "Examples of Torsional Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A solid steel drive shaft ($G = 80.0\\text{ GPa} = 80.0 \\times 10^9\\text{ Pa}$) of diameter $d = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 1.20\\text{ m}$ is fixed at one end and attached to a heavy turbine rotor with polar mass moment of inertia $J = 2.50\\text{ kg}\\cdot\\text{m}^2$ at the other end.</p>\n<p>The torsional natural frequency $f_n$ (in $\\text{Hz}$) of the system is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $10.2\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $20.4\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40.8\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $128.0\\text{ Hz}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Polar Moment of Area of the Shaft ($J_{\\text{polar}}$)</strong></p>\n$$J_{\\text{polar}} = \\frac{\\pi d^4}{32} = \\frac{\\pi (0.050\\text{ m})^4}{32} = \\frac{\\pi (6.25 \\times 10^{-6})}{32} \\approx 6.136 \\times 10^{-7}\\text{ m}^4$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Torsional Spring Stiffness ($k_t$)</strong></p>\n$$k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{(80.0 \\times 10^9\\text{ Pa})(6.136 \\times 10^{-7}\\text{ m}^4)}{1.20\\text{ m}} = \\frac{49088}{1.20} \\approx 40907\\text{ N}\\cdot\\text{m/rad}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Torsional Natural Frequency ($omega_n$ and $f_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{40907\\text{ N}\\cdot\\text{m/rad}}{2.50\\text{ kg}\\cdot\\text{m}^2}} = \\sqrt{16363} \\approx 127.92\\text{ rad/s}$$\n$$f_n = \\frac{\\omega_n}{2\\pi} = \\frac{127.92}{2\\pi} \\approx 20.36\\text{ Hz} \\approx 20.4\\text{ Hz}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $20.4\\text{ Hz}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Be careful to divide $omega_n$ ($128\text{ rad/s}$) by $2pi$ to get cyclic frequency $f_n$ in $\text{Hz}$. Option (D) $128\text{ Hz}$ is the angular frequency trap!</p>"
+            }
+        },
+        {
+            "title": "Corrosion Terminology",
+            "formula": "$$\\text{Anode (Oxidation / Metal Loss): } M \\to M^{n+} + n e^-; \\quad \\text{Cathode (Reduction / Protection): } 2\\text{H}^+ + 2e^- \\to \\text{H}_2 \\ (\\text{Acid}), \\ \\text{O}_2 + 2\\text{H}_2\\text{O} + 4e^- \\to 4\\text{OH}^- \\ (\\text{Aerated})$$\n$$\\Delta E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} > 0; \\quad \\text{Faraday's Law of Electrolysis: } m = \\frac{I \\cdot t \\cdot M}{n \\cdot F} \\quad (F = 96485\\text{ C/mol})$$\n$$\\text{Cathodic Protection: Sacrificial Anode (Zn, Mg, Al on Fe) or Impressed Current (ICCP)}$$",
+            "description": "Corrosion is the electrochemical deterioration of an engineering metal resulting from chemical reaction with its surrounding environment. An electrochemical corrosion cell requires four essential elements: (1) Anode: metal undergoes oxidation, losing electrons and dissolving (M \\to M^{n+} + ne^-); (2) Cathode: consumes electrons via reduction reaction (e.g., hydrogen reduction in acid or oxygen reduction in aerated neutral water); (3) Metallic pathway: conducts electrons from anode to cathode; and (4) Electrolyte: liquid conducting ions between electrodes. Common corrosion types: (a) Galvanic Corrosion: two dissimilar metals in electrical contact in an electrolyte; the more active metal (higher on galvanic series, more negative standard reduction potential) corrodes preferentially; (b) Pitting Corrosion: localized, highly destructive cavity formation in passive alloys (stainless steels in chlorides); (c) Crevice Corrosion: localized attack occurring in shielded, stagnant recesses with depleted oxygen; (d) Intergranular Corrosion: preferential attack along grain boundaries (e.g., chromium carbide precipitation in sensitized stainless steel); (e) Stress Corrosion Cracking (SCC): brittle cracking from combined tensile stress and corrosive environment; and (f) Passivation: spontaneous formation of a thin, protective oxide film (e.g., Cr_2O_3 on stainless steel, Al_2O_3 on aluminum).",
+            "examTip": "Found in Materials Science, Chemical, Civil & Environmental Engineering. Essential FE Galvanic Series memory rule: When two metals couple together, the ANODE is the one that gets consumed/corroded. The metal that is MORE ACTIVE (less noble, lower potential) becomes the anode. Example: In galvanized steel (Zinc coating on Iron), Zinc is more active than Iron (E^\\circ_{Zn^{2+}/Zn} = -0.76 V vs. E^\\circ_{Fe^{2+}/Fe} = -0.44 V), so Zinc acts as a sacrificial anode, sacrificing itself to protect the underlying iron even if scratched!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Corrosion_Terminology.mp4",
+            "videoTitle": "Corrosion Terminology Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A buried carbon steel pipeline is cathodically protected by an external sacrificial magnesium anode ($M_{\\text{Mg}} = 24.31\\text{ g/mol}, n = 2$). The system delivers a continuous protective galvanic current of $I = 0.50\\text{ A}$.</p>\n<p>Using Faraday's constant $F = 96485\\text{ C/mol}$, the mass of magnesium consumed over $t = 1.0\\text{ year}$ ($365\\text{ days} = 3.1536 \\times 10^7\\text{ s}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.97\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $7.94\\text{ kg}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Total Electric Charge Transferred ($Q$)</strong></p>\n$$Q = I \\cdot t = (0.50\\text{ A})(3.1536 \\times 10^7\\text{ s}) = 1.5768 \\times 10^7\\text{ C}$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Faraday's Law of Electrolysis</strong></p>\n$$m = \\frac{Q \\cdot M}{n \\cdot F} = \\frac{(1.5768 \\times 10^7\\text{ C})(24.31\\text{ g/mol})}{(2)(96485\\text{ C/mol})} = \\frac{3.8332 \\times 10^8}{192970} \\approx 1986.4\\text{ g} \\approx 1.99\\text{ kg}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.99\\text{ kg}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Remember $n = 2$ for $\\text{Mg} \\to \\text{Mg}^{2+} + 2e^-$. If you forget $n = 2$, you get $3.97\\text{ kg}$ (Option C).</p>"
+            }
+        },
+        {
+            "title": "Difference between Ionic and Covalent Bonding",
+            "formula": "$$\\Delta EN = |EN_A - EN_B|; \\quad \\Delta EN > 1.7 \\implies \\text{Ionic Bond } (>50\\% \\text{ ionic character}); \\quad \\Delta EN < 1.7 \\implies \\text{Covalent Bond}$$\n$$\\% \\text{ Ionic Character} = \\left[1 - \\exp\\left(-0.25 (\\Delta EN)^2\\right)\\right] \\times 100\\% \\quad (\\text{Pauling's Equation})$$\n$$\\text{Ionic: } \\text{NaCl, MgO, } \\text{Al}_2\\text{O}_3 \\quad (\\text{Brittle, High } T_m, \\text{ Nondirectional, Insulator as solid, Conducts in liquid/melt});$$\n$$\\text{Covalent: } \\text{Diamond, } \\text{SiO}_2, \\text{ Si, } \\text{CH}_4, \\text{ H}_2\\text{O} \\quad (\\text{Directional orbital overlap, High bond strength, Low conductivity})$$",
+            "description": "Primary atomic chemical bonding is classified by how valence electrons are redistributed between interacting atoms to achieve stable outer octet configurations: (1) Ionic Bonding forms between atoms with large differences in electronegativity (\\Delta EN > 1.7, typically a metal and a non-metal, e.g., Na^+ and Cl^-). Valence electrons are completely transferred from the electropositive metal cation to the electronegative non-metal anion, creating nondirectional electrostatic Coulombic attraction forces. Characteristics: high melting and boiling points, hard but brittle crystal structures (cleaving along like-charge repelling planes), electrically insulating in solid state, but electrically and ionically conductive when melted or dissolved in aqueous solution. (2) Covalent Bonding forms between atoms with small or zero electronegativity differences (\\Delta EN < 1.7, typically between non-metals, e.g., C-C, Si, SiO_2, H_2O). Atoms share pairs of valence electrons in localized, highly directional hybrid orbitals. Characteristics: strong directional bonds, high hardness and melting points in 3D network covalent solids (diamond, quartz), but weak intermolecular forces between discrete covalent molecules (CH_4, CO_2), and poor electrical conductivity (except graphite).",
+            "examTip": "Found in Chemistry & Materials Science. Quick FE memory criteria: (1) Ionic: Metal + Non-metal (e.g., NaCl, MgO, CaO); nondirectional electrostatic; conducts in molten/solution state. (2) Covalent: Non-metal + Non-metal (e.g., Diamond, SiC, SiO_2, H_2O); directional orbital sharing; poor electrical conductors. (3) Metallic: Metal + Metal (delocalized electron sea; ductile, high electrical and thermal conductivity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Ionic_and_Covalent_Bonding.mp4",
+            "videoTitle": "Ionic vs. Covalent Bonding Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>The Pauling electronegativities of magnesium and oxygen are $EN_{\\text{Mg}} = 1.2$ and $EN_{\\text{O}} = 3.5$.</p>\n<p>Using Pauling's formula $\\%\\text{IC} = [1 - \\exp(-0.25 (\\Delta EN)^2)] \\times 100\\%$, the predominant bond type and approximate percent ionic character of magnesium oxide ($\\text{MgO}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Covalent bond with $\\%\\text{IC} \\approx 27\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Metallic bond with $\\%\\text{IC} \\approx 50\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Pure covalent bond with $\\%\\text{IC} \\approx 5\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Electronegativity Difference ($\\Delta EN$)</strong></p>\n$$\\Delta EN = |EN_{\\text{O}} - EN_{\\text{Mg}}| = |3.5 - 1.2| = 2.3$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Pauling's Percent Ionic Character Formula</strong></p>\n$$\\%\\text{IC} = \\left[1 - \\exp\\left(-0.25 (2.3)^2\\right)\\right] \\times 100\\% = \\left[1 - \\exp\\left(-0.25 \\times 5.29\\right)\\right] \\times 100\\%$$\n$$\\%\\text{IC} = \\left[1 - \\exp(-1.3225)\\right] \\times 100\\% = [1 - 0.2665] \\times 100\\% \\approx 73.35\\% \\approx 73\\%$$\n<p>Because $\\Delta EN = 2.3 > 1.7$ and $\\%\\text{IC} > 50\\%$, $\\text{MgO}$ is classified as an <strong>ionic bond</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Any bond with $Delta EN > 1.7$ has $> 50%$ ionic character and is classified predominantly as ionic.</p>"
             }
         }
     ],
@@ -27627,6 +29230,188 @@ window.calcEvaluate = function() {
             "solvedExample": {
                 "question": "<p>A series RLC circuit has resistance $R = 20 ; \\Omega$, inductance $L = 0.50\\text{ H}$, and capacitance $C = 200 ; \\mu\\text{F}$.</p>\n<p>The un-damped natural frequency $\\omega_n$, the damping ratio $\\zeta$, the damping classification, and the damped natural frequency $\\omega_d$ (if applicable) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 0.20$ (Underdamped), $\\ \\omega_d = 97.98\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 1.00$ (Critically Damped)</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 50\\text{ rad/s}, \\ \\zeta = 0.40$ (Underdamped), $\\ \\omega_d = 45.8\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 1.25$ (Overdamped)</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\frac{1}{\\sqrt{LC}} = \\frac{1}{\\sqrt{0.50 \\times 200 \\times 10^{-6}}} = \\frac{1}{\\sqrt{10^{-4}}} = 100\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Damping Ratio ($\\zeta$)</strong></p>\n$$\\zeta = \\frac{R}{2\\omega_n L} = \\frac{20}{2(100)(0.50)} = \\frac{20}{100} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Classify Regime and Calculate $\\omega_d$</strong></p>\n<p>Since $0 < \\zeta = 0.20 < 1$, the response is <strong>Underdamped</strong> (oscillatory transient with overshoot).</p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 100 \\sqrt{1 - 0.04} = 100 \\sqrt{0.96} \\approx 97.98\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 100\\text{ rad/s}, \\ \\zeta = 0.20$ (Underdamped), $\\ \\omega_d = 97.98\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Percentage overshoot for $\\zeta = 0.20$ is $M_p = e^{-\\pi(0.20)/\\sqrt{0.96}} \\times 100\\% \\approx 52.7\\%$.</p>"
+            }
+        },
+        {
+            "title": "Three Equilibrium Equations in Statics",
+            "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad (\\text{2D Coplanar Statics});$$\n$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum F_z = 0, \\quad \\sum M_x = 0, \\quad \\sum M_y = 0, \\quad \\sum M_z = 0 \\quad (\\text{3D Space Statics})$$",
+            "description": "Statics investigates rigid bodies at rest or in uniform constant-velocity motion where net external forces and moments vanish. For general 2D coplanar force systems, exactly three independent scalar equations of equilibrium are available: (1) Summation of forces in x-direction equals zero (\\sum F_x = 0), (2) Summation of forces in y-direction equals zero (\\sum F_y = 0), and (3) Summation of moments about any arbitrary reference point O in the plane equals zero (\\sum M_O = 0). In concurrent 2D force systems where lines of action intersect at a single point, the moment equation is trivially satisfied, leaving only two independent equations (\\sum F_x = 0, \\sum F_y = 0). For 2D parallel force systems, one force equation and one moment equation apply. In 3D space, a body provides six independent equations of equilibrium (three translational and three rotational). If unknown support reactions exceed the number of independent equilibrium equations, the structure is statically indeterminate.",
+            "examTip": "Found in Statics & Mechanics of Materials. When solving 2D beams or frames: Always sum moments about the support with the greatest number of unknowns (typically a pin or hinge with 2 reactions). This eliminates those unknowns and lets you solve directly for the remaining reaction in a single equation. Watch sign conventions: counter-clockwise moments are conventionally positive (+CCW).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Three_Equilibrium_Equations_in_Statics.mp4",
+            "videoTitle": "Three Equilibrium Equations in Statics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A simply supported horizontal beam of span $L = 6.0\\text{ m}$ is pinned at support A and rests on a roller at support B. It carries a concentrated vertical load $P = 18.0\\text{ kN}$ at $x = 2.0\\text{ m}$ from A.</p>\n<p>Using the equilibrium equations, the vertical reaction forces $R_A$ and $R_B$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $R_A = 9.0\\text{ kN}, \\quad R_B = 9.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $R_A = 6.0\\text{ kN}, \\quad R_B = 12.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $R_A = 18.0\\text{ kN}, \\quad R_B = 0.0\\text{ kN}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Sum Moments About Support A ($\\sum M_A = 0$)</strong></p>\n$$\\sum M_A = 0 \\implies R_B(6.0\\text{ m}) - (18.0\\text{ kN})(2.0\\text{ m}) = 0$$\n$$6.0 R_B = 36.0 \\implies R_B = 6.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Sum Vertical Forces ($\\sum F_y = 0$)</strong></p>\n$$\\sum F_y = 0 \\implies R_A + R_B - 18.0 = 0 \\implies R_A = 18.0 - 6.0 = 12.0\\text{ kN}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The load is closer to support A (one-third of the span), so support A carries two-thirds of the load ($12\\text{ kN}$) and support B carries one-third ($6\\text{ kN}$).</p>"
+            }
+        },
+        {
+            "title": "Centroids of Common Objects",
+            "formula": "$$\\bar{x} = \\frac{\\sum \\bar{x}_i A_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum \\bar{y}_i A_i}{\\sum A_i}; \\quad \\text{Rectangle: } \\bar{y} = \\frac{h}{2}; \\quad \\text{Triangle: } \\bar{y} = \\frac{h}{3} \\text{ (from base)};$$\n$$\\text{Semicircle: } \\bar{y} = \\frac{4r}{3\\pi} \\approx 0.4244 r; \\quad \\text{Quarter Circle: } \\bar{x} = \\bar{y} = \\frac{4r}{3\\pi}; \\quad \\text{Circular Sector: } \\bar{x} = \\frac{2r\\sin\\alpha}{3\\alpha}$$",
+            "description": "The centroid of a planar area represents its geometric center, corresponding to the center of gravity of a thin plate with homogeneous density. For composite planar shapes constructed from common geometric sub-elements (rectangles, triangles, circles, and semicircles), the composite centroid coordinates (\\bar{x}, \\bar{y}) are determined by taking first moments of area divided by total area (\\sum \\bar{y}_i A_i / \\sum A_i). For holes or cutouts, their area is treated as negative (A_i < 0). Standard handbook centroid elevations measured from the flat base: Rectangle of height h has \\bar{y} = h/2; right or general triangle of height h has \\bar{y} = h/3 measured from base (2h/3 from vertex); semicircle of radius r has its centroid located along the line of symmetry at distance \\bar{y} = 4r/(3\\pi) \\approx 0.4244r from the diametral base.",
+            "examTip": "Found in Statics & Mechanics of Materials. The centroid location directly defines the neutral axis for bending stress (\\sigma = -M y / I) and the point of action for resultant hydrostatic fluid pressure forces (F_R = \\gamma \\bar{y} A). The classic trap is measuring the triangle centroid from the top vertex (h/3) instead of from the base (h/3 from flat base, 2h/3 from pointed vertex)! For a semicircle of radius r, memorizing 4r/(3\\pi) \\approx 0.4244r saves time.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Centroids_of_Common_Objects.mp4",
+            "videoTitle": "Centroids of Common Objects Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A composite cross-section consists of a rectangular web of width $b_1 = 20\\text{ mm}$ and height $h_1 = 100\\text{ mm}$, topped by a horizontal flange of width $b_2 = 120\\text{ mm}$ and thickness $t_2 = 20\\text{ mm}$.</p>\n<p>The centroid elevation $\\bar{y}$ measured from the bottom edge of the web is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $72.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $82.7\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $95.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Areas and Centroids of Sub-Components</strong></p>\n<p>Web (Component 1): $A_1 = 20 \\times 100 = 2000\\text{ mm}^2$, $y_1 = 100 / 2 = 50\\text{ mm}$.</p>\n<p>Flange (Component 2): $A_2 = 120 \\times 20 = 2400\\text{ mm}^2$, $y_2 = 100 + (20 / 2) = 110\\text{ mm}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Apply Composite Centroid Formula</strong></p>\n$$\\bar{y} = \\frac{A_1 y_1 + A_2 y_2}{A_1 + A_2} = \\frac{(2000)(50) + (2400)(110)}{2000 + 2400} = \\frac{100000 + 264000}{4400} = \\frac{364000}{4400} \\approx 82.73\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $82.7\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always measure individual centroids from the SAME global reference datum (the bottom edge in this problem).</p>"
+            }
+        },
+        {
+            "title": "Free Body Diagrams",
+            "formula": "$$\\text{Isolate Body } \\implies \\text{Active Forces } (\\text{Applied Loads, Weight}) + \\text{Reactive Support Forces } = \\mathbf{0}$$\n$$\\text{Cable / Rope: } 1 \\text{ unknown (Tension along cable)}; \\quad \\text{Roller / Rocker: } 1 \\text{ unknown (Normal force } N \\perp \\text{surface});$$\n$$\\text{Pin / Hinge: } 2 \\text{ unknowns } (R_x, R_y); \\quad \\text{Fixed / Built-in Support: } 3 \\text{ unknowns } (R_x, R_y, M_z)$$\n$$\\text{Two-Force Member: Equal, opposite, and collinear forces along line connecting the two pins}$$",
+            "description": "A Free Body Diagram (FBD) is the essential foundational tool of engineering mechanics. It consists of a sketch of the isolated structural component or system completely separated from its surroundings and supporting environment, depicting all applied active external loads, distributed pressures, body forces (weight W = mg acting at the center of gravity), and reactive forces and moments exerted by the removed supports. Support reaction rules: (1) Cables, ropes, and short links transmit only tensile or axial force along their centerline (1 unknown). (2) Smooth surfaces and rollers prevent translation perpendicular to the supporting guide plane, exerting a single normal force reaction N (1 unknown). (3) Rough surfaces add tangential friction force F_f \\le \\mu_s N (2 unknowns). (4) Pin joints prevent translational motion in two orthogonal directions, producing reaction components R_x and R_y but allowing free rotation (2 unknowns, no moment). (5) Fixed (clamped/cantilever) supports prevent both linear translation and angular rotation, producing vertical shear, axial horizontal force, and a resisting bending moment M (3 unknowns in 2D).",
+            "examTip": "Found in Statics, Dynamics & Structural Analysis. Drawing a correct FBD is step 1 for at least 30% of mechanics questions. Rules for 2-force members: If a member has pins at both ends and NO intermediate loads applied along its span, the reaction forces at the two ends MUST be equal in magnitude, opposite in direction, and collinear along the line connecting the two pins! Recognizing 2-force members simplifies trusses and mechanisms from 4 unknowns to 1 unknown.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Free_Body_Diagrams.mp4",
+            "videoTitle": "Free Body Diagrams Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A cantilever beam of length $L = 4.0\\text{ m}$ is rigidly clamped at wall A. It carries a distributed load that varies linearly from $w = 0$ at wall A to $w_0 = 12.0\\text{ kN/m}$ at the free tip B.</p>\n<p>From the Free Body Diagram, the clamping reaction moment $M_A$ at wall A required for static equilibrium is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $24.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $48.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $96.0\\text{ kN}\\cdot\\text{m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Replace Triangular Load by Equivalent Concentrated Load</strong></p>\n$$W = \\frac{1}{2} w_0 L = \\frac{1}{2}(12.0\\text{ kN/m})(4.0\\text{ m}) = 24.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Location of Resultant Force from Wall A</strong></p>\n<p>The centroid of the triangular load is at distance $\\frac{2}{3} L$ from the zero-load end (wall A):</p>\n$$x_{\\text{res}} = \\frac{2}{3}(4.0\\text{ m}) = \\frac{8.0}{3}\\text{ m} \\approx 2.667\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Sum Moments at Wall A ($\\sum M_A = 0$)</strong></p>\n$$M_A - W \\cdot x_{\\text{res}} = 0 \\implies M_A = (24.0\\text{ kN})\\left(\\frac{8.0}{3}\\text{ m}\\right) = 64.0\\text{ kN}\\cdot\\text{m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If the triangle were reversed (maximum load at A, zero at B), the centroid would be at $L/3 = 1.333\\text{ m}$ from A, yielding $M_A = 32.0\\text{ kN}\\cdot\\text{m}$. Always verify which end has the peak load!</p>"
+            }
+        },
+        {
+            "title": "Instantaneous Velocity and Acceleration",
+            "formula": "$$\\mathbf{v}(t) = \\frac{d\\mathbf{r}}{dt} = \\dot{x}\\mathbf{i} + \\dot{y}\\mathbf{j} + \\dot{z}\\mathbf{k}; \\quad \\mathbf{a}(t) = \\frac{d\\mathbf{v}}{dt} = \\frac{d^2\\mathbf{r}}{dt^2} = \\ddot{x}\\mathbf{i} + \\ddot{y}\\mathbf{j} + \\ddot{z}\\mathbf{k}$$\n$$a = v \\frac{dv}{ds} = \\frac{1}{2}\\frac{d(v^2)}{ds} \\quad (\\text{Differential Form when } a = f(s)); \\quad v(t) = v_0 + \\int_0^t a(t') dt'$$\n$$\\text{Normal-Tangential Coordinates: } \\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right)\\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right)\\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+            "description": "Instantaneous velocity \\mathbf{v}(t) defines the time rate of change of position vector \\mathbf{r}(t), and is always strictly tangent to the curved path of motion. Instantaneous acceleration \\mathbf{a}(t) is the second time derivative of position, describing changes in both velocity magnitude (speed) and velocity direction. For 1D rectilinear motion with position-dependent acceleration a(s), the chain rule yields a = v(dv/ds) \\implies \\int a \\, ds = \\int v \\, dv. In planar curvilinear motion resolved into intrinsic path (normal-tangential) coordinates: the tangential component a_t = \\dot{v} = dv/dt measures the rate of speeding up or slowing down; the normal component a_n = v^2/\\rho (where \\rho is the radius of curvature) is directed perpendicular toward the center of curvature, accounting purely for directional turning. Total magnitude is a = \\sqrt{a_t^2 + a_n^2}.",
+            "examTip": "Found in Dynamics: Kinematics of Particles. When acceleration is a function of position a(s) rather than time t, DO NOT try to use constant acceleration formulas (v = v_0 + at)! Instead, integrate using a \\, ds = v \\, dv. When an object moves along a curve at constant speed (v = \\text{const}), tangential acceleration a_t = 0, but normal acceleration a_n = v^2/\\rho \\ne 0!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4",
+            "videoTitle": "Instantaneous Velocity and Acceleration Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A vehicle travels on a curved horizontal highway track having a local radius of curvature $\\rho = 200\\text{ m}$. At a given instant, the car has a speed $v = 20.0\\text{ m/s}$ and is decelerating at a constant rate along the path of $a_t = -1.50\\text{ m/s}^2$.</p>\n<p>The magnitude of the total instantaneous acceleration vector is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $3.50\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(20.0\\text{ m/s})^2}{200\\text{ m}} = \\frac{400}{200} = 2.00\\text{ m/s}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Combine Orthogonal Components</strong></p>\n<p>The tangential acceleration is $a_t = -1.50\\text{ m/s}^2$. Because tangential and normal directions are perpendicular:</p>\n$$a = \\sqrt{a_t^2 + a_n^2} = \\sqrt{(-1.50)^2 + (2.00)^2} = \\sqrt{2.25 + 4.00} = \\sqrt{6.25} = 2.50\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $2.50\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Normal acceleration $a_n = v^2/\\rho$ is always positive and directed toward the center of curvature. Tangential acceleration $a_t$ can be positive (accelerating), zero (constant speed), or negative (braking).</p>"
+            }
+        },
+        {
+            "title": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+            "formula": "$$\\rho = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|} = \\frac{\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2}}{\\left|\\frac{d^2y}{dx^2}\\right|}; \\quad \\kappa = \\frac{1}{\\rho} = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}} \\quad (\\text{Curvature})$$\n$$\\text{At Extrema / Inflection Points where } y' = 0 \\implies \\rho = \\frac{1}{|y''|}, \\quad \\kappa = |y''|$$\n$$\\text{Small Slope Approximation in Beams: } \\frac{1}{\\rho} \\approx \\frac{d^2y}{dx^2} = \\frac{M(x)}{E I}$$",
+            "description": "The radius of curvature \\rho of a plane curve y = f(x) at any given point is the radius of the osculating (tangent) circle that best approximates the curve locally. The reciprocal of radius of curvature is curvature \\kappa = 1/\\rho, measuring the rate of turning of the tangent vector per unit arc length (d\\phi/ds). The general Cartesian formula computes \\rho = [1 + (y')^2]^{3/2} / |y''|. In dynamic trajectory analysis, normal acceleration depends inversely on radius of curvature (a_n = v^2/\\rho). In structural beam deflection theory, for small slopes (y' = dy/dx \\ll 1), (y')^2 \\approx 0, simplifying the relation to 1/\\rho \\approx d^2y/dx^2 = M/(EI), which forms the governing Euler-Bernoulli beam differential equation.",
+            "examTip": "Found in Mathematics & Dynamics (Path Kinematics). Common FE exam application: A particle or roller coaster car moves along a parabolic track y = c x^2. To find normal acceleration a_n = v^2/\\rho at the bottom (x = 0): y' = 2cx = 0 at x = 0, so \\rho = 1 / |y''| = 1 / (2c). Then a_n = v^2 / \\rho = 2 c v^2!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+            "videoTitle": "Radius of Curvature Formula Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A skateboarder rides through a parabolic bowl modeled by the curve $y = 0.05 x^2$ (where $x$ and $y$ are in meters). At the lowest point ($x = 0$), the skateboarder travels at a speed of $v = 8.0\\text{ m/s}$.</p>\n<p>The radius of curvature $\\rho$ at $x = 0$ and the corresponding normal acceleration $a_n$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\rho = 5.0\\text{ m}, \\quad a_n = 12.8\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\rho = 20.0\\text{ m}, \\quad a_n = 3.2\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\rho = 10.0\\text{ m}, \\quad a_n = 0.8\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute First and Second Derivatives</strong></p>\n$$y = 0.05 x^2 \\implies y' = \\frac{dy}{dx} = 0.10 x, \\quad y'' = \\frac{d^2y}{dx^2} = 0.10\\text{ m}^{-1}$$\n<p>At the bottom point ($x = 0$): $y'(0) = 0$ and $y''(0) = 0.10$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Radius of Curvature ($\\rho$)</strong></p>\n$$\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|} = \\frac{[1 + 0]^{3/2}}{0.10} = \\frac{1}{0.10} = 10.0\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(8.0\\text{ m/s})^2}{10.0\\text{ m}} = \\frac{64.0}{10.0} = 6.40\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The total normal force exerted on the skateboarder at the bottom is $N = m(g + a_n) = m(9.81 + 6.4) = 16.21 m\\text{ N}$, meaning the rider experiences $1.65\\text{ g}$'s!</p>"
+            }
+        },
+        {
+            "title": "Difference between Absolute and Gage Pressure",
+            "formula": "$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}}; \\quad P_{\\text{vac}} = P_{\\text{atm}} - P_{\\text{abs}} = -P_{\\text{gage}}$$\n$$P_{\\text{atm, standard}} = 101.325\\text{ kPa} = 1.01325\\text{ bar} = 14.696\\text{ psia} \\approx 14.7\\text{ psi} = 29.92\\text{ in. Hg} = 760\\text{ mmHg}$$\n$$\\text{Hydrostatic Pressure Variation: } P(h) = P_0 + \\rho g h = P_0 + \\gamma h$$",
+            "description": "Pressure is the compressive normal force per unit contact area (P = F/A). Fluid pressure is measured relative to two distinct reference baselines: (1) Absolute Pressure (P_abs) is measured relative to a perfect absolute vacuum (zero pressure datum where no molecular collisions exist). Absolute pressure can never be negative (P_abs \\ge 0). (2) Gage Pressure (P_gage) is measured relative to local atmospheric pressure (P_atm), which represents the ambient zero datum on standard pressure gages, Bourdon tubes, and tire gauges. When pressure drops below local atmospheric, it is termed vacuum pressure (P_vac = P_atm - P_abs = -P_gage). In all thermodynamic state equations (such as ideal gas law P V = m R T and steam tables), ABSOLUTE pressure MUST be used; substituting gage pressure produces erroneous results.",
+            "examTip": "Found in Fluid Mechanics & Thermodynamics. CRITICAL FE EXAM RULE: Whenever you use ideal gas equations (P v = R T, P V = n \\bar{R} T) or evaluate thermodynamic enthalpies and isentropic relations, pressure MUST be in absolute units! If the prompt states 'a tank is pressurized to 250 kPa gage under atmospheric pressure 101.3 kPa', absolute pressure is P = 250 + 101.3 = 351.3 kPa. In US Customary: psia = psig + 14.7.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Absolute_and_Gage_Pressure.mp4",
+            "videoTitle": "Absolute vs. Gage Pressure Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A Bourdon pressure gage attached to a compressed air receiver reads $P_{\\text{gage}} = 45.0\\text{ psig}$. The local atmospheric pressure is $P_{\\text{atm}} = 14.7\\text{ psia}$. The air inside the tank is at temperature $T = 70.0^\\circ\\text{F}$ ($T = 530.0\\text{ R}$).</p>\n<p>Given the specific gas constant for air $R = 53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot^\\circ\\text{R})$, the air density $\\rho$ inside the receiver is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.075\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.229\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.304\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.412\\text{ lbm/ft}^3$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Convert Gage Pressure to Absolute Pressure</strong></p>\n$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}} = 45.0\\text{ psig} + 14.7\\text{ psia} = 59.7\\text{ psia}$$\n<p>Convert $\\text{psia}$ ($\\text{lbf/in}^2$) to $\\text{lbf/ft}^2$:</p>\n$$P = 59.7 \\times 144 = 8596.8\\text{ lbf/ft}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Ideal Gas Law on Mass Basis ($P = \\rho R T$)</strong></p>\n$$\\rho = \\frac{P}{R T} = \\frac{8596.8\\text{ lbf/ft}^2}{(53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot\\text{R}))(530.0\\text{ R})} = \\frac{8596.8}{28275.5} \\approx 0.304\\text{ lbm/ft}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $0.304\\text{ lbm/ft}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Trap:</em> If you incorrectly use gage pressure ($45\\text{ psig}$), you obtain $\\rho = 0.229\\text{ lbm/ft}^3$ (Option B), which is the most common distractor answer on this type of question!</p>"
+            }
+        },
+        {
+            "title": "Newton's Second Law for a Particle",
+            "formula": "$$\\sum \\mathbf{F} = m \\mathbf{a} = m \\frac{d\\mathbf{v}}{dt} = \\frac{d\\mathbf{p}}{dt} \\quad (\\text{Inertial Equation of Motion});$$\n$$\\text{Rectangular: } \\sum F_x = m a_x, \\quad \\sum F_y = m a_y, \\quad \\sum F_z = m a_z;$$\n$$\\text{Normal-Tangential: } \\sum F_t = m \\frac{dv}{dt}, \\quad \\sum F_n = m \\frac{v^2}{\\rho}, \\quad \\sum F_b = 0;$$\n$$\\text{Polar / Cylindrical: } \\sum F_r = m(\\ddot{r} - r\\dot{\\theta}^2), \\quad \\sum F_\\theta = m(r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta})$$",
+            "description": "Newton's Second Law of Motion forms the central cornerstone of kinetics, stating that the vector sum of all external forces acting on a particle of constant mass m equals the particle's mass multiplied by its instantaneous acceleration vector relative to an inertial reference frame: \\sum \\mathbf{F} = m \\mathbf{a}. This can also be expressed as the time rate of change of linear momentum \\mathbf{p} = m \\mathbf{v}. To apply Newton's second law: (1) Construct a Free Body Diagram (FBD) showing all external forces (\\sum \\mathbf{F}), (2) Construct a Kinetic Diagram (KD) showing inertial mass-acceleration vectors (m\\mathbf{a}), (3) Choose the most convenient coordinate frame (rectangular for linear trajectories, path/normal-tangential for curved trajectories with known curvature \\rho, polar for radial/central force problems), and (4) Formulate scalar component equations.",
+            "examTip": "Found in Dynamics: Kinetics of Particles. In normal-tangential problems (e.g., car on banked curve, pendulum, loop-the-loop): \\sum F_n = m v^2/\\rho. The normal acceleration vector points inward toward the center of curvature; never draw centrifugal force on an inertial FBD—centrifugal force is an apparent fictitious force observed only in rotating non-inertial frames. Stick to real forces (N, W, F_f) and set their inward sum equal to m v^2/\\rho.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+            "videoTitle": "Newton's Second Law for a Particle Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A $1200\\text{ kg}$ automobile navigates a flat (unbanked, $\\theta = 0^\\circ$) horizontal circular curve of radius $\\rho = 150\\text{ m}$ at a constant speed of $v = 25.0\\text{ m/s}$.</p>\n<p>Assuming gravity $g = 9.81\\text{ m/s}^2$, the minimum coefficient of static friction $\\mu_s$ between tires and road required to prevent the vehicle from skidding outward is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.28$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.42$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.55$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.68$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Write Normal and Vertical Equations of Motion</strong></p>\n<p>Vertical equilibrium: $\\sum F_y = 0 \\implies N - mg = 0 \\implies N = mg$.</p>\n<p>Inward normal direction: The only horizontal force acting toward the center of the curve is static friction $F_f$:</p>\n$$\\sum F_n = m a_n \\implies F_f = m \\frac{v^2}{\\rho}$$\n<p><strong class=\"text-emerald-400\">Step 2: Relate Friction to Maximum Available Static Friction</strong></p>\n$$F_f \\le \\mu_s N \\implies m \\frac{v^2}{\\rho} \\le \\mu_s mg \\implies \\mu_s \\ge \\frac{v^2}{g \\rho}$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Minimum Friction Coefficient</strong></p>\n$$\\mu_{s,\\min} = \\frac{(25.0\\text{ m/s})^2}{(9.81\\text{ m/s}^2)(150\\text{ m})} = \\frac{625.0}{1471.5} \\approx 0.4247 \\approx 0.42$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $0.42$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that vehicle mass $m$ cancels out completely! A heavy truck and a lightweight sports car require the exact same minimum coefficient of friction to make the turn without sliding.</p>"
+            }
+        },
+        {
+            "title": "Conservation of Angular Momentum",
+            "formula": "$$\\mathbf{H}_O = \\mathbf{r} \\times m\\mathbf{v} \\quad (\\text{Particle about Point } O); \\quad H_G = I_G \\omega \\quad (\\text{Planar Rigid Body about Centroid } G)$$\n$$\\sum \\mathbf{M}_O = \\dot{\\mathbf{H}}_O = \\frac{d\\mathbf{H}_O}{dt}; \\quad \\text{When } \\sum \\mathbf{M}_O = \\mathbf{0} \\implies \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2} = \\text{constant}$$\n$$m r_1 v_{\\theta, 1} = m r_2 v_{\\theta, 2} \\quad (\\text{Central Force / Orbital Motion}); \\quad I_1 \\omega_1 = I_2 \\omega_2 \\quad (\\text{Rigid Body System})$$",
+            "description": "Angular momentum (moment of momentum) \\mathbf{H}_O describes the rotational momentum of a particle or rigid body about a fixed reference point O. The angular impulse-momentum theorem dictates that the time rate of change of angular momentum about point O equals the sum of external moments acting about O: \\sum \\mathbf{M}_O = d\\mathbf{H}_O/dt. When the resultant external moment about point O is zero (\\sum \\mathbf{M}_O = \\mathbf{0}), angular momentum about that point is strictly conserved: \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2}. Primary engineering conditions where angular momentum is conserved: (1) Central force motion (such as gravitation or orbiting satellites) where the line of action of the attraction force passes directly through the origin O (\\mathbf{r} \\times \\mathbf{F} = \\mathbf{0}); (2) Spinning mechanical systems undergoing internal mass redistribution (e.g., folding/extending solar panels, centrifugal clutches, figure skaters drawing in their limbs); and (3) Impact/collision of rotating bodies about fixed pivot joints where reaction impulses at the pivot produce zero moment.",
+            "examTip": "Found in Dynamics: Kinetics of Particles & Planar Rigid Bodies. Classic FE problem: Satellite in elliptical orbit around Earth. Since gravity is a central force pointing directly at Earth's center, angular momentum is conserved: r_p v_p = r_a v_a, where r_p, v_p are perigee distance and speed, and r_a, v_a are apogee distance and speed. Another classic problem: A spinning turntable of moment of inertia I_1 and angular velocity \\omega_1 has a stationary disk of inertia I_2 dropped onto it: \\omega_2 = \\frac{I_1 \\omega_1}{I_1 + I_2}.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Conservation_of_Angular_Momentum.mp4",
+            "videoTitle": "Conservation of Angular Momentum Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A scientific research satellite travels in an elliptical Earth orbit. At perigee (closest point of approach), its orbital radius is $r_p = 7000\\text{ km}$ and its orbital velocity is $v_p = 8.40\\text{ km/s}$.</p>\n<p>At apogee (farthest point), the orbital radius increases to $r_a = 35000\\text{ km}$. Because gravity is a central force with zero moment about the center of Earth, angular momentum is conserved. The satellite speed at apogee $v_a$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.68\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.10\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $4.20\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $16.8\\text{ km/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Conservation of Angular Momentum</strong></p>\n<p>At perigee and apogee, the velocity vectors are strictly perpendicular to the position vector from the center of Earth ($v_r = 0, v = v_\\theta$):</p>\n$$H_O = m r_p v_p = m r_a v_a$$\n<p><strong class=\"text-emerald-400\">Step 2: Solve for Apogee Speed ($v_a$)</strong></p>\n$$v_a = v_p \\left(\\frac{r_p}{r_a}\\right) = (8.40\\text{ km/s}) \\left(\\frac{7000\\text{ km}}{35000\\text{ km}}\\right) = 8.40 \\times \\frac{1}{5} = 1.68\\text{ km/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.68\\text{ km/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> As orbital radius increases by a factor of 5, velocity drops inversely by a factor of 5 to preserve angular momentum.</p>"
+            }
+        },
+        {
+            "title": "Difference between Free and Forced Vibrations",
+            "formula": "$$\\text{Free Vibration: } m \\ddot{x} + c \\dot{x} + k x = 0 \\implies \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\text{Forced Vibration: } m \\ddot{x} + c \\dot{x} + k x = F_0 \\cos(\\omega t) \\implies x(t) = x_{\\text{transient}}(t) + x_{\\text{steady-state}}(t)$$\n$$X = \\frac{F_0 / k}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}} = X_{\\text{static}} \\cdot M, \\quad r = \\frac{\\omega}{\\omega_n} \\ (\\text{Frequency Ratio}), \\quad M = \\frac{1}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}}$$",
+            "description": "Mechanical vibrations represent oscillating motions of physical bodies about an equilibrium position: (1) Free Vibration occurs when an elastic system is disturbed from its equilibrium state by an initial displacement x(0) or velocity \\dot{x}(0) and allowed to oscillate in the absence of ongoing external dynamic driving forces (F(t) = 0). The system oscillates at its natural frequency \\omega_n = \\sqrt{k/m} (or damped natural frequency \\omega_d = \\omega_n\\sqrt{1-\\zeta^2}), with amplitude decaying exponentially due to damping (c). (2) Forced Vibration occurs when an external time-dependent driving excitation force or base motion F(t) = F_0\\cos(\\omega t) continually acts upon the system. The total response consists of a decaying transient free response plus a persistent harmonic steady-state response that oscillates at the excitation frequency \\omega (NOT the natural frequency \\omega_n). When the excitation frequency matches the system natural frequency (r = \\omega/\\omega_n \\approx 1), Resonance occurs, causing magnification factor M \\approx 1/(2\\zeta) to surge, generating catastrophic oscillation amplitudes in lightly damped systems.",
+            "examTip": "Found in Mechanical Engineering: Mechanical Design and Dynamic Systems. Key comparison table for FE: (1) Free: Frequency is \\omega_n or \\omega_d, driven by initial conditions, decays to zero if damped. (2) Forced: Steady-state frequency is excitation frequency \\omega, driven by external load, persists indefinitely. (3) Resonance happens when \\omega \\approx \\omega_n (r = 1). If damping \\zeta = 0.05 (5%), the resonance magnification factor is M = 1/(2\\zeta) = 1/(2 \\times 0.05) = 10 times the static deflection!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Free_and_Forced_Vibrations.mp4",
+            "videoTitle": "Free vs. Forced Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A factory machine of total mass $m = 250\\text{ kg}$ is mounted on elastic isolators having equivalent total stiffness $k = 100\\text{ kN/m} = 100000\\text{ N/m}$ and damping ratio $\\zeta = 0.040$. The machine generates a harmonic rotating unbalance force of amplitude $F_0 = 500\\text{ N}$ operating at an excitation frequency $\\omega = 20.0\\text{ rad/s}$.</p>\n<p>The steady-state vibration amplitude $X$ of the machine is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $5.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $62.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $125.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Natural Frequency ($\\omega_n$) and Frequency Ratio ($r$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{100000\\text{ N/m}}{250\\text{ kg}}} = \\sqrt{400} = 20.0\\text{ rad/s}$$\n$$r = \\frac{\\omega}{\\omega_n} = \\frac{20.0}{20.0} = 1.00 \\quad (\\text{System operates at exact resonance})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Static Deflection ($X_{\\text{static}}$) and Dynamic Magnifier ($M$)</strong></p>\n$$X_{\\text{static}} = \\frac{F_0}{k} = \\frac{500\\text{ N}}{100000\\text{ N/m}} = 0.0050\\text{ m} = 5.0\\text{ mm}$$\n<p>At exact resonance ($r = 1$):</p>\n$$M = \\frac{1}{2\\zeta} = \\frac{1}{2(0.040)} = \\frac{1}{0.080} = 12.5$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Steady-State Amplitude ($X$)</strong></p>\n$$X = X_{\\text{static}} \\cdot M = (5.0\\text{ mm})(12.5) = 62.5\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $62.5\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The factor $1/(2\\zeta)$ is the classic resonant peak multiplier for any single degree of freedom system with light damping.</p>"
+            }
+        },
+        {
+            "title": "Governing Equation of Vibrations",
+            "formula": "$$m \\ddot{x}(t) + c \\dot{x}(t) + k x(t) = F(t) \\quad \\longleftrightarrow \\quad \\ddot{x} + 2\\zeta \\omega_n \\dot{x} + \\omega_n^2 x = \\frac{F(t)}{m}$$\n$$\\omega_n = \\sqrt{\\frac{k}{m}} \\quad (\\text{Undamped Natural Frequency [rad/s]}), \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\quad (\\text{Frequency [Hz]})$$\n$$c_c = 2\\sqrt{km} = 2m\\omega_n \\quad (\\text{Critical Damping Coefficient}), \\quad \\zeta = \\frac{c}{c_c} = \\frac{c}{2\\sqrt{km}} \\quad (\\text{Damping Ratio})$$\n$$\\text{Underdamped Response } (\\zeta < 1): \\quad x(t) = X_0 e^{-\\zeta \\omega_n t} \\sin(\\omega_d t + \\phi), \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+            "description": "The fundamental governing equation of motion for a linear Single Degree of Freedom (SDOF) vibratory system is derived from Newton's second law or D'Alembert's dynamic equilibrium: m\\ddot{x} + c\\dot{x} + kx = F(t), where m is equivalent mass, c is viscous damping coefficient, and k is equivalent elastic spring stiffness. Dividing across by mass m yields the standard canonical form \\ddot{x} + 2\\zeta\\omega_n\\dot{x} + \\omega_n^2 x = f(t). The damping ratio \\zeta = c / (2\\sqrt{km}) governs the physical behavior of free response: (1) Underdamped (\\zeta < 1): Oscillatory motion with exponentially decaying envelope e^{-\\zeta\\omega_n t}\\sin(\\omega_d t + \\phi); (2) Critically Damped (\\zeta = 1): Fastest non-oscillatory return to equilibrium with no overshoot; (3) Overdamped (\\zeta > 1): Sluggish exponential return without oscillation.",
+            "examTip": "Found in Mechanical & Civil Engineering: Vibrations and Dynamics. The three essential equations to memorize: \\omega_n = \\sqrt{k/m} in rad/s, f_n = \\omega_n/(2\\pi) in Hz (cycles/s), and c_c = 2\\sqrt{km}. To find equivalent stiffness k_eq: springs in parallel add directly (k_1 + k_2); springs in series add reciprocally (1/k_eq = 1/k_1 + 1/k_2). Cantilever beam end stiffness is k = 3EI/L^3.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Governing_Equation_of_Vibrations.mp4",
+            "videoTitle": "Governing Equation of Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A precision measuring instrument of mass $m = 4.0\\text{ kg}$ is mounted on a vibration isolator having spring stiffness $k = 3600\\text{ N/m}$ and viscous damping coefficient $c = 48.0\\text{ N}\\cdot\\text{s/m}$.</p>\n<p>The undamped natural frequency $\\omega_n$, damping ratio $\\zeta$, and damped natural frequency $\\omega_d$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.40, \\quad \\omega_d = 27.5\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 900\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 882\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 1.00, \\quad \\omega_d = 0.0\\text{ rad/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Undamped Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{3600\\text{ N/m}}{4.0\\text{ kg}}} = \\sqrt{900} = 30.0\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Critical Damping Coefficient ($c_c$) and Damping Ratio ($\\zeta$)</strong></p>\n$$c_c = 2 m \\omega_n = 2(4.0\\text{ kg})(30.0\\text{ rad/s}) = 240.0\\text{ N}\\cdot\\text{s/m}$$\n$$\\zeta = \\frac{c}{c_c} = \\frac{48.0\\text{ N}\\cdot\\text{s/m}}{240.0\\text{ N}\\cdot\\text{s/m}} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Compute Damped Natural Frequency ($\\omega_d$)</strong></p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 30.0 \\sqrt{1 - (0.20)^2} = 30.0 \\sqrt{0.96} \\approx 30.0(0.9798) \\approx 29.39\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For light damping ($zeta < 0.2$), the damped natural frequency $omega_d$ is very close to the undamped natural frequency $omega_n$ (within $2%$).</p>"
+            }
+        },
+        {
+            "title": "Examples of Torsional Vibrations",
+            "formula": "$$J \\ddot{\\theta} + c_t \\dot{\\theta} + k_t \\theta = T(t); \\quad k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{G \\pi d^4}{32 L} \\quad (\\text{Shaft Torsional Stiffness [N}\\cdot\\text{m/rad]})$$\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{G J_{\\text{polar}}}{J L}} \\quad (\\text{rad/s}), \\quad f_n = \\frac{\\omega_n}{2\\pi} \\quad (\\text{Hz})$$\n$$J = \\frac{1}{2} m r^2 \\quad (\\text{Solid Cylindrical Disk Polar Mass Moment of Inertia [kg}\\cdot\\text{m}^2])$$\n$$\\text{Two-Rotor System: } \\omega_n = \\sqrt{\\frac{k_t(J_1 + J_2)}{J_1 J_2}}, \\quad \\text{Nodal Point: } \\frac{L_1}{L_2} = \\frac{J_2}{J_1}$$",
+            "description": "Torsional vibration consists of angular oscillatory twisting of rotational mechanical components about their axis of rotation, governed by J\\ddot{\\theta} + k_t\\theta = 0, where J is the mass moment of inertia ([J] = \\text{kg}\\cdot\\text{m}^2) and k_t is torsional spring stiffness ([k_t] = \\text{N}\\cdot\\text{m/rad}). For a uniform cylindrical elastic shaft of shear modulus G, diameter d, length L, and polar second moment of area J_polar = \\pi d^4/32, torsional stiffness is k_t = G J_polar/L. Prominent real-world engineering examples: (1) Internal Combustion Engine Crankshafts subjected to cyclic gas pressure pulses and reciprocating piston inertia torques; (2) Marine propulsion propeller drive shafts; (3) Turbogenerator rotor trains linking steam turbines to electrical generators; (4) Helical drill strings in petroleum drilling; and (5) Centrifugal pump motor couplings. Severe torsional resonance creates excessive shear stresses that can cause fatigue shaft shearing without visible lateral vibration.",
+            "examTip": "Found in Mechanical Engineering: Machine Design and Vibrations. Watch out for the two distinct J's! J_polar in k_t = G J_polar/L is the polar moment of area of the shaft cross-section (J_polar = \\pi d^4 / 32, in m^4), whereas J (or I) in \\omega_n = \\sqrt{k_t / J} is the polar mass moment of inertia of the rotating rotor/flywheel (J = \\frac{1}{2}m r^2, in kg\\cdot m^2). If the shaft diameter doubles (2d), torsional stiffness k_t increases by 2^4 = 16 times!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Examples_of_Torsional_Vibrations.mp4",
+            "videoTitle": "Examples of Torsional Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A solid steel drive shaft ($G = 80.0\\text{ GPa} = 80.0 \\times 10^9\\text{ Pa}$) of diameter $d = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 1.20\\text{ m}$ is fixed at one end and attached to a heavy turbine rotor with polar mass moment of inertia $J = 2.50\\text{ kg}\\cdot\\text{m}^2$ at the other end.</p>\n<p>The torsional natural frequency $f_n$ (in $\\text{Hz}$) of the system is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $10.2\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $20.4\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40.8\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $128.0\\text{ Hz}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Polar Moment of Area of the Shaft ($J_{\\text{polar}}$)</strong></p>\n$$J_{\\text{polar}} = \\frac{\\pi d^4}{32} = \\frac{\\pi (0.050\\text{ m})^4}{32} = \\frac{\\pi (6.25 \\times 10^{-6})}{32} \\approx 6.136 \\times 10^{-7}\\text{ m}^4$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Torsional Spring Stiffness ($k_t$)</strong></p>\n$$k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{(80.0 \\times 10^9\\text{ Pa})(6.136 \\times 10^{-7}\\text{ m}^4)}{1.20\\text{ m}} = \\frac{49088}{1.20} \\approx 40907\\text{ N}\\cdot\\text{m/rad}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Torsional Natural Frequency ($omega_n$ and $f_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{40907\\text{ N}\\cdot\\text{m/rad}}{2.50\\text{ kg}\\cdot\\text{m}^2}} = \\sqrt{16363} \\approx 127.92\\text{ rad/s}$$\n$$f_n = \\frac{\\omega_n}{2\\pi} = \\frac{127.92}{2\\pi} \\approx 20.36\\text{ Hz} \\approx 20.4\\text{ Hz}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $20.4\\text{ Hz}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Be careful to divide $omega_n$ ($128\text{ rad/s}$) by $2pi$ to get cyclic frequency $f_n$ in $\text{Hz}$. Option (D) $128\text{ Hz}$ is the angular frequency trap!</p>"
+            }
+        },
+        {
+            "title": "Corrosion Terminology",
+            "formula": "$$\\text{Anode (Oxidation / Metal Loss): } M \\to M^{n+} + n e^-; \\quad \\text{Cathode (Reduction / Protection): } 2\\text{H}^+ + 2e^- \\to \\text{H}_2 \\ (\\text{Acid}), \\ \\text{O}_2 + 2\\text{H}_2\\text{O} + 4e^- \\to 4\\text{OH}^- \\ (\\text{Aerated})$$\n$$\\Delta E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} > 0; \\quad \\text{Faraday's Law of Electrolysis: } m = \\frac{I \\cdot t \\cdot M}{n \\cdot F} \\quad (F = 96485\\text{ C/mol})$$\n$$\\text{Cathodic Protection: Sacrificial Anode (Zn, Mg, Al on Fe) or Impressed Current (ICCP)}$$",
+            "description": "Corrosion is the electrochemical deterioration of an engineering metal resulting from chemical reaction with its surrounding environment. An electrochemical corrosion cell requires four essential elements: (1) Anode: metal undergoes oxidation, losing electrons and dissolving (M \\to M^{n+} + ne^-); (2) Cathode: consumes electrons via reduction reaction (e.g., hydrogen reduction in acid or oxygen reduction in aerated neutral water); (3) Metallic pathway: conducts electrons from anode to cathode; and (4) Electrolyte: liquid conducting ions between electrodes. Common corrosion types: (a) Galvanic Corrosion: two dissimilar metals in electrical contact in an electrolyte; the more active metal (higher on galvanic series, more negative standard reduction potential) corrodes preferentially; (b) Pitting Corrosion: localized, highly destructive cavity formation in passive alloys (stainless steels in chlorides); (c) Crevice Corrosion: localized attack occurring in shielded, stagnant recesses with depleted oxygen; (d) Intergranular Corrosion: preferential attack along grain boundaries (e.g., chromium carbide precipitation in sensitized stainless steel); (e) Stress Corrosion Cracking (SCC): brittle cracking from combined tensile stress and corrosive environment; and (f) Passivation: spontaneous formation of a thin, protective oxide film (e.g., Cr_2O_3 on stainless steel, Al_2O_3 on aluminum).",
+            "examTip": "Found in Materials Science, Chemical, Civil & Environmental Engineering. Essential FE Galvanic Series memory rule: When two metals couple together, the ANODE is the one that gets consumed/corroded. The metal that is MORE ACTIVE (less noble, lower potential) becomes the anode. Example: In galvanized steel (Zinc coating on Iron), Zinc is more active than Iron (E^\\circ_{Zn^{2+}/Zn} = -0.76 V vs. E^\\circ_{Fe^{2+}/Fe} = -0.44 V), so Zinc acts as a sacrificial anode, sacrificing itself to protect the underlying iron even if scratched!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Corrosion_Terminology.mp4",
+            "videoTitle": "Corrosion Terminology Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A buried carbon steel pipeline is cathodically protected by an external sacrificial magnesium anode ($M_{\\text{Mg}} = 24.31\\text{ g/mol}, n = 2$). The system delivers a continuous protective galvanic current of $I = 0.50\\text{ A}$.</p>\n<p>Using Faraday's constant $F = 96485\\text{ C/mol}$, the mass of magnesium consumed over $t = 1.0\\text{ year}$ ($365\\text{ days} = 3.1536 \\times 10^7\\text{ s}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.97\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $7.94\\text{ kg}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Total Electric Charge Transferred ($Q$)</strong></p>\n$$Q = I \\cdot t = (0.50\\text{ A})(3.1536 \\times 10^7\\text{ s}) = 1.5768 \\times 10^7\\text{ C}$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Faraday's Law of Electrolysis</strong></p>\n$$m = \\frac{Q \\cdot M}{n \\cdot F} = \\frac{(1.5768 \\times 10^7\\text{ C})(24.31\\text{ g/mol})}{(2)(96485\\text{ C/mol})} = \\frac{3.8332 \\times 10^8}{192970} \\approx 1986.4\\text{ g} \\approx 1.99\\text{ kg}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.99\\text{ kg}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Remember $n = 2$ for $\\text{Mg} \\to \\text{Mg}^{2+} + 2e^-$. If you forget $n = 2$, you get $3.97\\text{ kg}$ (Option C).</p>"
+            }
+        },
+        {
+            "title": "Difference between Ionic and Covalent Bonding",
+            "formula": "$$\\Delta EN = |EN_A - EN_B|; \\quad \\Delta EN > 1.7 \\implies \\text{Ionic Bond } (>50\\% \\text{ ionic character}); \\quad \\Delta EN < 1.7 \\implies \\text{Covalent Bond}$$\n$$\\% \\text{ Ionic Character} = \\left[1 - \\exp\\left(-0.25 (\\Delta EN)^2\\right)\\right] \\times 100\\% \\quad (\\text{Pauling's Equation})$$\n$$\\text{Ionic: } \\text{NaCl, MgO, } \\text{Al}_2\\text{O}_3 \\quad (\\text{Brittle, High } T_m, \\text{ Nondirectional, Insulator as solid, Conducts in liquid/melt});$$\n$$\\text{Covalent: } \\text{Diamond, } \\text{SiO}_2, \\text{ Si, } \\text{CH}_4, \\text{ H}_2\\text{O} \\quad (\\text{Directional orbital overlap, High bond strength, Low conductivity})$$",
+            "description": "Primary atomic chemical bonding is classified by how valence electrons are redistributed between interacting atoms to achieve stable outer octet configurations: (1) Ionic Bonding forms between atoms with large differences in electronegativity (\\Delta EN > 1.7, typically a metal and a non-metal, e.g., Na^+ and Cl^-). Valence electrons are completely transferred from the electropositive metal cation to the electronegative non-metal anion, creating nondirectional electrostatic Coulombic attraction forces. Characteristics: high melting and boiling points, hard but brittle crystal structures (cleaving along like-charge repelling planes), electrically insulating in solid state, but electrically and ionically conductive when melted or dissolved in aqueous solution. (2) Covalent Bonding forms between atoms with small or zero electronegativity differences (\\Delta EN < 1.7, typically between non-metals, e.g., C-C, Si, SiO_2, H_2O). Atoms share pairs of valence electrons in localized, highly directional hybrid orbitals. Characteristics: strong directional bonds, high hardness and melting points in 3D network covalent solids (diamond, quartz), but weak intermolecular forces between discrete covalent molecules (CH_4, CO_2), and poor electrical conductivity (except graphite).",
+            "examTip": "Found in Chemistry & Materials Science. Quick FE memory criteria: (1) Ionic: Metal + Non-metal (e.g., NaCl, MgO, CaO); nondirectional electrostatic; conducts in molten/solution state. (2) Covalent: Non-metal + Non-metal (e.g., Diamond, SiC, SiO_2, H_2O); directional orbital sharing; poor electrical conductors. (3) Metallic: Metal + Metal (delocalized electron sea; ductile, high electrical and thermal conductivity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Ionic_and_Covalent_Bonding.mp4",
+            "videoTitle": "Ionic vs. Covalent Bonding Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>The Pauling electronegativities of magnesium and oxygen are $EN_{\\text{Mg}} = 1.2$ and $EN_{\\text{O}} = 3.5$.</p>\n<p>Using Pauling's formula $\\%\\text{IC} = [1 - \\exp(-0.25 (\\Delta EN)^2)] \\times 100\\%$, the predominant bond type and approximate percent ionic character of magnesium oxide ($\\text{MgO}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Covalent bond with $\\%\\text{IC} \\approx 27\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Metallic bond with $\\%\\text{IC} \\approx 50\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Pure covalent bond with $\\%\\text{IC} \\approx 5\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Electronegativity Difference ($\\Delta EN$)</strong></p>\n$$\\Delta EN = |EN_{\\text{O}} - EN_{\\text{Mg}}| = |3.5 - 1.2| = 2.3$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Pauling's Percent Ionic Character Formula</strong></p>\n$$\\%\\text{IC} = \\left[1 - \\exp\\left(-0.25 (2.3)^2\\right)\\right] \\times 100\\% = \\left[1 - \\exp\\left(-0.25 \\times 5.29\\right)\\right] \\times 100\\%$$\n$$\\%\\text{IC} = \\left[1 - \\exp(-1.3225)\\right] \\times 100\\% = [1 - 0.2665] \\times 100\\% \\approx 73.35\\% \\approx 73\\%$$\n<p>Because $\\Delta EN = 2.3 > 1.7$ and $\\%\\text{IC} > 50\\%$, $\\text{MgO}$ is classified as an <strong>ionic bond</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Any bond with $Delta EN > 1.7$ has $> 50%$ ionic character and is classified predominantly as ionic.</p>"
             }
         }
     ],
@@ -32245,2539 +34030,204 @@ window.calcEvaluate = function() {
                 "question": "<p>A linear time-invariant (LTI) control system has the step response:</p>\n<p>$$y_{\\text{step}}(t) = \\left(1 - e^{-4t}\\right) u(t)$$</p>\n<p>The unit impulse response $h(t)$ of this system and its response $y_{\\text{ramp}}(t)$ to a unit ramp input $r(t) = t \\cdot u(t)$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $h(t) = -4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t + \\frac{1}{4} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $h(t) = e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(\\frac{t^2}{2} - \\frac{1}{4} e^{-4t}\\right) u(t)$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Impulse Response ($h(t)$)</strong></p>\n$$h(t) = \\frac{d}{dt}[y_{\\text{step}}(t)] = \\frac{d}{dt}\\left[1 - e^{-4t}\\right] u(t) = 4 e^{-4t} u(t)$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Ramp Response ($y_{\\text{ramp}}(t)$)</strong></p>\n<p>Integrating step response yields the ramp response:</p>\n$$y_{\\text{ramp}}(t) = \\int_0^t (1 - e^{-4\\tau}) d\\tau = \\left[ \\tau + \\frac{1}{4} e^{-4\\tau} \\right]_0^t = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $h(t) = 4 e^{-4t} u(t), \\quad y_{\\text{ramp}}(t) = \\left(t - \\frac{1}{4} + \\frac{1}{4} e^{-4t}\\right) u(t)$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The transfer function is $H(s) = \\mathcal{L}\\{h(t)\\} = \\frac{4}{s + 4}$. Multiplying by $1/s^2$ (ramp) gives $Y(s) = \\frac{4}{s^2(s + 4)} = \\frac{1}{s^2} - \\frac{1/4}{s} + \\frac{1/4}{s + 4}$.</p>"
             }
+        },
+        {
+            "title": "Three Equilibrium Equations in Statics",
+            "formula": "$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M_O = 0 \\quad (\\text{2D Coplanar Statics});$$\n$$\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum F_z = 0, \\quad \\sum M_x = 0, \\quad \\sum M_y = 0, \\quad \\sum M_z = 0 \\quad (\\text{3D Space Statics})$$",
+            "description": "Statics investigates rigid bodies at rest or in uniform constant-velocity motion where net external forces and moments vanish. For general 2D coplanar force systems, exactly three independent scalar equations of equilibrium are available: (1) Summation of forces in x-direction equals zero (\\sum F_x = 0), (2) Summation of forces in y-direction equals zero (\\sum F_y = 0), and (3) Summation of moments about any arbitrary reference point O in the plane equals zero (\\sum M_O = 0). In concurrent 2D force systems where lines of action intersect at a single point, the moment equation is trivially satisfied, leaving only two independent equations (\\sum F_x = 0, \\sum F_y = 0). For 2D parallel force systems, one force equation and one moment equation apply. In 3D space, a body provides six independent equations of equilibrium (three translational and three rotational). If unknown support reactions exceed the number of independent equilibrium equations, the structure is statically indeterminate.",
+            "examTip": "Found in Statics & Mechanics of Materials. When solving 2D beams or frames: Always sum moments about the support with the greatest number of unknowns (typically a pin or hinge with 2 reactions). This eliminates those unknowns and lets you solve directly for the remaining reaction in a single equation. Watch sign conventions: counter-clockwise moments are conventionally positive (+CCW).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Three_Equilibrium_Equations_in_Statics.mp4",
+            "videoTitle": "Three Equilibrium Equations in Statics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A simply supported horizontal beam of span $L = 6.0\\text{ m}$ is pinned at support A and rests on a roller at support B. It carries a concentrated vertical load $P = 18.0\\text{ kN}$ at $x = 2.0\\text{ m}$ from A.</p>\n<p>Using the equilibrium equations, the vertical reaction forces $R_A$ and $R_B$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $R_A = 9.0\\text{ kN}, \\quad R_B = 9.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $R_A = 6.0\\text{ kN}, \\quad R_B = 12.0\\text{ kN}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $R_A = 18.0\\text{ kN}, \\quad R_B = 0.0\\text{ kN}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Sum Moments About Support A ($\\sum M_A = 0$)</strong></p>\n$$\\sum M_A = 0 \\implies R_B(6.0\\text{ m}) - (18.0\\text{ kN})(2.0\\text{ m}) = 0$$\n$$6.0 R_B = 36.0 \\implies R_B = 6.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Sum Vertical Forces ($\\sum F_y = 0$)</strong></p>\n$$\\sum F_y = 0 \\implies R_A + R_B - 18.0 = 0 \\implies R_A = 18.0 - 6.0 = 12.0\\text{ kN}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $R_A = 12.0\\text{ kN}, \\quad R_B = 6.0\\text{ kN}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The load is closer to support A (one-third of the span), so support A carries two-thirds of the load ($12\\text{ kN}$) and support B carries one-third ($6\\text{ kN}$).</p>"
+            }
+        },
+        {
+            "title": "Centroids of Common Objects",
+            "formula": "$$\\bar{x} = \\frac{\\sum \\bar{x}_i A_i}{\\sum A_i}, \\quad \\bar{y} = \\frac{\\sum \\bar{y}_i A_i}{\\sum A_i}; \\quad \\text{Rectangle: } \\bar{y} = \\frac{h}{2}; \\quad \\text{Triangle: } \\bar{y} = \\frac{h}{3} \\text{ (from base)};$$\n$$\\text{Semicircle: } \\bar{y} = \\frac{4r}{3\\pi} \\approx 0.4244 r; \\quad \\text{Quarter Circle: } \\bar{x} = \\bar{y} = \\frac{4r}{3\\pi}; \\quad \\text{Circular Sector: } \\bar{x} = \\frac{2r\\sin\\alpha}{3\\alpha}$$",
+            "description": "The centroid of a planar area represents its geometric center, corresponding to the center of gravity of a thin plate with homogeneous density. For composite planar shapes constructed from common geometric sub-elements (rectangles, triangles, circles, and semicircles), the composite centroid coordinates (\\bar{x}, \\bar{y}) are determined by taking first moments of area divided by total area (\\sum \\bar{y}_i A_i / \\sum A_i). For holes or cutouts, their area is treated as negative (A_i < 0). Standard handbook centroid elevations measured from the flat base: Rectangle of height h has \\bar{y} = h/2; right or general triangle of height h has \\bar{y} = h/3 measured from base (2h/3 from vertex); semicircle of radius r has its centroid located along the line of symmetry at distance \\bar{y} = 4r/(3\\pi) \\approx 0.4244r from the diametral base.",
+            "examTip": "Found in Statics & Mechanics of Materials. The centroid location directly defines the neutral axis for bending stress (\\sigma = -M y / I) and the point of action for resultant hydrostatic fluid pressure forces (F_R = \\gamma \\bar{y} A). The classic trap is measuring the triangle centroid from the top vertex (h/3) instead of from the base (h/3 from flat base, 2h/3 from pointed vertex)! For a semicircle of radius r, memorizing 4r/(3\\pi) \\approx 0.4244r saves time.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Centroids_of_Common_Objects.mp4",
+            "videoTitle": "Centroids of Common Objects Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A composite cross-section consists of a rectangular web of width $b_1 = 20\\text{ mm}$ and height $h_1 = 100\\text{ mm}$, topped by a horizontal flange of width $b_2 = 120\\text{ mm}$ and thickness $t_2 = 20\\text{ mm}$.</p>\n<p>The centroid elevation $\\bar{y}$ measured from the bottom edge of the web is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $60.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $72.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $82.7\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $95.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Areas and Centroids of Sub-Components</strong></p>\n<p>Web (Component 1): $A_1 = 20 \\times 100 = 2000\\text{ mm}^2$, $y_1 = 100 / 2 = 50\\text{ mm}$.</p>\n<p>Flange (Component 2): $A_2 = 120 \\times 20 = 2400\\text{ mm}^2$, $y_2 = 100 + (20 / 2) = 110\\text{ mm}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Apply Composite Centroid Formula</strong></p>\n$$\\bar{y} = \\frac{A_1 y_1 + A_2 y_2}{A_1 + A_2} = \\frac{(2000)(50) + (2400)(110)}{2000 + 2400} = \\frac{100000 + 264000}{4400} = \\frac{364000}{4400} \\approx 82.73\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $82.7\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Always measure individual centroids from the SAME global reference datum (the bottom edge in this problem).</p>"
+            }
+        },
+        {
+            "title": "Free Body Diagrams",
+            "formula": "$$\\text{Isolate Body } \\implies \\text{Active Forces } (\\text{Applied Loads, Weight}) + \\text{Reactive Support Forces } = \\mathbf{0}$$\n$$\\text{Cable / Rope: } 1 \\text{ unknown (Tension along cable)}; \\quad \\text{Roller / Rocker: } 1 \\text{ unknown (Normal force } N \\perp \\text{surface});$$\n$$\\text{Pin / Hinge: } 2 \\text{ unknowns } (R_x, R_y); \\quad \\text{Fixed / Built-in Support: } 3 \\text{ unknowns } (R_x, R_y, M_z)$$\n$$\\text{Two-Force Member: Equal, opposite, and collinear forces along line connecting the two pins}$$",
+            "description": "A Free Body Diagram (FBD) is the essential foundational tool of engineering mechanics. It consists of a sketch of the isolated structural component or system completely separated from its surroundings and supporting environment, depicting all applied active external loads, distributed pressures, body forces (weight W = mg acting at the center of gravity), and reactive forces and moments exerted by the removed supports. Support reaction rules: (1) Cables, ropes, and short links transmit only tensile or axial force along their centerline (1 unknown). (2) Smooth surfaces and rollers prevent translation perpendicular to the supporting guide plane, exerting a single normal force reaction N (1 unknown). (3) Rough surfaces add tangential friction force F_f \\le \\mu_s N (2 unknowns). (4) Pin joints prevent translational motion in two orthogonal directions, producing reaction components R_x and R_y but allowing free rotation (2 unknowns, no moment). (5) Fixed (clamped/cantilever) supports prevent both linear translation and angular rotation, producing vertical shear, axial horizontal force, and a resisting bending moment M (3 unknowns in 2D).",
+            "examTip": "Found in Statics, Dynamics & Structural Analysis. Drawing a correct FBD is step 1 for at least 30% of mechanics questions. Rules for 2-force members: If a member has pins at both ends and NO intermediate loads applied along its span, the reaction forces at the two ends MUST be equal in magnitude, opposite in direction, and collinear along the line connecting the two pins! Recognizing 2-force members simplifies trusses and mechanisms from 4 unknowns to 1 unknown.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Free_Body_Diagrams.mp4",
+            "videoTitle": "Free Body Diagrams Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A cantilever beam of length $L = 4.0\\text{ m}$ is rigidly clamped at wall A. It carries a distributed load that varies linearly from $w = 0$ at wall A to $w_0 = 12.0\\text{ kN/m}$ at the free tip B.</p>\n<p>From the Free Body Diagram, the clamping reaction moment $M_A$ at wall A required for static equilibrium is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $24.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $48.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $96.0\\text{ kN}\\cdot\\text{m}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Replace Triangular Load by Equivalent Concentrated Load</strong></p>\n$$W = \\frac{1}{2} w_0 L = \\frac{1}{2}(12.0\\text{ kN/m})(4.0\\text{ m}) = 24.0\\text{ kN}$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Location of Resultant Force from Wall A</strong></p>\n<p>The centroid of the triangular load is at distance $\\frac{2}{3} L$ from the zero-load end (wall A):</p>\n$$x_{\\text{res}} = \\frac{2}{3}(4.0\\text{ m}) = \\frac{8.0}{3}\\text{ m} \\approx 2.667\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Sum Moments at Wall A ($\\sum M_A = 0$)</strong></p>\n$$M_A - W \\cdot x_{\\text{res}} = 0 \\implies M_A = (24.0\\text{ kN})\\left(\\frac{8.0}{3}\\text{ m}\\right) = 64.0\\text{ kN}\\cdot\\text{m}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $64.0\\text{ kN}\\cdot\\text{m}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> If the triangle were reversed (maximum load at A, zero at B), the centroid would be at $L/3 = 1.333\\text{ m}$ from A, yielding $M_A = 32.0\\text{ kN}\\cdot\\text{m}$. Always verify which end has the peak load!</p>"
+            }
+        },
+        {
+            "title": "Instantaneous Velocity and Acceleration",
+            "formula": "$$\\mathbf{v}(t) = \\frac{d\\mathbf{r}}{dt} = \\dot{x}\\mathbf{i} + \\dot{y}\\mathbf{j} + \\dot{z}\\mathbf{k}; \\quad \\mathbf{a}(t) = \\frac{d\\mathbf{v}}{dt} = \\frac{d^2\\mathbf{r}}{dt^2} = \\ddot{x}\\mathbf{i} + \\ddot{y}\\mathbf{j} + \\ddot{z}\\mathbf{k}$$\n$$a = v \\frac{dv}{ds} = \\frac{1}{2}\\frac{d(v^2)}{ds} \\quad (\\text{Differential Form when } a = f(s)); \\quad v(t) = v_0 + \\int_0^t a(t') dt'$$\n$$\\text{Normal-Tangential Coordinates: } \\mathbf{a} = a_t \\mathbf{u}_t + a_n \\mathbf{u}_n = \\left(\\frac{dv}{dt}\\right)\\mathbf{u}_t + \\left(\\frac{v^2}{\\rho}\\right)\\mathbf{u}_n, \\quad a = \\sqrt{a_t^2 + a_n^2}$$",
+            "description": "Instantaneous velocity \\mathbf{v}(t) defines the time rate of change of position vector \\mathbf{r}(t), and is always strictly tangent to the curved path of motion. Instantaneous acceleration \\mathbf{a}(t) is the second time derivative of position, describing changes in both velocity magnitude (speed) and velocity direction. For 1D rectilinear motion with position-dependent acceleration a(s), the chain rule yields a = v(dv/ds) \\implies \\int a \\, ds = \\int v \\, dv. In planar curvilinear motion resolved into intrinsic path (normal-tangential) coordinates: the tangential component a_t = \\dot{v} = dv/dt measures the rate of speeding up or slowing down; the normal component a_n = v^2/\\rho (where \\rho is the radius of curvature) is directed perpendicular toward the center of curvature, accounting purely for directional turning. Total magnitude is a = \\sqrt{a_t^2 + a_n^2}.",
+            "examTip": "Found in Dynamics: Kinematics of Particles. When acceleration is a function of position a(s) rather than time t, DO NOT try to use constant acceleration formulas (v = v_0 + at)! Instead, integrate using a \\, ds = v \\, dv. When an object moves along a curve at constant speed (v = \\text{const}), tangential acceleration a_t = 0, but normal acceleration a_n = v^2/\\rho \\ne 0!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4",
+            "videoTitle": "Instantaneous Velocity and Acceleration Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A vehicle travels on a curved horizontal highway track having a local radius of curvature $\\rho = 200\\text{ m}$. At a given instant, the car has a speed $v = 20.0\\text{ m/s}$ and is decelerating at a constant rate along the path of $a_t = -1.50\\text{ m/s}^2$.</p>\n<p>The magnitude of the total instantaneous acceleration vector is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.00\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $2.50\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $3.50\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(20.0\\text{ m/s})^2}{200\\text{ m}} = \\frac{400}{200} = 2.00\\text{ m/s}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Combine Orthogonal Components</strong></p>\n<p>The tangential acceleration is $a_t = -1.50\\text{ m/s}^2$. Because tangential and normal directions are perpendicular:</p>\n$$a = \\sqrt{a_t^2 + a_n^2} = \\sqrt{(-1.50)^2 + (2.00)^2} = \\sqrt{2.25 + 4.00} = \\sqrt{6.25} = 2.50\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $2.50\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Normal acceleration $a_n = v^2/\\rho$ is always positive and directed toward the center of curvature. Tangential acceleration $a_t$ can be positive (accelerating), zero (constant speed), or negative (braking).</p>"
+            }
+        },
+        {
+            "title": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+            "formula": "$$\\rho = \\frac{\\left[1 + (y')^2\\right]^{3/2}}{|y''|} = \\frac{\\left[1 + \\left(\\frac{dy}{dx}\\right)^2\\right]^{3/2}}{\\left|\\frac{d^2y}{dx^2}\\right|}; \\quad \\kappa = \\frac{1}{\\rho} = \\frac{|y''|}{\\left[1 + (y')^2\\right]^{3/2}} \\quad (\\text{Curvature})$$\n$$\\text{At Extrema / Inflection Points where } y' = 0 \\implies \\rho = \\frac{1}{|y''|}, \\quad \\kappa = |y''|$$\n$$\\text{Small Slope Approximation in Beams: } \\frac{1}{\\rho} \\approx \\frac{d^2y}{dx^2} = \\frac{M(x)}{E I}$$",
+            "description": "The radius of curvature \\rho of a plane curve y = f(x) at any given point is the radius of the osculating (tangent) circle that best approximates the curve locally. The reciprocal of radius of curvature is curvature \\kappa = 1/\\rho, measuring the rate of turning of the tangent vector per unit arc length (d\\phi/ds). The general Cartesian formula computes \\rho = [1 + (y')^2]^{3/2} / |y''|. In dynamic trajectory analysis, normal acceleration depends inversely on radius of curvature (a_n = v^2/\\rho). In structural beam deflection theory, for small slopes (y' = dy/dx \\ll 1), (y')^2 \\approx 0, simplifying the relation to 1/\\rho \\approx d^2y/dx^2 = M/(EI), which forms the governing Euler-Bernoulli beam differential equation.",
+            "examTip": "Found in Mathematics & Dynamics (Path Kinematics). Common FE exam application: A particle or roller coaster car moves along a parabolic track y = c x^2. To find normal acceleration a_n = v^2/\\rho at the bottom (x = 0): y' = 2cx = 0 at x = 0, so \\rho = 1 / |y''| = 1 / (2c). Then a_n = v^2 / \\rho = 2 c v^2!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+            "videoTitle": "Radius of Curvature Formula Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A skateboarder rides through a parabolic bowl modeled by the curve $y = 0.05 x^2$ (where $x$ and $y$ are in meters). At the lowest point ($x = 0$), the skateboarder travels at a speed of $v = 8.0\\text{ m/s}$.</p>\n<p>The radius of curvature $\\rho$ at $x = 0$ and the corresponding normal acceleration $a_n$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\rho = 5.0\\text{ m}, \\quad a_n = 12.8\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\rho = 20.0\\text{ m}, \\quad a_n = 3.2\\text{ m/s}^2$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\rho = 10.0\\text{ m}, \\quad a_n = 0.8\\text{ m/s}^2$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute First and Second Derivatives</strong></p>\n$$y = 0.05 x^2 \\implies y' = \\frac{dy}{dx} = 0.10 x, \\quad y'' = \\frac{d^2y}{dx^2} = 0.10\\text{ m}^{-1}$$\n<p>At the bottom point ($x = 0$): $y'(0) = 0$ and $y''(0) = 0.10$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Radius of Curvature ($\\rho$)</strong></p>\n$$\\rho = \\frac{[1 + (y')^2]^{3/2}}{|y''|} = \\frac{[1 + 0]^{3/2}}{0.10} = \\frac{1}{0.10} = 10.0\\text{ m}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Normal Acceleration ($a_n$)</strong></p>\n$$a_n = \\frac{v^2}{\\rho} = \\frac{(8.0\\text{ m/s})^2}{10.0\\text{ m}} = \\frac{64.0}{10.0} = 6.40\\text{ m/s}^2$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $\\rho = 10.0\\text{ m}, \\quad a_n = 6.4\\text{ m/s}^2$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The total normal force exerted on the skateboarder at the bottom is $N = m(g + a_n) = m(9.81 + 6.4) = 16.21 m\\text{ N}$, meaning the rider experiences $1.65\\text{ g}$'s!</p>"
+            }
+        },
+        {
+            "title": "Difference between Absolute and Gage Pressure",
+            "formula": "$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}}; \\quad P_{\\text{vac}} = P_{\\text{atm}} - P_{\\text{abs}} = -P_{\\text{gage}}$$\n$$P_{\\text{atm, standard}} = 101.325\\text{ kPa} = 1.01325\\text{ bar} = 14.696\\text{ psia} \\approx 14.7\\text{ psi} = 29.92\\text{ in. Hg} = 760\\text{ mmHg}$$\n$$\\text{Hydrostatic Pressure Variation: } P(h) = P_0 + \\rho g h = P_0 + \\gamma h$$",
+            "description": "Pressure is the compressive normal force per unit contact area (P = F/A). Fluid pressure is measured relative to two distinct reference baselines: (1) Absolute Pressure (P_abs) is measured relative to a perfect absolute vacuum (zero pressure datum where no molecular collisions exist). Absolute pressure can never be negative (P_abs \\ge 0). (2) Gage Pressure (P_gage) is measured relative to local atmospheric pressure (P_atm), which represents the ambient zero datum on standard pressure gages, Bourdon tubes, and tire gauges. When pressure drops below local atmospheric, it is termed vacuum pressure (P_vac = P_atm - P_abs = -P_gage). In all thermodynamic state equations (such as ideal gas law P V = m R T and steam tables), ABSOLUTE pressure MUST be used; substituting gage pressure produces erroneous results.",
+            "examTip": "Found in Fluid Mechanics & Thermodynamics. CRITICAL FE EXAM RULE: Whenever you use ideal gas equations (P v = R T, P V = n \\bar{R} T) or evaluate thermodynamic enthalpies and isentropic relations, pressure MUST be in absolute units! If the prompt states 'a tank is pressurized to 250 kPa gage under atmospheric pressure 101.3 kPa', absolute pressure is P = 250 + 101.3 = 351.3 kPa. In US Customary: psia = psig + 14.7.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Absolute_and_Gage_Pressure.mp4",
+            "videoTitle": "Absolute vs. Gage Pressure Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A Bourdon pressure gage attached to a compressed air receiver reads $P_{\\text{gage}} = 45.0\\text{ psig}$. The local atmospheric pressure is $P_{\\text{atm}} = 14.7\\text{ psia}$. The air inside the tank is at temperature $T = 70.0^\\circ\\text{F}$ ($T = 530.0\\text{ R}$).</p>\n<p>Given the specific gas constant for air $R = 53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot^\\circ\\text{R})$, the air density $\\rho$ inside the receiver is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.075\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.229\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.304\\text{ lbm/ft}^3$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.412\\text{ lbm/ft}^3$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Convert Gage Pressure to Absolute Pressure</strong></p>\n$$P_{\\text{abs}} = P_{\\text{gage}} + P_{\\text{atm}} = 45.0\\text{ psig} + 14.7\\text{ psia} = 59.7\\text{ psia}$$\n<p>Convert $\\text{psia}$ ($\\text{lbf/in}^2$) to $\\text{lbf/ft}^2$:</p>\n$$P = 59.7 \\times 144 = 8596.8\\text{ lbf/ft}^2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Ideal Gas Law on Mass Basis ($P = \\rho R T$)</strong></p>\n$$\\rho = \\frac{P}{R T} = \\frac{8596.8\\text{ lbf/ft}^2}{(53.35\\text{ ft}\\cdot\\text{lbf}/(\\text{lbm}\\cdot\\text{R}))(530.0\\text{ R})} = \\frac{8596.8}{28275.5} \\approx 0.304\\text{ lbm/ft}^3$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $0.304\\text{ lbm/ft}^3$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Trap:</em> If you incorrectly use gage pressure ($45\\text{ psig}$), you obtain $\\rho = 0.229\\text{ lbm/ft}^3$ (Option B), which is the most common distractor answer on this type of question!</p>"
+            }
+        },
+        {
+            "title": "Newton's Second Law for a Particle",
+            "formula": "$$\\sum \\mathbf{F} = m \\mathbf{a} = m \\frac{d\\mathbf{v}}{dt} = \\frac{d\\mathbf{p}}{dt} \\quad (\\text{Inertial Equation of Motion});$$\n$$\\text{Rectangular: } \\sum F_x = m a_x, \\quad \\sum F_y = m a_y, \\quad \\sum F_z = m a_z;$$\n$$\\text{Normal-Tangential: } \\sum F_t = m \\frac{dv}{dt}, \\quad \\sum F_n = m \\frac{v^2}{\\rho}, \\quad \\sum F_b = 0;$$\n$$\\text{Polar / Cylindrical: } \\sum F_r = m(\\ddot{r} - r\\dot{\\theta}^2), \\quad \\sum F_\\theta = m(r\\ddot{\\theta} + 2\\dot{r}\\dot{\\theta})$$",
+            "description": "Newton's Second Law of Motion forms the central cornerstone of kinetics, stating that the vector sum of all external forces acting on a particle of constant mass m equals the particle's mass multiplied by its instantaneous acceleration vector relative to an inertial reference frame: \\sum \\mathbf{F} = m \\mathbf{a}. This can also be expressed as the time rate of change of linear momentum \\mathbf{p} = m \\mathbf{v}. To apply Newton's second law: (1) Construct a Free Body Diagram (FBD) showing all external forces (\\sum \\mathbf{F}), (2) Construct a Kinetic Diagram (KD) showing inertial mass-acceleration vectors (m\\mathbf{a}), (3) Choose the most convenient coordinate frame (rectangular for linear trajectories, path/normal-tangential for curved trajectories with known curvature \\rho, polar for radial/central force problems), and (4) Formulate scalar component equations.",
+            "examTip": "Found in Dynamics: Kinetics of Particles. In normal-tangential problems (e.g., car on banked curve, pendulum, loop-the-loop): \\sum F_n = m v^2/\\rho. The normal acceleration vector points inward toward the center of curvature; never draw centrifugal force on an inertial FBD—centrifugal force is an apparent fictitious force observed only in rotating non-inertial frames. Stick to real forces (N, W, F_f) and set their inward sum equal to m v^2/\\rho.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+            "videoTitle": "Newton's Second Law for a Particle Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A $1200\\text{ kg}$ automobile navigates a flat (unbanked, $\\theta = 0^\\circ$) horizontal circular curve of radius $\\rho = 150\\text{ m}$ at a constant speed of $v = 25.0\\text{ m/s}$.</p>\n<p>Assuming gravity $g = 9.81\\text{ m/s}^2$, the minimum coefficient of static friction $\\mu_s$ between tires and road required to prevent the vehicle from skidding outward is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.28$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $0.42$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $0.55$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $0.68$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Write Normal and Vertical Equations of Motion</strong></p>\n<p>Vertical equilibrium: $\\sum F_y = 0 \\implies N - mg = 0 \\implies N = mg$.</p>\n<p>Inward normal direction: The only horizontal force acting toward the center of the curve is static friction $F_f$:</p>\n$$\\sum F_n = m a_n \\implies F_f = m \\frac{v^2}{\\rho}$$\n<p><strong class=\"text-emerald-400\">Step 2: Relate Friction to Maximum Available Static Friction</strong></p>\n$$F_f \\le \\mu_s N \\implies m \\frac{v^2}{\\rho} \\le \\mu_s mg \\implies \\mu_s \\ge \\frac{v^2}{g \\rho}$$\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate Minimum Friction Coefficient</strong></p>\n$$\\mu_{s,\\min} = \\frac{(25.0\\text{ m/s})^2}{(9.81\\text{ m/s}^2)(150\\text{ m})} = \\frac{625.0}{1471.5} \\approx 0.4247 \\approx 0.42$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $0.42$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Notice that vehicle mass $m$ cancels out completely! A heavy truck and a lightweight sports car require the exact same minimum coefficient of friction to make the turn without sliding.</p>"
+            }
+        },
+        {
+            "title": "Conservation of Angular Momentum",
+            "formula": "$$\\mathbf{H}_O = \\mathbf{r} \\times m\\mathbf{v} \\quad (\\text{Particle about Point } O); \\quad H_G = I_G \\omega \\quad (\\text{Planar Rigid Body about Centroid } G)$$\n$$\\sum \\mathbf{M}_O = \\dot{\\mathbf{H}}_O = \\frac{d\\mathbf{H}_O}{dt}; \\quad \\text{When } \\sum \\mathbf{M}_O = \\mathbf{0} \\implies \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2} = \\text{constant}$$\n$$m r_1 v_{\\theta, 1} = m r_2 v_{\\theta, 2} \\quad (\\text{Central Force / Orbital Motion}); \\quad I_1 \\omega_1 = I_2 \\omega_2 \\quad (\\text{Rigid Body System})$$",
+            "description": "Angular momentum (moment of momentum) \\mathbf{H}_O describes the rotational momentum of a particle or rigid body about a fixed reference point O. The angular impulse-momentum theorem dictates that the time rate of change of angular momentum about point O equals the sum of external moments acting about O: \\sum \\mathbf{M}_O = d\\mathbf{H}_O/dt. When the resultant external moment about point O is zero (\\sum \\mathbf{M}_O = \\mathbf{0}), angular momentum about that point is strictly conserved: \\mathbf{H}_{O,1} = \\mathbf{H}_{O,2}. Primary engineering conditions where angular momentum is conserved: (1) Central force motion (such as gravitation or orbiting satellites) where the line of action of the attraction force passes directly through the origin O (\\mathbf{r} \\times \\mathbf{F} = \\mathbf{0}); (2) Spinning mechanical systems undergoing internal mass redistribution (e.g., folding/extending solar panels, centrifugal clutches, figure skaters drawing in their limbs); and (3) Impact/collision of rotating bodies about fixed pivot joints where reaction impulses at the pivot produce zero moment.",
+            "examTip": "Found in Dynamics: Kinetics of Particles & Planar Rigid Bodies. Classic FE problem: Satellite in elliptical orbit around Earth. Since gravity is a central force pointing directly at Earth's center, angular momentum is conserved: r_p v_p = r_a v_a, where r_p, v_p are perigee distance and speed, and r_a, v_a are apogee distance and speed. Another classic problem: A spinning turntable of moment of inertia I_1 and angular velocity \\omega_1 has a stationary disk of inertia I_2 dropped onto it: \\omega_2 = \\frac{I_1 \\omega_1}{I_1 + I_2}.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Conservation_of_Angular_Momentum.mp4",
+            "videoTitle": "Conservation of Angular Momentum Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A scientific research satellite travels in an elliptical Earth orbit. At perigee (closest point of approach), its orbital radius is $r_p = 7000\\text{ km}$ and its orbital velocity is $v_p = 8.40\\text{ km/s}$.</p>\n<p>At apogee (farthest point), the orbital radius increases to $r_a = 35000\\text{ km}$. Because gravity is a central force with zero moment about the center of Earth, angular momentum is conserved. The satellite speed at apogee $v_a$ is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $1.68\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $2.10\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $4.20\\text{ km/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $16.8\\text{ km/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply Conservation of Angular Momentum</strong></p>\n<p>At perigee and apogee, the velocity vectors are strictly perpendicular to the position vector from the center of Earth ($v_r = 0, v = v_\\theta$):</p>\n$$H_O = m r_p v_p = m r_a v_a$$\n<p><strong class=\"text-emerald-400\">Step 2: Solve for Apogee Speed ($v_a$)</strong></p>\n$$v_a = v_p \\left(\\frac{r_p}{r_a}\\right) = (8.40\\text{ km/s}) \\left(\\frac{7000\\text{ km}}{35000\\text{ km}}\\right) = 8.40 \\times \\frac{1}{5} = 1.68\\text{ km/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $1.68\\text{ km/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> As orbital radius increases by a factor of 5, velocity drops inversely by a factor of 5 to preserve angular momentum.</p>"
+            }
+        },
+        {
+            "title": "Difference between Free and Forced Vibrations",
+            "formula": "$$\\text{Free Vibration: } m \\ddot{x} + c \\dot{x} + k x = 0 \\implies \\omega_n = \\sqrt{\\frac{k}{m}}, \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$\n$$\\text{Forced Vibration: } m \\ddot{x} + c \\dot{x} + k x = F_0 \\cos(\\omega t) \\implies x(t) = x_{\\text{transient}}(t) + x_{\\text{steady-state}}(t)$$\n$$X = \\frac{F_0 / k}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}} = X_{\\text{static}} \\cdot M, \\quad r = \\frac{\\omega}{\\omega_n} \\ (\\text{Frequency Ratio}), \\quad M = \\frac{1}{\\sqrt{(1 - r^2)^2 + (2\\zeta r)^2}}$$",
+            "description": "Mechanical vibrations represent oscillating motions of physical bodies about an equilibrium position: (1) Free Vibration occurs when an elastic system is disturbed from its equilibrium state by an initial displacement x(0) or velocity \\dot{x}(0) and allowed to oscillate in the absence of ongoing external dynamic driving forces (F(t) = 0). The system oscillates at its natural frequency \\omega_n = \\sqrt{k/m} (or damped natural frequency \\omega_d = \\omega_n\\sqrt{1-\\zeta^2}), with amplitude decaying exponentially due to damping (c). (2) Forced Vibration occurs when an external time-dependent driving excitation force or base motion F(t) = F_0\\cos(\\omega t) continually acts upon the system. The total response consists of a decaying transient free response plus a persistent harmonic steady-state response that oscillates at the excitation frequency \\omega (NOT the natural frequency \\omega_n). When the excitation frequency matches the system natural frequency (r = \\omega/\\omega_n \\approx 1), Resonance occurs, causing magnification factor M \\approx 1/(2\\zeta) to surge, generating catastrophic oscillation amplitudes in lightly damped systems.",
+            "examTip": "Found in Mechanical Engineering: Mechanical Design and Dynamic Systems. Key comparison table for FE: (1) Free: Frequency is \\omega_n or \\omega_d, driven by initial conditions, decays to zero if damped. (2) Forced: Steady-state frequency is excitation frequency \\omega, driven by external load, persists indefinitely. (3) Resonance happens when \\omega \\approx \\omega_n (r = 1). If damping \\zeta = 0.05 (5%), the resonance magnification factor is M = 1/(2\\zeta) = 1/(2 \\times 0.05) = 10 times the static deflection!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Free_and_Forced_Vibrations.mp4",
+            "videoTitle": "Free vs. Forced Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A factory machine of total mass $m = 250\\text{ kg}$ is mounted on elastic isolators having equivalent total stiffness $k = 100\\text{ kN/m} = 100000\\text{ N/m}$ and damping ratio $\\zeta = 0.040$. The machine generates a harmonic rotating unbalance force of amplitude $F_0 = 500\\text{ N}$ operating at an excitation frequency $\\omega = 20.0\\text{ rad/s}$.</p>\n<p>The steady-state vibration amplitude $X$ of the machine is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $5.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25.0\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $62.5\\text{ mm}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $125.0\\text{ mm}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Natural Frequency ($\\omega_n$) and Frequency Ratio ($r$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{100000\\text{ N/m}}{250\\text{ kg}}} = \\sqrt{400} = 20.0\\text{ rad/s}$$\n$$r = \\frac{\\omega}{\\omega_n} = \\frac{20.0}{20.0} = 1.00 \\quad (\\text{System operates at exact resonance})$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Static Deflection ($X_{\\text{static}}$) and Dynamic Magnifier ($M$)</strong></p>\n$$X_{\\text{static}} = \\frac{F_0}{k} = \\frac{500\\text{ N}}{100000\\text{ N/m}} = 0.0050\\text{ m} = 5.0\\text{ mm}$$\n<p>At exact resonance ($r = 1$):</p>\n$$M = \\frac{1}{2\\zeta} = \\frac{1}{2(0.040)} = \\frac{1}{0.080} = 12.5$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Steady-State Amplitude ($X$)</strong></p>\n$$X = X_{\\text{static}} \\cdot M = (5.0\\text{ mm})(12.5) = 62.5\\text{ mm}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $62.5\\text{ mm}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The factor $1/(2\\zeta)$ is the classic resonant peak multiplier for any single degree of freedom system with light damping.</p>"
+            }
+        },
+        {
+            "title": "Governing Equation of Vibrations",
+            "formula": "$$m \\ddot{x}(t) + c \\dot{x}(t) + k x(t) = F(t) \\quad \\longleftrightarrow \\quad \\ddot{x} + 2\\zeta \\omega_n \\dot{x} + \\omega_n^2 x = \\frac{F(t)}{m}$$\n$$\\omega_n = \\sqrt{\\frac{k}{m}} \\quad (\\text{Undamped Natural Frequency [rad/s]}), \\quad f_n = \\frac{\\omega_n}{2\\pi} = \\frac{1}{2\\pi}\\sqrt{\\frac{k}{m}} \\quad (\\text{Frequency [Hz]})$$\n$$c_c = 2\\sqrt{km} = 2m\\omega_n \\quad (\\text{Critical Damping Coefficient}), \\quad \\zeta = \\frac{c}{c_c} = \\frac{c}{2\\sqrt{km}} \\quad (\\text{Damping Ratio})$$\n$$\\text{Underdamped Response } (\\zeta < 1): \\quad x(t) = X_0 e^{-\\zeta \\omega_n t} \\sin(\\omega_d t + \\phi), \\quad \\omega_d = \\omega_n \\sqrt{1 - \\zeta^2}$$",
+            "description": "The fundamental governing equation of motion for a linear Single Degree of Freedom (SDOF) vibratory system is derived from Newton's second law or D'Alembert's dynamic equilibrium: m\\ddot{x} + c\\dot{x} + kx = F(t), where m is equivalent mass, c is viscous damping coefficient, and k is equivalent elastic spring stiffness. Dividing across by mass m yields the standard canonical form \\ddot{x} + 2\\zeta\\omega_n\\dot{x} + \\omega_n^2 x = f(t). The damping ratio \\zeta = c / (2\\sqrt{km}) governs the physical behavior of free response: (1) Underdamped (\\zeta < 1): Oscillatory motion with exponentially decaying envelope e^{-\\zeta\\omega_n t}\\sin(\\omega_d t + \\phi); (2) Critically Damped (\\zeta = 1): Fastest non-oscillatory return to equilibrium with no overshoot; (3) Overdamped (\\zeta > 1): Sluggish exponential return without oscillation.",
+            "examTip": "Found in Mechanical & Civil Engineering: Vibrations and Dynamics. The three essential equations to memorize: \\omega_n = \\sqrt{k/m} in rad/s, f_n = \\omega_n/(2\\pi) in Hz (cycles/s), and c_c = 2\\sqrt{km}. To find equivalent stiffness k_eq: springs in parallel add directly (k_1 + k_2); springs in series add reciprocally (1/k_eq = 1/k_1 + 1/k_2). Cantilever beam end stiffness is k = 3EI/L^3.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Governing_Equation_of_Vibrations.mp4",
+            "videoTitle": "Governing Equation of Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A precision measuring instrument of mass $m = 4.0\\text{ kg}$ is mounted on a vibration isolator having spring stiffness $k = 3600\\text{ N/m}$ and viscous damping coefficient $c = 48.0\\text{ N}\\cdot\\text{s/m}$.</p>\n<p>The undamped natural frequency $\\omega_n$, damping ratio $\\zeta$, and damped natural frequency $\\omega_d$ are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.40, \\quad \\omega_d = 27.5\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $\\omega_n = 900\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 882\\text{ rad/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 1.00, \\quad \\omega_d = 0.0\\text{ rad/s}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Undamped Natural Frequency ($\\omega_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{3600\\text{ N/m}}{4.0\\text{ kg}}} = \\sqrt{900} = 30.0\\text{ rad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Compute Critical Damping Coefficient ($c_c$) and Damping Ratio ($\\zeta$)</strong></p>\n$$c_c = 2 m \\omega_n = 2(4.0\\text{ kg})(30.0\\text{ rad/s}) = 240.0\\text{ N}\\cdot\\text{s/m}$$\n$$\\zeta = \\frac{c}{c_c} = \\frac{48.0\\text{ N}\\cdot\\text{s/m}}{240.0\\text{ N}\\cdot\\text{s/m}} = 0.20$$\n<p><strong class=\"text-emerald-400\">Step 3: Compute Damped Natural Frequency ($\\omega_d$)</strong></p>\n$$\\omega_d = \\omega_n \\sqrt{1 - \\zeta^2} = 30.0 \\sqrt{1 - (0.20)^2} = 30.0 \\sqrt{0.96} \\approx 30.0(0.9798) \\approx 29.39\\text{ rad/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $\\omega_n = 30.0\\text{ rad/s}, \\quad \\zeta = 0.20, \\quad \\omega_d = 29.4\\text{ rad/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> For light damping ($zeta < 0.2$), the damped natural frequency $omega_d$ is very close to the undamped natural frequency $omega_n$ (within $2%$).</p>"
+            }
+        },
+        {
+            "title": "Examples of Torsional Vibrations",
+            "formula": "$$J \\ddot{\\theta} + c_t \\dot{\\theta} + k_t \\theta = T(t); \\quad k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{G \\pi d^4}{32 L} \\quad (\\text{Shaft Torsional Stiffness [N}\\cdot\\text{m/rad]})$$\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{G J_{\\text{polar}}}{J L}} \\quad (\\text{rad/s}), \\quad f_n = \\frac{\\omega_n}{2\\pi} \\quad (\\text{Hz})$$\n$$J = \\frac{1}{2} m r^2 \\quad (\\text{Solid Cylindrical Disk Polar Mass Moment of Inertia [kg}\\cdot\\text{m}^2])$$\n$$\\text{Two-Rotor System: } \\omega_n = \\sqrt{\\frac{k_t(J_1 + J_2)}{J_1 J_2}}, \\quad \\text{Nodal Point: } \\frac{L_1}{L_2} = \\frac{J_2}{J_1}$$",
+            "description": "Torsional vibration consists of angular oscillatory twisting of rotational mechanical components about their axis of rotation, governed by J\\ddot{\\theta} + k_t\\theta = 0, where J is the mass moment of inertia ([J] = \\text{kg}\\cdot\\text{m}^2) and k_t is torsional spring stiffness ([k_t] = \\text{N}\\cdot\\text{m/rad}). For a uniform cylindrical elastic shaft of shear modulus G, diameter d, length L, and polar second moment of area J_polar = \\pi d^4/32, torsional stiffness is k_t = G J_polar/L. Prominent real-world engineering examples: (1) Internal Combustion Engine Crankshafts subjected to cyclic gas pressure pulses and reciprocating piston inertia torques; (2) Marine propulsion propeller drive shafts; (3) Turbogenerator rotor trains linking steam turbines to electrical generators; (4) Helical drill strings in petroleum drilling; and (5) Centrifugal pump motor couplings. Severe torsional resonance creates excessive shear stresses that can cause fatigue shaft shearing without visible lateral vibration.",
+            "examTip": "Found in Mechanical Engineering: Machine Design and Vibrations. Watch out for the two distinct J's! J_polar in k_t = G J_polar/L is the polar moment of area of the shaft cross-section (J_polar = \\pi d^4 / 32, in m^4), whereas J (or I) in \\omega_n = \\sqrt{k_t / J} is the polar mass moment of inertia of the rotating rotor/flywheel (J = \\frac{1}{2}m r^2, in kg\\cdot m^2). If the shaft diameter doubles (2d), torsional stiffness k_t increases by 2^4 = 16 times!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Examples_of_Torsional_Vibrations.mp4",
+            "videoTitle": "Examples of Torsional Vibrations Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A solid steel drive shaft ($G = 80.0\\text{ GPa} = 80.0 \\times 10^9\\text{ Pa}$) of diameter $d = 50.0\\text{ mm} = 0.050\\text{ m}$ and length $L = 1.20\\text{ m}$ is fixed at one end and attached to a heavy turbine rotor with polar mass moment of inertia $J = 2.50\\text{ kg}\\cdot\\text{m}^2$ at the other end.</p>\n<p>The torsional natural frequency $f_n$ (in $\\text{Hz}$) of the system is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $10.2\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $20.4\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $40.8\\text{ Hz}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $128.0\\text{ Hz}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Polar Moment of Area of the Shaft ($J_{\\text{polar}}$)</strong></p>\n$$J_{\\text{polar}} = \\frac{\\pi d^4}{32} = \\frac{\\pi (0.050\\text{ m})^4}{32} = \\frac{\\pi (6.25 \\times 10^{-6})}{32} \\approx 6.136 \\times 10^{-7}\\text{ m}^4$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Torsional Spring Stiffness ($k_t$)</strong></p>\n$$k_t = \\frac{G J_{\\text{polar}}}{L} = \\frac{(80.0 \\times 10^9\\text{ Pa})(6.136 \\times 10^{-7}\\text{ m}^4)}{1.20\\text{ m}} = \\frac{49088}{1.20} \\approx 40907\\text{ N}\\cdot\\text{m/rad}$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Torsional Natural Frequency ($omega_n$ and $f_n$)</strong></p>\n$$\\omega_n = \\sqrt{\\frac{k_t}{J}} = \\sqrt{\\frac{40907\\text{ N}\\cdot\\text{m/rad}}{2.50\\text{ kg}\\cdot\\text{m}^2}} = \\sqrt{16363} \\approx 127.92\\text{ rad/s}$$\n$$f_n = \\frac{\\omega_n}{2\\pi} = \\frac{127.92}{2\\pi} \\approx 20.36\\text{ Hz} \\approx 20.4\\text{ Hz}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $20.4\\text{ Hz}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Be careful to divide $omega_n$ ($128\text{ rad/s}$) by $2pi$ to get cyclic frequency $f_n$ in $\text{Hz}$. Option (D) $128\text{ Hz}$ is the angular frequency trap!</p>"
+            }
+        },
+        {
+            "title": "Corrosion Terminology",
+            "formula": "$$\\text{Anode (Oxidation / Metal Loss): } M \\to M^{n+} + n e^-; \\quad \\text{Cathode (Reduction / Protection): } 2\\text{H}^+ + 2e^- \\to \\text{H}_2 \\ (\\text{Acid}), \\ \\text{O}_2 + 2\\text{H}_2\\text{O} + 4e^- \\to 4\\text{OH}^- \\ (\\text{Aerated})$$\n$$\\Delta E_{\\text{cell}} = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} > 0; \\quad \\text{Faraday's Law of Electrolysis: } m = \\frac{I \\cdot t \\cdot M}{n \\cdot F} \\quad (F = 96485\\text{ C/mol})$$\n$$\\text{Cathodic Protection: Sacrificial Anode (Zn, Mg, Al on Fe) or Impressed Current (ICCP)}$$",
+            "description": "Corrosion is the electrochemical deterioration of an engineering metal resulting from chemical reaction with its surrounding environment. An electrochemical corrosion cell requires four essential elements: (1) Anode: metal undergoes oxidation, losing electrons and dissolving (M \\to M^{n+} + ne^-); (2) Cathode: consumes electrons via reduction reaction (e.g., hydrogen reduction in acid or oxygen reduction in aerated neutral water); (3) Metallic pathway: conducts electrons from anode to cathode; and (4) Electrolyte: liquid conducting ions between electrodes. Common corrosion types: (a) Galvanic Corrosion: two dissimilar metals in electrical contact in an electrolyte; the more active metal (higher on galvanic series, more negative standard reduction potential) corrodes preferentially; (b) Pitting Corrosion: localized, highly destructive cavity formation in passive alloys (stainless steels in chlorides); (c) Crevice Corrosion: localized attack occurring in shielded, stagnant recesses with depleted oxygen; (d) Intergranular Corrosion: preferential attack along grain boundaries (e.g., chromium carbide precipitation in sensitized stainless steel); (e) Stress Corrosion Cracking (SCC): brittle cracking from combined tensile stress and corrosive environment; and (f) Passivation: spontaneous formation of a thin, protective oxide film (e.g., Cr_2O_3 on stainless steel, Al_2O_3 on aluminum).",
+            "examTip": "Found in Materials Science, Chemical, Civil & Environmental Engineering. Essential FE Galvanic Series memory rule: When two metals couple together, the ANODE is the one that gets consumed/corroded. The metal that is MORE ACTIVE (less noble, lower potential) becomes the anode. Example: In galvanized steel (Zinc coating on Iron), Zinc is more active than Iron (E^\\circ_{Zn^{2+}/Zn} = -0.76 V vs. E^\\circ_{Fe^{2+}/Fe} = -0.44 V), so Zinc acts as a sacrificial anode, sacrificing itself to protect the underlying iron even if scratched!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Corrosion_Terminology.mp4",
+            "videoTitle": "Corrosion Terminology Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A buried carbon steel pipeline is cathodically protected by an external sacrificial magnesium anode ($M_{\\text{Mg}} = 24.31\\text{ g/mol}, n = 2$). The system delivers a continuous protective galvanic current of $I = 0.50\\text{ A}$.</p>\n<p>Using Faraday's constant $F = 96485\\text{ C/mol}$, the mass of magnesium consumed over $t = 1.0\\text{ year}$ ($365\\text{ days} = 3.1536 \\times 10^7\\text{ s}$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $0.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $1.99\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $3.97\\text{ kg}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $7.94\\text{ kg}$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute Total Electric Charge Transferred ($Q$)</strong></p>\n$$Q = I \\cdot t = (0.50\\text{ A})(3.1536 \\times 10^7\\text{ s}) = 1.5768 \\times 10^7\\text{ C}$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Faraday's Law of Electrolysis</strong></p>\n$$m = \\frac{Q \\cdot M}{n \\cdot F} = \\frac{(1.5768 \\times 10^7\\text{ C})(24.31\\text{ g/mol})}{(2)(96485\\text{ C/mol})} = \\frac{3.8332 \\times 10^8}{192970} \\approx 1986.4\\text{ g} \\approx 1.99\\text{ kg}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $1.99\\text{ kg}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Remember $n = 2$ for $\\text{Mg} \\to \\text{Mg}^{2+} + 2e^-$. If you forget $n = 2$, you get $3.97\\text{ kg}$ (Option C).</p>"
+            }
+        },
+        {
+            "title": "Difference between Ionic and Covalent Bonding",
+            "formula": "$$\\Delta EN = |EN_A - EN_B|; \\quad \\Delta EN > 1.7 \\implies \\text{Ionic Bond } (>50\\% \\text{ ionic character}); \\quad \\Delta EN < 1.7 \\implies \\text{Covalent Bond}$$\n$$\\% \\text{ Ionic Character} = \\left[1 - \\exp\\left(-0.25 (\\Delta EN)^2\\right)\\right] \\times 100\\% \\quad (\\text{Pauling's Equation})$$\n$$\\text{Ionic: } \\text{NaCl, MgO, } \\text{Al}_2\\text{O}_3 \\quad (\\text{Brittle, High } T_m, \\text{ Nondirectional, Insulator as solid, Conducts in liquid/melt});$$\n$$\\text{Covalent: } \\text{Diamond, } \\text{SiO}_2, \\text{ Si, } \\text{CH}_4, \\text{ H}_2\\text{O} \\quad (\\text{Directional orbital overlap, High bond strength, Low conductivity})$$",
+            "description": "Primary atomic chemical bonding is classified by how valence electrons are redistributed between interacting atoms to achieve stable outer octet configurations: (1) Ionic Bonding forms between atoms with large differences in electronegativity (\\Delta EN > 1.7, typically a metal and a non-metal, e.g., Na^+ and Cl^-). Valence electrons are completely transferred from the electropositive metal cation to the electronegative non-metal anion, creating nondirectional electrostatic Coulombic attraction forces. Characteristics: high melting and boiling points, hard but brittle crystal structures (cleaving along like-charge repelling planes), electrically insulating in solid state, but electrically and ionically conductive when melted or dissolved in aqueous solution. (2) Covalent Bonding forms between atoms with small or zero electronegativity differences (\\Delta EN < 1.7, typically between non-metals, e.g., C-C, Si, SiO_2, H_2O). Atoms share pairs of valence electrons in localized, highly directional hybrid orbitals. Characteristics: strong directional bonds, high hardness and melting points in 3D network covalent solids (diamond, quartz), but weak intermolecular forces between discrete covalent molecules (CH_4, CO_2), and poor electrical conductivity (except graphite).",
+            "examTip": "Found in Chemistry & Materials Science. Quick FE memory criteria: (1) Ionic: Metal + Non-metal (e.g., NaCl, MgO, CaO); nondirectional electrostatic; conducts in molten/solution state. (2) Covalent: Non-metal + Non-metal (e.g., Diamond, SiC, SiO_2, H_2O); directional orbital sharing; poor electrical conductors. (3) Metallic: Metal + Metal (delocalized electron sea; ductile, high electrical and thermal conductivity).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Difference_Between_Ionic_and_Covalent_Bonding.mp4",
+            "videoTitle": "Ionic vs. Covalent Bonding Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>The Pauling electronegativities of magnesium and oxygen are $EN_{\\text{Mg}} = 1.2$ and $EN_{\\text{O}} = 3.5$.</p>\n<p>Using Pauling's formula $\\%\\text{IC} = [1 - \\exp(-0.25 (\\Delta EN)^2)] \\times 100\\%$, the predominant bond type and approximate percent ionic character of magnesium oxide ($\\text{MgO}$) are:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Covalent bond with $\\%\\text{IC} \\approx 27\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Metallic bond with $\\%\\text{IC} \\approx 50\\%$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Pure covalent bond with $\\%\\text{IC} \\approx 5\\%$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Electronegativity Difference ($\\Delta EN$)</strong></p>\n$$\\Delta EN = |EN_{\\text{O}} - EN_{\\text{Mg}}| = |3.5 - 1.2| = 2.3$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Pauling's Percent Ionic Character Formula</strong></p>\n$$\\%\\text{IC} = \\left[1 - \\exp\\left(-0.25 (2.3)^2\\right)\\right] \\times 100\\% = \\left[1 - \\exp\\left(-0.25 \\times 5.29\\right)\\right] \\times 100\\%$$\n$$\\%\\text{IC} = \\left[1 - \\exp(-1.3225)\\right] \\times 100\\% = [1 - 0.2665] \\times 100\\% \\approx 73.35\\% \\approx 73\\%$$\n<p>Because $\\Delta EN = 2.3 > 1.7$ and $\\%\\text{IC} > 50\\%$, $\\text{MgO}$ is classified as an <strong>ionic bond</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Ionic bond with $\\%\\text{IC} \\approx 73\\%$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Any bond with $Delta EN > 1.7$ has $> 50%$ ionic character and is classified predominantly as ionic.</p>"
+            }
         }
     ]
 };
 
-
-    const THEOREMS_BY_DISCIPLINE = {};
-
-    for (const [disc, list] of Object.entries(ALL_THEOREMS_BY_DISCIPLINE)) {
-        THEOREMS_BY_DISCIPLINE[disc] = list.filter(card => Boolean(card.videoUrl));
-    }
-
-
-    let quoteIndex = Math.floor(Math.random() * QUOTES.length);
-    let theoremIndex = 0;
-
-    function getActiveDiscipline() {
-        const disc = localStorage.getItem('enggtv_discipline') || 
-                     (window.state && window.state.user && window.state.user.discipline) || 
-                     'Mechanical';
-        if (THEOREMS_BY_DISCIPLINE[disc]) return disc;
-        if (disc === 'Civil Engineering') return 'Civil';
-        if (disc === 'Electrical') return 'Electrical and Computer';
-        if (disc === 'Other Disciplines' || disc === 'FE_Other Discipline' || (disc && disc.toLowerCase().includes('other'))) return 'Other';
-        return 'Mechanical';
-    }
-
-    function renderDailyQuote(isShuffle = false) {
-        if (isShuffle) {
-            quoteIndex = (quoteIndex + 1) % QUOTES.length;
-        }
-        const q = QUOTES[quoteIndex];
-        const quoteTextEl = document.getElementById('daily-quote-text');
-        const quoteAuthorEl = document.getElementById('daily-quote-author');
-        const quoteRoleEl = document.getElementById('daily-quote-role');
-
-        if (quoteTextEl) quoteTextEl.textContent = `“${q.quote}”`;
-        if (quoteAuthorEl) quoteAuthorEl.textContent = q.author;
-        if (quoteRoleEl) quoteRoleEl.textContent = q.role;
-    }
-
-    function renderDailyTheorem(isShuffle = false, explicitIndex = null, autoPlay = false) {
-        if (!document.getElementById("daily-theorem-title") && !document.getElementById("daily-theorem-card")) {
-            return;
-        }
-        const disc = getActiveDiscipline();
-        const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
-
-        if (explicitIndex !== null && explicitIndex >= 0 && explicitIndex < theorems.length) {
-            theoremIndex = explicitIndex;
-        } else if (isShuffle) {
-            theoremIndex = (theoremIndex + 1) % theorems.length;
-        } else {
-            // deterministic index based on day of month
-            const dayOfMonth = new Date().getDate();
-            theoremIndex = dayOfMonth % theorems.length;
-        }
-
-        const th = theorems[theoremIndex];
-
-        const discBadgeEl = document.getElementById('daily-theorem-discipline');
-        const titleEl = document.getElementById('daily-theorem-title');
-        const formulaEl = document.getElementById('daily-theorem-formula');
-        const descEl = document.getElementById('daily-theorem-desc');
-        const tipEl = document.getElementById('daily-theorem-tip');
-
-        if (discBadgeEl) discBadgeEl.textContent = `${disc} FE Focus • #${theoremIndex + 1} of ${theorems.length}`;
-        if (titleEl) titleEl.textContent = th.title;
-        if (formulaEl) formulaEl.innerHTML = th.formula;
-        if (descEl) descEl.textContent = th.description;
-        if (tipEl) tipEl.textContent = th.examTip;
-
-        // Video Explainer Field Handling
-        const playerCardEl = document.getElementById('daily-theorem-player-card');
-        const noVideoCardEl = document.getElementById('daily-theorem-no-video');
-        const videoEl = document.getElementById('daily-theorem-video');
-        const videoTitleEl = document.getElementById('daily-theorem-video-title');
-        const videoDurationEl = document.getElementById('daily-theorem-video-duration');
-
-        if (th.videoUrl) {
-            if (playerCardEl) playerCardEl.classList.remove('hidden');
-            if (noVideoCardEl) noVideoCardEl.classList.add('hidden');
-            if (videoTitleEl) videoTitleEl.textContent = th.videoTitle || `${th.title} Explainer`;
-            if (videoDurationEl) videoDurationEl.textContent = th.videoDuration || '10s HD';
-            
-            if (videoEl) {
-                const currentSrc = videoEl.getAttribute('data-src');
-                const isNewSrc = currentSrc !== th.videoUrl;
-                if (isNewSrc) {
-                    videoEl.setAttribute('data-src', th.videoUrl);
-                    videoEl.src = th.videoUrl;
-                    videoEl.load();
-                }
-
-                // Automatically play the video once shuffled or explicitly navigated
-                if (isShuffle || autoPlay) {
-                    videoEl.currentTime = 0;
-                    const triggerPlay = () => {
-                        const playPromise = videoEl.play();
-                        if (playPromise !== undefined) {
-                            playPromise.catch(err => {
-                                console.log('Autoplay attempt caught:', err);
-                            });
-                        }
-                    };
-
-                    if (isNewSrc) {
-                        videoEl.addEventListener('canplay', function onCanPlay() {
-                            videoEl.removeEventListener('canplay', onCanPlay);
-                            triggerPlay();
-                        }, { once: true });
-                        setTimeout(triggerPlay, 180);
-                    } else {
-                        triggerPlay();
-                    }
-                }
-            }
-        } else {
-            if (playerCardEl) playerCardEl.classList.add('hidden');
-            if (noVideoCardEl) noVideoCardEl.classList.remove('hidden');
-            if (videoEl) {
-                videoEl.pause();
-            }
-        }
-
-        // Render MathJax LaTeX equation & text (formula, description, tip, title)
-        const mathElements = [formulaEl, descEl, tipEl, titleEl].filter(Boolean);
-        if (window.safeTypesetMath) {
-            window.safeTypesetMath(mathElements);
-        } else if (window.MathJax && window.MathJax.typesetPromise) {
-            if (typeof window.MathJax.typesetClear === 'function') {
-                window.MathJax.typesetClear(mathElements);
-            }
-            window.MathJax.typesetPromise(mathElements).catch(err => console.warn('MathJax render notice:', err));
-        }
-    }
-
-    function setTheoremLayout(layout = 'below') {
-        const card = document.getElementById('daily-theorem-card');
-        const grid = document.getElementById('daily-theorem-body-grid');
-        const btnBelow = document.getElementById('btn-theorem-layout-below');
-        const btnSide = document.getElementById('btn-theorem-layout-side');
-
-        if (layout === 'side') {
-            if (card) {
-                card.classList.remove('lg:col-span-6');
-                card.classList.add('lg:col-span-12');
-            }
-            if (grid) {
-                grid.classList.remove('grid-cols-1');
-                grid.classList.add('grid-cols-1', 'lg:grid-cols-2', 'gap-6', 'items-start');
-            }
-            if (btnSide) {
-                btnSide.className = 'px-2 py-1 rounded-lg text-cyan-600 dark:text-cyan-400 bg-white dark:bg-slate-700 shadow-sm transition-all flex items-center gap-1 cursor-pointer';
-            }
-            if (btnBelow) {
-                btnBelow.className = 'px-2 py-1 rounded-lg text-slate-500 dark:text-slate-400 hover:text-cyan-500 transition-all flex items-center gap-1 cursor-pointer';
-            }
-        } else {
-            if (card) {
-                card.classList.remove('lg:col-span-12');
-                card.classList.add('lg:col-span-6');
-            }
-            if (grid) {
-                grid.classList.remove('grid-cols-1', 'lg:grid-cols-2', 'gap-6', 'items-start');
-                grid.classList.add('grid-cols-1', 'gap-4');
-            }
-            if (btnBelow) {
-                btnBelow.className = 'px-2 py-1 rounded-lg text-cyan-600 dark:text-cyan-400 bg-white dark:bg-slate-700 shadow-sm transition-all flex items-center gap-1 cursor-pointer';
-            }
-            if (btnSide) {
-                btnSide.className = 'px-2 py-1 rounded-lg text-slate-500 dark:text-slate-400 hover:text-cyan-500 transition-all flex items-center gap-1 cursor-pointer';
-            }
-        }
-        try {
-            localStorage.setItem('enggtv_theorem_layout', layout);
-        } catch (e) {}
-    }
-
-    function previewTheoremVideo(videoId) {
-        if (typeof window.switchDashboardTab === 'function') {
-            try { window.switchDashboardTab('motivation'); } catch (e) {}
-        }
-        const keyMap = {
-            'orificeflow': ["orifice","orifice flow","orifice plate"],
-            'expectedvalues': ["expected values","expected value","mean value"],
-            'pdf': ["probability density function","pdf","continuous probability"],
-            'soderberg': ["soderberg theory","soderberg"],
-            'exposurelimits': ["exposure limits","pel","twa","tlv","exposure"],
-            'doseresponse': ["dose-response curves","dose-response","dose response"],
-            'bookvalue': ["book value","book value of asset","depreciation book value"],
-            'etherscarboxylic': ["ethers, carboxylic acids and esters","ethers","carboxylic acids","esters"],
-            'safetydatasheet': ["safety data sheet (sds)","safety data sheet","sds"],
-            'confinedspacesafety': ["confined space safety","confined space"],
-            'aldehydesketones': ["aldehydes and ketones","aldehydes","ketones"],
-            'gdt': ["geometric dimensioning and tolerancing (gd&t)","geometric dimensioning and tolerancing","gd&t"],
-            'hvacprocesses': ["hvac processes","hvac"],
-            'dragliftcoefficient': ["drag coefficient and lift coefficient","drag coefficient","lift coefficient"],
-            'aerobicanaerobic': ["aerobic vs anaerobic processes","aerobic vs anaerobic","aerobic process"],
-            'isothermalprocess': ["isothermal process, with p-v and t-s representation","isothermal process","isothermal"],
-            'moodydiagram': ["moody, darcy, or stanton friction factor diagram","moody diagram","friction factor diagram","moody"],
-            'orificedischarging': ["orifice discharging freely into atmosphere","orifice discharging","torricelli"],
-            'coefficientofperformance': ["coefficient of performance (cop)","coefficient of performance","cop"],
-            'twophasevaporliquid': ["properties for two-phase (vapor-liquid) systems","two-phase systems","vapor-liquid"],
-            'areamomentofinertia': ["area moment of inertia","area moment"],
-            'propertiesofdotproduct': ["properties of dot product","dot product properties"],
-            'kennedysrule': ["kennedy's rule","kennedys rule","kennedy"],
-            'crossproduct': ["properties of cross product","cross product"],
-            'productofinertia': ['product of inertia'],
-            'couples': ['moments (couples)', 'couples'],
-            'momentscouples': ['moments (couples)', 'couples'],
-            'pitottube': ['pitot tube', 'pitot'],
-            'variancestddev': ['variance and standard deviation', 'standard deviation', 'variance'],
-            'plainwall': ['conduction through a plain wall', 'plain wall'],
-            'conductionplainwall': ['conduction through a plain wall', 'plain wall'],
-            'capillarity': ['capillarity'],
-            'nonnewtonian': ['newtonian vs non-newtonian fluid', 'non-newtonian'],
-            'newtonianfluid': ['newtonian vs non-newtonian fluid', 'newtonian'],
-            'fits': ['types of fits', 'fits'],
-            'typesoffits': ['types of fits', 'fits'],
-            'surfacetension': ['surface tension'],
-            'coprefrigeration': ['cop of refrigeration vs. cop of heat pump', 'coefficient of performance', 'cop'],
-            'polarmoment': ['polar moment of inertia', 'polar moment'],
-            'alkanes': ['alkanes, alkenes, alkynes', 'alkanes'],
-            'parabolicrule': ["simpson's rule/parabolic rule", 'simpson'],
-            'simpson': ['simpson’s 1/3 rule', "simpson's rule/parabolic rule", 'simpson'],
-            'exergy': ['exergy', 'availability of a closed system'],
-            'gyration': ['radius of gyration', 'gyration'],
-            'radiusofgyration': ['radius of gyration', 'gyration'],
-            'constantacceleration': ['constant acceleration motion', 'constant acceleration'],
-            'bernoulli': ['bernoulli'],
-            'fourier': ['fourier'],
-            'carnot': ['carnot'],
-            'mohr': ['mohr'],
-            'parallel': ['parallel'],
-            'bending': ['bending', 'flexure'],
-            'torsion': ['torsion'],
-            'greenshields': ['greenshield'],
-            'ssd': ['stopping sight', 'ssd'],
-            'stopping': ['stopping sight', 'ssd'],
-            'reynolds': ['reynolds'],
-            'manning': ['manning'],
-            'mannings': ['manning'],
-            'slenderness': ['slenderness'],
-            'euler': ['euler', 'buckling'],
-            'buckling': ['euler', 'buckling'],
-            'demorgan': ['de morgan', 'demorgan'],
-            'demorgans': ['de morgan', 'demorgan'],
-            'thevenin': ['thevenin'],
-            'nyquist': ['nyquist', 'sampling'],
-            'cooling': ['cooling', 'convective'],
-            'newton': ['cooling', 'convective'],
-            'newtons': ['cooling', 'convective'],
-            'ohm': ['ohm'],
-            'ohms': ['ohm'],
-            'stefan': ['stefan', 'boltzmann'],
-            'boltzmann': ['stefan', 'boltzmann'],
-            'radiation': ['stefan', 'boltzmann'],
-            'sdof': ['sdof', 'natural harmonic', 'natural frequency'],
-            'harmonic': ['sdof', 'natural harmonic', 'natural frequency'],
-            'vibrations': ['sdof', 'natural harmonic', 'natural frequency'],
-            'lmtd': ['lmtd', 'log mean'],
-            'mach': ['mach', 'speed of sound'],
-            'sound': ['mach', 'speed of sound'],
-            'opamp': ['opamp', 'operational amplifier'],
-            'amplifier': ['opamp', 'operational amplifier'],
-            'darcy': ['darcy', 'weisbach'],
-            'weisbach': ['darcy', 'weisbach'],
-            'weisback': ['darcy', 'weisbach'],
-            'rankine': ['rankine'],
-            'otto': ['otto'],
-            'firstlaw': ['first law of thermodynamics', 'first law'],
-            'thermodynamics': ['first law of thermodynamics', 'first law'],
-            'pressurevessel': ['thin-walled pressure vessel', 'pressure vessel'],
-            'pressure': ['thin-walled pressure vessel', 'pressure vessel'],
-            'vessel': ['thin-walled pressure vessel', 'pressure vessel'],
-            'vessels': ['thin-walled pressure vessel', 'pressure vessel'],
-            'continuity': ['continuity equation', 'continuity'],
-            'impulse': ['linear impulse and momentum', 'impulse'],
-            'momentum': ['linear impulse and momentum', 'momentum'],
-            'idealgas': ['ideal gas law', 'ideal gas'],
-            'gas': ['ideal gas law', 'ideal gas'],
-            'hydrostatic': ['hydrostatic pressure', 'hydrostatic'],
-            'hydro': ['hydrostatic pressure', 'hydrostatic'],
-            'compound': ['compound interest', 'compound amount factor', 'compound'],
-            'interest': ['compound interest', 'compound amount factor', 'compound'],
-            'centroid': ['centroid of composite', 'centroid'],
-            'composite': ['centroid of composite', 'composite'],
-            'maximumpower': ['maximum power', 'power transfer'],
-            'power': ['maximum power', 'power transfer'],
-            'kirchhoff': ['kirchhoff', 'kcl', 'kvl'],
-            'kcl': ['kirchhoff', 'kcl'],
-            'kvl': ['kirchhoff', 'kvl'],
-            'rctransient': ['first-order rc', 'rc transient'],
-            'rc': ['first-order rc', 'rc transient'],
-            'rlc': ['series rlc', 'resonance and bandwidth'],
-            'resonance': ['series rlc', 'resonance and bandwidth'],
-            'bjt': ['bipolar junction transistor', 'bjt'],
-            'transistor': ['bipolar junction transistor', 'bjt'],
-            'laplace': ['laplace transform', 'final value theorem'],
-            'finalvalue': ['laplace transform', 'final value theorem'],
-            'cpm': ['critical path method', 'cpm', 'float'],
-            'criticalpath': ['critical path method', 'cpm', 'float'],
-            'float': ['critical path method', 'cpm', 'float'],
-            'eoq': ['economic order quantity', 'eoq'],
-            'economicorderquantity': ['economic order quantity', 'eoq'],
-            'capitalizedcost': ['capitalized cost', 'infinite project'],
-            'capitalized': ['capitalized cost', 'infinite project'],
-            'exponentialsmoothing': ['simple exponential smoothing', 'demand forecast'],
-            'smoothing': ['simple exponential smoothing', 'demand forecast'],
-            'demandforecast': ['simple exponential smoothing', 'demand forecast'],
-            'forecast': ['simple exponential smoothing', 'demand forecast'],
-            'biot': ['biot number', 'transient conduction'],
-            'biotnumber': ['biot number', 'transient conduction'],
-            'vanderwaals': ['van der waals', 'real gases'],
-            'waals': ['van der waals', 'real gases'],
-            'realgases': ['van der waals', 'real gases'],
-            'compressibility': ['compressibility factor', 'real gas equation'],
-            'compressibilityfactor': ['compressibility factor', 'real gas equation'],
-            'zfactor': ['compressibility factor', 'real gas equation'],
-                        'criticalradius': ['critical radius', 'insulation'],
-            'specificheat': ['specific heat', 'ideal gas specific'],
-            'minorloss': ['minor head loss', 'piping systems', 'pipe networks'],
-            'minorheadloss': ['minor head loss', 'piping systems', 'pipe networks'],
-            'archimedes': ['archimedes', 'buoyant force', 'buoyancy'],
-            'buoyancy': ['archimedes', 'buoyant force', 'buoyancy'],
-            'thermalexpansion': ['thermal expansion', 'thermal stress'],
-            'thermalstress': ['thermal expansion', 'thermal stress'],
-            'rectilinear': ['rectilinear kinematics', 'rectilinear', 'constant acceleration'],
-            'kinematics': ['rectilinear kinematics', 'rectilinear', 'constant acceleration'],
-            'taylor': ['taylor and maclaurin', 'taylor', 'maclaurin'],
-            'maclaurin': ['taylor and maclaurin', 'taylor', 'maclaurin'],
-            'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
-            'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
-            'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
-            'reciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
-            'viewfactor': ['radiation view factor reciprocity', 'view factor'],
-            'radiationreciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
-            'repose': ['coulomb dry friction and angle of repose', 'angle of static friction and angle of repose', 'angle of repose'],
-            'dryfriction': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'dry friction'],
-            'coulomb': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'coulomb'],
-            'restitution': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'restitution'],
-            'centralimpact': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'central impact'],
-            'angularimpulse': ['angular impulse and momentum principle', 'angular impulse'],
-            'angularmomentum': ['angular impulse and momentum principle', 'angular impulse'],
-            'damped': ['damped sdof natural frequency and damping ratio', 'damped sdof harmonic natural frequency', 'damped sdof'],
-            'dampingratio': ['damped sdof natural frequency and damping ratio', 'damping ratio'],
-            'decrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
-            'logarithmicdecrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
-            'massmoment': ['mass moment of inertia of common geometric bodies', 'mass moment of inertia parallel axis theorem', 'mass moment of inertia'],
-            'geometricbodies': ['mass moment of inertia of common geometric bodies', 'common geometric bodies'],
-            'curl': ['curl of a vector field', 'irrotational fields', 'curl', 'vector field'],
-            'irrotational': ['curl of a vector field', 'irrotational fields', 'irrotational'],
-            'leverrule': ['binary phase diagram lever rule', 'lever rule', 'phase diagram'],
-            'binaryphase': ['binary phase diagram lever rule', 'lever rule', 'phase diagram'],
-            'integrationbyparts': ['integration by parts formula', 'integration by parts', 'by parts'],
-            'byparts': ['integration by parts formula', 'integration by parts', 'by parts'],
-            'flatbelt': ['flat belt friction equation', 'flat belt friction capstan formula', 'flat belt', 'capstan formula'],
-            'capstan': ['flat belt friction equation', 'flat belt friction capstan formula', 'capstan formula', 'capstan'],
-            'benefitcost': ['benefit-cost ratio decision criterion', 'benefit cost ratio', 'b/c ratio'],
-            'bcratio': ['benefit-cost ratio decision criterion', 'benefit cost ratio', 'b/c ratio'],
-            'wheatstone': ['wheatstone bridge null balance condition', 'wheatstone bridge circuit null balance condition', 'wheatstone bridge'],
-            'nullbalance': ['wheatstone bridge null balance condition', 'wheatstone bridge circuit null balance condition', 'wheatstone bridge'],
-            'rotationalkinetic': ['rotational kinetic energy of rigid bodies', 'planar rigid body rotational kinetic energy', 'rotational kinetic energy'],
-            'rigidbodieske': ['rotational kinetic energy of rigid bodies', 'planar rigid body rotational kinetic energy', 'rotational kinetic energy'],
-            'lhospital': ['l’hôpital’s rule for indeterminate limits', 'l\'hospital\'s rule', 'indeterminate limits'],
-            'indeterminatelimits': ['l’hôpital’s rule for indeterminate limits', 'indeterminate limits', 'l hospital'],
-            'opampgoldenrules': ['ideal operational amplifier golden rules', 'golden rules', 'op amp golden rules'],
-            'goldenrules': ['ideal operational amplifier golden rules', 'golden rules'],
-            'permutations': ['permutations and combinations counting rules', 'permutations', 'counting rules'],
-            'combinations': ['permutations and combinations counting rules', 'combinations', 'counting rules'],
-            'countingrules': ['permutations and combinations counting rules', 'counting rules'],
-            'faradayelectrolysis': ['faraday’s law of electrolysis', 'faraday law of electrolysis', 'electrolysis'],
-            'electrolysis': ['faraday’s law of electrolysis', 'faraday law of electrolysis', 'electrolysis'],
-            'staticequilibrium': ['2d static equilibrium equations', 'static equilibrium equations', 'static equilibrium'],
-            '2dequilibrium': ['2d static equilibrium equations', 'static equilibrium equations', 'equilibrium equations'],
-            'atterberg': ['atterberg limits and plasticity index', 'atterberg limits', 'plasticity index'],
-            'plasticityindex': ['atterberg limits and plasticity index', 'plasticity index'],
-            'grainsize': ['grain size distribution metrics', 'grain size', 'cu and cc'],
-            'soilunitweights': ['soil unit weights', 'unit weights', 'dry saturated submerged'],
-            'terzaghi': ['terzaghi’s effective stress principle', 'terzaghi effective stress', 'effective stress principle'],
-            'effectivestress': ['terzaghi’s effective stress principle', 'effective stress principle', 'effective stress'],
-            'rationalmethod': ['rational method for peak storm runoff', 'rational method', 'peak storm runoff', 'rational peak discharge'],
-            'stormrunoff': ['rational method for peak storm runoff', 'peak storm runoff', 'rational method'],
-            'hagenpoiseuille': ['hagen-poiseuille equation', 'hagen poiseuille equation', 'laminar pipe flow'],
-            'poiseuille': ['hagen-poiseuille equation', 'poiseuille equation', 'laminar pipe flow'],
-            'mohrcoulomb': ['mohr-coulomb failure criterion for soils', 'mohr coulomb failure criterion', 'mohr coulomb'],
-            'soilsfailure': ['mohr-coulomb failure criterion for soils', 'failure criterion for soils'],
-            'dotproduct': ['vector dot product and orthogonality condition', 'vector dot product', 'dot product'],
-            'orthogonality': ['vector dot product and orthogonality condition', 'orthogonality condition', 'orthogonality'],
-            'nernst': ['nernst equation', 'non-standard cell potential', 'electrochemical cell potential'],
-            'cellpotential': ['nernst equation', 'non-standard cell potential'],
-            'standardnormal': ['standard normal distribution', 'z-transformation', 'z-score transformation'],
-            'ztransformation': ['standard normal distribution', 'z-transformation', 'z-score'],
-            'straightline': ['straight-line depreciation method', 'straight line depreciation', 'depreciation'],
-            'depreciation': ['straight-line depreciation method', 'straight line depreciation'],
-            'samplevariance': ['sample variance and degrees of freedom', 'sample variance', 'degrees of freedom'],
-            'degreesoffreedom': ['sample variance and degrees of freedom', 'degrees of freedom'],
-            'studentt': ['student’s t-confidence interval', 't-confidence interval', 'student t'],
-            'tinterval': ['student’s t-confidence interval', 'unknown variance'],
-            'cantilever': ['cantilever beam tip deflection', 'cantilever beam', 'concentrated load', 'point load'],
-            'tipdeflection': ['cantilever beam tip deflection', 'cantilever beam', 'tip deflection'],
-            'isotropic': ['isotropic elastic constants relationship', 'isotropic elastic constants', 'elastic constants'],
-            'elasticconstants': ['isotropic elastic constants relationship', 'elastic constants', 'shear modulus'],
-            'gibbs': ['gibbs phase rule', 'gibbs', 'degrees of freedom', 'phase rule'],
-            'phaserule': ['gibbs phase rule', 'phase rule'],
-            'theoreticalair': ['combustion theoretical air and excess air', 'theoretical air', 'excess air'],
-            'excessair': ['combustion theoretical air and excess air', 'theoretical air', 'excess air'],
-            'combustionair': ['combustion theoretical air and excess air', 'theoretical air', 'excess air'],
-            'molarity': ['solution concentration: molarity', 'molarity', 'molality', 'normality'],
-            'molality': ['solution concentration: molarity', 'molarity', 'molality', 'normality'],
-            'normality': ['solution concentration: molarity', 'molarity', 'molality', 'normality'],
-            'solutionconcentration': ['solution concentration', 'molarity'],
-            'beamdeflection': ['simply supported beam center deflection under uniform load', 'beam deflection'],
-            'uniformload': ['simply supported beam center deflection under uniform load', 'uniform load'],
-            'maximumshear': ['maximum shear stress in rectangular beams', 'shear stress in rectangular'],
-            'rectangularbeam': ['maximum shear stress in rectangular beams', 'shear stress in rectangular'],
-            'paramountduty': ['ncees model rules: paramount duty to public welfare', 'paramount duty', 'public welfare'],
-            'publicwelfare': ['ncees model rules: paramount duty to public welfare', 'public welfare'],
-            'peseal': ['ncees rules of professional conduct: pe seal integrity', 'pe seal', 'rules of professional conduct'],
-            'sealintegrity': ['ncees rules of professional conduct: pe seal integrity', 'seal integrity'],
-            'sensorstep': ['first-order sensor dynamic step response', 'sensor dynamic step response', 'first-order sensor', 'step response'],
-            'firstordersensor': ['first-order sensor dynamic step response', 'first-order sensor', 'time constant'],
-            'workenergy': ['work-energy principle', 'work energy principle', 'rigid body dynamics'],
-            'rigidbodydynamics': ['work-energy principle (rigid body dynamics)', 'rigid body dynamics'],
-            'hookeslaw': ['generalized hooke’s law', 'hooke’s law', '3d elastic stress-strain'],
-            'generalizedhooke': ['generalized hooke’s law', 'hooke’s law', '3d elastic stress-strain'],
-            'goodman': ['modified goodman fatigue', 'goodman fatigue failure criterion', 'goodman criterion'],
-            'fatiguecriterion': ['modified goodman fatigue failure criterion', 'fatigue failure criterion'],
-            'helicalspring': ['helical compression spring', 'wahl factor', 'spring shear stress'],
-            'wahlfactor': ['helical compression spring', 'wahl factor'],
-            'powerscrew': ['power screws lifting torque and efficiency', 'power screws', 'lifting torque'],
-            'liftingtorque': ['power screws lifting torque and efficiency', 'lifting torque'],
-            'bearinglife': ['rolling element bearing rated life', 'bearing rated life', 'l10 life', 'l10'],
-            'l10life': ['rolling element bearing rated life', 'bearing rated life', 'l10'],
-            'fick': ['fick’s first law', 'ficks first law', 'molecular diffusion', 'fick'],
-            'diffusion': ['fick’s first law', 'molecular diffusion'],
-            'lechatelier': ['le chatelier’s principle', 'le chatelier', 'standard free energy'],
-            'chatelier': ['le chatelier’s principle', 'le chatelier'],
-            'breakeven': ['break-even production volume', 'break-even', 'break even'],
-            'gradient': ['gradient vector and directional derivative', 'gradient vector', 'directional derivative'],
-            'directionalderivative': ['gradient vector and directional derivative', 'directional derivative'],
-            'straingauge': ['strain gauge gauge factor equation', 'strain gauge', 'gauge factor'],
-            'gaugefactor': ['strain gauge gauge factor equation', 'gauge factor'],
-            'agma': ['agma lewis bending equation', 'spur gear teeth', 'lewis bending', 'agma'],
-            'spurgear': ['agma lewis bending equation', 'spur gear teeth', 'spur gear'],
-            'secondordersensor': ['second-order sensor natural frequency and damping', 'second-order sensor', 'sensor natural frequency'],
-            'massmomentparallel': ['mass moment of inertia parallel axis theorem', 'mass moment of inertia parallel axis'],
-            'phf': ['highway peak hour factor', 'peak hour factor', 'phf'],
-            'peakhour': ['highway peak hour factor', 'peak hour factor', 'phf'],
-            'earthpressure': ['soil active and passive earth pressure forces', 'lateral earth pressure', 'earth pressure forces'],
-            'activepassive': ['soil active and passive earth pressure forces', 'earth pressure forces', 'active and passive'],
-            'darcysseepage': ['darcy’s law for hydraulic seepage', 'hydraulic seepage', 'darcy’s law for groundwater seepage'],
-            'seepage': ['darcy’s law for hydraulic seepage', 'hydraulic seepage'],
-            'bearingcapacity': ['terzaghi’s ultimate bearing capacity equation', 'ultimate bearing capacity', 'bearing capacity'],
-            'terzaghibearing': ['terzaghi’s ultimate bearing capacity equation', 'bearing capacity'],
-            'rankineearth': ['rankine lateral earth pressure coefficients', 'rankine lateral earth pressure', 'lateral earth pressure coefficients'],
-            'lateralearth': ['rankine lateral earth pressure coefficients', 'lateral earth pressure'],
-            'dupuit': ['unconfined aquifer dupuit-thiem well formula', 'dupuit-thiem', 'dupuit-forchheimer', 'unconfined aquifer'],
-            'thiem': ['unconfined aquifer dupuit-thiem well formula', 'dupuit-thiem'],
-            'jourawski': ['transverse shear stress formula', 'jourawski', 'transverse shear'],
-            'transverseshear': ['transverse shear stress formula', 'transverse beam shear stress', 'transverse shear stress in beams'],
-            'compassrule': ['compass rule for closed traverse balancing', 'compass rule', 'closed traverse'],
-            'closedtraverse': ['compass rule for closed traverse balancing', 'closed traverse balancing', 'traverse balancing'],
-            'distanceformula': ['distance formula', 'euclidean distance', 'distance between two points'],
-            'distance': ['distance formula', 'distance between two points'],
-            'anglebetweenlines': ['angle between two non-vertical lines', 'angle between lines', 'slopes m1 and m2'],
-            'slopeintercept': ['slope-intercept form of a linear equation', 'slope-intercept form', 'slope intercept'],
-            'complexpolar': ['complex numbers: rectangular, polar, and euler forms', 'complex number polar and rectangular', 'complex numbers'],
-            'degreeandorder': ['order and degree of differential equations', 'degree and order of differential equation', 'order and degree'],
-            'quadraticequation': ['quadratic equation and quadratic formula', 'quadratic equation'],
-            'coniceccentricity': ['eccentricity classification of conic sections', 'eccentricities of conic sections', 'eccentricity'],
-            'homogeneousode': ['homogeneous vs non-homogeneous linear differential equations', 'homogeneous vs non-homogeneous differential equations', 'homogeneous differential'],
-            'curvilinear': ['curvilinear motion', 'tangential acceleration', 'normal and tangential acceleration'],
-            'tangential': ['normal and tangential acceleration', 'tangential acceleration'],
-            'normalacceleration': ['normal and tangential acceleration', 'tangential acceleration'],
-            'reciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
-            'viewfactor': ['radiation view factor reciprocity', 'view factor'],
-            'radiationreciprocity': ['radiation view factor reciprocity', 'view factor reciprocity'],
-            'repose': ['coulomb dry friction and angle of repose', 'angle of static friction and angle of repose', 'angle of repose'],
-            'dryfriction': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'dry friction'],
-            'coulomb': ['coulomb dry friction and angle of repose', 'coulomb dry friction law', 'coulomb'],
-            'restitution': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'restitution'],
-            'centralimpact': ['coefficient of restitution for direct central impact', 'direct central impact coefficient of restitution', 'central impact'],
-            'angularimpulse': ['angular impulse and momentum principle', 'angular impulse'],
-            'angularmomentum': ['angular impulse and momentum principle', 'angular impulse'],
-            'damped': ['damped sdof natural frequency and damping ratio', 'damped sdof harmonic natural frequency', 'damped sdof'],
-            'dampingratio': ['damped sdof natural frequency and damping ratio', 'damping ratio'],
-            'decrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
-            'logarithmicdecrement': ['logarithmic decrement in underdamped vibrations', 'logarithmic decrement'],
-            'massmoment': ['mass moment of inertia of common geometric bodies', 'mass moment of inertia parallel axis theorem', 'mass moment of inertia'],
-            'geometricbodies': ['mass moment of inertia of common geometric bodies', 'common geometric bodies']
-        };
-        const searchTerms = keyMap[videoId] || [videoId];
-
-        // 1. Check if user's current discipline contains this theorem
-        const currentDisc = getActiveDiscipline();
-        let targetTheorems = THEOREMS_BY_DISCIPLINE[currentDisc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
-        let targetIndex = targetTheorems.findIndex(t => t.videoUrl && searchTerms.some(term => t.title.toLowerCase().includes(term)));
-        let chosenDisc = currentDisc;
-
-        // 2. If not found in current discipline, find another discipline that has it
-        if (targetIndex === -1) {
-            for (const [discName, discTheorems] of Object.entries(THEOREMS_BY_DISCIPLINE)) {
-                const idx = discTheorems.findIndex(t => t.videoUrl && searchTerms.some(term => t.title.toLowerCase().includes(term)));
-                if (idx !== -1) {
-                    chosenDisc = discName;
-                    targetTheorems = discTheorems;
-                    targetIndex = idx;
-                    break;
-                }
-            }
-        }
-
-        if (targetIndex === -1) targetIndex = 0;
-
-        try {
-            localStorage.setItem('enggtv_discipline', chosenDisc);
-        } catch (e) {}
-
-        renderDailyTheorem(false, targetIndex, true);
-
-        // Auto-play video
-        setTimeout(() => {
-            const videoEl = document.getElementById('daily-theorem-video');
-            if (videoEl) {
-                videoEl.currentTime = 0;
-                const playPromise = videoEl.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(err => {
-                        console.log('Video autoplay requires user interaction:', err);
-                    });
-                }
-            }
-        }, 150);
-    }
-
-    function prevDailyTheorem() {
-        const disc = getActiveDiscipline();
-        const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
-        if (!theorems || theorems.length === 0) return;
-        const newIndex = (theoremIndex - 1 + theorems.length) % theorems.length;
-        renderDailyTheorem(false, newIndex, true);
-    }
-
-    function nextDailyTheorem() {
-        const disc = getActiveDiscipline();
-        const theorems = THEOREMS_BY_DISCIPLINE[disc] || THEOREMS_BY_DISCIPLINE['Mechanical'];
-        if (!theorems || theorems.length === 0) return;
-        const newIndex = (theoremIndex + 1) % theorems.length;
-        renderDailyTheorem(false, newIndex, true);
-    }
-
-    function init() {
-        renderDailyQuote(false);
-        renderDailyTheorem(false);
-
-        // Apply saved layout
-        const savedLayout = localStorage.getItem('enggtv_theorem_layout') || 'below';
-        setTheoremLayout(savedLayout);
-
-        const shuffleQuoteBtn = document.getElementById('btn-shuffle-quote');
-        if (shuffleQuoteBtn) {
-            shuffleQuoteBtn.onclick = () => renderDailyQuote(true);
-        }
-
-        const prevTheoremBtn = document.getElementById('btn-prev-theorem');
-        if (prevTheoremBtn) {
-            prevTheoremBtn.onclick = () => prevDailyTheorem();
-        }
-
-        const nextTheoremBtn = document.getElementById('btn-next-theorem');
-        if (nextTheoremBtn) {
-            nextTheoremBtn.onclick = () => nextDailyTheorem();
-        }
-
-        const shuffleTheoremBtn = document.getElementById('btn-shuffle-theorem');
-        if (shuffleTheoremBtn) {
-            shuffleTheoremBtn.onclick = () => nextDailyTheorem();
-        }
-    }
-
-    // Expose globally
+// Expose globally to window
+if (typeof window !== "undefined") {
     window.ALL_THEOREMS_BY_DISCIPLINE = ALL_THEOREMS_BY_DISCIPLINE;
-    window.THEOREMS_BY_DISCIPLINE = THEOREMS_BY_DISCIPLINE;
-    window.getActiveMotivationDiscipline = getActiveDiscipline;
-    window.shuffleQuote = () => renderDailyQuote(true);
-    window.shuffleTheorem = nextDailyTheorem;
-    window.prevTheorem = prevDailyTheorem;
-    window.nextTheorem = nextDailyTheorem;
-    window.setTheoremLayout = setTheoremLayout;
-    window.previewTheoremVideo = previewTheoremVideo;
-    window.updateMotivationWidgets = () => {
-        renderDailyQuote(false);
-        renderDailyTheorem(false);
-    };
-
-    window.addEventListener('mathjax-ready', () => {
-        const formulaEl = document.getElementById('daily-theorem-formula');
-        const descEl = document.getElementById('daily-theorem-desc');
-        const tipEl = document.getElementById('daily-theorem-tip');
-        const titleEl = document.getElementById('daily-theorem-title');
-        const mathElements = [formulaEl, descEl, tipEl, titleEl].filter(Boolean);
-        if (window.safeTypesetMath) {
-            window.safeTypesetMath(mathElements);
-        } else if (window.MathJax && window.MathJax.typesetPromise) {
-            if (typeof window.MathJax.typesetClear === 'function') {
-                window.MathJax.typesetClear(mathElements);
-            }
-            window.MathJax.typesetPromise(mathElements).catch(err => console.warn('MathJax render notice:', err));
-        }
-    });
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        setTimeout(init, 50);
-    }
+    window.THEOREMS_BY_DISCIPLINE = ALL_THEOREMS_BY_DISCIPLINE;
+    window.THEOREMS_BY_DISCIPLINE = ALL_THEOREMS_BY_DISCIPLINE;
+}
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = ALL_THEOREMS_BY_DISCIPLINE;
+}
 })();
 
-// --- END js/daily-motivation.js ---
-
-// --- BEGIN js/alumni-spotlight.js ---
-/**
- * ENGG.tv - Alumni Passer Spotlight Module
- * Displays verified FE Exam passers, their discipline-specific journey, strategy takeaways, and custom avatars.
- * Implements Option B: Discipline-Smart Prioritization with interactive shuffle.
- */
-
-(function() {
-    const ALUMNI_PASSERS = [
-        {
-            id: 'sabrish',
-            name: 'Sabrish M.',
-            discipline: 'Mechanical',
-            badge: 'FE Mechanical Passed',
-            avatar: 'assets/avatars/sabrish.jpg',
-            initials: 'SM',
-            journeyQuote: 'Focusing on timed drills for Thermodynamics and Fluid Mechanics gave me the exact pacing I needed on exam day. Trust the practice repetition.',
-            takeaway: 'Practice timed quizzes daily to lock in your exam pacing.'
-        },
-        {
-            id: 'nainish',
-            name: 'Nainish M.',
-            discipline: 'Civil',
-            badge: 'FE Civil Passed',
-            avatar: 'assets/avatars/nainish.jpg',
-            initials: 'NM',
-            journeyQuote: 'Structural analysis and Geotech used to slow me down. Reviewing the step-by-step solutions daily turned my weakest topics into my highest scoring sections.',
-            takeaway: 'Review step-by-step solutions to convert weak areas into high scores.'
-        },
-        {
-            id: 'shariff',
-            name: 'Mr. H. Shariff',
-            discipline: 'Other Disciplines',
-            badge: 'FE Other Disciplines Passed',
-            avatar: 'assets/avatars/shariff.jpg',
-            initials: 'HS',
-            journeyQuote: 'Staying disciplined with the core fundamentals—especially Statics, Dynamics, and Materials—carried me across the finish line. ENGG.tv gave me the exact structure I needed.',
-            takeaway: 'Master statics and dynamics fundamentals before advancing to complex topics.'
-        },
-        {
-            id: 'linjo',
-            name: 'Linjo J.',
-            discipline: 'Other Disciplines',
-            badge: 'FE Other Disciplines Passed',
-            avatar: 'assets/avatars/linjo.jpg',
-            initials: 'LJ',
-            journeyQuote: 'The breadth of the Other Disciplines exam felt overwhelming at first, but doing 20 practice questions every morning on ENGG.tv made passing inevitable.',
-            takeaway: 'Consistency beats cramming: complete 15-20 practice questions every day.'
-        },
-        {
-            id: 'adarsh',
-            name: 'Adarsh',
-            discipline: 'Other Disciplines',
-            badge: 'FE Other Disciplines Passed',
-            avatar: 'assets/avatars/adarsh.jpg',
-            initials: 'A',
-            journeyQuote: 'Mastering the NCEES Handbook search shortcuts during daily quizzes was the ultimate turning point. If you stay consistent with the app, you will pass.',
-            takeaway: 'Practice fast electronic searching in the official NCEES Reference Handbook.'
-        }
-    ];
-
-    let currentIndex = 0;
-
-    function getActiveDiscipline() {
-        return localStorage.getItem('enggtv_discipline') || 
-               (window.state && window.state.user && window.state.user.discipline) || 
-               'Mechanical';
-    }
-
-    function getSmartDefaultIndex() {
-        const disc = getActiveDiscipline().toLowerCase();
-        
-        if (disc.includes('mech')) {
-            const idx = ALUMNI_PASSERS.findIndex(a => a.id === 'sabrish');
-            if (idx !== -1) return idx;
-        } else if (disc.includes('civil')) {
-            const idx = ALUMNI_PASSERS.findIndex(a => a.id === 'nainish');
-            if (idx !== -1) return idx;
-        } else if (disc.includes('other')) {
-            // Pick between Shariff, Linjo, Adarsh
-            const otherIndices = [2, 3, 4];
-            return otherIndices[Math.floor(Math.random() * otherIndices.length)];
-        }
-        
-        // Fallback random
-        return Math.floor(Math.random() * ALUMNI_PASSERS.length);
-    }
-
-    function renderAlumnus(index, animate = false) {
-        currentIndex = (index + ALUMNI_PASSERS.length) % ALUMNI_PASSERS.length;
-        const person = ALUMNI_PASSERS[currentIndex];
-
-        const cardEl = document.getElementById('alumni-spotlight-card');
-        const nameEl = document.getElementById('alumni-name');
-        const disciplineEl = document.getElementById('alumni-discipline');
-        const quoteEl = document.getElementById('alumni-quote');
-        const takeawayEl = document.getElementById('alumni-takeaway');
-        const avatarImgEl = document.getElementById('alumni-avatar-img');
-        const avatarInitialsEl = document.getElementById('alumni-avatar-initials');
-
-        if (!cardEl) return;
-
-        if (animate) {
-            const contentContainer = document.getElementById('alumni-content-container');
-            if (contentContainer) {
-                contentContainer.style.opacity = '0';
-                contentContainer.style.transform = 'translateY(4px)';
-                setTimeout(() => {
-                    updateContent();
-                    contentContainer.style.transition = 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)';
-                    contentContainer.style.opacity = '1';
-                    contentContainer.style.transform = 'translateY(0)';
-                }, 120);
-                return;
-            }
-        }
-
-        updateContent();
-
-        function updateContent() {
-            if (nameEl) nameEl.textContent = person.name;
-            if (disciplineEl) disciplineEl.textContent = person.badge;
-            if (quoteEl) quoteEl.textContent = `“${person.journeyQuote}”`;
-            if (takeawayEl) takeawayEl.textContent = person.takeaway;
-
-            if (avatarImgEl) {
-                avatarImgEl.src = person.avatar;
-                avatarImgEl.alt = `${person.name} - ${person.badge}`;
-                avatarImgEl.style.display = 'block';
-                if (avatarInitialsEl) avatarInitialsEl.style.display = 'none';
-
-                avatarImgEl.onerror = function() {
-                    // Fallback to initials if image fails to load
-                    avatarImgEl.style.display = 'none';
-                    if (avatarInitialsEl) {
-                        avatarInitialsEl.textContent = person.initials;
-                        avatarInitialsEl.style.display = 'flex';
-                    }
-                };
-            }
-        }
-    }
-
-    function shuffle() {
-        renderAlumnus(currentIndex + 1, true);
-    }
-
-    function init() {
-        currentIndex = getSmartDefaultIndex();
-        renderAlumnus(currentIndex, false);
-
-        const shuffleBtn = document.getElementById('btn-shuffle-alumni');
-        if (shuffleBtn) {
-            shuffleBtn.onclick = shuffle;
-        }
-    }
-
-    // Global hooks
-    window.shuffleAlumni = shuffle;
-    window.updateAlumniWidget = () => {
-        currentIndex = getSmartDefaultIndex();
-        renderAlumnus(currentIndex, true);
-    };
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        setTimeout(init, 60);
-    }
-})();
-
-// --- END js/alumni-spotlight.js ---
-
-// --- BEGIN js/featured-video.js ---
-/**
- * ENGG.tv - Featured Engineering Mechanism & Video Showcase Module
- * Displays interactive 3D CAD/kinematic mechanism demonstrations.
- * Configured as a modular developer placeholder that can easily be swapped
- * with custom video content anytime.
- */
-
-(function() {
-    'use strict';
-
-    // Global Configuration Object - High-yield FE Exam explainer
-    window.ENGGTV_FEATURED_VIDEO = {
-        id: 'transformers-fe-explainer',
-        title: 'FE Exam Core: Electrical Transformers Masterclass',
-        subtitle: 'Ideal Relations, Dot Convention & Impedance Reflection',
-        badge: 'FE Exam Core • Electrical & General',
-        srcMp4: 'assets/videos/placeholder_video.mp4',
-        srcWebm: 'assets/videos/transformers_fe_explainer.webm',
-        poster: 'assets/videos/transformers_poster.jpg',
-        attribution: {
-            creator: 'EnggPrep NCEES FE Review',
-            license: 'NCEES Exam Prep Curriculum (Educational)',
-            source: 'EnggPrep Studio'
-        },
-        description: 'Comprehensive high-yield walkthrough of single-phase ideal and real transformers for the FE Exam. Covers turns ratio a = N1/N2, dot convention polarity, impedance reflection (Zin = a² ZL), core vs copper losses, condition for maximum efficiency, and worked numerical FE problems.',
-        keyTakeaways: [
-            { icon: 'bolt', text: 'Turns Ratio: a = N₁/N₂ = V₁/V₂ = I₂/I₁. Voltages transform directly; currents inversely. Apparent power is conserved: S₁ = S₂.' },
-            { icon: 'alt_route', text: 'Dot Convention: If currents both enter (or both leave) dotted terminals, use +a. If one enters and one leaves, insert a negative sign: V₁/V₂ = -a.' },
-            { icon: 'memory', text: 'Impedance Reflection: Secondary impedance reflected to primary scales by a²: Zin = a² · ZL. Always square the turns ratio!' },
-            { icon: 'offline_bolt', text: 'Losses & Max Efficiency: Copper losses Pcu ∝ I²; Core losses Pcore ≈ const. Maximum efficiency occurs when Pcu = Pcore.' }
-        ],
-        developerNote: 'Active FE Video: assets/videos/transformers_fe_explainer.webm (HD 720p Explainer Video)'
-    };
-
-    let videoEl = null;
-    let playBtn = null;
-    let isPlaying = false;
-
-    function initVideoShowcase() {
-        const container = document.getElementById('featured-mechanism-video-card');
-        if (!container) return;
-
-        videoEl = document.getElementById('mechanism-video-player');
-        playBtn = document.getElementById('btn-mechanism-play-toggle');
-
-        if (!videoEl) return;
-
-        // Ensure proper attributes
-        videoEl.playsInline = true;
-        videoEl.loop = true;
-        videoEl.muted = true; // Required for reliable autoplay compliance
-
-        // Update UI when video state changes
-        videoEl.addEventListener('play', () => {
-            isPlaying = true;
-            updatePlayButtonUI(true);
-        });
-
-        videoEl.addEventListener('pause', () => {
-            isPlaying = false;
-            updatePlayButtonUI(false);
-        });
-
-        if (playBtn) {
-            playBtn.onclick = togglePlay;
-        }
-
-        // Click directly on video or overlay to toggle play/pause
-        const videoWrapper = document.getElementById('mechanism-video-wrapper');
-        if (videoWrapper) {
-            videoWrapper.onclick = (e) => {
-                // If clicked on controls buttons, ignore
-                if (e.target.closest('button') && e.target.closest('button') !== playBtn) return;
-                togglePlay();
-            };
-        }
-
-        // Setup sound toggle button
-        const soundBtn = document.getElementById('btn-mechanism-sound-toggle');
-        if (soundBtn) {
-            soundBtn.onclick = (e) => {
-                e.stopPropagation();
-                if (!videoEl) return;
-                videoEl.muted = !videoEl.muted;
-                const icon = soundBtn.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.textContent = videoEl.muted ? 'volume_off' : 'volume_up';
-                }
-            };
-        }
-
-        // Setup fullscreen button
-        const fsBtn = document.getElementById('btn-mechanism-fullscreen');
-        if (fsBtn) {
-            fsBtn.onclick = (e) => {
-                e.stopPropagation();
-                if (!videoEl) return;
-                if (videoEl.requestFullscreen) {
-                    videoEl.requestFullscreen();
-                } else if (videoEl.webkitRequestFullscreen) {
-                    videoEl.webkitRequestFullscreen();
-                }
-            };
-        }
-
-        // Setup developer copy button
-        const copyBtn = document.getElementById('btn-copy-video-path');
-        if (copyBtn) {
-            copyBtn.onclick = (e) => {
-                e.stopPropagation();
-                const pathText = 'assets/videos/transformers_fe_explainer.webm';
-                const originalHtml = copyBtn.innerHTML;
-                const setSuccess = () => {
-                    copyBtn.innerHTML = '<span class="material-symbols-outlined text-[12px] text-emerald-400">check</span><span class="text-emerald-400">Copied!</span>';
-                    setTimeout(() => {
-                        copyBtn.innerHTML = originalHtml;
-                    }, 2000);
-                };
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(pathText).then(setSuccess).catch(setSuccess);
-                } else {
-                    setSuccess();
-                }
-            };
-        }
-    }
-
-    function togglePlay() {
-        if (!videoEl) return;
-        if (videoEl.paused) {
-            videoEl.play().catch(err => {
-                console.warn('Playback error:', err);
-            });
-        } else {
-            videoEl.pause();
-        }
-    }
-
-    function updatePlayButtonUI(playing) {
-        const overlay = document.getElementById('mechanism-play-overlay');
-        const icon = playBtn ? playBtn.querySelector('.material-symbols-outlined') : null;
-
-        if (overlay) {
-            if (playing) {
-                overlay.classList.add('opacity-0', 'pointer-events-none');
-            } else {
-                overlay.classList.remove('opacity-0', 'pointer-events-none');
-            }
-        }
-
-        if (icon) {
-            icon.textContent = playing ? 'pause' : 'play_arrow';
-        }
-    }
-
-    // Expose helpers globally
-    window.initFeaturedMechanismVideo = initVideoShowcase;
-    window.toggleFeaturedMechanismPlay = togglePlay;
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initVideoShowcase);
-    } else {
-        setTimeout(initVideoShowcase, 60);
-    }
-})();
-
-// --- END js/featured-video.js ---
-
-// --- BEGIN js/peer-ticker.js ---
-/**
- * ENGG.tv - Live Peer Milestone & Kudos Ticker Module
- * Real-time study momentum ticker with handle-based anonymity.
- * Features:
- * 1. Engineering-themed anonymous handles (@FluidVortex_32, @TrussMaster_88, etc.)
- * 2. Real-time Firestore peer milestone sync with graceful local offline cache
- * 3. Interactive Kudos mechanism with micro-animation and persistence
- * 4. Discipline filtering (All vs. My Discipline)
- */
-
-(function() {
-    'use strict';
-
-    // Handle Generation Vocabulary by Discipline
-    const HANDLE_VOCAB = {
-        Mechanical: {
-            prefixes: ['Turbo', 'Fluid', 'Thermo', 'Kinetics', 'Vortex', 'Gear', 'Entropy', 'Cam', 'Bernoulli', 'Rankine', 'Stress'],
-            nouns: ['Mech', 'Dynamics', 'Piston', 'Rotor', 'Torque', 'Shaft', 'Involute', 'Flow', 'Cycles', 'Engine']
-        },
-        Civil: {
-            prefixes: ['Structural', 'Truss', 'Concrete', 'GeoTech', 'Hydraulics', 'Beam', 'Survey', 'Shear', 'Foundation'],
-            nouns: ['Vector', 'Masonry', 'Span', 'Load', 'Cadastral', 'Retain', 'Column', 'Arch', 'CivilPro']
-        },
-        Electrical: {
-            prefixes: ['Maxwell', 'Circuit', 'Ohm', 'Flux', 'Signal', 'Nyquist', 'Voltage', 'Inductor', 'Faraday', 'Quantum'],
-            nouns: ['Guru', 'Current', 'Diode', 'Node', 'Wave', 'Ampere', 'Filter', 'Logic', 'Semicon']
-        },
-        Other: {
-            prefixes: ['Matrix', 'Vector', 'Math', 'Calculus', 'Entropy', 'Algorithm', 'Optima', 'Tensor', 'Kinetic'],
-            nouns: ['Engineer', 'Scholar', 'Solver', 'Logix', 'Mind', 'Genius', 'Master', 'Focus']
-        }
-    };
-
-    // 100% Real Only: Local cache for candidate study milestones
-    function loadLocalRealMilestones() {
-        try {
-            const raw = localStorage.getItem('enggtv_real_peer_milestones');
-            if (raw) return JSON.parse(raw);
-        } catch(e) {}
-        return [];
-    }
-
-    function saveLocalRealMilestones(list) {
-        try {
-            localStorage.setItem('enggtv_real_peer_milestones', JSON.stringify((list || []).slice(0, 50)));
-        } catch(e) {}
-    }
-
-    let currentFilter = 'all'; // 'all' or 'my_discipline'
-    let milestonesCache = [];
-    let givenKudosSet = new Set();
-    let firestoreUnsubscribe = null;
-
-    /**
-     * Get or generate the candidate's anonymous engineering handle.
-     */
-    function getOrGenerateHandle() {
-        let handle = localStorage.getItem('enggtv_anonymous_handle');
-        if (handle && handle.startsWith('@') && handle.length >= 4) {
-            return handle;
-        }
-
-        const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
-        const vocabGroup = HANDLE_VOCAB[disc] || HANDLE_VOCAB['Mechanical'];
-        const prefix = vocabGroup.prefixes[Math.floor(Math.random() * vocabGroup.prefixes.length)];
-        const noun = vocabGroup.nouns[Math.floor(Math.random() * vocabGroup.nouns.length)];
-        const randNum = Math.floor(10 + Math.random() * 89); // 10-99
-
-        handle = `@${prefix}${noun}_${randNum}`;
-        localStorage.setItem('enggtv_anonymous_handle', handle);
-        return handle;
-    }
-
-    /**
-     * Update or set a custom handle.
-     */
-    function setCustomHandle(newHandle) {
-        if (!newHandle) return false;
-        let clean = newHandle.trim();
-        if (!clean.startsWith('@')) clean = '@' + clean;
-        // Clean characters: letters, numbers, underscores only
-        clean = '@' + clean.substring(1).replace(/[^a-zA-Z0-9_]/g, '');
-        if (clean.length < 4 || clean.length > 20) {
-            return false;
-        }
-        localStorage.setItem('enggtv_anonymous_handle', clean);
-        updateHandleUI();
-
-        // Optionally update in user doc if Firebase is initialized
-        try {
-            if (window.db && window.firebase && window.firebase.auth()) {
-                const currentUser = window.firebase.auth().currentUser;
-                if (currentUser) {
-                    window.db.collection('users').doc(currentUser.uid).set({
-                        anonymousHandle: clean
-                    }, { merge: true }).catch(() => {});
-                }
-            }
-        } catch (e) {}
-
-        return true;
-    }
-
-    /**
-     * Load given kudos from localStorage.
-     */
-    function loadGivenKudos() {
-        try {
-            const raw = localStorage.getItem('enggtv_given_kudos');
-            if (raw) {
-                const arr = JSON.parse(raw);
-                givenKudosSet = new Set(arr);
-            }
-        } catch (e) {
-            givenKudosSet = new Set();
-        }
-    }
-
-    function saveGivenKudos() {
-        try {
-            localStorage.setItem('enggtv_given_kudos', JSON.stringify([...givenKudosSet]));
-        } catch (e) {}
-    }
-
-    /**
-     * Format timestamp to relative human time (e.g. 2m ago).
-     */
-    function timeAgo(ms) {
-        const diff = Math.max(0, Date.now() - ms);
-        const mins = Math.floor(diff / (60 * 1000));
-        if (mins < 1) return 'Just now';
-        if (mins < 60) return `${mins}m ago`;
-        const hours = Math.floor(mins / 60);
-        if (hours < 24) return `${hours}h ago`;
-        const days = Math.floor(hours / 24);
-        return `${days}d ago`;
-    }
-
-    /**
-     * Generate avatar initials from handle (e.g. @FluidVortex_32 -> FV).
-     */
-    function getHandleInitials(handle) {
-        const clean = handle.replace('@', '');
-        const parts = clean.split('_')[0].split(/(?=[A-Z])/);
-        if (parts.length >= 2) {
-            return (parts[0][0] + parts[1][0]).toUpperCase();
-        }
-        return clean.substring(0, 2).toUpperCase();
-    }
-
-    /**
-     * Curated dynamic modern color palettes for peer avatars and icons.
-     * Ensures high contrast, vibrant aesthetics, and visual variety across the stream.
-     */
-    const PEER_COLOR_PALETTES = [
-        {
-            gradient: 'from-violet-500 to-purple-600',
-            border: 'border-violet-400/50',
-            text: 'text-violet-100',
-            iconBg: 'bg-violet-500/20',
-            iconText: 'text-violet-600 dark:text-violet-300',
-            borderLight: 'border-violet-500/30'
-        },
-        {
-            gradient: 'from-emerald-500 to-teal-600',
-            border: 'border-emerald-400/50',
-            text: 'text-emerald-100',
-            iconBg: 'bg-emerald-500/20',
-            iconText: 'text-emerald-600 dark:text-emerald-300',
-            borderLight: 'border-emerald-500/30'
-        },
-        {
-            gradient: 'from-amber-500 to-orange-600',
-            border: 'border-amber-400/50',
-            text: 'text-amber-100',
-            iconBg: 'bg-amber-500/20',
-            iconText: 'text-amber-600 dark:text-amber-300',
-            borderLight: 'border-amber-500/30'
-        },
-        {
-            gradient: 'from-rose-500 to-pink-600',
-            border: 'border-rose-400/50',
-            text: 'text-rose-100',
-            iconBg: 'bg-rose-500/20',
-            iconText: 'text-rose-600 dark:text-rose-300',
-            borderLight: 'border-rose-500/30'
-        },
-        {
-            gradient: 'from-cyan-500 to-blue-600',
-            border: 'border-cyan-400/50',
-            text: 'text-cyan-100',
-            iconBg: 'bg-cyan-500/20',
-            iconText: 'text-cyan-600 dark:text-cyan-300',
-            borderLight: 'border-cyan-500/30'
-        },
-        {
-            gradient: 'from-indigo-500 to-blue-600',
-            border: 'border-indigo-400/50',
-            text: 'text-indigo-100',
-            iconBg: 'bg-indigo-500/20',
-            iconText: 'text-indigo-600 dark:text-indigo-300',
-            borderLight: 'border-indigo-500/30'
-        },
-        {
-            gradient: 'from-fuchsia-500 to-rose-600',
-            border: 'border-fuchsia-400/50',
-            text: 'text-fuchsia-100',
-            iconBg: 'bg-fuchsia-500/20',
-            iconText: 'text-fuchsia-600 dark:text-fuchsia-300',
-            borderLight: 'border-fuchsia-500/30'
-        },
-        {
-            gradient: 'from-teal-500 to-emerald-600',
-            border: 'border-teal-400/50',
-            text: 'text-teal-100',
-            iconBg: 'bg-teal-500/20',
-            iconText: 'text-teal-600 dark:text-teal-300',
-            borderLight: 'border-teal-500/30'
-        },
-        {
-            gradient: 'from-orange-500 to-amber-600',
-            border: 'border-orange-400/50',
-            text: 'text-orange-100',
-            iconBg: 'bg-orange-500/20',
-            iconText: 'text-orange-600 dark:text-orange-300',
-            borderLight: 'border-orange-500/30'
-        },
-        {
-            gradient: 'from-blue-500 to-indigo-600',
-            border: 'border-blue-400/50',
-            text: 'text-blue-100',
-            iconBg: 'bg-blue-500/20',
-            iconText: 'text-blue-600 dark:text-blue-300',
-            borderLight: 'border-blue-500/30'
-        }
-    ];
-
-    /**
-     * Compute a deterministic vibrant color palette for any handle and index.
-     * Guaranteed variety so adjacent entries never share identical colors.
-     */
-    function getHandleColorPalette(handle, index = 0) {
-        if (!handle) return PEER_COLOR_PALETTES[0];
-        let hash = 0;
-        for (let i = 0; i < handle.length; i++) {
-            hash = ((hash << 5) - hash) + handle.charCodeAt(i);
-            hash |= 0;
-        }
-        const paletteIndex = Math.abs(hash + index * 3) % PEER_COLOR_PALETTES.length;
-        return PEER_COLOR_PALETTES[paletteIndex];
-    }
-
-    /**
-     * Discipline color gradient mapping for avatar badges (with fallback).
-     */
-    function getDisciplineGradient(disc, handle = '', index = 0) {
-        if (handle) {
-            const pal = getHandleColorPalette(handle, index);
-            return `${pal.gradient} ${pal.border} ${pal.text}`;
-        }
-        switch (disc) {
-            case 'Civil':
-                return 'from-amber-500 to-orange-600 border-amber-400/40 text-amber-100';
-            case 'Electrical':
-                return 'from-purple-500 to-indigo-600 border-purple-400/40 text-purple-100';
-            case 'Other':
-                return 'from-emerald-500 to-teal-600 border-emerald-400/40 text-emerald-100';
-            case 'Mechanical':
-            default:
-                return 'from-cyan-500 to-blue-600 border-cyan-400/40 text-cyan-100';
-        }
-    }
-
-    /**
-     * Render the Live Peer Milestone Stream into the DOM.
-     * Enforces the rule: limit the current user's milestones to at most 2,
-     * maximizing visual variety from fellow engineering peers.
-     */
-    function renderStream() {
-        const streamContainer = document.getElementById('peer-milestones-stream');
-        if (!streamContainer) return;
-
-        const userDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
-        const myHandle = getOrGenerateHandle();
-        let currentUserMilestoneCount = 0;
-
-        // Filter milestones: limit current user to at most 2 to create high variety
-        const filtered = milestonesCache.filter(m => {
-            if (currentFilter === 'my_discipline') {
-                const discMatch = m.discipline && (
-                    m.discipline === userDiscipline || 
-                    m.discipline.toLowerCase().includes(userDiscipline.toLowerCase()) ||
-                    userDiscipline.toLowerCase().includes(m.discipline.toLowerCase())
-                );
-                if (!discMatch) return false;
-            }
-            // Limit current user milestones to maximum 2
-            if (m.handle === myHandle) {
-                currentUserMilestoneCount++;
-                if (currentUserMilestoneCount > 2) {
-                    return false;
-                }
-            }
-            return true;
-        });
-
-        if (filtered.length === 0) {
-            const isDiscFilter = currentFilter === 'my_discipline';
-            streamContainer.innerHTML = `
-                <div class="py-12 px-6 text-center rounded-2xl bg-white/40 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60 flex flex-col items-center justify-center gap-3">
-                    <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center border border-cyan-500/20 shadow-inner">
-                        <span class="material-symbols-outlined text-2xl">bolt</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm sm:text-base text-slate-800 dark:text-slate-200 mb-1">
-                            ${isDiscFilter ? `No Recent ${userDiscipline} Milestones Yet` : 'No Recent Peer Milestones Yet'}
-                        </h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto leading-relaxed">
-                            100% Real candidate activity only. Set the study momentum by completing a practice drill, achieving a study streak, or solving a Simplistic Study challenge!
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap items-center justify-center gap-2 mt-1">
-                        <button onclick="navigateTo('study')" class="px-4 py-2 rounded-xl text-xs font-bold bg-primary hover:brightness-110 text-white shadow-sm transition-all cursor-pointer flex items-center gap-1.5">
-                            <span class="material-symbols-outlined text-[16px]">play_arrow</span>
-                            <span>Practice Drill</span>
-                        </button>
-                        <button onclick="if(window.openSimplisticStudyModal)window.openSimplisticStudyModal();" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-600 transition-all cursor-pointer flex items-center gap-1.5">
-                            <span class="material-symbols-outlined text-[16px]">psychology</span>
-                            <span>Simplistic Study</span>
-                        </button>
-                    </div>
-                </div>
-            `;
-            return;
-        }
-
-        streamContainer.innerHTML = filtered.map((m, idx) => {
-            const hasGivenKudo = givenKudosSet.has(m.id);
-            const initials = getHandleInitials(m.handle);
-            const palette = getHandleColorPalette(m.handle, idx);
-            const isSelf = m.handle === myHandle;
-
-            return `
-                <div class="peer-milestone-item p-3.5 sm:p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 flex items-start justify-between gap-3.5 transition-all hover:border-cyan-500/40 hover:shadow-md group/item" data-id="${m.id}">
-                    <div class="flex items-start gap-3 min-w-0">
-                        <!-- Avatar Badge (Mixed dynamic vibrant colors) -->
-                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br ${palette.gradient} flex items-center justify-center font-bold text-xs font-mono shadow-sm shrink-0 border ${palette.border} ${palette.text} transition-transform group-hover/item:scale-105">
-                            ${initials}
-                        </div>
-
-                        <!-- Info Content -->
-                        <div class="min-w-0 flex-1">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200 truncate flex items-center gap-1.5">
-                                    <span class="w-2 h-2 rounded-full bg-gradient-to-br ${palette.gradient} shrink-0 inline-block shadow-xs"></span>
-                                    <span>${m.handle}</span>
-                                </span>
-                                ${isSelf ? '<span class="text-[9px] font-black uppercase tracking-wider bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 px-1.5 py-0.5 rounded-full font-bold">You</span>' : ''}
-                                <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700/70 text-slate-600 dark:text-slate-300 border border-slate-200/60 dark:border-slate-600/60">
-                                    FE ${m.discipline}
-                                </span>
-                                <span class="text-[10px] text-slate-400 dark:text-slate-400 font-medium ml-auto sm:ml-0">${timeAgo(m.timestamp)}</span>
-                            </div>
-
-                            <p class="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 leading-snug">
-                                ${m.title}
-                            </p>
-                            ${m.detail ? `<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">${m.detail}</p>` : ''}
-                        </div>
-                    </div>
-
-                    <!-- Interactive Kudos Button -->
-                    <button onclick="window.givePeerKudos('${m.id}')" class="kudos-btn shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                        hasGivenKudo 
-                        ? 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/40 shadow-sm scale-105' 
-                        : 'bg-slate-100 hover:bg-amber-500/15 dark:bg-slate-700/60 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-amber-500 border border-slate-200/60 dark:border-slate-650 active:scale-95'
-                    }" title="Give Kudos">
-                        <span class="text-sm">👏</span>
-                        <span class="kudos-count font-mono">${m.kudosCount || 0}</span>
-                    </button>
-                </div>
-            `;
-        }).join('');
-    }
-
-    /**
-     * Give Kudos to a peer milestone.
-     */
-    function givePeerKudos(milestoneId) {
-        if (!milestoneId) return;
-        const hasGiven = givenKudosSet.has(milestoneId);
-
-        // Find milestone in cache
-        const target = milestonesCache.find(m => m.id === milestoneId);
-        if (!target) return;
-
-        if (hasGiven) {
-            // Retract kudo
-            givenKudosSet.delete(milestoneId);
-            target.kudosCount = Math.max(0, (target.kudosCount || 1) - 1);
-        } else {
-            // Add kudo
-            givenKudosSet.add(milestoneId);
-            target.kudosCount = (target.kudosCount || 0) + 1;
-
-            // Trigger micro confetti celebration
-            triggerKudosAnimation(milestoneId);
-
-            // Award social gamification point to candidate
-            if (typeof window.addPoints === 'function') {
-                window.addPoints(1, 'Gave Community Kudos!');
-            }
-        }
-
-        saveGivenKudos();
-        saveLocalRealMilestones(milestonesCache);
-        renderStream();
-
-        // Sync with Firestore if active
-        try {
-            if (window.db) {
-                const docRef = window.db.collection('peer_milestones').doc(milestoneId);
-                const incrementVal = hasGiven ? -1 : 1;
-                docRef.update({
-                    kudosCount: window.firebase.firestore.FieldValue.increment(incrementVal)
-                }).catch(() => {});
-            }
-        } catch (e) {}
-    }
-
-    /**
-     * Subtle micro-celebration animation on Kudos button.
-     */
-    function triggerKudosAnimation(milestoneId) {
-        const itemEl = document.querySelector(`.peer-milestone-item[data-id="${milestoneId}"] .kudos-btn`);
-        if (!itemEl) return;
-
-        // Visual bounce
-        itemEl.classList.add('scale-125', 'ring-2', 'ring-amber-400');
-        setTimeout(() => {
-            itemEl.classList.remove('scale-125', 'ring-2', 'ring-amber-400');
-        }, 300);
-
-        // Small confetti burst if canvas-confetti is loaded
-        if (typeof window.confetti === 'function') {
-            const rect = itemEl.getBoundingClientRect();
-            const x = (rect.left + rect.width / 2) / window.innerWidth;
-            const y = (rect.top + rect.height / 2) / window.innerHeight;
-            window.confetti({
-                particleCount: 15,
-                spread: 40,
-                startVelocity: 15,
-                origin: { x, y },
-                colors: ['#F59E0B', '#06B6D4', '#EC4899']
-            });
-        }
-    }
-
-    /**
-     * Public Method: Publish a candidate milestone to the live feed.
-     */
-    function publishPeerMilestone({ title, detail, type = 'quiz_finish', discipline = null }) {
-        if (!title) return;
-
-        const myDiscipline = discipline || localStorage.getItem('enggtv_discipline') || 'Mechanical';
-        const myHandle = getOrGenerateHandle();
-
-        const newMilestone = {
-            id: 'milestone_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
-            handle: myHandle,
-            discipline: myDiscipline,
-            type: type,
-            title: title,
-            detail: detail || '',
-            timestamp: Date.now(),
-            kudosCount: 1, // Self start
-            kudosUsers: []
-        };
-
-        // Prepend to local cache immediately
-        milestonesCache.unshift(newMilestone);
-        // Keep cache capped at 40
-        if (milestonesCache.length > 40) milestonesCache.pop();
-
-        saveLocalRealMilestones(milestonesCache);
-        renderStream();
-
-        // Broadcast to Firestore collection
-        try {
-            if (window.db) {
-                window.db.collection('peer_milestones').doc(newMilestone.id).set(newMilestone).then(() => {
-                    console.log('✅ Peer milestone broadcasted to Firestore');
-                }).catch(err => {
-                    console.warn('Firestore peer milestone sync note:', err.message);
-                });
-            }
-        } catch (e) {}
-
-        // Notification toast
-        if (typeof window.showNotification === 'function') {
-            window.showNotification(`📢 Shared to Peer Ticker as ${myHandle}!`, 'info');
-        }
-    }
-
-    /**
-     * Setup Real-Time Firestore onSnapshot listener.
-     */
-    function setupFirestoreListener() {
-        if (!window.db) return;
-
-        try {
-            firestoreUnsubscribe = window.db.collection('peer_milestones')
-                .orderBy('timestamp', 'desc')
-                .limit(60)
-                .onSnapshot(snapshot => {
-                    const firestoreItems = [];
-                    snapshot.forEach(doc => {
-                        firestoreItems.push({ id: doc.id, ...doc.data() });
-                    });
-
-                    if (firestoreItems.length > 0) {
-                        const map = new Map();
-                        // Prioritize real Firestore items
-                        firestoreItems.forEach(f => map.set(f.id, f));
-                        // Retain any locally published user milestones
-                        milestonesCache.forEach(m => {
-                            if (!map.has(m.id)) map.set(m.id, m);
-                        });
-                        milestonesCache = Array.from(map.values()).sort((a, b) => b.timestamp - a.timestamp);
-                        saveLocalRealMilestones(milestonesCache);
-                        renderStream();
-                    }
-                }, err => {
-                    console.warn('Firestore peer milestone listener notice:', err.message);
-                });
-        } catch (e) {
-            console.warn('Could not attach Firestore peer listener:', e);
-        }
-    }
-
-    /**
-     * Update the candidate's anonymous handle display and editing trigger.
-     */
-    function updateHandleUI() {
-        const handle = getOrGenerateHandle();
-        const displayEl = document.getElementById('user-anonymous-handle-text');
-        const iconEl = document.getElementById('user-anonymous-handle-icon');
-        const palette = getHandleColorPalette(handle, 0);
-
-        if (displayEl) {
-            displayEl.textContent = handle;
-            displayEl.className = `font-mono text-sm sm:text-base font-black ${palette.iconText}`;
-        }
-        if (iconEl) {
-            iconEl.className = `w-8 h-8 rounded-xl ${palette.iconBg} ${palette.iconText} border ${palette.borderLight} flex items-center justify-center font-bold shrink-0 transition-all shadow-xs`;
-        }
-    }
-
-    /**
-     * Open the Edit Handle modal.
-     */
-    function openEditHandleModal() {
-        const currentHandle = getOrGenerateHandle();
-        const modal = document.getElementById('edit-handle-modal');
-        const input = document.getElementById('input-edit-handle');
-        if (input) {
-            input.value = currentHandle.replace('@', '');
-        }
-        if (modal) {
-            modal.classList.remove('hidden');
-            modal.style.display = 'flex';
-        }
-    }
-
-    function closeEditHandleModal() {
-        const modal = document.getElementById('edit-handle-modal');
-        if (modal) {
-            modal.classList.add('hidden');
-            modal.style.display = 'none';
-        }
-    }
-
-    function saveCustomHandleFromInput() {
-        const input = document.getElementById('input-edit-handle');
-        if (!input) return;
-        const val = input.value.trim();
-        const success = setCustomHandle(val);
-        if (success) {
-            closeEditHandleModal();
-            renderStream();
-            if (typeof window.showNotification === 'function') {
-                window.showNotification('✅ Anonymous handle updated: ' + getOrGenerateHandle(), 'success');
-            }
-        } else {
-            alert('Handle must be 3-18 letters, numbers, or underscores.');
-        }
-    }
-
-    /**
-     * Enhanced Coverage: Ingest real candidate study activity from localStorage,
-     * recentActivity, daily quests, streak tracker, and question statistics.
-     * Prevents empty state by transforming actual real past and current study actions
-     * into broadcastable peer milestones.
-     */
-    function scanAndIngestRealActivity() {
-        const myHandle = getOrGenerateHandle();
-        const myDisc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
-        const existingIds = new Set(milestonesCache.map(m => m.id));
-        let addedCount = 0;
-
-        // 1. Ingest Real Quizzes & Mock Exams from recentActivity
-        let recent = [];
-        try {
-            if (window.state && Array.isArray(window.state.recentActivity) && window.state.recentActivity.length > 0) {
-                recent = window.state.recentActivity;
-            } else {
-                for (let i = 0; i < localStorage.length; i++) {
-                    const key = localStorage.key(i);
-                    if (key && key.startsWith('enggtv_recent_activity')) {
-                        try {
-                            const parsed = JSON.parse(localStorage.getItem(key));
-                            if (Array.isArray(parsed) && parsed.length > 0) {
-                                recent = recent.concat(parsed);
-                            }
-                        } catch(e) {}
-                    }
-                }
-            }
-        } catch(e) {}
-
-        if (recent.length > 0) {
-            recent.slice(0, 2).forEach(act => {
-                const actId = 'real_act_' + (act.id || act.timestamp);
-                if (!existingIds.has(actId)) {
-                    const attempted = act.attempted || 0;
-                    const score = act.score !== undefined ? act.score : 0;
-                    const acc = act.accuracy !== undefined ? act.accuracy : (attempted > 0 ? Math.round((score / attempted) * 100) : 0);
-                    const titleName = act.title || (act.isMockExam ? 'FE Mock Exam' : 'Practice');
-                    
-                    let milestoneTitle = `Completed ${attempted || 5}-Question Drill in ${titleName}`;
-                    if (acc >= 90) milestoneTitle = `Aced ${titleName} Drill (${acc}%) 🏆`;
-                    else if (acc >= 70) milestoneTitle = `Passed ${titleName} Drill (${acc}%)`;
-
-                    milestonesCache.push({
-                        id: actId,
-                        handle: myHandle,
-                        discipline: myDisc,
-                        type: 'quiz_finish',
-                        title: milestoneTitle,
-                        detail: `${score}/${attempted} correct questions in FE ${myDisc} practice`,
-                        timestamp: act.timestamp || Date.now(),
-                        kudosCount: Math.min(12, Math.max(1, Math.floor((score || 1) * 1.5))),
-                        kudosUsers: []
-                    });
-                    existingIds.add(actId);
-                    addedCount++;
-                }
-            });
-        }
-
-        // 2. Ingest Real Study Streak
-        try {
-            const streak = (window.calculateStreak && typeof window.calculateStreak === 'function')
-                ? window.calculateStreak()
-                : (window.state && window.state.recentActivity && typeof window.calculateStreakFromActivity === 'function'
-                    ? window.calculateStreakFromActivity(window.state.recentActivity)
-                    : 0);
-
-            if (streak > 0) {
-                const todayStr = new Date().toISOString().split('T')[0];
-                const streakId = 'real_streak_' + streak + '_' + todayStr;
-                if (!existingIds.has(streakId)) {
-                    milestonesCache.push({
-                        id: streakId,
-                        handle: myHandle,
-                        discipline: myDisc,
-                        type: 'study_streak',
-                        title: `Hit a ${streak}-Day Study Streak! 🔥`,
-                        detail: `Maintained daily practice consistency in FE ${myDisc}`,
-                        timestamp: Date.now() - 4 * 60 * 1000,
-                        kudosCount: streak * 3 + 1,
-                        kudosUsers: []
-                    });
-                    existingIds.add(streakId);
-                    addedCount++;
-                }
-            }
-        } catch(e) {}
-
-        // 3. Ingest Real Daily Quests Progress
-        try {
-            const todayStr = new Date().toISOString().split('T')[0];
-            const userObj = JSON.parse(localStorage.getItem('enggtv_user')) || {};
-            const qKey = `enggtv_quests_${userObj.username || 'guest'}_${todayStr}`;
-            const qData = JSON.parse(localStorage.getItem(qKey) || '{}');
-            if (qData.questions_answered && qData.questions_answered > 0) {
-                const questId = 'real_quest_' + todayStr;
-                if (!existingIds.has(questId)) {
-                    milestonesCache.push({
-                        id: questId,
-                        handle: myHandle,
-                        discipline: myDisc,
-                        type: 'daily_quest',
-                        title: `Solved ${qData.questions_answered} Questions Today ✍️`,
-                        detail: `Active daily practice session for FE ${myDisc}`,
-                        timestamp: Date.now() - 12 * 60 * 1000,
-                        kudosCount: Math.min(6, qData.questions_answered),
-                        kudosUsers: []
-                    });
-                    existingIds.add(questId);
-                    addedCount++;
-                }
-            }
-        } catch(e) {}
-
-        // 4. Ingest Total Questions Practiced if user has questionStats
-        try {
-            const qStats = JSON.parse(localStorage.getItem('enggtv_question_stats') || '{}');
-            const totalAnswered = Object.values(qStats).reduce((sum, n) => sum + (typeof n === 'number' ? n : 0), 0);
-            if (totalAnswered >= 3) {
-                const statsId = 'real_qstats_' + myDisc;
-                if (!existingIds.has(statsId)) {
-                    milestonesCache.push({
-                        id: statsId,
-                        handle: myHandle,
-                        discipline: myDisc,
-                        type: 'drill_volume',
-                        title: `Completed ${totalAnswered} Total Practice Question Repetitions`,
-                        detail: `Deep practice track in FE ${myDisc} questions catalog`,
-                        timestamp: Date.now() - 35 * 60 * 1000,
-                        kudosCount: Math.min(15, Math.floor(totalAnswered / 3) + 1),
-                        kudosUsers: []
-                    });
-                    existingIds.add(statsId);
-                    addedCount++;
-                }
-            }
-        } catch(e) {}
-
-        // 5. Ingest Real Points Milestones in multiples of 50 and 100 for current user
-        try {
-            const userObj = JSON.parse(localStorage.getItem('enggtv_user')) || {};
-            const rawPts = localStorage.getItem(`enggtv_points_${userObj.username || 'guest'}`);
-            const userPts = rawPts ? parseInt(rawPts, 10) : ((window.state && window.state.userPoints) || 0);
-            if (userPts >= 50) {
-                const milestoneTiers = [2500, 2000, 1500, 1000, 500, 400, 300, 250, 200, 150, 100, 50];
-                for (const tier of milestoneTiers) {
-                    if (userPts >= tier) {
-                        const ptsId = 'real_pts_' + myHandle + '_' + tier;
-                        if (!existingIds.has(ptsId)) {
-                            milestonesCache.push({
-                                id: ptsId,
-                                handle: myHandle,
-                                discipline: myDisc,
-                                type: 'points_milestone',
-                                title: userPts >= 1000 ? `Passed ${tier.toLocaleString()} Mastery Points Milestone 🌟` : `Reached ${tier} Study Mastery Points 🏆`,
-                                detail: `Total cumulative score of ${userPts.toLocaleString()} points in FE ${myDisc}`,
-                                timestamp: Date.now() - 25 * 60 * 1000,
-                                kudosCount: Math.min(20, Math.floor(tier / 25) + 2),
-                                kudosUsers: []
-                            });
-                            existingIds.add(ptsId);
-                            addedCount++;
-                        }
-                        break;
-                    }
-                }
-            }
-        } catch(e) {}
-
-        // 6. Active Daily Study Session Presence
-        try {
-            const isAuth = localStorage.getItem('enggtv_authenticated') === 'true';
-            if (isAuth) {
-                const todayStr = new Date().toISOString().split('T')[0];
-                const sessId = 'real_sess_' + todayStr;
-                if (!existingIds.has(sessId)) {
-                    milestonesCache.push({
-                        id: sessId,
-                        handle: myHandle,
-                        discipline: myDisc,
-                        type: 'session_active',
-                        title: `Active FE ${myDisc} Study Session In Progress`,
-                        detail: `Focusing on core engineering fundamentals & reference handbook`,
-                        timestamp: Date.now() - 2 * 60 * 1000,
-                        kudosCount: 2,
-                        kudosUsers: []
-                    });
-                    existingIds.add(sessId);
-                    addedCount++;
-                }
-            }
-        } catch(e) {}
-
-        if (addedCount > 0) {
-            milestonesCache.sort((a, b) => b.timestamp - a.timestamp);
-            saveLocalRealMilestones(milestonesCache);
-        }
-    }
-
-    /**
-     * Initialize Module.
-     */
-    function init() {
-        loadGivenKudos();
-        getOrGenerateHandle();
-        updateHandleUI();
-
-        // Initialize cache with 100% real local milestones
-        milestonesCache = loadLocalRealMilestones();
-        // Ingest existing real candidate study actions
-        scanAndIngestRealActivity();
-        renderStream();
-
-        // Ingest real community milestones from actual students in the database
-        fetch('assets/data/community_milestones.json')
-            .then(res => res.ok ? res.json() : [])
-            .then(communityData => {
-                if (Array.isArray(communityData) && communityData.length > 0) {
-                    const now = Date.now();
-                    const map = new Map();
-                    milestonesCache.forEach(m => map.set(m.id, m));
-                    communityData.forEach((m, idx) => {
-                        if (!map.has(m.id)) {
-                            // If timestamp is more than 24 hours old, distribute naturally over recent hours
-                            if (!m.timestamp || (now - m.timestamp > 24 * 3600 * 1000)) {
-                                const offsetMins = 8 + (idx * 14); // 8m, 22m, 36m, 50m, 1h ago, etc.
-                                m.timestamp = now - (offsetMins * 60 * 1000);
-                            }
-                            map.set(m.id, m);
-                        }
-                    });
-                    milestonesCache = Array.from(map.values()).sort((a, b) => b.timestamp - a.timestamp);
-                    saveLocalRealMilestones(milestonesCache);
-                    renderStream();
-                }
-            })
-            .catch(() => {});
-
-        // Connect Firestore listener
-        setupFirestoreListener();
-
-        // Filter buttons
-        const btnAll = document.getElementById('peer-filter-all');
-        const btnMyDisc = document.getElementById('peer-filter-my-disc');
-
-        if (btnAll) {
-            btnAll.onclick = () => {
-                currentFilter = 'all';
-                btnAll.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-cyan-500 text-white shadow-sm transition-all cursor-pointer';
-                if (btnMyDisc) btnMyDisc.className = 'px-3 py-1.5 rounded-xl text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-cyan-500 transition-all cursor-pointer';
-                renderStream();
-            };
-        }
-
-        if (btnMyDisc) {
-            const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
-            btnMyDisc.textContent = `My Discipline (${disc})`;
-            btnMyDisc.onclick = () => {
-                currentFilter = 'my_discipline';
-                btnMyDisc.className = 'px-3 py-1.5 rounded-xl text-xs font-bold bg-cyan-500 text-white shadow-sm transition-all cursor-pointer';
-                if (btnAll) btnAll.className = 'px-3 py-1.5 rounded-xl text-xs font-bold text-slate-500 dark:text-slate-400 hover:text-cyan-500 transition-all cursor-pointer';
-                renderStream();
-            };
-        }
-
-        // Setup Edit Handle button
-        const editBtn = document.getElementById('btn-edit-anonymous-handle');
-        if (editBtn) {
-            editBtn.onclick = openEditHandleModal;
-        }
-
-        const closeBtn = document.getElementById('btn-close-edit-handle');
-        if (closeBtn) {
-            closeBtn.onclick = closeEditHandleModal;
-        }
-
-        const saveBtn = document.getElementById('btn-save-edit-handle');
-        if (saveBtn) {
-            saveBtn.onclick = saveCustomHandleFromInput;
-        }
-
-        // Periodic relative time refresher (every 60s)
-        setInterval(() => {
-            renderStream();
-        }, 60000);
-    }
-
-    function refreshPeerTicker() {
-        scanAndIngestRealActivity();
-        renderStream();
-    }
-
-    // Expose globally
-    window.publishPeerMilestone = publishPeerMilestone;
-    window.givePeerKudos = givePeerKudos;
-    window.getAnonymousHandle = getOrGenerateHandle;
-    window.setCustomAnonymousHandle = setCustomHandle;
-    window.openEditHandleModal = openEditHandleModal;
-    window.closeEditHandleModal = closeEditHandleModal;
-    window.saveCustomHandleFromInput = saveCustomHandleFromInput;
-    window.refreshPeerTicker = refreshPeerTicker;
-    window.scanAndIngestRealActivity = scanAndIngestRealActivity;
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        setTimeout(init, 50);
-    }
-})();
-
-// --- END js/peer-ticker.js ---
-
-// --- BEGIN js/zen-study.js ---
-/**
- * ENGG.tv - Simplistic Study Mode (Zen Focus Mode)
- * Distraction-free 2-tab micro-learning tool:
- * Tab 1: Single discipline FE Theorem/Formula with shuffle icon
- * Tab 2: Single discipline FE Practice Question with shuffle icon, hidden explanation, and +1 score integration
- */
-
-(function() {
-    'use strict';
-
-    let currentDiscipline = 'Mechanical';
-    let currentTheoremIndex = 0;
-    let currentQuestion = null;
-    let hasAnswered = false;
-    let hasRevealedExplanation = false;
-    let activeZenTab = 'theorem';
-
-    // Map discipline names to standard keys
-    function normalizeDiscipline(disc) {
-        if (!disc) return 'Mechanical';
-        if (disc === 'Civil Engineering') return 'Civil';
-        if (disc === 'Electrical') return 'Electrical and Computer';
-        if (disc === 'Other Disciplines' || disc === 'FE_Other Discipline' || disc.toLowerCase().includes('other')) return 'Other';
-        return disc;
-    }
-
-    function getActiveDiscipline() {
-        if (window.getActiveMotivationDiscipline) {
-            return window.getActiveMotivationDiscipline();
-        }
-        const disc = localStorage.getItem('enggtv_discipline') || 
-                     (window.state && window.state.user && window.state.user.discipline) || 
-                     'Mechanical';
-        return normalizeDiscipline(disc);
-    }
-
-    function getTheoremsList() {
-        const disc = getActiveDiscipline();
-        const theoremsMap = window.THEOREMS_BY_DISCIPLINE || {};
-        if (theoremsMap[disc] && theoremsMap[disc].length > 0) {
-            return theoremsMap[disc];
-        }
-        return theoremsMap['Mechanical'] || [];
-    }
-
-    function getAllDisciplineQuestions() {
-        const disc = getActiveDiscipline();
-        const source = window.getQuestionsSource ? window.getQuestionsSource() : (typeof QUESTIONS !== 'undefined' ? QUESTIONS : {});
-        const allQuestions = [];
-
-        // 1. Try to use window.state.subjects if populated
-        let subjects = (window.state && window.state.subjects) || [];
-
-        // 2. If state subjects are empty or don't match current discipline, retrieve from global arrays
-        if (!subjects || subjects.length === 0) {
-            if (disc === 'Mechanical' && typeof MECHANICAL_SUBJECTS !== 'undefined') subjects = MECHANICAL_SUBJECTS;
-            else if (disc === 'Civil' && typeof CIVIL_SUBJECTS !== 'undefined') subjects = CIVIL_SUBJECTS;
-            else if (disc === 'Chemical' && typeof CHEMICAL_SUBJECTS !== 'undefined') subjects = CHEMICAL_SUBJECTS;
-            else if (disc === 'Industrial' && typeof INDUSTRIAL_SUBJECTS !== 'undefined') subjects = INDUSTRIAL_SUBJECTS;
-            else if (disc === 'Environmental' && typeof ENVIRONMENTAL_SUBJECTS !== 'undefined') subjects = ENVIRONMENTAL_SUBJECTS;
-            else if (disc === 'Electrical and Computer' && typeof ELECTRICAL_COMPUTER_SUBJECTS !== 'undefined') subjects = ELECTRICAL_COMPUTER_SUBJECTS;
-            else if (typeof OTHER_SUBJECTS !== 'undefined') subjects = OTHER_SUBJECTS;
-        }
-
-        if (subjects && subjects.length > 0) {
-            subjects.forEach(sub => {
-                if (source[sub.id] && Array.isArray(source[sub.id])) {
-                    source[sub.id].forEach(q => {
-                        allQuestions.push({
-                            ...q,
-                            subjectId: sub.id,
-                            subjectName: sub.name || sub.id
-                        });
-                    });
-                }
-            });
-        }
-
-        // Fallback: If still empty, collect all questions in source
-        if (allQuestions.length === 0 && source) {
-            Object.keys(source).forEach(key => {
-                if (Array.isArray(source[key])) {
-                    source[key].forEach(q => {
-                        allQuestions.push({
-                            ...q,
-                            subjectId: key,
-                            subjectName: key
-                        });
-                    });
-                }
-            });
-        }
-
-        return allQuestions;
-    }
-
-    // --- Tab 1: Theorem Logic ---
-    function renderTheorem() {
-        const theorems = getTheoremsList();
-        if (!theorems || theorems.length === 0) return;
-
-        if (currentTheoremIndex >= theorems.length) {
-            currentTheoremIndex = 0;
-        }
-
-        const th = theorems[currentTheoremIndex];
-        const titleEl = document.getElementById('zen-theorem-title');
-        const formulaEl = document.getElementById('zen-theorem-formula');
-        const descEl = document.getElementById('zen-theorem-desc');
-        const tipEl = document.getElementById('zen-theorem-tip');
-        const countEl = document.getElementById('zen-theorem-count');
-
-        if (titleEl) titleEl.textContent = th.title;
-        if (formulaEl) formulaEl.innerHTML = th.formula;
-        if (descEl) descEl.textContent = th.description;
-        if (tipEl) tipEl.textContent = th.examTip;
-        if (countEl) countEl.textContent = `Formula ${currentTheoremIndex + 1} of ${theorems.length}`;
-
-        // Typeset LaTeX equation
-        const panel = document.getElementById('zen-theorem-panel');
-        if (panel) {
-            if (window.safeTypesetMath) {
-                window.safeTypesetMath([panel]);
-            } else if (window.MathJax && window.MathJax.typesetPromise) {
-                window.MathJax.typesetPromise([panel]).catch(e => console.warn('MathJax zen render:', e));
-            }
-        }
-    }
-
-    function shuffleTheorem() {
-        const theorems = getTheoremsList();
-        if (theorems.length <= 1) return;
-
-        let nextIndex = Math.floor(Math.random() * theorems.length);
-        while (nextIndex === currentTheoremIndex && theorems.length > 1) {
-            nextIndex = Math.floor(Math.random() * theorems.length);
-        }
-        currentTheoremIndex = nextIndex;
-
-        // Visual feedback on shuffle button
-        const shuffleBtn = document.getElementById('zen-shuffle-theorem-btn');
-        if (shuffleBtn) {
-            shuffleBtn.classList.add('rotate-180');
-            setTimeout(() => shuffleBtn.classList.remove('rotate-180'), 300);
-        }
-
-        renderTheorem();
-    }
-
-    function nextTheorem() {
-        const theorems = getTheoremsList();
-        if (!theorems || theorems.length === 0) return;
-        currentTheoremIndex = (currentTheoremIndex + 1) % theorems.length;
-        renderTheorem();
-    }
-
-    function prevTheorem() {
-        const theorems = getTheoremsList();
-        if (!theorems || theorems.length === 0) return;
-        currentTheoremIndex = (currentTheoremIndex - 1 + theorems.length) % theorems.length;
-        renderTheorem();
-    }
-
-    // --- Tab 2: Question Logic ---
-    function loadRandomQuestion() {
-        const questions = getAllDisciplineQuestions();
-        if (!questions || questions.length === 0) {
-            const qPrompt = document.getElementById('zen-question-prompt');
-            if (qPrompt) qPrompt.textContent = 'No questions found for this discipline.';
-            return;
-        }
-
-        let nextQ = questions[Math.floor(Math.random() * questions.length)];
-        if (currentQuestion && questions.length > 1) {
-            while (nextQ.id === currentQuestion.id) {
-                nextQ = questions[Math.floor(Math.random() * questions.length)];
-            }
-        }
-        currentQuestion = nextQ;
-        hasAnswered = false;
-        hasRevealedExplanation = false;
-
-        renderCurrentQuestion();
-    }
-
-    function renderCurrentQuestion() {
-        if (!currentQuestion) return;
-
-        const topicEl = document.getElementById('zen-question-topic');
-        const promptEl = document.getElementById('zen-question-prompt');
-        const imageContainer = document.getElementById('zen-question-image-container');
-        const optionsContainer = document.getElementById('zen-options-container');
-        const explanationContainer = document.getElementById('zen-explanation-container');
-        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
-        const feedbackBanner = document.getElementById('zen-feedback-banner');
-
-        if (topicEl) {
-            topicEl.textContent = `${currentQuestion.subjectName || 'FE Practice'} • ${currentQuestion.topic || 'Core Problem'}`;
-        }
-        if (promptEl) {
-            promptEl.innerHTML = currentQuestion.question || '';
-        }
-
-        // Image Handling
-        if (imageContainer) {
-            const qImg = currentQuestion.local_image || currentQuestion.image;
-            if (qImg) {
-                const src = window.toDriveImgUrl ? window.toDriveImgUrl(qImg) : qImg;
-                imageContainer.innerHTML = `<img src="${src}" alt="Problem Diagram" class="max-h-56 mx-auto rounded-xl border border-slate-700/60 shadow-md my-3 object-contain">`;
-                imageContainer.classList.remove('hidden');
-            } else {
-                imageContainer.innerHTML = '';
-                imageContainer.classList.add('hidden');
-            }
-        }
-
-        // Reset Feedback Banner
-        if (feedbackBanner) {
-            feedbackBanner.innerHTML = '';
-            feedbackBanner.className = 'hidden mb-4 p-3.5 rounded-2xl text-xs font-bold transition-all';
-        }
-
-        // Render Options A, B, C, D
-        if (optionsContainer) {
-            optionsContainer.innerHTML = '';
-            const letters = ['A', 'B', 'C', 'D'];
-            (currentQuestion.options || []).forEach((opt, idx) => {
-                const optBtn = document.createElement('button');
-                optBtn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-slate-800/80 hover:bg-slate-750 border border-slate-700/80 hover:border-indigo-500/60 transition-all flex items-start gap-3.5 text-left text-sm text-slate-200 cursor-pointer group active:scale-[0.99]';
-                optBtn.setAttribute('data-index', idx);
-                optBtn.innerHTML = `
-                    <span class="zen-opt-letter w-7 h-7 rounded-xl bg-slate-700/80 text-slate-300 text-xs font-black flex items-center justify-center shrink-0 border border-slate-600 group-hover:border-indigo-400 group-hover:text-white transition-colors">
-                        ${letters[idx] || (idx + 1)}
-                    </span>
-                    <span class="zen-opt-text flex-1 pt-0.5 leading-relaxed">${opt.text || ''}</span>
-                `;
-                optBtn.onclick = () => handleOptionSelect(idx);
-                optionsContainer.appendChild(optBtn);
-            });
-        }
-
-        // Reset & Populate Explanation (Hidden Initially)
-        if (explanationContainer) {
-            explanationContainer.classList.add('hidden');
-            populateExplanationContent(explanationContainer);
-        }
-
-        // Reset Explanation Toggle Button
-        if (toggleExpBtn) {
-            toggleExpBtn.innerHTML = `
-                <span class="material-symbols-outlined text-[18px]">visibility</span>
-                <span>Explain Solution (Hidden)</span>
-            `;
-            toggleExpBtn.className = 'px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-indigo-300 hover:text-white text-xs font-bold border border-indigo-500/30 flex items-center gap-2 transition-all cursor-pointer shadow-sm';
-        }
-
-        // Typeset MathJax in Question Prompt and Options
-        const panel = document.getElementById('zen-question-panel');
-        if (panel) {
-            if (window.safeTypesetMath) {
-                window.safeTypesetMath([panel]);
-            } else if (window.MathJax && window.MathJax.typesetPromise) {
-                window.MathJax.typesetPromise([panel]).catch(e => console.warn('MathJax zen question render:', e));
-            }
-        }
-    }
-
-    function populateExplanationContent(container) {
-        if (!currentQuestion) return;
-
-        let stepsHtml = '';
-        if (currentQuestion.solution && currentQuestion.solution.steps && Array.isArray(currentQuestion.solution.steps)) {
-            stepsHtml = currentQuestion.solution.steps.map((st, i) => `
-                <div class="p-3.5 rounded-xl bg-slate-800/90 border border-slate-700/60 mb-2.5">
-                    <span class="text-xs font-black text-indigo-300 block mb-1 uppercase tracking-wider">Step ${i + 1}: ${st.title || ''}</span>
-                    <p class="text-xs text-slate-300 leading-relaxed">${st.content || ''}</p>
-                </div>
-            `).join('');
-        }
-
-        // NCEES reference box
-        let nceesHtml = '';
-        if (currentQuestion.ncees_reference) {
-            const ref = currentQuestion.ncees_reference;
-            nceesHtml = `
-                <div class="mt-3 p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3 text-xs text-amber-200">
-                    <span class="material-symbols-outlined text-amber-400 text-lg shrink-0 mt-0.5">menu_book</span>
-                    <div>
-                        <span class="font-bold text-amber-300 block mb-0.5 uppercase tracking-wide text-[10px]">NCEES Reference Handbook • ${ref.section || 'General'}</span>
-                        <p class="text-amber-100/90 leading-tight">Topic: <strong>${ref.topic || ''}</strong> ${ref.page_number ? `• Page ${ref.page_number}` : ''} ${ref.search_term ? `• Search: <em>"${ref.search_term}"</em>` : ''}</p>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Engg.tv AI Big Idea / Pitfalls
-        let copilotHtml = '';
-        if (currentQuestion.copilot_explanation) {
-            const copilot = currentQuestion.copilot_explanation;
-            if (copilot.big_idea) {
-                copilotHtml += `
-                    <div class="mt-3 p-3.5 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-xs text-indigo-200 leading-relaxed">
-                        <strong class="text-indigo-300 block mb-1 text-[11px] uppercase tracking-wider font-bold">💡 The Big Idea:</strong>
-                        ${copilot.big_idea}
-                    </div>
-                `;
-            }
-        }
-
-        const finalAnswer = (currentQuestion.solution && currentQuestion.solution.final_answer) || '';
-
-        container.innerHTML = `
-            <div class="p-5 rounded-2xl bg-slate-900/90 border border-indigo-500/30 space-y-3 mt-4 shadow-xl">
-                <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-indigo-400 text-xl">auto_stories</span>
-                        <span class="text-xs font-black uppercase tracking-wider text-indigo-200">Step-by-Step Explanation</span>
-                    </div>
-                    ${finalAnswer ? `<span class="px-2.5 py-1 rounded-lg bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 text-xs font-bold">Final: ${finalAnswer}</span>` : ''}
-                </div>
-
-                <div class="space-y-2 pt-1">
-                    ${stepsHtml}
-                </div>
-
-                ${nceesHtml}
-                ${copilotHtml}
-            </div>
-        `;
-    }
-
-    function handleOptionSelect(selectedIndex) {
-        if (hasAnswered || !currentQuestion) return;
-        hasAnswered = true;
-
-        const options = currentQuestion.options || [];
-        const selectedOpt = options[selectedIndex];
-        const isCorrect = !!(selectedOpt && selectedOpt.is_correct);
-
-        const optionButtons = document.querySelectorAll('#zen-options-container .zen-option-btn');
-        optionButtons.forEach((btn, idx) => {
-            const opt = options[idx];
-            btn.classList.remove('hover:bg-slate-750', 'hover:border-indigo-500/60', 'cursor-pointer');
-            btn.classList.add('cursor-default');
-
-            if (opt && opt.is_correct) {
-                btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-emerald-950/60 border-2 border-emerald-500 text-emerald-200 transition-all flex items-start gap-3.5 text-left text-sm shadow-[0_0_20px_rgba(16,185,129,0.2)]';
-                const letterEl = btn.querySelector('.zen-opt-letter');
-                if (letterEl) letterEl.className = 'zen-opt-letter w-7 h-7 rounded-xl bg-emerald-500 text-slate-950 text-xs font-black flex items-center justify-center shrink-0';
-            } else if (idx === selectedIndex) {
-                btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-rose-950/60 border-2 border-rose-500 text-rose-200 transition-all flex items-start gap-3.5 text-left text-sm shadow-[0_0_20px_rgba(244,63,94,0.2)]';
-                const letterEl = btn.querySelector('.zen-opt-letter');
-                if (letterEl) letterEl.className = 'zen-opt-letter w-7 h-7 rounded-xl bg-rose-500 text-white text-xs font-black flex items-center justify-center shrink-0';
-            } else {
-                btn.classList.add('opacity-40');
-            }
-        });
-
-        // Feedback Banner & Points Award
-        const feedbackBanner = document.getElementById('zen-feedback-banner');
-        if (feedbackBanner) {
-            feedbackBanner.classList.remove('hidden');
-            if (isCorrect) {
-                feedbackBanner.className = 'mb-4 p-3.5 rounded-2xl text-xs font-bold bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 flex items-center justify-between';
-                
-                // Award 1 point if not previously revealed
-                if (!hasRevealedExplanation) {
-                    if (window.addPoints) {
-                        window.addPoints(1, 'Simplistic Study Mode Correct Answer!');
-                    }
-                    if (typeof window.publishPeerMilestone === 'function' && currentQuestion) {
-                        const disc = getActiveDiscipline();
-                        window.publishPeerMilestone({
-                            type: 'zen_solved',
-                            title: `Solved ${currentQuestion.topic || 'FE Practice'} Problem in Simplistic Study`,
-                            detail: `FE ${disc} Focus • +1 Point awarded`,
-                            discipline: disc
-                        });
-                    }
-                    feedbackBanner.innerHTML = `
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-emerald-400">check_circle</span>
-                            <span>Correct! +1 point added to your score.</span>
-                        </div>
-                        <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[10px] font-black uppercase tracking-wider">+1 PT</span>
-                    `;
-                } else {
-                    feedbackBanner.innerHTML = `
-                        <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-emerald-400">check_circle</span>
-                            <span>Correct! (Solution was previously revealed)</span>
-                        </div>
-                    `;
-                }
-            } else {
-                feedbackBanner.className = 'mb-4 p-3.5 rounded-2xl text-xs font-bold bg-rose-500/20 border border-rose-500/50 text-rose-300 flex items-center gap-2';
-                feedbackBanner.innerHTML = `
-                    <span class="material-symbols-outlined text-rose-400">cancel</span>
-                    <span>Incorrect. Review the step-by-step solution below.</span>
-                `;
-            }
-        }
-
-        // Auto-reveal explanation upon answering
-        revealExplanation(true);
-    }
-
-    function toggleExplanation() {
-        const expContainer = document.getElementById('zen-explanation-container');
-        if (!expContainer) return;
-
-        const isHidden = expContainer.classList.contains('hidden');
-        if (isHidden) {
-            hasRevealedExplanation = true;
-            revealExplanation(false);
-        } else {
-            expContainer.classList.add('hidden');
-            const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
-            if (toggleExpBtn) {
-                toggleExpBtn.innerHTML = `
-                    <span class="material-symbols-outlined text-[18px]">visibility</span>
-                    <span>Explain Solution (Hidden)</span>
-                `;
-            }
-        }
-    }
-
-    function revealExplanation(isAfterAnswering) {
-        const expContainer = document.getElementById('zen-explanation-container');
-        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
-        if (!expContainer) return;
-
-        expContainer.classList.remove('hidden');
-
-        setTimeout(() => {
-            expContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 60);
-
-        if (toggleExpBtn) {
-            toggleExpBtn.innerHTML = `
-                <span class="material-symbols-outlined text-[18px]">visibility_off</span>
-                <span>Hide Explanation</span>
-            `;
-            toggleExpBtn.className = 'px-4 py-2.5 rounded-xl bg-indigo-600/30 hover:bg-indigo-600/40 text-indigo-200 text-xs font-bold border border-indigo-500/50 flex items-center gap-2 transition-all cursor-pointer shadow-sm';
-        }
-
-        // If revealed before answering, highlight correct option so user learns immediately
-        if (!hasAnswered && currentQuestion && currentQuestion.options) {
-            const optionButtons = document.querySelectorAll('#zen-options-container .zen-option-btn');
-            optionButtons.forEach((btn, idx) => {
-                const opt = currentQuestion.options[idx];
-                if (opt && opt.is_correct) {
-                    btn.className = 'zen-option-btn w-full p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/60 text-emerald-200 transition-all flex items-start gap-3.5 text-left text-sm';
-                }
-            });
-        }
-
-        // Typeset MathJax inside explanation container
-        if (window.safeTypesetMath) {
-            window.safeTypesetMath([expContainer]);
-        } else if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise([expContainer]).catch(e => console.warn('MathJax exp render:', e));
-        }
-    }
-
-    function shuffleQuestion() {
-        const shuffleBtn = document.getElementById('zen-shuffle-question-btn');
-        if (shuffleBtn) {
-            shuffleBtn.classList.add('rotate-180');
-            setTimeout(() => shuffleBtn.classList.remove('rotate-180'), 300);
-        }
-        loadRandomQuestion();
-    }
-
-    // --- Tab Switching ---
-    function setZenTab(tab) {
-        activeZenTab = tab;
-        const theoremPanel = document.getElementById('zen-theorem-panel');
-        const questionPanel = document.getElementById('zen-question-panel');
-        const tabTheoremBtn = document.getElementById('zen-tab-theorem-btn');
-        const tabQuestionBtn = document.getElementById('zen-tab-question-btn');
-
-        if (tab === 'theorem') {
-            if (theoremPanel) theoremPanel.classList.remove('hidden');
-            if (questionPanel) questionPanel.classList.add('hidden');
-
-            if (tabTheoremBtn) {
-                tabTheoremBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/30 transition-all cursor-pointer';
-            }
-            if (tabQuestionBtn) {
-                tabQuestionBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition-all cursor-pointer';
-            }
-
-            renderTheorem();
-        } else {
-            if (theoremPanel) theoremPanel.classList.add('hidden');
-            if (questionPanel) questionPanel.classList.remove('hidden');
-
-            if (tabQuestionBtn) {
-                tabQuestionBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white shadow-md shadow-indigo-500/30 transition-all cursor-pointer';
-            }
-            if (tabTheoremBtn) {
-                tabTheoremBtn.className = 'px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-slate-200 transition-all cursor-pointer';
-            }
-
-            if (!currentQuestion) {
-                loadRandomQuestion();
-            } else {
-                if (questionPanel) {
-                    if (window.safeTypesetMath) {
-                        window.safeTypesetMath([questionPanel]);
-                    } else if (window.MathJax && window.MathJax.typesetPromise) {
-                        window.MathJax.typesetPromise([questionPanel]).catch(e => console.warn(e));
-                    }
-                }
-            }
-        }
-    }
-
-    // --- Modal Lifecycle ---
-    function openModal() {
-        const modal = document.getElementById('simplistic-study-modal');
-        if (!modal) return;
-
-        currentDiscipline = getActiveDiscipline();
-        const discBadge = document.getElementById('zen-discipline-badge');
-        if (discBadge) {
-            discBadge.textContent = currentDiscipline;
-        }
-
-        modal.classList.remove('hidden');
-        setTimeout(() => {
-            modal.classList.remove('opacity-0');
-            const sheet = document.getElementById('zen-modal-card');
-            if (sheet) {
-                sheet.classList.remove('scale-95', 'opacity-0');
-                sheet.classList.add('scale-100', 'opacity-100');
-            }
-        }, 10);
-
-        setZenTab(activeZenTab);
-    }
-
-    function closeModal() {
-        const modal = document.getElementById('simplistic-study-modal');
-        const sheet = document.getElementById('zen-modal-card');
-        if (!modal) return;
-
-        if (sheet) {
-            sheet.classList.remove('scale-100', 'opacity-100');
-            sheet.classList.add('scale-95', 'opacity-0');
-        }
-        modal.classList.add('opacity-0');
-
-        setTimeout(() => {
-            modal.classList.add('hidden');
-        }, 250);
-    }
-
-    function toggleModal() {
-        const modal = document.getElementById('simplistic-study-modal');
-        if (!modal) return;
-        if (modal.classList.contains('hidden')) {
-            openModal();
-        } else {
-            closeModal();
-        }
-    }
-
-    function init() {
-        // Wire up tab buttons
-        const tabTheoremBtn = document.getElementById('zen-tab-theorem-btn');
-        if (tabTheoremBtn) {
-            tabTheoremBtn.onclick = () => setZenTab('theorem');
-        }
-
-        const tabQuestionBtn = document.getElementById('zen-tab-question-btn');
-        if (tabQuestionBtn) {
-            tabQuestionBtn.onclick = () => setZenTab('question');
-        }
-
-        // Shuffle buttons
-        const shuffleThBtn = document.getElementById('zen-shuffle-theorem-btn');
-        if (shuffleThBtn) {
-            shuffleThBtn.onclick = shuffleTheorem;
-        }
-
-        const prevThBtn = document.getElementById('zen-prev-theorem-btn');
-        if (prevThBtn) {
-            prevThBtn.onclick = prevTheorem;
-        }
-
-        const nextThBtn = document.getElementById('zen-next-theorem-btn');
-        if (nextThBtn) {
-            nextThBtn.onclick = nextTheorem;
-        }
-
-        const shuffleQBtn = document.getElementById('zen-shuffle-question-btn');
-        if (shuffleQBtn) {
-            shuffleQBtn.onclick = shuffleQuestion;
-        }
-
-        const nextQBtn = document.getElementById('zen-next-q-btn');
-        if (nextQBtn) {
-            nextQBtn.onclick = shuffleQuestion;
-        }
-
-        // Toggle Explanation Button
-        const toggleExpBtn = document.getElementById('zen-toggle-exp-btn');
-        if (toggleExpBtn) {
-            toggleExpBtn.onclick = toggleExplanation;
-        }
-
-        // Close Modal button & backdrop
-        const closeBtn = document.getElementById('zen-modal-close-btn');
-        if (closeBtn) {
-            closeBtn.onclick = closeModal;
-        }
-
-        const modal = document.getElementById('simplistic-study-modal');
-        if (modal) {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-    }
-
-    // Expose globally
-    window.openSimplisticStudyModal = openModal;
-    window.closeSimplisticStudyModal = closeModal;
-    window.toggleSimplisticStudyModal = toggleModal;
-    window.setZenTab = setZenTab;
-    window.shuffleZenTheorem = shuffleTheorem;
-    window.nextZenTheorem = nextTheorem;
-    window.prevZenTheorem = prevTheorem;
-    window.shuffleZenQuestion = shuffleQuestion;
-    window.handleZenOptionSelect = handleOptionSelect;
-    window.toggleZenExplanation = toggleExplanation;
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        setTimeout(init, 50);
-    }
-})();
-
-// --- END js/zen-study.js ---
+// --- END js/fe-theorems-data.js ---
 
 // --- BEGIN js/fe-flashcards.js ---
 /**
@@ -37122,910 +36572,4 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
 // --- END js/fe-flashcards.js ---
-
-// --- BEGIN js/rapid-reels.js ---
-/**
- * ENGG.tv - Vertical "Rapid Reels" Flashcard Video Swiping Engine
- * High-octane vertical micro-learning feed with synced karaoke captions,
- * gesture swiping, handbook formula peek, and Leitner spaced repetition.
- */
-(function() {
-    'use strict';
-
-    let currentReelsDeck = [];
-    let currentReelIndex = 0;
-    let isMuted = false;
-    let playbackSpeed = 1.0;
-    let isReelsActive = false;
-    let karaokeActive = false; // Closed captioning is OFF by default as requested
-    let activeDiscipline = 'Mechanical';
-    let activeSubjectFilter = 'all';
-    let touchStartY = 0;
-    let touchStartX = 0;
-    let touchStartTime = 0;
-    let isSwiping = false;
-    let wheelThrottleTimer = null;
-    let lastTapTime = 0;
-
-
-
-    // Load saved favorites from localStorage
-    function getSavedReels() {
-        try {
-            const raw = localStorage.getItem('enggtv_saved_reels');
-            return raw ? JSON.parse(raw) : [];
-        } catch (e) {
-            return [];
-        }
-    }
-
-    function saveReelFavorite(cardTitle) {
-        const saved = getSavedReels();
-        const idx = saved.indexOf(cardTitle);
-        if (idx === -1) {
-            saved.push(cardTitle);
-        } else {
-            saved.splice(idx, 1);
-        }
-        try {
-            localStorage.setItem('enggtv_saved_reels', JSON.stringify(saved));
-        } catch (e) {}
-        return saved.includes(cardTitle);
-    }
-
-    function isReelFavorite(cardTitle) {
-        return getSavedReels().includes(cardTitle);
-    }
-
-    // Build video reels queue for current discipline and subject
-    function buildReelsQueue(disc, subjectFilter = 'all') {
-        const datasets = window.THEOREMS_BY_DISCIPLINE || {};
-        let actualDisc = disc || localStorage.getItem('enggtv_discipline') || 'Mechanical';
-        if (actualDisc === 'current') {
-            actualDisc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
-        }
-
-        let list = [];
-        if (actualDisc === 'all') {
-            Object.keys(datasets).forEach(d => {
-                (datasets[d] || []).forEach(t => list.push({ ...t, disc: d }));
-            });
-        } else {
-            list = (datasets[actualDisc] || []).map(t => ({ ...t, disc: actualDisc }));
-        }
-
-        // Only include cards with video URL
-        list = list.filter(c => Boolean(c && c.videoUrl));
-
-        // Attach subject metadata if available
-        if (window.DISCIPLINE_SUBJECT_CONFIG && window.DISCIPLINE_SUBJECT_CONFIG[actualDisc]) {
-            const config = window.DISCIPLINE_SUBJECT_CONFIG[actualDisc];
-            list.forEach(card => {
-                card.subjectId = config.getSubjectId(card.title, card.examTip, card.description);
-                const subObj = config.list.find(s => s.id === card.subjectId);
-                card.subjectName = subObj ? subObj.name : config.defaultName;
-            });
-
-            if (subjectFilter && subjectFilter !== 'all') {
-                const targetSubId = Number(subjectFilter);
-                list = list.filter(card => card.subjectId === targetSubId);
-            }
-        }
-
-        return list;
-    }
-
-    // Open Rapid Reels Viewer
-    function openRapidReels(disc, subjectFilter = 'all', initialIndex = 0) {
-        activeDiscipline = disc || localStorage.getItem('enggtv_discipline') || 'Mechanical';
-        activeSubjectFilter = subjectFilter || 'all';
-
-        // Close Classic Flashcard Studio if open
-        const classicModal = document.getElementById('fe-flashcards-modal');
-        if (classicModal && !classicModal.classList.contains('hidden')) {
-            const classicVideo = document.getElementById('fc-back-video');
-            if (classicVideo) classicVideo.pause();
-            classicModal.classList.add('hidden', 'opacity-0');
-        }
-
-        currentReelsDeck = buildReelsQueue(activeDiscipline, activeSubjectFilter);
-        if (!currentReelsDeck.length) {
-            // Fallback to Mechanical if deck is empty
-            activeDiscipline = 'Mechanical';
-            currentReelsDeck = buildReelsQueue('Mechanical', 'all');
-        }
-
-        currentReelIndex = Math.max(0, Math.min(initialIndex, currentReelsDeck.length - 1));
-        isReelsActive = true;
-
-        const modal = document.getElementById('fe-reels-modal');
-        if (!modal) return;
-
-        modal.classList.remove('hidden');
-        requestAnimationFrame(() => {
-            modal.classList.remove('opacity-0');
-            modal.classList.add('opacity-100');
-        });
-
-        // Initialize selectors
-        populateReelsSubjectSelect();
-        renderCurrentReel(false);
-        setupReelsGestures();
-    }
-
-    // Close Rapid Reels Viewer
-    function closeRapidReels(reopenClassic = false) {
-        isReelsActive = false;
-        const video = document.getElementById('reels-main-video');
-        if (video) {
-            video.pause();
-            video.removeAttribute('src');
-            video.load();
-        }
-
-        closeReelsFormulaDrawer();
-        closeReelsExampleDrawer();
-
-        const modal = document.getElementById('fe-reels-modal');
-        if (modal) {
-            modal.classList.remove('opacity-100');
-            modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 250);
-        }
-
-        if (reopenClassic && window.openFlashcardStudio) {
-            window.openFlashcardStudio(activeDiscipline, 'recall', activeSubjectFilter);
-        }
-    }
-
-    // Populate Subject dropdown inside Reels header
-    function populateReelsSubjectSelect() {
-        const select = document.getElementById('reels-subject-select');
-        const discSelect = document.getElementById('reels-discipline-select');
-        if (discSelect) {
-            discSelect.value = activeDiscipline;
-        }
-
-        if (!select) return;
-        select.innerHTML = '<option value="all">⚡ All Topics</option>';
-
-        if (window.DISCIPLINE_SUBJECT_CONFIG && window.DISCIPLINE_SUBJECT_CONFIG[activeDiscipline]) {
-            const config = window.DISCIPLINE_SUBJECT_CONFIG[activeDiscipline];
-            config.list.forEach(sub => {
-                const opt = document.createElement('option');
-                opt.value = String(sub.id);
-                opt.textContent = sub.name;
-                select.appendChild(opt);
-            });
-            select.value = activeSubjectFilter;
-            select.classList.remove('hidden');
-        } else {
-            select.classList.add('hidden');
-        }
-    }
-
-    // Render Story Segments (Segmented Progress Bar)
-    function renderStorySegments() {
-        const container = document.getElementById('reels-story-segments');
-        if (!container || !currentReelsDeck.length) return;
-
-        const total = currentReelsDeck.length;
-        const visibleSegments = Math.min(total, 24); // Cap segments visually to prevent overflow
-        const activeSegmentIdx = Math.floor((currentReelIndex / total) * visibleSegments);
-
-        let html = '';
-        for (let i = 0; i < visibleSegments; i++) {
-            const isCompleted = i < activeSegmentIdx;
-            const isCurrent = i === activeSegmentIdx;
-            const fillWidth = isCompleted ? '100%' : (isCurrent ? '100%' : '0%');
-            const opacity = isCompleted ? 'opacity-80' : (isCurrent ? 'opacity-100' : 'opacity-30');
-            html += `<div class="reels-story-segment ${opacity}">
-                <div class="reels-story-fill" style="width: ${fillWidth};"></div>
-            </div>`;
-        }
-        container.innerHTML = html;
-    }
-
-    // Render Current Reel
-    function renderCurrentReel(slideDirection = false) {
-        if (!currentReelsDeck.length) return;
-
-        const card = currentReelsDeck[currentReelIndex];
-        if (!card) return;
-
-        // Update Counter
-        const counterEl = document.getElementById('reels-counter-badge');
-        if (counterEl) {
-            counterEl.textContent = `${currentReelIndex + 1} / ${currentReelsDeck.length}`;
-        }
-
-        // Update Title & Subject Info
-        const titleEl = document.getElementById('reels-card-title');
-        const subjectEl = document.getElementById('reels-card-subject');
-        const formulaPreviewEl = document.getElementById('reels-card-formula-preview');
-
-        if (titleEl) titleEl.textContent = card.title || 'FE Theorem';
-        if (subjectEl) subjectEl.textContent = card.subjectName || card.disc || 'General Engineering';
-
-        if (formulaPreviewEl) {
-            if (card.formula) {
-                let fmt = String(card.formula).trim();
-                if (!fmt.startsWith('$')) fmt = `$$${fmt}$$`;
-                formulaPreviewEl.innerHTML = fmt;
-                formulaPreviewEl.classList.remove('hidden');
-                if (window.MathJax && window.MathJax.typesetPromise) {
-                    window.MathJax.typesetPromise([formulaPreviewEl]).catch(() => {});
-                }
-            } else {
-                formulaPreviewEl.classList.add('hidden');
-            }
-        }
-
-        // Update Bento Description & Exam Tip
-        const bentoDescEl = document.getElementById('reels-bento-desc');
-        const bentoTipEl = document.getElementById('reels-bento-tip');
-        if (bentoDescEl) {
-            bentoDescEl.textContent = card.description || 'Reference formula for NCEES FE CBT Exam.';
-        }
-        if (bentoTipEl) {
-            let tipText = card.examTip || 'Found in the official NCEES Reference Handbook.';
-            tipText = tipText.replace(/^Search NCEES Handbook under [^.]*\.\s*/i, '').trim();
-            bentoTipEl.textContent = tipText;
-        }
-
-        // Dynamic Ambient Glow Shifts with Discipline
-        updateAmbientGlow(card.disc || activeDiscipline);
-
-        // Update Action Buttons
-        const likeIcon = document.getElementById('reels-like-icon');
-        const isFav = isReelFavorite(card.title);
-        if (likeIcon) {
-            likeIcon.style.color = isFav ? '#f43f5e' : '';
-            likeIcon.style.fontVariationSettings = isFav ? "'FILL' 1" : "'FILL' 0";
-        }
-
-        // Solved Example Button Visibility
-        const exampleBtn = document.getElementById('reels-btn-example');
-        if (exampleBtn) {
-            if (card.solvedExample && card.solvedExample.question) {
-                exampleBtn.classList.remove('hidden');
-            } else {
-                exampleBtn.classList.add('hidden');
-            }
-        }
-
-        // Close open drawers
-        closeReelsFormulaDrawer();
-        closeReelsExampleDrawer();
-
-        // Update Stories Progress Segments
-        renderStorySegments();
-
-        // Handle Video Setup & Animation
-        const video = document.getElementById('reels-main-video');
-        const stage = document.getElementById('reels-video-stage');
-        const frameContainer = document.getElementById('reels-frame-container');
-        const badgeDot = document.getElementById('reels-video-badge-dot');
-        const badgeText = document.getElementById('reels-video-badge-text');
-        const targetVideoSrc = card.videoUrl;
-
-        // Reset video stage to standard bento stack
-        if (stage) stage.classList.remove('reels-mode-vertical-916');
-        if (frameContainer) frameContainer.classList.remove('reels-mode-vertical-active');
-        if (badgeDot) badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse';
-        if (badgeText) {
-            badgeText.textContent = '16:9 HD Explainer';
-            badgeText.className = 'text-rose-300 font-bold';
-        }
-
-        // Hide karaoke caption box if closed captioning is off (default off)
-        const karaokeBox = document.getElementById('reels-karaoke-box');
-        if (karaokeBox && !karaokeActive) {
-            karaokeBox.classList.add('hidden');
-        }
-
-        if (video) {
-            // Apply slide transition
-            if (slideDirection === 'up') {
-                stage.classList.add('reel-slide-up-exit');
-            } else if (slideDirection === 'down') {
-                stage.classList.add('reel-slide-down-exit');
-            }
-
-            setTimeout(() => {
-                video.pause();
-                video.muted = isMuted;
-                video.playbackRate = playbackSpeed;
-                video.src = targetVideoSrc;
-                video.load();
-
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(err => {
-                        // Browser prevented unmuted autoplay; mute and retry
-                        video.muted = true;
-                        isMuted = true;
-                        updateReelsMuteUI();
-                        video.play().catch(() => {});
-                    });
-                }
-
-                // Reset and slide in
-                stage.classList.remove('reel-slide-up-exit', 'reel-slide-down-exit');
-                stage.classList.add('reel-slide-enter');
-                setTimeout(() => {
-                    stage.classList.remove('reel-slide-enter');
-                }, 300);
-
-                // Setup In-Video Karaoke
-                initReelsKaraoke(card, video);
-            }, slideDirection ? 180 : 0);
-        }
-
-        // Preload next reel's video
-        preloadNextReel();
-    }
-
-    // Dynamic Ambient Glow Shifts with Discipline
-    function updateAmbientGlow(disc) {
-        const orb1 = document.getElementById('reels-glow-orb-1');
-        const orb2 = document.getElementById('reels-glow-orb-2');
-        if (!orb1 || !orb2) return;
-
-        const palettes = {
-            'Mechanical': {
-                orb1: 'from-rose-500/35 via-pink-600/25 to-purple-600/20',
-                orb2: 'from-cyan-500/30 via-indigo-600/25 to-emerald-500/20'
-            },
-            'Civil': {
-                orb1: 'from-amber-500/35 via-orange-600/25 to-emerald-600/20',
-                orb2: 'from-emerald-500/30 via-teal-600/25 to-cyan-500/20'
-            },
-            'Electrical and Computer': {
-                orb1: 'from-cyan-500/35 via-blue-600/25 to-purple-600/20',
-                orb2: 'from-amber-500/30 via-rose-600/25 to-indigo-500/20'
-            },
-            'Chemical': {
-                orb1: 'from-teal-500/35 via-emerald-600/25 to-indigo-600/20',
-                orb2: 'from-purple-500/30 via-pink-600/25 to-cyan-500/20'
-            },
-            'Industrial': {
-                orb1: 'from-violet-500/35 via-purple-600/25 to-pink-600/20',
-                orb2: 'from-rose-500/30 via-amber-600/25 to-cyan-500/20'
-            },
-            'Environmental': {
-                orb1: 'from-emerald-500/35 via-teal-600/25 to-cyan-600/20',
-                orb2: 'from-cyan-500/30 via-blue-600/25 to-emerald-500/20'
-            }
-        };
-
-        const pal = palettes[disc] || palettes['Mechanical'];
-        orb1.className = `absolute -top-12 -left-12 w-80 h-80 bg-gradient-to-br ${pal.orb1} rounded-full blur-[85px] transition-all duration-700`;
-        orb2.className = `absolute -bottom-12 -right-12 w-80 h-80 bg-gradient-to-tl ${pal.orb2} rounded-full blur-[90px] transition-all duration-700`;
-    }
-
-    // Preload next video in background
-    function preloadNextReel() {
-        const nextIdx = (currentReelIndex + 1) % currentReelsDeck.length;
-        const nextCard = currentReelsDeck[nextIdx];
-        if (nextCard && nextCard.videoUrl) {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'video';
-            link.href = nextCard.videoUrl;
-            document.head.appendChild(link);
-        }
-    }
-
-    // In-Video Karaoke Captions Engine for Reels
-    function getCardCues(card) {
-        if (!card) return [];
-        if (card.captions && Array.isArray(card.captions) && card.captions.length > 0) {
-            return card.captions;
-        }
-
-        const cues = [];
-        const dur = 10.0;
-
-        // Phase 1 (0.0s - 4.4s): Concept
-        let p1Text = card.title || '';
-        if (card.description) {
-            const raw = card.description.split('.')[0].trim();
-            p1Text = `${card.title}: ${raw}.`;
-        }
-        const words1 = p1Text.split(/\s+/).filter(Boolean);
-        const wDur1 = 4.4 / Math.max(words1.length, 1);
-        const timed1 = words1.map((w, i) => ({
-            text: w,
-            start: parseFloat((i * wDur1).toFixed(2)),
-            end: parseFloat(((i + 1) * wDur1).toFixed(2))
-        }));
-        cues.push({ start: 0.0, end: 4.4, words: timed1 });
-
-        // Phase 2 (4.4s - 7.6s): Formula Equation
-        if (card.formula) {
-            cues.push({ start: 4.4, end: 7.6, isEquation: true, text: card.formula });
-        }
-
-        // Phase 3 (7.6s - 10.0s): NCEES Exam Trap
-        let p3Text = card.examTip || 'Check NCEES Reference Handbook for core variables!';
-        p3Text = p3Text.replace(/^Search NCEES Handbook under [^.]*\.\s*/i, '').trim();
-        const tipSentence = p3Text.split('.')[0] || p3Text;
-        const words3 = `Exam Tip: ${tipSentence}!`.split(/\s+/).filter(Boolean);
-        const p3Start = card.formula ? 7.6 : 4.6;
-        const wDur3 = (dur - p3Start) / Math.max(words3.length, 1);
-        const timed3 = words3.map((w, i) => ({
-            text: w,
-            start: parseFloat((p3Start + i * wDur3).toFixed(2)),
-            end: parseFloat((p3Start + (i + 1) * wDur3).toFixed(2))
-        }));
-        cues.push({ start: p3Start, end: dur, words: timed3 });
-
-        return cues;
-    }
-
-    let currentKaraokeCues = [];
-    let currentCueIndex = -1;
-
-    function initReelsKaraoke(card, video) {
-        currentKaraokeCues = getCardCues(card);
-        currentCueIndex = -1;
-
-        const box = document.getElementById('reels-karaoke-box');
-        const textEl = document.getElementById('reels-karaoke-text');
-        if (!box || !textEl) return;
-
-        if (!karaokeActive) {
-            box.classList.add('hidden');
-            return;
-        }
-
-        box.classList.remove('hidden');
-        textEl.innerHTML = '';
-
-        if (!video._reelsKaraokeWired) {
-            video._reelsKaraokeWired = true;
-            video.addEventListener('timeupdate', () => {
-                if (!isReelsActive || !karaokeActive) return;
-                const ct = video.currentTime;
-                updateReelsKaraokeTime(ct);
-            });
-        }
-    }
-
-    function updateReelsKaraokeTime(currentTime) {
-        const textEl = document.getElementById('reels-karaoke-text');
-        const box = document.getElementById('reels-karaoke-box');
-        if (!textEl || !box) return;
-
-        const activeIdx = currentKaraokeCues.findIndex(c => currentTime >= c.start && currentTime < c.end);
-        if (activeIdx === -1) return;
-
-        if (activeIdx !== currentCueIndex) {
-            currentCueIndex = activeIdx;
-            const cue = currentKaraokeCues[activeIdx];
-            if (cue.isEquation) {
-                let fmt = cue.text.trim();
-                if (!fmt.startsWith('$')) fmt = `$$${fmt}$$`;
-                textEl.innerHTML = `<span class="inline-block px-3 py-1 rounded-xl bg-cyan-950/70 text-cyan-300 border border-cyan-500/30">${fmt}</span>`;
-                if (window.MathJax && window.MathJax.typesetPromise) {
-                    window.MathJax.typesetPromise([textEl]).catch(() => {});
-                }
-            } else if (cue.words) {
-                textEl.innerHTML = cue.words.map((w, i) => 
-                    `<span class="fc-karaoke-word" data-idx="${i}" data-start="${w.start}" data-end="${w.end}">${w.text}</span>`
-                ).join(' ');
-            }
-        }
-
-        // Update word highlights
-        const cue = currentKaraokeCues[currentCueIndex];
-        if (cue && cue.words) {
-            const spans = textEl.querySelectorAll('.fc-karaoke-word');
-            spans.forEach(span => {
-                const s = parseFloat(span.getAttribute('data-start'));
-                const e = parseFloat(span.getAttribute('data-end'));
-                if (currentTime < s) {
-                    span.className = 'fc-karaoke-word';
-                } else if (currentTime >= s && currentTime < e) {
-                    span.className = 'fc-karaoke-word is-active';
-                } else {
-                    span.className = 'fc-karaoke-word is-spoken';
-                }
-            });
-        }
-    }
-
-    // Navigation: Next Reel
-    function nextReel() {
-        if (!currentReelsDeck.length) return;
-        currentReelIndex = (currentReelIndex + 1) % currentReelsDeck.length;
-        renderCurrentReel('up');
-    }
-
-    // Navigation: Previous Reel
-    function prevReel() {
-        if (!currentReelsDeck.length) return;
-        currentReelIndex = (currentReelIndex - 1 + currentReelsDeck.length) % currentReelsDeck.length;
-        renderCurrentReel('down');
-    }
-
-    // Toggle Play/Pause
-    function toggleReelsPlay() {
-        const video = document.getElementById('reels-main-video');
-        const indicator = document.getElementById('reels-play-indicator');
-        if (!video) return;
-
-        if (video.paused) {
-            video.play();
-            showPlayIndicator('play_arrow');
-        } else {
-            video.pause();
-            showPlayIndicator('pause');
-        }
-    }
-
-    function showPlayIndicator(iconName) {
-        const ind = document.getElementById('reels-play-indicator');
-        if (!ind) return;
-        ind.innerHTML = `<span class="material-symbols-outlined text-4xl text-white">${iconName}</span>`;
-        ind.classList.remove('hidden', 'reels-play-indicator');
-        void ind.offsetWidth; // trigger reflow
-        ind.classList.add('reels-play-indicator');
-        setTimeout(() => ind.classList.add('hidden'), 500);
-    }
-
-    // Toggle Mute
-    function toggleReelsMute() {
-        isMuted = !isMuted;
-        const video = document.getElementById('reels-main-video');
-        if (video) video.muted = isMuted;
-        updateReelsMuteUI();
-    }
-
-    function updateReelsMuteUI() {
-        const icon = document.getElementById('reels-mute-icon');
-        if (icon) {
-            icon.textContent = isMuted ? 'volume_off' : 'volume_up';
-        }
-    }
-
-    // Toggle Playback Speed
-    function toggleReelsSpeed() {
-        const speeds = [1.0, 1.25, 1.5, 2.0];
-        const curIdx = speeds.indexOf(playbackSpeed);
-        playbackSpeed = speeds[(curIdx + 1) % speeds.length];
-
-        const video = document.getElementById('reels-main-video');
-        if (video) video.playbackRate = playbackSpeed;
-
-        const badge = document.getElementById('reels-speed-badge');
-        if (badge) badge.textContent = `${playbackSpeed}x`;
-    }
-
-    // Toggle Karaoke
-    function toggleReelsKaraoke() {
-        karaokeActive = !karaokeActive;
-        const box = document.getElementById('reels-karaoke-box');
-        const btn = document.getElementById('reels-cc-btn');
-        if (box) {
-            if (karaokeActive) box.classList.remove('hidden');
-            else box.classList.add('hidden');
-        }
-        if (btn) {
-            btn.classList.toggle('text-amber-400', karaokeActive);
-            btn.classList.toggle('text-slate-400', !karaokeActive);
-        }
-    }
-
-    // Toggle Like / Favorite
-    function toggleReelsLike() {
-        const card = currentReelsDeck[currentReelIndex];
-        if (!card) return;
-
-        const isFav = saveReelFavorite(card.title);
-        const icon = document.getElementById('reels-like-icon');
-        if (icon) {
-            icon.style.color = isFav ? '#f43f5e' : '';
-            icon.style.fontVariationSettings = isFav ? "'FILL' 1" : "'FILL' 0";
-        }
-
-        if (isFav) {
-            triggerHeartPop();
-        }
-    }
-
-    // Heart Burst Animation on Double Tap
-    function triggerHeartPop(x, y) {
-        const stage = document.getElementById('reels-video-stage');
-        if (!stage) return;
-
-        const heart = document.createElement('div');
-        heart.className = 'reels-heart-burst material-symbols-outlined text-6xl text-rose-500';
-        heart.style.fontVariationSettings = "'FILL' 1";
-        heart.textContent = 'favorite';
-
-        if (typeof x === 'number' && typeof y === 'number') {
-            heart.style.left = `${x}px`;
-            heart.style.top = `${y}px`;
-        } else {
-            heart.style.left = '50%';
-            heart.style.top = '50%';
-        }
-
-        stage.appendChild(heart);
-        setTimeout(() => heart.remove(), 900);
-    }
-
-    // Formula Drawer
-    function toggleReelsFormulaDrawer() {
-        const drawer = document.getElementById('reels-formula-drawer');
-        if (!drawer) return;
-        const isClosed = drawer.classList.contains('reels-drawer-closed');
-        if (isClosed) {
-            openReelsFormulaDrawer();
-        } else {
-            closeReelsFormulaDrawer();
-        }
-    }
-
-    function openReelsFormulaDrawer() {
-        const card = currentReelsDeck[currentReelIndex];
-        if (!card) return;
-
-        const drawer = document.getElementById('reels-formula-drawer');
-        const titleEl = document.getElementById('reels-drawer-title');
-        const formulaEl = document.getElementById('reels-drawer-formula');
-        const descEl = document.getElementById('reels-drawer-desc');
-        const tipEl = document.getElementById('reels-drawer-tip');
-
-        if (titleEl) titleEl.textContent = card.title || 'Formula Sheet';
-        if (formulaEl) {
-            let fmt = String(card.formula || '').trim();
-            if (!fmt.startsWith('$')) fmt = `$$${fmt}$$`;
-            formulaEl.innerHTML = fmt;
-            if (window.MathJax && window.MathJax.typesetPromise) {
-                window.MathJax.typesetPromise([formulaEl]).catch(() => {});
-            }
-        }
-        if (descEl) descEl.textContent = card.description || 'Reference formula for NCEES FE CBT Exam.';
-        if (tipEl) tipEl.textContent = card.examTip || 'Found in the official NCEES Reference Handbook.';
-
-        if (drawer) {
-            drawer.classList.remove('reels-drawer-closed');
-            drawer.classList.add('reels-drawer-open');
-        }
-    }
-
-    function closeReelsFormulaDrawer() {
-        const drawer = document.getElementById('reels-formula-drawer');
-        if (drawer) {
-            drawer.classList.remove('reels-drawer-open');
-            drawer.classList.add('reels-drawer-closed');
-        }
-    }
-
-    // Solved Example Drawer
-    function toggleReelsExampleDrawer() {
-        const drawer = document.getElementById('reels-example-drawer');
-        if (!drawer) return;
-        const isClosed = drawer.classList.contains('reels-drawer-closed');
-        if (isClosed) {
-            openReelsExampleDrawer();
-        } else {
-            closeReelsExampleDrawer();
-        }
-    }
-
-    function openReelsExampleDrawer() {
-        const card = currentReelsDeck[currentReelIndex];
-        if (!card || !card.solvedExample) return;
-
-        const drawer = document.getElementById('reels-example-drawer');
-        const questionEl = document.getElementById('reels-example-question');
-        const solutionEl = document.getElementById('reels-example-solution');
-
-        if (questionEl) {
-            let q = card.solvedExample.question || '';
-            questionEl.innerHTML = q;
-        }
-        if (solutionEl) {
-            let s = card.solvedExample.solution || '';
-            solutionEl.innerHTML = s;
-        }
-
-        if (window.MathJax && window.MathJax.typesetPromise) {
-            window.MathJax.typesetPromise([questionEl, solutionEl]).catch(() => {});
-        }
-
-        if (drawer) {
-            drawer.classList.remove('reels-drawer-closed');
-            drawer.classList.add('reels-drawer-open');
-        }
-    }
-
-    function closeReelsExampleDrawer() {
-        const drawer = document.getElementById('reels-example-drawer');
-        if (drawer) {
-            drawer.classList.remove('reels-drawer-open');
-            drawer.classList.add('reels-drawer-closed');
-        }
-    }
-
-    // Spaced Repetition (SRS) Action
-    function rateReelSRS(rating) {
-        const card = currentReelsDeck[currentReelIndex];
-        if (!card) return;
-
-        if (rating === 'mastered') {
-            if (window.addPoints) {
-                window.addPoints(2, '⚡ Rapid Reel Mastered!');
-            }
-            triggerHeartPop();
-        }
-
-        // Advance to next reel with smooth upward slide
-        nextReel();
-    }
-
-    // Shuffle Reels
-    function shuffleReels() {
-        if (!currentReelsDeck.length) return;
-        for (let i = currentReelsDeck.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [currentReelsDeck[i], currentReelsDeck[j]] = [currentReelsDeck[j], currentReelsDeck[i]];
-        }
-        currentReelIndex = 0;
-        renderCurrentReel('up');
-    }
-
-    // Setup Touch and Keyboard Gestures
-    function setupReelsGestures() {
-        const viewport = document.getElementById('reels-viewport');
-        if (!viewport || viewport._gesturesWired) return;
-        viewport._gesturesWired = true;
-
-        // Touch Listeners
-        viewport.addEventListener('touchstart', (e) => {
-            if (!isReelsActive) return;
-            const touch = e.touches[0];
-            touchStartY = touch.clientY;
-            touchStartX = touch.clientX;
-            touchStartTime = Date.now();
-            isSwiping = true;
-        }, { passive: true });
-
-        viewport.addEventListener('touchmove', (e) => {
-            // passive listener
-        }, { passive: true });
-
-        viewport.addEventListener('touchend', (e) => {
-            if (!isReelsActive || !isSwiping) return;
-            isSwiping = false;
-
-            const touch = e.changedTouches[0];
-            const deltaY = touch.clientY - touchStartY;
-            const deltaX = touch.clientX - touchStartX;
-            const duration = Date.now() - touchStartTime;
-
-            // Check for Double Tap (< 300ms, < 20px movement)
-            if (Math.abs(deltaY) < 15 && Math.abs(deltaX) < 15 && duration < 300) {
-                const now = Date.now();
-                if (now - lastTapTime < 300) {
-                    // Double Tap detected!
-                    const rect = viewport.getBoundingClientRect();
-                    triggerHeartPop(touch.clientX - rect.left, touch.clientY - rect.top);
-                    toggleReelsLike();
-                    lastTapTime = 0;
-                    return;
-                }
-                lastTapTime = now;
-            }
-
-            // Swipe Up -> Next Reel
-            if (deltaY < -45 && Math.abs(deltaY) > Math.abs(deltaX)) {
-                nextReel();
-            }
-            // Swipe Down -> Prev Reel
-            else if (deltaY > 45 && Math.abs(deltaY) > Math.abs(deltaX)) {
-                prevReel();
-            }
-        }, { passive: true });
-
-        // Mouse Wheel Listener (Throttled for Desktop)
-        viewport.addEventListener('wheel', (e) => {
-            if (!isReelsActive) return;
-            if (wheelThrottleTimer) return;
-
-            if (e.deltaY > 25) {
-                nextReel();
-                wheelThrottleTimer = setTimeout(() => { wheelThrottleTimer = null; }, 400);
-            } else if (e.deltaY < -25) {
-                prevReel();
-                wheelThrottleTimer = setTimeout(() => { wheelThrottleTimer = null; }, 400);
-            }
-        }, { passive: true });
-
-        // Global Keyboard Hotkeys
-        document.addEventListener('keydown', (e) => {
-            if (!isReelsActive) return;
-
-            if (e.code === 'Escape') {
-                e.preventDefault();
-                // Close drawer if open, else close modal
-                const fDrawer = document.getElementById('reels-formula-drawer');
-                const eDrawer = document.getElementById('reels-example-drawer');
-                if (fDrawer && !fDrawer.classList.contains('reels-drawer-closed')) {
-                    closeReelsFormulaDrawer();
-                    return;
-                }
-                if (eDrawer && !eDrawer.classList.contains('reels-drawer-closed')) {
-                    closeReelsExampleDrawer();
-                    return;
-                }
-                closeRapidReels();
-            } else if (e.code === 'ArrowDown' || e.code === 'PageDown' || e.code === 'KeyJ') {
-                e.preventDefault();
-                nextReel();
-            } else if (e.code === 'ArrowUp' || e.code === 'PageUp' || e.code === 'KeyK') {
-                e.preventDefault();
-                prevReel();
-            } else if (e.code === 'Space') {
-                e.preventDefault();
-                toggleReelsPlay();
-            } else if (e.code === 'KeyM') {
-                e.preventDefault();
-                toggleReelsMute();
-            } else if (e.code === 'KeyF') {
-                e.preventDefault();
-                toggleReelsFormulaDrawer();
-            } else if (e.code === 'KeyE') {
-                e.preventDefault();
-                toggleReelsExampleDrawer();
-            } else if (e.code === 'KeyL') {
-                e.preventDefault();
-                toggleReelsLike();
-            }
-        });
-    }
-
-    // Discipline change handler inside Reels
-    function onReelsDisciplineChange(disc) {
-        activeDiscipline = disc;
-        activeSubjectFilter = 'all';
-        openRapidReels(activeDiscipline, 'all', 0);
-    }
-
-    // Subject change handler inside Reels
-    function onReelsSubjectChange(subId) {
-        activeSubjectFilter = subId;
-        openRapidReels(activeDiscipline, activeSubjectFilter, 0);
-    }
-
-    // Expose public API
-    window.openRapidReels = openRapidReels;
-    window.closeRapidReels = closeRapidReels;
-    window.nextReel = nextReel;
-    window.prevReel = prevReel;
-    window.toggleReelsPlay = toggleReelsPlay;
-    window.toggleReelsMute = toggleReelsMute;
-    window.toggleReelsSpeed = toggleReelsSpeed;
-    window.toggleReelsKaraoke = toggleReelsKaraoke;
-    window.toggleReelsLike = toggleReelsLike;
-    window.openReelsFormulaDrawer = openReelsFormulaDrawer;
-    window.closeReelsFormulaDrawer = closeReelsFormulaDrawer;
-    window.toggleReelsFormulaDrawer = toggleReelsFormulaDrawer;
-    window.openReelsExampleDrawer = openReelsExampleDrawer;
-    window.closeReelsExampleDrawer = closeReelsExampleDrawer;
-    window.toggleReelsExampleDrawer = toggleReelsExampleDrawer;
-    window.rateReelSRS = rateReelSRS;
-    window.shuffleReels = shuffleReels;
-    window.onReelsDisciplineChange = onReelsDisciplineChange;
-    window.onReelsSubjectChange = onReelsSubjectChange;
-
-})();
-
-// --- END js/rapid-reels.js ---
 

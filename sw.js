@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v240';
+const CACHE_NAME = 'engg-prep-cache-v243';
 const APP_SHELL = [
   './',
   './index.html',
@@ -16,7 +16,6 @@ const APP_SHELL = [
   './js/global-search.js',
   './js/onboarding.js',
   './js/achievements.js',
-  './js/tts.js',
   './js/weakness-srs.js',
   './js/daily-quests.js',
   './assets/data/community_milestones.json',
