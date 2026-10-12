@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v244';
+const CACHE_NAME = 'engg-prep-cache-v246';
 const APP_SHELL = [
   './',
   './index.html',
@@ -160,6 +160,28 @@ self.addEventListener('fetch', event => {
 
   // Skip chrome-extension requests
   if (event.request.url.startsWith('chrome-extension://')) return;
+
+  // Network-First for HTML page navigations (e.g. login.html, index.html)
+  // Ensures mobile devices and tablets immediately fetch fresh HTML when online, with offline cache fallback
+  const isHtmlNav = event.request.mode === 'navigate' || 
+                    event.request.destination === 'document' || 
+                    (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html'));
+  if (isHtmlNav) {
+    event.respondWith(
+      fetch(event.request).then(networkResponse => {
+        if (networkResponse && (networkResponse.status === 200 || networkResponse.status === 0)) {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, responseToCache);
+          });
+        }
+        return networkResponse;
+      }).catch(() => {
+        return caches.match(event.request);
+      })
+    );
+    return;
+  }
 
   event.respondWith(
     caches.match(event.request).then(cachedResponse => {
