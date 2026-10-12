@@ -37479,7 +37479,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     
-    // Autoplay flashcard video with robust browser policy fallback
+    // Autoplay flashcard video with robust unmuted sound policy
     function playBackVideo() {
         const video = document.getElementById('fc-back-video');
         if (!video) return;
@@ -37488,25 +37488,48 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         if (!card || !card.videoUrl) return;
         if (activeMediaTab !== 'video') return;
 
-        const attemptPlay = () => {
+        // Ensure video element matches user preference (default: unmuted)
+        video.muted = userAudioMuted;
+        updateAudioButtonUI(video.muted);
+
+        // Cancel previous pending canplay listener if any
+        if (video._pendingPlayHandler) {
+            video.removeEventListener('canplay', video._pendingPlayHandler);
+            video._pendingPlayHandler = null;
+        }
+
+        const startPlayback = () => {
+            video._pendingPlayHandler = null;
             const modal = document.getElementById('fe-flashcards-modal');
-            if (!modal || modal.classList.contains('hidden')) return;
+            if (!modal || modal.classList.contains('hidden') || modal.style.display === 'none') return;
+            if (activeMediaTab !== 'video') return;
+
+            // Ensure muted matches user preference at moment of playback
+            video.muted = userAudioMuted;
 
             const playPromise = video.play();
             if (playPromise !== undefined) {
-                playPromise.catch(err => {
-                    // Browser prevented unmuted autoplay; mute and retry playback
-                    video.muted = true;
-                    video.play().catch(() => {});
+                playPromise.then(() => {
+                    updateAudioButtonUI(video.muted);
+                }).catch(err => {
+                    // Browser prevented unmuted autoplay due to policy
+                    if (!userAudioMuted) {
+                        console.warn('[Flashcards] Browser blocked unmuted autoplay; falling back to muted with tap-to-unmute:', err);
+                        video.muted = true;
+                        updateAudioButtonUI(true, true);
+                        video.play().catch(() => {});
+                        armOneTouchUnmute();
+                    }
                 });
             }
         };
 
         if (video.readyState >= 2) {
-            attemptPlay();
+            startPlayback();
         } else {
-            video.addEventListener('canplay', attemptPlay, { once: true });
-            attemptPlay();
+            // DO NOT call startPlayback() immediately when readyState < 2 (prevents premature promise rejection & bogus muting)
+            video._pendingPlayHandler = startPlayback;
+            video.addEventListener('canplay', startPlayback, { once: true });
         }
     }
 
@@ -37632,6 +37655,83 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         return cues;
     }
 
+    
+    // Flashcard Video Audio Control (Mute / Unmute) & User Preference Persistence
+    let userAudioMuted = (function() {
+        try {
+            return localStorage.getItem('fe_flashcard_user_muted') === 'true';
+        } catch (e) {
+            return false;
+        }
+    })();
+
+    function updateAudioButtonUI(isMuted, isAutoplayBlocked = false) {
+        const icon = document.getElementById('fc-audio-icon');
+        const text = document.getElementById('fc-audio-text');
+        const btn = document.getElementById('fc-btn-toggle-audio');
+        if (!icon || !text) return;
+        if (isMuted) {
+            icon.textContent = 'volume_off';
+            if (isAutoplayBlocked) {
+                text.textContent = 'Tap for Sound';
+                if (btn) {
+                    btn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-amber-500/25 text-amber-300 border-amber-400/50 hover:bg-amber-500/35 cursor-pointer shadow-sm animate-pulse';
+                    btn.title = 'Sound muted by browser autoplay policy — tap here or on video to enable sound';
+                }
+            } else {
+                text.textContent = 'Muted';
+                if (btn) {
+                    btn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-slate-800/80 text-amber-300 border-amber-500/40 hover:bg-amber-500/20 cursor-pointer shadow-sm';
+                    btn.title = 'Sound is muted — click to unmute';
+                }
+            }
+        } else {
+            icon.textContent = 'volume_up';
+            text.textContent = 'Sound On';
+            if (btn) {
+                btn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-emerald-500/25 text-emerald-300 border-emerald-400/50 hover:bg-emerald-500/35 cursor-pointer shadow-sm';
+                btn.title = 'Sound is active — click to mute';
+            }
+        }
+    }
+
+    function armOneTouchUnmute() {
+        const container = document.getElementById('fc-back-video-container');
+        if (!container || container._oneTouchArmed) return;
+        container._oneTouchArmed = true;
+
+        const unmuteHandler = (e) => {
+            const video = document.getElementById('fc-back-video');
+            if (video && video.muted && !userAudioMuted) {
+                video.muted = false;
+                updateAudioButtonUI(false);
+                if (video.paused) video.play().catch(() => {});
+            }
+            container.removeEventListener('click', unmuteHandler);
+            container.removeEventListener('touchstart', unmuteHandler);
+            container._oneTouchArmed = false;
+        };
+
+        container.addEventListener('click', unmuteHandler, { once: true });
+        container.addEventListener('touchstart', unmuteHandler, { once: true, passive: true });
+    }
+
+    function toggleFlashcardAudio() {
+        const video = document.getElementById('fc-back-video');
+        if (!video) return;
+        userAudioMuted = !video.muted;
+        try {
+            localStorage.setItem('fe_flashcard_user_muted', userAudioMuted ? 'true' : 'false');
+        } catch (e) {}
+
+        video.muted = userAudioMuted;
+        updateAudioButtonUI(video.muted);
+
+        if (!video.muted && video.paused) {
+            video.play().catch(() => {});
+        }
+    }
+
     function updateKaraokeUI() {
         const btn = document.getElementById('fc-btn-toggle-captions');
         const statusText = document.getElementById('fc-caption-status-text');
@@ -37708,6 +37808,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const video = document.getElementById('fc-back-video');
         if (!video || video._karaokeWired) return;
         video._karaokeWired = true;
+
+        video.addEventListener('volumechange', () => {
+            updateAudioButtonUI(video.muted);
+        });
 
         video.addEventListener('timeupdate', () => {
             const card = currentDeck[currentIndex];
@@ -37790,7 +37894,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     function prevCard() {
         if (currentDeck.length === 0) return;
         const video = document.getElementById('fc-back-video');
-        if (video) video.pause();
+        if (video) {
+            video.pause();
+            if (!userAudioMuted) video.muted = false;
+        }
 
         currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
         renderCard();
@@ -37800,7 +37907,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     function nextCard() {
         if (currentDeck.length === 0) return;
         const video = document.getElementById('fc-back-video');
-        if (video) video.pause();
+        if (video) {
+            video.pause();
+            if (!userAudioMuted) video.muted = false;
+        }
 
         currentIndex = (currentIndex + 1) % currentDeck.length;
         renderCard();
@@ -38059,6 +38169,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     window.nextFlashcard = nextCard;
     window.shuffleFlashcards = shuffleCards;
     window.toggleKaraokeCaptions = toggleKaraokeCaptions;
+    window.toggleFlashcardAudio = toggleFlashcardAudio;
     window.toggleTeleprompter = toggleKaraokeCaptions;
     window.toggleSolvedExample = toggleSolvedExample;
     window.toggleSolvedExampleSolution = toggleSolvedExampleSolution;

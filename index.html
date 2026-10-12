@@ -1874,7 +1874,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=244').then(registration => {
+          navigator.serviceWorker.register('./sw.js?v=246').then(registration => {
             registration.update();
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, err => {
@@ -2574,6 +2574,10 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                                             </div>
 
                                             <div class="flex items-center gap-1.5">
+                                                <button id="fc-btn-toggle-audio" type="button" onclick="window.toggleFlashcardAudio && window.toggleFlashcardAudio()" class="flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-slate-800/80 text-amber-300 border-amber-500/40 hover:bg-amber-500/20 cursor-pointer shadow-sm" title="Mute / Unmute Video Sound">
+                                                    <span id="fc-audio-icon" class="material-symbols-outlined text-[13px]">volume_off</span>
+                                                    <span id="fc-audio-text">Muted</span>
+                                                </button>
                                                 <button id="fc-btn-toggle-captions" type="button" onclick="window.toggleKaraokeCaptions && window.toggleKaraokeCaptions()" class="hidden items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-cyan-500/20 text-cyan-300 border-cyan-500/40 hover:bg-cyan-500/30 cursor-pointer" title="Toggle In-Video Karaoke Captions">
                                                     <span class="material-symbols-outlined text-[13px]">closed_caption</span>
                                                     <span id="fc-caption-status-text">CC On</span>
@@ -2584,13 +2588,14 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
 
                                         <!-- Video Container -->
                                         <div id="fc-back-video-container" class="w-full rounded-2xl overflow-hidden border border-cyan-500/35 bg-black aspect-video relative shadow-lg shadow-cyan-950/40 group/video">
-                                            <video id="fc-back-video" playsinline controls autoplay preload="auto" class="w-full h-full object-contain bg-black"></video>
+                                            <video id="fc-back-video" playsinline controls preload="auto" class="w-full h-full object-contain bg-black"></video>
 
                                             <!-- Solved Example Trigger Button (Positioned on top of video, desktop/laptop priority) -->
-                                            <button id="fc-btn-video-example" type="button" onclick="event.stopPropagation(); window.toggleSolvedExample && window.toggleSolvedExample(event);" class="hidden absolute top-2 sm:top-3 right-2 sm:right-3 z-30 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all duration-300 items-center gap-1.5 cursor-pointer liquid-glass-btn group shadow-lg" title="View FE Exam Solved Example for this Topic">
-                                                <span class="material-symbols-outlined text-[15px] sm:text-[17px] text-emerald-300 group-hover:scale-110 transition-transform">school</span>
-                                                <span class="tracking-wide">Show me a solved example</span>
-                                                <span class="material-symbols-outlined text-[14px] text-emerald-200/80 group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                                            <button id="fc-btn-video-example" type="button" onclick="event.stopPropagation(); window.toggleSolvedExample && window.toggleSolvedExample(event);" class="hidden absolute top-2 sm:top-3 left-2 sm:left-3 z-30 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold transition-all duration-300 items-center gap-1.5 cursor-pointer liquid-glass-btn group shadow-lg" title="View FE Exam Solved Example for this Topic">
+                                                <span class="material-symbols-outlined text-[14px] sm:text-[17px] text-emerald-300 group-hover:scale-110 transition-transform">school</span>
+                                                <span class="tracking-wide hidden md:inline">Show me a solved example</span>
+                                                <span class="tracking-wide inline md:hidden">Solved Example</span>
+                                                <span class="material-symbols-outlined text-[12px] sm:text-[14px] text-emerald-200/80 group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
                                             </button>
 
                                             <!-- In-Video Karaoke Caption Overlay (Positioned directly over the video, above native controls) -->
