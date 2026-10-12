@@ -3725,24 +3725,27 @@ html.dark .formula-display {
 }
 
 #fc-back-formula {
-    min-height: min-content !important;
+    min-height: 95px !important;
     height: auto !important;
-    overflow-x: auto !important;
+    overflow-x: hidden !important;
     overflow-y: visible !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 #fc-back-formula mjx-container,
 #fc-front-formula-view mjx-container {
     display: inline-block !important;
-    margin: 0.2rem auto !important;
-    font-size: 1.15em !important;
+    margin: 0.25rem auto !important;
+    font-size: 1.28em !important;
     line-height: normal !important;
+    max-width: 100% !important;
 }
 
 #fc-back-formula mjx-container svg,
 #fc-front-formula-view mjx-container svg {
     display: inline-block !important;
-    max-width: none !important;
+    max-width: 100% !important;
     height: auto !important;
     vertical-align: middle !important;
 }
@@ -3752,7 +3755,11 @@ html.dark .formula-display {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.15rem 0;
+    margin: 0.3rem 0;
+    line-height: 1.45;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden !important;
 }
 
 /* In-Video Karaoke Captions Engine (Sample 4: Apple Translucent Glass Dock) */

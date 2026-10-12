@@ -19,7 +19,7 @@
     <title>ENGG.tv | FE Exam Study</title>
     <meta name="description"
         content="A premium study application for the Fundamentals of Engineering (FE) Mechanical Exam. Practice questions, mock exams, and progress tracking.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="manifest" href="manifest.json">
@@ -1039,17 +1039,20 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
   </div>
 </div>
 
-<!-- Courses Card -->
-<div class="glass-card p-5 flex items-center gap-5">
-  <div class="w-14 h-14 bg-amber-50 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center shrink-0">
-    <span class="material-symbols-outlined text-amber-600 text-3xl" data-icon="school" style="font-variation-settings: 'FILL' 1;">school</span>
+<!-- Global Standings Card -->
+<div id="btn-global-standings" onclick="window.leaderboardPreviousPage = 'settings'; navigateTo('leaderboard');" class="glass-card p-5 flex items-center gap-5 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+  <div class="w-14 h-14 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl flex items-center justify-center shrink-0">
+    <span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-3xl" data-icon="leaderboard" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
   </div>
-  <div class="flex flex-col">
-    <span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-widest">Courses</span>
-    <p id="settings-courses-display" class="text-xl font-bold text-on-surface dark:text-slate-100">0 Started</p>
-    <p id="settings-courses-subtitle" class="text-[11px] text-slate-400">of 0 total</p>
+  <div class="flex-1 min-w-0">
+    <span class="font-label-caps text-[10px] text-slate-400 uppercase tracking-widest">Global Standings</span>
+    <p class="text-xl font-bold text-on-surface dark:text-slate-100">Worldwide Rank</p>
+    <p class="text-[11px] text-slate-400 truncate">See how you rank against peers</p>
   </div>
+  <span class="material-symbols-outlined text-slate-300 shrink-0" data-icon="chevron_right">chevron_right</span>
 </div>
+
+
 
 <!-- Points Card -->
 <div id="btn-points-info" class="glass-card p-5 flex items-center gap-5 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
@@ -1523,7 +1526,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         </div>
                     </div>
 
-                    <button onclick="navigateTo('leaderboard')" class="w-full mt-4 py-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold rounded-2xl active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
+                    <button onclick="window.leaderboardPreviousPage = 'achievements-view'; navigateTo('leaderboard');" class="w-full mt-4 py-4 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold rounded-2xl active:scale-[0.98] transition-all uppercase tracking-widest text-sm">
                         View Global Standings
                     </button>
                 </div>
@@ -1532,7 +1535,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
             <section id="leaderboard" class="page">
                 <div class="max-w-md mx-auto">
                     <div class="flex items-center gap-4 mb-8 mt-4">
-                        <button onclick="navigateTo('achievements-view')" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center active:scale-90 transition-all">
+                        <button onclick="navigateTo(window.leaderboardPreviousPage || 'settings')" class="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center active:scale-90 transition-all">
                             <span class="material-symbols-outlined text-slate-600 dark:text-slate-300">chevron_left</span>
                         </button>
                         <h2 class="font-display-lg text-display-lg text-on-surface dark:text-slate-100">Global Standings</h2>
@@ -1833,7 +1836,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="advanced_questions.js?v=3"></script>
     <script src="exam_questions.js?v=3"></script>
     <script src="js/particles.js"></script>
-    <script src="app.js?v=150"></script>
+    <script src="app.js?v=152"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -1871,7 +1874,8 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js').then(registration => {
+          navigator.serviceWorker.register('./sw.js?v=244').then(registration => {
+            registration.update();
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, err => {
             console.log('ServiceWorker registration failed: ', err);
@@ -2522,7 +2526,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                                          <!-- Formula Box -->
                                          <div id="fc-back-formula-box" class="order-1 w-full shrink-0">
                                              <span class="text-[10px] font-black uppercase tracking-widest text-cyan-400 block mb-1">NCEES Governing Formula:</span>
-                                             <div id="fc-back-formula" class="bg-slate-950/70 p-4 sm:p-5 rounded-2xl border border-cyan-500/25 text-center font-mono text-cyan-300 text-sm sm:text-base lg:text-lg shadow-inner overflow-x-auto min-h-min h-auto flex flex-col justify-center items-center gap-1.5">
+                                             <div id="fc-back-formula" class="bg-slate-950/70 p-4 sm:p-5 rounded-2xl border border-cyan-500/25 text-center font-mono text-cyan-300 text-sm sm:text-base lg:text-lg shadow-inner overflow-x-hidden min-h-[95px] h-auto flex flex-col justify-center items-center gap-1.5">
                                                  $$P_1 + \frac{1}{2}\rho v_1^2 + \rho g z_1 = P_2 + \frac{1}{2}\rho v_2^2 + \rho g z_2$$
                                              </div>
                                          </div>
