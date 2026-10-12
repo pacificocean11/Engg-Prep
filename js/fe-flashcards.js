@@ -35,7 +35,7 @@
         // 1. Mathematics
         if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|l’hôpital|gradient vector|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|laplace transforms|laplace transform definition|matrix multiplication|inverse of a square matrix|inverse of a matrix|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|algorithm|flowchart|pseudocode|quadratic equation|complex numbers:|law of sines|double-angle|arithmetic vs geometric|volumes of basic shapes|coordinates of foci and equation of directrix|maxima and minima|partial derivatives|curvature of any curve|properties of identity matrix|complementary function and particular integral/i.test(lower)) return 1;
         // 2. Probability and Statistics
-        if (/expected value and variance of a linear combination of variables|properties of normal distribution|when to use normal distribution|general character of probability|type i and type ii|binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
+        if (/expected value and variance of a linear combination of variables|properties of normal distribution|when to use normal distribution|general character of probability|type i and type ii|binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|2^n factorial experiments|2n factorial experiments|analysis of variance for 2^n factorial|analysis of variance for 2n factorial|exponentially weighted moving average|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
         // 3. Ethics and Professional Practice
         if (/paramount duty|pe seal integrity|code of ethics|safety data sheet|signal words|flammability, lfl and ufl|confined space safety|noise pollution measurements|osha|hazard quotient|excess lifetime cancer|chronic daily intake|hierarchy of controls|nfpa 704|electrical safety: gfci|hazop study|lower and upper flammability|intellectual property: patents|conflicts of interest|whistleblowing|conflict of interest|obligations of a licensed|licensed professional engineer|design patent vs utility patent|design patent|ncees model rules|ergonomic posture assessment/i.test(lower)) return 3;
         // 4. Engineering Economics
@@ -49,7 +49,7 @@
         // 8. Mechanics of Materials
         if (/differential relationships between load, shear|mohr’s circle for plane stress|analytical in-plane principal stresses|generalized hooke’s law|isotropic elastic constants|elastic strain energy|cantilever sheet pile|triaxial shear|vertical stress increase beneath point loads|axial stress and elongation|poisson’s ratio|elastic flexure formula|elastic section modulus|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|shear center|maximum shear stress in rectangular cross-section|thermal expansion deformation and thermal stress|combined axial and bending|moment-area first theorem|moment-area second theorem|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modulus of elasticity vs\. modulus of rigidity|transformation of composite section|theoretical effective-length factors/i.test(lower)) return 8;
         // 9. Material Properties and Processing
-        if (/standard portland cement|bragg's law|engineering stress-strain vs|modulus of resilience vs|cubic crystal structures|binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|eutectic and eutectoid|gibbs phase rule|fick’s first law|fick's first law|first-order chemical reaction half-life|malleability and ductility|hardness of a material|relationship between hardness and tensile|hardness and tensile strength|jominy hardenability|photoelectric effect|charpy and izod|thermoplastics vs|peritectic vs|failure by creep|failure by fracture|difference between quenching and annealing|intrinsic semiconductors vs extrinsic semiconductor|difference between quenching and annealing|quenching and annealing/i.test(lower)) return 9;
+        if (/standard portland cement|bragg's law|engineering stress-strain vs|modulus of resilience vs|cubic crystal structures|binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|eutectic and eutectoid|gibbs phase rule|fick’s first law|fick's first law|first-order chemical reaction half-life|malleability and ductility|hardness of a material|relationship between hardness and tensile|ductile-to-brittle transition|ductile to brittle transition|amorphous materials vs. crystalline|amorphous materials vs crystalline|hardness and tensile strength|jominy hardenability|photoelectric effect|charpy and izod|thermoplastics vs|peritectic vs|failure by creep|failure by fracture|difference between quenching and annealing|intrinsic semiconductors vs extrinsic semiconductor|difference between quenching and annealing|quenching and annealing/i.test(lower)) return 9;
         // 10. Fluid Mechanics
         if (/newton's law of viscosity|newtonian vs non-newtonian|power-law|non-newtonian|surface tension|capillarity|capillary rise height|hydrostatic pressure distribution|manometers|bouyancy force|hydrostatic force on submerged curved|buoyancy and metacentric|hydrostatic center of pressure|archimedes’ principle|bernoulli’s principle|continuity equation|modified fluid energy equation|darcy-weisbach|reynolds number|schmidt number|hagen-poiseuille|moody, darcy|hydraulic diameter for non-circular|laminar flow friction factor|rapid sand filter|storm sewer gravity|hazen-williams|hardy cross|minor head losses in pipe|drag coefficient and lift|stokes' law|boundary layer displacement|speed of sound & mach|stagnation temperature|froude number and hydraulic|net positive suction head|pump hydraulic power|centrifugal pump cavitation|centrifugal pump affinity laws|pump specific speed|pitot tube|venturi meter|orifice meter|orifice discharging freely|orifice$|coagulation velocity gradient|camp-stein rapid mixing|viscosity of a fluid|impulse turbine vs|specific gravity|energy equation for steady incompressible flow|concept of head in fluid mechanics/i.test(lower)) return 10;
         // 11. Thermodynamics
@@ -59,7 +59,7 @@
         // 13. Measurements, Instrumentation, and Controls
         if (/strain gauge gauge factor|temperature sensors: thermocouple|first-order sensor dynamic step|second-order sensor natural frequency|open-loop step response method|laplace transform final value|closed-loop feedback control|steady-state error constants|bode plot gain margin|ce, cb and cc transistor|ce cb and cc transistor|routh-hurwitz stability|root locus construction|pid controller time-domain|process control: first-order|process control: ziegler-nichols|ratio control strategy|cascade control architecture|uncertainty|piezoelectric effect|piezoelectric/i.test(lower)) return 13;
         // 14. Mechanical Design and Analysis
-        if (/modified goodman fatigue criterion|modified goodman fatigue failure|soderberg theory|s-n fatigue curve|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|marin factors for fatigue|helical compression spring|equivalent spring stiffness for springs in parallel and series|rolling element bearing rated|equivalent dynamic radial load|power screws lifting torque|flat belt friction|agma lewis bending|asme transmission shaft|spur gear geometry|bolted joint preload|pressure relief valve sizing|types of fits|first angle vs\. third|geometric dimensioning and tolerancing|failure by fatigue/i.test(lower)) return 14;
+        if (/modified goodman fatigue criterion|modified goodman fatigue failure|soderberg theory|s-n fatigue curve|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|marin factors for fatigue|helical compression spring|equivalent spring stiffness for springs in parallel and series|rolling element bearing rated|equivalent dynamic radial load|power screws lifting torque|flat belt friction|agma lewis bending|asme transmission shaft|spur gear geometry|bolted joint preload|pressure relief valve sizing|types of fits|three types of fits in manufacturing|moving average forecasting|three types of fits in manufacturing|involute gear tooth nomenclature|ansi symbols for hydraulic power|first angle vs\. third|geometric dimensioning and tolerancing|failure by fatigue/i.test(lower)) return 14;
 
         return 1;
     }
@@ -201,7 +201,7 @@
         if (/confidence interval|student’s \$t\$-confidence|sample mean and standard error|expected value|sample variance|variance and standard deviation|median of a sample|mode of a sample|central tendenc|dispersion|binomial distribution|standard normal distribution|normal distribution|probability density function|cumulative distribution|student's t-distribution two-sample|one-way analysis of variance|anova|chi-square|null hypothesis|permutations and combinations|bathtub failure curve|simple linear regression|correlation coefficient|least squares|goodness of fit|curve fitting|forecasting error metrics/i.test(lower)) return 2;
 
         // 3. Chemistry
-        if (/galvanic cell|nernst equation|faraday’s law of electrolysis|oxidation|reduction|redox|molarity, molality|solution concentration|ph scale|acids? and bases?|buffer|periodic table|chemical equilibrium constant|chemical compatibility|first-order chemical reaction half-life|photosynthesis|alcohols|aldehydes and ketones|alkanes, alkenes, alkynes|ethers, carboxylic/i.test(lower)) return 3;
+        if (/galvanic cell|nernst equation|faraday’s law of electrolysis|oxidation|reduction|redox|molarity, molality|solution concentration|ph scale|acids? and bases?|buffer|periodic table|chemical equilibrium constant|chemical compatibility|first-order chemical reaction half-life|photosynthesis|alcohols|selected rules of nomenclature in organic chemistry: alcohols|selected rules of nomenclature in organic chemistry|cellular biology|aldehydes and ketones|alkanes, alkenes, alkynes|ethers, carboxylic/i.test(lower)) return 3;
 
         // 4. Instrumentation and Controls
         if (/strain gauge gauge factor|first-order sensor dynamic step|second-order sensor natural frequency|temperature sensors: thermocouple|thermocouple seebeck|operational amplifier|op-amp|instrumentation amplifier|schmitt trigger|nyquist-shannon|flip-flop|multiplexers and demultiplexers|two's complement|half-adder and full-adder|binary ripple carry|static cmos inverter|closed-loop feedback control|steady-state error constants|bode plot gain margin/i.test(lower)) return 4;
@@ -850,130 +850,90 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
     }
 
-    // Format flashcard formula into stacked lines if excessive, preserving full font size and expanding vertically
+    // Format flashcard formula: Semantic Clause Splitting (Logical Multi-Line Breaking)
+    // Splits only on display blocks and top-level statement semicolons (;) to keep clauses intact
+    // and naturally shorter, enabling significantly larger text without any horizontal scrollbars.
     function formatFlashcardFormula(formulaStr) {
         if (!formulaStr) return '';
-        let inner = String(formulaStr).trim();
-        if (inner.startsWith('$$') && inner.endsWith('$$')) {
-            inner = inner.slice(2, -2).trim();
-        } else if (inner.startsWith('$') && inner.endsWith('$')) {
-            inner = inner.slice(1, -1).trim();
+        const str = String(formulaStr).trim();
+
+        // Extract individual $$...$$ display equation blocks
+        let rawBlocks = [];
+        const blockMatches = str.match(/\$\$[\s\S]*?\$\$/g);
+        if (blockMatches && blockMatches.length > 0) {
+            rawBlocks = blockMatches.map(b => b.replace(/^\$\$|\$\$$/g, '').trim());
+        } else {
+            rawBlocks = [str.replace(/^\$+|\$+$/g, '').trim()];
         }
 
-        // If concise and lacks top-level multi-statement delimiters, render as single row
-        if (inner.length <= 50 && !inner.includes('; \\quad') && !inner.includes(';\\quad') && !inner.includes('\\\\')) {
-            return '<div class="fc-formula-row">$$' + inner + '$$</div>';
-        }
+        const clauses = [];
 
-        const rawParts = [];
-        let cur = '';
-        let envDepth = 0;
-        let braceDepth = 0;
-        let i = 0;
+        rawBlocks.forEach(block => {
+            block = block.replace(/[\r\n]+/g, ' ').trim();
+            if (!block) return;
 
-        while (i < inner.length) {
-            if (inner.startsWith('\\begin{', i)) {
-                envDepth++;
-                cur += '\\begin{';
-                i += 7;
-                continue;
-            }
-            if (inner.startsWith('\\end{', i)) {
-                envDepth = Math.max(0, envDepth - 1);
-                cur += '\\end{';
-                i += 5;
-                continue;
-            }
-            if (inner[i] === '{') {
-                braceDepth++;
-                cur += '{';
-                i++;
-                continue;
-            }
-            if (inner[i] === '}') {
-                braceDepth = Math.max(0, braceDepth - 1);
-                cur += '}';
-                i++;
-                continue;
-            }
+            let cur = '';
+            let envDepth = 0;
+            let braceDepth = 0;
+            let bracketDepth = 0;
+            let parenDepth = 0;
+            let i = 0;
 
-            // At top level (outside matrix, cases, aligned, and braces)
-            if (envDepth === 0 && braceDepth === 0) {
-                // Semicolon separator
-                if (inner.startsWith('; \\quad', i)) {
-                    cur += ';';
-                    rawParts.push(cur.trim());
-                    cur = '';
+            while (i < block.length) {
+                if (block.startsWith('\\begin{', i)) {
+                    envDepth++;
+                    cur += '\\begin{';
                     i += 7;
                     continue;
                 }
-                if (inner.startsWith(';\\quad', i)) {
-                    cur += ';';
-                    rawParts.push(cur.trim());
-                    cur = '';
-                    i += 6;
+                if (block.startsWith('\\end{', i)) {
+                    envDepth = Math.max(0, envDepth - 1);
+                    cur += '\\end{';
+                    i += 5;
                     continue;
                 }
-                // Explicit top-level newline
-                if (inner.startsWith('\\\\', i)) {
-                    rawParts.push(cur.trim());
-                    cur = '';
-                    i += 2;
-                    continue;
-                }
-                // Comma quad separator
-                if (inner.startsWith(', \\quad', i) || inner.startsWith(',\\quad', i)) {
-                    const advance = inner.startsWith(', \\quad', i) ? 7 : 6;
-                    cur += ',';
-                    if (cur.length > 25 || inner.length > 70) {
-                        rawParts.push(cur.trim());
+
+                const ch = block[i];
+                if (ch === '{') braceDepth++;
+                else if (ch === '}') braceDepth = Math.max(0, braceDepth - 1);
+                else if (ch === '[') bracketDepth++;
+                else if (ch === ']') bracketDepth = Math.max(0, bracketDepth - 1);
+                else if (ch === '(') parenDepth++;
+                else if (ch === ')') parenDepth = Math.max(0, parenDepth - 1);
+
+                // Split strictly at top-level statement boundaries:
+                // Semicolon (;) outside any brackets, parens, or LaTeX environments, excluding LaTeX spacing like \;
+                if (envDepth === 0 && braceDepth === 0 && bracketDepth === 0 && parenDepth === 0) {
+                    if (ch === ';' && (i === 0 || block[i - 1] !== '\\')) {
+                        const trimmed = cur.trim();
+                        if (trimmed) clauses.push(trimmed);
                         cur = '';
-                    } else {
-                        cur += ' \\quad ';
+                        i++;
+                        while (block.startsWith('\\quad', i) || block[i] === ' ') {
+                            if (block.startsWith('\\quad', i)) i += 5;
+                            else i++;
+                        }
+                        continue;
                     }
-                    i += advance;
-                    continue;
                 }
+
+                cur += ch;
+                i++;
             }
 
-            cur += inner[i];
-            i++;
-        }
+            if (cur.trim()) {
+                clauses.push(cur.trim());
+            }
+        });
 
-        if (cur.trim().length > 0) {
-            rawParts.push(cur.trim());
-        }
-
-        const validParts = rawParts.map(p => {
-            let s = p.trim();
-            if (s.endsWith(',')) s = s.slice(0, -1).trim();
+        const cleanedClauses = clauses.map(c => {
+            let s = c.trim();
+            s = s.replace(/;+$/, '').trim();
+            s = s.replace(/^(\\quad|\s)+|(\\quad|\s)+$/g, '').trim();
             return s;
-        }).filter(p => p.length > 0);
+        }).filter(Boolean);
 
-        if (validParts.length <= 1) {
-            return '<div class="fc-formula-row">$$' + inner + '$$</div>';
-        }
-
-        // Group parts so we don't produce tiny fragments (group consecutive short parts <= 55 chars)
-        const grouped = [];
-        let accum = '';
-
-        for (let pIdx = 0; pIdx < validParts.length; pIdx++) {
-            const part = validParts[pIdx];
-            if (!accum) {
-                accum = part;
-            } else {
-                if (accum.length + part.length < 55 && !accum.endsWith(';') && !accum.includes('\\begin{') && !part.includes('\\begin{')) {
-                    accum += ', \\quad ' + part;
-                } else {
-                    grouped.push(accum);
-                    accum = part;
-                }
-            }
-        }
-        if (accum) grouped.push(accum);
-
-        return grouped.map(g => '<div class="fc-formula-row">$$' + g + '$$</div>').join('');
+        return cleanedClauses.map(clause => `<div class="fc-formula-row">$$${clause}$$</div>`).join('');
     }
 
     function renderCard() {
