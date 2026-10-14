@@ -2418,11 +2418,23 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         startTimer();
     }
 
-    function loadQuestion() {
-        // Record time spent on previous question before loading new one
-        if (state.questionEnteredAt && !state.isFinished) {
-            // We don't record here because time is recorded on submit; just reset the entry timestamp
+    function recordTimeOnActiveQuestion() {
+        if (!state.isFinished && state.questionEnteredAt && state.currentQuestionIndex !== null && state.currentQuestionIndex !== undefined) {
+            const elapsed = (Date.now() - state.questionEnteredAt) / 1000;
+            if (elapsed > 0) {
+                if (!Array.isArray(state.questionTimes)) {
+                    state.questionTimes = new Array(state.quizQuestions.length).fill(0);
+                }
+                const currentSecs = state.questionTimes[state.currentQuestionIndex] || 0;
+                state.questionTimes[state.currentQuestionIndex] = currentSecs + Math.max(1, Math.round(elapsed));
+            }
+            state.questionEnteredAt = Date.now();
         }
+    }
+
+    function loadQuestion() {
+        // Record accumulated time spent on the active question before loading a new one
+        recordTimeOnActiveQuestion();
         state.questionEnteredAt = Date.now();
 
         const question = state.quizQuestions[state.currentQuestionIndex];
@@ -2615,13 +2627,15 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 btn.classList.add('flagged');
             }
             
-            if (state.submitted[idx]) {
-                if (state.isFinished) {
+            if (state.isFinished) {
+                if (state.submitted[idx] || (state.answers[idx] !== null && state.answers[idx] !== undefined)) {
                     const q = state.quizQuestions[idx];
                     const selectedIdx = state.answers[idx];
-                    const isCorrect = selectedIdx !== null && q.options[selectedIdx] && q.options[selectedIdx].is_correct;
+                    const isCorrect = selectedIdx !== null && selectedIdx !== undefined && q.options[selectedIdx] && q.options[selectedIdx].is_correct;
                     btn.classList.add(isCorrect ? 'correct-res' : 'wrong-res');
-                } else {
+                }
+            } else {
+                if (state.submitted[idx] || (state.answers[idx] !== null && state.answers[idx] !== undefined)) {
                     btn.classList.add('answered');
                 }
             }
@@ -2642,6 +2656,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 btn.style.filter = 'grayscale(100%)';
             } else {
                 btn.onclick = () => {
+                    recordTimeOnActiveQuestion();
                     state.currentQuestionIndex = idx;
                     loadQuestion();
                 };
@@ -2975,10 +2990,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 }
                 
                 // Record time spent on this question
-                if (state.questionEnteredAt) {
-                    const timeSpent = (Date.now() - state.questionEnteredAt) / 1000; // seconds
-                    state.questionTimes[state.currentQuestionIndex] = Math.round(timeSpent);
-                }
+                recordTimeOnActiveQuestion();
 
                 // Default confidence to 3 (Neutral) if not set
                 if (state.confidence[state.currentQuestionIndex] === null) {
@@ -3034,6 +3046,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
+                recordTimeOnActiveQuestion();
                 // FE Exam: block advancing past question 55 during Part 1
                 if (state.isFullFEExam && !state.hasTakenFEBreak && state.currentQuestionIndex >= 54) {
                     if (state.currentQuestionIndex === 54) {
@@ -3081,6 +3094,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
+                recordTimeOnActiveQuestion();
                 if (state.isFullFEExam && state.hasTakenFEBreak && state.currentQuestionIndex === 55) {
                     if (window.showFEBlockModal) {
                         window.showFEBlockModal("Access Denied", "You cannot return to Part 1 (Questions 1-55) after your scheduled break.");
@@ -3196,6 +3210,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         state.answers = new Array(state.quizQuestions.length).fill(null);
         state.submitted = new Array(state.quizQuestions.length).fill(false);
         state.flagged = new Array(state.quizQuestions.length).fill(false);
+        state.confidence = new Array(state.quizQuestions.length).fill(null);
+        state.questionTimes = new Array(state.quizQuestions.length).fill(0);
+        state.questionEnteredAt = Date.now();
         state.score = 0;
         state.secondsElapsed = 0;
         state.isFinished = false;
@@ -3240,21 +3257,37 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             return;
         }
 
-        // Record time for the currently viewed question if not yet submitted
-        if (state.questionEnteredAt && !state.submitted[state.currentQuestionIndex]) {
-            const timeSpent = (Date.now() - state.questionEnteredAt) / 1000;
-            state.questionTimes[state.currentQuestionIndex] = Math.round(timeSpent);
-        }
+        // Record accumulated time for the active question
+        recordTimeOnActiveQuestion();
+        state.isFinished = true;
+
+        // Auto-finalize and evaluate all questions where the user selected an answer
+        state.quizQuestions.forEach((q, idx) => {
+            const selectedIdx = state.answers[idx];
+            if (selectedIdx !== null && selectedIdx !== undefined) {
+                const isCorrect = !!(q.options[selectedIdx] && q.options[selectedIdx].is_correct);
+                
+                // If it wasn't submitted via the submit button during drill, finalize now and process rewards
+                if (!state.submitted[idx]) {
+                    state.submitted[idx] = true;
+                    if (isCorrect) {
+                        addPoints(1);
+                    }
+                    if (window.recordSRS) window.recordSRS(q, isCorrect);
+                    if (window.incrementQuestProgress) window.incrementQuestProgress('questions_answered', 1);
+                }
+            }
+        });
 
         const prevPoints = state.userPoints;
         let attempted = 0;
         let correct = 0;
 
         state.quizQuestions.forEach((q, idx) => {
-            if (state.submitted[idx]) {
+            if (state.submitted[idx] || (state.answers[idx] !== null && state.answers[idx] !== undefined)) {
                 attempted++;
                 const selectedIndex = state.answers[idx];
-                if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
+                if (selectedIndex !== null && selectedIndex !== undefined && q.options[selectedIndex] && q.options[selectedIndex].is_correct) {
                     correct++;
                 }
             }
