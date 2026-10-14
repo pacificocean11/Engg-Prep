@@ -108,12 +108,12 @@
             <!-- Interactive Random Concept Video Player -->
             <div class="relative w-full max-w-xl rounded-[2rem] overflow-hidden shadow-2xl shadow-pink-500/10 border-[6px] border-white/80 bg-slate-950 my-2 aspect-video flex items-center justify-center group">
                 <!-- Video Element -->
-                <video id="hero-preview-video" class="w-full h-full object-cover" autoplay muted playsinline preload="auto">
+                <video id="hero-preview-video" class="w-full h-full object-cover" autoplay muted playsinline preload="metadata">
                     <source src="assets/videos/Basic_rules_of_derivatives.mp4" type="video/mp4">
                 </video>
 
                 <!-- Subject Category Pill (Top Left) -->
-                <div class="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wide shadow-lg">
+                <div class="hidden sm:flex absolute top-3 left-3 z-20 items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wide shadow-lg">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                     <span id="hero-video-subject-tag" class="text-amber-300 font-mono">Mathematics</span>
                 </div>
@@ -928,7 +928,7 @@
         // Register & proactively update Service Worker on login page for mobile/tablet instant sync
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js?v=246').then(registration => {
+                navigator.serviceWorker.register('./sw.js?v=247').then(registration => {
                     registration.update();
                 }).catch(err => {
                     console.warn('SW registration on login:', err);

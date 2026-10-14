@@ -63,27 +63,27 @@
 
     <!-- TikZJax for TikZ Rendering -->
     <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <script src="https://tikzjax.com/v1/tikzjax.js" defer></script>
 
     <!-- Chart.js for Advanced Analytics -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     
     <!-- Canvas Confetti for Gamification -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
     
 
     <!-- HTML2Canvas for Achievement Sharing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
     
     <!-- HTML2PDF for Report Export -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
 
     <!-- EmailJS for Contact Form -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
     <script type="text/javascript">
-        (function() {
-            emailjs.init({ publicKey: 'Uwc3opQD-AVDLlIVG' });
-        })();
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.emailjs) emailjs.init({ publicKey: 'Uwc3opQD-AVDLlIVG' });
+        });
     </script>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -1831,12 +1831,13 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script src="firebase-config.js?v=4"></script>
     <script src="js/data-manager.js?v=5"></script>
-    <script src="questions.js?v=3"></script>
-    <script src="notes.js?v=95"></script>
-    <script src="advanced_questions.js?v=3"></script>
-    <script src="exam_questions.js?v=3"></script>
+    <script src="questions_common.js?v=4"></script>
+    <script src="js/questions-loader.js?v=4"></script>
+    <script src="notes.js?v=95" defer></script>
+    <script src="advanced_questions.js?v=3" defer></script>
+    <script src="exam_questions.js?v=3" defer></script>
     <script src="js/particles.js"></script>
-    <script src="app.js?v=152"></script>
+    <script src="app.js?v=153"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -1874,7 +1875,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=246').then(registration => {
+          navigator.serviceWorker.register('./sw.js?v=247').then(registration => {
             registration.update();
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, err => {
@@ -2526,8 +2527,9 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                                          <!-- Formula Box -->
                                          <div id="fc-back-formula-box" class="order-1 w-full shrink-0">
                                              <span class="text-[10px] font-black uppercase tracking-widest text-cyan-400 block mb-1">NCEES Governing Formula:</span>
-                                             <div id="fc-back-formula" class="bg-slate-950/70 p-4 sm:p-5 rounded-2xl border border-cyan-500/25 text-center font-mono text-cyan-300 text-sm sm:text-base lg:text-lg shadow-inner overflow-x-hidden min-h-[95px] h-auto flex flex-col justify-center items-center gap-1.5">
-                                                 $$P_1 + \frac{1}{2}\rho v_1^2 + \rho g z_1 = P_2 + \frac{1}{2}\rho v_2^2 + \rho g z_2$$
+                                             <div id="fc-back-formula" class="bg-slate-950/70 p-4 sm:p-5 rounded-2xl border border-cyan-500/25 text-center font-mono text-cyan-300 text-sm sm:text-base lg:text-lg shadow-inner overflow-x-hidden min-h-[120px] h-auto flex flex-col justify-center items-center gap-1.5">
+                                                 <div class="fc-formula-row">$$P_1 + \frac{1}{2}\rho v_1^2 + \rho g z_1 =$$</div>
+                                                 <div class="fc-formula-row">$$P_2 + \frac{1}{2}\rho v_2^2 + \rho g z_2$$</div>
                                              </div>
                                          </div>
 
@@ -2630,8 +2632,20 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
 
                                                 <!-- Overlay Scrollable Body: Question & Solution -->
                                                 <div id="fc-video-example-scrollable" class="flex-1 overflow-y-auto my-2 pr-1.5 space-y-3 custom-scrollbar text-left text-xs sm:text-sm text-slate-100">
-                                                    <!-- Question Content (LaTeX supported) -->
+                                                    <!-- Self-Practice Challenge Header Banner -->
+                                                    <div id="fc-self-practice-banner" class="flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-transparent border border-emerald-500/30 text-emerald-200 text-xs shadow-sm">
+                                                        <div class="flex items-center gap-2">
+                                                            <span class="material-symbols-outlined text-amber-300 text-[18px]">verified</span>
+                                                            <span><strong class="text-white">Self-Practice Challenge:</strong> Solve it yourself first to earn <strong class="text-amber-300">+1 Point</strong>!</span>
+                                                        </div>
+                                                        <span id="fc-self-practice-badge" class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-[10px] font-black text-emerald-300 tracking-wider">1 PT</span>
+                                                    </div>
+
+                                                    <!-- Question Content (LaTeX supported with interactive options) -->
                                                     <div id="fc-video-example-question" class="leading-relaxed space-y-2 select-text"></div>
+
+                                                    <!-- Dynamic Feedback Banner (Correct / Incorrect notification) -->
+                                                    <div id="fc-example-feedback" class="hidden"></div>
 
                                                     <!-- Action Row: Show Solution Button -->
                                                     <div class="pt-2 border-t border-white/10 flex items-center justify-between">
