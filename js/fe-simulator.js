@@ -340,6 +340,9 @@
         window.state.answers = new Array(window.state.quizQuestions.length).fill(null);
         window.state.submitted = new Array(window.state.quizQuestions.length).fill(false);
         window.state.flagged = new Array(window.state.quizQuestions.length).fill(false);
+        window.state.confidence = new Array(window.state.quizQuestions.length).fill(null);
+        window.state.questionTimes = new Array(window.state.quizQuestions.length).fill(0);
+        window.state.questionEnteredAt = Date.now();
         window.state.score = 0;
         window.state.secondsElapsed = 0;
         window.state.isFinished = false;
