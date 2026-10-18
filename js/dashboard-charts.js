@@ -151,23 +151,31 @@ function initCharts(overallPercentage, range = '7d') {
         if (!diagnosticSubjects.some(s => s.attempted > 0)) {
             html = `<tr><td colspan="3" class="text-center py-12 text-slate-400 dark:text-slate-500 text-sm font-medium">No diagnostic data available.<br>Complete a quiz to generate your report.</td></tr>`;
         } else {
-            diagnosticSubjects.forEach(s => {
+            diagnosticSubjects.forEach((s, idx) => {
                 const accuracy = s.attempted > 0 ? Math.round((s.correct / s.attempted) * 100) : 0;
                 const barColor = accuracy >= 70 ? 'bg-emerald-500' : (accuracy >= 50 ? 'bg-amber-500' : 'bg-red-500');
+                const isTargetMet = accuracy >= 70;
                 const widthVal = s.attempted === 0 ? 0 : accuracy; // 0 if unattempted
                 
                 html += `
-                <tr class="border-b border-slate-100 dark:border-slate-800/30 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors group">
-                    <td class="py-4 px-2 text-sm font-bold text-slate-800 dark:text-slate-200">${s.name}</td>
-                    <td class="py-4 px-2 text-sm text-slate-600 dark:text-slate-400 text-center font-mono font-bold">${s.attempted}</td>
-                    <td class="py-4 px-2 relative">
+                <tr class="diagnostic-row border-b border-slate-100 dark:border-slate-800/30 hover:bg-slate-50 dark:hover:bg-slate-800/20 transition-colors group cursor-default" style="--row-idx: ${idx};">
+                    <td class="py-3.5 px-2 text-sm font-bold text-slate-800 dark:text-slate-200">
+                        <div class="flex items-center gap-1.5">
+                            ${isTargetMet ? '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 shadow-sm shadow-emerald-500/50" title="Target Met (>= 70%)"></span>' : ''}
+                            <span>${s.name}</span>
+                        </div>
+                    </td>
+                    <td class="py-3.5 px-2 text-sm text-slate-600 dark:text-slate-400 text-center font-mono font-bold">${s.attempted}</td>
+                    <td class="py-3.5 px-2 relative">
                         <!-- Continuous Dashed Target Line -->
                         <div class="absolute top-0 bottom-0 left-[70%] w-0 border-l-2 border-dashed border-black dark:border-white z-20 opacity-80 ml-2 pointer-events-none"></div>
                         
                         <!-- Progress Bar Container -->
-                        <div class="w-full h-3 bg-slate-200 dark:bg-slate-700/50 rounded-full relative overflow-hidden shadow-inner z-10">
+                        <div class="w-full h-3.5 bg-slate-200 dark:bg-slate-700/50 rounded-full relative overflow-hidden shadow-inner z-10" title="${accuracy}% accuracy (${s.correct}/${s.attempted} correct)">
                             <!-- Performance Bar -->
-                            <div class="h-full ${barColor} rounded-full relative transition-all duration-1000 ease-out" style="width: ${widthVal}%"></div>
+                            <div class="diagnostic-bar-fill h-full ${barColor} ${isTargetMet ? 'diagnostic-bar-target-met' : ''} rounded-full relative flex items-center justify-end pr-1.5" style="--target-width: ${widthVal}%; --row-idx: ${idx};">
+                                ${widthVal >= 22 ? `<span class="text-[8px] font-black text-white leading-none select-none drop-shadow-sm opacity-95">${accuracy}%</span>` : ''}
+                            </div>
                         </div>
                     </td>
                 </tr>`;

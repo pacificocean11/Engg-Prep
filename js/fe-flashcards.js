@@ -851,8 +851,9 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     // Format flashcard formula: Semantic Clause Splitting (Logical Multi-Line Breaking)
-    // Splits only on display blocks and top-level statement semicolons (;) to keep clauses intact
-    // and naturally shorter, enabling significantly larger text without any horizontal scrollbars.
+    // 1. Splits on display blocks and top-level statement semicolons (;)
+    // 2. In long clauses (>= 48 chars), splits at top-level equality (=, \approx) or separators (\quad, \qquad)
+    // to prevent formulas from shrinking to tiny unreadable font heights in one line.
     function formatFlashcardFormula(formulaStr) {
         if (!formulaStr) return '';
         const str = String(formulaStr).trim();
@@ -926,12 +927,92 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             }
         });
 
-        const cleanedClauses = clauses.map(c => {
+        // Helper: Split an individual long clause (>= 48 chars) at a natural mathematical breakpoint
+        // so it renders on multiple lines at 100% full font size without horizontal scaling.
+        function splitClauseIfLong(clause) {
+            const s = clause.trim();
+            if (s.length < 48) return [s];
+
+            // Don't split if already inside an explicit multi-line or tabular LaTeX environment
+            if (s.includes('\\begin{cases}') || s.includes('\\begin{aligned}') || s.includes('\\begin{matrix}') || s.includes('\\begin{array}')) {
+                return [s];
+            }
+
+            let envDepth = 0, braceDepth = 0, bracketDepth = 0, parenDepth = 0;
+            const candidates = [];
+
+            let i = 0;
+            while (i < s.length) {
+                if (s.startsWith('\\begin{', i)) { envDepth++; i += 7; continue; }
+                if (s.startsWith('\\end{', i)) { envDepth = Math.max(0, envDepth - 1); i += 5; continue; }
+
+                const ch = s[i];
+                if (ch === '{') braceDepth++;
+                else if (ch === '}') braceDepth = Math.max(0, braceDepth - 1);
+                else if (ch === '[') bracketDepth++;
+                else if (ch === ']') bracketDepth = Math.max(0, bracketDepth - 1);
+                else if (ch === '(') parenDepth++;
+                else if (ch === ')') parenDepth = Math.max(0, parenDepth - 1);
+
+                if (envDepth === 0 && braceDepth === 0 && bracketDepth === 0 && parenDepth === 0) {
+                    if (s.startsWith('\\qquad', i) && !/[a-zA-Z]/.test(s[i + 6] || '')) {
+                        candidates.push({ index: i, len: 6, type: 'sep' });
+                    } else if (s.startsWith('\\quad', i) && !/[a-zA-Z]/.test(s[i + 5] || '')) {
+                        candidates.push({ index: i, len: 5, type: 'sep' });
+                    } else if (ch === '=' && s[i + 1] !== '=' && (i === 0 || s[i - 1] !== '=') && (i === 0 || s[i - 1] !== '\\')) {
+                        candidates.push({ index: i, len: 1, type: 'eq' });
+                    } else if (s.startsWith('\\approx', i) && !/[a-zA-Z]/.test(s[i + 7] || '')) {
+                        candidates.push({ index: i, len: 7, type: 'rel' });
+                    } else if (s.startsWith('\\equiv', i) && !/[a-zA-Z]/.test(s[i + 6] || '')) {
+                        candidates.push({ index: i, len: 6, type: 'rel' });
+                    }
+                }
+                i++;
+            }
+
+            if (candidates.length === 0) return [s];
+
+            // Priority 1: Spacing separators (\quad, \qquad)
+            const seps = candidates.filter(c => c.type === 'sep');
+            if (seps.length > 0) {
+                const mid = s.length / 2;
+                seps.sort((a, b) => Math.abs(a.index - mid) - Math.abs(b.index - mid));
+                const best = seps[0];
+                const p1 = s.substring(0, best.index).trim();
+                const p2 = s.substring(best.index + best.len).trim();
+                if (p1 && p2) {
+                    const sub2 = splitClauseIfLong(p2);
+                    return [p1, ...sub2];
+                }
+            }
+
+            // Priority 2: Equality or relation operators (=, \approx, etc.)
+            const eqs = candidates.filter(c => c.type === 'eq' || c.type === 'rel');
+            if (eqs.length > 0) {
+                const mid = s.length / 2;
+                eqs.sort((a, b) => Math.abs(a.index - mid) - Math.abs(b.index - mid));
+                const best = eqs[0];
+                const p1 = s.substring(0, best.index + best.len).trim();
+                const p2 = s.substring(best.index + best.len).trim();
+                if (p1 && p2) {
+                    const sub2 = splitClauseIfLong(p2);
+                    return [p1, ...sub2];
+                }
+            }
+
+            return [s];
+        }
+
+        const cleanedClauses = [];
+        clauses.forEach(c => {
             let s = c.trim();
             s = s.replace(/;+$/, '').trim();
             s = s.replace(/^(\\quad|\s)+|(\\quad|\s)+$/g, '').trim();
-            return s;
-        }).filter(Boolean);
+            if (s) {
+                const parts = splitClauseIfLong(s);
+                cleanedClauses.push(...parts);
+            }
+        });
 
         return cleanedClauses.map(clause => `<div class="fc-formula-row">$$${clause}$$</div>`).join('');
     }
@@ -1118,6 +1199,65 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const backVideoContainer = document.getElementById('fc-back-video-container');
         const backImgContainer = document.getElementById('fc-back-image-container');
 
+                function setFlashcardVideoSource(videoUrl) {
+            const backVideo = document.getElementById('fc-back-video');
+            const driveFrame = document.getElementById('fc-back-drive-frame');
+            if (!videoUrl) {
+                if (backVideo) {
+                    backVideo.pause();
+                    backVideo.removeAttribute('src');
+                    backVideo.load();
+                    backVideo.classList.add('hidden');
+                }
+                if (driveFrame) {
+                    driveFrame.src = '';
+                    driveFrame.classList.add('hidden');
+                }
+                return;
+            }
+
+            const isDrive = videoUrl.includes('drive.google.com') || videoUrl.includes('drive.usercontent.google.com') || videoUrl.startsWith('/api/drive-stream/');
+            let targetSrc = videoUrl;
+            let driveId = '';
+            if (isDrive) {
+                const m = videoUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
+                if (m) driveId = m[1];
+                targetSrc = driveId ? ('/api/drive-stream/' + driveId) : videoUrl;
+            }
+
+            if (backVideo) {
+                if (driveFrame) {
+                    driveFrame.src = '';
+                    driveFrame.classList.add('hidden');
+                }
+                backVideo.classList.remove('hidden');
+                backVideo.src = targetSrc;
+                backVideo.load();
+
+                if (driveId) {
+                    backVideo.onerror = function() {
+                        console.warn('Direct stream error, falling back to Drive iframe preview');
+                        backVideo.classList.add('hidden');
+                        if (driveFrame) {
+                            driveFrame.src = 'https://drive.google.com/file/d/' + driveId + '/preview';
+                            driveFrame.classList.remove('hidden');
+                        }
+                    };
+                }
+
+                if (typeof playBackVideo === 'function') {
+                    playBackVideo();
+                } else {
+                    backVideo.muted = typeof userAudioMuted !== 'undefined' ? userAudioMuted : true;
+                    backVideo.play().catch(() => {
+                        backVideo.muted = true;
+                        backVideo.play().catch(() => {});
+                    });
+                }
+            }
+        }
+
+
         if (hasVideo && hasImage) {
             if (backColVideo) {
                 backColVideo.classList.remove('hidden');
@@ -1127,10 +1267,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-start lg:space-y-3';
             }
 
-            if (backVideo) {
-                backVideo.src = card.videoUrl;
-                backVideo.load();
-            }
+        setFlashcardVideoSource(card.videoUrl);
 
             if (backImg) {
                 backImg.alt = card.imageTitle || card.title || 'Technical Blueprint Diagram';
@@ -1166,10 +1303,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 backColPrimary.className = 'contents lg:flex lg:flex-col lg:col-span-5 lg:justify-start lg:space-y-3';
             }
 
-            if (backVideo) {
-                backVideo.src = card.videoUrl;
-                backVideo.load();
-            }
+            setFlashcardVideoSource(card.videoUrl);
 
             if (backVideoContainer) backVideoContainer.classList.remove('hidden');
             if (backImgContainer) backImgContainer.classList.add('hidden');
@@ -1259,18 +1393,50 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const exampleQuestion = document.getElementById('fc-video-example-question');
         const exampleSolution = document.getElementById('fc-video-example-solution');
         const solutionBtnLabel = document.getElementById('fc-solution-btn-label');
+        const exampleFeedback = document.getElementById('fc-example-feedback');
 
         if (card.solvedExample) {
             if (btnVideoExample) btnVideoExample.classList.remove('hidden');
             if (exampleOverlay) exampleOverlay.classList.add('hidden');
             if (exampleSolution) exampleSolution.classList.add('hidden');
             if (solutionBtnLabel) solutionBtnLabel.textContent = 'Show me the Solution';
+            if (exampleFeedback) {
+                exampleFeedback.classList.add('hidden');
+                exampleFeedback.innerHTML = '';
+            }
 
             if (exampleQuestion) {
                 exampleQuestion.innerHTML = formatSolvedExampleQuestion(card.solvedExample.question || '');
             }
             if (exampleSolution) {
                 exampleSolution.innerHTML = formatSolvedExampleSolution(card.solvedExample.solution || '');
+            }
+
+            // Restore previous answer state if user previously attempted this card
+            const answeredMap = getAnsweredSolvedExamples();
+            const pastAttempt = answeredMap[card.title];
+            const correctAnswer = extractSolvedExampleAnswer(card);
+
+            if (pastAttempt) {
+                applySolvedExampleOptionStyles(pastAttempt.selectedOption, pastAttempt.isCorrect, correctAnswer);
+                if (exampleFeedback) {
+                    exampleFeedback.classList.remove('hidden');
+                    if (pastAttempt.isCorrect) {
+                        exampleFeedback.innerHTML = `
+                            <div class="p-2.5 rounded-xl bg-emerald-500/15 border border-emerald-400/40 text-emerald-200 text-xs font-semibold flex items-center gap-2.5">
+                                <span class="material-symbols-outlined text-emerald-300 text-[18px]">verified</span>
+                                <span>Previously Solved Correctly: Option (${pastAttempt.selectedOption})</span>
+                            </div>
+                        `;
+                    } else {
+                        exampleFeedback.innerHTML = `
+                            <div class="p-2.5 rounded-xl bg-amber-500/15 border border-amber-400/35 text-amber-200 text-xs font-semibold flex items-center gap-2.5">
+                                <span class="material-symbols-outlined text-amber-300 text-[18px]">info</span>
+                                <span>Previously Attempted: Option (${pastAttempt.selectedOption}) | Correct: Option (${correctAnswer || 'N/A'})</span>
+                            </div>
+                        `;
+                    }
+                }
             }
 
             // Ensure media column is displayed on the back face so solved example is visible
@@ -1471,7 +1637,177 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             return `${prefix}$${latex}$${suffix}`;
         });
 
+        // Transform options grid into responsive layout and option divs into interactive clickable buttons
+        processed = processed.replace(/<div class="grid grid-cols-2 gap-2/g, '<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5');
+
+        processed = processed.replace(/<div class="[^"]*p-2[^"]*">\s*\(([A-D])\)\s*([\s\S]*?)<\/div>/g, (m, letter, content) => {
+            const cleanContent = content.trim();
+            return `<button type="button" data-option="${letter}" onclick="event.stopPropagation(); window.selectSolvedExampleOption && window.selectSolvedExampleOption('${letter}', this, event);" class="fc-example-option group/opt w-full text-left p-2.5 sm:p-3 rounded-xl border border-slate-700/80 bg-slate-900/90 hover:bg-slate-800/90 hover:border-cyan-400/60 active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-start gap-2.5 shadow-sm text-xs sm:text-sm">
+                <span class="fc-option-letter w-6 h-6 rounded-lg bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-bold text-xs flex items-center justify-center shrink-0 group-hover/opt:border-cyan-300 group-hover/opt:bg-cyan-900 transition-colors">${letter}</span>
+                <span class="fc-option-text flex-1 text-slate-200 leading-relaxed font-sans">${cleanContent}</span>
+                <span class="fc-option-status-icon hidden text-[16px] shrink-0"></span>
+            </button>`;
+        });
+
         return processed;
+    }
+
+    // Helper to extract the correct answer (A, B, C, D) from solved example solution
+    function extractSolvedExampleAnswer(card) {
+        if (!card || !card.solvedExample) return null;
+        const sol = card.solvedExample.solution || '';
+        const patterns = [
+            /Correct\s+(?:Answer|Option)[^:(<]*[:\s]+(?:<[^>]+>\s*)*\(([A-D])\)/i,
+            /Correct\s+(?:Answer|Option)[^:(<]*[:\s]+(?:<[^>]+>\s*)*([A-D])(?:\b|\s|\))/i,
+            /Answer\s*[:\s]+(?:<[^>]+>\s*)*\(([A-D])\)/i,
+            /text-emerald-300[^>]*>\s*\(([A-D])\)/i,
+            /font-bold[^>]*>\s*\(([A-D])\)/i,
+            /\b(?:choice|option)\s+\(([A-D])\)/i,
+            /\(([A-D])\)\s*is\s+correct/i
+        ];
+        for (const pat of patterns) {
+            const m = sol.match(pat);
+            if (m && m[1]) return m[1].toUpperCase();
+        }
+        return null;
+    }
+
+    // Solved example state storage in localStorage
+    function getAnsweredSolvedExamples() {
+        try {
+            const raw = localStorage.getItem('enggtv_solved_examples_answered');
+            return raw ? JSON.parse(raw) : {};
+        } catch (e) {
+            return {};
+        }
+    }
+
+    function markSolvedExampleAnswered(cardTitle, selectedOption, isCorrect) {
+        if (!cardTitle) return;
+        try {
+            const answered = getAnsweredSolvedExamples();
+            answered[cardTitle] = {
+                selectedOption,
+                isCorrect,
+                timestamp: Date.now()
+            };
+            localStorage.setItem('enggtv_solved_examples_answered', JSON.stringify(answered));
+        } catch (e) {}
+    }
+
+    // Apply visual styling to option buttons according to selection and correct answer
+    function applySolvedExampleOptionStyles(selectedOption, isCorrect, correctAnswer) {
+        const allBtns = document.querySelectorAll('.fc-example-option');
+        allBtns.forEach(btn => {
+            btn.disabled = true;
+            btn.classList.remove('hover:bg-slate-800/90', 'hover:border-cyan-400/60', 'cursor-pointer', 'active:scale-[0.99]');
+            btn.classList.add('cursor-default');
+
+            const opt = (btn.getAttribute('data-option') || '').toUpperCase();
+            const letterEl = btn.querySelector('.fc-option-letter');
+            const statusIcon = btn.querySelector('.fc-option-status-icon');
+
+            if (opt === (correctAnswer || '').toUpperCase()) {
+                // Highlight correct option in glowing emerald green
+                btn.classList.remove('bg-slate-900/90', 'border-slate-700/80');
+                btn.classList.add('bg-emerald-500/20', 'border-emerald-400', 'text-emerald-100', 'shadow-[0_0_15px_rgba(16,185,129,0.25)]');
+                if (letterEl) {
+                    letterEl.className = 'fc-option-letter w-6 h-6 rounded-lg bg-emerald-500 text-slate-950 font-black text-xs flex items-center justify-center shrink-0 shadow-sm';
+                }
+                if (statusIcon) {
+                    statusIcon.className = 'fc-option-status-icon material-symbols-outlined text-emerald-400 text-[18px] shrink-0';
+                    statusIcon.textContent = 'check_circle';
+                    statusIcon.classList.remove('hidden');
+                }
+            } else if (opt === (selectedOption || '').toUpperCase() && !isCorrect) {
+                // Highlight user's incorrect pick in rose red
+                btn.classList.remove('bg-slate-900/90', 'border-slate-700/80');
+                btn.classList.add('bg-rose-500/20', 'border-rose-500', 'text-rose-200');
+                if (letterEl) {
+                    letterEl.className = 'fc-option-letter w-6 h-6 rounded-lg bg-rose-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm';
+                }
+                if (statusIcon) {
+                    statusIcon.className = 'fc-option-status-icon material-symbols-outlined text-rose-400 text-[18px] shrink-0';
+                    statusIcon.textContent = 'cancel';
+                    statusIcon.classList.remove('hidden');
+                }
+            } else {
+                btn.classList.add('opacity-45');
+            }
+        });
+    }
+
+    // Handler when user clicks an option in solved example
+    function selectSolvedExampleOption(selectedOption, clickedBtn, e) {
+        if (e && e.stopPropagation) e.stopPropagation();
+        const card = currentDeck && currentDeck[currentIndex];
+        if (!card || !card.solvedExample) return;
+
+        const correctAnswer = extractSolvedExampleAnswer(card);
+        const answered = getAnsweredSolvedExamples();
+        const alreadyAnswered = Boolean(answered[card.title]);
+        const isCorrect = Boolean(correctAnswer && selectedOption.toUpperCase() === correctAnswer.toUpperCase());
+
+        if (!alreadyAnswered) {
+            if (isCorrect) {
+                markSolvedExampleAnswered(card.title, selectedOption, true);
+                if (window.addPoints) {
+                    window.addPoints(1, '🎯 Solved Example Correct!');
+                }
+            } else {
+                markSolvedExampleAnswered(card.title, selectedOption, false);
+            }
+        }
+
+        applySolvedExampleOptionStyles(selectedOption, isCorrect, correctAnswer);
+
+        // Display feedback banner
+        const feedbackEl = document.getElementById('fc-example-feedback');
+        if (feedbackEl) {
+            feedbackEl.classList.remove('hidden');
+            if (isCorrect) {
+                feedbackEl.innerHTML = `
+                    <div class="p-3 rounded-xl bg-emerald-500/15 border border-emerald-400/40 text-emerald-200 text-xs font-semibold flex items-center gap-3 animate-fadeIn shadow-sm">
+                        <span class="w-8 h-8 rounded-lg bg-emerald-500/30 border border-emerald-400/50 flex items-center justify-center text-emerald-300 shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">military_tech</span>
+                        </span>
+                        <div class="flex-1">
+                            <div class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
+                                <span>Correct! Option (${selectedOption})</span>
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-500/30 text-[10px] font-black text-emerald-300 uppercase tracking-wider">+1 Point</span>
+                            </div>
+                            <div class="text-[11px] text-emerald-200/90 mt-0.5">Great job solving this FE practice problem independently. Full step-by-step solution shown below!</div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                feedbackEl.innerHTML = `
+                    <div class="p-3 rounded-xl bg-amber-500/15 border border-amber-400/35 text-amber-200 text-xs font-semibold flex items-center gap-3 animate-fadeIn shadow-sm">
+                        <span class="w-8 h-8 rounded-lg bg-amber-500/30 border border-amber-400/40 flex items-center justify-center text-amber-300 shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                        </span>
+                        <div class="flex-1">
+                            <div class="font-bold text-white text-xs sm:text-sm">Incorrect — Correct Option is (${correctAnswer || 'N/A'})</div>
+                            <div class="text-[11px] text-amber-200/90 mt-0.5">No points this time, but examine the step-by-step FE solution below to master this concept.</div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // Automatically reveal the solution so user can review the mathematical derivation
+        const solution = document.getElementById('fc-video-example-solution');
+        const btnLabel = document.getElementById('fc-solution-btn-label');
+        if (solution) {
+            solution.classList.remove('hidden');
+            if (btnLabel) btnLabel.textContent = 'Hide Solution';
+            triggerMathTypeset([solution]);
+            setTimeout(() => {
+                if (solution && typeof solution.scrollIntoView === 'function') {
+                    solution.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }, 80);
+        }
     }
 
     // Helper to format solved example solution text
@@ -1647,6 +1983,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         if (e && e.stopPropagation) e.stopPropagation();
         const solution = document.getElementById('fc-video-example-solution');
         const btnLabel = document.getElementById('fc-solution-btn-label');
+        const card = currentDeck && currentDeck[currentIndex];
 
         if (!solution) return;
         const isHidden = solution.classList.contains('hidden');
@@ -1654,6 +1991,39 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         if (isHidden) {
             solution.classList.remove('hidden');
             if (btnLabel) btnLabel.textContent = 'Hide Solution';
+
+            // If user opened solution directly without attempting, disable options so they cannot claim points retroactively
+            if (card) {
+                const answeredMap = getAnsweredSolvedExamples();
+                if (!answeredMap[card.title]) {
+                    const allBtns = document.querySelectorAll('.fc-example-option');
+                    const correctAnswer = extractSolvedExampleAnswer(card);
+                    if (allBtns.length > 0) {
+                        allBtns.forEach(btn => {
+                            btn.disabled = true;
+                            btn.classList.remove('hover:bg-slate-800/90', 'hover:border-cyan-400/60', 'cursor-pointer');
+                            btn.classList.add('cursor-default');
+                            const opt = (btn.getAttribute('data-option') || '').toUpperCase();
+                            if (opt === (correctAnswer || '').toUpperCase()) {
+                                btn.classList.add('border-emerald-400/70', 'bg-emerald-500/15');
+                            } else {
+                                btn.classList.add('opacity-45');
+                            }
+                        });
+                        const feedbackEl = document.getElementById('fc-example-feedback');
+                        if (feedbackEl && feedbackEl.classList.contains('hidden')) {
+                            feedbackEl.classList.remove('hidden');
+                            feedbackEl.innerHTML = `
+                                <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-xs flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-slate-400 text-[18px]">visibility</span>
+                                    <span>Solution revealed directly without self-attempt (0 points).</span>
+                                </div>
+                            `;
+                        }
+                    }
+                }
+            }
+
             triggerMathTypeset([solution]);
             setTimeout(() => triggerMathTypeset([solution]), 60);
             setTimeout(() => triggerMathTypeset([solution]), 220);
@@ -2201,6 +2571,11 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const modal = document.getElementById('fe-flashcards-modal');
         const card = document.getElementById('flashcard-studio-card');
         const video = document.getElementById('fc-back-video');
+        const driveFrame = document.getElementById('fc-back-drive-frame');
+        if (driveFrame) {
+            driveFrame.src = '';
+            driveFrame.classList.add('hidden');
+        }
         if (video) {
             try {
                 video.pause();
@@ -2380,6 +2755,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     window.toggleTeleprompter = toggleKaraokeCaptions;
     window.toggleSolvedExample = toggleSolvedExample;
     window.toggleSolvedExampleSolution = toggleSolvedExampleSolution;
+    window.selectSolvedExampleOption = selectSolvedExampleOption;
     // Backwards compatibility aliases
     window.rateFlashcard = nextCard;
     window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);

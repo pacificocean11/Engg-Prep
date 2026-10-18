@@ -131,6 +131,11 @@
     function closeRapidReels(reopenClassic = false) {
         isReelsActive = false;
         const video = document.getElementById('reels-main-video');
+        const driveFrame = document.getElementById('reels-drive-frame');
+        if (driveFrame) {
+            driveFrame.src = '';
+            driveFrame.classList.add('hidden');
+        }
         if (video) {
             video.pause();
             video.removeAttribute('src');
@@ -145,185 +150,73 @@
             modal.classList.remove('opacity-100');
             modal.classList.add('opacity-0');
             setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 250);
-        }
-
-        if (reopenClassic && window.openFlashcardStudio) {
-            window.openFlashcardStudio(activeDiscipline, 'recall', activeSubjectFilter);
-        }
-    }
-
-    // Populate Subject dropdown inside Reels header
-    function populateReelsSubjectSelect() {
-        const select = document.getElementById('reels-subject-select');
-        const discSelect = document.getElementById('reels-discipline-select');
-        if (discSelect) {
-            discSelect.value = activeDiscipline;
-        }
-
-        if (!select) return;
-        select.innerHTML = '<option value="all">⚡ All Topics</option>';
-
-        if (window.DISCIPLINE_SUBJECT_CONFIG && window.DISCIPLINE_SUBJECT_CONFIG[activeDiscipline]) {
-            const config = window.DISCIPLINE_SUBJECT_CONFIG[activeDiscipline];
-            config.list.forEach(sub => {
-                const opt = document.createElement('option');
-                opt.value = String(sub.id);
-                opt.textContent = sub.name;
-                select.appendChild(opt);
-            });
-            select.value = activeSubjectFilter;
-            select.classList.remove('hidden');
-        } else {
-            select.classList.add('hidden');
-        }
-    }
-
-    // Render Story Segments (Segmented Progress Bar)
-    function renderStorySegments() {
-        const container = document.getElementById('reels-story-segments');
-        if (!container || !currentReelsDeck.length) return;
-
-        const total = currentReelsDeck.length;
-        const visibleSegments = Math.min(total, 24); // Cap segments visually to prevent overflow
-        const activeSegmentIdx = Math.floor((currentReelIndex / total) * visibleSegments);
-
-        let html = '';
-        for (let i = 0; i < visibleSegments; i++) {
-            const isCompleted = i < activeSegmentIdx;
-            const isCurrent = i === activeSegmentIdx;
-            const fillWidth = isCompleted ? '100%' : (isCurrent ? '100%' : '0%');
-            const opacity = isCompleted ? 'opacity-80' : (isCurrent ? 'opacity-100' : 'opacity-30');
-            html += `<div class="reels-story-segment ${opacity}">
-                <div class="reels-story-fill" style="width: ${fillWidth};"></div>
-            </div>`;
-        }
-        container.innerHTML = html;
-    }
-
-    // Render Current Reel
-    function renderCurrentReel(slideDirection = false) {
-        if (!currentReelsDeck.length) return;
-
-        const card = currentReelsDeck[currentReelIndex];
-        if (!card) return;
-
-        // Update Counter
-        const counterEl = document.getElementById('reels-counter-badge');
-        if (counterEl) {
-            counterEl.textContent = `${currentReelIndex + 1} / ${currentReelsDeck.length}`;
-        }
-
-        // Update Title & Subject Info
-        const titleEl = document.getElementById('reels-card-title');
-        const subjectEl = document.getElementById('reels-card-subject');
-        const formulaPreviewEl = document.getElementById('reels-card-formula-preview');
-
-        if (titleEl) titleEl.textContent = card.title || 'FE Theorem';
-        if (subjectEl) subjectEl.textContent = card.subjectName || card.disc || 'General Engineering';
-
-        if (formulaPreviewEl) {
-            if (card.formula) {
-                let fmt = String(card.formula).trim();
-                if (!fmt.startsWith('$')) fmt = `$$${fmt}$$`;
-                formulaPreviewEl.innerHTML = fmt;
-                formulaPreviewEl.classList.remove('hidden');
-                if (window.MathJax && window.MathJax.typesetPromise) {
-                    window.MathJax.typesetPromise([formulaPreviewEl]).catch(() => {});
+                const isDrive = targetVideoSrc && (targetVideoSrc.includes('drive.google.com') || targetVideoSrc.includes('drive.usercontent.google.com') || targetVideoSrc.startsWith('/api/drive-stream/'));
+                let driveId = '';
+                if (isDrive) {
+                    const m = targetVideoSrc.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
+                    if (m) driveId = m[1];
                 }
-            } else {
-                formulaPreviewEl.classList.add('hidden');
-            }
-        }
 
-        // Update Bento Description & Exam Tip
-        const bentoDescEl = document.getElementById('reels-bento-desc');
-        const bentoTipEl = document.getElementById('reels-bento-tip');
-        if (bentoDescEl) {
-            bentoDescEl.textContent = card.description || 'Reference formula for NCEES FE CBT Exam.';
-        }
-        if (bentoTipEl) {
-            let tipText = card.examTip || 'Found in the official NCEES Reference Handbook.';
-            tipText = tipText.replace(/^Search NCEES Handbook under [^.]*\.\s*/i, '').trim();
-            bentoTipEl.textContent = tipText;
-        }
+                let driveFrame = document.getElementById('reels-drive-frame');
+                if (!driveFrame && stage) {
+                    driveFrame = document.createElement('iframe');
+                    driveFrame.id = 'reels-drive-frame';
+                    driveFrame.className = 'w-full h-full border-0 hidden';
+                    driveFrame.allow = 'autoplay; fullscreen';
+                    driveFrame.setAttribute('allowfullscreen', 'true');
+                    stage.appendChild(driveFrame);
+                }
 
-        // Dynamic Ambient Glow Shifts with Discipline
-        updateAmbientGlow(card.disc || activeDiscipline);
+                if (isDrive && driveId) {
+                    if (driveFrame) {
+                        driveFrame.src = '';
+                        driveFrame.classList.add('hidden');
+                    }
+                    video.classList.remove('hidden');
+                    video.pause();
+                    video.muted = isMuted;
+                    video.playbackRate = playbackSpeed;
+                    video.src = '/api/drive-stream/' + driveId;
+                    video.load();
 
-        // Update Action Buttons
-        const likeIcon = document.getElementById('reels-like-icon');
-        const isFav = isReelFavorite(card.title);
-        if (likeIcon) {
-            likeIcon.style.color = isFav ? '#f43f5e' : '';
-            likeIcon.style.fontVariationSettings = isFav ? "'FILL' 1" : "'FILL' 0";
-        }
+                    video.onerror = function() {
+                        video.classList.add('hidden');
+                        if (driveFrame) {
+                            driveFrame.src = 'https://drive.google.com/file/d/' + driveId + '/preview';
+                            driveFrame.classList.remove('hidden');
+                        }
+                    };
 
-        // Solved Example Button Visibility
-        const exampleBtn = document.getElementById('reels-btn-example');
-        if (exampleBtn) {
-            if (card.solvedExample && card.solvedExample.question) {
-                exampleBtn.classList.remove('hidden');
-            } else {
-                exampleBtn.classList.add('hidden');
-            }
-        }
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(err => {
+                            video.muted = true;
+                            isMuted = true;
+                            updateReelsMuteUI();
+                            video.play().catch(() => {});
+                        });
+                    }
+                } else {
+                    if (driveFrame) {
+                        driveFrame.src = '';
+                        driveFrame.classList.add('hidden');
+                    }
+                    video.classList.remove('hidden');
+                    video.pause();
+                    video.muted = isMuted;
+                    video.playbackRate = playbackSpeed;
+                    video.src = targetVideoSrc;
+                    video.load();
 
-        // Close open drawers
-        closeReelsFormulaDrawer();
-        closeReelsExampleDrawer();
-
-        // Update Stories Progress Segments
-        renderStorySegments();
-
-        // Handle Video Setup & Animation
-        const video = document.getElementById('reels-main-video');
-        const stage = document.getElementById('reels-video-stage');
-        const frameContainer = document.getElementById('reels-frame-container');
-        const badgeDot = document.getElementById('reels-video-badge-dot');
-        const badgeText = document.getElementById('reels-video-badge-text');
-        const targetVideoSrc = card.videoUrl;
-
-        // Reset video stage to standard bento stack
-        if (stage) stage.classList.remove('reels-mode-vertical-916');
-        if (frameContainer) frameContainer.classList.remove('reels-mode-vertical-active');
-        if (badgeDot) badgeDot.className = 'w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse';
-        if (badgeText) {
-            badgeText.textContent = '16:9 HD Explainer';
-            badgeText.className = 'text-rose-300 font-bold';
-        }
-
-        // Hide karaoke caption box if closed captioning is off (default off)
-        const karaokeBox = document.getElementById('reels-karaoke-box');
-        if (karaokeBox && !karaokeActive) {
-            karaokeBox.classList.add('hidden');
-        }
-
-        if (video) {
-            // Apply slide transition
-            if (slideDirection === 'up') {
-                stage.classList.add('reel-slide-up-exit');
-            } else if (slideDirection === 'down') {
-                stage.classList.add('reel-slide-down-exit');
-            }
-
-            setTimeout(() => {
-                video.pause();
-                video.muted = isMuted;
-                video.playbackRate = playbackSpeed;
-                video.src = targetVideoSrc;
-                video.load();
-
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(err => {
-                        // Browser prevented unmuted autoplay; mute and retry
-                        video.muted = true;
-                        isMuted = true;
-                        updateReelsMuteUI();
-                        video.play().catch(() => {});
-                    });
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(err => {
+                            video.muted = true;
+                            isMuted = true;
+                            updateReelsMuteUI();
+                            video.play().catch(() => {});
+                        });
+                    }
                 }
 
                 // Reset and slide in
