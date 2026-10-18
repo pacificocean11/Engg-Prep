@@ -214,18 +214,46 @@ html.dark .content {
     background: radial-gradient(circle at top right, rgba(255, 186, 56, 0.05), transparent);
 }
 
-/* Glassmorphism System (B-1) */
+/* Glassmorphism System - Next-Gen Specular Depth (Apple / Linear Caliber) */
 .glass-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
+    position: relative;
     border-radius: var(--radius-lg);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+html:not(.dark) .glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
+                0 4px 20px -4px rgba(15, 23, 42, 0.06),
+                0 1px 3px 0 rgba(15, 23, 42, 0.03);
+}
+
+html:not(.dark) .glass-card:hover {
+    box-shadow: inset 0 1px 0 0 #ffffff,
+                0 12px 32px -4px rgba(15, 23, 42, 0.09),
+                0 0 0 1px rgba(245, 158, 11, 0.25);
+    transform: translateY(-2px);
 }
 
 html.dark .glass-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.02),
+                0 12px 36px -6px rgba(0, 0, 0, 0.55);
+}
+
+html.dark .glass-card:hover {
+    border-color: rgba(245, 158, 11, 0.35) !important;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+                0 18px 45px -8px rgba(0, 0, 0, 0.75),
+                0 0 25px -4px rgba(245, 158, 11, 0.12) !important;
+    transform: translateY(-2px);
 }
 
 /* Cyber Glow Effects (B-4) */
@@ -253,11 +281,10 @@ html.dark .glass-card {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Bottom Navigation Styling */
+/* Bottom Navigation Styling - Floating Specular Dock */
 #bottom-nav {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(25px) saturate(200%);
-    -webkit-backdrop-filter: blur(25px) saturate(200%);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
     z-index: 999;
     bottom: 2rem !important;
     left: 50% !important;
@@ -270,16 +297,29 @@ html.dark .glass-card {
     justify-content: center !important;
     align-items: center !important;
     margin: 0 !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+html:not(.dark) #bottom-nav {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
+                0 20px 50px -10px rgba(15, 23, 42, 0.15),
+                0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+html.dark #bottom-nav {
+    background: rgba(15, 23, 42, 0.88) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.18),
+                0 25px 60px -12px rgba(0, 0, 0, 0.8),
+                0 0 25px rgba(245, 158, 11, 0.08) !important;
 }
 
 #bottom-nav li {
     margin: 0 !important;
     padding: 0 !important;
     list-style: none !important;
-}
-
-html.dark #bottom-nav {
-    background: rgba(15, 23, 42, 0.85);
 }
 
 #bottom-nav li {
@@ -1039,8 +1079,8 @@ html.dark .option-prefix {
 }
 
 .map-btn.flagged {
-    border-color: #f59e0b;
-    color: #f59e0b;
+    border-color: #FF006E;
+    color: #FF006E;
     background: rgba(245, 158, 11, 0.05);
 }
 
@@ -1194,8 +1234,8 @@ html.dark .result-item {
 
 #flag-btn.active {
     background: rgba(245, 158, 11, 0.1);
-    border-color: #f59e0b;
-    color: #f59e0b;
+    border-color: #FF006E;
+    color: #FF006E;
 }
 
 .tikz-container {
@@ -1983,7 +2023,7 @@ html.dark #avatar-picker-sheet {
 .avatar-option:hover { transform: scale(1.12); }
 
 .avatar-option.selected-avatar {
-    border-color: #b60055;
+    border-color: #FF006E;
     box-shadow: 0 0 0 4px rgba(182, 0, 85, 0.18);
     transform: scale(1.12);
 }
@@ -3320,7 +3360,7 @@ html.dark .dark\:bg-slate-900\/80 {
 html.dark .glass-card:hover,
 html.dark .card:hover {
     box-shadow: 0 12px 40px 0 rgba(245, 158, 11, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
-    border-color: rgba(245, 158, 11, 0.25) !important;
+    border-color: rgba(182, 0, 85, 0.18) !important;
 }
 
 /* 4. TikZ & MathJax Circuit/Plot Inversion in Dark Mode */
@@ -3472,7 +3512,7 @@ html.dark .enggtv-ai-subtitle {
     color: #E2C799;
 }
 html.dark .enggtv-ai-badge {
-    background-color: rgba(245, 158, 11, 0.25);
+    background-color: rgba(182, 0, 85, 0.18);
     color: #FBBF24;
     border: 1px solid rgba(245, 158, 11, 0.5);
 }
@@ -3555,17 +3595,29 @@ html.dark .mesh-orb.orb-3 {
 
 /* Luxury Warm Glassmorphic Card Class */
 .warm-glass-card {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+html:not(.dark) .warm-glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
+                0 10px 30px -4px rgba(245, 158, 11, 0.08),
+                0 2px 6px rgba(15, 23, 42, 0.03);
 }
 html.dark .warm-glass-card {
-    background: rgba(26, 18, 11, 0.8);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    background: rgba(15, 23, 42, 0.82) !important;
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border: 1px solid rgba(245, 158, 11, 0.25) !important;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+                0 16px 40px -8px rgba(0, 0, 0, 0.6),
+                0 0 30px -5px rgba(245, 158, 11, 0.08);
 }
 html.dark .warm-glass-card:hover {
-    border-color: rgba(245, 158, 11, 0.5);
-    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.15), 0 0 20px rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.45) !important;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+                0 20px 48px -6px rgba(0, 0, 0, 0.75),
+                0 0 30px rgba(245, 158, 11, 0.18) !important;
     transform: translateY(-2px);
 }
 
@@ -3725,7 +3777,7 @@ html.dark .formula-display {
 }
 
 #fc-back-formula {
-    min-height: 95px !important;
+    min-height: 120px !important;
     height: auto !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
@@ -4065,5 +4117,200 @@ html.dark .formula-display {
     #reels-bento-card {
         margin-top: 0.75rem !important;
         flex: 1 0 auto !important;
+    }
+}
+
+/* ==========================================================================
+   Diagnostic Performance Report Animations & Micro-Interactions
+   ========================================================================== */
+
+@keyframes diagnosticRowFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes diagnosticBarFill {
+    0% {
+        width: 0%;
+        opacity: 0.3;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        width: var(--target-width, 0%);
+        opacity: 1;
+    }
+}
+
+@keyframes diagnosticShimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    60%, 100% {
+        transform: translateX(250%);
+    }
+}
+
+.diagnostic-row {
+    animation: diagnosticRowFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--row-idx, 0) * 45ms);
+}
+
+.diagnostic-bar-fill {
+    width: 0%;
+    animation: diagnosticBarFill 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--row-idx, 0) * 45ms + 100ms);
+    will-change: width;
+}
+
+/* Subtle glowing pulse & shine on subjects meeting/exceeding target */
+.diagnostic-bar-target-met {
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+}
+
+.diagnostic-bar-target-met::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 100%
+    );
+    border-radius: 9999px;
+    animation: diagnosticShimmer 2.2s infinite;
+    animation-delay: calc(var(--row-idx, 0) * 45ms + 1000ms);
+    pointer-events-none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .diagnostic-row {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .diagnostic-bar-fill {
+        animation: none !important;
+        width: var(--target-width, 0%) !important;
+    }
+    .diagnostic-bar-target-met::after {
+        animation: none !important;
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   Study Notes Responsive Layout (Side-by-Side 50/50 Desktop/Laptop Grid)
+   ========================================================================== */
+.container-fluid {
+    width: 100%;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+
+.row.align-items-start {
+    align-items: flex-start;
+}
+
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+@media (min-width: 992px) {
+    .row > .col,
+    .row > .col-lg-6 {
+        flex: 1 1 50%;
+        max-width: 50%;
+        width: 50%;
+    }
+    .row > .col-lg-7 {
+        flex: 1 1 58.333333%;
+        max-width: 58.333333%;
+        width: 58.333333%;
+    }
+    .row > .col-lg-8 {
+        flex: 1 1 60%;
+        max-width: 60%;
+        width: 60%;
+    }
+    .row > .col-lg-5 {
+        flex: 1 1 41.666667%;
+        max-width: 41.666667%;
+        width: 41.666667%;
+    }
+    .row > .col-lg-4 {
+        flex: 1 1 40%;
+        max-width: 40%;
+        width: 40%;
+    }
+}
+
+/* Study Notes Media & Image Sizing */
+.note-media-col,
+.col center,
+.col > center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.note-media-col img,
+.note-image-contain,
+.col center img {
+    max-width: 100%;
+    max-height: 420px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.note-media-col img:hover,
+.col center img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+    .note-split-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+
+
+/* Persistent Study Notes Header */
+body.notes-view-active main {
+    padding-top: 7.75rem !important; /* ~124px to accommodate two-row fixed header */
+}
+
+@media (max-width: 640px) {
+    body.notes-view-active main {
+        padding-top: 7.25rem !important;
     }
 }

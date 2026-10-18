@@ -1,2990 +1,3022 @@
 {
-    "discipline": "Mechanical",
-    "subjects": [
+  "discipline": "Mechanical",
+  "subjects": [
+    {
+      "subject": "Mathematics",
+      "chapters": [
         {
-            "subject": "Mathematics",
-            "chapters": [
-                {
-                    "chapter": "Math Basics",
-                    "topics": [
-                        {
-                            "topic": "Theory of Complex Numbers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Trigonometry",
-                            "subtopics": [
-                                "Addition Formulas",
-                                "Basic Trigonometric Definitions",
-                                "Fundamental Trigonometric Identities",
-                                "Law of Cosines",
-                                "Law of Sines",
-                                "Trigonometric Formulas for Multiple Angles",
-                                "Trigonometric Ratios of Negative Angles"
-                            ]
-                        },
-                        {
-                            "topic": "Logarithms",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Areas and Volumes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Calculators",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Analytic Geometry",
-                    "topics": [
-                        {
-                            "topic": "Straight Line",
-                            "subtopics": [
-                                "Angle between Two Lines",
-                                "Distance Formula",
-                                "Equation of a Straight Line",
-                                "Parallel and Perpendicular Lines",
-                                "Slope of a Straight Line"
-                            ]
-                        },
-                        {
-                            "topic": "Conics",
-                            "subtopics": [
-                                "Conic Curves as a Section of a Cone",
-                                "Eccentricity in Terms of Conic Section Parameters",
-                                "Identifying Conic Section from Given Equation"
-                            ]
-                        },
-                        {
-                            "topic": "Circle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Ellipse",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Parabola",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Hyperbola",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Calculus",
-                    "topics": [
-                        {
-                            "topic": "Limits",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Derivatives",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Partial Derivatives",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Application of Derivatives",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Indefinite Integrals",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Differential Equations",
-                    "topics": [
-                        {
-                            "topic": "General Terminology",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "First Order DE",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Higher Order Differential Equations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Laplace Transform",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Applying Boundary Conditions",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Linear Algebra",
-                    "topics": [
-                        {
-                            "topic": "Types of Matrices",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Matrix Operations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Determinant of a Matrix",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Unit Vector",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Dot and Cross Products",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Gradient, Divergence and Curl",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Numerical Methods",
-                    "topics": [
-                        {
-                            "topic": "Newton's Method of Root Extraction",
-                            "subtopics": [
-                                "Newton's Method of Root Extraction"
-                            ]
-                        },
-                        {
-                            "topic": "Newton's Method of Minimization",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Forward Rectangular Rule",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Trapezoidal Rule",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Simpson's Rule",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Taylor's and MacLaurin's Series",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Algorithm and Logic Development",
-                    "topics": [
-                        {
-                            "topic": "Flowchart",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Key Terms in Flowchart and Programming",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Pseudocode",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "chapter": "Math Basics",
+          "topics": [
+            {
+              "topic": "Theory of Complex Numbers",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Trigonometry",
+              "subtopics": [
+                "Addition Formulas",
+                "Basic Trigonometric Definitions",
+                "Fundamental Trigonometric Identities",
+                "Law of Cosines",
+                "Law of Sines",
+                "Trigonometric Formulas for Multiple Angles",
+                "Trigonometric Ratios of Negative Angles"
+              ]
+            },
+            {
+              "topic": "Logarithms",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Areas and Volumes",
+              "subtopics": [
+                "Areas and Volumes",
+                "Surface Areas of Basic Shapes"
+              ]
+            },
+            {
+              "topic": "Calculators",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
         },
         {
-            "subject": "Probability and Statistics",
-            "chapters": [
-                {
-                    "chapter": "Measures of Central Tendencies",
-                    "topics": [
-                        {
-                            "topic": "Mean, Median, Mode",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Standard Deviation and Variance",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Permutations and Combinations",
-                    "topics": [
-                        {
-                            "topic": "Arrangement and Selection",
-                            "subtopics": [
-                                "Permutations and Combinations"
-                            ]
-                        },
-                        {
-                            "topic": "Selection with Identical Objects",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Laws of Probability",
-                    "topics": [
-                        {
-                            "topic": "Probability - Basic Concepts",
-                            "subtopics": [
-                                "Conditional Probability",
-                                "Law of Total Probability",
-                                "Probability Terminology"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Probability Functions, Distributions, and Expected Values",
-                    "topics": [
-                        {
-                            "topic": "PDF and CDF",
-                            "subtopics": [
-                                "PDF and CDF"
-                            ]
-                        },
-                        {
-                            "topic": "Binomial Distribution",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Normal Distribution",
-                            "subtopics": [
-                                "Normal Distribution"
-                            ]
-                        },
-                        {
-                            "topic": "t-distribution",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Expected Value",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Regression and Curve Fitting",
-                    "topics": [
-                        {
-                            "topic": "Regression and Curve Fitting",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Correlation Coefficient",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Hypothesis Testing",
-                    "topics": [
-                        {
-                            "topic": "Null Hypothesis",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Confidence Intervals",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Comparison of Samples",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Propagation of Error",
-                    "topics": [
-                        {
-                            "topic": "Linear Combinations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Measurement of Error",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "chapter": "Analytic Geometry",
+          "topics": [
+            {
+              "topic": "Straight Line",
+              "subtopics": [
+                "Angle between Two Lines",
+                "Slope Intercept Format",
+                "Distance Formula",
+                "Equation of a Straight Line",
+                "Parallel and Perpendicular Lines",
+                "Slope of a Straight Line"
+              ]
+            },
+            {
+              "topic": "Conics",
+              "subtopics": [
+                "Conic Curves as a Section of a Cone",
+                "Eccentricity in Terms of Conic Section Parameters",
+                "Identifying Conic Section from Given Equation"
+              ]
+            },
+            {
+              "topic": "Circle",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Ellipse",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Parabola",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Hyperbola",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
         },
         {
-            "subject": "Ethics and Professional Practice",
-            "chapters": [
-                {
-                    "chapter": "Codes of Ethics",
-                    "topics": [
-                        {
-                            "topic": "Ethical and Legal Considerations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "NCEES Model Law",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Professional and Technical Societies",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Intellectual Property",
-                    "topics": [
-                        {
-                            "topic": "Introduction to Intellectual Property",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Patents and Copyrights",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Trade Secrets",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Trademarks",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Public Health, Safety and Welfare",
-                    "topics": [
-                        {
-                            "topic": "Public Health, Safety and Welfare in Engineering",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Societal Considerations",
-                    "topics": [
-                        {
-                            "topic": "Life Cycle Assessment (LCA)",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Sustainability",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "chapter": "Calculus",
+          "topics": [
+            {
+              "topic": "Limits",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Derivatives",
+              "subtopics": [
+                "Overview",
+                "Some Basic Formulae",
+                "Chain Rule"
+              ]
+            },
+            {
+              "topic": "Partial Derivatives",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Application of Derivatives",
+              "subtopics": [
+                "Curvature of Any Curve",
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Indefinite Integrals",
+              "subtopics": [
+                "Integration Formulas",
+                "Integration by Substitution",
+                "Integration by Parts",
+                "Integration by Partial Fractions"
+              ]
+            }
+          ]
         },
         {
-            "subject": "Engineering Economics",
-            "chapters": [
-                {
-                    "chapter": "Time Value of Money",
-                    "topics": [
-                        {
-                            "topic": "Discounted Cash Flow Factors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Non-Annual Compounding",
-                    "topics": [
-                        {
-                            "topic": "Non-Annual Compounding",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Inflation",
-                    "topics": [
-                        {
-                            "topic": "Inflation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Capitalized Costs",
-                    "topics": [
-                        {
-                            "topic": "Capitalized Costs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Break-even Analysis",
-                    "topics": [
-                        {
-                            "topic": "Break-even Analysis",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Cost Types and Breakdowns",
-                    "topics": [
-                        {
-                            "topic": "Cost Types",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Economic Analyses",
-                    "topics": [
-                        {
-                            "topic": "Cost-Benefit Analysis",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Overhead Analysis",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Payback Period Analyses",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "chapter": "Differential Equations",
+          "topics": [
+            {
+              "topic": "General Terminology",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "First Order DE",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Higher Order Differential Equations",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Laplace Transform",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Applying Boundary Conditions",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
         },
         {
-            "subject": "Electricity and Magnetism",
-            "chapters": [
-                {
-                    "chapter": "Electrical Fundamentals",
-                    "topics": [
-                        {
-                            "topic": "Coulomb's Law",
-                            "subtopics": [
-                                "Coulomb's Law"
-                            ]
-                        },
-                        {
-                            "topic": "Electrostatic Field",
-                            "subtopics": [
-                                "Electrostatic Field"
-                            ]
-                        },
-                        {
-                            "topic": "Voltage",
-                            "subtopics": [
-                                "Electric Potential"
-                            ]
-                        },
-                        {
-                            "topic": "Electric Current",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Magnetic Field",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Resistance",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Power absorbed",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Kirchhoff's Laws",
-                            "subtopics": [
-                                "Kirchhoff's Current Law",
-                                "Kirchhoff's Voltage Law"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Capacitors and Inductors",
-                    "topics": [
-                        {
-                            "topic": "Energy Stored in a Capacitor or Inductor",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Capacitors and Inductors in Parallel and Series",
-                            "subtopics": [
-                                "Capacitors in Series and Parallel",
-                                "Inductors in Series and Parallel",
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "AC Circuits",
-                    "topics": [
-                        {
-                            "topic": "Frequency and Period of AC Waveform",
-                            "subtopics": [
-                                "DC vs AC"
-                            ]
-                        },
-                        {
-                            "topic": "Average Value",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Effective or RMS value",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "AC Impedance",
-                            "subtopics": [
-                                "Calculation of Impedance",
-                                "Power Factor and Power Angle"
-                            ]
-                        },
-                        {
-                            "topic": "Phasors of Purely Resistive, Inductive and Capacitive Circuits",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Admittance, Conductance and Susceptance",
-                            "subtopics": [
-                                "Overview",
-                                "Parallel RLC Circuits"
-                            ]
-                        },
-                        {
-                            "topic": "AC Power",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Transformers",
-                    "topics": [
-                        {
-                            "topic": "Transformers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Motors and Generators",
-                    "topics": [
-                        {
-                            "topic": "Efficiency, Losses and Power in Rotating Machines",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "AC Electric Motor",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "DC Electric Motors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Servomotors and Generators",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "chapter": "Linear Algebra",
+          "topics": [
+            {
+              "topic": "Types of Matrices",
+              "subtopics": [
+                "Overview",
+                "Identity Matrix"
+              ]
+            },
+            {
+              "topic": "Matrix Operations",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Determinant of a Matrix",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Unit Vector",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Dot and Cross Products",
+              "subtopics": [
+                "Calculation of Dot Product",
+                "Application of Dot Product",
+                "Calculation of Cross Product",
+                "Properties of Cross Product"
+              ]
+            },
+            {
+              "topic": "Gradient, Divergence and Curl",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
         },
         {
-            "subject": "Statics",
-            "chapters": [
-                {
-                    "chapter": "Resultants of Force Systems",
-                    "topics": [
-                        {
-                            "topic": "Resultant of Forces",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Resolution of Forces",
-                    "topics": [
-                        {
-                            "topic": "Resolution of Forces",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Moments and Couple",
-                    "topics": [
-                        {
-                            "topic": "Couple",
-                            "subtopics": [
-                                "Couple",
-                                "Moment"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Systems of Forces",
-                    "topics": [
-                        {
-                            "topic": "Equilibrium of Rigid Bodies",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Centroids",
-                    "topics": [
-                        {
-                            "topic": "Centroids of Masses, Areas, Lengths, and Volumes",
-                            "subtopics": [
-                                "Centroid of Basic Shapes",
-                                "Centroid of Composite Area",
-                                "Moment of Area"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Moment of Inertia",
-                    "topics": [
-                        {
-                            "topic": "Area Moments of Inertia",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Parallel Axis Theorem (Statics)",
-                            "subtopics": [
-                                "Parallel Axis Theorem (Statics)"
-                            ]
-                        },
-                        {
-                            "topic": "Perpendicular Axis Theorem",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Polar Moment of Inertia",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Product of Inertia",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Radius of Gyration",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Static Friction",
-                    "topics": [
-                        {
-                            "topic": "Friction",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Screw Thread",
-                    "topics": [
-                        {
-                            "topic": "Screw Thread",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Belt Friction",
-                    "topics": [
-                        {
-                            "topic": "Belt Friction",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Statically Determinate Truss",
-                    "topics": [
-                        {
-                            "topic": "Method of Joints",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Method of Section",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Zero Force Members",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Concurrent Forces",
-                    "topics": [
-                        {
-                            "topic": "Concurrent Forces",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Concurrent Force Systems",
-                    "topics": [
-                        {
-                            "topic": "Free Body Diagrams",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Types of Loads",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Equilibrium of Rigid Bodies",
-                    "topics": [
-                        {
-                            "topic": "Loads",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Principle of Virtual Work",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Types of Supports",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "chapter": "Numerical Methods",
+          "topics": [
+            {
+              "topic": "Newton's Method of Root Extraction",
+              "subtopics": [
+                "Newton's Method of Root Extraction"
+              ]
+            },
+            {
+              "topic": "Newton's Method of Minimization",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Forward Rectangular Rule",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Trapezoidal Rule",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Simpson's Rule",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Taylor's and MacLaurin's Series",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
         },
         {
-            "subject": "Dynamics, Kinematics and Vibrations",
-            "chapters": [
-                {
-                    "chapter": "Kinematics of Particles",
-                    "topics": [
-                        {
-                            "topic": "Constant Acceleration Motion",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Instantaneous Velocity and Acceleration",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Projectile Motion",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Relative Motion",
-                            "subtopics": [
-                                "Relative Motion"
-                            ]
-                        },
-                        {
-                            "topic": "Tangential and Normal Component of Acceleration",
-                            "subtopics": [
-                                "Tangential and Normal Component of Acceleration"
-                            ]
-                        },
-                        {
-                            "topic": "Uniform Circular Motion",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Variable Acceleration Motion",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Kinetic Friction",
-                    "topics": [
-                        {
-                            "topic": "Kinetic Friction",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Newton's Second Law- Particles",
-                    "topics": [
-                        {
-                            "topic": "One-Dimensional Motion of a Particle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Work-Energy of Particles",
-                    "topics": [
-                        {
-                            "topic": "Kinetic Energy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Law of Conservation of Energy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Potential Energy",
-                            "subtopics": [
-                                "Potential Energy"
-                            ]
-                        },
-                        {
-                            "topic": "Power and Efficiency",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Work",
-                            "subtopics": [
-                                "Work"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Impulse-Momentum of Particles",
-                    "topics": [
-                        {
-                            "topic": "Impact",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Impulse-Momentum Equation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Linear and Angular Momentum",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Kinematics of Rigid Bodies",
-                    "topics": [
-                        {
-                            "topic": "Instantaneous Center of Rotation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Kennedy's Rule",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Rotation of a Rigid Body under Constant Acceleration",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Rotation of a Rigid Body under Variable Acceleration",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Kinematics of Mechanisms",
-                    "topics": [
-                        {
-                            "topic": "Kinematics of Mechanisms",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Newton's Second Law- Rigid Bodies",
-                    "topics": [
-                        {
-                            "topic": "Mass Moment of Inertia of a Rigid Body",
-                            "subtopics": [
-                                "Mass Moment of Inertia of a Rigid Body"
-                            ]
-                        },
-                        {
-                            "topic": "Mass Radius of Gyration",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Moment of Inertia of a Point Mass",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "One-Dimensional Motion of a Rigid Body",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Parallel Axis Theorem- Dynamics",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Work-Energy of Rigid Bodies",
-                    "topics": [
-                        {
-                            "topic": "Kinetic Energy of a Rigid Body",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Impulse-Momentum of Rigid Bodies",
-                    "topics": [
-                        {
-                            "topic": "Impulse-Momentum of Rigid Bodies",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Vibrations",
-                    "topics": [
-                        {
-                            "topic": "Forced Vibrations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Free Vibrations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Torsional Vibrations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Mechanics of Materials",
-            "chapters": [
-                {
-                    "chapter": "Uniaxial Stress- Strain",
-                    "topics": [
-                        {
-                            "topic": "Percentage Changes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Stress and Strain",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Thermal Deformations",
-                    "topics": [
-                        {
-                            "topic": "Thermal Expansion of Metals",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Pressure Vessels",
-                    "topics": [
-                        {
-                            "topic": "Pressure Vessels",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thin Cylinders",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Two-Dimensional Stress/Strain",
-                    "topics": [
-                        {
-                            "topic": "Principal Stresses",
-                            "subtopics": [
-                                "Principal Planes",
-                                "Principal Stresses"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Hooke's Law",
-                    "topics": [
-                        {
-                            "topic": "Hooke's Law",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Torsion",
-                    "topics": [
-                        {
-                            "topic": "Hollow, Thin Walled Shafts",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Solid or Thick Walled Shafts",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Beams",
-                    "topics": [
-                        {
-                            "topic": "Composite Sections",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Deflection of Beams",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Shear Stresses in Beams",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Columns",
-                    "topics": [
-                        {
-                            "topic": "Column Buckling",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Elastic Strain Energy",
-                    "topics": [
-                        {
-                            "topic": "Elastic Strain Energy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Static Indeterminacy",
-                    "topics": [
-                        {
-                            "topic": "Concepts of Determinate and Indeterminate Structures",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Combined Loading",
-                    "topics": [
-                        {
-                            "topic": "Combined Loading",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Deformations",
-                    "topics": [
-                        {
-                            "topic": "Elastic and Plastic Deformation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Mohr's Circle",
-                    "topics": [
-                        {
-                            "topic": "Mohr's Circle",
-                            "subtopics": [
-                                "Mohr's Circle"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Shear and Moment Diagrams",
-                    "topics": [
-                        {
-                            "topic": "Procedure to Draw Shear and Moment Diagrams",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "SFD and BMD for Simply Supported Beam",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Stress and Strain Caused by Axial Loads",
-                    "topics": [
-                        {
-                            "topic": "Elastic Constants",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Factor of Safety",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Poisson's Ratio",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Stress and Strain Caused by Bending Loads",
-                    "topics": [
-                        {
-                            "topic": "Bending Loads",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Stress and Strain Caused by Torsional Loads",
-                    "topics": [
-                        {
-                            "topic": "Torsional Shear Stress",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Material Properties and Processing",
-            "chapters": [
-                {
-                    "chapter": "Properties",
-                    "topics": [
-                        {
-                            "topic": "Electrical Properties of Material",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Mechanical Properties of Material",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thermal Properties of Material",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Stress-Strain Diagrams",
-                    "topics": [
-                        {
-                            "topic": "Stress-Strain Diagram Terms",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "True Vs. Engineering Stress-Strain Curve",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Ferrous Metals",
-                    "topics": [
-                        {
-                            "topic": "Ferrous Metals",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Nonferrous Metals",
-                    "topics": [
-                        {
-                            "topic": "Nonferrous Metals",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Engineered Materials",
-                    "topics": [
-                        {
-                            "topic": "Engineered Materials",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Manufacturing Processes",
-                    "topics": [
-                        {
-                            "topic": "Classification of Manufacturing Processes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "CNC",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Cold Processes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Hot Processes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Non-Traditional Machining Processes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Powder Metallurgy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Phase Diagrams/Heat Treating",
-                    "topics": [
-                        {
-                            "topic": "Allotropes of iron",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Critical point",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Heat Treatment",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Important Points in Iron-Iron Carbide Phase Diagram",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Iron-Iron Carbide Diagram",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Lever Rule",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Phase Diagrams",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Triple Point",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Corrosion",
-                    "topics": [
-                        {
-                            "topic": "Corrosion Control",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Corrosion Mechanism",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Corrosion Terminology",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "EMF and Galvanic Series",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Failure Mechanisms",
-                    "topics": [
-                        {
-                            "topic": "Crack Propagation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Creep",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Fatigue",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Materials Selection",
-                    "topics": [
-                        {
-                            "topic": "Material Selection Factors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Fluid Mechanics",
-            "chapters": [
-                {
-                    "chapter": "Fluid Properties",
-                    "topics": [
-                        {
-                            "topic": "Common Fluid Properties",
-                            "subtopics": [
-                                "Density, Specific Volume, Specific Weight, and Specific Gravity",
-                                "Vapor Pressure"
-                            ]
-                        },
-                        {
-                            "topic": "Stress, Pressure and Viscosity",
-                            "subtopics": [
-                                "Newton's Law of Viscosity",
-                                "Viscosity"
-                            ]
-                        },
-                        {
-                            "topic": "Surface Tension and Capillarity",
-                            "subtopics": [
-                                "Capillarity",
-                                "Surface Tension"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Fluid Statics",
-                    "topics": [
-                        {
-                            "topic": "Archimedes Principle and Buoyancy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Hydrostatic Forces on Submerged Surfaces",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Manometers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Pascal's Law",
-                            "subtopics": [
-                                "Pascal's Law"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "One-Dimensional Fluid Flow",
-                    "topics": [
-                        {
-                            "topic": "Bernoulli and Energy Equation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Continuity Equation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Euler's Equation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Internal Flow",
-                    "topics": [
-                        {
-                            "topic": "Head Loss due to Flow",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Minor Losses",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Multipath Pipeline",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Noncircular Ducts",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Pressure Drop for Laminar Flow",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Reynold's Number",
-                            "subtopics": [
-                                "Reynold's Number"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "External Flow",
-                    "topics": [
-                        {
-                            "topic": "Drag Force",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Impulse-Momentum Principle",
-                    "topics": [
-                        {
-                            "topic": "Deflectors and Blades",
-                            "subtopics": [
-                                "Fixed Blade",
-                                "Impulse Turbine",
-                                "Moving Blade"
-                            ]
-                        },
-                        {
-                            "topic": "Jet Propulsions",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Momentum Equation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Pipes, Bends and Contractions",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Compressible Flow",
-                    "topics": [
-                        {
-                            "topic": "Isentropic Flow Relationships",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Mach Number",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Normal Shock Relationships",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Fluid Machinery",
-                    "topics": [
-                        {
-                            "topic": "Blowers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Compressors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Fan Characteristics",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Turbines",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Flow Measurement",
-                    "topics": [
-                        {
-                            "topic": "Orifice",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Pitot Tube",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Venturi Meter",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Weir",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Dimensional Homogeneity",
-                    "topics": [
-                        {
-                            "topic": "Dimensional Analysis",
-                            "subtopics": [
-                                "Buckingham's Pi Theorem"
-                            ]
-                        },
-                        {
-                            "topic": "Similitude",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Airfoil Theory",
-                    "topics": [
-                        {
-                            "topic": "Airfoil Theory",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Performance curves",
-                    "topics": [
-                        {
-                            "topic": "Pump Performance Curves",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Power and Efficiency-Fluid",
-                    "topics": [
-                        {
-                            "topic": "Power and Efficiency Definitions",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Scaling Laws for Fans, Pumps and Compressors",
-                    "topics": [
-                        {
-                            "topic": "Efficiency of a Centrifugal Pump",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "NPSH and Cavitation",
-                            "subtopics": [
-                                "Overview",
-                                "Scaling Laws"
-                            ]
-                        },
-                        {
-                            "topic": "Pumps",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Thermodynamics",
-            "chapters": [
-                {
-                    "chapter": "Single Component Systems",
-                    "topics": [
-                        {
-                            "topic": "Thermodynamic Properties",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "PVT Behavior",
-                    "topics": [
-                        {
-                            "topic": "Ideal Gas Laws",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "First Law of Thermodynamics",
-                    "topics": [
-                        {
-                            "topic": "Adiabatic Process",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Closed Thermodynamic System",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Cyclic Process",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Open Thermodynamic System",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Polytropic Process",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Steady Flow Energy Equation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thermodynamic Processes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Thermodynamic Processes",
-                    "topics": [
-                        {
-                            "topic": "Isobaric Process- Constant Pressure",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Isochoric Process- Constant Volume",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Isothermal Process- Constant Temperature",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Basic Cycles",
-                    "topics": [
-                        {
-                            "topic": "Carnot Cycle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Coefficient of Performance",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Diesel Cycle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Otto Cycle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Rankine Cycle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Psychrometrics",
-                    "topics": [
-                        {
-                            "topic": "HVAC Processes",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Psychrometric Chart",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Second Law of Thermodynamics",
-                    "topics": [
-                        {
-                            "topic": "Entropy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Exergy (Availability)",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Gibbs and Helmholtz Free Energy",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Combustion & Products",
-                    "topics": [
-                        {
-                            "topic": "Combustion in Air",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Combustion of Hydrocarbon in Pure Oxygen",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Enthalpy of Formation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Heats of Reaction",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Incomplete Combustion",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Refrigeration and HVAC",
-                    "topics": [
-                        {
-                            "topic": "Air Refrigeration Cycle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Stages of Refrigeration Cycle",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Energy Transfer",
-                    "topics": [
-                        {
-                            "topic": "Open and Closed Systems",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Energy Transfers",
-                    "topics": [
-                        {
-                            "topic": "Introduction to Energy Transfer",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Laws of Thermodynamics",
-                    "topics": [
-                        {
-                            "topic": "Introduction to Thermodynamic Laws",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Second Law of Thermodynamics",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Third Law of Thermodynamics",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Zeroth Law of Thermodynamics",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Nonreacting Mixtures of Gases",
-                    "topics": [
-                        {
-                            "topic": "Nonreacting Mixtures of Gases",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Power Cycles",
-                    "topics": [
-                        {
-                            "topic": "Introduction to Power Cycles",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Properties of Ideal Gases and Pure Substances",
-                    "topics": [
-                        {
-                            "topic": "Properties of Pure Substances",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Properties of Steam",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Heat Transfer",
-            "chapters": [
-                {
-                    "chapter": "Conduction",
-                    "topics": [
-                        {
-                            "topic": "Approximate Solution for Solid with Sudden Convection",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Composite Plane Wall",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Conduction through a Cylindrical Wall",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Conduction through a Plane Wall",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Fins",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Fourier's Law of Heat Conduction",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Lumped System Analysis",
-                            "subtopics": [
-                                "Approximate Solution for Solid with Sudden Convection",
-                                "Biot Number",
-                                "Lumped System Calculations"
-                            ]
-                        },
-                        {
-                            "topic": "Thermal Resistance of Various Objects",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Convection",
-                    "topics": [
-                        {
-                            "topic": "Critical Radius of Insulation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Dimensionless Numbers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "External Flow",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Heat Generation in Solids",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Internal Flow",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Newton's Law of Cooling",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Types of Convection",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Heat Exchangers",
-                    "topics": [
-                        {
-                            "topic": "Effectiveness-NTU Relation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Heat Exchanger Effectiveness",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "LMTD",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "NTU",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Radiation",
-                    "topics": [
-                        {
-                            "topic": "Kirchhoff's Law of Radiation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Net Energy Exchange by Radiation between Two Bodies",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Perfectly Black Body",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Shape Factors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Stefan-Boltzmann Law",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Measurements, Instrumentation and Controls",
-            "chapters": [
-                {
-                    "chapter": "Sensors and Transducers",
-                    "topics": [
-                        {
-                            "topic": "LVDT",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "pH Sensor",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Piezoelectric Transducers",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Pressure Sensors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "RTD",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Strain Gage",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thermistors",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Thermocouple",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Wheatstone Bridge",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Control Systems",
-                    "topics": [
-                        {
-                            "topic": "Control Systems",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Dynamic System Response",
-                    "topics": [
-                        {
-                            "topic": "Dynamic System Response Terminology",
-                            "subtopics": [
-                                "Dynamic System Response Terminology"
-                            ]
-                        },
-                        {
-                            "topic": "Steady State Error",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Time Response of a First Order System",
-                            "subtopics": [
-                                "Unit-ramp Response of First-Order System",
-                                "Unit-step Response of a first-order System"
-                            ]
-                        },
-                        {
-                            "topic": "Time Response of a Second Order Underdamped System",
-                            "subtopics": [
-                                "Time Response of a Second Order Underdamped System"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Measurement Uncertainty",
-                    "topics": [
-                        {
-                            "topic": "Kline-McClintock Equation",
-                            "subtopics": [
-                                "Kline-McClintock Equation"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "subject": "Mechanical Design and Analysis",
-            "chapters": [
-                {
-                    "chapter": "Springs",
-                    "topics": [
-                        {
-                            "topic": "End Conditions of Compression Springs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Equivalent Spring Constant",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Helical Linear Springs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Helical Torsion Springs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Spring Material",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Types of Springs",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Bearings",
-                    "topics": [
-                        {
-                            "topic": "Basic Load Rating",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Equivalent radial Load",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Power Screws",
-                    "topics": [
-                        {
-                            "topic": "Power Screw Calculations",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Power Transmission",
-                    "topics": [
-                        {
-                            "topic": "Gear Trains",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Gearing",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Lewis Equation",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Loading on Gears",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Shaft and Axles",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Joining Methods",
-                    "topics": [
-                        {
-                            "topic": "Cotter Joint for Circular rods",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Fastener Groups in Shear",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Flanged Joints",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Riveted Joints",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Threaded Joints",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Types of Joining Methods",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Press/Shrink Fits",
-                    "topics": [
-                        {
-                            "topic": "Press or Shrink Fits",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Manufacturability",
-                    "topics": [
-                        {
-                            "topic": "Basis of Fits",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Feature Control Frame",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Limit Gauges",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Terminology of Limit Systems",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Types of Fits",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "GD and T",
-                    "topics": [
-                        {
-                            "topic": "GD and T",
-                            "subtopics": [
-                                "GD and T"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Static Loading Failure Theories",
-                    "topics": [
-                        {
-                            "topic": "Endurance Limit for Steels",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Failure Theories for Brittle Materials",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Failure Theories for Ductile Materials",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Variable Loading Failure Theories",
-                    "topics": [
-                        {
-                            "topic": "Variable Loading Failure Theories",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Quality and Reliability",
-                    "topics": [
-                        {
-                            "topic": "Reliability of an Assembly",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Components",
-                    "topics": [
-                        {
-                            "topic": "Components of a Hydraulic System",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Components of a Pneumatic System",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Electromechanical Components",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Valves",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Engg Drawing",
-                    "topics": [
-                        {
-                            "topic": "Engineering Drawing",
-                            "subtopics": [
-                                "Elements of Engineering Drawing"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Cycles and Processes",
-                    "topics": [
-                        {
-                            "topic": "Gas Turbines",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Internal Combustion Engines",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Steam Power Plants",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Deformation and Stiffness",
-                    "topics": [
-                        {
-                            "topic": "Elastic and Plastic Deformation- Design",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Elastic Moduli",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Stiffness",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Pressure Vessels and Piping",
-                    "topics": [
-                        {
-                            "topic": "Thick Cylinders",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "chapter": "Stress Analysis of Machine Elements",
-                    "topics": [
-                        {
-                            "topic": "Basic Stress Concepts and Types",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        },
-                        {
-                            "topic": "Strain-Design",
-                            "subtopics": [
-                                "Overview"
-                            ]
-                        }
-                    ]
-                }
-            ]
+          "chapter": "Algorithm and Logic Development",
+          "topics": [
+            {
+              "topic": "Flowchart",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Key Terms in Flowchart and Programming",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Pseudocode",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "subject": "Probability and Statistics",
+      "chapters": [
+        {
+          "chapter": "Measures of Central Tendencies",
+          "topics": [
+            {
+              "topic": "Mean, Median, Mode",
+              "subtopics": [
+                "Mean",
+                "Median",
+                "Mode"
+              ]
+            },
+            {
+              "topic": "Standard Deviation and Variance",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Permutations and Combinations",
+          "topics": [
+            {
+              "topic": "Arrangement and Selection",
+              "subtopics": [
+                "Permutations and Combinations"
+              ]
+            },
+            {
+              "topic": "Selection with Identical Objects",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Laws of Probability",
+          "topics": [
+            {
+              "topic": "Probability - Basic Concepts",
+              "subtopics": [
+                "Conditional Probability",
+                "Law of Total Probability",
+                "Probability Terminology"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Probability Functions, Distributions, and Expected Values",
+          "topics": [
+            {
+              "topic": "PDF and CDF",
+              "subtopics": [
+                "Probability Density Function",
+                "Cumulative Distribution Function"
+              ]
+            },
+            {
+              "topic": "Binomial Distribution",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Normal Distribution",
+              "subtopics": [
+                "Normal Distribution",
+                "Standard Normal Distribution (Z-Transformation)"
+              ]
+            },
+            {
+              "topic": "t-distribution",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Expected Value",
+              "subtopics": [
+                "Expected Value of a Discrete Function",
+                "Expected Value of a Continuous Function"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Regression and Curve Fitting",
+          "topics": [
+            {
+              "topic": "Regression and Curve Fitting",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Correlation Coefficient",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Hypothesis Testing",
+          "topics": [
+            {
+              "topic": "Null Hypothesis",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Confidence Intervals",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Comparison of Samples",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Propagation of Error",
+          "topics": [
+            {
+              "topic": "Linear Combinations",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Measurement of Error",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Ethics and Professional Practice",
+      "chapters": [
+        {
+          "chapter": "Codes of Ethics",
+          "topics": [
+            {
+              "topic": "Ethical and Legal Considerations",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "NCEES Model Law",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Professional and Technical Societies",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Intellectual Property",
+          "topics": [
+            {
+              "topic": "Introduction to Intellectual Property",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Patents and Copyrights",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Trade Secrets",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Trademarks",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Public Health, Safety and Welfare",
+          "topics": [
+            {
+              "topic": "Public Health, Safety and Welfare in Engineering",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Societal Considerations",
+          "topics": [
+            {
+              "topic": "Life Cycle Assessment (LCA)",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Sustainability",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Engineering Economics",
+      "chapters": [
+        {
+          "chapter": "Time Value of Money",
+          "topics": [
+            {
+              "topic": "Discounted Cash Flow Factors",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Non-Annual Compounding",
+          "topics": [
+            {
+              "topic": "Non-Annual Compounding",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Inflation",
+          "topics": [
+            {
+              "topic": "Inflation",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Capitalized Costs",
+          "topics": [
+            {
+              "topic": "Capitalized Costs",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Break-even Analysis",
+          "topics": [
+            {
+              "topic": "Break-even Analysis",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Cost Types and Breakdowns",
+          "topics": [
+            {
+              "topic": "Cost Types",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Economic Analyses",
+          "topics": [
+            {
+              "topic": "Cost-Benefit Analysis",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Overhead Analysis",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Payback Period Analyses",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Electricity and Magnetism",
+      "chapters": [
+        {
+          "chapter": "Electrical Fundamentals",
+          "topics": [
+            {
+              "topic": "Coulomb's Law",
+              "subtopics": [
+                "Coulomb's Law"
+              ]
+            },
+            {
+              "topic": "Electrostatic Field",
+              "subtopics": [
+                "Electrostatic Field"
+              ]
+            },
+            {
+              "topic": "Voltage",
+              "subtopics": [
+                "Electric Potential"
+              ]
+            },
+            {
+              "topic": "Electric Current",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Magnetic Field",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Resistance",
+              "subtopics": [
+                "Overview",
+                "Equivalent Resistance in Series and Parallel"
+              ]
+            },
+            {
+              "topic": "Power absorbed",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Kirchhoff's Laws",
+              "subtopics": [
+                "Kirchhoff's Current Law",
+                "Kirchhoff's Voltage Law"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Capacitors and Inductors",
+          "topics": [
+            {
+              "topic": "Energy Stored in a Capacitor or Inductor",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Capacitors and Inductors in Parallel and Series",
+              "subtopics": [
+                "Capacitors in Series and Parallel",
+                "Inductors in Series and Parallel",
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "AC Circuits",
+          "topics": [
+            {
+              "topic": "Frequency and Period of AC Waveform",
+              "subtopics": [
+                "DC vs AC"
+              ]
+            },
+            {
+              "topic": "Average Value",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Effective or RMS value",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "AC Impedance",
+              "subtopics": [
+                "Calculation of Impedance",
+                "Power Factor and Power Angle"
+              ]
+            },
+            {
+              "topic": "Phasors of Purely Resistive, Inductive and Capacitive Circuits",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Admittance, Conductance and Susceptance",
+              "subtopics": [
+                "Overview",
+                "Parallel RLC Circuits"
+              ]
+            },
+            {
+              "topic": "AC Power",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Transformers",
+          "topics": [
+            {
+              "topic": "Transformers",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Motors and Generators",
+          "topics": [
+            {
+              "topic": "Efficiency, Losses and Power in Rotating Machines",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "AC Electric Motor",
+              "subtopics": [
+                "Synchronous Speed of an AC Motor",
+                "Slip of an Induction Machine"
+              ]
+            },
+            {
+              "topic": "DC Electric Motors",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Servomotors and Generators",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Statics",
+      "chapters": [
+        {
+          "chapter": "Resultants of Force Systems",
+          "topics": [
+            {
+              "topic": "Resultant of Forces",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Resolution of Forces",
+          "topics": [
+            {
+              "topic": "Resolution of Forces",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Moments and Couple",
+          "topics": [
+            {
+              "topic": "Couple",
+              "subtopics": [
+                "Couple",
+                "Moment"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Systems of Forces",
+          "topics": [
+            {
+              "topic": "Equilibrium of Rigid Bodies",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Centroids",
+          "topics": [
+            {
+              "topic": "Centroids of Masses, Areas, Lengths, and Volumes",
+              "subtopics": [
+                "Centroid of Basic Shapes",
+                "Centroid of Composite Area",
+                "Moment of Area"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Moment of Inertia",
+          "topics": [
+            {
+              "topic": "Area Moments of Inertia",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Parallel Axis Theorem (Statics)",
+              "subtopics": [
+                "Parallel Axis Theorem (Statics)"
+              ]
+            },
+            {
+              "topic": "Perpendicular Axis Theorem",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Polar Moment of Inertia",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Product of Inertia",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Radius of Gyration",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Static Friction",
+          "topics": [
+            {
+              "topic": "Friction",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Screw Thread",
+          "topics": [
+            {
+              "topic": "Screw Thread",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Belt Friction",
+          "topics": [
+            {
+              "topic": "Belt Friction",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Statically Determinate Truss",
+          "topics": [
+            {
+              "topic": "Method of Joints",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Method of Section",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Zero Force Members",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Concurrent Forces",
+          "topics": [
+            {
+              "topic": "Concurrent Forces",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Concurrent Force Systems",
+          "topics": [
+            {
+              "topic": "Free Body Diagrams",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Types of Loads",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Equilibrium of Rigid Bodies",
+          "topics": [
+            {
+              "topic": "Loads",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Principle of Virtual Work",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Types of Supports",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Dynamics, Kinematics and Vibrations",
+      "chapters": [
+        {
+          "chapter": "Kinematics of Particles",
+          "topics": [
+            {
+              "topic": "Constant Acceleration Motion",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Instantaneous Velocity and Acceleration",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Projectile Motion",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Relative Motion",
+              "subtopics": [
+                "Relative Motion"
+              ]
+            },
+            {
+              "topic": "Tangential and Normal Component of Acceleration",
+              "subtopics": [
+                "Tangential and Normal Component of Acceleration"
+              ]
+            },
+            {
+              "topic": "Uniform Circular Motion",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Variable Acceleration Motion",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Kinetic Friction",
+          "topics": [
+            {
+              "topic": "Kinetic Friction",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Newton's Second Law- Particles",
+          "topics": [
+            {
+              "topic": "One-Dimensional Motion of a Particle",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Work-Energy of Particles",
+          "topics": [
+            {
+              "topic": "Kinetic Energy",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Law of Conservation of Energy",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Potential Energy",
+              "subtopics": [
+                "Potential Energy"
+              ]
+            },
+            {
+              "topic": "Power and Efficiency",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Work",
+              "subtopics": [
+                "Work"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Impulse-Momentum of Particles",
+          "topics": [
+            {
+              "topic": "Impact",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Impulse-Momentum Equation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Linear and Angular Momentum",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Kinematics of Rigid Bodies",
+          "topics": [
+            {
+              "topic": "Instantaneous Center of Rotation",
+              "subtopics": [
+                "Overview",
+                "I.C. for Various Types of Links"
+              ]
+            },
+            {
+              "topic": "Kennedy's Rule",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Rotation of a Rigid Body under Constant Acceleration",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Rotation of a Rigid Body under Variable Acceleration",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Kinematics of Mechanisms",
+          "topics": [
+            {
+              "topic": "Kinematics of Mechanisms",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Newton's Second Law- Rigid Bodies",
+          "topics": [
+            {
+              "topic": "Mass Moment of Inertia of a Rigid Body",
+              "subtopics": [
+                "Mass Moment of Inertia of a Rigid Body"
+              ]
+            },
+            {
+              "topic": "Mass Radius of Gyration",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Moment of Inertia of a Point Mass",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "One-Dimensional Motion of a Rigid Body",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Parallel Axis Theorem- Dynamics",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Work-Energy of Rigid Bodies",
+          "topics": [
+            {
+              "topic": "Kinetic Energy of a Rigid Body",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Impulse-Momentum of Rigid Bodies",
+          "topics": [
+            {
+              "topic": "Impulse-Momentum of Rigid Bodies",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Vibrations",
+          "topics": [
+            {
+              "topic": "Forced Vibrations",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Free Vibrations",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Torsional Vibrations",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Mechanics of Materials",
+      "chapters": [
+        {
+          "chapter": "Uniaxial Stress- Strain",
+          "topics": [
+            {
+              "topic": "Percentage Changes",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Stress and Strain",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Thermal Deformations",
+          "topics": [
+            {
+              "topic": "Thermal Expansion of Metals",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Pressure Vessels",
+          "topics": [
+            {
+              "topic": "Pressure Vessels",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Thin Cylinders",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Two-Dimensional Stress/Strain",
+          "topics": [
+            {
+              "topic": "Principal Stresses",
+              "subtopics": [
+                "Principal Planes",
+                "Principal Stresses"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Hooke's Law",
+          "topics": [
+            {
+              "topic": "Hooke's Law",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Torsion",
+          "topics": [
+            {
+              "topic": "Hollow, Thin Walled Shafts",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Solid or Thick Walled Shafts",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Beams",
+          "topics": [
+            {
+              "topic": "Composite Sections",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Deflection of Beams",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Shear Stresses in Beams",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Columns",
+          "topics": [
+            {
+              "topic": "Column Buckling",
+              "subtopics": [
+                "Overview",
+                "Concentrically loaded long Columns",
+                "Equivalent Length"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Elastic Strain Energy",
+          "topics": [
+            {
+              "topic": "Elastic Strain Energy",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Static Indeterminacy",
+          "topics": [
+            {
+              "topic": "Concepts of Determinate and Indeterminate Structures",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Combined Loading",
+          "topics": [
+            {
+              "topic": "Combined Loading",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Deformations",
+          "topics": [
+            {
+              "topic": "Elastic and Plastic Deformation",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Mohr's Circle",
+          "topics": [
+            {
+              "topic": "Mohr's Circle",
+              "subtopics": [
+                "Mohr's Circle"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Shear and Moment Diagrams",
+          "topics": [
+            {
+              "topic": "Procedure to Draw Shear and Moment Diagrams",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "SFD and BMD for Simply Supported Beam",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Stress and Strain Caused by Axial Loads",
+          "topics": [
+            {
+              "topic": "Elastic Constants",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Factor of Safety",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Poisson's Ratio",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Stress and Strain Caused by Bending Loads",
+          "topics": [
+            {
+              "topic": "Bending Loads",
+              "subtopics": [
+                "Bending Equation",
+                "Neutral Axis",
+                "Modulus of Section"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Stress and Strain Caused by Torsional Loads",
+          "topics": [
+            {
+              "topic": "Torsional Shear Stress",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Material Properties and Processing",
+      "chapters": [
+        {
+          "chapter": "Properties",
+          "topics": [
+            {
+              "topic": "Electrical Properties of Material",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Mechanical Properties of Material",
+              "subtopics": [
+                "Overview",
+                "Hardness",
+                "Malleability & Ductility"
+              ]
+            },
+            {
+              "topic": "Thermal Properties of Material",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Stress-Strain Diagrams",
+          "topics": [
+            {
+              "topic": "Stress-Strain Diagram Terms",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "True Vs. Engineering Stress-Strain Curve",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Ferrous Metals",
+          "topics": [
+            {
+              "topic": "Ferrous Metals",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Nonferrous Metals",
+          "topics": [
+            {
+              "topic": "Nonferrous Metals",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Engineered Materials",
+          "topics": [
+            {
+              "topic": "Engineered Materials",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Manufacturing Processes",
+          "topics": [
+            {
+              "topic": "Classification of Manufacturing Processes",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "CNC",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Cold Processes",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Hot Processes",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Non-Traditional Machining Processes",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Powder Metallurgy",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Phase Diagrams/Heat Treating",
+          "topics": [
+            {
+              "topic": "Allotropes of iron",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Critical point",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Heat Treatment",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Important Points in Iron-Iron Carbide Phase Diagram",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Iron-Iron Carbide Diagram",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Lever Rule",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Phase Diagrams",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Triple Point",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Corrosion",
+          "topics": [
+            {
+              "topic": "Corrosion Control",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Corrosion Mechanism",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Corrosion Terminology",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "EMF and Galvanic Series",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Failure Mechanisms",
+          "topics": [
+            {
+              "topic": "Crack Propagation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Creep",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Fatigue",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Materials Selection",
+          "topics": [
+            {
+              "topic": "Material Selection Factors",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Fluid Mechanics",
+      "chapters": [
+        {
+          "chapter": "Fluid Properties",
+          "topics": [
+            {
+              "topic": "Common Fluid Properties",
+              "subtopics": [
+                "Density, Specific Volume, Specific Weight, and Specific Gravity",
+                "Vapor Pressure"
+              ]
+            },
+            {
+              "topic": "Stress, Pressure and Viscosity",
+              "subtopics": [
+                "Newton's Law of Viscosity",
+                "Viscosity",
+                "Newtonian vs Non-Newtonian Fluids"
+              ]
+            },
+            {
+              "topic": "Surface Tension and Capillarity",
+              "subtopics": [
+                "Capillarity",
+                "Surface Tension"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Fluid Statics",
+          "topics": [
+            {
+              "topic": "Archimedes Principle and Buoyancy",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Hydrostatic Forces on Submerged Surfaces",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Manometers",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Pascal's Law",
+              "subtopics": [
+                "Pascal's Law"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "One-Dimensional Fluid Flow",
+          "topics": [
+            {
+              "topic": "Bernoulli and Energy Equation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Continuity Equation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Euler's Equation",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Internal Flow",
+          "topics": [
+            {
+              "topic": "Head Loss due to Flow",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Minor Losses",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Multipath Pipeline",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Noncircular Ducts",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Pressure Drop for Laminar Flow",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Reynold's Number",
+              "subtopics": [
+                "Reynold's Number"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "External Flow",
+          "topics": [
+            {
+              "topic": "Drag Force",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Impulse-Momentum Principle",
+          "topics": [
+            {
+              "topic": "Deflectors and Blades",
+              "subtopics": [
+                "Fixed Blade",
+                "Impulse Turbine",
+                "Moving Blade"
+              ]
+            },
+            {
+              "topic": "Jet Propulsions",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Momentum Equation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Pipes, Bends and Contractions",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Compressible Flow",
+          "topics": [
+            {
+              "topic": "Isentropic Flow Relationships",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Mach Number",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Normal Shock Relationships",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Fluid Machinery",
+          "topics": [
+            {
+              "topic": "Blowers",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Compressors",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Fan Characteristics",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Turbines",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Flow Measurement",
+          "topics": [
+            {
+              "topic": "Orifice",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Pitot Tube",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Venturi Meter",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Weir",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Dimensional Homogeneity",
+          "topics": [
+            {
+              "topic": "Dimensional Analysis",
+              "subtopics": [
+                "Buckingham's Pi Theorem"
+              ]
+            },
+            {
+              "topic": "Similitude",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Airfoil Theory",
+          "topics": [
+            {
+              "topic": "Airfoil Theory",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Performance curves",
+          "topics": [
+            {
+              "topic": "Pump Performance Curves",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Power and Efficiency-Fluid",
+          "topics": [
+            {
+              "topic": "Power and Efficiency Definitions",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Scaling Laws for Fans, Pumps and Compressors",
+          "topics": [
+            {
+              "topic": "Efficiency of a Centrifugal Pump",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "NPSH and Cavitation",
+              "subtopics": [
+                "Overview",
+                "Scaling Laws"
+              ]
+            },
+            {
+              "topic": "Pumps",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Thermodynamics",
+      "chapters": [
+        {
+          "chapter": "Single Component Systems",
+          "topics": [
+            {
+              "topic": "Thermodynamic Properties",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "PVT Behavior",
+          "topics": [
+            {
+              "topic": "Ideal Gas Laws",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "First Law of Thermodynamics",
+          "topics": [
+            {
+              "topic": "Adiabatic Process",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Closed Thermodynamic System",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Cyclic Process",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Open Thermodynamic System",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Polytropic Process",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Steady Flow Energy Equation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Thermodynamic Processes",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Thermodynamic Processes",
+          "topics": [
+            {
+              "topic": "Isobaric Process- Constant Pressure",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Isochoric Process- Constant Volume",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Isothermal Process- Constant Temperature",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Basic Cycles",
+          "topics": [
+            {
+              "topic": "Carnot Cycle",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Coefficient of Performance",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Diesel Cycle",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Otto Cycle",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Rankine Cycle",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Psychrometrics",
+          "topics": [
+            {
+              "topic": "HVAC Processes",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Psychrometric Chart",
+              "subtopics": [
+                "Reading Psychrometric Chart",
+                "Relative and Absolute Humidity",
+                "Dry Bulb, Wet Bulb and Dew Point Temperature"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Second Law of Thermodynamics",
+          "topics": [
+            {
+              "topic": "Entropy",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Exergy (Availability)",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Gibbs and Helmholtz Free Energy",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Combustion & Products",
+          "topics": [
+            {
+              "topic": "Combustion in Air",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Combustion of Hydrocarbon in Pure Oxygen",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Enthalpy of Formation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Heats of Reaction",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Incomplete Combustion",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Refrigeration and HVAC",
+          "topics": [
+            {
+              "topic": "Air Refrigeration Cycle",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Stages of Refrigeration Cycle",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Energy Transfer",
+          "topics": [
+            {
+              "topic": "Open and Closed Systems",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Energy Transfers",
+          "topics": [
+            {
+              "topic": "Introduction to Energy Transfer",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Laws of Thermodynamics",
+          "topics": [
+            {
+              "topic": "Introduction to Thermodynamic Laws",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Second Law of Thermodynamics",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Third Law of Thermodynamics",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Zeroth Law of Thermodynamics",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Nonreacting Mixtures of Gases",
+          "topics": [
+            {
+              "topic": "Nonreacting Mixtures of Gases",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Power Cycles",
+          "topics": [
+            {
+              "topic": "Introduction to Power Cycles",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Properties of Ideal Gases and Pure Substances",
+          "topics": [
+            {
+              "topic": "Properties of Pure Substances",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Properties of Steam",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Heat Transfer",
+      "chapters": [
+        {
+          "chapter": "Conduction",
+          "topics": [
+            {
+              "topic": "Approximate Solution for Solid with Sudden Convection",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Composite Plane Wall",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Conduction through a Cylindrical Wall",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Conduction through a Plane Wall",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Fins",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Fourier's Law of Heat Conduction",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Lumped System Analysis",
+              "subtopics": [
+                "Approximate Solution for Solid with Sudden Convection",
+                "Biot Number",
+                "Lumped System Calculations"
+              ]
+            },
+            {
+              "topic": "Thermal Resistance of Various Objects",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Convection",
+          "topics": [
+            {
+              "topic": "Critical Radius of Insulation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Dimensionless Numbers",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "External Flow",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Heat Generation in Solids",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Internal Flow",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Newton's Law of Cooling",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Types of Convection",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Heat Exchangers",
+          "topics": [
+            {
+              "topic": "Effectiveness-NTU Relation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Heat Exchanger Effectiveness",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "LMTD",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "NTU",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Radiation",
+          "topics": [
+            {
+              "topic": "Kirchhoff's Law of Radiation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Net Energy Exchange by Radiation between Two Bodies",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Perfectly Black Body",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Shape Factors",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Stefan-Boltzmann Law",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Measurements, Instrumentation and Controls",
+      "chapters": [
+        {
+          "chapter": "Sensors and Transducers",
+          "topics": [
+            {
+              "topic": "LVDT",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "pH Sensor",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Piezoelectric Transducers",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Pressure Sensors",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "RTD",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Strain Gage",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Thermistors",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Thermocouple",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Wheatstone Bridge",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Control Systems",
+          "topics": [
+            {
+              "topic": "Control Systems",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Dynamic System Response",
+          "topics": [
+            {
+              "topic": "Dynamic System Response Terminology",
+              "subtopics": [
+                "Dynamic System Response Terminology"
+              ]
+            },
+            {
+              "topic": "Steady State Error",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Time Response of a First Order System",
+              "subtopics": [
+                "Unit-ramp Response of First-Order System",
+                "Unit-step Response of a first-order System"
+              ]
+            },
+            {
+              "topic": "Time Response of a Second Order Underdamped System",
+              "subtopics": [
+                "Time Response of a Second Order Underdamped System"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Measurement Uncertainty",
+          "topics": [
+            {
+              "topic": "Kline-McClintock Equation",
+              "subtopics": [
+                "Kline-McClintock Equation"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject": "Mechanical Design and Analysis",
+      "chapters": [
+        {
+          "chapter": "Springs",
+          "topics": [
+            {
+              "topic": "End Conditions of Compression Springs",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Equivalent Spring Constant",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Helical Linear Springs",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Helical Torsion Springs",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Spring Material",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Types of Springs",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Bearings",
+          "topics": [
+            {
+              "topic": "Basic Load Rating",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Equivalent radial Load",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Power Screws",
+          "topics": [
+            {
+              "topic": "Power Screw Calculations",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Power Transmission",
+          "topics": [
+            {
+              "topic": "Gear Trains",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Gearing",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Lewis Equation",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Loading on Gears",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Shaft and Axles",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Joining Methods",
+          "topics": [
+            {
+              "topic": "Cotter Joint for Circular rods",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Fastener Groups in Shear",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Flanged Joints",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Riveted Joints",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Threaded Joints",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Types of Joining Methods",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Press/Shrink Fits",
+          "topics": [
+            {
+              "topic": "Press or Shrink Fits",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Manufacturability",
+          "topics": [
+            {
+              "topic": "Basis of Fits",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Feature Control Frame",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Limit Gauges",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Terminology of Limit Systems",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Types of Fits",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "GD and T",
+          "topics": [
+            {
+              "topic": "GD and T",
+              "subtopics": [
+                "GD and T"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Static Loading Failure Theories",
+          "topics": [
+            {
+              "topic": "Endurance Limit for Steels",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Failure Theories for Brittle Materials",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Failure Theories for Ductile Materials",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Variable Loading Failure Theories",
+          "topics": [
+            {
+              "topic": "Variable Loading Failure Theories",
+              "subtopics": [
+                "Overview",
+                "Endurance Strength",
+                "Soderberg’s Theory",
+                "Goodman’s Line & Modified Goodman"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Quality and Reliability",
+          "topics": [
+            {
+              "topic": "Reliability of an Assembly",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Components",
+          "topics": [
+            {
+              "topic": "Components of a Hydraulic System",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Components of a Pneumatic System",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Electromechanical Components",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Valves",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Engg Drawing",
+          "topics": [
+            {
+              "topic": "Engineering Drawing",
+              "subtopics": [
+                "Elements of Engineering Drawing"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Cycles and Processes",
+          "topics": [
+            {
+              "topic": "Gas Turbines",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Internal Combustion Engines",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Steam Power Plants",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Deformation and Stiffness",
+          "topics": [
+            {
+              "topic": "Elastic and Plastic Deformation- Design",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Elastic Moduli",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Stiffness",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Pressure Vessels and Piping",
+          "topics": [
+            {
+              "topic": "Thick Cylinders",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        },
+        {
+          "chapter": "Stress Analysis of Machine Elements",
+          "topics": [
+            {
+              "topic": "Basic Stress Concepts and Types",
+              "subtopics": [
+                "Overview"
+              ]
+            },
+            {
+              "topic": "Strain-Design",
+              "subtopics": [
+                "Overview"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
