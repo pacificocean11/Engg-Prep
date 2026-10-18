@@ -59,7 +59,7 @@
         // 13. Measurements, Instrumentation, and Controls
         if (/strain gauge gauge factor|temperature sensors: thermocouple|first-order sensor dynamic step|second-order sensor natural frequency|open-loop step response method|laplace transform final value|closed-loop feedback control|steady-state error constants|bode plot gain margin|ce, cb and cc transistor|ce cb and cc transistor|routh-hurwitz stability|root locus construction|pid controller time-domain|process control: first-order|process control: ziegler-nichols|ratio control strategy|cascade control architecture|uncertainty|piezoelectric effect|piezoelectric/i.test(lower)) return 13;
         // 14. Mechanical Design and Analysis
-        if (/modified goodman fatigue criterion|modified goodman fatigue failure|soderberg theory|s-n fatigue curve|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|marin factors for fatigue|helical compression spring|equivalent spring stiffness for springs in parallel and series|rolling element bearing rated|equivalent dynamic radial load|power screws lifting torque|flat belt friction|agma lewis bending|asme transmission shaft|spur gear geometry|bolted joint preload|pressure relief valve sizing|types of fits|three types of fits in manufacturing|moving average forecasting|three types of fits in manufacturing|involute gear tooth nomenclature|ansi symbols for hydraulic power|first angle vs\. third|geometric dimensioning and tolerancing|failure by fatigue/i.test(lower)) return 14;
+        if (/types of screw threads|types of threads|screw threads|power screws|modified goodman fatigue criterion|modified goodman fatigue failure|soderberg theory|s-n fatigue curve|maximum shear stress theory|distortion energy theory|maximum normal stress theory|coulomb-mohr and modified mohr|marin factors for fatigue|helical compression spring|equivalent spring stiffness for springs in parallel and series|rolling element bearing rated|equivalent dynamic radial load|power screws lifting torque|flat belt friction|agma lewis bending|asme transmission shaft|spur gear geometry|bolted joint preload|pressure relief valve sizing|types of fits|three types of fits in manufacturing|moving average forecasting|three types of fits in manufacturing|involute gear tooth nomenclature|ansi symbols for hydraulic power|first angle vs\. third|geometric dimensioning and tolerancing|failure by fatigue/i.test(lower)) return 14;
 
         return 1;
     }
@@ -86,6 +86,7 @@
         const tip = (examTip || '').toLowerCase();
 
         // Priority overrides
+        if (/fourier/i.test(lower)) return 1;
         if (/plastic section modulus and shape factor/i.test(lower)) return 11;
         if (/total float and free float in activity networks|bill of materials explosion tree/i.test(lower)) return 14;
         if (/mass haul diagram|first angle vs\. third angle/i.test(lower)) return 14;
