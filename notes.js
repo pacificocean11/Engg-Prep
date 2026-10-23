@@ -843,7 +843,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Ceramics.mp4",
+    "videoTitle": "Ceramics (Structure, Properties, and Processing)"
   },
   {
     "discipline": "Chemical",
@@ -1009,7 +1011,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Control_Systems.mp4",
+    "videoTitle": "Control Systems"
   },
   {
     "discipline": "Chemical",
@@ -1045,7 +1049,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Control_Systems.mp4",
+    "videoTitle": "Control Systems"
   },
   {
     "discipline": "Chemical",
@@ -1057,7 +1063,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Control_Systems.mp4",
+    "videoTitle": "Control Systems"
   },
   {
     "discipline": "Chemical",
@@ -1189,7 +1197,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Control_Systems.mp4",
+    "videoTitle": "Control Systems"
   },
   {
     "discipline": "Chemical",
@@ -2019,13 +2029,31 @@ const notesData = [
     "chapter": "Interpretation of engineering drawings",
     "topic": "Engineering Drawing",
     "subtopic": "Elements of Engineering Drawing",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png\" alt=\"Engineering Drawing\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckenwelle.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/20/Department_of_Railways_NSW_draing_title_block.jpg\" alt=\"Title Block\" width=\"340\"><br/>\r\n\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Department_of_Railways_NSW_draing_title_block.jpg\">Department of Railways New South Wales</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/89/Schneckengetriebe.png\" alt=\"Drawing with Bill of Materials\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckengetriebe.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/55/Isometric_cube.png\" alt=\"Isometric cube\" width=\"200\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Isometric_cube.png\">MrNoble.xyz</a>, CC0, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/7/7f/%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\" alt=\"Oblique Projection\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\">すじにくシチュー</a>, CC0, via Wikimedia Commons</small></small></center><br/></div><h5 id=\"first-angle-and-third-angle-orthographic-projection\"><b>First Angle and Third Angle Orthographic Projection:</b></h5>\r\n\r\n<p>In the first angle projection, Front view is at the top and top is below from view aligned with it. Left hand view is placed on the right side of front view and vice versa.<br />\r\nIn the third angle projection, Front view is at the bottom and top is above from view aligned with it. Left hand view is placed on the left side and right side view is placed on the right side of front view.</p>\r\n\r\n<h5 id=\"isometric-views-and-isometric-projections\"><b>Isometric Views and Isometric Projections:</b></h5>\r\n\r\n<p>Isometric views are 3-D pictorial views. The isometric x and y axes are 30<span class=\"math inline\">\\(^\\circ\\)</span> to the horizontal line. z axis is still vertical. In isometric projection, an isometric scale is constructed to account of reduction in apparent length of objects. Circles in represented by isocircles which are ellipses with an angle of 35<span class=\"math inline\">\\(^\\circ\\)</span>16’.</p>\r\n\r\n<h5 id=\"oblique-views\"><b>Oblique Views:</b></h5>\r\n\r\n<p>To avoid isocircles in isometric view, sometimes simplified version of pictorial representation is made where front surface is still perpendicular to the observer. So now, circles are represented as they are instead of isocircles, which increase the speed of drawing. General, Cabinet and Cavalier Oblique view share same concepts, however variations in z axis angle and length are there.</p>\r\n\r\n<h5 id=\"perspective-views\"><b>Perspective Views:</b></h5>\r\n\r\n<p>Perspective views have vanishing points to give illusion of depth. They are useful in architectural drawings or drawings where distortion due to large depth is significant. One point, two point and three point perspective views can be drawn based on how much realistic drawing is required.</p>\r\n\r\n\r\n<h5 id=\"title-block\"><b>Title Block:</b></h5>\r\n\r\n<p>Title block is the information box generally located at the bottom right corner of a drawing. It contains information regarding company name, Title, date, scale, part number and drawing number. It may contain additional information such as company logo, copyright information, first/third angle symbol etc.</p>\r\n\r\n<h5 id=\"working-drawings\"><b>Working Drawings:</b></h5>\r\n\r\n<p>Working drawings are comprehensive drawings ready to be released for manufacturing personnel. They generally contain required orthographic views (Front, top and side) and may have pictorial representation in terms of isometric view. Depending upon the complexity of manufactured part, section view or detailed views may be added. It can also have special instructions regarding tolerances and manufacturing processes.</p>\r\n\r\n<h5 id=\"bill-of-materials-bom\"><b>Bill of Materials: (BOM)</b></h5>\r\n\r\n<p>it is the parts list which lists how many parts are there in an assembly. Generally the tabular information contains part name, quantity and material. The parts in the drawing views are referred then with balloons having same serial numbers as in part list.</p>\r\n\r\n<h5 id=\"revision-table\"><b>Revision Table: </b></h5>\r\n\r\n<p>A table which shows information regarding chronological revisions made in the parts. Typically includes revision number, what revision was made, who authorized it and the date on which it was revised.</p>\r\n\r\n<h5 id=\"hole-table\"><b>Hole Table: </b></h5>\r\n\r\n<p>If a part has multiple holes, then instead of cluttering the drawing with hole related dimensions, it is preferred to have a separate table showing size and location of holes in the part.</p>\r\n\r\n<h5 id=\"development-of-surfaces-and-flat-patterns\"><b>Development of Surfaces and Flat patterns:</b></h5>\r\n\r\n<p>In air conditioning, where ducts meet at an oblique angle, development of surfaces is required. Special parts such as boxes need to be created out of a cut-out sheet metal surface which is shown in flat pattern.</p>",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png\" alt=\"Engineering Drawing\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckenwelle.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/20/Department_of_Railways_NSW_draing_title_block.jpg\" alt=\"Title Block\" width=\"340\"><br/>\r\n\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Department_of_Railways_NSW_draing_title_block.jpg\">Department of Railways New South Wales</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/89/Schneckengetriebe.png\" alt=\"Drawing with Bill of Materials\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckengetriebe.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/55/Isometric_cube.png\" alt=\"Isometric cube\" width=\"200\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Isometric_cube.png\">MrNoble.xyz</a>, CC0, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/7/7f/%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\" alt=\"Oblique Projection\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\">すじにくシチュー</a>, CC0, via Wikimedia Commons</small></small></center><br/></div><h5 id=\"isometric-views-and-isometric-projections\"><b>Isometric Views and Isometric Projections:</b></h5>\r\n\r\n<p>Isometric views are 3-D pictorial views. The isometric x and y axes are 30<span class=\"math inline\">\\(^\\circ\\)</span> to the horizontal line. z axis is still vertical. In isometric projection, an isometric scale is constructed to account of reduction in apparent length of objects. Circles in represented by isocircles which are ellipses with an angle of 35<span class=\"math inline\">\\(^\\circ\\)</span>16’.</p>\r\n\r\n<h5 id=\"oblique-views\"><b>Oblique Views:</b></h5>\r\n\r\n<p>To avoid isocircles in isometric view, sometimes simplified version of pictorial representation is made where front surface is still perpendicular to the observer. So now, circles are represented as they are instead of isocircles, which increase the speed of drawing. General, Cabinet and Cavalier Oblique view share same concepts, however variations in z axis angle and length are there.</p>\r\n\r\n<h5 id=\"perspective-views\"><b>Perspective Views:</b></h5>\r\n\r\n<p>Perspective views have vanishing points to give illusion of depth. They are useful in architectural drawings or drawings where distortion due to large depth is significant. One point, two point and three point perspective views can be drawn based on how much realistic drawing is required.</p>\r\n\r\n\r\n<h5 id=\"title-block\"><b>Title Block:</b></h5>\r\n\r\n<p>Title block is the information box generally located at the bottom right corner of a drawing. It contains information regarding company name, Title, date, scale, part number and drawing number. It may contain additional information such as company logo, copyright information, first/third angle symbol etc.</p>\r\n\r\n<h5 id=\"working-drawings\"><b>Working Drawings:</b></h5>\r\n\r\n<p>Working drawings are comprehensive drawings ready to be released for manufacturing personnel. They generally contain required orthographic views (Front, top and side) and may have pictorial representation in terms of isometric view. Depending upon the complexity of manufactured part, section view or detailed views may be added. It can also have special instructions regarding tolerances and manufacturing processes.</p>\r\n\r\n<h5 id=\"bill-of-materials-bom\"><b>Bill of Materials: (BOM)</b></h5>\r\n\r\n<p>it is the parts list which lists how many parts are there in an assembly. Generally the tabular information contains part name, quantity and material. The parts in the drawing views are referred then with balloons having same serial numbers as in part list.</p>\r\n\r\n<h5 id=\"revision-table\"><b>Revision Table: </b></h5>\r\n\r\n<p>A table which shows information regarding chronological revisions made in the parts. Typically includes revision number, what revision was made, who authorized it and the date on which it was revised.</p>\r\n\r\n<h5 id=\"hole-table\"><b>Hole Table: </b></h5>\r\n\r\n<p>If a part has multiple holes, then instead of cluttering the drawing with hole related dimensions, it is preferred to have a separate table showing size and location of holes in the part.</p>\r\n\r\n<h5 id=\"development-of-surfaces-and-flat-patterns\"><b>Development of Surfaces and Flat patterns:</b></h5>\r\n\r\n<p>In air conditioning, where ducts meet at an oblique angle, development of surfaces is required. Special parts such as boxes need to be created out of a cut-out sheet metal surface which is shown in flat pattern.</p>",
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1FM4S-H9_HzZ-zehjJjrS9eNMjtZrzo09/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": null,
+    "videoTitle": null
+  },
+  {
+    "discipline": "Civil",
+    "subject": "Construction Engineering",
+    "chapter": "Interpretation of engineering drawings",
+    "topic": "Engineering Drawing",
+    "subtopic": "First Angle and Third Angle Orthographic Projection",
+    "content_html": "<h5 id=\"first-angle-and-third-angle-orthographic-projection\"><b>First Angle and Third Angle Orthographic Projection:</b></h5>\n\n<div class=\"container-fluid\">\n  <div class=\"row align-items-start\">\n    <div class=\"col-lg-8\">\n      <p>Orthographic projection maps 3D objects onto 2D perpendicular viewing planes. The spatial orientation of views depends on which quadrant (first or third) the object is placed in:</p>\n      <ul>\n        <li><strong>First Angle Projection (ISO / European Standard):</strong>\n          <ul>\n            <li>The object lies in the <em>first quadrant</em> (between observer and projection plane).</li>\n            <li><strong>Top View (Plan):</strong> Placed <em>below</em> the Front View.</li>\n            <li><strong>Left-Hand View:</strong> Projected and drawn on the <em>right side</em> of the Front View.</li>\n            <li><strong>Right-Hand View:</strong> Projected and drawn on the <em>left side</em> of the Front View.</li>\n            <li><strong>Symbol:</strong> Truncated cone with the small circular face on the right and cone taper pointing right.</li>\n          </ul>\n        </li>\n        <li><strong>Third Angle Projection (ANSI / ASME / US Standard):</strong>\n          <ul>\n            <li>The object lies in the <em>third quadrant</em> (projection plane lies between observer and object).</li>\n            <li><strong>Top View (Plan):</strong> Placed <em>above</em> the Front View.</li>\n            <li><strong>Left-Hand View:</strong> Projected and drawn on the <em>left side</em> of the Front View.</li>\n            <li><strong>Right-Hand View:</strong> Projected and drawn on the <em>right side</em> of the Front View.</li>\n            <li><strong>Symbol:</strong> Truncated cone with the small circular face on the left and cone taper pointing left.</li>\n          </ul>\n        </li>\n      </ul>\n      <table class=\"table table-bordered table-sm my-2 text-center text-xs\">\n        <thead class=\"table-dark\">\n          <tr><th>Feature</th><th>First Angle Projection</th><th>Third Angle Projection</th></tr>\n        </thead>\n        <tbody>\n          <tr><td>Standard Adoption</td><td>ISO, European, British (BS), Indian (BIS)</td><td>ANSI, ASME Y14.3M, United States, Canada</td></tr>\n          <tr><td>Object Placement</td><td>Object between observer and projection plane</td><td>Projection plane between observer and object</td></tr>\n          <tr><td>Top View Position</td><td>Below Front View</td><td>Above Front View</td></tr>\n          <tr><td>Left Side View</td><td>Placed on the Right of Front View</td><td>Placed on the Left of Front View</td></tr>\n        </tbody>\n      </table>\n    </div>\n    <div class=\"col-lg-4 text-center\">\n      <center>\n        <img src=\"https://upload.wikimedia.org/wikipedia/commons/e/ec/Third_angle_projection_symbol.svg\" alt=\"Third Angle Projection Symbol\" width=\"160\"><br/>\n        <small><small>Third Angle Projection Symbol (ANSI/ASME)</small></small>\n      </center>\n      <br/>\n      <center>\n        <img src=\"https://upload.wikimedia.org/wikipedia/commons/9/90/First_angle_projection_symbol.svg\" alt=\"First Angle Projection Symbol\" width=\"160\"><br/>\n        <small><small>First Angle Projection Symbol (ISO)</small></small>\n      </center>\n    </div>\n  </div>\n</div>",
+    "important": "",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1FM4S-H9_HzZ-zehjJjrS9eNMjtZrzo09/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png"
+    ],
+    "local_images": [],
+    "video": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+    "videoTitle": "First Angle vs. Third Angle Orthographic Projection"
   },
   {
     "discipline": "Civil",
@@ -2111,7 +2139,9 @@ const notesData = [
     "important": "\\[m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'\\]\r\n\r\n\\[e= \\dfrac{(v_2')_n - (v_1')_n}{(v_1)_n - (v_2)_n}\\]\r\n\r\n\\[({v_1'})_n = \\dfrac{m_2 ({v_2})_n (1 + e) + ( m_1 - em_2)({v_1})_n} {m_1 + m_2}\\]\r\n\\[({v_2'})_n = \\dfrac{m_1 ({v_1})_n (1 + e) - ( em_1 - m_2)({v_2})_n} {m_1 + m_2}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Elastic_vs_inelastic_collision.mp4",
+    "videoTitle": "Elastic vs. Inelastic Collisions"
   },
   {
     "discipline": "Civil",
@@ -2142,12 +2172,14 @@ const notesData = [
     "subject": "Dynamics",
     "chapter": "Impulse-Momentum of Rigid Bodies",
     "topic": "Impulse-Momentum of Rigid Bodies",
-    "subtopic": "Overview",
+    "subtopic": "Principle of Angular Impulse and Momentum",
     "content_html": "<h5><span><b>Principle of Angular Impulse and Momentum:</b></span></h5>\r\n\r\n<p>The angular momentum or the moment of momentum about point 0 for a particle is defined as \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$H_0 = r \\times mv$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\nor \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$H_0 = I_0 \\omega$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\n<p>Taking the time derivative of the above, the equation of motion may be written as \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\dot{H_0} = \\dfrac{I_0 \\omega}{dt} = M_0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\nwhere M<span class=\"math inline\">\\(_0\\)</span> is the moment applied to the particle. Now by integrating and summing over a system of any number of particles, this may be expanded to \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\Sigma (H_{0i})_{{t_2}} = \\Sigma (H_{0i})_{{t_1}} + \\Sigma \\displaystyle \\int_{t_1}^{t_2} M_{0i} dt$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\n<p>The term on the left side of the equation is the angular momentum of a system of particles at time t<span class=\"math inline\">\\(_2\\)</span>. The first term on the right side of the equation is the angular momentum of a system of particles at time t<span class=\"math inline\">\\(_1\\)</span>. The second term on the right side of the equation is the angular impulse of the moment M<span class=\"math inline\">\\(_0\\)</span> from time t<span class=\"math inline\">\\(_1\\)</span> to t<span class=\"math inline\">\\(_2\\)</span>.</p>\r\n\r\n<h5><span><b>Conservation of Angular Momentum:</b></span></h5>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\Sigma(\\mathrm{syst.} \\bar{H})_1 = \\Sigma(\\mathrm{syst.} \\bar{H})_2$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 112</span></button>\r\n</div><br/>",
     "important": "\\[\\Sigma(\\mathrm{syst.} \\bar{H})_1 = \\Sigma(\\mathrm{syst.} \\bar{H})_2\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
+    "videoTitle": "Principle of Angular Impulse and Momentum"
   },
   {
     "discipline": "Civil",
@@ -2160,8 +2192,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1flwzOiZ2K89_ulp69Bv7fv_lgLcAL0-Z/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:58.16% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/586138415?h=810fd81b68&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Motion Under Constant Acceleration\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Rectilinear_Kinematics_Constant_Acceleration_Equations.mp4",
-    "videoTitle": "Rectilinear Kinematics Constant Acceleration Equations"
+    "video": "assets/videos/Constant_Acceleration_Motion.mp4",
+    "videoTitle": "Constant Acceleration Motion"
   },
   {
     "discipline": "Civil",
@@ -2219,7 +2251,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/7/76/NOX_2019_PM_JohnTebenham.jpg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
+    "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion"
   },
   {
     "discipline": "Civil",
@@ -2301,7 +2335,9 @@ const notesData = [
     "important": "\\[\\begin{align*} \r\n\\omega &amp;= \\omega_0 + \\alpha t \\\\\r\n \\theta &amp;= \\theta_0 +\\omega_0 t + \\dfrac{1}{2} \\alpha_0 t^2 \\\\\r\n\\omega^2 &amp;= \\omega_0^2 + 2\\alpha_0 (\\theta - \\theta_0) \r\n\\end{align*}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o7g1VXgNN6lGqFEANTiPOZVBrHkVwbAX/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Constant_Acceleration_Rotational_Motion_Equations.mp4",
+    "videoTitle": "Constant Acceleration Rotational Motion Equations"
   },
   {
     "discipline": "Civil",
@@ -2325,7 +2361,9 @@ const notesData = [
     "important": "\\[F_k = \\mu_k F_N\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Static_vs_kinetic_friction.mp4",
+    "videoTitle": "Static vs. Kinetic Friction (Coulomb Friction Laws)"
   },
   {
     "discipline": "Civil",
@@ -2481,7 +2519,9 @@ const notesData = [
     "important": "\\[\\mathrm{Total\\ KE} = \\dfrac{1}{2}mv^2 + \\dfrac{1}{2}I\\omega^2\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
+    "videoTitle": "Work-Energy Principle (Rigid Body Dynamics)"
   },
   {
     "discipline": "Civil",
@@ -2507,19 +2547,23 @@ const notesData = [
     "important": "\\[P = \\dfrac{A}{i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1havLCPfQl5t3b131JVdJFztjgaLZexTp/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1o4113njSMO4VwuUfyaQXwugJV3ChZ6h1/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "videoTitle": "Capitalized Cost for Infinite Project Life"
   },
   {
     "discipline": "Civil",
     "subject": "Engineering Economics",
     "chapter": "Cost Types and Breakdowns",
     "topic": "Cost Types",
-    "subtopic": "Overview",
+    "subtopic": "Sunk Costs",
     "content_html": "<h4><span class=\"badge bg-warning\">Fixed Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Fixed costs are costs that must be paid whether or not any units are produced. These costs are \"fixed\" over a specified period of time or range of production. e.g. cost of land, building, machinery and permits.</p>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <p><img src=\"https://drive.google.com/uc?id=16HNzuXgmQVU70tLtZOludgaqqCS4XOby\" style=\"width:340px;\"></p>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Variable Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Variable costs are costs that vary directly with the number of products produced. For instance, the cost of the materials needed and the labour used is directly proportional to the quantity manufactured.</p>\r\n\r\n<ul>\r\n\t<li>In the next diagram, the fixed costs will always be represented by horizontal straight line (parallel to quantity axis) as it is independent of quantity.</li>\r\n\t<li>The variable cost will always pass through the origin as no manufactured units means no variable cost.</li>\r\n</ul>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n  <p><img src=\"https://drive.google.com/uc?id=10bi1LIIT0xM6yIMxz6gaDl52xiJbefN-\" style=\"width:340px;\"></p>   \r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Average Cost:</span></h4>\r\n\r\n<p>The Average Cost is the per unit cost of production obtained by dividing the total cost (TC) by the total output (Q). By per unit cost of production, we mean that all the fixed and variable cost is taken into the consideration for calculating the average cost. Thus, it is also called as Per Unit Total Cost. <span class=\"math display\">\\[\\begin{aligned} \\mathrm{Average\\ Cost} &amp;= \\dfrac{\\mathrm{Total\\ Cost}}{\\mathrm{Quantity}}\\\\ AC &amp;= \\dfrac{TC}{Q}\\end{aligned}\\]</span></p>\r\n\r\n<h4><span class=\"badge bg-warning\">Incremental Costs:</span></h4>\r\n\r\n<p>If a company decides to increase production, it will incur additional costs. Incremental cost is the total cost incurred or anticipated due to an additional unit of product being produced. Incremental cost is calculated by analyzing the additional expenses involved in the production process, such as raw materials, for one additional unit of production. A company can still be profitable even if incremental cost exceed incremental revenue, but its profit starts declining at that point. Additional units need not be manufactured if incremental cost is adverse in comparison to incremental revenue, unless there is a compelling reason to do so.</p>\r\n\r\n<h4><span class=\"badge bg-warning\">Sunk Costs:</span></h4>\r\n\r\n<p>Sunk cost, in economics and finance, a cost that has already been incurred and that cannot be recovered. In economic decision making, sunk costs are treated as bygone and are not taken into consideration when deciding whether to continue an investment project.<br />\r\nIn real life, money spent on baseball games, non-refundable airfare, or even tuition fees for getting a major you eventually did not find useful represent sunk costs because there is no way to recover them.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Sunk_Costs.mp4",
+    "videoTitle": "Sunk Costs"
   },
   {
     "discipline": "Civil",
@@ -2545,7 +2589,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Overhead_Analysis.mp4",
+    "videoTitle": "Overhead Analysis"
   },
   {
     "discipline": "Civil",
@@ -2571,7 +2617,9 @@ const notesData = [
     "important": "\\[d = i + f + (i \\times f)\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Inflation_Fishers_equation.mp4",
+    "videoTitle": "Inflation: Fisher's Equation"
   },
   {
     "discipline": "Civil",
@@ -2583,7 +2631,9 @@ const notesData = [
     "important": "\\[i_e = \\left(1 + \\dfrac{r}{m}\\right)^m - 1\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
   },
   {
     "discipline": "Civil",
@@ -2621,7 +2671,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
+    "videoTitle": "NCEES Model Rules of Professional Conduct"
   },
   {
     "discipline": "Civil",
@@ -2633,7 +2685,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Professional_and_Technical_Societies.mp4",
+    "videoTitle": "Professional and Technical Societies"
   },
   {
     "discipline": "Civil",
@@ -2739,7 +2793,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/b/b1/Density_-_Kilogram_per_cubic_metre.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Specific_Gravity.mp4",
+    "videoTitle": "Specific Gravity"
   },
   {
     "discipline": "Civil",
@@ -2928,7 +2984,9 @@ const notesData = [
       "https://drive.google.com/file/d/1TgIUqMQ5A3bXb8sQiZ6kdJzt2W0mrZlI/view?usp=sharing",
       "https://upload.wikimedia.org/wikipedia/commons/b/b0/Minor_Losses.png"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "videoTitle": "Minor Head Loss in Piping Systems"
   },
   {
     "discipline": "Civil",
@@ -3068,7 +3126,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Bernoullis_Principle.mp4",
+    "videoTitle": "Bernoulli’s Principle"
   },
   {
     "discipline": "Civil",
@@ -3528,7 +3588,9 @@ const notesData = [
     "important": "<p><span class=\"math display\">\\[\\cos^2\\ \\theta +  \\sin^2\\ \\theta =\r\n1\\]</span> <span class=\"math display\">\\[1 + \\tan^2\\ \\theta = \\sec^2\\\r\n\\theta\\]</span> <span class=\"math display\">\\[1 + \\cot^2\\ \\theta =\r\n\\csc^2\\ \\theta\\]</span></p>",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1CDxs2FvnlUjI5pjYLnLMqQ-b6HmPBGzZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1e8Y2AgwYZth5sjV6kg2HqN2k43M3BCF8/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/181nTTKM9riReoakUQD2F5QoELeQPNRWs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
   },
   {
     "discipline": "Civil",
@@ -3612,7 +3674,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/3/38/Sinus_und_Kosinus_am_Einheitskreis_Einfach_Cos.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
   },
   {
     "discipline": "Civil",
@@ -3880,7 +3944,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Civil",
@@ -3892,7 +3958,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Civil",
@@ -3905,8 +3973,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Integration_by_Parts_Formula.mp4",
-    "videoTitle": "Integration by Parts Formula"
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Civil",
@@ -3918,7 +3986,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Civil",
@@ -3945,8 +4015,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1HvMhza0wze3gPh1jFwCqNrowLxnKzVzz/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1TkCihjNM2LRYyas26tN9Xo-w8mRxjBRt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kU_D4LBtldkdCZMS-G8QAGdlnOpxFiwE/preview",
-    "videoTitle": "Partial Derivatives"
+    "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "videoTitle": "Derivative of Logarithmic Functions"
   },
   {
     "discipline": "Civil",
@@ -4132,7 +4202,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Permutations_with_Repetition.mp4",
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
   },
   {
     "discipline": "Civil",
@@ -4310,7 +4382,9 @@ const notesData = [
     "important": "For ungrouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma x_i}{N}\\]\r\nFor grouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma w_i x_i}{\\Sigma w_i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Sun6dRN5wTExOfl7D9dTx5Vm40QegJam/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1rlEAnQ67JoGdK9X2GiFEY7kAuY9adEeK/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13CdRMDO7YGFnQhoSqoO2z4c2H-BFIQgZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/830495011?h=ddf84e2393&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Mean Median Mode\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
   },
   {
     "discipline": "Civil",
@@ -4556,7 +4630,9 @@ const notesData = [
     "important": "\\[\\nu = - \\dfrac{\\mathrm{lateral\\ strain}}{\\mathrm{longitudinal\\ strain}}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Poissons_Ratio_and_Lateral_Strain_Contraction.mp4",
+    "videoTitle": "Poisson's Ratio and Lateral Strain Contraction"
   },
   {
     "discipline": "Civil",
@@ -4749,7 +4825,7 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/0/04/Figura_3..jpg"
     ],
     "local_images": [],
-    "video": "assets/videos/Mohr's Circle.mp4",
+    "video": "assets/videos/Mohr_s_Circle.mp4",
     "videoTitle": "Mohr's Circle"
   },
   {
@@ -5503,12 +5579,26 @@ const notesData = [
     "subject": "Transportation Engineering",
     "chapter": "Geometric Design",
     "topic": "Highways",
-    "subtopic": "Overview",
+    "subtopic": "Elements of Highway Design",
     "content_html": "<div class= \"container-fluid\">\r\n  <div class= \"row align-items-start\">\r\n    <div class=\"col col-lg-8\">\r\n   <ul>\r\n<li>Geometric design of highways deals with dimensions and layout of visible features of the highway.</li>\r\n<li>Geometric design fulfils the requirements of the driver and the vehicle, such as comfort, efficiency and safety.</li>\r\n<li>Proper geometric design will help in the reduction of accidents and their severity.</li>\r\n</ul>\r\n\r\nElements of Highway Design:\r\n<ul>\r\n<li>Alignment: Horizontal and Vertical alignment</li>\r\n<li>Carriage way: the width of pavement way on which vehicles travel is called carriage way.</li>\r\n<li>Road Shoulders: Shoulders are provided along the road edge to serve as an emergency lane for vehicles.</li>\r\n<li>Formation width: It is the top width of the highway embankment or the bottom width of cutting excluding the side drain.</li>\r\n<li>Right of Way: It is the area of land acquired for the land, along its alignment. It is the distance between boundary stones of road on either side of road.</li>\r\n<li>Side Slope: The slope of earthwork in filing (embankment) or cutting is called side slope.</li>\r\n<li>Berm: the distance between the road toe and inner edge of borrow pit is called berm. It prevents the erosion of embankment soil.</li>\r\n<li>Side Drain: For the drainage of rain water, drains are provided on either side of the road.</li>\r\n<li>Building line: The distance from the center line of road on either side, within which the construction of building is NOT permitted is called building line.</li>\r\n<li>Central Line: At the locations like bank, hospital factory, theater, etc on the road where more people gather, disturbance to the traffic will be more. The distance from the central line to such buildings is called control line.</li>\r\n<li>Borrow pits: The pits dug along the road alignment for using excavated earth in construction of embarkment are known as borrow pits.</li>\r\n<li>Kerbs: The boundaries between pavement and shoulders or footpaths are known as kerbs.</li>\r\n</ul>\r\n\r\n<h5><span><b>Peak Hour Factor:</b></span>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$PHF = \\dfrac{\\mathrm{Hourly\\ Volume}}{\\mathrm{Hourly\\ Flow\\ Rate}} = \\dfrac{V}{4 \\times V_{15}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 299</span></button>\r\n</div><br/>\r\n\r\n    </div>\r\n    <div class=\"col\">\r\n<center><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b3/I-90-94_Entrance_at_Madison_Street%2C_Chicago_%2814560285196%29.jpg\" style=\"max-width: 50vh;\"></p><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:I-90-94_Entrance_at_Madison_Street,_Chicago_(14560285196).jpg\">Tony Webster from Portland, Oregon, United States</a>, <a href=\"https://creativecommons.org/licenses/by/2.0\">CC BY 2.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    </div>\r\n  </div>\r\n</div>",
     "important": "",
     "resources": "",
     "images": [],
     "local_images": []
+  },
+  {
+    "discipline": "Civil",
+    "subject": "Transportation Engineering",
+    "chapter": "Geometric Design",
+    "topic": "Highways",
+    "subtopic": "Stopping Sight Distance",
+    "content_html": "<h5><span><b>Stopping Sight Distance (SSD):</b></span></h5>\n<div class=\"container-fluid\">\n  <div class=\"row align-items-start\">\n    <div class=\"col col-lg-8\">\n      <p>Stopping sight distance (SSD) is the minimum distance required for a vehicle driver traveling at design speed to detect an unexpected hazard ahead and bring the vehicle safely to a complete stop before reaching the collision obstacle.</p>\n      <p>SSD consists of two additive components: <strong>Brake Reaction Distance</strong> ($d_r$) and <strong>Braking Distance</strong> ($d_b$):</p>\n      <div class=\"text-center my-3\">\n        <button type=\"button\" class=\"btn btn-light shadow-lg\">\n          $$SSD = d_r + d_b = 1.47 V t + \\dfrac{V^2}{30\\left(\\left(\\dfrac{a}{32.2}\\right) \\pm G\\right)}$$\n          <span class=\"text-muted\">&emsp; (US Customary: $V$ in mph, $t = 2.5\\text{ s}$, $a = 11.2\\text{ ft/s}^2$)</span>\n        </button>\n      </div>\n      <div class=\"text-center my-3\">\n        <button type=\"button\" class=\"btn btn-light shadow-lg\">\n          $$SSD = 0.278 V t + \\dfrac{V^2}{254\\left(\\left(\\dfrac{a}{9.81}\\right) \\pm G\\right)}$$\n          <span class=\"text-muted\">&emsp; (SI Metric: $V$ in km/h, $t = 2.5\\text{ s}$, $a = 3.4\\text{ m/s}^2$)</span>\n        </button>\n      </div>\n      <ul>\n        <li>$V$ = Design speed of highway ($\text{mph}$ or $\text{km/h}$)</li>\n        <li>$t$ = Perception-reaction time (AASHTO standard: $t = 2.5\\text{ seconds}$)</li>\n        <li>$a$ = Deceleration rate (AASHTO comfortable deceleration: $11.2\\text{ ft/s}^2$ or $3.4\\text{ m/s}^2$)</li>\n        <li>$G$ = Road grade in percent $/ 100$ ($+G$ for upgrade, $-G$ for downgrade)</li>\n      </ul>\n      <p><em>FE Exam Rule:</em> Downgrades ($-G$) significantly increase stopping sight distance, whereas upgrades ($+G$) reduce required braking distance.</p>\n    </div>\n    <div class=\"col text-center\">\n      <img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b3/I-90-94_Entrance_at_Madison_Street%2C_Chicago_%2814560285196%29.jpg\" style=\"max-width: 100%; border-radius: 8px;\" alt=\"Highway Design\">\n      <br/><small><small><a href=\"https://commons.wikimedia.org/wiki/File:I-90-94_Entrance_at_Madison_Street,_Chicago_(14560285196).jpg\">Tony Webster</a>, CC BY 2.0</small></small>\n    </div>\n  </div>\n</div>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Stopping_Sight_Distance.mp4",
+    "videoTitle": "Stopping Sight Distance (SSD)"
   },
   {
     "discipline": "Civil",
@@ -6488,7 +6578,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Control_Systems.mp4",
+    "videoTitle": "Control Systems"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7006,19 +7098,23 @@ const notesData = [
     "important": "\\[P = \\dfrac{A}{i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1havLCPfQl5t3b131JVdJFztjgaLZexTp/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1o4113njSMO4VwuUfyaQXwugJV3ChZ6h1/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "videoTitle": "Capitalized Cost for Infinite Project Life"
   },
   {
     "discipline": "Electrical and Computer",
     "subject": "Engineering Economics",
     "chapter": "Cost Types and Breakdowns",
     "topic": "Cost Types",
-    "subtopic": "Overview",
+    "subtopic": "Sunk Costs",
     "content_html": "<h4><span class=\"badge bg-warning\">Fixed Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Fixed costs are costs that must be paid whether or not any units are produced. These costs are \"fixed\" over a specified period of time or range of production. e.g. cost of land, building, machinery and permits.</p>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <p><img src=\"https://drive.google.com/uc?id=16HNzuXgmQVU70tLtZOludgaqqCS4XOby\" style=\"width:340px;\"></p>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Variable Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Variable costs are costs that vary directly with the number of products produced. For instance, the cost of the materials needed and the labour used is directly proportional to the quantity manufactured.</p>\r\n\r\n<ul>\r\n\t<li>In the next diagram, the fixed costs will always be represented by horizontal straight line (parallel to quantity axis) as it is independent of quantity.</li>\r\n\t<li>The variable cost will always pass through the origin as no manufactured units means no variable cost.</li>\r\n</ul>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n  <p><img src=\"https://drive.google.com/uc?id=10bi1LIIT0xM6yIMxz6gaDl52xiJbefN-\" style=\"width:340px;\"></p>   \r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Average Cost:</span></h4>\r\n\r\n<p>The Average Cost is the per unit cost of production obtained by dividing the total cost (TC) by the total output (Q). By per unit cost of production, we mean that all the fixed and variable cost is taken into the consideration for calculating the average cost. Thus, it is also called as Per Unit Total Cost. <span class=\"math display\">\\[\\begin{aligned} \\mathrm{Average\\ Cost} &amp;= \\dfrac{\\mathrm{Total\\ Cost}}{\\mathrm{Quantity}}\\\\ AC &amp;= \\dfrac{TC}{Q}\\end{aligned}\\]</span></p>\r\n\r\n<h4><span class=\"badge bg-warning\">Incremental Costs:</span></h4>\r\n\r\n<p>If a company decides to increase production, it will incur additional costs. Incremental cost is the total cost incurred or anticipated due to an additional unit of product being produced. Incremental cost is calculated by analyzing the additional expenses involved in the production process, such as raw materials, for one additional unit of production. A company can still be profitable even if incremental cost exceed incremental revenue, but its profit starts declining at that point. Additional units need not be manufactured if incremental cost is adverse in comparison to incremental revenue, unless there is a compelling reason to do so.</p>\r\n\r\n<h4><span class=\"badge bg-warning\">Sunk Costs:</span></h4>\r\n\r\n<p>Sunk cost, in economics and finance, a cost that has already been incurred and that cannot be recovered. In economic decision making, sunk costs are treated as bygone and are not taken into consideration when deciding whether to continue an investment project.<br />\r\nIn real life, money spent on baseball games, non-refundable airfare, or even tuition fees for getting a major you eventually did not find useful represent sunk costs because there is no way to recover them.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Sunk_Costs.mp4",
+    "videoTitle": "Sunk Costs"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7044,7 +7140,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Overhead_Analysis.mp4",
+    "videoTitle": "Overhead Analysis"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7070,7 +7168,9 @@ const notesData = [
     "important": "\\[d = i + f + (i \\times f)\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Inflation_Fishers_equation.mp4",
+    "videoTitle": "Inflation: Fisher's Equation"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7082,7 +7182,9 @@ const notesData = [
     "important": "\\[i_e = \\left(1 + \\dfrac{r}{m}\\right)^m - 1\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7184,7 +7286,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trademarks.mp4",
+    "videoTitle": "Trademarks and Brand Protection Explainer"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7334,7 +7438,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/18fjuAUKSf5rfCSPsRgIUHTA2n1DJB8MH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "videoUrl": "assets/videos/Pseudocode.mp4",
+    "videoTitle": "Pseudocode and Algorithm Logic Explainer"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7602,7 +7708,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7614,7 +7722,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7627,8 +7737,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Integration_by_Parts_Formula.mp4",
-    "videoTitle": "Integration by Parts Formula"
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7640,7 +7750,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Electrical and Computer",
@@ -7667,8 +7779,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1HvMhza0wze3gPh1jFwCqNrowLxnKzVzz/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1TkCihjNM2LRYyas26tN9Xo-w8mRxjBRt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kU_D4LBtldkdCZMS-G8QAGdlnOpxFiwE/preview",
-    "videoTitle": "Partial Derivatives"
+    "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "videoTitle": "Derivative of Logarithmic Functions"
   },
   {
     "discipline": "Electrical and Computer",
@@ -8078,7 +8190,9 @@ const notesData = [
     "important": "<p><span class=\"math display\">\\[\\cos^2\\ \\theta +  \\sin^2\\ \\theta =\r\n1\\]</span> <span class=\"math display\">\\[1 + \\tan^2\\ \\theta = \\sec^2\\\r\n\\theta\\]</span> <span class=\"math display\">\\[1 + \\cot^2\\ \\theta =\r\n\\csc^2\\ \\theta\\]</span></p>",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1CDxs2FvnlUjI5pjYLnLMqQ-b6HmPBGzZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1e8Y2AgwYZth5sjV6kg2HqN2k43M3BCF8/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/181nTTKM9riReoakUQD2F5QoELeQPNRWs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
   },
   {
     "discipline": "Electrical and Computer",
@@ -8162,7 +8276,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/3/38/Sinus_und_Kosinus_am_Einheitskreis_Einfach_Cos.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
   },
   {
     "discipline": "Electrical and Computer",
@@ -11218,7 +11334,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Control_Systems.mp4",
+    "videoTitle": "Control Systems"
   },
   {
     "discipline": "Industrial",
@@ -11594,7 +11712,9 @@ const notesData = [
     "important": "<p><span class=\"math display\">\\[\\cos^2\\ \\theta +  \\sin^2\\ \\theta =\r\n1\\]</span> <span class=\"math display\">\\[1 + \\tan^2\\ \\theta = \\sec^2\\\r\n\\theta\\]</span> <span class=\"math display\">\\[1 + \\cot^2\\ \\theta =\r\n\\csc^2\\ \\theta\\]</span></p>",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1CDxs2FvnlUjI5pjYLnLMqQ-b6HmPBGzZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1e8Y2AgwYZth5sjV6kg2HqN2k43M3BCF8/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/181nTTKM9riReoakUQD2F5QoELeQPNRWs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
   },
   {
     "discipline": "Mechanical",
@@ -11636,7 +11756,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Law_of_Cosines.mp4",
+    "videoTitle": "Law of Cosines for General Triangles"
   },
   {
     "discipline": "Mechanical",
@@ -11678,7 +11800,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/3/38/Sinus_und_Kosinus_am_Einheitskreis_Einfach_Cos.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
   },
   {
     "discipline": "Mechanical",
@@ -11985,8 +12109,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1HvMhza0wze3gPh1jFwCqNrowLxnKzVzz/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1TkCihjNM2LRYyas26tN9Xo-w8mRxjBRt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kU_D4LBtldkdCZMS-G8QAGdlnOpxFiwE/preview",
-    "videoTitle": "Partial Derivatives"
+    "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "videoTitle": "Derivative of Logarithmic Functions"
   },
   {
     "discipline": "Mechanical",
@@ -12026,7 +12150,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Mechanical",
@@ -12038,7 +12164,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Mechanical",
@@ -12051,8 +12179,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Integration_by_Parts_Formula.mp4",
-    "videoTitle": "Integration by Parts Formula"
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Mechanical",
@@ -12064,7 +12192,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Mechanical",
@@ -12386,7 +12516,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1uCFxNAT5yW6n27IrSXThFVTVIHdgODcV/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1uZuXIQQTHckS6MayC8hPqmNVSWbUkjaO/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/12B1zaTJafEzc7_OHbsAfGtgqhQriEIMG/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/586143740?h=9d7b10cdb1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Flowchart Symbols\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Flowchart_Symbols.mp4",
+    "videoTitle": "Flowchart Symbols"
   },
   {
     "discipline": "Mechanical",
@@ -12410,7 +12542,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/18fjuAUKSf5rfCSPsRgIUHTA2n1DJB8MH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "videoUrl": "assets/videos/Pseudocode.mp4",
+    "videoTitle": "Pseudocode and Algorithm Logic Explainer"
   },
   {
     "discipline": "Mechanical",
@@ -12418,11 +12552,25 @@ const notesData = [
     "chapter": "Measures of Central Tendencies",
     "topic": "Mean, Median, Mode",
     "subtopic": "Mean",
-    "content_html": "<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<h5><span><b>Mean:</b></span></h5>\n<p>For a set of $n$ samples consisting of individual measurements:</p>\n<div class=\"text-center\">\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\bar{X} = \\dfrac{1}{n} \\sum_{i=1}^{n} X_i$ <span class=\"text-muted\">&emsp; Page 63</span></button>\n</div><br/>\n<p>For a set of samples with weights or frequencies $w_i$:</p>\n<div class=\"text-center\">\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\bar{X}_w = \\dfrac{\\sum w_i X_i}{\\sum w_i}$ <span class=\"text-muted\">&emsp; Page 63</span></button>\n</div><br/>\n<p>Sample geometric mean:</p>\n<div class=\"text-center\">\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\text{Geometric Mean} = \\sqrt[n]{X_1 X_2 \\cdots X_n}$ <span class=\"text-muted\">&emsp; Page 63</span></button>\n</div><br/>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/3/33/Visualisation_mode_median_mean.svg\" alt=\"Mean\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Visualisation_mode_median_mean.svg\">Cmglee</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a></small></small></center>\n\t\t</div>\n\t</div>\n</div>",
+    "content_html": "<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<h5><span><b>Mean:</b></span></h5>\n<p>For a set of $n$ samples consisting of individual measurements:</p>\n<div class=\"text-center\">\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\bar{X} = \\dfrac{1}{n} \\sum_{i=1}^{n} X_i$ <span class=\"text-muted\">&emsp; Page 63</span></button>\n</div><br/>\n<p>For a set of samples with weights or frequencies $w_i$:</p>\n<div class=\"text-center\">\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\bar{X}_w = \\dfrac{\\sum w_i X_i}{\\sum w_i}$ <span class=\"text-muted\">&emsp; Page 63</span></button>\n</div><br/>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/3/33/Visualisation_mode_median_mean.svg\" alt=\"Mean\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Visualisation_mode_median_mean.svg\">Cmglee</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a></small></small></center>\n\t\t</div>\n\t</div>\n</div>",
     "important": "For ungrouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma x_i}{N}\\]\r\nFor grouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma w_i x_i}{\\Sigma w_i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Sun6dRN5wTExOfl7D9dTx5Vm40QegJam/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1rlEAnQ67JoGdK9X2GiFEY7kAuY9adEeK/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13CdRMDO7YGFnQhoSqoO2z4c2H-BFIQgZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/830495011?h=ddf84e2393&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Mean Median Mode\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": []
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Probability and Statistics",
+    "chapter": "Measures of Central Tendencies",
+    "topic": "Mean, Median, Mode",
+    "subtopic": "Sample Geometric Mean",
+    "content_html": "<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<h5><span><b>Sample Geometric Mean:</b></span></h5>\n<p>The geometric mean is a measure of central tendency used for finding the average of a set of numbers that indicate growth rates, ratios, or multiplicative processes:</p>\n<div class=\"text-center\">\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\text{Geometric Mean} = \\sqrt[n]{X_1 X_2 \\cdots X_n}$ <span class=\"text-muted\">&emsp; Page 63</span></button>\n</div><br/>\n\t\t</div>\n\t</div>\n</div>",
+    "important": "\\[\\text{Geometric Mean} = \\sqrt[n]{X_1 X_2 \\cdots X_n}\\]",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Geometric_Mean.mp4",
+    "videoTitle": "Geometric Mean and Compounded Growth Rates"
   },
   {
     "discipline": "Mechanical",
@@ -12434,7 +12582,9 @@ const notesData = [
     "important": "For ungrouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma x_i}{N}\\]\r\nFor grouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma w_i x_i}{\\Sigma w_i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Sun6dRN5wTExOfl7D9dTx5Vm40QegJam/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1rlEAnQ67JoGdK9X2GiFEY7kAuY9adEeK/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13CdRMDO7YGFnQhoSqoO2z4c2H-BFIQgZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/830495011?h=ddf84e2393&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Mean Median Mode\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
   },
   {
     "discipline": "Mechanical",
@@ -12488,7 +12638,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Permutations_with_Repetition.mp4",
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
   },
   {
     "discipline": "Mechanical",
@@ -12614,7 +12766,9 @@ const notesData = [
     "important": "\\[t = \\dfrac{\\bar{x} - \\mu}{\\left(\\dfrac{s}{\\sqrt{n}}\\right)}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Rsr8ri-IwIv0cGfERh5k0QLzE70U1EeM/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/831810746?h=e694943725&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"t-distribution\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
+    "videoTitle": "Student’s t-Confidence Interval for Unknown Variance"
   },
   {
     "discipline": "Mechanical",
@@ -12756,7 +12910,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
+    "videoTitle": "NCEES Model Rules of Professional Conduct"
   },
   {
     "discipline": "Mechanical",
@@ -12768,7 +12924,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Professional_and_Technical_Societies.mp4",
+    "videoTitle": "Professional and Technical Societies"
   },
   {
     "discipline": "Mechanical",
@@ -12820,7 +12978,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trademarks.mp4",
+    "videoTitle": "Trademarks and Brand Protection Explainer"
   },
   {
     "discipline": "Mechanical",
@@ -12884,7 +13044,9 @@ const notesData = [
     "important": "\\[i_e = \\left(1 + \\dfrac{r}{m}\\right)^m - 1\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
   },
   {
     "discipline": "Mechanical",
@@ -12896,7 +13058,9 @@ const notesData = [
     "important": "\\[d = i + f + (i \\times f)\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Inflation_Fishers_equation.mp4",
+    "videoTitle": "Inflation: Fisher's Equation"
   },
   {
     "discipline": "Mechanical",
@@ -12908,7 +13072,9 @@ const notesData = [
     "important": "\\[P = \\dfrac{A}{i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1havLCPfQl5t3b131JVdJFztjgaLZexTp/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1o4113njSMO4VwuUfyaQXwugJV3ChZ6h1/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "videoTitle": "Capitalized Cost for Infinite Project Life"
   },
   {
     "discipline": "Mechanical",
@@ -12929,12 +13095,28 @@ const notesData = [
     "subject": "Engineering Economics",
     "chapter": "Cost Types and Breakdowns",
     "topic": "Cost Types",
-    "subtopic": "Overview",
-    "content_html": "<h4><span class=\"badge bg-warning\">Fixed Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Fixed costs are costs that must be paid whether or not any units are produced. These costs are \"fixed\" over a specified period of time or range of production. e.g. cost of land, building, machinery and permits.</p>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <p><img src=\"https://drive.google.com/uc?id=16HNzuXgmQVU70tLtZOludgaqqCS4XOby\" style=\"width:340px;\"></p>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Variable Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Variable costs are costs that vary directly with the number of products produced. For instance, the cost of the materials needed and the labour used is directly proportional to the quantity manufactured.</p>\r\n\r\n<ul>\r\n\t<li>In the next diagram, the fixed costs will always be represented by horizontal straight line (parallel to quantity axis) as it is independent of quantity.</li>\r\n\t<li>The variable cost will always pass through the origin as no manufactured units means no variable cost.</li>\r\n</ul>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n  <p><img src=\"https://drive.google.com/uc?id=10bi1LIIT0xM6yIMxz6gaDl52xiJbefN-\" style=\"width:340px;\"></p>   \r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Average Cost:</span></h4>\r\n\r\n<p>The Average Cost is the per unit cost of production obtained by dividing the total cost (TC) by the total output (Q). By per unit cost of production, we mean that all the fixed and variable cost is taken into the consideration for calculating the average cost. Thus, it is also called as Per Unit Total Cost. <span class=\"math display\">\\[\\begin{aligned} \\mathrm{Average\\ Cost} &amp;= \\dfrac{\\mathrm{Total\\ Cost}}{\\mathrm{Quantity}}\\\\ AC &amp;= \\dfrac{TC}{Q}\\end{aligned}\\]</span></p>\r\n\r\n<h4><span class=\"badge bg-warning\">Incremental Costs:</span></h4>\r\n\r\n<p>If a company decides to increase production, it will incur additional costs. Incremental cost is the total cost incurred or anticipated due to an additional unit of product being produced. Incremental cost is calculated by analyzing the additional expenses involved in the production process, such as raw materials, for one additional unit of production. A company can still be profitable even if incremental cost exceed incremental revenue, but its profit starts declining at that point. Additional units need not be manufactured if incremental cost is adverse in comparison to incremental revenue, unless there is a compelling reason to do so.</p>\r\n\r\n<h4><span class=\"badge bg-warning\">Sunk Costs:</span></h4>\r\n\r\n<p>Sunk cost, in economics and finance, a cost that has already been incurred and that cannot be recovered. In economic decision making, sunk costs are treated as bygone and are not taken into consideration when deciding whether to continue an investment project.<br />\r\nIn real life, money spent on baseball games, non-refundable airfare, or even tuition fees for getting a major you eventually did not find useful represent sunk costs because there is no way to recover them.</p>",
+    "subtopic": "Incremental Costs",
+    "content_html": "<h4><span class=\"badge bg-warning\">Fixed Costs:</span></h4>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<p>Fixed costs are costs that must be paid whether or not any units are produced. These costs are \"fixed\" over a specified period of time or range of production. e.g. cost of land, building, machinery and permits.</p>\n\t\t</div>\n    \t\t<div class=\"col\">\n     <p><img src=\"https://drive.google.com/uc?id=16HNzuXgmQVU70tLtZOludgaqqCS4XOby\" style=\"width:340px;\"></p>\n    \t\t</div>\n  \t</div>\n</div>\n\n<h4><span class=\"badge bg-warning\">Variable Costs:</span></h4>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<p>Variable costs are costs that vary directly with the number of products produced. For instance, the cost of the materials needed and the labour used is directly proportional to the quantity manufactured.</p>\n\n<ul>\n\t<li>In the next diagram, the fixed costs will always be represented by horizontal straight line (parallel to quantity axis) as it is independent of quantity.</li>\n\t<li>The variable cost will always pass through the origin as no manufactured units means no variable cost.</li>\n</ul>\n\n\t\t</div>\n    \t\t<div class=\"col\">\n  <p><img src=\"https://drive.google.com/uc?id=10bi1LIIT0xM6yIMxz6gaDl52xiJbefN-\" style=\"width:340px;\"></p>   \n    \t\t</div>\n  \t</div>\n</div>\n\n<h4><span class=\"badge bg-warning\">Average Cost:</span></h4>\n\n<p>The Average Cost is the per unit cost of production obtained by dividing the total cost (TC) by the total output (Q). By per unit cost of production, we mean that all the fixed and variable cost is taken into the consideration for calculating the average cost. Thus, it is also called as Per Unit Total Cost. <span class=\"math display\">\\[\\begin{aligned} \\mathrm{Average\\ Cost} &amp;= \\dfrac{\\mathrm{Total\\ Cost}}{\\mathrm{Quantity}}\\\\ AC &amp;= \\dfrac{TC}{Q}\\end{aligned}\\]</span></p>\n\n<h4><span class=\"badge bg-warning\">Incremental Costs:</span></h4>\n\n<p>If a company decides to increase production, it will incur additional costs. Incremental cost is the total cost incurred or anticipated due to an additional unit of product being produced. Incremental cost is calculated by analyzing the additional expenses involved in the production process, such as raw materials, for one additional unit of production. A company can still be profitable even if incremental cost exceed incremental revenue, but its profit starts declining at that point. Additional units need not be manufactured if incremental cost is adverse in comparison to incremental revenue, unless there is a compelling reason to do so.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Incremental_Costs.mp4",
+    "videoTitle": "Incremental Costs and Differential Economic Analysis"
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Engineering Economics",
+    "chapter": "Cost Types and Breakdowns",
+    "topic": "Cost Types",
+    "subtopic": "Sunk Costs",
+    "content_html": "<h4><span class=\"badge bg-warning\">Sunk Costs:</span></h4>\n\n<p>Sunk cost, in economics and finance, a cost that has already been incurred and that cannot be recovered. In economic decision making, sunk costs are treated as bygone and are not taken into consideration when deciding whether to continue an investment project.<br />\nIn real life, money spent on baseball games, non-refundable airfare, or even tuition fees for getting a major you eventually did not find useful represent sunk costs because there is no way to recover them.</p>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Sunk_Costs.mp4",
+    "videoTitle": "Sunk Costs"
   },
   {
     "discipline": "Mechanical",
@@ -12960,7 +13142,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Overhead_Analysis.mp4",
+    "videoTitle": "Overhead Analysis"
   },
   {
     "discipline": "Mechanical",
@@ -12988,7 +13172,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/0/07/CoulombsLaw.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Coulombs_Law_in_electrostatics.mp4",
+    "videoTitle": "Coulomb’s Law of Electrostatic Force and Field Intensity"
   },
   {
     "discipline": "Mechanical",
@@ -13047,12 +13233,28 @@ const notesData = [
     "subject": "Electricity and Magnetism",
     "chapter": "Electrical Fundamentals",
     "topic": "Resistance",
-    "subtopic": "Overview",
-    "content_html": "<h5><span><b>Electrical Resistance:</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<p><strong>Electrical resistance</strong> is a measure of the difficulty to pass an electric current through that conductor. <span class=\"math display\">\\[R = \\dfrac{V}{I}\\]</span> or more commonly written as: \r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$V = IR$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 358</span></button>\r\n</div>\r\n(known as Ohm’s Law), where R = electric resistance (this is the resistance to flow of charge through a device).<br />\r\nAn object or device with greater resistance will require a greater voltage to produce a certain amount of current.<br />\r\nSI unit for resistance is Ohm:<br />\r\n1 Ohm = 1 Volt/1 Ampere or W = <span class=\"math inline\">\\(\\dfrac{V}{A}\\)</span><br />\r\n(The number of ohms indicates how many volts are required to produce 1 Ampere of current.)</p>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n    <center> <img src=\"https://upload.wikimedia.org/wikipedia/commons/b/bd/Electrical_resistance_1.jpg\" alt=\"Electrical resistance\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Electrical_resistance_1.jpg\">The original uploader was Chggr at Greek Wikipedia.</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/7/74/Ohmen_legea_triangelua.png\" alt=\"Ohm's Law\" width=\"250\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Ohmen_legea_triangelua.png\">Gorkaazk</a>, CC0, via Wikimedia Commons</small></small></center><br/>\r\n\r\n\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\n<h5><span><b>Resistivity:</b></span></h5>\r\n\r\n<p><strong>Resistivity</strong> is a measure of the resisting power of a specified material to the flow of an electric current.<br />\r\nFor a conductor of length L, electrical resistivity <span class=\"math inline\">\\(\\rho\\)</span>, and cross-sectional area A, the resistance is: \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = \\dfrac{\\rho L}{A}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 357</span></button>\r\n</div><br/>\r\n\r\n</p>\r\n\r\n<h5><span><b>Internal Resistance:</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p><strong>Internal resistance</strong> is the resistance within a battery, or other voltage source, that causes a drop in the source voltage when there is a current. Thus, the voltage <span class=\"math inline\">\\(V\\)</span> of the battery is related to its emf <span class=\"math inline\">\\(E\\)</span> and internal resistance <span class=\"math inline\">\\(r\\)</span> via <span class=\"math display\">\\[V = {E} - I\\,r.\\]</span></p>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b1/Internal-resistance-model-of-a-source-of-voltage.svg\" alt=\"Internal resistance\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Internal-resistance-model-of-a-source-of-voltage.svg\">MikeRun</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n<h5><span><b>Effect of Temperature on Resistance and Resistivity:</b></span></h5>\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\rho = \\rho_0\\left[1  + \\alpha (T - T_0)\\right]$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 358</span></button>\r\n</div><br/>\r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = R_0\\left[1  + \\alpha (T - T_0)\\right]$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 358</span></button>\r\n</div><br/>\r\n\r\nwhere,<br/>\r\n$\\alpha$ = Temperature coefficient",
-    "important": "Ohm's Law:\r\n\\[R = \\dfrac{V}{I}\\]\r\n\r\nResistance in Series:\r\n\\[R_{\\mathrm{series}} = R_1 + R_2 + R_3 + ......................\\]\r\n\r\nResistance in Parallel:\r\n\\[\\dfrac{1}{R_{\\mathrm{parallel}}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\dfrac{1}{R_3} + ......................\\]",
+    "subtopic": "Ohm's Law",
+    "content_html": "<h5><span><b>Electrical Resistance:</b></span></h5>\n\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<p>Electrical resistance is a measure of the opposition to current flow in an electrical circuit. It is related to voltage and current by:</p>\n\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$V = IR$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 358</span></button>\n</div><br/>\n(known as Ohm’s Law), where R = electric resistance (this is the resistance to flow of charge through a device).<br />\nAn object or device with greater resistance will require a greater voltage to produce a certain amount of current.<br />\nSI unit for resistance is Ohm:<br />\n1 Ohm = 1 Volt/1 Ampere or $\\Omega = \\dfrac{V}{A}$<br />\n(The number of ohms indicates how many volts are required to produce 1 Ampere of current.)</p>\n\n\t\t</div>\n    \t\t<div class=\"col\">\n    <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/bd/Electrical_resistance_1.jpg\" alt=\"Electrical resistance\" width=\"340\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Electrical_resistance_1.jpg\">The original uploader was Chggr at Greek Wikipedia.</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/7/74/Ohmen_legea_triangelua.png\" alt=\"Ohm's Law\" width=\"250\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Ohmen_legea_triangelua.png\">Gorkaazk</a>, CC0, via Wikimedia Commons</small></small></center><br/>\n    \t\t</div>\n  \t</div>\n</div>",
+    "important": "Ohm's Law:\r\n\\[R = \\dfrac{V}{I}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1bTglUnAYQRFFKpTUyg9gM8bDg1UwbtXK/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/833244213?h=646b827786&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Resistance\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Ohms_Law.mp4",
+    "videoTitle": "Ohm's Law"
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Electricity and Magnetism",
+    "chapter": "Electrical Fundamentals",
+    "topic": "Resistance",
+    "subtopic": "Resistivity",
+    "content_html": "<h5><span><b>Resistivity:</b></span></h5>\n\n<p><strong>Resistivity</strong> is a measure of the resisting power of a specified material to the flow of an electric current.<br />\nFor a conductor of length $L$, electrical resistivity $\\rho$, and cross-sectional area $A$, the resistance is:</p>\n\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = \\dfrac{\\rho L}{A}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 357</span></button>\n</div><br/>\n\n<h5><span><b>Internal Resistance:</b></span></h5>\n\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<p><strong>Internal resistance</strong> is the resistance within a battery, or other voltage source, that causes a drop in the source voltage when there is a current. Thus, the voltage $V$ of the battery is related to its electromotive force $E$ and internal resistance $r$ via:\n\\[V = {E} - I\\,r.\\]</p>\n\t\t</div>\n    \t\t<div class=\"col\">\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b1/Internal-resistance-model-of-a-source-of-voltage.svg\" alt=\"Internal resistance\" width=\"340\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Internal-resistance-model-of-a-source-of-voltage.svg\">MikeRun</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\n    \t\t</div>\n  \t</div>\n</div>\n\n<h5><span><b>Effect of Temperature on Resistance and Resistivity:</b></span></h5>\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\rho = \\rho_0\\left[1  + \\alpha (T - T_0)\\right]$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 358</span></button>\n</div><br/>\n\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = R_0\\left[1  + \\alpha (T - T_0)\\right]$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 358</span></button>\n</div><br/>\n\n<p>where $\\alpha$ = Temperature coefficient of resistivity.</p>",
+    "important": "Resistivity:\n\\[R = \\dfrac{\\rho L}{A}\\]\n\nEffect of Temperature on Resistance:\n\\[R = R_0\\left[1 + \\alpha(T - T_0)\\right]\\]\n\\[\\rho = \\rho_0\\left[1 + \\alpha(T - T_0)\\right]\\]",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Specific_Resistance_of_a_Conductor.mp4",
+    "videoTitle": "Specific Resistance of a Conductor (Resistivity)"
   },
   {
     "discipline": "Mechanical",
@@ -13122,7 +13324,9 @@ const notesData = [
     "important": "\\[E = \\dfrac{CV_c^2}{2} = \\dfrac{q_c^2}{2C} = \\dfrac{q_cv_c}{2}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1io21qu8zcrL-ZgcmPbzJtu3McWVOBHeW/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1iQdfUddOAi9QF2aLQIShf3iqpAVLKrQA/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Capacitance_of_a_parallel_plate_capacitor.mp4",
+    "videoTitle": "Capacitance of a Parallel Plate Capacitor"
   },
   {
     "discipline": "Mechanical",
@@ -13288,7 +13492,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
+    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios"
   },
   {
     "discipline": "Mechanical",
@@ -13418,7 +13624,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/a/af/STATICS-CMC04-01-01-4e5866f5dec14b43b9a9d90db5fcadfa0-G.png"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Moments_Couples.mp4",
+    "videoTitle": "Moments (Couples)"
   },
   {
     "discipline": "Mechanical",
@@ -13747,8 +13955,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1flwzOiZ2K89_ulp69Bv7fv_lgLcAL0-Z/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:58.16% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/586138415?h=810fd81b68&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Motion Under Constant Acceleration\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Rectilinear_Kinematics_Constant_Acceleration_Equations.mp4",
-    "videoTitle": "Rectilinear Kinematics Constant Acceleration Equations"
+    "video": "assets/videos/Constant_Acceleration_Motion.mp4",
+    "videoTitle": "Constant Acceleration Motion"
   },
   {
     "discipline": "Mechanical",
@@ -13806,7 +14014,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/7/76/NOX_2019_PM_JohnTebenham.jpg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
+    "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion"
   },
   {
     "discipline": "Mechanical",
@@ -13846,7 +14056,9 @@ const notesData = [
     "important": "\\[F_k = \\mu_k F_N\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Static_vs_kinetic_friction.mp4",
+    "videoTitle": "Static vs. Kinetic Friction (Coulomb Friction Laws)"
   },
   {
     "discipline": "Mechanical",
@@ -13940,7 +14152,9 @@ const notesData = [
     "important": "\\[m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'\\]\r\n\r\n\\[e= \\dfrac{(v_2')_n - (v_1')_n}{(v_1)_n - (v_2)_n}\\]\r\n\r\n\\[({v_1'})_n = \\dfrac{m_2 ({v_2})_n (1 + e) + ( m_1 - em_2)({v_1})_n} {m_1 + m_2}\\]\r\n\\[({v_2'})_n = \\dfrac{m_1 ({v_1})_n (1 + e) - ( em_1 - m_2)({v_2})_n} {m_1 + m_2}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Elastic_vs_inelastic_collision.mp4",
+    "videoTitle": "Elastic vs. Inelastic Collisions"
   },
   {
     "discipline": "Mechanical",
@@ -14018,7 +14232,9 @@ const notesData = [
     "important": "\\[\\begin{align*} \r\n\\omega &amp;= \\omega_0 + \\alpha t \\\\\r\n \\theta &amp;= \\theta_0 +\\omega_0 t + \\dfrac{1}{2} \\alpha_0 t^2 \\\\\r\n\\omega^2 &amp;= \\omega_0^2 + 2\\alpha_0 (\\theta - \\theta_0) \r\n\\end{align*}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1o7g1VXgNN6lGqFEANTiPOZVBrHkVwbAX/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Constant_Acceleration_Rotational_Motion_Equations.mp4",
+    "videoTitle": "Constant Acceleration Rotational Motion Equations"
   },
   {
     "discipline": "Mechanical",
@@ -14042,7 +14258,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Inversion_of_a_Mechanism.mp4",
+    "videoTitle": "Inversion of a Mechanism"
   },
   {
     "discipline": "Mechanical",
@@ -14116,19 +14334,23 @@ const notesData = [
     "important": "\\[\\mathrm{Total\\ KE} = \\dfrac{1}{2}mv^2 + \\dfrac{1}{2}I\\omega^2\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
+    "videoTitle": "Work-Energy Principle (Rigid Body Dynamics)"
   },
   {
     "discipline": "Mechanical",
     "subject": "Dynamics, Kinematics and Vibrations",
     "chapter": "Impulse-Momentum of Rigid Bodies",
     "topic": "Impulse-Momentum of Rigid Bodies",
-    "subtopic": "Overview",
+    "subtopic": "Principle of Angular Impulse and Momentum",
     "content_html": "<h5><span><b>Principle of Angular Impulse and Momentum:</b></span></h5>\r\n\r\n<p>The angular momentum or the moment of momentum about point 0 for a particle is defined as \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$H_0 = r \\times mv$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\nor \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$H_0 = I_0 \\omega$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\n<p>Taking the time derivative of the above, the equation of motion may be written as \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\dot{H_0} = \\dfrac{I_0 \\omega}{dt} = M_0$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\nwhere M<span class=\"math inline\">\\(_0\\)</span> is the moment applied to the particle. Now by integrating and summing over a system of any number of particles, this may be expanded to \r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\Sigma (H_{0i})_{{t_2}} = \\Sigma (H_{0i})_{{t_1}} + \\Sigma \\displaystyle \\int_{t_1}^{t_2} M_{0i} dt$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 108</span></button>\r\n</div><br/>\r\n\r\n<p>The term on the left side of the equation is the angular momentum of a system of particles at time t<span class=\"math inline\">\\(_2\\)</span>. The first term on the right side of the equation is the angular momentum of a system of particles at time t<span class=\"math inline\">\\(_1\\)</span>. The second term on the right side of the equation is the angular impulse of the moment M<span class=\"math inline\">\\(_0\\)</span> from time t<span class=\"math inline\">\\(_1\\)</span> to t<span class=\"math inline\">\\(_2\\)</span>.</p>\r\n\r\n<h5><span><b>Conservation of Angular Momentum:</b></span></h5>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$\\Sigma(\\mathrm{syst.} \\bar{H})_1 = \\Sigma(\\mathrm{syst.} \\bar{H})_2$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 112</span></button>\r\n</div><br/>",
     "important": "\\[\\Sigma(\\mathrm{syst.} \\bar{H})_1 = \\Sigma(\\mathrm{syst.} \\bar{H})_2\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
+    "videoTitle": "Principle of Angular Impulse and Momentum"
   },
   {
     "discipline": "Mechanical",
@@ -14154,7 +14376,9 @@ const notesData = [
     "important": "\\[\\ddot{x} + \\dfrac{k}{m} x = 0\\]\r\n\\[\\omega_n = \\sqrt{\\dfrac{k}{m}}= \\mathrm{natural\\ frequency}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1XnM2zKSInLIDB-x1xT2zaJCtB8o1dKII/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1ftsq0ZdyqWcZMGvALTKeJBFPr91fvurY/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><div class=\"w-full mt-2\"><div style=\"padding:56.3% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1011663096?h=82d7dd55fa&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Free Vibrations\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Damped_Free_Vibrations.mp4",
+    "videoTitle": "Damped Free Vibrations (SDOF System Response)"
   },
   {
     "discipline": "Mechanical",
@@ -14441,7 +14665,7 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/0/04/Figura_3..jpg"
     ],
     "local_images": [],
-    "video": "assets/videos/Mohr's Circle.mp4",
+    "video": "assets/videos/Mohr_s_Circle.mp4",
     "videoTitle": "Mohr's Circle"
   },
   {
@@ -14504,7 +14728,9 @@ const notesData = [
     "important": "\\[\\nu = - \\dfrac{\\mathrm{lateral\\ strain}}{\\mathrm{longitudinal\\ strain}}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Poissons_Ratio_and_Lateral_Strain_Contraction.mp4",
+    "videoTitle": "Poisson's Ratio and Lateral Strain Contraction"
   },
   {
     "discipline": "Mechanical",
@@ -14649,12 +14875,28 @@ const notesData = [
     "subject": "Material Properties and Processing",
     "chapter": "Ferrous Metals",
     "topic": "Ferrous Metals",
-    "subtopic": "Overview",
-    "content_html": "<ul>\r\n\t<li>Mild Steel - Carbon content of 0.1 to 0.3% and Iron content of 99.7 -99.9%. Used for engineering purposes and in general, none specialised metal products.</li>\r\n\t<li>Carbon steel -Carbon content of 0.6 to 1.4% and Iron content of 98.6 to 99.4%. Used to make cutting tools such as drill bits.</li>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n\t<li>Stainless Steel - Made up of Iron, nickel and chromium. Resists staining and corrosion and is therefore used for the likes of cutlery and surgical instrumentation.</li>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f3/Stainless_kitchen_container_with_cover.jpg\" alt=\"Stainless Steel\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Stainless_kitchen_container_with_cover.jpg\">Yapparina</a>, CC0, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<li>\r\n\t<p>Cast Iron - Carbon 2 - 6% and Iron at 94 to 98%. Very strong but brittle. Used to manufacture items such as engine blocks and manhole covers. Cast iron is a group of iron-carbon alloys with a carbon content greater than 2%. The alloy constituents affect its colour when fractured:</p>\r\n\r\n\t<ol>\r\n\t\t<li>White cast iron has carbide impurities which allow cracks to pass straight through.</li>\r\n\t\t<li>Grey cast iron has graphite flakes which deflect a passing crack and initiate countless new cracks as the material breaks.</li>\r\n\t\t<li>Malleable iron is cast as white iron, the structure being a metastable carbide in a pearlitic matrix. Through an annealing heat treatment, the brittle structure as first cast is transformed into the malleable form.</li>\r\n\t</ol>\r\n\t</li>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/1/14/Cast-Iron-Pan.jpg\" alt=\"Cast Iron\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Cast-Iron-Pan.jpg\">Evan-Amos</a>, Public domain, via Wikimedia Commons</small></small></center><br/>\r\n\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\t\r\n\t<li>\r\n\t<p>Wrought Iron -Composed of almost 100% iron. Used to make items such as ornamental gates and fencing.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<p>Plain Carbon Steel: These steel contain carbon as their primary alloying element. Low carbon(upto 0.2% C) and medium carbon (0.2 to 0.6% C) are used for piping, plant fabrication and other applications. High carbon steel (above 0.6% C) are subjected to heat treatment.</p>",
+    "subtopic": "Stainless Steel",
+    "content_html": "<ul>\n\t<li><strong>Mild Steel</strong> - Carbon content of 0.1 to 0.3% and Iron content of 99.7 -99.9%. Used for engineering purposes and in general, non-specialised metal products.</li>\n\t<li><strong>Carbon Steel</strong> - Carbon content of 0.6 to 1.4% and Iron content of 98.6 to 99.4%. Used to make cutting tools such as drill bits.</li>\n</ul>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p><strong>Stainless Steel</strong> - Made up of Iron, nickel and chromium. Resists staining and corrosion and is therefore used for the likes of cutlery and surgical instrumentation.</p>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f3/Stainless_kitchen_container_with_cover.jpg\" alt=\"Stainless Steel\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Stainless_kitchen_container_with_cover.jpg\">Yapparina</a>, CC0, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>\n<ul>\n\t<li><strong>Wrought Iron</strong> - Composed of almost 100% iron. Used to make items such as ornamental gates and fencing.</li>\n</ul>\n<p><strong>Plain Carbon Steel</strong>: These steels contain carbon as their primary alloying element. Low carbon (up to 0.2% C) and medium carbon (0.2 to 0.6% C) are used for piping, plant fabrication and other applications. High carbon steel (above 0.6% C) is subjected to heat treatment.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Stainless_Steel.mp4",
+    "videoTitle": "Stainless Steel"
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Material Properties and Processing",
+    "chapter": "Ferrous Metals",
+    "topic": "Ferrous Metals",
+    "subtopic": "Cast Iron",
+    "content_html": "<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p><strong>Cast Iron</strong> - Carbon 2 - 6% and Iron at 94 to 98%. Very strong but brittle. Used to manufacture items such as engine blocks and manhole covers. Cast iron is a group of iron-carbon alloys with a carbon content greater than 2%. The alloy constituents affect its colour when fractured:</p>\n\t\t\t<ol>\n\t\t\t\t<li><strong>White cast iron</strong> has carbide impurities which allow cracks to pass straight through.</li>\n\t\t\t\t<li><strong>Grey cast iron</strong> has graphite flakes which deflect a passing crack and initiate countless new cracks as the material breaks.</li>\n\t\t\t\t<li><strong>Malleable iron</strong> is cast as white iron, the structure being a metastable carbide in a pearlitic matrix. Through an annealing heat treatment, the brittle structure as first cast is transformed into the malleable form.</li>\n\t\t\t</ol>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/1/14/Cast-Iron-Pan.jpg\" alt=\"Cast Iron\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Cast-Iron-Pan.jpg\">Evan-Amos</a>, Public domain, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Cast_Iron.mp4",
+    "videoTitle": "Cast Iron"
   },
   {
     "discipline": "Mechanical",
@@ -14673,12 +14915,28 @@ const notesData = [
     "subject": "Material Properties and Processing",
     "chapter": "Engineered Materials",
     "topic": "Engineered Materials",
-    "subtopic": "Overview",
-    "content_html": "<h5><span><b>Elastomers and Fibres:</b></span></h5>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p><strong>Elastomers</strong> are rubber like solids with elastic properties. In these elastomeric polymers, the polymer chains are held together by the weakest intermolecular forces. These weak binding forces permit the polymer to be stretched. A few cross-links are introduced in between the chains, which help the polymer to retract to its original position after the force is released as in vulcanised rubber. The examples are buna-S, buna-N, neoprene, etc.<br />\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/24/Rubber_bands.jpg\" alt=\"Rubber_bands\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Rubber_bands.jpg\">FML</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.5\">CC BY-SA 2.5</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<strong>Fibres</strong> are the thread forming solids which possess high tensile strength and high modulus. These characteristics can be attributed to the strong intermolecular forces like hydrogen bonding. These strong forces also lead to close packing of chains and thus impart crystalline nature. The examples are polyamides(Nylon 6,6), polyesters (Terylene), etc.</p>\r\n\r\n<h5><span><b>Thermoplastic Polymers:</b></span></h5>\r\n\r\n<p>These are the linear or slightly branched long chain molecules capable of repeatedly softening on heating and hardening on cooling.These polymers possess intermolecular forces of attraction intermediate between elastomers and fibres. Some common thermoplastics are polythene, polystyrene, polyvinyls, etc.<br />\r\nA <strong>thermoplastic</strong> is a polymer that turns to a liquid when heated and freezes to a very glassy state when cooled sufficiently.<br />\r\nMost thermoplastics are high-molecular-weight polymers whose chains associate through weak Van der Waals forces (polyethylene); stronger dipole-dipole interactions and hydrogen bonding (Nylon).</p>\r\n\r\n<h5><span><b>Thermosetting Polymers:</b></span></h5>\r\n\r\n<p>These polymers are cross linked or heavily branched molecules, which on heating undergo extensive cross linking in moulds and again become infusible. These cannot be reused. Some common examples are bakelite, urea-formaldelyde resins, etc.<br />\r\nThermoplastic polymers differ from thermosetting polymers (Bakelite, vulcanized rubber) since thermoplastics can be remelted and remolded.<br />\r\nThermosetting plastics when heated, will chemically decompose, so they cannot be recycled. Yet, once a thermoset is cured it tends to be stronger than a thermoplastic.<br />\r\nTypically, linear polymers with minor branched structures (and flexible chains) are thermoplastics. The networked structures are thermosets.</p>\r\n\r\n<h5><span><b>Ceramics:</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>This category of materials includes things like tile, bricks, plates, glass, and toilets. Ceramics can be found in products like watches (quartz tuning forks-the time keeping devices in watches), snow skies (piezoelectric-ceramics that stress when a voltage is applied to them), automobiles (spark plugs and ceramic engine parts found in race cars), and phone lines. They can also be found on space shuttles, appliances (enamel coatings), and airplanes (nose cones). Depending on their method of formation, ceramics can be dense or lightweight. Typically, they will demonstrate excellent strength and hardness properties; however, they are often brittle in nature. Ceramics can also be formed to serve as electrically conductive materials, objects allowing electricity to pass through their mass, or insulators, materials preventing the flow of electricity. Some ceramics, like superconductors, also display magnetic properties.<br />\r\nCeramics are generally made by taking mixtures of clay, earthen elements, powders, and water and shaping them into desired forms. Once the ceramic has been shaped, it is fired in a high temperature oven known as a kiln. Often, ceramics are covered in decorative, waterproof, paint-like substances known as glazes.</p>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b7/02021_1210_20st-century_pottery_in_Poland.jpg\" alt=\"Ceramic\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:02021_1210_20st-century_pottery_in_Poland.jpg\">Silar</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<h5><span><b>Glass:</b></span></h5>\r\n<p>The mechanical properties of glasses are dual in nature:</p>\r\n\r\n<ul>\r\n\t<li>Below the glass transition temperature, T$_g$, glass is a rigid brittle material.</li>\r\n\t<li>Above T$_g$, glass behaves as a viscous liquid.</li>\r\n</ul>\r\n\r\n<p>with behavior characterized by continuous deformation (at a rate inversely related to viscosity) rather than a fixed elastic strain in response to stress.</p>\r\n\r\n<p>Types of Glasses:</p>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Annealed:\r\n\t<ul>\r\n\t\t<li>No residual stresses at room temperature</li>\r\n\t\t<li>Large and sharp segment breakage.</li>\r\n\t</ul>\r\n\t</li>\r\n\t<li>Tempered:\r\n\t<ul>\r\n\t\t<li>Surface quenched below <span class=\"math inline\">\\(T_g\\)</span></li>\r\n\t\t<li>Slow cooled to room temperature.</li>\r\n\t\t<li>Surface residual compressive stress,</li>\r\n\t\t<li>Core residual tensile stress</li>\r\n\t\t<li>Finely fragmented and dull breakage.</li>\r\n\t</ul>\r\n\t</li>\r\n\t<li>\r\n\t<p>Laminated: Two ordinary layer of annealed glass with a central layer of polymer.</p>\r\n\t</li>\r\n</ul>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/5b/Bottle._Colored_glass._img_01.jpg\" alt=\"Glass Bottles\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Bottle._Colored_glass._img_01.jpg\">Dmitry Makeev</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>",
+    "subtopic": "Elastomers and Fibres",
+    "content_html": "<h5><span><b>Elastomers and Fibres:</b></span></h5>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p><strong>Elastomers</strong> are rubber like solids with elastic properties. In these elastomeric polymers, the polymer chains are held together by the weakest intermolecular forces. These weak binding forces permit the polymer to be stretched. A few cross-links are introduced in between the chains, which help the polymer to retract to its original position after the force is released as in vulcanised rubber. The examples are buna-S, buna-N, neoprene, etc.<br />\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/24/Rubber_bands.jpg\" alt=\"Rubber_bands\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Rubber_bands.jpg\">FML</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.5\">CC BY-SA 2.5</a>, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>\n<p><strong>Fibres</strong> are the thread forming solids which possess high tensile strength and high modulus. These characteristics can be attributed to the strong intermolecular forces like hydrogen bonding. These strong forces also lead to close packing of chains and thus impart crystalline nature. The examples are polyamides (Nylon 6,6), polyesters (Terylene), etc.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Elastomers_and_Fibres.mp4",
+    "videoTitle": "Elastomers and Fibres"
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Material Properties and Processing",
+    "chapter": "Engineered Materials",
+    "topic": "Engineered Materials",
+    "subtopic": "Thermoplastic Polymers",
+    "content_html": "<h5><span><b>Thermoplastic Polymers:</b></span></h5>\n<p>These are the linear or slightly branched long chain molecules capable of repeatedly softening on heating and hardening on cooling. These polymers possess intermolecular forces of attraction intermediate between elastomers and fibres. Some common thermoplastics are polythene, polystyrene, polyvinyls, etc.<br />\nA <strong>thermoplastic</strong> is a polymer that turns to a liquid when heated and freezes to a very glassy state when cooled sufficiently.<br />\nMost thermoplastics are high-molecular-weight polymers whose chains associate through weak Van der Waals forces (polyethylene); stronger dipole-dipole interactions and hydrogen bonding (Nylon).</p>\n\n<h5><span><b>Thermosetting Polymers:</b></span></h5>\n<p>These polymers are cross linked or heavily branched molecules, which on heating undergo extensive cross linking in moulds and again become infusible. These cannot be reused. Some common examples are bakelite, urea-formaldehyde resins, etc.<br />\nThermoplastic polymers differ from thermosetting polymers (Bakelite, vulcanized rubber) since thermoplastics can be remelted and remolded.<br />\nThermosetting plastics when heated, will chemically decompose, so they cannot be recycled. Yet, once a thermoset is cured it tends to be stronger than a thermoplastic.<br />\nTypically, linear polymers with minor branched structures (and flexible chains) are thermoplastics. The networked structures are thermosets.</p>\n\n<h5><span><b>Ceramics:</b></span></h5>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p>This category of materials includes things like tile, bricks, plates, glass, and toilets. Ceramics can be found in products like watches (quartz tuning forks-the time keeping devices in watches), snow skies (piezoelectric-ceramics that stress when a voltage is applied to them), automobiles (spark plugs and ceramic engine parts found in race cars), and phone lines. They can also be found on space shuttles, appliances (enamel coatings), and airplanes (nose cones). Depending on their method of formation, ceramics can be dense or lightweight. Typically, they will demonstrate excellent strength and hardness properties; however, they are often brittle in nature. Ceramics can also be formed to serve as electrically conductive materials, objects allowing electricity to pass through their mass, or insulators, materials preventing the flow of electricity. Some ceramics, like superconductors, also display magnetic properties.<br />\n\t\t\tCeramics are generally made by taking mixtures of clay, earthen elements, powders, and water and shaping them into desired forms. Once the ceramic has been shaped, it is fired in a high temperature oven known as a kiln. Often, ceramics are covered in decorative, waterproof, paint-like substances known as glazes.</p>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b7/02021_1210_20st-century_pottery_in_Poland.jpg\" alt=\"Ceramic\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:02021_1210_20st-century_pottery_in_Poland.jpg\">Silar</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>\n\n<h5><span><b>Glass:</b></span></h5>\n<p>The mechanical properties of glasses are dual in nature:</p>\n<ul>\n\t<li>Below the glass transition temperature, T$_g$, glass is a rigid brittle material.</li>\n\t<li>Above T$_g$, glass behaves as a viscous liquid.</li>\n</ul>\n<p>with behavior characterized by continuous deformation (at a rate inversely related to viscosity) rather than a fixed elastic strain in response to stress.</p>\n<p>Types of Glasses:</p>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<ul>\n\t\t\t\t<li>Annealed:\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li>No residual stresses at room temperature</li>\n\t\t\t\t\t\t<li>Large and sharp segment breakage.</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li>Tempered:\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li>Surface quenched below <span class=\"math inline\">\\(T_g\\)</span></li>\n\t\t\t\t\t\t<li>Slow cooled to room temperature.</li>\n\t\t\t\t\t\t<li>Surface residual compressive stress,</li>\n\t\t\t\t\t\t<li>Core residual tensile stress</li>\n\t\t\t\t\t\t<li>Finely fragmented and dull breakage.</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li>Laminated: Two ordinary layer of annealed glass with a central layer of polymer.</li>\n\t\t\t</ul>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/5b/Bottle._Colored_glass._img_01.jpg\" alt=\"Glass Bottles\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Bottle._Colored_glass._img_01.jpg\">Dmitry Makeev</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Thermoplastics_vs_Thermosetting_Plastics.mp4",
+    "videoTitle": "Thermoplastics vs. Thermosetting Plastics"
   },
   {
     "discipline": "Mechanical",
@@ -14788,7 +15046,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Difference_between_quenching_and_annealing.mp4",
+    "videoTitle": "Difference between Quenching and Annealing"
   },
   {
     "discipline": "Mechanical",
@@ -14866,7 +15126,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Methods_for_Controlling_Corrosion.mp4",
+    "videoTitle": "Methods for Controlling Corrosion"
   },
   {
     "discipline": "Mechanical",
@@ -14970,7 +15232,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/b/b1/Density_-_Kilogram_per_cubic_metre.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Specific_Gravity.mp4",
+    "videoTitle": "Specific Gravity"
   },
   {
     "discipline": "Mechanical",
@@ -15140,7 +15404,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Bernoullis_Principle.mp4",
+    "videoTitle": "Bernoulli’s Principle"
   },
   {
     "discipline": "Mechanical",
@@ -15197,7 +15463,9 @@ const notesData = [
       "https://drive.google.com/file/d/1TgIUqMQ5A3bXb8sQiZ6kdJzt2W0mrZlI/view?usp=sharing",
       "https://upload.wikimedia.org/wikipedia/commons/b/b0/Minor_Losses.png"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "videoTitle": "Minor Head Loss in Piping Systems"
   },
   {
     "discipline": "Mechanical",
@@ -15261,7 +15529,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Boundary_Layer_Displacement_and_Momentum_Thickness.mp4",
+    "videoTitle": "Boundary Layer Displacement and Momentum Thickness"
   },
   {
     "discipline": "Mechanical",
@@ -15364,8 +15634,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1003559896?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Mach Number\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/19W3jcW95JGkU1oBNVb6L9XzwbR9bJETU/preview",
-    "videoTitle": "Mach Number"
+    "video": "assets/videos/Dimensionless_numbers.mp4",
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
   },
   {
     "discipline": "Mechanical",
@@ -15621,7 +15891,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Meyers_formula_for_specific_heats.mp4",
+    "videoTitle": "Mayer's Formula for Specific Heats (cp - cv = R)"
   },
   {
     "discipline": "Mechanical",
@@ -15807,7 +16079,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1NNrrK5vcM8YlPjw0OsNX4mqUdENGymGx/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Otto_Cycle.mp4",
+    "videoTitle": "Otto Cycle"
   },
   {
     "discipline": "Mechanical",
@@ -15889,7 +16163,9 @@ const notesData = [
     "important": "\\[\\Delta S = S_f - S_i\\]\r\n\r\n\\[ds = \\left(\\dfrac{1}{T}\\right) \\delta q_{rev}\\]\r\n\r\n\\[s_2 - s_1 = \\displaystyle \\int_{T_1}^{T_2}\\left(\\dfrac{1}{T}\\right) \\delta q_{rev}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Entropy.mp4",
+    "videoTitle": "Entropy"
   },
   {
     "discipline": "Mechanical",
@@ -16051,7 +16327,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Second_Law_of_Thermodynamics.mp4",
+    "videoTitle": "Second Law of Thermodynamics (Clausius, Kelvin-Planck, and Entropy)"
   },
   {
     "discipline": "Mechanical",
@@ -16063,7 +16341,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Third_Law_of_Thermodynamics.mp4",
+    "videoTitle": "Third Law of Thermodynamics (Absolute Entropy and Absolute Zero)"
   },
   {
     "discipline": "Mechanical",
@@ -16151,7 +16431,9 @@ const notesData = [
     "important": "Air film resistance,\r\n\\[R = \\dfrac{1}{hA}\\]\r\n\r\nThermal resistance of plane wall\r\n\\[R = \\dfrac{L}{kA}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Heat_transfer_through_Composite_Plane_Wall.mp4",
+    "videoTitle": "Heat Transfer Through Composite Plane Wall"
   },
   {
     "discipline": "Mechanical",
@@ -16191,7 +16473,9 @@ const notesData = [
     "important": "Heat transfer through fin:\r\n\\[\\dot{Q} = \\sqrt{hPkA_c} (T_b-T_\\infty)\\tanh(mL_c)\\]\r\n\r\nCorrected Length of fin:\r\n\\[L_c = L + \\dfrac{A_c}{P}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Hzn7guuKa4eJk5q6dFGjxKmocJoUupzh/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Heat_transfer_through_Fins.mp4",
+    "videoTitle": "Heat Transfer Through Fins (Extended Surfaces)"
   },
   {
     "discipline": "Mechanical",
@@ -16283,7 +16567,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1-O6kqpOQ6O19bXNDgHkXspUKftDYd1rH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Dimensionless_numbers.mp4",
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
   },
   {
     "discipline": "Mechanical",
@@ -16343,7 +16629,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Types_of_convection.mp4",
+    "videoTitle": "Types of Convection (Natural, Forced, and Phase Change)"
   },
   {
     "discipline": "Mechanical",
@@ -16500,7 +16788,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1hFGZUClTwELsziJYQiUbHVeSNPUp7wyw/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Piezoelectric_effect.mp4",
+    "videoTitle": "Piezoelectric Effect"
   },
   {
     "discipline": "Mechanical",
@@ -16538,7 +16828,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1wHYBvR6hmmm_5HJnsTmNf80KNzhi0uKZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Strain_Gauge_Gauge_Factor_Equation.mp4",
+    "videoTitle": "Strain Gauge Gauge Factor Equation"
   },
   {
     "discipline": "Mechanical",
@@ -16589,8 +16881,8 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Closed_Loop_Feedback_Control_System_Transfer_Function.mp4",
-    "videoTitle": "Closed Loop Feedback Control System Transfer Function"
+    "video": "assets/videos/Control_Systems.mp4",
+    "videoTitle": "Control Systems"
   },
   {
     "discipline": "Mechanical",
@@ -16658,7 +16950,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/4/4f/Second_order_transfer_function.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Damped_Free_Vibrations.mp4",
+    "videoTitle": "Damped Free Vibrations (SDOF System Response)"
   },
   {
     "discipline": "Mechanical",
@@ -16749,9 +17043,23 @@ const notesData = [
     "subject": "Mechanical Design and Analysis",
     "chapter": "Bearings",
     "topic": "Basic Load Rating",
-    "subtopic": "Overview",
-    "content_html": "<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<ol>\r\n\t<li>Hydrodynamically lubricated bearings - If a lubricant film is enclosed in a wedge or tapered gap between the stationary and moving members, the oil film is drawn into the wedge shape generating a pressure that can support a load.</li>\r\n<li>Rolling Contact Bearings These can be further classified as:</li>\r\n<ul>\r\n\t\t<li>Ball Bearings- A typical ball bearing has the following components:</li>\r\n                <ul>\r\n\t\t\t<li>Outer ring, which contains the outer raceway</li>\r\n\t\t\t<li>Inner ring, which contains the inner raceway</li>\r\n\t\t\t<li>Complement of balls</li>\r\n\t\t\t<li>Two-piece separator (also called cage or retainer)</li>\r\n\t\t</ul>\r\n                <li>Roller Bearings- These have more load carrying capacity as the contact area is  more compared to ball bearings.</li>\r\n\t\t<li>Needle Bearings– Only for radial loads.</li>\r\n</ul>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/2d/Ball_bearing.jpg\" alt=\"Ball bearing\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Ball_bearing.jpg\">Solaris2006</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n\r\n    \t\t</div>\r\n  \t</div>\r\n\r\n\r\n\r\n<h5><span><b>Footstep Bearing:</b></span></h5>\r\n\r\n<p>Footstep bearing is used to support shaft vertically. It consists of a cast iron block into which a gunmetal bush having a collar at the top is fitted. The shaft rests on a steel pad. The pad is prevented from rotating by a pin, inserted half inside the block and half in the pad and away from the centre. The collar of the bush is made hollow to serve as an oil cup for lubrication of the bearing.</p>\r\n</ol>\r\n\r\n<h5><span><b>Basic Load Rating:</b></span></h5>\r\n<p>Bearings are subjected to repeated stress cycles and are likely to fail by fatigue. <span class=\"math inline\">\\(L_{10}\\)</span> life is defined as the number of hours that 90% of the bearings tested will exceed, which means the probability of failure is 10% at the <span class=\"math inline\">\\(L_{10}\\)</span> life.<br />\r\n<strong>Average life</strong> is the number of hours that 50% of the bearings exceed.<br />\r\n<strong>Basic Load Rating</strong> is defined as the load for which 90% of the bearings from a given population will survive 1 million revolutions.<br />\r\nIt is calculated as follows:</p>\r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$C = PL^{\\left[\\dfrac{1}{a}\\right]}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 434</span></button>\r\n</div><br/>\r\n\r\n<p>where,<br />\r\nC = minimum required basic load rating<br />\r\nP = design radial load<br />\r\nL = design life (in millions of revolutions)<br />\r\na = constant which is = 3 for ball bearing or <span class=\"math inline\">\\(\\dfrac{10}{3}\\)</span> for roller bearings.</p>",
+    "subtopic": "Types of Bearings",
+    "content_html": "<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<h5><span><b>Types of Bearings:</b></span></h5>\n<ol>\n\t<li><b>Hydrodynamically lubricated bearings</b> - If a lubricant film is enclosed in a wedge or tapered gap between the stationary and moving members, the oil film is drawn into the wedge shape generating a pressure that can support a load.</li>\n<li><b>Rolling Contact Bearings</b> - These can be further classified as:\n<ul>\n\t\t<li><b>Ball Bearings</b> - A typical ball bearing has the following components:\n                <ul>\n\t\t\t<li>Outer ring, which contains the outer raceway</li>\n\t\t\t<li>Inner ring, which contains the inner raceway</li>\n\t\t\t<li>Complement of balls</li>\n\t\t\t<li>Two-piece separator (also called cage or retainer)</li>\n\t\t</ul>\n\t\t</li>\n                <li><b>Roller Bearings</b> - These have more load carrying capacity as the contact area is more compared to ball bearings.</li>\n\t\t<li><b>Needle Bearings</b> – Only for radial loads.</li>\n</ul>\n</li>\n</ol>\n\t\t</div>\n    \t\t<div class=\"col\">\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/2d/Ball_bearing.jpg\" alt=\"Ball bearing\" width=\"340\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Ball_bearing.jpg\">Solaris2006</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\n    \t\t</div>\n  \t</div>\n\n<h5><span><b>Footstep Bearing:</b></span></h5>\n<p>Footstep bearing is used to support shaft vertically. It consists of a cast iron block into which a gunmetal bush having a collar at the top is fitted. The shaft rests on a steel pad. The pad is prevented from rotating by a pin, inserted half inside the block and half in the pad and away from the centre. The collar of the bush is made hollow to serve as an oil cup for lubrication of the bearing.</p>",
     "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Types_of_bearings.mp4",
+    "videoTitle": "Types of Bearings"
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Mechanical Design and Analysis",
+    "chapter": "Bearings",
+    "topic": "Basic Load Rating",
+    "subtopic": "Basic Load Rating",
+    "content_html": "<h5><span><b>Basic Load Rating &amp; Fatigue Life:</b></span></h5>\n<p>Bearings are subjected to repeated stress cycles and are likely to fail by fatigue. $L_{10}$ life is defined as the number of hours that 90% of the bearings tested will exceed, which means the probability of failure is 10% at the $L_{10}$ life.<br />\n<strong>Average life</strong> is the number of hours that 50% of the bearings exceed.<br />\n<strong>Basic Load Rating</strong> is defined as the load for which 90% of the bearings from a given population will survive 1 million revolutions.<br />\nIt is calculated as follows:</p>\n\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$C = P L^{\\left[\\dfrac{1}{a}\\right]}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 434</span></button>\n</div><br/>\n\n<p>where,<br />\n$C$ = minimum required basic load rating<br />\n$P$ = design radial load<br />\n$L$ = design life (in millions of revolutions)<br />\n$a$ = constant which is = $3$ for ball bearings or $\\dfrac{10}{3}$ for roller bearings.</p>",
+    "important": "Basic Load Rating:\r\n\\[C = P L^{[1/a]}\\]",
     "resources": "",
     "images": [],
     "local_images": [],
@@ -16775,12 +17083,26 @@ const notesData = [
     "subject": "Mechanical Design and Analysis",
     "chapter": "Power Screws",
     "topic": "Power Screw Calculations",
-    "subtopic": "Overview",
-    "content_html": "<h5><span><b>Power Screw Terminology:</b></span></h5>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<ul>\r\n\t<li>Pitch(p) : The axial distance between successive threads.</li>\r\n\t<li>Lead (L) : The distance advanced by the screw (or nut) for one rotation. The lead equals the pitch for a single start thread. For a multi-start thread the lead equals the pitch multiplied by the number of starts.</li>\r\n\t<li>Root diameter (d<span class=\"math inline\">\\(_i\\)</span>): The root diameter is the inside diameter of the thread, also known as minor diameter.</li>\r\n\t<li>Pitch diameter (d): The pitch diameter is the diameter of a theoretical thread which had zero thread depth but has the same lead as the actual screw. If there were no clearance, then the pitch diameter would be the mean diameter.</li>\r\n</ul>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n<center><img src=\" https://upload.wikimedia.org/wikipedia/commons/6/67/Screw_Threads.png\" alt=\"Screw Threads\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Screw_Threads.png\">Robert Hewitt</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/ff/Screw_thread_handedness.png\" alt=\"Screw thread handedness\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Screw_thread_handedness.png\">Eugene Wycliffe Kerr</a>, Public domain, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/0/00/Lead_and_pitch.png\" alt=\"Lead and pitch\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Lead_and_pitch.png\">Lambiam</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n\r\n\r\n  \r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h5><span><b>Torque required to raise the load:</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$T_{R}=\\dfrac {Fd_m}{2}\\left( \\dfrac {\\pi \\mu d_m + l}{\\pi d_m-\\mu l}\\right) +\\dfrac {F \\mu_c d_c}{2}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 435</span></button>\r\n</div><br/>\r\n\r\n\r\n<h5><span><b>Torque required to lower the load:</b></span></h5>\r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$T_{L}=\\dfrac {F d_m}{2}\\left( \\dfrac {\\pi \\mu d_m - l}{\\pi d_m +\\mu l}\\right) +\\dfrac {F\\mu_{c}d_{c}}{2}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 435</span></button>\r\n</div><br/>\r\n\r\n\r\n\r\n<p>where,<br />\r\nd<span class=\"math inline\">\\(_c\\)</span> = mean collar diameter<br />\r\nd<span class=\"math inline\">\\(_m\\)</span> = mean thread diameter<br />\r\n<span class=\"math inline\">\\(l\\)</span> = lead<br />\r\nF = load<br />\r\n<span class=\"math inline\">\\(\\mu\\)</span> = coefficient of friction for thread<br />\r\n<span class=\"math inline\">\\(\\mu_c\\)</span> = coefficient of friction for collar</p>\r\n\r\n<h5><span><b>Efficiency of a Power Screw:</b></span></h5>\r\n\r\n<p>The efficiency of a power screw may be expressed as:</p>\r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\eta = \\dfrac{Fl}{2 \\pi T}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 435</span></button>\r\n</div><br/>\r\n\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center>\r\n\r\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c8/Helix_angle_v2.svg\" alt=\"Helix angle\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Helix_angle_v2.svg\">Wizard191</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>",
+    "subtopic": "Power Screw Terminology",
+    "content_html": "<h5><span><b>Power Screw Terminology:</b></span></h5>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<ul>\n\t<li>Pitch (p) : The distance from a point on one thread to the corresponding point on the next thread.</li>\n\t<li>Lead (L) : The distance advanced by the screw (or nut) for one rotation. The lead equals the pitch for a single start thread. For a multi-start thread the lead equals the pitch multiplied by the number of starts.</li>\n\t<li>Root diameter (d<span class=\"math inline\">\\(_i\\)</span>): The root diameter is the inside diameter of the thread, also known as minor diameter.</li>\n\t<li>Pitch diameter (d): The pitch diameter is the diameter of a theoretical thread which had zero thread depth but has the same lead as the actual screw. If there were no clearance, then the pitch diameter would be the mean diameter.</li>\n</ul>\n\t\t</div>\n    \t\t<div class=\"col\">\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/67/Screw_Threads.png\" alt=\"Screw Threads\" width=\"340\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Screw_Threads.png\">Robert Hewitt</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\n\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/ff/Screw_thread_handedness.png\" alt=\"Screw thread handedness\" width=\"340\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Screw_thread_handedness.png\">Eugene Wycliffe Kerr</a>, Public domain, via Wikimedia Commons</small></small></center><br/>\n\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/0/00/Lead_and_pitch.png\" alt=\"Lead and pitch\" width=\"340\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Lead_and_pitch.png\">Lambiam</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\n    \t\t</div>\n  \t</div>\n</div>",
     "important": "",
     "resources": "",
     "images": [],
     "local_images": []
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Mechanical Design and Analysis",
+    "chapter": "Power Screws",
+    "topic": "Power Screw Calculations",
+    "subtopic": "Torque required to raise the load",
+    "content_html": "<h5><span><b>Torque required to raise the load:</b></span></h5>\n\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$T_{R}=\\dfrac {Fd_m}{2}\\left( \\dfrac {\\pi \\mu d_m + l}{\\pi d_m-\\mu l}\\right) +\\dfrac {F \\mu_c d_c}{2}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 435</span></button>\n</div><br/>\n\n<h5><span><b>Torque required to lower the load:</b></span></h5>\n\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$T_{L}=\\dfrac {F d_m}{2}\\left( \\dfrac {\\pi \\mu d_m - l}{\\pi d_m +\\mu l}\\right) +\\dfrac {F\\mu_{c}d_{c}}{2}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 435</span></button>\n</div><br/>\n\n<p>where,<br />\n$d_c$ = mean collar diameter<br />\n$d_m$ = mean thread diameter<br />\n$l$ = lead<br />\n$F$ = load<br />\n$\\mu$ = coefficient of friction for thread<br />\n$\\mu_c$ = coefficient of friction for collar</p>\n\n<h5><span><b>Efficiency of a Power Screw:</b></span></h5>\n\n<p>The efficiency of a power screw may be expressed as:</p>\n\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\eta = \\dfrac{Fl}{2 \\pi T}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 435</span></button>\n</div><br/>\n\n\t\t</div>\n    \t\t<div class=\"col\">\n     <center>\n<img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c8/Helix_angle_v2.svg\" alt=\"Helix angle\" width=\"340\"><br/>\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Helix_angle_v2.svg\">Wizard191</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\n    \t\t</div>\n  \t</div>\n</div>",
+    "important": "Torque to raise the load:\n\\[T_R = \\dfrac{Fd_m}{2}\\left(\\dfrac{\\pi\\mu d_m + l}{\\pi d_m - \\mu l}\\right) + \\dfrac{F\\mu_c d_c}{2}\\]\n\nTorque to lower the load:\n\\[T_L = \\dfrac{Fd_m}{2}\\left(\\dfrac{\\pi\\mu d_m - l}{\\pi d_m + \\mu l}\\right) + \\dfrac{F\\mu_c d_c}{2}\\]\n\nEfficiency:\n\\[\\eta = \\dfrac{Fl}{2\\pi T}\\]",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Power_Screws_Lifting_Torque_and_Efficiency.mp4",
+    "videoTitle": "Power Screws Lifting Torque and Efficiency"
   },
   {
     "discipline": "Mechanical",
@@ -16804,7 +17126,9 @@ const notesData = [
     "important": "\\[p_c = \\dfrac{\\pi d}{N}\\]\r\n\r\n\\[p_b = p_c \\cos \\phi\\]\r\n\r\n\\[m = \\dfrac{d}{N}\\]\r\n\r\n\\[C = \\dfrac{(d_1 + d_2)}{2}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Types_of_Gears.mp4",
+    "videoTitle": "Types of Gears"
   },
   {
     "discipline": "Mechanical",
@@ -16948,7 +17272,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Feature_Control_Frame_in_Manufacturing.mp4",
+    "videoTitle": "Feature Control Frame in Manufacturing"
   },
   {
     "discipline": "Mechanical",
@@ -17029,12 +17355,28 @@ const notesData = [
     "subject": "Mechanical Design and Analysis",
     "chapter": "Static Loading Failure Theories",
     "topic": "Failure Theories for Ductile Materials",
-    "subtopic": "Overview",
-    "content_html": "<h5><span><b>Maximum-Shear-Stress Theory: (Tresca)</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<p>As per this theory, yielding in the material is governed by the maximum shear stress developed in the material under the action of the principal stresses. The maximum shear stress due to the principal stresses should not exceed the maximum shear stress developed in a simple tensile test, that is, at yield point.</p>\r\n\r\n<p>When Yielding occurs in any material, the maximum shear stress at the point of failure equals or exceeds the maximum shear stress when yielding occurs in the tension test specimen. \r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\tau_{max} = \\dfrac{\\sigma_1 - \\sigma_3}{2}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\n\r\nThe theory applies to ductile materials only, because it is based on yielding.<br />\r\nThis yield criterion gives good agreement with experimental results for ductile materials; because of its simplicity, it is the most often used yield theory.<br />\r\n<br />\r\nThe main objection to this theory is that it ignores the possible effect of the intermediate principal stress, <span class=\"math inline\">\\(\\sigma_2\\)</span>. However, only one other theory, the maximum distortional strain energy theory, predicts yielding better than does the Tresca theory, and the differences between the two theories are rarely more than 15%.<br />\r\nFailure is predicted when any of the three shear stresses corresponding to the principal stresses, <span class=\"math inline\">\\(\\sigma_{1,2}\\)</span>, equals or exceeds the shear stress corresponding to the yield strength, <span class=\"math inline\">\\(\\sigma_{y}\\)</span>, of the material in uniaxial tension or compression.</p>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f2/Critere_tresca_von_mises.svg\" alt=\"tresca von mises\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Critere_tresca_von_mises.svg\">Cdang</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n<h5><span><b>Distortion Energy Theory:</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<p>According to the Von Mises’s theory, a ductile solid will yield when the distortion energy density reaches a critical value for that material.<br />\r\n<br />\r\nOr, a more formal statement of this theory would be,<br />\r\n<br />\r\nWhen Yielding occurs in any material, the distortion strain energy per unit volume at the point of failure equals or exceeds the distortion strain energy per unit volume when yielding occurs in the tension test specimen.<br />\r\nAgain, the theory applies to ductile materials only, because it is based on yielding. \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\left[\\dfrac{(\\sigma_1 - \\sigma_2)^2 +(\\sigma_2 - \\sigma_3)^2 +(\\sigma_1 - \\sigma_3)^2}{2}\\right]^{\\frac{1}{2}}\\geq S_y$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\nThe effective or Von-Mises stress is given by, \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\sigma' = \\left(\\sigma_A^2 - \\sigma_A \\sigma_B + \\sigma_B^2\\right)^{\\frac{1}{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\nor, \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\sigma' = \\left(\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2\\right)^{\\frac{1}{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\nwhere $\\sigma_A$ and $\\sigma_B$ are the two nonzero principal stresses and $\\sigma_x$, $\\sigma_y$ , and $\\tau_{xy}$ are the stresses in orthogonal directions.</p>\r\n\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21593&authkey=%21AIKu4rpVGjm-y4M&width=265&height=287\" width=\"265\" height=\"287\" /></center>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>",
+    "subtopic": "Maximum-Shear-Stress Theory (Tresca)",
+    "content_html": "<h5><span><b>Maximum-Shear-Stress Theory: (Tresca)</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<p>As per this theory, yielding in the material is governed by the maximum shear stress developed in the material under the action of the principal stresses. The maximum shear stress due to the principal stresses should not exceed the maximum shear stress developed in a simple tensile test, that is, at yield point.</p>\r\n\r\n<p>When Yielding occurs in any material, the maximum shear stress at the point of failure equals or exceeds the maximum shear stress when yielding occurs in the tension test specimen. \r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\tau_{max} = \\dfrac{\\sigma_1 - \\sigma_3}{2}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\n\r\nThe theory applies to ductile materials only, because it is based on yielding.<br />\r\nThis yield criterion gives good agreement with experimental results for ductile materials; because of its simplicity, it is the most often used yield theory.<br />\r\n<br />\r\nThe main objection to this theory is that it ignores the possible effect of the intermediate principal stress, <span class=\"math inline\">\\(\\sigma_2\\)</span>. However, only one other theory, the maximum distortional strain energy theory, predicts yielding better than does the Tresca theory, and the differences between the two theories are rarely more than 15%.<br />\r\nFailure is predicted when any of the three shear stresses corresponding to the principal stresses, <span class=\"math inline\">\\(\\sigma_{1,2}\\)</span>, equals or exceeds the shear stress corresponding to the yield strength, <span class=\"math inline\">\\(\\sigma_{y}\\)</span>, of the material in uniaxial tension or compression.</p>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f2/Critere_tresca_von_mises.svg\" alt=\"tresca von mises\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Critere_tresca_von_mises.svg\">Cdang</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>",
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1ykUt7kq9FPNLnAto-4g62iWvTX7GvRrW/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": null,
+    "videoTitle": null
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Mechanical Design and Analysis",
+    "chapter": "Static Loading Failure Theories",
+    "topic": "Failure Theories for Ductile Materials",
+    "subtopic": "Distortion Energy Theory",
+    "content_html": "<h5><span><b>Distortion Energy Theory:</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<p>According to the Von Mises’s theory, a ductile solid will yield when the distortion energy density reaches a critical value for that material.<br />\r\n<br />\r\nOr, a more formal statement of this theory would be,<br />\r\n<br />\r\nWhen Yielding occurs in any material, the distortion strain energy per unit volume at the point of failure equals or exceeds the distortion strain energy per unit volume when yielding occurs in the tension test specimen.<br />\r\nAgain, the theory applies to ductile materials only, because it is based on yielding. \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\left[\\dfrac{(\\sigma_1 - \\sigma_2)^2 +(\\sigma_2 - \\sigma_3)^2 +(\\sigma_1 - \\sigma_3)^2}{2}\\right]^{\\frac{1}{2}}\\geq S_y$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\nThe effective or Von-Mises stress is given by, \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\sigma' = \\left(\\sigma_A^2 - \\sigma_A \\sigma_B + \\sigma_B^2\\right)^{\\frac{1}{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\nor, \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$\\sigma' = \\left(\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2\\right)^{\\frac{1}{2}}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 449</span></button>\r\n</div><br/>\r\n\r\nwhere $\\sigma_A$ and $\\sigma_B$ are the two nonzero principal stresses and $\\sigma_x$, $\\sigma_y$ , and $\\tau_{xy}$ are the stresses in orthogonal directions.</p>\r\n\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21593&authkey=%21AIKu4rpVGjm-y4M&width=265&height=287\" width=\"265\" height=\"287\" /></center>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>",
+    "important": "von Mises Effective Stress (Plane Stress):\r\n\\[\\sigma' = \\sqrt{\\sigma_A^2 - \\sigma_A \\sigma_B + \\sigma_B^2} = \\sqrt{\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2} \\le \\dfrac{S_y}{n}\\]",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1ykUt7kq9FPNLnAto-4g62iWvTX7GvRrW/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Distortion_Energy_Theory_von_Mises_Yield_Criterion_for_Ductile_Metals.mp4",
+    "videoTitle": "Distortion Energy Theory (von Mises Yield Criterion) for Ductile Metals"
   },
   {
     "discipline": "Mechanical",
@@ -17084,21 +17426,37 @@ const notesData = [
     "important": "Modified Goodman Theory:\r\n\\[\\dfrac{\\sigma_{a}}{S_{e}} + \\dfrac{\\sigma_{m}}{S_{ut}} \\geq 1\\]\r\n\\[\\dfrac{\\sigma_{max}}{S_y} \\geq 1\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
+    "videoTitle": "Modified Goodman Fatigue Failure Criterion"
   },
   {
     "discipline": "Mechanical",
     "subject": "Mechanical Design and Analysis",
     "chapter": "Quality and Reliability",
     "topic": "Reliability of an Assembly",
-    "subtopic": "Overview",
-    "content_html": "<p>Most products are made up of a number of components. The reliability of each component and the configuration of the system consisting of these components determines the system reliability (i.e., the reliability of the product).</p>\r\n\r\n<h5><span><b>Components connected in Series:</b></span></h5>\r\n\r\n<p>If the components are in series, system performs satisfactorily if all components are fully functional. For example, Christmas lights. \r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = \\displaystyle \\prod_{i = 1}^{n} P_i$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 424</span></button>\r\n</div><br/>\r\n\r\n<h5><span><b>Components connected in Parallel:</b></span></h5>\r\n\r\n<p>If the components are in parallel, system performs if any one component remains operational. For example, an airplane with four engines, or a laptop with a power source and a battery. \r\n\r\n<div class=\"text-center\">\r\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = 1- \\displaystyle \\prod_{i = 1}^{n}( 1- P_i)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 424</span></button>\r\n</div><br/>\r\n\r\n\r\n<h5><span><b>Components connected Combination of Series and Parallel:</b></span></h5>\r\n\r\n<p>In such cases, first find out the reliability of series branches and then apply parallel reliability formula.</p>",
-    "important": "Series:\r\n\\[R = \\prod_{i = 1}^{n} P_i\\]\r\n\r\nParallel:\r\n\\[R = 1- \\prod_{i = 1}^{n}( 1- P_i)\\]",
+    "subtopic": "Components connected in Series",
+    "content_html": "<p>Most products are made up of a number of components. The reliability of each component and the configuration of the system consisting of these components determines the system reliability (i.e., the reliability of the product).</p>\n\n<h5><span><b>Components connected in Series:</b></span></h5>\n\n<p>If the components are in series, system performs satisfactorily if all components are fully functional. For example, Christmas lights.</p>\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = \\displaystyle \\prod_{i = 1}^{n} P_i$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 424</span></button>\n</div><br/>",
+    "important": "Series System Reliability:\r\n\\[R = \\prod_{i = 1}^{n} P_i\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1g7f8S31rEmwCyVjxbirxpKLy4UozNcjJ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
     "video": "assets/videos/Series_System_Reliability_Modeling.mp4",
     "videoTitle": "Series System Reliability Modeling"
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Mechanical Design and Analysis",
+    "chapter": "Quality and Reliability",
+    "topic": "Reliability of an Assembly",
+    "subtopic": "Components connected in Parallel",
+    "content_html": "<h5><span><b>Components connected in Parallel:</b></span></h5>\n\n<p>If the components are in parallel, system performs if any one component remains operational. For example, an airplane with four engines, or a laptop with a power source and a battery.</p>\n\n<div class=\"text-center\">\n<button type=\"button\" class=\"btn btn-light shadow-lg\">$R = 1- \\displaystyle \\prod_{i = 1}^{n}( 1- P_i)$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 424</span></button>\n</div><br/>\n\n<h5><span><b>Components connected Combination of Series and Parallel:</b></span></h5>\n\n<p>In such cases, first find out the reliability of series branches and then apply parallel reliability formula.</p>",
+    "important": "Parallel System Reliability:\r\n\\[R = 1 - \\prod_{i = 1}^{n}(1 - P_i)\\]",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Parallel_System_Reliability_Formulation.mp4",
+    "videoTitle": "Parallel System Reliability Formulation"
   },
   {
     "discipline": "Mechanical",
@@ -17154,13 +17512,31 @@ const notesData = [
     "chapter": "Engg Drawing",
     "topic": "Engineering Drawing",
     "subtopic": "Elements of Engineering Drawing",
-    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png\" alt=\"Engineering Drawing\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckenwelle.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/20/Department_of_Railways_NSW_draing_title_block.jpg\" alt=\"Title Block\" width=\"340\"><br/>\r\n\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Department_of_Railways_NSW_draing_title_block.jpg\">Department of Railways New South Wales</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/89/Schneckengetriebe.png\" alt=\"Drawing with Bill of Materials\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckengetriebe.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/55/Isometric_cube.png\" alt=\"Isometric cube\" width=\"200\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Isometric_cube.png\">MrNoble.xyz</a>, CC0, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/7/7f/%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\" alt=\"Oblique Projection\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\">すじにくシチュー</a>, CC0, via Wikimedia Commons</small></small></center><br/></div><h5 id=\"first-angle-and-third-angle-orthographic-projection\"><b>First Angle and Third Angle Orthographic Projection:</b></h5>\r\n\r\n<p>In the first angle projection, Front view is at the top and top is below from view aligned with it. Left hand view is placed on the right side of front view and vice versa.<br />\r\nIn the third angle projection, Front view is at the bottom and top is above from view aligned with it. Left hand view is placed on the left side and right side view is placed on the right side of front view.</p>\r\n\r\n<h5 id=\"isometric-views-and-isometric-projections\"><b>Isometric Views and Isometric Projections:</b></h5>\r\n\r\n<p>Isometric views are 3-D pictorial views. The isometric x and y axes are 30<span class=\"math inline\">\\(^\\circ\\)</span> to the horizontal line. z axis is still vertical. In isometric projection, an isometric scale is constructed to account of reduction in apparent length of objects. Circles in represented by isocircles which are ellipses with an angle of 35<span class=\"math inline\">\\(^\\circ\\)</span>16’.</p>\r\n\r\n<h5 id=\"oblique-views\"><b>Oblique Views:</b></h5>\r\n\r\n<p>To avoid isocircles in isometric view, sometimes simplified version of pictorial representation is made where front surface is still perpendicular to the observer. So now, circles are represented as they are instead of isocircles, which increase the speed of drawing. General, Cabinet and Cavalier Oblique view share same concepts, however variations in z axis angle and length are there.</p>\r\n\r\n<h5 id=\"perspective-views\"><b>Perspective Views:</b></h5>\r\n\r\n<p>Perspective views have vanishing points to give illusion of depth. They are useful in architectural drawings or drawings where distortion due to large depth is significant. One point, two point and three point perspective views can be drawn based on how much realistic drawing is required.</p>\r\n\r\n\r\n<h5 id=\"title-block\"><b>Title Block:</b></h5>\r\n\r\n<p>Title block is the information box generally located at the bottom right corner of a drawing. It contains information regarding company name, Title, date, scale, part number and drawing number. It may contain additional information such as company logo, copyright information, first/third angle symbol etc.</p>\r\n\r\n<h5 id=\"working-drawings\"><b>Working Drawings:</b></h5>\r\n\r\n<p>Working drawings are comprehensive drawings ready to be released for manufacturing personnel. They generally contain required orthographic views (Front, top and side) and may have pictorial representation in terms of isometric view. Depending upon the complexity of manufactured part, section view or detailed views may be added. It can also have special instructions regarding tolerances and manufacturing processes.</p>\r\n\r\n<h5 id=\"bill-of-materials-bom\"><b>Bill of Materials: (BOM)</b></h5>\r\n\r\n<p>it is the parts list which lists how many parts are there in an assembly. Generally the tabular information contains part name, quantity and material. The parts in the drawing views are referred then with balloons having same serial numbers as in part list.</p>\r\n\r\n<h5 id=\"revision-table\"><b>Revision Table: </b></h5>\r\n\r\n<p>A table which shows information regarding chronological revisions made in the parts. Typically includes revision number, what revision was made, who authorized it and the date on which it was revised.</p>\r\n\r\n<h5 id=\"hole-table\"><b>Hole Table: </b></h5>\r\n\r\n<p>If a part has multiple holes, then instead of cluttering the drawing with hole related dimensions, it is preferred to have a separate table showing size and location of holes in the part.</p>\r\n\r\n<h5 id=\"development-of-surfaces-and-flat-patterns\"><b>Development of Surfaces and Flat patterns:</b></h5>\r\n\r\n<p>In air conditioning, where ducts meet at an oblique angle, development of surfaces is required. Special parts such as boxes need to be created out of a cut-out sheet metal surface which is shown in flat pattern.</p>",
+    "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png\" alt=\"Engineering Drawing\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckenwelle.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/20/Department_of_Railways_NSW_draing_title_block.jpg\" alt=\"Title Block\" width=\"340\"><br/>\r\n\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Department_of_Railways_NSW_draing_title_block.jpg\">Department of Railways New South Wales</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/8/89/Schneckengetriebe.png\" alt=\"Drawing with Bill of Materials\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Schneckengetriebe.png\">Thorsten Hartmann</a>, <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\">CC BY-SA 3.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/55/Isometric_cube.png\" alt=\"Isometric cube\" width=\"200\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Isometric_cube.png\">MrNoble.xyz</a>, CC0, via Wikimedia Commons</small></small></center><br/>\r\n\r\n<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/7/7f/%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\" alt=\"Oblique Projection\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:%E7%AB%8B%E6%96%B9%E4%BD%93%E3%81%AE%E3%82%AD%E3%83%A3%E3%83%93%E3%83%8D%E3%83%83%E3%83%88%E5%9B%B3.svg\">すじにくシチュー</a>, CC0, via Wikimedia Commons</small></small></center><br/></div><h5 id=\"isometric-views-and-isometric-projections\"><b>Isometric Views and Isometric Projections:</b></h5>\r\n\r\n<p>Isometric views are 3-D pictorial views. The isometric x and y axes are 30<span class=\"math inline\">\\(^\\circ\\)</span> to the horizontal line. z axis is still vertical. In isometric projection, an isometric scale is constructed to account of reduction in apparent length of objects. Circles in represented by isocircles which are ellipses with an angle of 35<span class=\"math inline\">\\(^\\circ\\)</span>16’.</p>\r\n\r\n<h5 id=\"oblique-views\"><b>Oblique Views:</b></h5>\r\n\r\n<p>To avoid isocircles in isometric view, sometimes simplified version of pictorial representation is made where front surface is still perpendicular to the observer. So now, circles are represented as they are instead of isocircles, which increase the speed of drawing. General, Cabinet and Cavalier Oblique view share same concepts, however variations in z axis angle and length are there.</p>\r\n\r\n<h5 id=\"perspective-views\"><b>Perspective Views:</b></h5>\r\n\r\n<p>Perspective views have vanishing points to give illusion of depth. They are useful in architectural drawings or drawings where distortion due to large depth is significant. One point, two point and three point perspective views can be drawn based on how much realistic drawing is required.</p>\r\n\r\n\r\n<h5 id=\"title-block\"><b>Title Block:</b></h5>\r\n\r\n<p>Title block is the information box generally located at the bottom right corner of a drawing. It contains information regarding company name, Title, date, scale, part number and drawing number. It may contain additional information such as company logo, copyright information, first/third angle symbol etc.</p>\r\n\r\n<h5 id=\"working-drawings\"><b>Working Drawings:</b></h5>\r\n\r\n<p>Working drawings are comprehensive drawings ready to be released for manufacturing personnel. They generally contain required orthographic views (Front, top and side) and may have pictorial representation in terms of isometric view. Depending upon the complexity of manufactured part, section view or detailed views may be added. It can also have special instructions regarding tolerances and manufacturing processes.</p>\r\n\r\n<h5 id=\"bill-of-materials-bom\"><b>Bill of Materials: (BOM)</b></h5>\r\n\r\n<p>it is the parts list which lists how many parts are there in an assembly. Generally the tabular information contains part name, quantity and material. The parts in the drawing views are referred then with balloons having same serial numbers as in part list.</p>\r\n\r\n<h5 id=\"revision-table\"><b>Revision Table: </b></h5>\r\n\r\n<p>A table which shows information regarding chronological revisions made in the parts. Typically includes revision number, what revision was made, who authorized it and the date on which it was revised.</p>\r\n\r\n<h5 id=\"hole-table\"><b>Hole Table: </b></h5>\r\n\r\n<p>If a part has multiple holes, then instead of cluttering the drawing with hole related dimensions, it is preferred to have a separate table showing size and location of holes in the part.</p>\r\n\r\n<h5 id=\"development-of-surfaces-and-flat-patterns\"><b>Development of Surfaces and Flat patterns:</b></h5>\r\n\r\n<p>In air conditioning, where ducts meet at an oblique angle, development of surfaces is required. Special parts such as boxes need to be created out of a cut-out sheet metal surface which is shown in flat pattern.</p>",
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1FM4S-H9_HzZ-zehjJjrS9eNMjtZrzo09/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": null,
+    "videoTitle": null
+  },
+  {
+    "discipline": "Mechanical",
+    "subject": "Mechanical Design and Analysis",
+    "chapter": "Engg Drawing",
+    "topic": "Engineering Drawing",
+    "subtopic": "First Angle and Third Angle Orthographic Projection",
+    "content_html": "<h5 id=\"first-angle-and-third-angle-orthographic-projection\"><b>First Angle and Third Angle Orthographic Projection:</b></h5>\n\n<div class=\"container-fluid\">\n  <div class=\"row align-items-start\">\n    <div class=\"col-lg-8\">\n      <p>Orthographic projection maps 3D objects onto 2D perpendicular viewing planes. The spatial orientation of views depends on which quadrant (first or third) the object is placed in:</p>\n      <ul>\n        <li><strong>First Angle Projection (ISO / European Standard):</strong>\n          <ul>\n            <li>The object lies in the <em>first quadrant</em> (between observer and projection plane).</li>\n            <li><strong>Top View (Plan):</strong> Placed <em>below</em> the Front View.</li>\n            <li><strong>Left-Hand View:</strong> Projected and drawn on the <em>right side</em> of the Front View.</li>\n            <li><strong>Right-Hand View:</strong> Projected and drawn on the <em>left side</em> of the Front View.</li>\n            <li><strong>Symbol:</strong> Truncated cone with the small circular face on the right and cone taper pointing right.</li>\n          </ul>\n        </li>\n        <li><strong>Third Angle Projection (ANSI / ASME / US Standard):</strong>\n          <ul>\n            <li>The object lies in the <em>third quadrant</em> (projection plane lies between observer and object).</li>\n            <li><strong>Top View (Plan):</strong> Placed <em>above</em> the Front View.</li>\n            <li><strong>Left-Hand View:</strong> Projected and drawn on the <em>left side</em> of the Front View.</li>\n            <li><strong>Right-Hand View:</strong> Projected and drawn on the <em>right side</em> of the Front View.</li>\n            <li><strong>Symbol:</strong> Truncated cone with the small circular face on the left and cone taper pointing left.</li>\n          </ul>\n        </li>\n      </ul>\n      <table class=\"table table-bordered table-sm my-2 text-center text-xs\">\n        <thead class=\"table-dark\">\n          <tr><th>Feature</th><th>First Angle Projection</th><th>Third Angle Projection</th></tr>\n        </thead>\n        <tbody>\n          <tr><td>Standard Adoption</td><td>ISO, European, British (BS), Indian (BIS)</td><td>ANSI, ASME Y14.3M, United States, Canada</td></tr>\n          <tr><td>Object Placement</td><td>Object between observer and projection plane</td><td>Projection plane between observer and object</td></tr>\n          <tr><td>Top View Position</td><td>Below Front View</td><td>Above Front View</td></tr>\n          <tr><td>Left Side View</td><td>Placed on the Right of Front View</td><td>Placed on the Left of Front View</td></tr>\n        </tbody>\n      </table>\n    </div>\n    <div class=\"col-lg-4 text-center\">\n      <center>\n        <img src=\"https://upload.wikimedia.org/wikipedia/commons/e/ec/Third_angle_projection_symbol.svg\" alt=\"Third Angle Projection Symbol\" width=\"160\"><br/>\n        <small><small>Third Angle Projection Symbol (ANSI/ASME)</small></small>\n      </center>\n      <br/>\n      <center>\n        <img src=\"https://upload.wikimedia.org/wikipedia/commons/9/90/First_angle_projection_symbol.svg\" alt=\"First Angle Projection Symbol\" width=\"160\"><br/>\n        <small><small>First Angle Projection Symbol (ISO)</small></small>\n      </center>\n    </div>\n  </div>\n</div>",
+    "important": "",
+    "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1FM4S-H9_HzZ-zehjJjrS9eNMjtZrzo09/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/96/Schneckenwelle.png"
+    ],
+    "local_images": [],
+    "video": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+    "videoTitle": "First Angle vs. Third Angle Orthographic Projection"
   },
   {
     "discipline": "Mechanical",
@@ -17510,7 +17886,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/0/07/CoulombsLaw.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Coulombs_Law_in_electrostatics.mp4",
+    "videoTitle": "Coulomb’s Law of Electrostatic Force and Field Intensity"
   },
   {
     "discipline": "Other",
@@ -17606,7 +17984,9 @@ const notesData = [
     "important": "Ohm's Law:\r\n\\[R = \\dfrac{V}{I}\\]\r\n\r\nResistance in Series:\r\n\\[R_{\\mathrm{series}} = R_1 + R_2 + R_3 + ......................\\]\r\n\r\nResistance in Parallel:\r\n\\[\\dfrac{1}{R_{\\mathrm{parallel}}} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\dfrac{1}{R_3} + ......................\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1bTglUnAYQRFFKpTUyg9gM8bDg1UwbtXK/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/833244213?h=646b827786&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Resistance\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Ohms_Law.mp4",
+    "videoTitle": "Ohm's Law"
   },
   {
     "discipline": "Other",
@@ -17734,7 +18114,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
+    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios"
   },
   {
     "discipline": "Other",
@@ -17760,19 +18142,23 @@ const notesData = [
     "important": "\\[P = \\dfrac{A}{i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1havLCPfQl5t3b131JVdJFztjgaLZexTp/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1o4113njSMO4VwuUfyaQXwugJV3ChZ6h1/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "videoTitle": "Capitalized Cost for Infinite Project Life"
   },
   {
     "discipline": "Other",
     "subject": "Engineering Economics",
     "chapter": "Cost Types and Breakdowns",
     "topic": "Cost Types",
-    "subtopic": "Overview",
+    "subtopic": "Sunk Costs",
     "content_html": "<h4><span class=\"badge bg-warning\">Fixed Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Fixed costs are costs that must be paid whether or not any units are produced. These costs are \"fixed\" over a specified period of time or range of production. e.g. cost of land, building, machinery and permits.</p>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <p><img src=\"https://drive.google.com/uc?id=16HNzuXgmQVU70tLtZOludgaqqCS4XOby\" style=\"width:340px;\"></p>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Variable Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Variable costs are costs that vary directly with the number of products produced. For instance, the cost of the materials needed and the labour used is directly proportional to the quantity manufactured.</p>\r\n\r\n<ul>\r\n\t<li>In the next diagram, the fixed costs will always be represented by horizontal straight line (parallel to quantity axis) as it is independent of quantity.</li>\r\n\t<li>The variable cost will always pass through the origin as no manufactured units means no variable cost.</li>\r\n</ul>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n  <p><img src=\"https://drive.google.com/uc?id=10bi1LIIT0xM6yIMxz6gaDl52xiJbefN-\" style=\"width:340px;\"></p>   \r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Average Cost:</span></h4>\r\n\r\n<p>The Average Cost is the per unit cost of production obtained by dividing the total cost (TC) by the total output (Q). By per unit cost of production, we mean that all the fixed and variable cost is taken into the consideration for calculating the average cost. Thus, it is also called as Per Unit Total Cost. <span class=\"math display\">\\[\\begin{aligned} \\mathrm{Average\\ Cost} &amp;= \\dfrac{\\mathrm{Total\\ Cost}}{\\mathrm{Quantity}}\\\\ AC &amp;= \\dfrac{TC}{Q}\\end{aligned}\\]</span></p>\r\n\r\n<h4><span class=\"badge bg-warning\">Incremental Costs:</span></h4>\r\n\r\n<p>If a company decides to increase production, it will incur additional costs. Incremental cost is the total cost incurred or anticipated due to an additional unit of product being produced. Incremental cost is calculated by analyzing the additional expenses involved in the production process, such as raw materials, for one additional unit of production. A company can still be profitable even if incremental cost exceed incremental revenue, but its profit starts declining at that point. Additional units need not be manufactured if incremental cost is adverse in comparison to incremental revenue, unless there is a compelling reason to do so.</p>\r\n\r\n<h4><span class=\"badge bg-warning\">Sunk Costs:</span></h4>\r\n\r\n<p>Sunk cost, in economics and finance, a cost that has already been incurred and that cannot be recovered. In economic decision making, sunk costs are treated as bygone and are not taken into consideration when deciding whether to continue an investment project.<br />\r\nIn real life, money spent on baseball games, non-refundable airfare, or even tuition fees for getting a major you eventually did not find useful represent sunk costs because there is no way to recover them.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Sunk_Costs.mp4",
+    "videoTitle": "Sunk Costs"
   },
   {
     "discipline": "Other",
@@ -17798,7 +18184,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Overhead_Analysis.mp4",
+    "videoTitle": "Overhead Analysis"
   },
   {
     "discipline": "Other",
@@ -17824,7 +18212,9 @@ const notesData = [
     "important": "\\[d = i + f + (i \\times f)\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Inflation_Fishers_equation.mp4",
+    "videoTitle": "Inflation: Fisher's Equation"
   },
   {
     "discipline": "Other",
@@ -17836,7 +18226,9 @@ const notesData = [
     "important": "\\[i_e = \\left(1 + \\dfrac{r}{m}\\right)^m - 1\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
   },
   {
     "discipline": "Other",
@@ -18068,7 +18460,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/b/b1/Density_-_Kilogram_per_cubic_metre.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Specific_Gravity.mp4",
+    "videoTitle": "Specific Gravity"
   },
   {
     "discipline": "Other",
@@ -18333,7 +18727,9 @@ const notesData = [
       "https://drive.google.com/file/d/1TgIUqMQ5A3bXb8sQiZ6kdJzt2W0mrZlI/view?usp=sharing",
       "https://upload.wikimedia.org/wikipedia/commons/b/b0/Minor_Losses.png"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "videoTitle": "Minor Head Loss in Piping Systems"
   },
   {
     "discipline": "Other",
@@ -18397,7 +18793,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Bernoullis_Principle.mp4",
+    "videoTitle": "Bernoulli’s Principle"
   },
   {
     "discipline": "Other",
@@ -18515,7 +18913,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Methods_for_Controlling_Corrosion.mp4",
+    "videoTitle": "Methods for Controlling Corrosion"
   },
   {
     "discipline": "Other",
@@ -18560,12 +18960,28 @@ const notesData = [
     "subject": "Material Properties and Processing",
     "chapter": "Engineered Materials",
     "topic": "Engineered Materials",
-    "subtopic": "Overview",
-    "content_html": "<h5><span><b>Elastomers and Fibres:</b></span></h5>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p><strong>Elastomers</strong> are rubber like solids with elastic properties. In these elastomeric polymers, the polymer chains are held together by the weakest intermolecular forces. These weak binding forces permit the polymer to be stretched. A few cross-links are introduced in between the chains, which help the polymer to retract to its original position after the force is released as in vulcanised rubber. The examples are buna-S, buna-N, neoprene, etc.<br />\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/24/Rubber_bands.jpg\" alt=\"Rubber_bands\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Rubber_bands.jpg\">FML</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.5\">CC BY-SA 2.5</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n<strong>Fibres</strong> are the thread forming solids which possess high tensile strength and high modulus. These characteristics can be attributed to the strong intermolecular forces like hydrogen bonding. These strong forces also lead to close packing of chains and thus impart crystalline nature. The examples are polyamides(Nylon 6,6), polyesters (Terylene), etc.</p>\r\n\r\n<h5><span><b>Thermoplastic Polymers:</b></span></h5>\r\n\r\n<p>These are the linear or slightly branched long chain molecules capable of repeatedly softening on heating and hardening on cooling.These polymers possess intermolecular forces of attraction intermediate between elastomers and fibres. Some common thermoplastics are polythene, polystyrene, polyvinyls, etc.<br />\r\nA <strong>thermoplastic</strong> is a polymer that turns to a liquid when heated and freezes to a very glassy state when cooled sufficiently.<br />\r\nMost thermoplastics are high-molecular-weight polymers whose chains associate through weak Van der Waals forces (polyethylene); stronger dipole-dipole interactions and hydrogen bonding (Nylon).</p>\r\n\r\n<h5><span><b>Thermosetting Polymers:</b></span></h5>\r\n\r\n<p>These polymers are cross linked or heavily branched molecules, which on heating undergo extensive cross linking in moulds and again become infusible. These cannot be reused. Some common examples are bakelite, urea-formaldelyde resins, etc.<br />\r\nThermoplastic polymers differ from thermosetting polymers (Bakelite, vulcanized rubber) since thermoplastics can be remelted and remolded.<br />\r\nThermosetting plastics when heated, will chemically decompose, so they cannot be recycled. Yet, once a thermoset is cured it tends to be stronger than a thermoplastic.<br />\r\nTypically, linear polymers with minor branched structures (and flexible chains) are thermoplastics. The networked structures are thermosets.</p>\r\n\r\n<h5><span><b>Ceramics:</b></span></h5>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>This category of materials includes things like tile, bricks, plates, glass, and toilets. Ceramics can be found in products like watches (quartz tuning forks-the time keeping devices in watches), snow skies (piezoelectric-ceramics that stress when a voltage is applied to them), automobiles (spark plugs and ceramic engine parts found in race cars), and phone lines. They can also be found on space shuttles, appliances (enamel coatings), and airplanes (nose cones). Depending on their method of formation, ceramics can be dense or lightweight. Typically, they will demonstrate excellent strength and hardness properties; however, they are often brittle in nature. Ceramics can also be formed to serve as electrically conductive materials, objects allowing electricity to pass through their mass, or insulators, materials preventing the flow of electricity. Some ceramics, like superconductors, also display magnetic properties.<br />\r\nCeramics are generally made by taking mixtures of clay, earthen elements, powders, and water and shaping them into desired forms. Once the ceramic has been shaped, it is fired in a high temperature oven known as a kiln. Often, ceramics are covered in decorative, waterproof, paint-like substances known as glazes.</p>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b7/02021_1210_20st-century_pottery_in_Poland.jpg\" alt=\"Ceramic\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:02021_1210_20st-century_pottery_in_Poland.jpg\">Silar</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<h5><span><b>Glass:</b></span></h5>\r\n<p>The mechanical properties of glasses are dual in nature:</p>\r\n\r\n<ul>\r\n\t<li>Below the glass transition temperature, T$_g$, glass is a rigid brittle material.</li>\r\n\t<li>Above T$_g$, glass behaves as a viscous liquid.</li>\r\n</ul>\r\n\r\n<p>with behavior characterized by continuous deformation (at a rate inversely related to viscosity) rather than a fixed elastic strain in response to stress.</p>\r\n\r\n<p>Types of Glasses:</p>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Annealed:\r\n\t<ul>\r\n\t\t<li>No residual stresses at room temperature</li>\r\n\t\t<li>Large and sharp segment breakage.</li>\r\n\t</ul>\r\n\t</li>\r\n\t<li>Tempered:\r\n\t<ul>\r\n\t\t<li>Surface quenched below <span class=\"math inline\">\\(T_g\\)</span></li>\r\n\t\t<li>Slow cooled to room temperature.</li>\r\n\t\t<li>Surface residual compressive stress,</li>\r\n\t\t<li>Core residual tensile stress</li>\r\n\t\t<li>Finely fragmented and dull breakage.</li>\r\n\t</ul>\r\n\t</li>\r\n\t<li>\r\n\t<p>Laminated: Two ordinary layer of annealed glass with a central layer of polymer.</p>\r\n\t</li>\r\n</ul>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/5b/Bottle._Colored_glass._img_01.jpg\" alt=\"Glass Bottles\" width=\"340\"><br/>\r\n\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Bottle._Colored_glass._img_01.jpg\">Dmitry Makeev</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>",
+    "subtopic": "Elastomers and Fibres",
+    "content_html": "<h5><span><b>Elastomers and Fibres:</b></span></h5>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p><strong>Elastomers</strong> are rubber like solids with elastic properties. In these elastomeric polymers, the polymer chains are held together by the weakest intermolecular forces. These weak binding forces permit the polymer to be stretched. A few cross-links are introduced in between the chains, which help the polymer to retract to its original position after the force is released as in vulcanised rubber. The examples are buna-S, buna-N, neoprene, etc.<br />\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/2/24/Rubber_bands.jpg\" alt=\"Rubber_bands\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Rubber_bands.jpg\">FML</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.5\">CC BY-SA 2.5</a>, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>\n<p><strong>Fibres</strong> are the thread forming solids which possess high tensile strength and high modulus. These characteristics can be attributed to the strong intermolecular forces like hydrogen bonding. These strong forces also lead to close packing of chains and thus impart crystalline nature. The examples are polyamides (Nylon 6,6), polyesters (Terylene), etc.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Elastomers_and_Fibres.mp4",
+    "videoTitle": "Elastomers and Fibres"
+  },
+  {
+    "discipline": "Other",
+    "subject": "Material Properties and Processing",
+    "chapter": "Engineered Materials",
+    "topic": "Engineered Materials",
+    "subtopic": "Thermoplastic Polymers",
+    "content_html": "<h5><span><b>Thermoplastic Polymers:</b></span></h5>\n<p>These are the linear or slightly branched long chain molecules capable of repeatedly softening on heating and hardening on cooling. These polymers possess intermolecular forces of attraction intermediate between elastomers and fibres. Some common thermoplastics are polythene, polystyrene, polyvinyls, etc.<br />\nA <strong>thermoplastic</strong> is a polymer that turns to a liquid when heated and freezes to a very glassy state when cooled sufficiently.<br />\nMost thermoplastics are high-molecular-weight polymers whose chains associate through weak Van der Waals forces (polyethylene); stronger dipole-dipole interactions and hydrogen bonding (Nylon).</p>\n\n<h5><span><b>Thermosetting Polymers:</b></span></h5>\n<p>These polymers are cross linked or heavily branched molecules, which on heating undergo extensive cross linking in moulds and again become infusible. These cannot be reused. Some common examples are bakelite, urea-formaldehyde resins, etc.<br />\nThermoplastic polymers differ from thermosetting polymers (Bakelite, vulcanized rubber) since thermoplastics can be remelted and remolded.<br />\nThermosetting plastics when heated, will chemically decompose, so they cannot be recycled. Yet, once a thermoset is cured it tends to be stronger than a thermoplastic.<br />\nTypically, linear polymers with minor branched structures (and flexible chains) are thermoplastics. The networked structures are thermosets.</p>\n\n<h5><span><b>Ceramics:</b></span></h5>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p>This category of materials includes things like tile, bricks, plates, glass, and toilets. Ceramics can be found in products like watches (quartz tuning forks-the time keeping devices in watches), snow skies (piezoelectric-ceramics that stress when a voltage is applied to them), automobiles (spark plugs and ceramic engine parts found in race cars), and phone lines. They can also be found on space shuttles, appliances (enamel coatings), and airplanes (nose cones). Depending on their method of formation, ceramics can be dense or lightweight. Typically, they will demonstrate excellent strength and hardness properties; however, they are often brittle in nature. Ceramics can also be formed to serve as electrically conductive materials, objects allowing electricity to pass through their mass, or insulators, materials preventing the flow of electricity. Some ceramics, like superconductors, also display magnetic properties.<br />\n\t\t\tCeramics are generally made by taking mixtures of clay, earthen elements, powders, and water and shaping them into desired forms. Once the ceramic has been shaped, it is fired in a high temperature oven known as a kiln. Often, ceramics are covered in decorative, waterproof, paint-like substances known as glazes.</p>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/b/b7/02021_1210_20st-century_pottery_in_Poland.jpg\" alt=\"Ceramic\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:02021_1210_20st-century_pottery_in_Poland.jpg\">Silar</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>\n\n<h5><span><b>Glass:</b></span></h5>\n<p>The mechanical properties of glasses are dual in nature:</p>\n<ul>\n\t<li>Below the glass transition temperature, T$_g$, glass is a rigid brittle material.</li>\n\t<li>Above T$_g$, glass behaves as a viscous liquid.</li>\n</ul>\n<p>with behavior characterized by continuous deformation (at a rate inversely related to viscosity) rather than a fixed elastic strain in response to stress.</p>\n<p>Types of Glasses:</p>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<ul>\n\t\t\t\t<li>Annealed:\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li>No residual stresses at room temperature</li>\n\t\t\t\t\t\t<li>Large and sharp segment breakage.</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li>Tempered:\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li>Surface quenched below <span class=\"math inline\">\\(T_g\\)</span></li>\n\t\t\t\t\t\t<li>Slow cooled to room temperature.</li>\n\t\t\t\t\t\t<li>Surface residual compressive stress,</li>\n\t\t\t\t\t\t<li>Core residual tensile stress</li>\n\t\t\t\t\t\t<li>Finely fragmented and dull breakage.</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</li>\n\t\t\t\t<li>Laminated: Two ordinary layer of annealed glass with a central layer of polymer.</li>\n\t\t\t</ul>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/5/5b/Bottle._Colored_glass._img_01.jpg\" alt=\"Glass Bottles\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Bottle._Colored_glass._img_01.jpg\">Dmitry Makeev</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0\">CC BY-SA 4.0</a>, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Thermoplastics_vs_Thermosetting_Plastics.mp4",
+    "videoTitle": "Thermoplastics vs. Thermosetting Plastics"
   },
   {
     "discipline": "Other",
@@ -18612,12 +19028,28 @@ const notesData = [
     "subject": "Material Properties and Processing",
     "chapter": "Ferrous Metals",
     "topic": "Ferrous Metals",
-    "subtopic": "Overview",
-    "content_html": "<ul>\r\n\t<li>Mild Steel - Carbon content of 0.1 to 0.3% and Iron content of 99.7 -99.9%. Used for engineering purposes and in general, none specialised metal products.</li>\r\n\t<li>Carbon steel -Carbon content of 0.6 to 1.4% and Iron content of 98.6 to 99.4%. Used to make cutting tools such as drill bits.</li>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n\t<li>Stainless Steel - Made up of Iron, nickel and chromium. Resists staining and corrosion and is therefore used for the likes of cutlery and surgical instrumentation.</li>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f3/Stainless_kitchen_container_with_cover.jpg\" alt=\"Stainless Steel\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Stainless_kitchen_container_with_cover.jpg\">Yapparina</a>, CC0, via Wikimedia Commons</small></small></center><br/>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n\r\n<li>\r\n\t<p>Cast Iron - Carbon 2 - 6% and Iron at 94 to 98%. Very strong but brittle. Used to manufacture items such as engine blocks and manhole covers. Cast iron is a group of iron-carbon alloys with a carbon content greater than 2%. The alloy constituents affect its colour when fractured:</p>\r\n\r\n\t<ol>\r\n\t\t<li>White cast iron has carbide impurities which allow cracks to pass straight through.</li>\r\n\t\t<li>Grey cast iron has graphite flakes which deflect a passing crack and initiate countless new cracks as the material breaks.</li>\r\n\t\t<li>Malleable iron is cast as white iron, the structure being a metastable carbide in a pearlitic matrix. Through an annealing heat treatment, the brittle structure as first cast is transformed into the malleable form.</li>\r\n\t</ol>\r\n\t</li>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/1/14/Cast-Iron-Pan.jpg\" alt=\"Cast Iron\" width=\"340\"><br/>\r\n<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Cast-Iron-Pan.jpg\">Evan-Amos</a>, Public domain, via Wikimedia Commons</small></small></center><br/>\r\n\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n\r\n\r\n\r\n\t\r\n\t<li>\r\n\t<p>Wrought Iron -Composed of almost 100% iron. Used to make items such as ornamental gates and fencing.</p>\r\n\t</li>\r\n</ul>\r\n\r\n<p>Plain Carbon Steel: These steel contain carbon as their primary alloying element. Low carbon(upto 0.2% C) and medium carbon (0.2 to 0.6% C) are used for piping, plant fabrication and other applications. High carbon steel (above 0.6% C) are subjected to heat treatment.</p>",
+    "subtopic": "Stainless Steel",
+    "content_html": "<ul>\n\t<li><strong>Mild Steel</strong> - Carbon content of 0.1 to 0.3% and Iron content of 99.7 -99.9%. Used for engineering purposes and in general, non-specialised metal products.</li>\n\t<li><strong>Carbon Steel</strong> - Carbon content of 0.6 to 1.4% and Iron content of 98.6 to 99.4%. Used to make cutting tools such as drill bits.</li>\n</ul>\n<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p><strong>Stainless Steel</strong> - Made up of Iron, nickel and chromium. Resists staining and corrosion and is therefore used for the likes of cutlery and surgical instrumentation.</p>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/f/f3/Stainless_kitchen_container_with_cover.jpg\" alt=\"Stainless Steel\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Stainless_kitchen_container_with_cover.jpg\">Yapparina</a>, CC0, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>\n<ul>\n\t<li><strong>Wrought Iron</strong> - Composed of almost 100% iron. Used to make items such as ornamental gates and fencing.</li>\n</ul>\n<p><strong>Plain Carbon Steel</strong>: These steels contain carbon as their primary alloying element. Low carbon (up to 0.2% C) and medium carbon (0.2 to 0.6% C) are used for piping, plant fabrication and other applications. High carbon steel (above 0.6% C) is subjected to heat treatment.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Stainless_Steel.mp4",
+    "videoTitle": "Stainless Steel"
+  },
+  {
+    "discipline": "Other",
+    "subject": "Material Properties and Processing",
+    "chapter": "Ferrous Metals",
+    "topic": "Ferrous Metals",
+    "subtopic": "Cast Iron",
+    "content_html": "<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n\t\t\t<p><strong>Cast Iron</strong> - Carbon 2 - 6% and Iron at 94 to 98%. Very strong but brittle. Used to manufacture items such as engine blocks and manhole covers. Cast iron is a group of iron-carbon alloys with a carbon content greater than 2%. The alloy constituents affect its colour when fractured:</p>\n\t\t\t<ol>\n\t\t\t\t<li><strong>White cast iron</strong> has carbide impurities which allow cracks to pass straight through.</li>\n\t\t\t\t<li><strong>Grey cast iron</strong> has graphite flakes which deflect a passing crack and initiate countless new cracks as the material breaks.</li>\n\t\t\t\t<li><strong>Malleable iron</strong> is cast as white iron, the structure being a metastable carbide in a pearlitic matrix. Through an annealing heat treatment, the brittle structure as first cast is transformed into the malleable form.</li>\n\t\t\t</ol>\n\t\t</div>\n\t\t<div class=\"col\">\n\t\t\t<center><img src=\"https://upload.wikimedia.org/wikipedia/commons/1/14/Cast-Iron-Pan.jpg\" alt=\"Cast Iron\" width=\"340\"><br/>\n\t\t\t<small><small><a href=\"https://commons.wikimedia.org/wiki/File:Cast-Iron-Pan.jpg\">Evan-Amos</a>, Public domain, via Wikimedia Commons</small></small></center><br/>\n\t\t</div>\n\t</div>\n</div>",
+    "important": "",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Cast_Iron.mp4",
+    "videoTitle": "Cast Iron"
   },
   {
     "discipline": "Other",
@@ -18751,7 +19183,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Difference_between_quenching_and_annealing.mp4",
+    "videoTitle": "Difference between Quenching and Annealing"
   },
   {
     "discipline": "Other",
@@ -18865,7 +19299,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1uCFxNAT5yW6n27IrSXThFVTVIHdgODcV/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1uZuXIQQTHckS6MayC8hPqmNVSWbUkjaO/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/12B1zaTJafEzc7_OHbsAfGtgqhQriEIMG/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/586143740?h=9d7b10cdb1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Flowchart Symbols\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Flowchart_Symbols.mp4",
+    "videoTitle": "Flowchart Symbols"
   },
   {
     "discipline": "Other",
@@ -18889,7 +19325,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/18fjuAUKSf5rfCSPsRgIUHTA2n1DJB8MH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "videoUrl": "assets/videos/Pseudocode.mp4",
+    "videoTitle": "Pseudocode and Algorithm Logic Explainer"
   },
   {
     "discipline": "Other",
@@ -19153,7 +19591,9 @@ const notesData = [
     "important": "<p><span class=\"math display\">\\[\\cos^2\\ \\theta +  \\sin^2\\ \\theta =\r\n1\\]</span> <span class=\"math display\">\\[1 + \\tan^2\\ \\theta = \\sec^2\\\r\n\\theta\\]</span> <span class=\"math display\">\\[1 + \\cot^2\\ \\theta =\r\n\\csc^2\\ \\theta\\]</span></p>",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1CDxs2FvnlUjI5pjYLnLMqQ-b6HmPBGzZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1e8Y2AgwYZth5sjV6kg2HqN2k43M3BCF8/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/181nTTKM9riReoakUQD2F5QoELeQPNRWs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
   },
   {
     "discipline": "Other",
@@ -19195,7 +19635,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Law_of_Cosines.mp4",
+    "videoTitle": "Law of Cosines for General Triangles"
   },
   {
     "discipline": "Other",
@@ -19237,7 +19679,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/3/38/Sinus_und_Kosinus_am_Einheitskreis_Einfach_Cos.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
   },
   {
     "discipline": "Other",
@@ -19319,7 +19763,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Other",
@@ -19331,7 +19777,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Other",
@@ -19344,8 +19792,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Integration_by_Parts_Formula.mp4",
-    "videoTitle": "Integration by Parts Formula"
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Other",
@@ -19357,7 +19805,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Other",
@@ -19384,8 +19834,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1HvMhza0wze3gPh1jFwCqNrowLxnKzVzz/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1TkCihjNM2LRYyas26tN9Xo-w8mRxjBRt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kU_D4LBtldkdCZMS-G8QAGdlnOpxFiwE/preview",
-    "videoTitle": "Partial Derivatives"
+    "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "videoTitle": "Derivative of Logarithmic Functions"
   },
   {
     "discipline": "Other",
@@ -19942,7 +20392,9 @@ const notesData = [
     "important": "For ungrouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma x_i}{N}\\]\r\nFor grouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma w_i x_i}{\\Sigma w_i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Sun6dRN5wTExOfl7D9dTx5Vm40QegJam/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1rlEAnQ67JoGdK9X2GiFEY7kAuY9adEeK/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13CdRMDO7YGFnQhoSqoO2z4c2H-BFIQgZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/830495011?h=ddf84e2393&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Mean Median Mode\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
   },
   {
     "discipline": "Other",
@@ -19996,7 +20448,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Permutations_with_Repetition.mp4",
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
   },
   {
     "discipline": "Other",
@@ -20806,7 +21260,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1NNrrK5vcM8YlPjw0OsNX4mqUdENGymGx/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Otto_Cycle.mp4",
+    "videoTitle": "Otto Cycle"
   },
   {
     "discipline": "Other",
@@ -20832,7 +21288,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Dimensionless_numbers.mp4",
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
   },
   {
     "discipline": "Other",
@@ -20904,7 +21362,9 @@ const notesData = [
     "important": "Air film resistance,\r\n\\[R = \\dfrac{1}{hA}\\]\r\n\r\nThermal resistance of plane wall\r\n\\[R = \\dfrac{L}{kA}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Heat_transfer_through_Composite_Plane_Wall.mp4",
+    "videoTitle": "Heat Transfer Through Composite Plane Wall"
   },
   {
     "discipline": "Other",
@@ -20942,7 +21402,9 @@ const notesData = [
     "important": "Heat transfer through fin:\r\n\\[\\dot{Q} = \\sqrt{hPkA_c} (T_b-T_\\infty)\\tanh(mL_c)\\]\r\n\r\nCorrected Length of fin:\r\n\\[L_c = L + \\dfrac{A_c}{P}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Hzn7guuKa4eJk5q6dFGjxKmocJoUupzh/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Heat_transfer_through_Fins.mp4",
+    "videoTitle": "Heat Transfer Through Fins (Extended Surfaces)"
   },
   {
     "discipline": "Other",
@@ -21032,7 +21494,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1-O6kqpOQ6O19bXNDgHkXspUKftDYd1rH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Dimensionless_numbers.mp4",
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
   },
   {
     "discipline": "Other",
@@ -21094,7 +21558,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Types_of_convection.mp4",
+    "videoTitle": "Types of Convection (Natural, Forced, and Phase Change)"
   },
   {
     "discipline": "Other",
@@ -21238,7 +21704,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Second_Law_of_Thermodynamics.mp4",
+    "videoTitle": "Second Law of Thermodynamics (Clausius, Kelvin-Planck, and Entropy)"
   },
   {
     "discipline": "Other",
@@ -21250,7 +21718,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Third_Law_of_Thermodynamics.mp4",
+    "videoTitle": "Third Law of Thermodynamics (Absolute Entropy and Absolute Zero)"
   },
   {
     "discipline": "Other",
@@ -21444,7 +21914,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Meyers_formula_for_specific_heats.mp4",
+    "videoTitle": "Mayer's Formula for Specific Heats (cp - cv = R)"
   },
   {
     "discipline": "Other",
@@ -21562,7 +22034,9 @@ const notesData = [
     "important": "\\[\\Delta S = S_f - S_i\\]\r\n\r\n\\[ds = \\left(\\dfrac{1}{T}\\right) \\delta q_{rev}\\]\r\n\r\n\\[s_2 - s_1 = \\displaystyle \\int_{T_1}^{T_2}\\left(\\dfrac{1}{T}\\right) \\delta q_{rev}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Entropy.mp4",
+    "videoTitle": "Entropy"
   },
   {
     "discipline": "Other",
@@ -21688,7 +22162,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/18fjuAUKSf5rfCSPsRgIUHTA2n1DJB8MH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "videoUrl": "assets/videos/Pseudocode.mp4",
+    "videoTitle": "Pseudocode and Algorithm Logic Explainer"
   },
   {
     "discipline": "Environmental",
@@ -21952,7 +22428,9 @@ const notesData = [
     "important": "<p><span class=\"math display\">\\[\\cos^2\\ \\theta +  \\sin^2\\ \\theta =\r\n1\\]</span> <span class=\"math display\">\\[1 + \\tan^2\\ \\theta = \\sec^2\\\r\n\\theta\\]</span> <span class=\"math display\">\\[1 + \\cot^2\\ \\theta =\r\n\\csc^2\\ \\theta\\]</span></p>",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1CDxs2FvnlUjI5pjYLnLMqQ-b6HmPBGzZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1e8Y2AgwYZth5sjV6kg2HqN2k43M3BCF8/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/181nTTKM9riReoakUQD2F5QoELeQPNRWs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
   },
   {
     "discipline": "Environmental",
@@ -22036,7 +22514,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/3/38/Sinus_und_Kosinus_am_Einheitskreis_Einfach_Cos.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
   },
   {
     "discipline": "Environmental",
@@ -22118,7 +22598,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Environmental",
@@ -22130,7 +22612,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Environmental",
@@ -22143,8 +22627,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Integration_by_Parts_Formula.mp4",
-    "videoTitle": "Integration by Parts Formula"
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Environmental",
@@ -22156,7 +22640,9 @@ const notesData = [
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Cbor0EKETvWY1kFCwp7rhXIUtfNoxoPS/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580161459?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Partial_Fractions\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Indefinite_Integrals.mp4",
+    "videoTitle": "Indefinite Integrals"
   },
   {
     "discipline": "Environmental",
@@ -22183,8 +22669,8 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1HvMhza0wze3gPh1jFwCqNrowLxnKzVzz/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1TkCihjNM2LRYyas26tN9Xo-w8mRxjBRt/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kU_D4LBtldkdCZMS-G8QAGdlnOpxFiwE/preview",
-    "videoTitle": "Partial Derivatives"
+    "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "videoTitle": "Derivative of Logarithmic Functions"
   },
   {
     "discipline": "Environmental",
@@ -22594,7 +23080,9 @@ const notesData = [
     "important": "For ungrouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma x_i}{N}\\]\r\nFor grouped data,\r\n\\[\\bar{x} = \\dfrac{\\Sigma w_i x_i}{\\Sigma w_i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Sun6dRN5wTExOfl7D9dTx5Vm40QegJam/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1rlEAnQ67JoGdK9X2GiFEY7kAuY9adEeK/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/13CdRMDO7YGFnQhoSqoO2z4c2H-BFIQgZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/830495011?h=ddf84e2393&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Mean Median Mode\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
   },
   {
     "discipline": "Environmental",
@@ -22648,7 +23136,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Permutations_with_Repetition.mp4",
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
   },
   {
     "discipline": "Environmental",
@@ -22840,7 +23330,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
+    "videoTitle": "NCEES Model Rules of Professional Conduct"
   },
   {
     "discipline": "Environmental",
@@ -22852,7 +23344,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Professional_and_Technical_Societies.mp4",
+    "videoTitle": "Professional and Technical Societies"
   },
   {
     "discipline": "Environmental",
@@ -22904,7 +23398,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Trademarks.mp4",
+    "videoTitle": "Trademarks and Brand Protection Explainer"
   },
   {
     "discipline": "Environmental",
@@ -22968,19 +23464,23 @@ const notesData = [
     "important": "\\[P = \\dfrac{A}{i}\\]",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1havLCPfQl5t3b131JVdJFztjgaLZexTp/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1o4113njSMO4VwuUfyaQXwugJV3ChZ6h1/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "videoTitle": "Capitalized Cost for Infinite Project Life"
   },
   {
     "discipline": "Environmental",
     "subject": "Engineering Economics",
     "chapter": "Cost Types and Breakdowns",
     "topic": "Cost Types",
-    "subtopic": "Overview",
+    "subtopic": "Sunk Costs",
     "content_html": "<h4><span class=\"badge bg-warning\">Fixed Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Fixed costs are costs that must be paid whether or not any units are produced. These costs are \"fixed\" over a specified period of time or range of production. e.g. cost of land, building, machinery and permits.</p>\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n     <p><img src=\"https://drive.google.com/uc?id=16HNzuXgmQVU70tLtZOludgaqqCS4XOby\" style=\"width:340px;\"></p>\r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Variable Costs:</span></h4>\r\n<div class=\"container-fluid\">\r\n\t<div class=\"row align-items-start\">\r\n\t\t<div class=\"col col-lg-8\">\r\n<p>Variable costs are costs that vary directly with the number of products produced. For instance, the cost of the materials needed and the labour used is directly proportional to the quantity manufactured.</p>\r\n\r\n<ul>\r\n\t<li>In the next diagram, the fixed costs will always be represented by horizontal straight line (parallel to quantity axis) as it is independent of quantity.</li>\r\n\t<li>The variable cost will always pass through the origin as no manufactured units means no variable cost.</li>\r\n</ul>\r\n\r\n\t\t</div>\r\n    \t\t<div class=\"col\">\r\n  <p><img src=\"https://drive.google.com/uc?id=10bi1LIIT0xM6yIMxz6gaDl52xiJbefN-\" style=\"width:340px;\"></p>   \r\n    \t\t</div>\r\n  \t</div>\r\n</div>\r\n\r\n<h4><span class=\"badge bg-warning\">Average Cost:</span></h4>\r\n\r\n<p>The Average Cost is the per unit cost of production obtained by dividing the total cost (TC) by the total output (Q). By per unit cost of production, we mean that all the fixed and variable cost is taken into the consideration for calculating the average cost. Thus, it is also called as Per Unit Total Cost. <span class=\"math display\">\\[\\begin{aligned} \\mathrm{Average\\ Cost} &amp;= \\dfrac{\\mathrm{Total\\ Cost}}{\\mathrm{Quantity}}\\\\ AC &amp;= \\dfrac{TC}{Q}\\end{aligned}\\]</span></p>\r\n\r\n<h4><span class=\"badge bg-warning\">Incremental Costs:</span></h4>\r\n\r\n<p>If a company decides to increase production, it will incur additional costs. Incremental cost is the total cost incurred or anticipated due to an additional unit of product being produced. Incremental cost is calculated by analyzing the additional expenses involved in the production process, such as raw materials, for one additional unit of production. A company can still be profitable even if incremental cost exceed incremental revenue, but its profit starts declining at that point. Additional units need not be manufactured if incremental cost is adverse in comparison to incremental revenue, unless there is a compelling reason to do so.</p>\r\n\r\n<h4><span class=\"badge bg-warning\">Sunk Costs:</span></h4>\r\n\r\n<p>Sunk cost, in economics and finance, a cost that has already been incurred and that cannot be recovered. In economic decision making, sunk costs are treated as bygone and are not taken into consideration when deciding whether to continue an investment project.<br />\r\nIn real life, money spent on baseball games, non-refundable airfare, or even tuition fees for getting a major you eventually did not find useful represent sunk costs because there is no way to recover them.</p>",
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Sunk_Costs.mp4",
+    "videoTitle": "Sunk Costs"
   },
   {
     "discipline": "Environmental",
@@ -23006,7 +23506,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Overhead_Analysis.mp4",
+    "videoTitle": "Overhead Analysis"
   },
   {
     "discipline": "Environmental",
@@ -23032,7 +23534,9 @@ const notesData = [
     "important": "\\[d = i + f + (i \\times f)\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Inflation_Fishers_equation.mp4",
+    "videoTitle": "Inflation: Fisher's Equation"
   },
   {
     "discipline": "Environmental",
@@ -23044,7 +23548,9 @@ const notesData = [
     "important": "\\[i_e = \\left(1 + \\dfrac{r}{m}\\right)^m - 1\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
   },
   {
     "discipline": "Environmental",
@@ -23276,7 +23782,9 @@ const notesData = [
     "images": [
       "https://upload.wikimedia.org/wikipedia/commons/b/b1/Density_-_Kilogram_per_cubic_metre.svg"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Specific_Gravity.mp4",
+    "videoTitle": "Specific Gravity"
   },
   {
     "discipline": "Environmental",
@@ -23541,7 +24049,9 @@ const notesData = [
       "https://drive.google.com/file/d/1TgIUqMQ5A3bXb8sQiZ6kdJzt2W0mrZlI/view?usp=sharing",
       "https://upload.wikimedia.org/wikipedia/commons/b/b0/Minor_Losses.png"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "videoTitle": "Minor Head Loss in Piping Systems"
   },
   {
     "discipline": "Environmental",
@@ -23605,7 +24115,9 @@ const notesData = [
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Bernoullis_Principle.mp4",
+    "videoTitle": "Bernoulli’s Principle"
   },
   {
     "discipline": "Environmental",
@@ -23764,3 +24276,7 @@ const notesData = [
     "local_images": []
   }
 ];
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = notesData;
+}

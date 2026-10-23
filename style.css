@@ -38,80 +38,9 @@
 /* Focused Session Styles (Hides Navigation) */
 .nav-hidden #main-header,
 .nav-hidden #bottom-nav {
-    display: none !important;
-}
-
-.nav-hidden main {
-    padding-top: 1rem !important;
-}
-
-/* Custom Scrollbar for Premium Feel */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 0, 110, 0.1);
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 0, 110, 0.3);
-}
-
-/* Focused Session Styles (Hides Navigation) */
-.nav-hidden #main-header,
-.nav-hidden #bottom-nav {
-    display: none !important;
-}
-
-.nav-hidden main {
-    padding-top: 1rem !important;
-}
-
-body.nav-hidden {
-    padding-bottom: 0 !important;
-}
-
-/* Dark Mode Overrides (Cyber Aesthetics & Ambient Dark Mode) */
-html.dark {
-    --bg-main: #090d16;
-    --card-bg: rgba(15, 23, 42, 0.75);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --border-color: rgba(255, 255, 255, 0.08);
-    --accent-navy: #f59e0b;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-.legacy-wrapper {
-    color: var(--text-secondary);
-    overflow-x: hidden;
-    width: 100%;
-}
-
-html.dark .legacy-wrapper {
-    background-color: var(--bg-main);
-    background-image: none; /* Remove background image in dark mode for better legibility */
-}
-
-.legacy-wrapper #app {
-    display: flex;
-}
-
-/* Sidebar Styling */
-.sidebar {
-    width: 280px;
-    background: rgba(253, 166, 10, 0.85); /* Frosted Orange */
-    backdrop-filter: blur(25px) saturate(150%);
-    -webkit-backdrop-filter: blur(25px) saturate(150%);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    z-index: 100;
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    z-index: 10050 !important;
 }
 
 html.dark .sidebar {
@@ -3716,17 +3645,17 @@ html.dark .formula-display {
     position: relative;
     width: 100%;
     height: 520px;
-    max-height: calc(90vh - 120px);
-    min-height: 460px;
+    max-height: calc(100vh - 170px);
+    min-height: 420px;
     transition: none;
     transform: none !important;
 }
 
 @media (min-width: 1024px) {
     .flip-card-inner {
-        height: 590px;
-        min-height: 530px;
-        max-height: calc(92vh - 110px);
+        height: 540px;
+        min-height: 450px;
+        max-height: calc(100vh - 160px);
     }
 }
 
@@ -3868,7 +3797,7 @@ html.dark .formula-display {
 
 /* Liquid / Frosted Glass Aesthetic for Solved Example Overlay */
 .liquid-glass-btn {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(16, 185, 129, 0.25) 50%, rgba(6, 182, 212, 0.20) 100%) !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 0, 110, 0.25) 50%, rgba(190, 0, 85, 0.20) 100%) !important;
     backdrop-filter: blur(18px) saturate(190%) !important;
     -webkit-backdrop-filter: blur(18px) saturate(190%) !important;
     border: 1px solid rgba(255, 255, 255, 0.35) !important;
@@ -3899,7 +3828,7 @@ html.dark .formula-display {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(15, 23, 42, 0.75) 100%) !important;
     backdrop-filter: blur(14px) !important;
     -webkit-backdrop-filter: blur(14px) !important;
-    border: 1px solid rgba(52, 211, 153, 0.35) !important;
+    border: 1px solid rgba(255, 0, 110, 0.35) !important;
     box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15), 0 10px 25px rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -4313,4 +4242,214 @@ body.notes-view-active main {
     body.notes-view-active main {
         padding-top: 7.25rem !important;
     }
+}
+
+
+/* FE Flashcard Light/Dark Theme Consistency */
+html:not(.dark) #fc-back-formula {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+html:not(.dark) #fc-back-formula mjx-container,
+html:not(.dark) #fc-back-formula mjx-container svg {
+    fill: #0f172a !important;
+    color: #0f172a !important;
+}
+html.dark #fc-back-formula {
+    background: rgba(2, 6, 23, 0.7) !important;
+    border-color: rgba(255, 0, 110, 0.30) !important;
+    color: #f472b6 !important;
+}
+html.dark #fc-back-formula mjx-container,
+html.dark #fc-back-formula mjx-container svg {
+    fill: #f472b6 !important;
+    color: #f472b6 !important;
+}
+html:not(.dark) #fc-video-caption-overlay #fc-karaoke-box {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+html:not(.dark) #fc-video-caption-overlay #fc-karaoke-text {
+    color: #0f172a !important;
+}
+
+
+/* No-Scrollbar utility for Contextual Header Tabs */
+.no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+}
+.no-scrollbar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+
+/* ========================================================================= */
+/* Solved Example Overlay & Content Legibility Enhancements                  */
+/* ========================================================================= */
+html:not(.dark) #fc-video-example-overlay {
+    color: #0f172a !important;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+}
+html.dark #fc-video-example-overlay {
+    color: #f8fafc !important;
+    background-color: rgba(2, 6, 23, 0.98) !important;
+}
+
+html:not(.dark) #fc-video-example-scrollable {
+    color: #0f172a !important;
+}
+html.dark #fc-video-example-scrollable {
+    color: #f1f5f9 !important;
+}
+
+/* Question Content & Paragraphs */
+html:not(.dark) #fc-video-example-question,
+html:not(.dark) #fc-video-example-question p {
+    color: #0f172a !important;
+    font-weight: 500;
+}
+html.dark #fc-video-example-question,
+html.dark #fc-video-example-question p {
+    color: #f1f5f9 !important;
+}
+
+/* Option Buttons inside Question */
+html:not(.dark) .fc-example-option {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+html:not(.dark) .fc-example-option:hover {
+    background-color: #fdf2f8 !important;
+    border-color: #FF006E !important;
+}
+html:not(.dark) .fc-example-option .fc-option-text {
+    color: #0f172a !important;
+    font-weight: 500 !important;
+}
+html.dark .fc-example-option .fc-option-text {
+    color: #e2e8f0 !important;
+}
+
+/* Solved Example Solution Container & Steps */
+html:not(.dark) #fc-video-example-solution {
+    color: #0f172a !important;
+    background-color: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+}
+html.dark #fc-video-example-solution {
+    color: #f1f5f9 !important;
+    background-color: rgba(15, 23, 42, 0.92) !important;
+    border: 1px solid rgba(255, 0, 110, 0.3) !important;
+}
+
+html:not(.dark) #fc-video-example-solution p {
+    color: #1e293b !important;
+    line-height: 1.6;
+    font-weight: 450;
+}
+html.dark #fc-video-example-solution p {
+    color: #e2e8f0 !important;
+    line-height: 1.6;
+}
+
+#fc-video-example-solution strong {
+    font-weight: 700;
+}
+
+/* Border override for solution steps */
+#fc-video-example-solution .border-emerald-500\/20,
+#fc-video-example-solution [class*="border-emerald"] {
+    border-color: rgba(255, 0, 110, 0.25) !important;
+}
+
+/* Step Headers & Highlights in Solution */
+html:not(.dark) #fc-video-example-solution .text-emerald-400,
+html:not(.dark) #fc-video-example-solution .text-emerald-300,
+html:not(.dark) #fc-video-example-solution .text-pink-400,
+html:not(.dark) #fc-video-example-solution .text-pink-300 {
+    color: #be0055 !important; /* Rich deep brand pink */
+}
+html.dark #fc-video-example-solution .text-emerald-400,
+html.dark #fc-video-example-solution .text-emerald-300,
+html.dark #fc-video-example-solution .text-pink-400,
+html.dark #fc-video-example-solution .text-pink-300 {
+    color: #f472b6 !important;
+}
+
+html:not(.dark) #fc-video-example-solution .text-cyan-300 {
+    color: #be0055 !important; /* Brand pink for contrast */
+}
+html.dark #fc-video-example-solution .text-cyan-300 {
+    color: #f472b6 !important;
+}
+
+html:not(.dark) #fc-video-example-solution .text-slate-400 {
+    color: #475569 !important; /* Darker slate for exam tips */
+}
+html.dark #fc-video-example-solution .text-slate-400 {
+    color: #94a3b8 !important;
+}
+
+/* MathJax Formulas in Solved Examples */
+#fc-video-example-overlay mjx-container {
+    color: inherit !important;
+}
+#fc-video-example-overlay mjx-container svg {
+    fill: currentColor !important;
+}
+
+html:not(.dark) #fc-video-example-question mjx-container,
+html:not(.dark) #fc-video-example-solution mjx-container,
+html:not(.dark) .fc-example-option mjx-container {
+    color: #0f172a !important;
+}
+html:not(.dark) #fc-video-example-question mjx-container svg,
+html:not(.dark) #fc-video-example-solution mjx-container svg,
+html:not(.dark) .fc-example-option mjx-container svg {
+    fill: #0f172a !important;
+}
+
+html.dark #fc-video-example-question mjx-container,
+html.dark #fc-video-example-solution mjx-container,
+html.dark .fc-example-option mjx-container {
+    color: #f1f5f9 !important;
+}
+html.dark #fc-video-example-question mjx-container svg,
+html.dark #fc-video-example-solution mjx-container svg,
+html.dark .fc-example-option mjx-container svg {
+    fill: #f1f5f9 !important;
+}
+
+#fc-card-discipline, #fc-card-level-badge { display: none !important; }
+
+/* Watch Concept Video Button (Study Notes) */
+.notes-video-trigger,
+button[title*="Watch animated concept video"] {
+    background-color: rgba(255, 0, 110, 0.10) !important;
+    border-color: rgba(255, 0, 110, 0.35) !important;
+    color: #be0055 !important;
+}
+html.dark .notes-video-trigger,
+html.dark button[title*="Watch animated concept video"] {
+    background-color: rgba(255, 0, 110, 0.15) !important;
+    border-color: rgba(255, 0, 110, 0.40) !important;
+    color: #f472b6 !important;
+}
+.notes-video-trigger:hover,
+button[title*="Watch animated concept video"]:hover {
+    background-color: rgba(255, 0, 110, 0.20) !important;
+    border-color: rgba(255, 0, 110, 0.60) !important;
+    color: #be0055 !important;
+}
+html.dark .notes-video-trigger:hover,
+html.dark button[title*="Watch animated concept video"]:hover {
+    background-color: rgba(255, 0, 110, 0.25) !important;
+    border-color: rgba(255, 0, 110, 0.70) !important;
+    color: #f472b6 !important;
 }
