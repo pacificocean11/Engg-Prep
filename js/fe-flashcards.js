@@ -32,22 +32,41 @@
 
     function getMechanicalSubjectId(title, examTip) {
         const lower = (title || '').toLowerCase();
+        if (/derivative of logarithmic|indefinite integrals/i.test(lower)) return 1;
+        if (/control systems/i.test(lower)) return 13;
+        // Priority overrides for new additions
+        if (/methods for controlling corrosion|corrosion/i.test(lower)) return 9;
+        if (/feature control frame/i.test(lower)) return 14;
+        if (/ceramics/i.test(lower)) return 9;
+        if (/composite plane wall|heat transfer through fins|types of convection/i.test(lower)) return 12;
+        if (/fisher’s equation|fisher's equation|inflation/i.test(lower)) return 4;
+        if (/dimensionless numbers/i.test(lower)) return 10;
+        if (/static vs\.? kinetic friction/i.test(lower)) return 6;
+        if (/elastic vs\.? inelastic collision|damped free vibrations/i.test(lower)) return 7;
+        if (/third law of thermodynamics|second law of thermodynamics|mayer’s formula|meyer’s formula|meyers formula/i.test(lower)) return 11;
+        if (/permutations with repetition|multinomial permutations/i.test(lower)) return 2;
+        if (/elastomer|stainless steel|cast iron/i.test(lower)) return 9;
+        if (/inversion of a mechanism|kinematic inversion/i.test(lower)) return 7;
+        if (/forward rectangular|rectangular rule/i.test(lower)) return 1;
+        if (/incremental cost/i.test(lower)) return 4;
+        if (/ethical and legal|professional and technical societies/i.test(lower)) return 3;
         // 1. Mathematics
         if (/distance formula|angle between two non-vertical|slope-intercept|conic section|types of parabolas|l’hôpital|gradient vector|chain rule for differentiation|product and quotient rules|integration by parts|taylor and maclaurin|taylor series|infinite series convergence|homogeneous vs non-homogeneous|order and degree of differential|second-order linear homogeneous ode|laplace transforms|laplace transform definition|matrix multiplication|inverse of a square matrix|inverse of a matrix|vector magnitude|vector dot product|vector cross product|properties of dot|properties of cross|length of a vector|curl of a vector|divergence of a vector|newton-raphson|newton's method for root|trapezoidal rule|simpson’s 1\/3 rule|simpson's rule|algorithm|flowchart|pseudocode|quadratic equation|complex numbers:|law of sines|double-angle|arithmetic vs geometric|volumes of basic shapes|coordinates of foci and equation of directrix|maxima and minima|partial derivatives|curvature of any curve|properties of identity matrix|complementary function and particular integral/i.test(lower)) return 1;
         // 2. Probability and Statistics
-        if (/expected value and variance of a linear combination of variables|properties of normal distribution|when to use normal distribution|general character of probability|type i and type ii|binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|2^n factorial experiments|2n factorial experiments|analysis of variance for 2^n factorial|analysis of variance for 2n factorial|exponentially weighted moving average|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
+        if (/geometric mean|expected value and variance of a linear combination of variables|properties of normal distribution|when to use normal distribution|general character of probability|type i and type ii|binomial distribution|standard normal distribution|probability density function|cumulative distribution|sample variance|median of a sample|mode of a sample|variance and standard deviation|sample mean and standard error|confidence intervals|student’s \$t\$-confidence|expected values|simple linear regression|correlation coefficient and coefficient|permutations and combinations|null hypothesis|student's t-distribution two-sample|one-way analysis of variance|chi-square goodness|statistical process control|2^n factorial experiments|2n factorial experiments|analysis of variance for 2^n factorial|analysis of variance for 2n factorial|exponentially weighted moving average|western electric|six sigma|bathtub failure|mean time between failures|parallel system reliability|standby redundancy/i.test(lower)) return 2;
         // 3. Ethics and Professional Practice
+        if (/trademark/i.test(lower)) return 3;
         if (/paramount duty|pe seal integrity|code of ethics|safety data sheet|signal words|flammability, lfl and ufl|confined space safety|noise pollution measurements|osha|hazard quotient|excess lifetime cancer|chronic daily intake|hierarchy of controls|nfpa 704|electrical safety: gfci|hazop study|lower and upper flammability|intellectual property: patents|conflicts of interest|whistleblowing|conflict of interest|obligations of a licensed|licensed professional engineer|design patent vs utility patent|design patent|ncees model rules|ergonomic posture assessment/i.test(lower)) return 3;
         // 4. Engineering Economics
-        if (/compound interest|nominal vs\. effective annual|capitalized cost|straight-line depreciation|book value|macrs|bonds|benefit-cost|break-even production volume|internal rate of return|simple payback period|break-even analysis for make-or-buy|payback period:|sensitivity analysis|critical path method|economic order quantity|earned value management|predetermined motion time|kanban production|bill of materials|exponential smoothing|forecasting error|total productive maintenance/i.test(lower)) return 4;
+        if (/sunk cost|sunk costs|overhead rate|overhead analysis|compound interest|nominal vs\. effective annual|capitalized cost|straight-line depreciation|book value|macrs|bonds|benefit-cost|break-even production volume|internal rate of return|simple payback period|break-even analysis for make-or-buy|payback period:|sensitivity analysis|critical path method|economic order quantity|earned value management|predetermined motion time|kanban production|bill of materials|exponential smoothing|forecasting error|total productive maintenance/i.test(lower)) return 4;
         // 5. Electricity and Magnetism
-        if (/ohm’s law and joule|poynting vector|kirchhoff|thevenin|wheatstone bridge|first-order rc transient|first-order rc circuit time|operational amplifier|ideal operational amplifier|instrumentation amplifier|schmitt trigger|equivalent resistance in series|series rlc resonance|second-order rlc|characteristic roots and damping|equivalent capacitance and inductance|ac power triangle|three-phase induction motor|synchronous machine|dc shunt motor|ideal transformer|dc motor back-emf|specific resistance of a conductor|capacitance of a parallel plate|parallel plate capacitor/i.test(lower)) return 5;
+        if (/coulomb’s law|coulomb's law|coulombs law|electrostatic|ohm’s law and joule|poynting vector|kirchhoff|thevenin|wheatstone bridge|first-order rc transient|first-order rc circuit time|operational amplifier|ideal operational amplifier|instrumentation amplifier|schmitt trigger|equivalent resistance in series|series rlc resonance|second-order rlc|characteristic roots and damping|equivalent capacitance and inductance|ac power triangle|three-phase induction motor|synchronous machine|dc shunt motor|ideal transformer|dc motor back-emf|specific resistance of a conductor|capacitance of a parallel plate|parallel plate capacitor/i.test(lower)) return 5;
         // 6. Statics
         if (/resolution of a force|lami's theorem|2d static equilibrium|moments \(couples\)|gravity retaining wall|free body diagram support|two-force and three-force|truss zero-force|method of joints|method of sections|parallel axis theorem \(second moment|centroid of composite|area moment of inertia|radius of gyration|product of inertia|centroid and moment of inertia for composite|centroids and area moments of inertia for standard shapes|coulomb dry friction|limiting friction/i.test(lower)) return 6;
         // 7. Dynamics, Kinematics, and Vibrations
         if (/variable acceleration rotational motion equations|constant acceleration rotational motion equations|instantaneous centers of various types of links|rotational motion|underdamped|critically damped|overdamped|coriolis|normal and tangential acceleration in curvilinear|rectilinear kinematics|constant acceleration motion|variable acceleration motion|relative motion|projectile motion|kinematics of particles: normal|uniform circular motion|kinetic friction|particle kinetics: direct|potential energy in many|kinetic energy|linear impulse and momentum|coefficient of restitution|instantaneous center of rotation|kennedy's rule|planar rigid body relative velocity|work-energy principle \(rigid body|rotational kinetic energy|mass moment of inertia of common|mass moment of inertia parallel axis|angular impulse and momentum|planar rigid body equations of motion|conservation of linear and angular momentum for colliding|sdof undamped natural frequency|damped sdof natural frequency|logarithmic decrement|vibration transmissibility/i.test(lower)) return 7;
         // 8. Mechanics of Materials
-        if (/differential relationships between load, shear|mohr’s circle for plane stress|analytical in-plane principal stresses|generalized hooke’s law|isotropic elastic constants|elastic strain energy|cantilever sheet pile|triaxial shear|vertical stress increase beneath point loads|axial stress and elongation|poisson’s ratio|elastic flexure formula|elastic section modulus|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|shear center|maximum shear stress in rectangular cross-section|thermal expansion deformation and thermal stress|combined axial and bending|moment-area first theorem|moment-area second theorem|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modulus of elasticity vs\. modulus of rigidity|transformation of composite section|theoretical effective-length factors/i.test(lower)) return 8;
+        if (/factor of safety|differential relationships between load, shear|mohr’s circle for plane stress|analytical in-plane principal stresses|generalized hooke’s law|isotropic elastic constants|elastic strain energy|cantilever sheet pile|triaxial shear|vertical stress increase beneath point loads|axial stress and elongation|poisson’s ratio|elastic flexure formula|elastic section modulus|beam flexure formula|torsion formula|polar moment of inertia|pure torsion of circular shafts|transverse shear stress in beams|shear center|maximum shear stress in rectangular cross-section|thermal expansion deformation and thermal stress|combined axial and bending|moment-area first theorem|moment-area second theorem|beam deflection differential|cantilever beam tip deflection|simply supported beam center deflection|euler’s critical buckling|slenderness ratio for steel|thin-walled pressure vessel|modulus of elasticity vs\. modulus of rigidity|transformation of composite section|theoretical effective-length factors/i.test(lower)) return 8;
         // 9. Material Properties and Processing
         if (/standard portland cement|bragg's law|engineering stress-strain vs|modulus of resilience vs|cubic crystal structures|binary eutectic phase diagram|iron-carbon microstructures|binary phase diagram lever rule|eutectic and eutectoid|gibbs phase rule|fick’s first law|fick's first law|first-order chemical reaction half-life|malleability and ductility|hardness of a material|relationship between hardness and tensile|ductile-to-brittle transition|ductile to brittle transition|amorphous materials vs. crystalline|amorphous materials vs crystalline|hardness and tensile strength|jominy hardenability|photoelectric effect|charpy and izod|thermoplastics vs|peritectic vs|failure by creep|failure by fracture|difference between quenching and annealing|intrinsic semiconductors vs extrinsic semiconductor|difference between quenching and annealing|quenching and annealing/i.test(lower)) return 9;
         // 10. Fluid Mechanics
@@ -86,6 +105,20 @@
         const tip = (examTip || '').toLowerCase();
 
         // Priority overrides
+        if (/ceramics/i.test(lower)) return 7;
+        if (/composite plane wall/i.test(lower)) return 7;
+        if (/fisher’s equation|fisher's equation|inflation/i.test(lower)) return 3;
+        if (/dimensionless numbers/i.test(lower)) return 8;
+        if (/static vs\.? kinetic friction/i.test(lower)) return 4;
+        if (/elastic vs\.? inelastic collision|damped free vibrations/i.test(lower)) return 5;
+        if (/permutations with repetition|multinomial permutations/i.test(lower)) return 1;
+        if (/elastomer|stainless steel|cast iron/i.test(lower)) return 7;
+        if (/inversion of a mechanism|kinematic inversion/i.test(lower)) return 5;
+        if (/forward rectangular|rectangular rule/i.test(lower)) return 1;
+        if (/incremental cost/i.test(lower)) return 3;
+        if (/ethical and legal|professional and technical societies/i.test(lower)) return 2;
+        if (/geometric mean/i.test(lower)) return 1;
+        if (/law of cosines|law of sines|trigonometric/i.test(lower)) return 1;
         if (/fourier/i.test(lower)) return 1;
         if (/plastic section modulus and shape factor/i.test(lower)) return 11;
         if (/total float and free float in activity networks|bill of materials explosion tree/i.test(lower)) return 14;
@@ -153,6 +186,7 @@
             /engineering economics|economics/i.test(tip)) return 3;
 
         // 2. Ethics & Professional Practice
+        if (/trademark/i.test(lower)) return 2;
         if (/ethics|code of ethics|public welfare|pe seal|licensure|conflict of interest|whistleblowing|liability|contract law/i.test(lower) ||
             /ethics|professional practice/i.test(tip)) return 2;
 
@@ -186,6 +220,21 @@
         const tip = (examTip || '').toLowerCase();
 
         // Priority overrides
+        if (/ceramics/i.test(lower)) return 11;
+        if (/composite plane wall|heat transfer through fins|types of convection|third law of thermodynamics|second law of thermodynamics|mayer’s formula|meyer’s formula|meyers formula/i.test(lower)) return 14;
+        if (/fisher’s equation|fisher's equation|inflation/i.test(lower)) return 7;
+        if (/dimensionless numbers/i.test(lower)) return 12;
+        if (/static vs\.? kinetic friction/i.test(lower)) return 8;
+        if (/elastic vs\.? inelastic collision|damped free vibrations/i.test(lower)) return 9;
+        if (/permutations with repetition|multinomial permutations/i.test(lower)) return 2;
+        if (/elastomer|stainless steel|cast iron/i.test(lower)) return 11;
+        if (/inversion of a mechanism|kinematic inversion/i.test(lower)) return 9;
+        if (/forward rectangular|rectangular rule/i.test(lower)) return 1;
+        if (/incremental cost/i.test(lower)) return 7;
+        if (/ethical and legal|professional and technical societies/i.test(lower)) return 5;
+        if (/coulomb’s law|coulomb's law|coulombs law/i.test(lower)) return 13;
+        if (/geometric mean/i.test(lower)) return 2;
+        if (/law of cosines|law of sines|trigonometric/i.test(lower)) return 1;
         if (/mohr/i.test(lower)) return 10;
         if (/magnetic force on a straight current/i.test(lower)) return 13;
         if (/rectifier with filter capacitor ripple voltage/i.test(lower)) return 13;
@@ -269,6 +318,11 @@ function getElectricalSubjectId(title, examTip, description) {
     const tip = (examTip || '').toLowerCase();
 
     // Specific overrides
+    if (/forward rectangular|rectangular rule/i.test(lower)) return 1;
+    if (/incremental cost/i.test(lower)) return 4;
+    if (/ethical and legal|professional and technical societies/i.test(lower)) return 3;
+    if (/geometric mean/i.test(lower)) return 2;
+    if (/law of cosines|law of sines|trigonometric/i.test(lower)) return 1;
     if (/attenuation constant and phase constant/i.test(lower)) return 11;
     if (/dirac delta impulse and unit step integration/i.test(lower)) return 7;
     if (/laplace transform time delay property/i.test(lower)) return 7;
@@ -402,6 +456,14 @@ function getChemicalSubjectId(title, examTip, description) {
     const lower = (title || '').toLowerCase();
     const tip = (examTip || '').toLowerCase();
 
+    // Overrides
+    if (/elastomer|stainless steel|cast iron/i.test(lower)) return 4;
+    if (/inversion of a mechanism|kinematic inversion/i.test(lower)) return 3;
+    if (/forward rectangular|rectangular rule/i.test(lower)) return 1;
+    if (/incremental cost/i.test(lower)) return 13;
+    if (/ethical and legal|professional and technical societies/i.test(lower)) return 16;
+    if (/law of cosines|law of sines|trigonometric/i.test(lower)) return 1;
+
     // 16. Safety, Health, and Environment
     if (/hazard quotient|hazard index|gaussian plume|pressure relief valve sizing|hazop|flammability limits|lower and upper flammability|threshold limit value|toxic vapor dispersion|nfpa 704|hierarchy of controls|osha|safety/i.test(lower) || /process safety|safety/i.test(tip)) {
         return 16;
@@ -516,6 +578,14 @@ function getEnvironmentalSubjectId(title, examTip, description) {
     const lower = (title || '').toLowerCase();
     const tip = (examTip || '').toLowerCase();
 
+    // Overrides
+    if (/elastomer|stainless steel|cast iron/i.test(lower)) return 5;
+    if (/forward rectangular|rectangular rule/i.test(lower)) return 1;
+    if (/incremental cost/i.test(lower)) return 4;
+    if (/ethical and legal|professional and technical societies/i.test(lower)) return 3;
+    if (/geometric mean/i.test(lower)) return 2;
+    if (/law of cosines|law of sines|trigonometric/i.test(lower)) return 1;
+
     // 14. Environmental Health and Safety
     if (/environmental health|industrial hygiene|radiation protection|toxicology|noise|osha/i.test(tip) ||
         /sound pressure level|decibel addition|noise reduction coefficient|dosimetry|dose-response|ld50|carcinogenic risk|hazard index|hazard quotient|reference dose|radiation half-life|absorbed dose|sievert|gray|\brad\b|\brem\b|osha permissible exposure|time-weighted average twa/i.test(lower)) {
@@ -619,6 +689,11 @@ function getIndustrialSubjectId(title, examTip, description) {
     const tip = (examTip || '').toLowerCase();
 
     // Priority overrides
+    if (/elastomer|stainless steel|cast iron|inversion of a mechanism|kinematic inversion/i.test(lower)) return 2;
+    if (/forward rectangular|rectangular rule/i.test(lower)) return 1;
+    if (/incremental cost/i.test(lower)) return 4;
+    if (/ethical and legal|professional and technical societies/i.test(lower)) return 3;
+    if (/law of cosines|law of sines|trigonometric/i.test(lower)) return 1;
     if (/vector cross product|vector dot product|vector magnitude/i.test(lower)) {
         return 1;
     }
@@ -1020,6 +1095,11 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 
     function renderCard() {
         const modal = document.getElementById('fe-flashcards-modal');
+        const cardEl = document.getElementById('flashcard-studio-card');
+        const paneFc = document.getElementById('study-pane-flashcards');
+        const paneNotes = document.getElementById('study-pane-notes');
+        if (paneFc) paneFc.classList.remove('hidden');
+        if (paneNotes) paneNotes.classList.add('hidden');
         if (!modal) return;
         if (modal.classList.contains('hidden') && modal.style.display !== 'flex') return;
 
@@ -1074,7 +1154,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
         if (cardLvl) {
             cardLvl.textContent = `#${currentIndex + 1} of ${currentDeck.length}`;
-            cardLvl.className = 'text-[10px] font-black uppercase tracking-wider bg-purple-500/20 text-purple-300 px-2.5 py-0.5 rounded-full border border-purple-500/30';
+            cardLvl.className = 'hidden'; cardLvl.style.display = 'none';
         }
 
         if (currentMode === 'identify') {
@@ -1316,11 +1396,11 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             if (mediaStaticHeader) mediaStaticHeader.classList.remove('hidden');
             if (headerIcon) {
                 headerIcon.textContent = 'smart_display';
-                headerIcon.className = 'material-symbols-outlined text-[15px] text-cyan-400';
+                headerIcon.className = 'material-symbols-outlined text-[15px] text-[#FF006E]';
             }
             if (headerLabel) {
                 headerLabel.textContent = '10s Video Explainer';
-                headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-cyan-400';
+                headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-[#FF006E]';
             }
             if (videoDur) {
                 videoDur.textContent = card.videoDuration || '10s';
@@ -1424,15 +1504,15 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                     exampleFeedback.classList.remove('hidden');
                     if (pastAttempt.isCorrect) {
                         exampleFeedback.innerHTML = `
-                            <div class="p-2.5 rounded-xl bg-emerald-500/15 border border-emerald-400/40 text-emerald-200 text-xs font-semibold flex items-center gap-2.5">
-                                <span class="material-symbols-outlined text-emerald-300 text-[18px]">verified</span>
+                            <div class="p-2.5 rounded-xl bg-pink-50 dark:bg-pink-500/15 border border-pink-300 dark:border-pink-400/40 text-pink-950 dark:text-pink-200 text-xs font-semibold flex items-center gap-2.5">
+                                <span class="material-symbols-outlined text-[#be0055] dark:text-pink-300 text-[18px]">verified</span>
                                 <span>Previously Solved Correctly: Option (${pastAttempt.selectedOption})</span>
                             </div>
                         `;
                     } else {
                         exampleFeedback.innerHTML = `
-                            <div class="p-2.5 rounded-xl bg-amber-500/15 border border-amber-400/35 text-amber-200 text-xs font-semibold flex items-center gap-2.5">
-                                <span class="material-symbols-outlined text-amber-300 text-[18px]">info</span>
+                            <div class="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-500/15 border border-amber-300 dark:border-amber-400/35 text-amber-900 dark:text-amber-200 text-xs font-semibold flex items-center gap-2.5">
+                                <span class="material-symbols-outlined text-amber-700 dark:text-amber-300 text-[18px]">info</span>
                                 <span>Previously Attempted: Option (${pastAttempt.selectedOption}) | Correct: Option (${correctAnswer || 'N/A'})</span>
                             </div>
                         `;
@@ -1462,11 +1542,11 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 const headerLabel = document.getElementById('fc-media-header-label');
                 if (headerIcon) {
                     headerIcon.textContent = 'school';
-                    headerIcon.className = 'material-symbols-outlined text-[15px] text-emerald-400';
+                    headerIcon.className = 'material-symbols-outlined text-[15px] text-[#FF006E]';
                 }
                 if (headerLabel) {
                     headerLabel.textContent = 'FE Practice Problem';
-                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-emerald-400';
+                    headerLabel.className = 'text-[10px] font-black uppercase tracking-widest text-[#FF006E]';
                 }
                 if (mediaSubtext) mediaSubtext.classList.add('hidden');
             } else {
@@ -1643,9 +1723,9 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 
         processed = processed.replace(/<div class="[^"]*p-2[^"]*">\s*\(([A-D])\)\s*([\s\S]*?)<\/div>/g, (m, letter, content) => {
             const cleanContent = content.trim();
-            return `<button type="button" data-option="${letter}" onclick="event.stopPropagation(); window.selectSolvedExampleOption && window.selectSolvedExampleOption('${letter}', this, event);" class="fc-example-option group/opt w-full text-left p-2.5 sm:p-3 rounded-xl border border-slate-700/80 bg-slate-900/90 hover:bg-slate-800/90 hover:border-cyan-400/60 active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-start gap-2.5 shadow-sm text-xs sm:text-sm">
-                <span class="fc-option-letter w-6 h-6 rounded-lg bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 font-bold text-xs flex items-center justify-center shrink-0 group-hover/opt:border-cyan-300 group-hover/opt:bg-cyan-900 transition-colors">${letter}</span>
-                <span class="fc-option-text flex-1 text-slate-200 leading-relaxed font-sans">${cleanContent}</span>
+            return `<button type="button" data-option="${letter}" onclick="event.stopPropagation(); window.selectSolvedExampleOption && window.selectSolvedExampleOption('${letter}', this, event);" class="fc-example-option group/opt w-full text-left p-2.5 sm:p-3 rounded-xl border border-slate-300 dark:border-slate-700/80 bg-white hover:bg-slate-50 dark:bg-slate-900/90 dark:hover:bg-slate-800/90 hover:border-[#FF006E] dark:hover:border-pink-400/80 active:scale-[0.99] transition-all duration-200 cursor-pointer flex items-start gap-2.5 shadow-sm text-xs sm:text-sm text-slate-900 dark:text-slate-100">
+                <span class="fc-option-letter w-6 h-6 rounded-lg bg-pink-100 dark:bg-pink-950/80 border border-pink-300 dark:border-pink-500/40 text-[#be0055] dark:text-pink-300 font-bold text-xs flex items-center justify-center shrink-0 group-hover/opt:border-[#FF006E] group-hover/opt:bg-pink-200 dark:group-hover/opt:bg-pink-900 transition-colors">${letter}</span>
+                <span class="fc-option-text flex-1 text-slate-800 dark:text-slate-200 leading-relaxed font-sans font-medium">${cleanContent}</span>
                 <span class="fc-option-status-icon hidden text-[16px] shrink-0"></span>
             </button>`;
         });
@@ -1701,7 +1781,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const allBtns = document.querySelectorAll('.fc-example-option');
         allBtns.forEach(btn => {
             btn.disabled = true;
-            btn.classList.remove('hover:bg-slate-800/90', 'hover:border-cyan-400/60', 'cursor-pointer', 'active:scale-[0.99]');
+            btn.classList.remove('hover:bg-slate-800/90', 'hover:border-cyan-400/60', 'hover:border-pink-400/80', 'cursor-pointer', 'active:scale-[0.99]');
             btn.classList.add('cursor-default');
 
             const opt = (btn.getAttribute('data-option') || '').toUpperCase();
@@ -1710,25 +1790,25 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 
             if (opt === (correctAnswer || '').toUpperCase()) {
                 // Highlight correct option in glowing emerald green
-                btn.classList.remove('bg-slate-900/90', 'border-slate-700/80');
-                btn.classList.add('bg-emerald-500/20', 'border-emerald-400', 'text-emerald-100', 'shadow-[0_0_15px_rgba(16,185,129,0.25)]');
+                btn.classList.remove('bg-white', 'bg-slate-900/90', 'border-slate-300', 'border-slate-700/80', 'text-slate-900', 'text-slate-100');
+                btn.classList.add('bg-emerald-50', 'dark:bg-emerald-500/20', 'border-emerald-500', 'dark:border-emerald-400', 'text-emerald-950', 'dark:text-emerald-100', 'shadow-[0_0_15px_rgba(16,185,129,0.25)]');
                 if (letterEl) {
-                    letterEl.className = 'fc-option-letter w-6 h-6 rounded-lg bg-emerald-500 text-slate-950 font-black text-xs flex items-center justify-center shrink-0 shadow-sm';
+                    letterEl.className = 'fc-option-letter w-6 h-6 rounded-lg bg-emerald-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm';
                 }
                 if (statusIcon) {
-                    statusIcon.className = 'fc-option-status-icon material-symbols-outlined text-emerald-400 text-[18px] shrink-0';
+                    statusIcon.className = 'fc-option-status-icon material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-[18px] shrink-0';
                     statusIcon.textContent = 'check_circle';
                     statusIcon.classList.remove('hidden');
                 }
             } else if (opt === (selectedOption || '').toUpperCase() && !isCorrect) {
                 // Highlight user's incorrect pick in rose red
-                btn.classList.remove('bg-slate-900/90', 'border-slate-700/80');
-                btn.classList.add('bg-rose-500/20', 'border-rose-500', 'text-rose-200');
+                btn.classList.remove('bg-white', 'bg-slate-900/90', 'border-slate-300', 'border-slate-700/80', 'text-slate-900', 'text-slate-100');
+                btn.classList.add('bg-rose-50', 'dark:bg-rose-500/20', 'border-rose-400', 'dark:border-rose-500', 'text-rose-950', 'dark:text-rose-200');
                 if (letterEl) {
                     letterEl.className = 'fc-option-letter w-6 h-6 rounded-lg bg-rose-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-sm';
                 }
                 if (statusIcon) {
-                    statusIcon.className = 'fc-option-status-icon material-symbols-outlined text-rose-400 text-[18px] shrink-0';
+                    statusIcon.className = 'fc-option-status-icon material-symbols-outlined text-rose-600 dark:text-rose-400 text-[18px] shrink-0';
                     statusIcon.textContent = 'cancel';
                     statusIcon.classList.remove('hidden');
                 }
@@ -1768,28 +1848,28 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             feedbackEl.classList.remove('hidden');
             if (isCorrect) {
                 feedbackEl.innerHTML = `
-                    <div class="p-3 rounded-xl bg-emerald-500/15 border border-emerald-400/40 text-emerald-200 text-xs font-semibold flex items-center gap-3 animate-fadeIn shadow-sm">
-                        <span class="w-8 h-8 rounded-lg bg-emerald-500/30 border border-emerald-400/50 flex items-center justify-center text-emerald-300 shrink-0">
+                    <div class="p-3 rounded-xl bg-pink-50 dark:bg-pink-500/15 border border-pink-300 dark:border-pink-400/40 text-pink-950 dark:text-pink-200 text-xs font-semibold flex items-center gap-3 animate-fadeIn shadow-sm">
+                        <span class="w-8 h-8 rounded-lg bg-pink-500/20 dark:bg-pink-500/30 border border-pink-400/50 flex items-center justify-center text-[#be0055] dark:text-pink-300 shrink-0">
                             <span class="material-symbols-outlined text-[20px]">military_tech</span>
                         </span>
                         <div class="flex-1">
-                            <div class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
+                            <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-2">
                                 <span>Correct! Option (${selectedOption})</span>
-                                <span class="px-2 py-0.5 rounded-full bg-emerald-500/30 text-[10px] font-black text-emerald-300 uppercase tracking-wider">+1 Point</span>
+                                <span class="px-2 py-0.5 rounded-full bg-pink-200 dark:bg-pink-500/30 text-[10px] font-black text-[#be0055] dark:text-pink-300 uppercase tracking-wider">+1 Point</span>
                             </div>
-                            <div class="text-[11px] text-emerald-200/90 mt-0.5">Great job solving this FE practice problem independently. Full step-by-step solution shown below!</div>
+                            <div class="text-[11px] text-pink-800 dark:text-pink-200/90 mt-0.5">Great job solving this FE practice problem independently. Full step-by-step solution shown below!</div>
                         </div>
                     </div>
                 `;
             } else {
                 feedbackEl.innerHTML = `
-                    <div class="p-3 rounded-xl bg-amber-500/15 border border-amber-400/35 text-amber-200 text-xs font-semibold flex items-center gap-3 animate-fadeIn shadow-sm">
-                        <span class="w-8 h-8 rounded-lg bg-amber-500/30 border border-amber-400/40 flex items-center justify-center text-amber-300 shrink-0">
+                    <div class="p-3 rounded-xl bg-amber-50 dark:bg-amber-500/15 border border-amber-300 dark:border-amber-400/35 text-amber-950 dark:text-amber-200 text-xs font-semibold flex items-center gap-3 animate-fadeIn shadow-sm">
+                        <span class="w-8 h-8 rounded-lg bg-amber-500/20 dark:bg-amber-500/30 border border-amber-400/40 flex items-center justify-center text-amber-700 dark:text-amber-300 shrink-0">
                             <span class="material-symbols-outlined text-[20px]">lightbulb</span>
                         </span>
                         <div class="flex-1">
-                            <div class="font-bold text-white text-xs sm:text-sm">Incorrect — Correct Option is (${correctAnswer || 'N/A'})</div>
-                            <div class="text-[11px] text-amber-200/90 mt-0.5">No points this time, but examine the step-by-step FE solution below to master this concept.</div>
+                            <div class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Incorrect — Correct Option is (${correctAnswer || 'N/A'})</div>
+                            <div class="text-[11px] text-amber-800 dark:text-amber-200/90 mt-0.5">No points this time, but examine the step-by-step FE solution below to master this concept.</div>
                         </div>
                     </div>
                 `;
@@ -2002,11 +2082,11 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                     if (allBtns.length > 0) {
                         allBtns.forEach(btn => {
                             btn.disabled = true;
-                            btn.classList.remove('hover:bg-slate-800/90', 'hover:border-cyan-400/60', 'cursor-pointer');
+                            btn.classList.remove('hover:bg-slate-800/90', 'hover:border-cyan-400/60', 'hover:border-pink-400/80', 'cursor-pointer');
                             btn.classList.add('cursor-default');
                             const opt = (btn.getAttribute('data-option') || '').toUpperCase();
                             if (opt === (correctAnswer || '').toUpperCase()) {
-                                btn.classList.add('border-emerald-400/70', 'bg-emerald-500/15');
+                                btn.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:border-emerald-400/70', 'dark:bg-emerald-500/15');
                             } else {
                                 btn.classList.add('opacity-45');
                             }
@@ -2015,8 +2095,8 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                         if (feedbackEl && feedbackEl.classList.contains('hidden')) {
                             feedbackEl.classList.remove('hidden');
                             feedbackEl.innerHTML = `
-                                <div class="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-xs flex items-center gap-2">
-                                    <span class="material-symbols-outlined text-slate-400 text-[18px]">visibility</span>
+                                <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-xs flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-[18px]">visibility</span>
                                     <span>Solution revealed directly without self-attempt (0 points).</span>
                                 </div>
                             `;
@@ -2144,7 +2224,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             if (badge) badge.textContent = (card && card.videoDuration) || '10s';
 
             if (btnVideo) {
-                btnVideo.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm';
+                btnVideo.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 bg-[#FF006E]/20 text-pink-300 border border-[#FF006E]/40 shadow-sm';
             }
             if (btnBlueprint) {
                 btnBlueprint.className = 'px-2.5 py-0.5 text-[10px] font-bold rounded-lg transition-all flex items-center gap-1 text-slate-400 hover:text-slate-200';
@@ -2267,7 +2347,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             icon.textContent = 'volume_up';
             text.textContent = 'Sound On';
             if (btn) {
-                btn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-emerald-500/25 text-emerald-300 border-emerald-400/50 hover:bg-emerald-500/35 cursor-pointer shadow-sm';
+                btn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-[#FF006E]/20 text-pink-300 border border-[#FF006E]/40 hover:bg-[#FF006E]/30 cursor-pointer shadow-sm';
                 btn.title = 'Sound is active — click to mute';
             }
         }
@@ -2333,7 +2413,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             btn.classList.remove('hidden');
             btn.classList.add('flex');
             if (karaokeActive) {
-                btn.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-cyan-500/20 text-cyan-300 border-cyan-500/40 hover:bg-cyan-500/30 cursor-pointer shadow-sm';
+                btn.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-[#FF006E]/20 text-pink-300 border border-[#FF006E]/40 hover:bg-[#FF006E]/30 cursor-pointer shadow-sm';
                 if (statusText) statusText.textContent = 'CC On';
             } else {
                 btn.className = 'flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-all border bg-slate-800/80 text-slate-400 border-slate-700 hover:text-slate-200 cursor-pointer';
@@ -2370,7 +2450,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 
         if (cue.isEquation) {
             // Presenter is showing/stating the equation: render full MathJax formula with Apple dock badge
-            textEl.innerHTML = `<div class="inline-flex items-center gap-2.5 py-0.5 px-2 font-mono tracking-wide text-sm sm:text-base text-cyan-300"><span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-cyan-500/20 text-cyan-300 border border-cyan-400/35 shadow-sm">NCEES Equation</span><span>${cue.text}</span></div>`;
+            textEl.innerHTML = `<div class="inline-flex items-center gap-2.5 py-0.5 px-2 font-mono tracking-wide text-sm sm:text-base text-pink-300"><span class="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-[#FF006E]/20 text-pink-300 border border-[#FF006E]/40 shadow-sm">NCEES Equation</span><span>${cue.text}</span></div>`;
             triggerMathTypeset([textEl]);
         } else if (cue.words && Array.isArray(cue.words)) {
             // Render Karaoke words
@@ -2568,7 +2648,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     // Close Flashcard Studio Modal
-    function closeFlashcardStudio() {
+    function closeFlashcardStudio(resetTab = true) {
         const modal = document.getElementById('fe-flashcards-modal');
         const card = document.getElementById('flashcard-studio-card');
         const video = document.getElementById('fc-back-video');
@@ -2600,6 +2680,10 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 modal.style.display = 'none';
                 modal.style.visibility = 'hidden';
             }, 250);
+        }
+
+        if (resetTab && typeof window.switchStudyMode === 'function') {
+            window.switchStudyMode('notes');
         }
     }
 
@@ -2760,6 +2844,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     // Backwards compatibility aliases
     window.rateFlashcard = nextCard;
     window.restartFlashcardSession = () => openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
+    window.DISCIPLINE_SUBJECT_CONFIG = DISCIPLINE_SUBJECT_CONFIG;
 
 })();
 
