@@ -291,6 +291,7 @@
               "topic": "Mean, Median, Mode",
               "subtopics": [
                 "Mean",
+                "Sample Geometric Mean",
                 "Median",
                 "Mode"
               ]
@@ -579,7 +580,8 @@
             {
               "topic": "Cost Types",
               "subtopics": [
-                "Overview"
+                "Incremental Costs",
+                "Sunk Costs"
               ]
             }
           ]
@@ -648,7 +650,8 @@
             {
               "topic": "Resistance",
               "subtopics": [
-                "Overview",
+                "Ohm's Law",
+                "Resistivity",
                 "Equivalent Resistance in Series and Parallel"
               ]
             },
@@ -2699,7 +2702,8 @@
             {
               "topic": "Basic Load Rating",
               "subtopics": [
-                "Overview"
+                "Types of Bearings",
+                "Basic Load Rating"
               ]
             },
             {
@@ -2716,7 +2720,8 @@
             {
               "topic": "Power Screw Calculations",
               "subtopics": [
-                "Overview"
+                "Power Screw Terminology",
+                "Torque required to raise the load"
               ]
             }
           ]
@@ -2872,7 +2877,8 @@
             {
               "topic": "Failure Theories for Ductile Materials",
               "subtopics": [
-                "Overview"
+                "Maximum-Shear-Stress Theory (Tresca)",
+                "Distortion Energy Theory"
               ]
             }
           ]
@@ -2897,7 +2903,8 @@
             {
               "topic": "Reliability of an Assembly",
               "subtopics": [
-                "Overview"
+                "Components connected in Series",
+                "Components connected in Parallel"
               ]
             }
           ]
@@ -2937,7 +2944,8 @@
             {
               "topic": "Engineering Drawing",
               "subtopics": [
-                "Elements of Engineering Drawing"
+                "Elements of Engineering Drawing",
+                "First Angle and Third Angle Orthographic Projection"
               ]
             }
           ]
