@@ -40,12 +40,12 @@ function updateSyncStatus(status) {
         syncDot.classList.add("bg-rose-500", "animate-pulse");
         syncIndicator.title = "Failed to sync progress with Firebase. Check your connection.";
     } else if (status === 'local') {
-        syncIcon.textContent = "cloud_off";
-        syncIcon.classList.add("text-slate-400", "dark:text-slate-500");
-        syncText.textContent = "Offline";
-        syncText.classList.add("text-slate-500", "dark:text-slate-400");
-        syncDot.classList.add("bg-slate-400", "dark:bg-slate-600");
-        syncIndicator.title = "Progress is saved locally in your browser.";
+        syncIcon.textContent = "cloud_done";
+        syncIcon.classList.add("text-emerald-500", "dark:text-emerald-400");
+        syncText.textContent = "Saved";
+        syncText.classList.add("text-slate-600", "dark:text-slate-300");
+        syncDot.classList.add("bg-emerald-500", "dark:bg-emerald-400");
+        syncIndicator.title = "Progress is saved locally in your browser storage.";
     }
 }
 
