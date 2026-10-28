@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v260';
+const CACHE_NAME = 'engg-prep-cache-v261';
 const APP_SHELL = [
   './',
   './index.html',
@@ -69,6 +69,13 @@ self.addEventListener('fetch', event => {
 
   // Skip chrome-extension requests
   if (event.request.url.startsWith('chrome-extension://')) return;
+
+  // Skip video streaming and Range requests (let browser media pipeline stream natively)
+  if (event.request.url.includes('.mp4') || 
+      event.request.destination === 'video' || 
+      (event.request.headers.get('range'))) {
+    return;
+  }
 
   // Network-First for HTML page navigations (e.g. login.html, index.html)
   // Ensures mobile devices and tablets immediately fetch fresh HTML when online, with offline cache fallback

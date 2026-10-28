@@ -474,6 +474,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         if (typeof updateSyncStatus === 'function') {
             updateSyncStatus(navigator.onLine ? 'local' : 'offline');
         }
+        // Immediately connect Firestore sync listener if user is logged in
+        if (state.user && state.user.username && state.user.username !== 'guest') {
+            if (typeof window.setupFirestoreSyncListener === 'function') {
+                window.setupFirestoreSyncListener(state.user.uid || state.user.username);
+            }
+        }
         setupQuizListeners();
         setupDashboardListeners();
         setupAdminListeners();
