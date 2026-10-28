@@ -32,6 +32,20 @@
 
     function getMechanicalSubjectId(title, examTip) {
         const lower = (title || '').toLowerCase();
+        if (/powder metallurgy|electrical properties of material|non-traditional machining|non traditional machining/i.test(lower)) return 9;
+        if (/types of springs|helical compression|helical torsion|belleville/i.test(lower)) return 14;
+        if (/valves in fluid power|directional control valve|flow control valve|logic control valve|\bvalves\b/i.test(lower) && !/pressure relief valve sizing formula for vapor/i.test(lower)) return 14;
+        if (/pneumatic system|components of a pneumatic|components of a hydraulic system/i.test(lower)) return 14;
+        if (/applying boundary conditions|boundary conditions/i.test(lower)) return 1;
+        if (/sustainability/i.test(lower)) return 3;
+        if (/types of cash flows|cash flow/i.test(lower)) return 4;
+        if (/depreciation methods|depreciation/i.test(lower)) return 4;
+        if (/pneumatic system|components of a pneumatic|components of a hydraulic system/i.test(lower)) return 14;
+        if (/applying boundary conditions|boundary conditions/i.test(lower)) return 1;
+        if (/sustainability/i.test(lower)) return 3;
+        if (/types of cash flows|cash flow/i.test(lower)) return 4;
+        if (/depreciation methods|depreciation/i.test(lower)) return 4;
+        if (/concept of complex numbers|complex numbers/i.test(lower)) return 1;
         if (/derivative of logarithmic|indefinite integrals/i.test(lower)) return 1;
         if (/control systems/i.test(lower)) return 13;
         // Priority overrides for new additions
@@ -794,50 +808,751 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 };
 
 
+    // =========================================================================
+    // FE Rapid Flashcard Subject & Chapter Classification (Option A: Megamenu)
+    // =========================================================================
+    function getCardChapter(card, disc, subjectId) {
+        if (card.chapter) return card.chapter;
+        const text = (card.title + ' ' + (card.examTip || '') + ' ' + (card.description || '')).toLowerCase();
+
+        // 1. Mathematics
+        if (subjectId === 1) {
+            if (/differential equation|particular integral|complementary function|cauchy-euler|homogeneous equation|separable|integrating factor|laplace transform|wronskian|undetermined coefficients|initial value problem|boundary value|ode/i.test(text)) {
+                return 'Differential Equations';
+            }
+            if (/matrix|matrices|eigenvalue|eigenvector|determinant|cramer|vector dot|vector cross|linear algebra|rank of matrix|inverse matrix/i.test(text)) {
+                return 'Linear Algebra';
+            }
+            if (/derivative|integral|integration|limit|calculus|taylor series|maclaurin|l'hopital|curvature|gradient|divergence|curl|chain rule|power rule|product rule|quotient rule|maxima and minima|partial derivative|inflection point|definite integral|indefinite integral/i.test(text)) {
+                return 'Calculus';
+            }
+            if (/ellipse|parabola|hyperbola|circle|conic|straight line|slope|perpendicular|distance between|coordinates|polar coordinates|cartesian|tangent to curve|analytic geometry|foci|directrix|eccentricity/i.test(text)) {
+                return 'Analytic Geometry';
+            }
+            if (/numerical|algorithm|iteration|newton-raphson|bisection|euler's method|trapezoidal rule|simpson/i.test(text)) {
+                return 'Numerical Methods';
+            }
+            return 'Math Basics';
+        }
+
+        // 2. Probability & Statistics
+        if (subjectId === 2) {
+            if (/regression|least squares|correlation coefficient|curve fitting/i.test(text)) return 'Regression & Curve Fitting';
+            if (/hypothesis|t-test|z-test|confidence interval|p-value|significance/i.test(text)) return 'Hypothesis Testing';
+            if (/permutation|combination|counting/i.test(text)) return 'Permutations & Combinations';
+            if (/normal distribution|binomial|poisson|probability density|expected value|variance|standard deviation/i.test(text)) return 'Distributions & Expected Values';
+            return 'Laws of Probability';
+        }
+
+        // 3. Ethics & Professional Practice
+        if (subjectId === 3) {
+            if (/intellectual property|patent|copyright|trade secret/i.test(text)) return 'Intellectual Property';
+            if (/public health|safety|welfare|whistleblowing/i.test(text)) return 'Public Health & Safety';
+            return 'Codes of Ethics';
+        }
+
+        // 4. Engineering Economics
+        if (subjectId === 4) {
+            if (/break-even|payback/i.test(text)) return 'Break-even Analysis';
+            if (/capitalized cost|perpetuity/i.test(text)) return 'Capitalized Costs';
+            if (/inflation|depreciation/i.test(text)) return 'Inflation & Depreciation';
+            if (/annual compounding|effective rate|nominal rate/i.test(text)) return 'Compounding Rates';
+            return 'Time Value of Money';
+        }
+
+        // 5. Electricity & Magnetism
+        if (subjectId === 5) {
+            if (/ac circuit|impedance|phasor|power factor|reactive power/i.test(text)) return 'AC Circuits';
+            if (/capacitor|inductor|rc circuit|rl circuit|rlc circuit/i.test(text)) return 'Capacitors & Inductors';
+            if (/three-phase|wye|delta/i.test(text)) return 'Three-phase Power';
+            if (/transformer|mutual inductance/i.test(text)) return 'Transformers';
+            if (/motor|generator|torque-speed/i.test(text)) return 'Motors & Generators';
+            return 'Electrical Fundamentals';
+        }
+
+        // 6. Statics
+        if (subjectId === 6) {
+            if (/truss|method of joints|method of sections|zero force/i.test(text)) return 'Statically Determinate Truss';
+            if (/friction|impending slip|belt friction|screw thread|angle of repose/i.test(text)) return 'Static Friction';
+            if (/centroid|center of gravity|first moment/i.test(text)) return 'Centroids';
+            if (/moment of inertia|parallel axis|radius of gyration/i.test(text)) return 'Moment of Inertia';
+            if (/moment|couple|torque/i.test(text)) return 'Moments & Couples';
+            return 'Equilibrium of Rigid Bodies';
+        }
+
+        // 7. Dynamics & Vibrations
+        if (subjectId === 7) {
+            if (/vibration|natural frequency|damping|resonance|sdof/i.test(text)) return 'Vibrations';
+            if (/impulse|momentum|collision|restitution/i.test(text)) return 'Impulse & Momentum';
+            if (/work-energy|kinetic energy|potential energy|conservation of energy/i.test(text)) return 'Work-Energy Principles';
+            if (/rigid body|rotation|instantaneous center|rolling without slip/i.test(text)) return 'Kinematics & Kinetics of Rigid Bodies';
+            return 'Kinematics of Particles';
+        }
+
+        // 8. Mechanics of Materials
+        if (subjectId === 8) {
+            if (/mohr|principal stress|shear stress|stress transformation/i.test(text)) return 'Mohr\'s Circle & Stress States';
+            if (/beam|shear diagram|moment diagram|flexure formula|bending stress/i.test(text)) return 'Beams & Bending Loads';
+            if (/torsion|torsional shear|polar moment/i.test(text)) return 'Torsion';
+            if (/column|buckling|euler buckling/i.test(text)) return 'Columns & Buckling';
+            if (/pressure vessel|thin-walled|hoop stress/i.test(text)) return 'Pressure Vessels';
+            if (/thermal deformation|thermal stress/i.test(text)) return 'Thermal Deformations';
+            return 'Uniaxial Stress-Strain';
+        }
+
+        // 9. Material Properties & Processing
+        if (subjectId === 9) {
+            if (/phase diagram|eutectic|heat treat|austenite|martensite/i.test(text)) return 'Phase Diagrams & Heat Treating';
+            if (/corrosion|galvanic|oxidation/i.test(text)) return 'Corrosion & Degradation';
+            if (/failure mechanism|fatigue|creep|fracture toughness|sn curve/i.test(text)) return 'Failure Mechanisms';
+            if (/ferrous|steel|cast iron|nonferrous|aluminum|brass/i.test(text)) return 'Ferrous & Nonferrous Metals';
+            return 'Material Properties & Testing';
+        }
+
+        // 10. Fluid Mechanics
+        if (subjectId === 10) {
+            if (/pipe flow|head loss|darcy|friction factor|moody|minor loss|internal flow/i.test(text)) return 'Internal Flow & Pipe Networks';
+            if (/manometer|buoyancy|hydrostatic|pressure distribution/i.test(text)) return 'Fluid Statics';
+            if (/bernoulli|continuity|energy equation|one-dimensional/i.test(text)) return 'One-Dimensional Fluid Flow';
+            if (/mach number|compressible|isentropic flow|shock wave/i.test(text)) return 'Compressible Flow';
+            if (/pump|turbine|scaling laws|specific speed/i.test(text)) return 'Fluid Machinery & Pumps';
+            if (/reynolds|dimensionless|dimensional analysis|buckingham/i.test(text)) return 'Dimensional Analysis';
+            return 'Fluid Properties';
+        }
+
+        // 11. Thermodynamics
+        if (subjectId === 11) {
+            if (/carnot|brayton|rankine|otto|diesel|cycle/i.test(text)) return 'Power & Refrigeration Cycles';
+            if (/first law|closed system|open system|steady flow/i.test(text)) return 'First Law of Thermodynamics';
+            if (/second law|entropy|clausius|kelvin-planck|irreversibility/i.test(text)) return 'Second Law & Entropy';
+            if (/ideal gas|pvt|equation of state|compressibility factor/i.test(text)) return 'Properties of Ideal Gases & Pure Substances';
+            if (/psychrometric|humidity|dew point|wet bulb/i.test(text)) return 'Psychrometrics';
+            return 'Thermodynamic Processes';
+        }
+
+        // 12. Heat Transfer
+        if (subjectId === 12) {
+            if (/conduction|fourier|thermal resistance|composite wall/i.test(text)) return 'Conduction';
+            if (/convection|nusselt|prandtl|heat transfer coefficient/i.test(text)) return 'Convection';
+            if (/radiation|stefan-boltzmann|emissivity|view factor|blackbody/i.test(text)) return 'Radiation';
+            if (/heat exchanger|lmtd|ntu/i.test(text)) return 'Heat Exchangers';
+            return 'Conduction & Thermal Resistance';
+        }
+
+        // 13. Measurements & Controls
+        if (subjectId === 13) {
+            if (/bode|root locus|transfer function|block diagram|feedback|stability|pid|control/i.test(text)) return 'Control Systems';
+            if (/sensor|transducer|thermocouple|strain gauge/i.test(text)) return 'Sensors & Transducers';
+            if (/uncertainty|error propagation/i.test(text)) return 'Measurement Uncertainty';
+            return 'Dynamic System Response';
+        }
+
+        // 14. Mechanical Design & Analysis
+        if (subjectId === 14) {
+            if (/spring|helical spring|spring constant/i.test(text)) return 'Springs';
+            if (/bearing|journal bearing|ball bearing|roller bearing/i.test(text)) return 'Bearings';
+            if (/gear|gear train|pinion|spur gear|power transmission/i.test(text)) return 'Power Transmission & Gears';
+            if (/bolt|rivet|weld|joining/i.test(text)) return 'Fasteners & Joining Methods';
+            if (/failure theory|von mises|tresca|goodman|soderberg/i.test(text)) return 'Static & Fatigue Failure Theories';
+            if (/power screw|lead screw/i.test(text)) return 'Power Screws';
+            return 'Machine Element Analysis';
+        }
+
+        return 'Core Topics';
+    }
+
+    let cachedHierarchy = null;
+    let megamenuActiveSubjectId = 1;
+
+    function buildDisciplineHierarchy(fullDeck, actualDisc) {
+        const config = DISCIPLINE_SUBJECT_CONFIG[actualDisc];
+        if (!config) return null;
+
+        const subjectList = config.list;
+        const getSubjectFn = config.getSubjectId;
+
+        const hierarchy = {
+            discipline: actualDisc,
+            totalCards: fullDeck.length,
+            subjects: []
+        };
+
+        const subjectMap = {};
+        subjectList.forEach(sub => {
+            subjectMap[sub.id] = {
+                id: sub.id,
+                name: sub.name,
+                total: 0,
+                chapters: {}
+            };
+        });
+
+        fullDeck.forEach(c => {
+            const sId = c.subjectId || getSubjectFn(c.title, c.examTip, c.description);
+            const ch = c.chapter || getCardChapter(c, actualDisc, sId);
+            c.subjectId = sId;
+            c.chapter = ch;
+            if (subjectMap[sId]) {
+                subjectMap[sId].total++;
+                if (!subjectMap[sId].chapters[ch]) {
+                    subjectMap[sId].chapters[ch] = {
+                        count: 0,
+                        topicsMap: {},
+                        topics: []
+                    };
+                }
+                subjectMap[sId].chapters[ch].count++;
+                const top = (c.title || '').trim();
+                if (top && !subjectMap[sId].chapters[ch].topicsMap[top]) {
+                    subjectMap[sId].chapters[ch].topicsMap[top] = true;
+                    subjectMap[sId].chapters[ch].topics.push(top);
+                }
+            }
+        });
+
+        hierarchy.subjects = subjectList.map(sub => {
+            const data = subjectMap[sub.id];
+            const chList = Object.keys(data.chapters).map(chName => ({
+                name: chName,
+                count: data.chapters[chName].count,
+                topics: data.chapters[chName].topics || []
+            }));
+            chList.sort((a, b) => b.count - a.count);
+            return {
+                id: sub.id,
+                name: sub.name,
+                total: data.total,
+                chapterCount: chList.length,
+                chapters: chList
+            };
+        });
+
+        return hierarchy;
+    }
+
+    function updateMegamenuTriggerLabel(hierarchy) {
+        const label = document.getElementById('fc-megamenu-label');
+        if (!label || !hierarchy) return;
+
+        if (currentSubjectFilter === 'all' || !currentSubjectFilter) {
+            label.textContent = `All Subjects (${hierarchy.totalCards})`;
+            return;
+        }
+
+        if (typeof currentSubjectFilter === 'string' && currentSubjectFilter.includes(':')) {
+            const [subIdStr, chapterName] = currentSubjectFilter.split(':');
+            const targetSub = hierarchy.subjects.find(s => s.id === Number(subIdStr));
+            if (!targetSub) {
+                label.textContent = `All Subjects (${hierarchy.totalCards})`;
+                return;
+            }
+            const cleanSubName = targetSub.name.replace(/^\d+\.\s*/, '');
+            if (!chapterName || chapterName === 'all') {
+                label.textContent = `${cleanSubName} (${targetSub.total})`;
+            } else {
+                const chObj = targetSub.chapters.find(c => c.name === chapterName);
+                const count = chObj ? chObj.count : 0;
+                label.textContent = `${cleanSubName} > ${chapterName} (${count})`;
+            }
+        } else {
+            const targetSub = hierarchy.subjects.find(s => s.id === Number(currentSubjectFilter));
+            if (targetSub) {
+                const cleanSubName = targetSub.name.replace(/^\d+\.\s*/, '');
+                label.textContent = `${cleanSubName} (${targetSub.total})`;
+            } else {
+                label.textContent = `All Subjects (${hierarchy.totalCards})`;
+            }
+        }
+    }
+
+    function highlightFlashcardSearchMatch(text, query) {
+        if (!query || !text) return text;
+        const qClean = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        if (!qClean) return text;
+        try {
+            const regex = new RegExp('(' + qClean + ')', 'gi');
+            return text.replace(regex, '<mark class="bg-amber-300/90 dark:bg-amber-400/50 text-slate-900 dark:text-amber-100 px-0.5 rounded font-bold">$1</mark>');
+        } catch (e) {
+            return text;
+        }
+    }
+
+    function renderMegamenuSubjects(filterQuery = '') {
+        const listEl = document.getElementById('fc-megamenu-subjects-list');
+        if (!listEl || !cachedHierarchy) return;
+
+        const q = (filterQuery || '').toLowerCase().trim();
+        const subjects = cachedHierarchy.subjects;
+        let html = '';
+
+        if (q) {
+            // Count total matching chapters & topics across syllabus
+            let totalMatchingChapters = 0;
+            let totalMatchingTopics = 0;
+            subjects.forEach(sub => {
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        totalMatchingChapters++;
+                        totalMatchingTopics += (matchingTops.length > 0 ? matchingTops.length : 1);
+                    }
+                });
+            });
+
+            const isAllResultsActive = (!megamenuActiveSubjectId || megamenuActiveSubjectId === 'all_results');
+
+            html += `
+                <div onclick="window.setMegamenuActiveSubject('all_results')" class="flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-all border ${isAllResultsActive ? 'bg-gradient-to-r from-[#be0055] to-pink-600 text-white font-bold shadow-md shadow-pink-500/20 border-pink-500' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'}">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-[17px] ${isAllResultsActive ? 'text-white' : 'text-[#be0055] dark:text-pink-400'}">search_check</span>
+                        <span class="text-xs truncate font-bold">All Matching Topics (${totalMatchingTopics})</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isAllResultsActive ? 'bg-white/20 text-white' : 'bg-pink-500/10 text-[#be0055] dark:text-pink-300'}">${totalMatchingChapters} chaps</span>
+                </div>
+            `;
+
+            subjects.forEach(sub => {
+                let subMatchingChapters = 0;
+                let subMatchingTopics = 0;
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        subMatchingChapters++;
+                        subMatchingTopics += (matchingTops.length > 0 ? matchingTops.length : 1);
+                    }
+                });
+
+                if (subMatchingChapters === 0) return;
+
+                const isSubActive = (megamenuActiveSubjectId === sub.id);
+
+                html += `
+                    <div class="group/sub rounded-xl transition-all border ${isSubActive ? 'bg-pink-500/10 border-pink-500/40 text-[#be0055] dark:text-pink-300 shadow-sm' : 'border-transparent hover:bg-slate-100/80 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200'}">
+                        <div onclick="event.stopPropagation(); window.setMegamenuActiveSubject(${sub.id}, event)" onmouseenter="if(window.innerWidth>=640){ window.setMegamenuActiveSubject(${sub.id}, event); }" class="flex items-center justify-between p-2.5 cursor-pointer">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="material-symbols-outlined text-[16px] ${isSubActive ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">folder</span>
+                                <span class="text-xs font-semibold truncate ${isSubActive ? 'text-[#be0055] dark:text-pink-300 font-bold' : ''}">${highlightFlashcardSearchMatch(sub.name, q)}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#be0055] text-white">${subMatchingTopics} topics</span>
+                                <span class="material-symbols-outlined text-[16px] text-slate-400 transition-transform ${isSubActive ? 'rotate-90 sm:rotate-0' : ''}">chevron_right</span>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Inline Accordion with Matching Topics -->
+                        <div class="sm:hidden px-3 pb-3 pt-1 space-y-2 border-t border-slate-200/40 dark:border-slate-800/40 ${isSubActive ? 'block' : 'hidden'}">
+                            <div class="grid grid-cols-1 gap-1.5 pt-1">
+                                ${sub.chapters.map(ch => {
+                                    const chMatches = ch.name.toLowerCase().includes(q);
+                                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                                    if (!chMatches && matchingTops.length === 0) return '';
+                                    return `
+                                        <div class="rounded-xl border transition-all overflow-hidden border-pink-500/80 bg-pink-500/10 shadow-sm">
+                                            <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-2.5 text-xs flex items-center justify-between cursor-pointer font-bold text-[#be0055] dark:text-pink-300">
+                                                <div class="flex items-center gap-1.5 min-w-0">
+                                                    <span class="material-symbols-outlined text-[15px] text-[#be0055] dark:text-pink-400 shrink-0">menu_book</span>
+                                                    <span class="truncate">${highlightFlashcardSearchMatch(ch.name, q)}</span>
+                                                </div>
+                                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ml-2 shrink-0 bg-[#be0055] text-white">${ch.count}</span>
+                                            </div>
+                                            ${ch.topics && ch.topics.length > 0 ? `
+                                                <div class="px-2.5 pb-2 pt-0.5 space-y-1 border-t border-slate-100 dark:border-slate-800/60">
+                                                    ${ch.topics.map(top => {
+                                                        const isMatch = top.toLowerCase().includes(q);
+                                                        return `
+                                                            <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 text-[11px] py-1 px-1.5 rounded cursor-pointer transition-all ${isMatch ? 'bg-pink-500/20 text-[#be0055] dark:text-pink-200 font-bold' : 'text-slate-500 dark:text-slate-400 hover:text-[#be0055]'}">
+                                                                <span class="w-1.5 h-1.5 rounded-full ${isMatch ? 'bg-[#be0055]' : 'bg-slate-300'} shrink-0"></span>
+                                                                <span class="truncate">${highlightFlashcardSearchMatch(top, q)}</span>
+                                                                ${isMatch ? '<span class="ml-auto text-[9px] px-1 rounded bg-[#be0055] text-white font-bold">Topic Match</span>' : ''}
+                                                            </div>
+                                                        `;
+                                                    }).join('')}
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+        } else {
+            // Normal browsing (no query)
+            const isAllSelected = (currentSubjectFilter === 'all' || !currentSubjectFilter);
+            html += `
+                <div onclick="window.selectFlashcardSubjectChapter('all', 'all')" class="flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-all border ${isAllSelected ? 'bg-pink-500/15 border-pink-500/50 text-[#be0055] dark:text-pink-300 font-bold shadow-sm' : 'border-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'}">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-[17px] ${isAllSelected ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">apps</span>
+                        <span class="text-xs truncate font-bold">All Subjects (Complete Deck)</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isAllSelected ? 'bg-[#be0055] text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${cachedHierarchy.totalCards}</span>
+                </div>
+            `;
+
+            subjects.forEach(sub => {
+                const isSubActive = (megamenuActiveSubjectId === sub.id);
+                const isSubFiltered = (
+                    (typeof currentSubjectFilter === 'string' && currentSubjectFilter.startsWith(`${sub.id}:`)) ||
+                    String(currentSubjectFilter) === String(sub.id)
+                );
+
+                html += `
+                    <div class="group/sub rounded-xl transition-all border ${isSubActive ? 'bg-pink-500/10 border-pink-500/40 text-[#be0055] dark:text-pink-300' : 'border-transparent hover:bg-slate-100/80 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200'}">
+                        <div onclick="event.stopPropagation(); window.setMegamenuActiveSubject(${sub.id}, event)" onmouseenter="if(window.innerWidth>=640){ window.setMegamenuActiveSubject(${sub.id}, event); }" class="flex items-center justify-between p-2.5 cursor-pointer">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="material-symbols-outlined text-[16px] ${isSubFiltered ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">folder</span>
+                                <span class="text-xs font-semibold truncate ${isSubFiltered ? 'text-[#be0055] dark:text-pink-300 font-bold' : ''}">${sub.name}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isSubFiltered ? 'bg-[#be0055] text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${sub.total}</span>
+                                <span class="material-symbols-outlined text-[16px] text-slate-400 transition-transform ${isSubActive ? 'rotate-90 sm:rotate-0' : ''}">chevron_right</span>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Inline Accordion with Chapters and Topics -->
+                        <div class="sm:hidden px-3 pb-3 pt-1 space-y-1.5 border-t border-slate-200/40 dark:border-slate-800/40 ${isSubActive ? 'block' : 'hidden'}">
+                            <div data-sub-id="${sub.id}" data-chap="all" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-2 rounded-lg text-xs font-semibold flex items-center justify-between bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 cursor-pointer hover:bg-pink-500/20">
+                                <span>All Chapters in ${sub.name.replace(/^\d+\.\s*/, '')}</span>
+                                <span class="text-[10px] font-bold bg-[#be0055] text-white px-1.5 py-0.5 rounded">${sub.total}</span>
+                            </div>
+                            <div class="grid grid-cols-1 gap-1.5 pt-1">
+                                ${sub.chapters.map(ch => {
+                                    const isChActive = (currentSubjectFilter === `${sub.id}:${ch.name}`);
+                                    return `
+                                        <div class="rounded-xl border transition-all overflow-hidden ${isChActive ? 'border-pink-500 bg-pink-500/10 shadow-sm' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60'}">
+                                            <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-2.5 text-xs flex items-center justify-between cursor-pointer font-bold ${isChActive ? 'text-[#be0055] dark:text-pink-300' : 'text-slate-800 dark:text-slate-100'}">
+                                                <div class="flex items-center gap-1.5 min-w-0">
+                                                    <span class="material-symbols-outlined text-[15px] ${isChActive ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'} shrink-0">menu_book</span>
+                                                    <span class="truncate">${ch.name}</span>
+                                                </div>
+                                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ml-2 shrink-0 ${isChActive ? 'bg-[#be0055] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${ch.count}</span>
+                                            </div>
+                                            ${ch.topics && ch.topics.length > 0 ? `
+                                                <div class="px-2.5 pb-2 pt-0.5 space-y-1 border-t border-slate-100 dark:border-slate-800/60">
+                                                    ${ch.topics.map(top => `
+                                                        <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 text-[11px] py-1 px-1.5 rounded cursor-pointer text-slate-500 dark:text-slate-400 hover:text-[#be0055] hover:bg-pink-500/10 transition-all">
+                                                            <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 shrink-0"></span>
+                                                            <span class="truncate">${top}</span>
+                                                        </div>
+                                                    `).join('')}
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        listEl.innerHTML = html;
+    }
+
+    function renderMegamenuChapters(filterQuery = '') {
+        const panelEl = document.getElementById('fc-megamenu-chapters-panel');
+        if (!panelEl || !cachedHierarchy) return;
+
+        const q = (typeof filterQuery === 'string' ? filterQuery : (document.getElementById('fc-megamenu-search')?.value || '')).toLowerCase().trim();
+        const subjects = cachedHierarchy.subjects;
+
+        let displayChapters = [];
+        let isGlobalSearch = false;
+        let headerTitle = '';
+        let headerSubtitle = '';
+
+        if (q) {
+            if (!megamenuActiveSubjectId || megamenuActiveSubjectId === 'all_results') {
+                isGlobalSearch = true;
+                // Gather matching chapters across ALL subjects
+                subjects.forEach(sub => {
+                    sub.chapters.forEach(ch => {
+                        const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                        const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                        if (chMatches || matchingTops.length > 0) {
+                            displayChapters.push({
+                                ...ch,
+                                subId: sub.id,
+                                subjectName: sub.name,
+                                matchingTopics: matchingTops
+                            });
+                        }
+                    });
+                });
+                headerTitle = `Search Results for "${filterQuery}"`;
+                headerSubtitle = `Found ${displayChapters.length} matching chapter(s) across rapid deck`;
+            } else {
+                const sub = subjects.find(s => s.id === megamenuActiveSubjectId) || subjects[0];
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        displayChapters.push({
+                            ...ch,
+                            subId: sub.id,
+                            subjectName: sub.name,
+                            matchingTopics: matchingTops
+                        });
+                    }
+                });
+                headerTitle = `"${filterQuery}" in ${sub.name}`;
+                headerSubtitle = `${displayChapters.length} matching chapter(s)`;
+            }
+        } else {
+            // Normal browsing (no search query)
+            const sub = subjects.find(s => s.id === megamenuActiveSubjectId) || subjects[0];
+            if (!sub) {
+                panelEl.innerHTML = '<div class="text-xs text-slate-400 p-4 text-center">No chapters found for this subject</div>';
+                return;
+            }
+            displayChapters = sub.chapters.map(ch => ({
+                ...ch,
+                subId: sub.id,
+                subjectName: sub.name,
+                matchingTopics: []
+            }));
+            headerTitle = sub.name;
+            headerSubtitle = `${sub.chapterCount} Chapters • ${sub.total} Rapid Flashcards`;
+        }
+
+        let html = `
+            <div class="mb-3 pb-2 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">${headerTitle}</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">${headerSubtitle}</p>
+                </div>
+                ${!q ? `
+                    <button type="button" data-sub-id="${megamenuActiveSubjectId}" data-chap="all" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="px-2 py-1 text-[11px] font-bold rounded-lg border transition-all cursor-pointer border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:border-pink-500 hover:text-[#be0055]">
+                        All Chapters (${cachedHierarchy.totalCards})
+                    </button>
+                ` : ''}
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        `;
+
+        if (!displayChapters || displayChapters.length === 0) {
+            html += `
+                <div class="col-span-3 p-8 text-center text-xs text-slate-400">
+                    <span class="material-symbols-outlined text-[32px] text-slate-300 dark:text-slate-600 block mb-2">search_off</span>
+                    No flashcard topics or chapters matching "<strong>${filterQuery}</strong>". Try searching for another concept or formula.
+                </div>
+            `;
+        } else {
+            displayChapters.forEach(ch => {
+                const subId = ch.subId;
+                const subName = ch.subjectName;
+                const isChSelected = (currentSubjectFilter === `${subId}:${ch.name}`);
+                const matchingTops = ch.matchingTopics || [];
+                const otherTops = ch.topics ? ch.topics.filter(t => !matchingTops.includes(t)) : [];
+
+                html += `
+                    <div class="rounded-xl border transition-all flex flex-col group overflow-hidden shadow-sm hover:shadow-md ${matchingTops.length > 0 ? 'border-pink-500/70 bg-pink-500/[0.04] dark:bg-pink-950/20' : (isChSelected ? 'bg-pink-500/[0.08] dark:bg-pink-950/30 border-pink-500 shadow-pink-500/10' : 'bg-white dark:bg-slate-900/80 border-slate-200 dark:border-slate-800/80 hover:border-pink-500/50 hover:bg-pink-50/20 dark:hover:bg-slate-900')}">
+                        <!-- Chapter Header (Direct click opens chapter) -->
+                        <div data-sub-id="${subId}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-3 pb-2.5 flex items-center justify-between gap-2 cursor-pointer border-b border-slate-100 dark:border-slate-800/60 bg-slate-50/60 dark:bg-slate-800/40 hover:bg-pink-500/10 transition-colors" title="Open ${ch.name}">
+                            <div class="min-w-0 flex-1">
+                                ${isGlobalSearch ? `<span class="text-[9px] font-black uppercase tracking-wider text-[#be0055] dark:text-pink-400 block truncate mb-0.5">${highlightFlashcardSearchMatch(subName, q)}</span>` : ''}
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="material-symbols-outlined text-[16px] text-[#be0055] dark:text-pink-400 shrink-0">menu_book</span>
+                                    <span class="text-xs font-bold truncate group-hover:text-[#be0055] dark:group-hover:text-pink-300 text-slate-900 dark:text-white transition-colors">${highlightFlashcardSearchMatch(ch.name, q)}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                ${matchingTops.length > 0 ? `
+                                    <span class="px-1.5 py-0.5 rounded-full text-[9px] font-black bg-pink-500 text-white flex items-center gap-0.5 shadow-sm" title="${matchingTops.length} matching topics">
+                                        <span class="material-symbols-outlined text-[11px]">bolt</span>${matchingTops.length}
+                                    </span>
+                                ` : ''}
+                                <span class="px-2 py-0.5 rounded-lg text-[10px] font-black shrink-0 ${isChSelected ? 'bg-[#be0055] text-white' : 'bg-pink-500/10 text-[#be0055] dark:text-pink-300 border border-pink-500/20'}">${ch.count} cards</span>
+                            </div>
+                        </div>
+
+                        <!-- Topics List under Chapter -->
+                        <div class="p-2.5 pt-2 flex flex-col gap-1 flex-1">
+                            <!-- Matched Topics First (Highlighted) -->
+                            ${matchingTops.map(top => `
+                                <div data-sub-id="${subId}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-[11px] bg-pink-500/15 dark:bg-pink-950/40 text-[#be0055] dark:text-pink-200 font-bold border border-pink-500/30 cursor-pointer hover:bg-pink-500/25 transition-all shadow-xs" title="Click to open topic: ${top}">
+                                    <span class="material-symbols-outlined text-[13px] text-[#be0055] dark:text-pink-400 shrink-0">check_circle</span>
+                                    <span class="truncate flex-1">${highlightFlashcardSearchMatch(top, q)}</span>
+                                    <span class="text-[9px] font-black uppercase px-1.5 py-0.2 rounded bg-[#be0055] text-white shrink-0">Topic Match</span>
+                                </div>
+                            `).join('')}
+
+                            <!-- Other Topics in Chapter -->
+                            ${otherTops.map(top => `
+                                <div data-sub-id="${subId}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 px-2 py-1 rounded-lg text-[11px] text-slate-600 dark:text-slate-400 hover:text-[#be0055] dark:hover:text-pink-300 hover:bg-pink-50/50 dark:hover:bg-pink-950/20 cursor-pointer transition-all">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 shrink-0"></span>
+                                    <span class="truncate" title="${top}">${top}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        html += `</div>`;
+        panelEl.innerHTML = html;
+    }
+
+    window.setMegamenuActiveSubject = function(subId, event) {
+        if (event) {
+            try { event.stopPropagation(); } catch (e) {}
+        }
+        megamenuActiveSubjectId = subId;
+        const q = (document.getElementById('fc-megamenu-search')?.value || '');
+        renderMegamenuSubjects(q);
+        renderMegamenuChapters(q);
+    };
+
+    window.selectFlashcardSubjectChapterFromEl = function(el) {
+        if (!el) return;
+        const subId = el.getAttribute('data-sub-id') || 'all';
+        const chap = decodeURIComponent(el.getAttribute('data-chap') || '');
+        const topic = decodeURIComponent(el.getAttribute('data-topic') || '');
+        window.selectFlashcardSubjectChapter(subId, chap, topic);
+    };
+
+    window.selectFlashcardTopicFromEl = function(el) {
+        if (!el) return;
+        const subId = el.getAttribute('data-sub-id') || 'all';
+        const chap = decodeURIComponent(el.getAttribute('data-chap') || '');
+        const topic = decodeURIComponent(el.getAttribute('data-topic') || '');
+        window.selectFlashcardSubjectChapter(subId, chap, topic);
+    };
+
+    window.selectFlashcardSubjectChapter = function(subId, chapterName, targetCardTitle) {
+        if (subId === 'all') {
+            currentSubjectFilter = 'all';
+        } else if (chapterName === 'all') {
+            currentSubjectFilter = String(subId);
+        } else {
+            currentSubjectFilter = `${subId}:${chapterName}`;
+        }
+        closeMegamenu();
+        openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter, targetCardTitle);
+    };
+
+    function openMegamenu() {
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const backdrop = document.getElementById('fc-megamenu-backdrop');
+        if (!dropdown || !trigger) return;
+
+        const rect = trigger.getBoundingClientRect();
+        const isMobile = window.innerWidth < 640;
+
+        if (isMobile) {
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 480)}px`;
+            dropdown.style.left = '8px';
+            dropdown.style.right = '8px';
+            dropdown.style.width = 'auto';
+            dropdown.style.maxHeight = '82vh';
+        } else {
+            const dropdownWidth = Math.min(1240, window.innerWidth - 32);
+            let left = Math.max(16, (window.innerWidth - dropdownWidth) / 2);
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 580)}px`;
+            dropdown.style.left = `${left}px`;
+            dropdown.style.right = 'auto';
+            dropdown.style.width = `${dropdownWidth}px`;
+            dropdown.style.maxHeight = '85vh';
+        }
+
+        if (backdrop) backdrop.classList.remove('hidden');
+        dropdown.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            if (backdrop) backdrop.classList.remove('opacity-0');
+            dropdown.classList.remove('opacity-0', 'scale-95');
+            dropdown.classList.add('opacity-100', 'scale-100');
+        });
+
+        const searchInput = document.getElementById('fc-megamenu-search');
+        if (searchInput) {
+            searchInput.value = '';
+            searchInput.focus();
+        }
+    }
+
+    function closeMegamenu() {
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const backdrop = document.getElementById('fc-megamenu-backdrop');
+        if (!dropdown) return;
+
+        dropdown.classList.remove('opacity-100', 'scale-100');
+        dropdown.classList.add('opacity-0', 'scale-95');
+        if (backdrop) backdrop.classList.add('opacity-0');
+
+        setTimeout(() => {
+            dropdown.classList.add('hidden');
+            if (backdrop) backdrop.classList.add('hidden');
+        }, 200);
+    }
+
     function syncSubjectSelectVisibility() {
-        const select = document.getElementById('fc-subject-select');
-        if (!select) return;
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        const legacySelect = document.getElementById('fc-subject-select');
         const actualDisc = (currentDiscipline === 'current' || !currentDiscipline) 
             ? getActiveDiscipline() 
             : currentDiscipline;
         const hasSubjects = (actualDisc !== 'all' && Boolean(DISCIPLINE_SUBJECT_CONFIG[actualDisc]));
 
         if (hasSubjects) {
-            select.classList.remove('hidden');
+            if (trigger) {
+                trigger.classList.remove('hidden');
+                trigger.classList.add('flex');
+            }
         } else {
-            select.classList.add('hidden');
+            if (trigger) {
+                trigger.classList.remove('flex');
+                trigger.classList.add('hidden');
+            }
+            if (legacySelect) legacySelect.classList.add('hidden');
         }
     }
 
     function updateSubjectSelectOptions(fullDeck, actualDisc) {
-        const select = document.getElementById('fc-subject-select');
-        if (!select) return;
-
         const config = DISCIPLINE_SUBJECT_CONFIG[actualDisc];
         if (!config) {
-            select.classList.add('hidden');
+            const trigger = document.getElementById('fc-megamenu-trigger');
+            if (trigger) trigger.classList.add('hidden');
             return;
         }
 
-        const subjectList = config.list;
-        const getSubjectFn = config.getSubjectId;
+        cachedHierarchy = buildDisciplineHierarchy(fullDeck, actualDisc);
+        if (!cachedHierarchy) return;
 
-        const counts = {};
-        fullDeck.forEach(c => {
-            const sId = c.subjectId || getSubjectFn(c.title, c.examTip, c.description);
-            counts[sId] = (counts[sId] || 0) + 1;
-        });
+        if (typeof currentSubjectFilter === 'string' && currentSubjectFilter.includes(':')) {
+            megamenuActiveSubjectId = Number(currentSubjectFilter.split(':')[0]) || 1;
+        } else if (currentSubjectFilter && currentSubjectFilter !== 'all') {
+            megamenuActiveSubjectId = Number(currentSubjectFilter) || 1;
+        }
 
-        const totalCount = fullDeck.length;
-        let html = `<option value="all">All Subjects (${totalCount} Cards)</option>`;
-        subjectList.forEach(sub => {
-            const count = counts[sub.id] || 0;
-            html += `<option value="${sub.id}">${sub.name} (${count})</option>`;
-        });
+        updateMegamenuTriggerLabel(cachedHierarchy);
 
-        select.innerHTML = html;
-        select.value = currentSubjectFilter;
-        select.title = 'Switch Subject (FE ' + actualDisc + ' Syllabus)';
+        const discBadge = document.getElementById('fc-megamenu-discipline-badge');
+        if (discBadge) discBadge.textContent = actualDisc;
+        const totalCountEl = document.getElementById('fc-megamenu-total-count');
+        if (totalCountEl) totalCountEl.textContent = cachedHierarchy.totalCards;
+
+        renderMegamenuSubjects();
+        renderMegamenuChapters();
+
+        const select = document.getElementById('fc-subject-select');
+        if (select) {
+            let html = `<option value="all">All Subjects (${cachedHierarchy.totalCards} Cards)</option>`;
+            cachedHierarchy.subjects.forEach(sub => {
+                html += `<option value="${sub.id}">${sub.name} (${sub.total})</option>`;
+            });
+            select.innerHTML = html;
+            select.value = (typeof currentSubjectFilter === 'string' && currentSubjectFilter.includes(':'))
+                ? currentSubjectFilter.split(':')[0]
+                : currentSubjectFilter;
+        }
     }
 
     // Get active discipline from app or localStorage
@@ -875,12 +1590,25 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 card.subjectId = config.getSubjectId(card.title, card.examTip, card.description);
                 const subObj = config.list.find(s => s.id === card.subjectId);
                 card.subjectName = subObj ? subObj.name : config.defaultName;
+                card.chapter = getCardChapter(card, actualDisc, card.subjectId);
             });
 
-            // Apply subject filter if selected
+            // Apply subject and chapter filter if selected
             if (subjectFilter && subjectFilter !== 'all') {
-                const targetSubId = Number(subjectFilter);
-                allTheorems = allTheorems.filter(card => card.subjectId === targetSubId);
+                if (typeof subjectFilter === 'string' && subjectFilter.includes(':')) {
+                    const [subIdStr, chapterName] = subjectFilter.split(':');
+                    const targetSubId = Number(subIdStr);
+                    allTheorems = allTheorems.filter(card => {
+                        if (card.subjectId !== targetSubId) return false;
+                        if (!chapterName || chapterName === 'all') return true;
+                        return card.chapter === chapterName;
+                    });
+                } else {
+                    const targetSubId = Number(subjectFilter);
+                    if (!isNaN(targetSubId)) {
+                        allTheorems = allTheorems.filter(card => card.subjectId === targetSubId);
+                    }
+                }
             }
         }
 
@@ -1094,6 +1822,14 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     function renderCard() {
+        const headerNotesControls = document.getElementById('header-notes-controls');
+        if (headerNotesControls) {
+            headerNotesControls.classList.add('hidden');
+            headerNotesControls.classList.remove('flex');
+        }
+        if (typeof window.closeNotesMegamenu === 'function') {
+            window.closeNotesMegamenu();
+        }
         const modal = document.getElementById('fe-flashcards-modal');
         const cardEl = document.getElementById('flashcard-studio-card');
         const paneFc = document.getElementById('study-pane-flashcards');
@@ -2589,7 +3325,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     // Open Flashcard Studio Modal
-    function openFlashcardStudio(disc, mode, subjectFilter) {
+    function openFlashcardStudio(disc, mode, subjectFilter, targetCardTitle) {
         currentDiscipline = disc || currentDiscipline;
         currentMode = mode || currentMode;
         if (typeof subjectFilter !== 'undefined') {
@@ -2606,6 +3342,17 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         currentDeck = buildSessionQueue(currentDiscipline, currentMode, currentSubjectFilter);
         currentIndex = 0;
         isFlipped = true;
+
+        if (targetCardTitle && currentDeck && currentDeck.length > 0) {
+            const cleanTarget = targetCardTitle.toLowerCase().trim();
+            const foundIdx = currentDeck.findIndex(c => 
+                (c.title && c.title.toLowerCase().trim() === cleanTarget) ||
+                (c.title && c.title.toLowerCase().includes(cleanTarget))
+            );
+            if (foundIdx !== -1) {
+                currentIndex = foundIdx;
+            }
+        }
 
         // Immediately preload first 8 cards in this session
         if (currentDeck && currentDeck.length > 0) {
@@ -2687,6 +3434,38 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
     }
 
+    
+    // Close Megamenu on click outside
+    document.addEventListener('click', (e) => {
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        if (!dropdown || dropdown.classList.contains('hidden')) return;
+        // Never close if clicked inside the dropdown or trigger
+        if (dropdown.contains(e.target) || (trigger && trigger.contains(e.target))) return;
+        closeMegamenu();
+    });
+
+    // Reposition on window resize
+    window.addEventListener('resize', () => {
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        if (!dropdown || dropdown.classList.contains('hidden') || !trigger) return;
+        const rect = trigger.getBoundingClientRect();
+        const isMobile = window.innerWidth < 640;
+        if (isMobile) {
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 480)}px`;
+            dropdown.style.left = '8px';
+            dropdown.style.right = '8px';
+            dropdown.style.width = 'auto';
+        } else {
+            const dropdownWidth = Math.min(1240, window.innerWidth - 32);
+            let left = Math.max(16, (window.innerWidth - dropdownWidth) / 2);
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 580)}px`;
+            dropdown.style.left = `${left}px`;
+            dropdown.style.width = `${dropdownWidth}px`;
+        }
+    });
+
     // Attach Keyboard Hotkeys
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('fe-flashcards-modal');
@@ -2745,6 +3524,60 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
             });
         }
+
+        // Wire Megamenu Trigger & Controls
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        const closeBtnMegamenu = document.getElementById('fc-megamenu-close-btn');
+        const backdrop = document.getElementById('fc-megamenu-backdrop');
+        const allBtn = document.getElementById('fc-megamenu-all-btn');
+        const searchInput = document.getElementById('fc-megamenu-search');
+
+        if (trigger && (!trigger.dataset || !trigger.dataset.wired)) {
+            if (trigger.dataset) trigger.dataset.wired = 'true';
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = document.getElementById('fc-megamenu-dropdown');
+                if (dropdown && !dropdown.classList.contains('hidden')) {
+                    closeMegamenu();
+                } else {
+                    openMegamenu();
+                }
+            });
+        }
+
+        if (closeBtnMegamenu && (!closeBtnMegamenu.dataset || !closeBtnMegamenu.dataset.wired)) {
+            if (closeBtnMegamenu.dataset) closeBtnMegamenu.dataset.wired = 'true';
+            closeBtnMegamenu.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeMegamenu();
+            });
+        }
+
+        if (backdrop && (!backdrop.dataset || !backdrop.dataset.wired)) {
+            if (backdrop.dataset) backdrop.dataset.wired = 'true';
+            backdrop.addEventListener('click', () => {
+                closeMegamenu();
+            });
+        }
+
+        if (allBtn && (!allBtn.dataset || !allBtn.dataset.wired)) {
+            if (allBtn.dataset) allBtn.dataset.wired = 'true';
+            allBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.selectFlashcardSubjectChapter('all', 'all');
+            });
+        }
+
+        if (searchInput && (!searchInput.dataset || !searchInput.dataset.wired)) {
+            if (searchInput.dataset) searchInput.dataset.wired = 'true';
+            searchInput.addEventListener('input', (e) => {
+                const q = e.target.value;
+                renderMegamenuSubjects(q);
+                renderMegamenuChapters(q);
+            });
+        }
+
 
         // Top-right Close Button
         const closeBtn = document.getElementById('fc-close-btn');
@@ -2830,6 +3663,22 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     window.openBlueprintLightbox = openBlueprintLightbox;
     window.closeBlueprintLightbox = closeBlueprintLightbox;
     window.openFlashcardStudio = openFlashcardStudio;
+    window.jumpToFlashcard = function(target) {
+        if (!currentDeck || currentDeck.length === 0) return false;
+        if (typeof target === 'number') {
+            currentIndex = Math.max(0, Math.min(target, currentDeck.length - 1));
+            renderCard();
+            return true;
+        }
+        const clean = String(target).trim().toLowerCase();
+        const idx = currentDeck.findIndex(c => (c.title || '').trim().toLowerCase() === clean || (c.title || '').toLowerCase().includes(clean));
+        if (idx !== -1) {
+            currentIndex = idx;
+            renderCard();
+            return true;
+        }
+        return false;
+    };
     window.closeFlashcardStudio = closeFlashcardStudio;
     window.flipFlashcard = flipCard;
     window.prevFlashcard = prevCard;
