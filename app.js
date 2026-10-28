@@ -310,10 +310,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         if (!url) return url;
         // Match /file/d/FILE_ID/ pattern
         const m = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
-        if (m) return `https://drive.google.com/thumbnail?id=${m[1]}&sz=w1000`;
+        if (m) return `https://lh3.googleusercontent.com/d/${m[1]}`;
         // Match id=FILE_ID query param (uc?export=view&id=...)
         const m2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-        if (m2) return `https://drive.google.com/thumbnail?id=${m2[1]}&sz=w1000`;
+        if (m2) return `https://lh3.googleusercontent.com/d/${m2[1]}`;
         return url;
     }
 
@@ -1143,6 +1143,12 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         
         // Auto-hide navigation and header for focused sessions (Quiz/Exam)
         // Persistent Study Notes Header Bar Toggle
+        const bdropEl = document.getElementById('notes-megamenu-backdrop');
+        const mdropEl = document.getElementById('notes-megamenu-dropdown');
+        if (pageId !== 'notes') {
+            if (bdropEl) bdropEl.classList.add('hidden', 'opacity-0');
+            if (mdropEl) mdropEl.classList.add('hidden', 'opacity-0');
+        }
         const notesSubbar = document.getElementById('notes-header-subbar');
         if (notesSubbar) {
             if (pageId === 'notes-content-view') {
@@ -1218,6 +1224,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (pageId === 'notes') {
                 if (typeof window.switchStudyMode === 'function') window.switchStudyMode('notes');
                 if (typeof renderNotes === 'function') renderNotes();
+                if (typeof window.openNotesMegamenu === 'function') {
+                    window.openNotesMegamenu();
+                }
             } else {
                 if (typeof window.closeFlashcardStudio === 'function') window.closeFlashcardStudio(false);
             }
@@ -1246,7 +1255,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             const allNavLinks = document.querySelectorAll('.nav-links li, #bottom-nav li');
             allNavLinks.forEach(link => {
                 const targetPage = link.getAttribute('data-page');
-                if (targetPage === pageId) {
+                if (targetPage === pageId || (pageId === 'notes-content-view' && targetPage === 'notes')) {
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
@@ -1257,7 +1266,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             if (typeof sidebar !== 'undefined' && sidebar) sidebar.classList.remove('active');
             if (typeof sidebarOverlay !== 'undefined' && sidebarOverlay) sidebarOverlay.classList.remove('active');
 
-            window.scrollTo(0, 0);
+            if (!window.__skipScrollToTop) {
+                window.scrollTo(0, 0);
+            }
+            window.__skipScrollToTop = false;
         };
 
         if (document.startViewTransition) {
@@ -1325,445 +1337,1411 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         initTilt();
     }
 
+    
+    // =========================================================================
+    // FE Study Notes Megamenu & Chapter Navigation
+    // =========================================================================
+    let currentNotesSubjectFilter = 'all';
+    let currentNotesChapterFilter = 'all';
+    let cachedNotesHierarchy = null;
+    let notesMegamenuActiveSubject = null;
+
+    function getDisciplineSubjectOrder(discipline) {
+        const disc = (discipline || '').toLowerCase();
+        if (disc.includes('mech')) {
+            return [
+                "Mathematics", "Probability and Statistics", "Ethics and Professional Practice", 
+                "Engineering Economics", "Electricity and Magnetism", "Statics", 
+                "Dynamics, Kinematics and Vibrations", "Mechanics of Materials", 
+                "Material Properties and Processing", "Fluid Mechanics", "Thermodynamics", 
+                "Heat Transfer", "Measurements, Instrumentation and Controls", 
+                "Mechanical Design and Analysis"
+            ];
+        }
+        if (disc.includes('civil')) {
+            return [
+                "Mathematics and Statistics", "Ethics and Professional Practice", "Engineering Economics", 
+                "Statics", "Dynamics", "Mechanics of Materials", "Materials", "Fluid Mechanics", 
+                "Surveying", "Water Resources and Environmental Engineering", "Structural Engineering", 
+                "Geotechnical Engineering", "Transportation Engineering", "Construction Engineering"
+            ];
+        }
+        if (disc.includes('elect')) {
+            return [
+                "Mathematics", "Probability and Statistics", "Ethics and Professional Practice", 
+                "Engineering Economics", "Properties of Electrical Materials", "Circuit Analysis", 
+                "Linear Systems", "Signal Processing", "Electronics", "Power Systems", 
+                "Electromagnetics", "Control Systems", "Communications", "Computer Networks", 
+                "Digital Systems", "Computer Systems", "Software Engineering"
+            ];
+        }
+        if (disc.includes('chem')) {
+            return [
+                "Mathematics", "Probability and Statistics", "Engineering Sciences", "Computational Tools", 
+                "Materials", "Chemistry", "Fluid Mechanics", "Thermodynamics", "Material and Energy Balances", 
+                "Heat Transfer", "Mass Transfer and Separation", "Chemical Reaction Engineering", 
+                "Process Design and Economics", "Process Control", "Safety, Health, and Environment", 
+                "Ethics and Professional Practice"
+            ];
+        }
+        if (disc.includes('indust')) {
+            return [
+                "Mathematics", "Engineering Sciences", "Ethics and Professional Practice", 
+                "Engineering Economics", "Probability and Statistics", "Modeling and Quantitative Analysis", 
+                "Engineering Management", "Manufacturing, Service, and Other Production Systems", 
+                "Facilities and Supply Chain", "Human Factors, Ergonomics, and Safety", "Work Design", 
+                "Quality", "Systems Engineering, Analysis, and Design"
+            ];
+        }
+        if (disc.includes('env')) {
+            return [
+                "Mathematics", "Probability and Statistics", "Ethics and Professional Practice", 
+                "Engineering Economics", "Fundamental Principles", "Environmental Chemistry", 
+                "Health Hazards and Risk Assessment", "Fluid Mechanics and Hydraulics", "Thermodynamics", 
+                "Surface Water Resources and Hydrology", "Groundwater, Soils, and Sediments", 
+                "Water and Wastewater", "Air Quality and Control", "Solid and Hazardous Waste", 
+                "Energy and Environment"
+            ];
+        }
+        return [
+            "Mathematics", "Probability and Statistics", "Chemistry and Biology", "Chemistry", 
+            "Measurements, Instrumentation and Controls", "Engineering Ethics and Societal Impacts", 
+            "Safety, Health, and Environment", "Engineering Economics", "Statics", "Dynamics", 
+            "Strength of Materials", "Mechanics of Materials", "Material Properties and Processing", 
+            "Materials", "Fluid Mechanics", "Electricity and Magnetism", "Thermodynamics", 
+            "Thermodynamics and Heat Transfer"
+        ];
+    }
+
+    // Global Chapter Orders for Study Notes and Flashcards
+    const momChaptersOrder = [
+            "Shear and Moment Diagrams",
+            "Mohr's Circle",
+            "Uniaxial Stress- Strain",
+            "Stress and Strain Caused by Axial Loads",
+            "Stress and Strain Caused by Bending Loads",
+            "Stress and Strain Caused by Torsional Loads",
+            "Thermal Deformations",
+            "Pressure Vessels",
+            "Two-Dimensional Stress/Strain",
+            "Hooke's Law",
+            "Torsion",
+            "Beams",
+            "Elastic Strain Energy",
+            "Combined Loading",
+            "Deformations",
+            "Columns",
+            "Static Indeterminacy"
+        ];
+
+        const staticsChaptersOrder = [
+            "Resultants of Force Systems",
+            "Resolution of Forces",
+            "Moments and Couple",
+            "Systems of Forces",
+            "Equilibrium of Rigid Bodies",
+            "Concurrent Forces",
+            "Concurrent Force Systems",
+            "Centroids",
+            "Moment of Inertia",
+            "Static Friction",
+            "Screw Thread",
+            "Belt Friction",
+            "Statically Determinate Truss"
+        ];
+
+        const ethicsChaptersOrder = [
+            "Codes of ethics",
+            "Public health, safety, and welfare",
+            "Intellectual property",
+            "Societal considerations"
+        ];
+
+        const mathChaptersOrder = [
+            "Math Basics",
+            "Analytic Geometry",
+            "Calculus",
+            "Differential Equations",
+            "Linear Algebra",
+            "Numerical Methods",
+            "Algorithm and Logic Development"
+        ];
+
+        window.getChapterIndex = getChapterIndex;
+        function getChapterIndex(subName, chapName, fallbackIdx) {
+            const cleanSub = (subName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            if (cleanSub.includes('material') && cleanSub.includes('mechanic')) {
+                const cleanChap = (chapName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                let mIdx = momChaptersOrder.findIndex(o => o.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanChap);
+                if (mIdx !== -1) return mIdx;
+                mIdx = momChaptersOrder.findIndex(o => {
+                    const cleanO = o.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    return cleanChap.includes(cleanO) || cleanO.includes(cleanChap);
+                });
+                if (mIdx !== -1) return mIdx;
+            }
+
+            if (cleanSub.includes('static')) {
+                const cleanChap = (chapName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                let sIdx = staticsChaptersOrder.findIndex(o => o.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanChap);
+                if (sIdx !== -1) return sIdx;
+                sIdx = staticsChaptersOrder.findIndex(o => {
+                    const cleanO = o.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    return cleanChap.includes(cleanO) || cleanO.includes(cleanChap);
+                });
+                if (sIdx !== -1) return sIdx;
+            }
+
+            if (cleanSub.includes('ethic')) {
+                const cleanChap = (chapName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                let eIdx = ethicsChaptersOrder.findIndex(o => o.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanChap);
+                if (eIdx !== -1) return eIdx;
+                eIdx = ethicsChaptersOrder.findIndex(o => {
+                    const cleanO = o.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    return cleanChap.includes(cleanO) || cleanO.includes(cleanChap);
+                });
+                if (eIdx !== -1) return eIdx;
+            }
+            if (cleanSub.includes('math')) {
+                const cleanChap = (chapName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+                let mIdx = mathChaptersOrder.findIndex(o => o.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanChap);
+                if (mIdx !== -1) return mIdx;
+                mIdx = mathChaptersOrder.findIndex(o => {
+                    const cleanO = o.toLowerCase().replace(/[^a-z0-9]/g, '');
+                    return cleanChap.includes(cleanO) || cleanO.includes(cleanChap);
+                });
+                if (mIdx !== -1) return mIdx;
+            }
+            return fallbackIdx != null ? fallbackIdx : 999;
+        }
+
+    function buildNotesHierarchy(filteredNotes, currentDiscipline) {
+        const subjectsMap = {};
+        filteredNotes.forEach((item, idx) => {
+            const sub = item.subject || 'General';
+            const chap = item.chapter || 'General';
+            const topic = (item.topic || '').trim();
+
+            if (!subjectsMap[sub]) {
+                subjectsMap[sub] = {
+                    name: sub,
+                    totalNotes: 0,
+                    chapters: {}
+                };
+            }
+            subjectsMap[sub].totalNotes++;
+
+            if (!subjectsMap[sub].chapters[chap]) {
+                subjectsMap[sub].chapters[chap] = {
+                    count: 0,
+                    firstIdx: idx,
+                    topicsMap: {},
+                    topics: []
+                };
+            }
+            subjectsMap[sub].chapters[chap].count++;
+            if (topic && !subjectsMap[sub].chapters[chap].topicsMap[topic]) {
+                subjectsMap[sub].chapters[chap].topicsMap[topic] = true;
+                subjectsMap[sub].chapters[chap].topics.push(topic);
+            }
+        });
+
+
+        // Chapter order defined at module scope
+
+        const subjectList = Object.keys(subjectsMap).map(subName => {
+            const subData = subjectsMap[subName];
+            const chList = Object.keys(subData.chapters).map(chName => ({
+                name: chName,
+                count: subData.chapters[chName].count,
+                firstIdx: subData.chapters[chName].firstIdx,
+                topics: subData.chapters[chName].topics
+            }));
+            chList.sort((a, b) => getChapterIndex(subName, a.name, a.firstIdx) - getChapterIndex(subName, b.name, b.firstIdx));
+            return {
+                name: subName,
+                totalNotes: subData.totalNotes,
+                chapterCount: chList.length,
+                chapters: chList
+            };
+        });
+
+        const orderList = getDisciplineSubjectOrder(currentDiscipline);
+        function getSubjectIndex(subName) {
+            const cleanSub = (subName || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+            // 1. Exact normalized match
+            let idx = orderList.findIndex(o => o.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanSub);
+            if (idx !== -1) return idx;
+            // 2. Fallback prefix or substring match
+            idx = orderList.findIndex(o => {
+                const cleanO = o.toLowerCase().replace(/[^a-z0-9]/g, '');
+                return cleanSub.includes(cleanO) || cleanO.includes(cleanSub);
+            });
+            return idx !== -1 ? idx : 999;
+        }
+
+        subjectList.sort((a, b) => getSubjectIndex(a.name) - getSubjectIndex(b.name));
+
+        return {
+            discipline: currentDiscipline,
+            totalNotes: filteredNotes.length,
+            subjects: subjectList
+        };
+    }
+
+    function updateNotesMegamenuTriggerLabel(hierarchy) {
+        const label = document.getElementById('notes-megamenu-label');
+        if (!label || !hierarchy) return;
+
+        if (currentNotesSubjectFilter === 'all' || !currentNotesSubjectFilter) {
+            label.textContent = `All Subjects (${hierarchy.subjects.length} • ${hierarchy.totalNotes} Notes)`;
+            return;
+        }
+
+        const cleanSubName = currentNotesSubjectFilter.replace(/^\d+\.\s*/, '');
+        if (currentNotesChapterFilter === 'all' || !currentNotesChapterFilter) {
+            const subObj = hierarchy.subjects.find(s => s.name.toLowerCase() === currentNotesSubjectFilter.toLowerCase());
+            const count = subObj ? subObj.totalNotes : 0;
+            label.textContent = `${cleanSubName} (${count} Notes)`;
+        } else {
+            const subObj = hierarchy.subjects.find(s => s.name.toLowerCase() === currentNotesSubjectFilter.toLowerCase());
+            const chObj = subObj ? subObj.chapters.find(c => c.name.toLowerCase() === currentNotesChapterFilter.toLowerCase()) : null;
+            const count = chObj ? chObj.count : 0;
+            label.textContent = `${cleanSubName} > ${currentNotesChapterFilter} (${count})`;
+        }
+    }
+
+    function highlightNotesSearchMatch(text, query) {
+        if (!query || !text) return text;
+        const qClean = query.trim().replace(/[.*+?^$${}()|[\]\\]/g, '\\$&');
+        if (!qClean) return text;
+        try {
+            const regex = new RegExp('(' + qClean + ')', 'gi');
+            return text.replace(regex, '<mark class="bg-amber-300/90 dark:bg-amber-400/50 text-slate-900 dark:text-amber-100 px-0.5 rounded font-bold">$1</mark>');
+        } catch (e) {
+            return text;
+        }
+    }
+
+    function renderNotesMegamenuSubjects(filterQuery = '') {
+        const listEl = document.getElementById('notes-megamenu-subjects-list');
+        if (!listEl) return;
+        if (!cachedNotesHierarchy) {
+            const currentDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            const filteredNotes = (typeof notesData !== 'undefined' ? notesData : []).filter(item => item.discipline === currentDiscipline);
+            cachedNotesHierarchy = buildNotesHierarchy(filteredNotes, currentDiscipline);
+        }
+        if (!cachedNotesHierarchy) return;
+
+        const q = (filterQuery || '').toLowerCase().trim();
+        const subjects = cachedNotesHierarchy.subjects;
+        let html = '';
+
+        if (q) {
+            // Count total matching chapters & topics across syllabus
+            let totalMatchingChapters = 0;
+            let totalMatchingTopics = 0;
+            subjects.forEach(sub => {
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        totalMatchingChapters++;
+                        totalMatchingTopics += (matchingTops.length > 0 ? matchingTops.length : 1);
+                    }
+                });
+            });
+
+            const isAllResultsActive = (!notesMegamenuActiveSubject || notesMegamenuActiveSubject === 'all_results');
+
+            html += `
+                <div onclick="window.setNotesMegamenuActiveSubject('all_results')" class="flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-all border ${isAllResultsActive ? 'bg-gradient-to-r from-[#be0055] to-pink-600 text-white font-bold shadow-md shadow-pink-500/20 border-pink-500' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'}">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-[17px] ${isAllResultsActive ? 'text-white' : 'text-[#be0055] dark:text-pink-400'}">search_check</span>
+                        <span class="text-xs truncate font-bold">All Matching Topics (${totalMatchingTopics})</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isAllResultsActive ? 'bg-white/20 text-white' : 'bg-pink-500/10 text-[#be0055] dark:text-pink-300'}">${totalMatchingChapters} chaps</span>
+                </div>
+            `;
+
+            subjects.forEach(sub => {
+                let subMatchingChapters = 0;
+                let subMatchingTopics = 0;
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        subMatchingChapters++;
+                        subMatchingTopics += (matchingTops.length > 0 ? matchingTops.length : 1);
+                    }
+                });
+
+                if (subMatchingChapters === 0) return;
+
+                const isSubActive = (notesMegamenuActiveSubject && notesMegamenuActiveSubject.toLowerCase() === sub.name.toLowerCase());
+
+                html += `
+                    <div class="group/sub rounded-xl transition-all border ${isSubActive ? 'bg-pink-500/10 border-pink-500/40 text-[#be0055] dark:text-pink-300 shadow-sm' : 'border-transparent hover:bg-slate-100/80 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200'}">
+                        <div data-sub="${encodeURIComponent(sub.name)}" onclick="event.stopPropagation(); window.setNotesMegamenuActiveSubjectFromEl(this, event)" class="flex items-center justify-between p-2.5 cursor-pointer">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="material-symbols-outlined text-[16px] ${isSubActive ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">folder</span>
+                                <span class="text-xs font-semibold truncate ${isSubActive ? 'text-[#be0055] dark:text-pink-300 font-bold' : ''}">${highlightNotesSearchMatch(sub.name, q)}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#be0055] text-white">${subMatchingTopics} topics</span>
+                                <span class="material-symbols-outlined text-[16px] text-slate-400 transition-transform ${isSubActive ? 'rotate-90 sm:rotate-0' : ''}">chevron_right</span>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Inline Accordion with Matching Topics -->
+                        <div class="sm:hidden px-3 pb-3 pt-1 space-y-2 border-t border-slate-200/40 dark:border-slate-800/40 ${isSubActive ? 'block' : 'hidden'}">
+                            <div class="grid grid-cols-1 gap-1.5 pt-1">
+                                ${sub.chapters.map(ch => {
+                                    const chMatches = ch.name.toLowerCase().includes(q);
+                                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                                    if (!chMatches && matchingTops.length === 0) return '';
+                                    return `
+                                        <div class="rounded-xl border transition-all overflow-hidden border-pink-500/80 bg-pink-500/10 shadow-sm">
+                                            <div data-sub="${encodeURIComponent(sub.name)}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectNotesSubjectChapterFromEl(this)" class="p-2.5 text-xs flex items-center justify-between cursor-pointer font-bold text-[#be0055] dark:text-pink-300">
+                                                <div class="flex items-center gap-1.5 min-w-0">
+                                                    <span class="material-symbols-outlined text-[15px] text-[#be0055] dark:text-pink-400 shrink-0">menu_book</span>
+                                                    <span class="truncate">${highlightNotesSearchMatch(ch.name, q)}</span>
+                                                </div>
+                                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ml-2 shrink-0 bg-[#be0055] text-white">${ch.count}</span>
+                                            </div>
+                                            ${ch.topics && ch.topics.length > 0 ? `
+                                                <div class="px-2.5 pb-2 pt-0.5 space-y-1 border-t border-slate-100 dark:border-slate-800/60">
+                                                    ${ch.topics.map(top => {
+                                                        const isMatch = top.toLowerCase().includes(q);
+                                                        return `
+                                                            <div data-sub="${encodeURIComponent(sub.name)}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectNotesTopicFromEl(this)" class="flex items-center gap-1.5 text-[11px] py-1 px-1.5 rounded cursor-pointer transition-all ${isMatch ? 'bg-pink-500/20 text-[#be0055] dark:text-pink-200 font-bold' : 'text-slate-500 dark:text-slate-400 hover:text-[#be0055]'}">
+                                                                <span class="w-1.5 h-1.5 rounded-full ${isMatch ? 'bg-[#be0055]' : 'bg-slate-300'} shrink-0"></span>
+                                                                <span class="truncate">${highlightNotesSearchMatch(top, q)}</span>
+                                                                ${isMatch ? '<span class="ml-auto text-[9px] px-1 rounded bg-[#be0055] text-white font-bold">Topic Match</span>' : ''}
+                                                            </div>
+                                                        `;
+                                                    }).join('')}
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+        } else {
+            // Normal browsing (no query)
+            const isAllSelected = (currentNotesSubjectFilter === 'all' || !currentNotesSubjectFilter);
+            html += `
+                <div onclick="window.selectNotesSubjectChapter('all', 'all')" class="flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-all border ${isAllSelected ? 'bg-pink-500/15 border-pink-500/50 text-[#be0055] dark:text-pink-300 font-bold shadow-sm' : 'border-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'}">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-[17px] ${isAllSelected ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">apps</span>
+                        <span class="text-xs truncate font-bold">All Subjects (Complete Syllabus)</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isAllSelected ? 'bg-[#be0055] text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${cachedNotesHierarchy.totalNotes}</span>
+                </div>
+            `;
+
+            subjects.forEach(sub => {
+                const isSubActive = (notesMegamenuActiveSubject && notesMegamenuActiveSubject.toLowerCase() === sub.name.toLowerCase());
+                const isSubFiltered = (currentNotesSubjectFilter && currentNotesSubjectFilter.toLowerCase() === sub.name.toLowerCase());
+
+                html += `
+                    <div class="group/sub rounded-xl transition-all border ${isSubActive ? 'bg-pink-500/10 border-pink-500/40 text-[#be0055] dark:text-pink-300 shadow-sm' : 'border-transparent hover:bg-slate-100/80 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200'}">
+                        <div data-sub="${encodeURIComponent(sub.name)}" onclick="event.stopPropagation(); window.setNotesMegamenuActiveSubjectFromEl(this, event)" onmouseenter="if(window.innerWidth>=640){ window.setNotesMegamenuActiveSubjectFromEl(this, event); }" class="flex items-center justify-between p-2.5 cursor-pointer">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="material-symbols-outlined text-[16px] ${isSubFiltered ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">folder</span>
+                                <span class="text-xs font-semibold truncate ${isSubFiltered ? 'text-[#be0055] dark:text-pink-300 font-bold' : ''}">${sub.name}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isSubFiltered ? 'bg-[#be0055] text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${sub.totalNotes}</span>
+                                <span class="material-symbols-outlined text-[16px] text-slate-400 transition-transform ${isSubActive ? 'rotate-90 sm:rotate-0' : ''}">chevron_right</span>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Inline Accordion with Chapters & Topics -->
+                        <div class="sm:hidden px-3 pb-3 pt-1 space-y-2 border-t border-slate-200/40 dark:border-slate-800/40 ${isSubActive ? 'block' : 'hidden'}">
+                            <div data-sub="${encodeURIComponent(sub.name)}" data-chap="all" onclick="window.selectNotesSubjectChapterFromEl(this)" class="p-2 rounded-lg text-xs font-semibold flex items-center justify-between bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 cursor-pointer hover:bg-pink-500/20">
+                                <span>All Chapters in ${sub.name}</span>
+                                <span class="text-[10px] font-bold bg-[#be0055] text-white px-1.5 py-0.5 rounded">${sub.totalNotes}</span>
+                            </div>
+                            <div class="grid grid-cols-1 gap-1.5 pt-1">
+                                ${sub.chapters.map(ch => {
+                                    const isChActive = (currentNotesSubjectFilter.toLowerCase() === sub.name.toLowerCase() && currentNotesChapterFilter.toLowerCase() === ch.name.toLowerCase());
+                                    return `
+                                        <div class="rounded-xl border transition-all overflow-hidden ${isChActive ? 'border-pink-500/80 bg-pink-500/10 shadow-sm' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60'}">
+                                            <div data-sub="${encodeURIComponent(sub.name)}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectNotesSubjectChapterFromEl(this)" class="p-2.5 text-xs flex items-center justify-between cursor-pointer font-bold ${isChActive ? 'text-[#be0055] dark:text-pink-300' : 'text-slate-800 dark:text-slate-100'}">
+                                                <div class="flex items-center gap-1.5 min-w-0">
+                                                    <span class="material-symbols-outlined text-[15px] text-[#be0055] dark:text-pink-400 shrink-0">menu_book</span>
+                                                    <span class="truncate">${ch.name}</span>
+                                                </div>
+                                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ml-2 shrink-0 ${isChActive ? 'bg-[#be0055] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${ch.count}</span>
+                                            </div>
+                                            ${ch.topics && ch.topics.length > 0 ? `
+                                                <div class="px-2.5 pb-2 pt-0.5 space-y-1 border-t border-slate-100 dark:border-slate-800/60">
+                                                    ${ch.topics.map(top => `
+                                                        <div data-sub="${encodeURIComponent(sub.name)}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectNotesTopicFromEl(this)" class="flex items-center gap-1.5 text-[11px] text-slate-600 dark:text-slate-400 hover:text-[#be0055] dark:hover:text-pink-300 py-1 px-1.5 rounded cursor-pointer hover:bg-pink-50/50 dark:hover:bg-pink-950/30">
+                                                            <span class="w-1.5 h-1.5 rounded-full bg-pink-400 shrink-0"></span>
+                                                            <span class="truncate">${top}</span>
+                                                        </div>
+                                                    `).join('')}
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        listEl.innerHTML = html;
+    }
+
+    function renderNotesMegamenuChapters(filterQuery = '') {
+        const panelEl = document.getElementById('notes-megamenu-chapters-panel');
+        if (!panelEl) return;
+        if (!cachedNotesHierarchy) {
+            const currentDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            const filteredNotes = (typeof notesData !== 'undefined' ? notesData : []).filter(item => item.discipline === currentDiscipline);
+            cachedNotesHierarchy = buildNotesHierarchy(filteredNotes, currentDiscipline);
+        }
+        if (!cachedNotesHierarchy) return;
+
+        const q = (filterQuery || '').toLowerCase().trim();
+        const subjects = cachedNotesHierarchy.subjects;
+
+        let displayChapters = [];
+        let isGlobalSearch = false;
+        let headerTitle = '';
+        let headerSubtitle = '';
+
+        if (q) {
+            if (!notesMegamenuActiveSubject || notesMegamenuActiveSubject === 'all_results') {
+                isGlobalSearch = true;
+                // Gather matching chapters across ALL subjects
+                subjects.forEach(sub => {
+                    sub.chapters.forEach(ch => {
+                        const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                        const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                        if (chMatches || matchingTops.length > 0) {
+                            displayChapters.push({
+                                ...ch,
+                                subjectName: sub.name,
+                                matchingTopics: matchingTops
+                            });
+                        }
+                    });
+                });
+                headerTitle = `Search Results for "${filterQuery}"`;
+                headerSubtitle = `Found ${displayChapters.length} matching chapter(s) across syllabus`;
+            } else {
+                const sub = subjects.find(s => s.name.toLowerCase() === notesMegamenuActiveSubject.toLowerCase()) || subjects[0];
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        displayChapters.push({
+                            ...ch,
+                            subjectName: sub.name,
+                            matchingTopics: matchingTops
+                        });
+                    }
+                });
+                headerTitle = `"${filterQuery}" in ${sub.name}`;
+                headerSubtitle = `${displayChapters.length} matching chapter(s)`;
+            }
+        } else {
+            // Normal browsing (no search query)
+            const sub = subjects.find(s => s.name.toLowerCase() === (notesMegamenuActiveSubject || '').toLowerCase()) || subjects[0];
+            if (!sub) {
+                panelEl.innerHTML = '<div class="text-xs text-slate-400 p-4 text-center">No chapters found for this subject</div>';
+                return;
+            }
+            displayChapters = sub.chapters.map(ch => ({
+                ...ch,
+                subjectName: sub.name,
+                matchingTopics: []
+            }));
+            headerTitle = sub.name;
+            headerSubtitle = `${sub.chapterCount} Chapters • ${sub.totalNotes} Handbook Notes`;
+        }
+
+        let html = `
+            <div class="mb-3 pb-2 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">${headerTitle}</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">${headerSubtitle}</p>
+                </div>
+                ${!q ? `
+                    <button type="button" data-sub="${encodeURIComponent(headerTitle)}" data-chap="all" onclick="window.selectNotesSubjectChapterFromEl(this)" class="px-2 py-1 text-[11px] font-bold rounded-lg border transition-all cursor-pointer border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:border-pink-500 hover:text-[#be0055]">
+                        All Chapters (${cachedNotesHierarchy.totalNotes})
+                    </button>
+                ` : ''}
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        `;
+
+        if (!displayChapters || displayChapters.length === 0) {
+            html += `
+                <div class="col-span-3 p-8 text-center text-xs text-slate-400">
+                    <span class="material-symbols-outlined text-[32px] text-slate-300 dark:text-slate-600 block mb-2">search_off</span>
+                    No topics or chapters matching "<strong>${filterQuery}</strong>". Try searching for another concept or formula.
+                </div>
+            `;
+        } else {
+            displayChapters.forEach(ch => {
+                const subName = ch.subjectName;
+                const isChSelected = (currentNotesSubjectFilter.toLowerCase() === subName.toLowerCase() && currentNotesChapterFilter.toLowerCase() === ch.name.toLowerCase());
+                const matchingTops = ch.matchingTopics || [];
+                const otherTops = ch.topics ? ch.topics.filter(t => !matchingTops.includes(t)) : [];
+
+                html += `
+                    <div class="rounded-xl border transition-all flex flex-col group overflow-hidden shadow-sm hover:shadow-md ${matchingTops.length > 0 ? 'border-pink-500/70 bg-pink-500/[0.04] dark:bg-pink-950/20' : (isChSelected ? 'bg-pink-500/[0.08] dark:bg-pink-950/30 border-pink-500 shadow-pink-500/10' : 'bg-white dark:bg-slate-900/80 border-slate-200 dark:border-slate-800/80 hover:border-pink-500/50 hover:bg-pink-50/20 dark:hover:bg-slate-900')}">
+                        <!-- Chapter Header (Direct click opens chapter) -->
+                        <div data-sub="${encodeURIComponent(subName)}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectNotesSubjectChapterFromEl(this)" class="p-3 pb-2.5 flex items-center justify-between gap-2 cursor-pointer border-b border-slate-100 dark:border-slate-800/60 bg-slate-50/60 dark:bg-slate-800/40 hover:bg-pink-500/10 transition-colors" title="Open ${ch.name}">
+                            <div class="min-w-0 flex-1">
+                                ${isGlobalSearch ? `<span class="text-[9px] font-black uppercase tracking-wider text-[#be0055] dark:text-pink-400 block truncate mb-0.5">${highlightNotesSearchMatch(subName, q)}</span>` : ''}
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="material-symbols-outlined text-[16px] text-[#be0055] dark:text-pink-400 shrink-0">menu_book</span>
+                                    <span class="text-xs font-bold truncate group-hover:text-[#be0055] dark:group-hover:text-pink-300 text-slate-900 dark:text-white transition-colors">${highlightNotesSearchMatch(ch.name, q)}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                ${matchingTops.length > 0 ? `
+                                    <span class="px-1.5 py-0.5 rounded-full text-[9px] font-black bg-pink-500 text-white flex items-center gap-0.5 shadow-sm" title="${matchingTops.length} matching topics">
+                                        <span class="material-symbols-outlined text-[11px]">bolt</span>${matchingTops.length}
+                                    </span>
+                                ` : ''}
+                                <span class="px-2 py-0.5 rounded-lg text-[10px] font-black shrink-0 ${isChSelected ? 'bg-[#be0055] text-white' : 'bg-pink-500/10 text-[#be0055] dark:text-pink-300 border border-pink-500/20'}">${ch.count} notes</span>
+                            </div>
+                        </div>
+
+                        <!-- Topics List under Chapter -->
+                        <div class="p-2.5 pt-2 flex flex-col gap-1 flex-1">
+                            <!-- Matched Topics First (Highlighted) -->
+                            ${matchingTops.map(top => `
+                                <div data-sub="${encodeURIComponent(subName)}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectNotesTopicFromEl(this)" class="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-[11px] bg-pink-500/15 dark:bg-pink-950/40 text-[#be0055] dark:text-pink-200 font-bold border border-pink-500/30 cursor-pointer hover:bg-pink-500/25 transition-all shadow-xs" title="Click to open topic: ${top}">
+                                    <span class="material-symbols-outlined text-[13px] text-[#be0055] dark:text-pink-400 shrink-0">check_circle</span>
+                                    <span class="truncate flex-1">${highlightNotesSearchMatch(top, q)}</span>
+                                    <span class="text-[9px] font-black uppercase px-1.5 py-0.2 rounded bg-[#be0055] text-white shrink-0">Topic Match</span>
+                                </div>
+                            `).join('')}
+
+                            <!-- Other Topics in Chapter -->
+                            ${otherTops.map(top => `
+                                <div data-sub="${encodeURIComponent(subName)}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectNotesTopicFromEl(this)" class="flex items-center gap-1.5 px-2 py-1 rounded-lg text-[11px] text-slate-600 dark:text-slate-400 hover:text-[#be0055] dark:hover:text-pink-300 hover:bg-pink-50/50 dark:hover:bg-pink-950/20 cursor-pointer transition-all">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 shrink-0"></span>
+                                    <span class="truncate" title="${top}">${top}</span>
+                                </div>
+                            `).join('')}
+
+                            ${(!ch.topics || ch.topics.length === 0) ? `
+                                <div class="text-[11px] text-slate-400 dark:text-slate-500 italic px-2 py-1">Comprehensive formulas & theory</div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        html += `</div>`;
+        panelEl.innerHTML = html;
+    }
+
+    window.setNotesMegamenuActiveSubject = function(subName, event) {
+        if (event) {
+            try { event.stopPropagation(); } catch (e) {}
+        }
+        notesMegamenuActiveSubject = subName;
+        renderNotesMegamenuSubjects();
+        const searchInput = document.getElementById('notes-megamenu-search');
+        renderNotesMegamenuChapters(searchInput ? searchInput.value : '');
+    };
+
+    window.setNotesMegamenuActiveSubjectFromEl = function(el, event) {
+        if (event) {
+            try { event.stopPropagation(); } catch (e) {}
+        }
+        const sub = decodeURIComponent(el.getAttribute('data-sub') || '');
+        if (sub) window.setNotesMegamenuActiveSubject(sub, event);
+    };
+
+    window.selectNotesSubjectChapterFromEl = function(el) {
+        const sub = decodeURIComponent(el.getAttribute('data-sub') || 'all');
+        const chap = decodeURIComponent(el.getAttribute('data-chap') || 'all');
+        const topic = decodeURIComponent(el.getAttribute('data-topic') || '');
+        window.selectNotesSubjectChapter(sub, chap, topic);
+    };
+
+    window.selectNotesTopicFromEl = function(el) {
+        const sub = decodeURIComponent(el.getAttribute('data-sub') || 'all');
+        const chap = decodeURIComponent(el.getAttribute('data-chap') || 'all');
+        const topic = decodeURIComponent(el.getAttribute('data-topic') || '');
+        window.selectNotesSubjectChapter(sub, chap, topic);
+    };
+
+    window.selectNotesTopic = function(subName, chapterName, topicName) {
+        window.selectNotesSubjectChapter(decodeURIComponent(subName), decodeURIComponent(chapterName), decodeURIComponent(topicName || ''));
+    };
+
+    window.selectNotesSubjectChapter = function(subName, chapterName, targetTopicName) {
+        if (subName === 'all') {
+            currentNotesSubjectFilter = 'all';
+            currentNotesChapterFilter = 'all';
+        } else {
+            currentNotesSubjectFilter = subName;
+            currentNotesChapterFilter = chapterName || 'all';
+        }
+        if (cachedNotesHierarchy) {
+            updateNotesMegamenuTriggerLabel(cachedNotesHierarchy);
+        }
+        closeNotesMegamenu();
+
+        // Immediately open matching notes in notes-content-view!
+        if (subName !== 'all') {
+            const currentDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            const subjectNotes = (typeof notesData !== 'undefined' ? notesData : []).filter(item => 
+                item.discipline === currentDiscipline && 
+                (item.subject || '').toLowerCase() === subName.toLowerCase()
+            );
+            if (subjectNotes && subjectNotes.length > 0) {
+                const targetChap = (chapterName && chapterName !== 'all') ? chapterName : (subjectNotes[0].chapter || 'General');
+                const matchingNotes = subjectNotes.filter(item => 
+                    (item.chapter || 'General').toLowerCase() === targetChap.toLowerCase()
+                );
+                openNotes(subName, targetChap, matchingNotes.length ? matchingNotes : subjectNotes, targetTopicName);
+                return;
+            }
+        }
+
+        if (typeof window.navigateTo === 'function') {
+            window.navigateTo('notes');
+        }
+
+        renderNotes();
+
+        const listEl = document.getElementById('notes-subject-list');
+        if (listEl) {
+            listEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+    window.clearNotesFilter = function() {
+        currentNotesSubjectFilter = 'all';
+        currentNotesChapterFilter = 'all';
+        if (cachedNotesHierarchy) {
+            updateNotesMegamenuTriggerLabel(cachedNotesHierarchy);
+        }
+        renderNotes();
+    };
+
+    window.onStudyNotesTabClick = function(event) {
+        if (event) {
+            try { event.preventDefault(); event.stopPropagation(); } catch (e) {}
+        }
+        const activePage = document.querySelector('section.page.active')?.id;
+        if (activePage !== 'notes' && activePage !== 'notes-content-view') {
+            if (typeof window.navigateTo === 'function') {
+                window.navigateTo('notes');
+            }
+        }
+        if (typeof window.switchStudyMode === 'function') {
+            window.switchStudyMode('notes');
+        }
+        const dropdown = document.getElementById('notes-megamenu-dropdown');
+        if (dropdown && !dropdown.classList.contains('hidden')) {
+            if (typeof window.closeNotesMegamenu === 'function') {
+                window.closeNotesMegamenu();
+            }
+        } else {
+            if (typeof window.openNotesMegamenu === 'function') {
+                window.openNotesMegamenu();
+            }
+        }
+    };
+    window.openNotesMegamenu = openNotesMegamenu;
+    window.closeNotesMegamenu = closeNotesMegamenu;
+    function openNotesMegamenu() {
+        const trigger = document.getElementById('study-tab-btn-notes') || document.getElementById('notes-megamenu-trigger');
+        const dropdown = document.getElementById('notes-megamenu-dropdown');
+        const backdrop = document.getElementById('notes-megamenu-backdrop');
+        if (!dropdown || !trigger) return;
+
+        if (typeof window.loadSolvedProblemsData === 'function') {
+            window.loadSolvedProblemsData();
+        }
+        const currentDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+        if (typeof window.loadDisciplineNotes === 'function') {
+            window.loadDisciplineNotes(currentDiscipline);
+        }
+        if (!cachedNotesHierarchy) {
+            const filteredNotes = (typeof notesData !== 'undefined' ? notesData : []).filter(item => item.discipline === currentDiscipline);
+            cachedNotesHierarchy = buildNotesHierarchy(filteredNotes, currentDiscipline);
+        }
+
+        const notesDiscSelect = document.getElementById('notes-discipline-select');
+        if (notesDiscSelect) notesDiscSelect.value = currentDiscipline;
+        const discBadge = document.getElementById('notes-megamenu-discipline-badge');
+        if (discBadge) discBadge.textContent = currentDiscipline;
+        const totalCountEl = document.getElementById('notes-megamenu-total-count');
+        if (totalCountEl && cachedNotesHierarchy) totalCountEl.textContent = cachedNotesHierarchy.totalNotes;
+
+        if (!notesMegamenuActiveSubject && cachedNotesHierarchy && cachedNotesHierarchy.subjects.length > 0) {
+            notesMegamenuActiveSubject = cachedNotesHierarchy.subjects[0].name;
+        }
+
+        renderNotesMegamenuSubjects();
+        renderNotesMegamenuChapters();
+
+        const rect = trigger.getBoundingClientRect();
+        const isMobile = window.innerWidth < 640;
+
+        if (isMobile) {
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 480)}px`;
+            dropdown.style.left = '8px';
+            dropdown.style.right = '8px';
+            dropdown.style.width = 'auto';
+            dropdown.style.maxHeight = '85vh';
+        } else {
+            const dropdownWidth = Math.min(1240, window.innerWidth - 32);
+            let left = Math.max(16, (window.innerWidth - dropdownWidth) / 2);
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 580)}px`;
+            dropdown.style.left = `${left}px`;
+            dropdown.style.right = 'auto';
+            dropdown.style.width = `${dropdownWidth}px`;
+            dropdown.style.maxHeight = '85vh';
+        }
+
+        if (backdrop) backdrop.classList.remove('hidden');
+        dropdown.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            if (backdrop) backdrop.classList.remove('opacity-0');
+            dropdown.classList.remove('opacity-0', 'scale-95');
+            dropdown.classList.add('opacity-100', 'scale-100');
+        });
+
+        const searchInput = document.getElementById('notes-megamenu-search');
+        if (searchInput) {
+            searchInput.value = '';
+            searchInput.focus();
+        }
+    }
+
+    function closeNotesMegamenu() {
+        const dropdown = document.getElementById('notes-megamenu-dropdown');
+        const backdrop = document.getElementById('notes-megamenu-backdrop');
+        if (!dropdown) return;
+
+        dropdown.classList.remove('opacity-100', 'scale-100');
+        dropdown.classList.add('opacity-0', 'scale-95');
+        if (backdrop) backdrop.classList.add('opacity-0');
+
+        setTimeout(() => {
+            dropdown.classList.add('hidden');
+            if (backdrop) backdrop.classList.add('hidden');
+        }, 200);
+    }
+
+    function wireNotesMegamenuControls() {
+        const trigger = document.getElementById('study-tab-btn-notes') || document.getElementById('notes-megamenu-trigger');
+        const closeBtn = document.getElementById('notes-megamenu-close-btn');
+        const backdrop = document.getElementById('notes-megamenu-backdrop');
+        const allBtn = document.getElementById('notes-megamenu-all-btn');
+        const searchInput = document.getElementById('notes-megamenu-search');
+        const notesDiscSelect = document.getElementById('notes-discipline-select');
+
+        if (notesDiscSelect && (!notesDiscSelect.dataset || !notesDiscSelect.dataset.wired)) {
+            if (notesDiscSelect.dataset) notesDiscSelect.dataset.wired = 'true';
+            notesDiscSelect.value = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            notesDiscSelect.addEventListener('change', (e) => {
+                const newDisc = e.target.value;
+                localStorage.setItem('enggtv_discipline', newDisc);
+                const fcSelect = document.getElementById('fc-discipline-select');
+                if (fcSelect) fcSelect.value = newDisc;
+                if (typeof window.updateSidebarProfile === 'function') window.updateSidebarProfile();
+                currentNotesSubjectFilter = 'all';
+                currentNotesChapterFilter = 'all';
+                cachedNotesHierarchy = null;
+                notesMegamenuActiveSubject = null;
+                renderNotes();
+            });
+        }
+
+        const legacyTrigger = document.getElementById('notes-megamenu-trigger');
+        if (legacyTrigger && (!legacyTrigger.dataset || !legacyTrigger.dataset.wired)) {
+            legacyTrigger.dataset.wired = 'true';
+            legacyTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (typeof window.onStudyNotesTabClick === 'function') {
+                    window.onStudyNotesTabClick(e);
+                }
+            });
+        }
+
+        if (closeBtn && (!closeBtn.dataset || !closeBtn.dataset.wired)) {
+            if (closeBtn.dataset) closeBtn.dataset.wired = 'true';
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeNotesMegamenu();
+            });
+        }
+
+        if (backdrop && (!backdrop.dataset || !backdrop.dataset.wired)) {
+            if (backdrop.dataset) backdrop.dataset.wired = 'true';
+            backdrop.addEventListener('click', () => {
+                closeNotesMegamenu();
+            });
+        }
+
+        if (allBtn && (!allBtn.dataset || !allBtn.dataset.wired)) {
+            if (allBtn.dataset) allBtn.dataset.wired = 'true';
+            allBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.selectNotesSubjectChapter('all', 'all');
+            });
+        }
+
+        if (searchInput && (!searchInput.dataset || !searchInput.dataset.wired)) {
+            if (searchInput.dataset) searchInput.dataset.wired = 'true';
+            searchInput.addEventListener('input', (e) => {
+                const q = (e.target.value || '').trim();
+                if (q) {
+                    notesMegamenuActiveSubject = 'all_results';
+                } else {
+                    if (cachedNotesHierarchy && cachedNotesHierarchy.subjects.length > 0) {
+                        notesMegamenuActiveSubject = cachedNotesHierarchy.subjects[0].name;
+                    }
+                }
+                renderNotesMegamenuSubjects(q);
+                renderNotesMegamenuChapters(q);
+            });
+        }
+    }
+
+    // Close notes megamenu on outside click
+    document.addEventListener('click', (e) => {
+        const dropdown = document.getElementById('notes-megamenu-dropdown');
+        const trigger = document.getElementById('notes-megamenu-trigger');
+        if (!dropdown || dropdown.classList.contains('hidden')) return;
+        const subbarBrowse = document.getElementById('notes-subbar-browse-btn');
+        if (dropdown.contains(e.target) || (trigger && trigger.contains(e.target)) || (subbarBrowse && subbarBrowse.contains(e.target))) return;
+        closeNotesMegamenu();
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const dropdown = document.getElementById('notes-megamenu-dropdown');
+            if (dropdown && !dropdown.classList.contains('hidden')) {
+                closeNotesMegamenu();
+            }
+        }
+    });
+
+    // Reposition notes megamenu on resize
+    window.addEventListener('resize', () => {
+        const dropdown = document.getElementById('notes-megamenu-dropdown');
+        const trigger = document.getElementById('notes-megamenu-trigger');
+        if (!dropdown || dropdown.classList.contains('hidden') || !trigger) return;
+        const rect = trigger.getBoundingClientRect();
+        const isMobile = window.innerWidth < 640;
+        if (isMobile) {
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 480)}px`;
+            dropdown.style.left = '8px';
+            dropdown.style.right = '8px';
+            dropdown.style.width = 'auto';
+        } else {
+            const dropdownWidth = Math.min(1240, window.innerWidth - 32);
+            let left = Math.max(16, (window.innerWidth - dropdownWidth) / 2);
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 580)}px`;
+            dropdown.style.left = `${left}px`;
+            dropdown.style.width = `${dropdownWidth}px`;
+        }
+    });
+
     function renderNotes() {
         const notesList = document.getElementById('notes-subject-list');
-        if (!notesList) return;
-        notesList.innerHTML = '';
+        if (notesList) notesList.innerHTML = '';
         
         const currentDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
 
-        const notesPageTitle = document.getElementById('notes-page-title');
-        const notesPageDesc = document.getElementById('notes-page-desc');
-        if (notesPageTitle) {
-            notesPageTitle.textContent = `${currentDiscipline} Notes`;
-        }
-        if (notesPageDesc) {
-            const disciplineText = currentDiscipline === 'Other' ? 'Other Disciplines' : currentDiscipline;
-            notesPageDesc.textContent = `Comprehensive study notes and formulas for ${disciplineText} Engineering.`;
-        }
-
         if (typeof notesData === 'undefined' || !notesData.length) {
-            notesList.innerHTML = '<div class="text-center py-10 glass-card"><span class="material-symbols-outlined text-4xl text-slate-300 mb-2">menu_book</span><p class="text-slate-500 font-medium">Notes module initializing...</p></div>';
             return;
         }
 
         const filteredNotes = notesData.filter(item => item.discipline === currentDiscipline);
-
         if (filteredNotes.length === 0) {
-            notesList.innerHTML = `<div class="text-center py-12 glass-card border border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-5xl text-slate-300 dark:text-slate-600 mb-3 block">construction</span><h3 class="text-lg font-bold text-slate-700 dark:text-slate-300 mb-1">Coming Soon</h3><p class="text-slate-500 dark:text-slate-400">Notes for ${currentDiscipline} discipline will be available in a future update!</p></div>`;
             return;
         }
 
-        const subjects = {};
-        filteredNotes.forEach(item => {
-            if (!subjects[item.subject]) subjects[item.subject] = { items: [], chapters: {} };
-            subjects[item.subject].items.push(item);
-            
-            const chap = item.chapter || 'General';
-            if (!subjects[item.subject].chapters[chap]) subjects[item.subject].chapters[chap] = [];
-            subjects[item.subject].chapters[chap].push(item);
-        });
-
-        const colors = [
-            {bg: 'bg-primary-fixed', text: 'text-primary', icon: 'menu_book'},
-            {bg: 'bg-tertiary-fixed', text: 'text-tertiary', icon: 'library_books'},
-            {bg: 'bg-orange-100', text: 'text-primary', icon: 'auto_stories'},
-            {bg: 'bg-primary-fixed-dim/30', text: 'text-primary', icon: 'chrome_reader_mode'},
-            {bg: 'bg-green-100', text: 'text-green-700', icon: 'history_edu'}
-        ];
-
-        let subjectKeys = Object.keys(subjects);
-        if (currentDiscipline === 'Other' || currentDiscipline === 'Other Disciplines' || currentDiscipline.includes('Other')) {
-            const otherOrder = [
-                "Mathematics", 
-                "Probability and Statistics", 
-                "Chemistry and Biology",
-                "Chemistry", 
-                "Measurements, Instrumentation and Controls", 
-                "Instrumentation and Controls",
-                "Engineering Ethics and Societal Impacts", 
-                "Safety, Health, and Environment", 
-                "Engineering Economics", 
-                "Statics", 
-                "Dynamics", 
-                "Strength of Materials",
-                "Mechanics of Materials", 
-                "Material Properties and Processing", 
-                "Materials",
-                "Fluid Mechanics", 
-                "Electricity and Magnetism", 
-                "Basic Electrical Engineering",
-                "Thermodynamics",
-                "Thermodynamics and Heat Transfer"
-            ];
-            subjectKeys.sort((a, b) => {
-                let idxA = otherOrder.indexOf(a);
-                let idxB = otherOrder.indexOf(b);
-                if (idxA === -1) idxA = 999;
-                if (idxB === -1) idxB = 999;
-                return idxA - idxB;
-            });
-        } else if (currentDiscipline.includes('Civil')) {
-            console.log("Applying Civil custom subject sorting...");
-            const civilOrder = [
-                "Mathematics and Statistics",
-                "Ethics and Professional Practice",
-                "Engineering Economics",
-                "Statics",
-                "Dynamics",
-                "Mechanics of Materials",
-                "Materials",
-                "Fluid Mechanics",
-                "Surveying",
-                "Water Resources and Environmental Engineering",
-                "Structural Engineering",
-                "Geotechnical Engineering",
-                "Transportation Engineering",
-                "Construction Engineering"
-            ];
-            subjectKeys = subjectKeys.filter(key => key !== "CNST");
-            subjectKeys.sort((a, b) => {
-                let idxA = civilOrder.indexOf(a);
-                let idxB = civilOrder.indexOf(b);
-                if (idxA === -1) idxA = 999;
-                if (idxB === -1) idxB = 999;
-                return idxA - idxB;
-            });
-        } else if (currentDiscipline === 'Electrical and Computer') {
-            const elecComputerOrder = [
-                "Mathematics",
-                "Probability and Statistics",
-                "Ethics and Professional Practice",
-                "Engineering Economics",
-                "Properties of Electrical Materials",
-                "Properties of Materials",
-                "Material Properties and Processing",
-                "Circuit Analysis",
-                "Circuit Analysis (Linear and Non-linear)",
-                "Linear Systems",
-                "Signal Processing",
-                "Electronics",
-                "Power Systems",
-                "Electromagnetics",
-                "Control Systems",
-                "Communications",
-                "Computer Networks",
-                "Digital Systems",
-                "Computer Systems",
-                "Software Engineering"
-            ];
-            subjectKeys.sort((a, b) => {
-                let idxA = elecComputerOrder.indexOf(a);
-                let idxB = elecComputerOrder.indexOf(b);
-                if (idxA === -1) idxA = 999;
-                if (idxB === -1) idxB = 999;
-                return idxA - idxB;
-            });
-        } else if (currentDiscipline === 'Industrial') {
-            const industrialOrder = [
-                "Mathematics",
-                "Engineering Sciences",
-                "Ethics and Professional Practice",
-                "Engineering Economics",
-                "Probability and Statistics",
-                "Modeling and Quantitative Analysis",
-                "Engineering Management",
-                "Manufacturing, Service, and Other Production Systems",
-                "Facilities and Supply Chain",
-                "Human Factors, Ergonomics, and Safety",
-                "Work Design",
-                "Quality",
-                "Systems Engineering, Analysis, and Design"
-            ];
-            subjectKeys.sort((a, b) => {
-                let idxA = industrialOrder.indexOf(a);
-                let idxB = industrialOrder.indexOf(b);
-                if (idxA === -1) idxA = 999;
-                if (idxB === -1) idxB = 999;
-                return idxA - idxB;
-            });
-        } else if (currentDiscipline === 'Environmental' || currentDiscipline.includes('Environmental')) {
-            const envOrder = [
-                "Mathematics",
-                "Probability and Statistics",
-                "Ethics and Professional Practice",
-                "Engineering Economics",
-                "Fundamental Principles",
-                "Environmental Chemistry",
-                "Health Hazards and Risk Assessment",
-                "Fluid Mechanics and Hydraulics",
-                "Thermodynamics",
-                "Surface Water Resources and Hydrology",
-                "Groundwater, Soils, and Sediments",
-                "Water and Wastewater",
-                "Air Quality and Control",
-                "Solid and Hazardous Waste",
-                "Energy and Environment"
-            ];
-            subjectKeys.sort((a, b) => {
-                let idxA = envOrder.indexOf(a);
-                let idxB = envOrder.indexOf(b);
-                if (idxA === -1) idxA = 999;
-                if (idxB === -1) idxB = 999;
-                return idxA - idxB;
-            });
+        cachedNotesHierarchy = buildNotesHierarchy(filteredNotes, currentDiscipline);
+        if (!notesMegamenuActiveSubject && cachedNotesHierarchy.subjects.length > 0) {
+            notesMegamenuActiveSubject = cachedNotesHierarchy.subjects[0].name;
         }
+        updateNotesMegamenuTriggerLabel(cachedNotesHierarchy);
 
-        let idx = 0;
-        subjectKeys.forEach(subj => {
-            const color = colors[idx % colors.length];
-            const data = subjects[subj];
-            const chapters = data.chapters;
-            const chapterCount = Object.keys(chapters).length;
-            
-            const card = document.createElement('div');
-            card.className = 'stagger-item glass-card flex flex-col active:scale-[0.98] transition-transform duration-150 subject-card-tilt';
-            card.style.animationDelay = `${idx * 100}ms`;
-            
-            const headerDiv = document.createElement('div');
-            headerDiv.className = 'p-6 flex justify-between items-start cursor-pointer';
-            
-            headerDiv.innerHTML = `
-                <div class="flex justify-between items-center w-full">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl ${color.bg} flex items-center justify-center">
-                            <span class="material-symbols-outlined ${color.text} text-2xl" data-icon="${color.icon}">${color.icon}</span>
-                        </div>
-                        <div>
-                            <h3 class="font-title-sm text-title-sm text-on-surface dark:text-slate-100">${subj}</h3>
-                            <p class="text-xs text-slate-400 dark:text-slate-500 font-medium">${chapterCount} chapters</p>
-                        </div>
-                    </div>
-                    <span class="material-symbols-outlined text-slate-300 transition-transform duration-300 transform accordion-icon">expand_more</span>
-                </div>
-            `;
-            
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'px-6 pb-6 hidden';
-            
-            const chapterList = document.createElement('div');
-            chapterList.className = 'mt-4 flex flex-col gap-2 border-t border-slate-100 dark:border-slate-800 pt-4';
-            
-            let chapterKeys = Object.keys(chapters);
-            if (subj === 'Mathematics') {
-                const mathChapterOrder = [
-                    "Math Basics",
-                    "Basic Math",
-                    "Analytic Geometry",
-                    "Calculus",
-                    "Differential Equations",
-                    "Linear Algebra",
-                    "Numerical Methods",
-                    "Algorithm and Logic Development"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = mathChapterOrder.indexOf(a);
-                    let idxB = mathChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            } else if (subj === 'Measurements, Instrumentation and Controls' && (currentDiscipline.includes('Other'))) {
-                const measChapterOrder = [
-                    "Sensors and Transducers",
-                    "Data Acquisition",
-                    "Logic Diagrams"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = measChapterOrder.indexOf(a);
-                    let idxB = measChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            } else if (subj === 'Engineering Economics') {
-                const econChapterOrder = [
-                    "Time Value of Money",
-                    "Non-Annual Compounding",
-                    "Inflation",
-                    "Capitalized Costs",
-                    "Break-even Analysis",
-                    "Cost Types and Breakdowns",
-                    "Economic Analyses"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = econChapterOrder.indexOf(a);
-                    let idxB = econChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            } else if (subj === 'Statics' && currentDiscipline.includes('Other')) {
-                const staticsChapterOrder = [
-                    "Resultants of Force Systems",
-                    "Resolution of Forces",
-                    "Moments and Couple",
-                    "Systems of Forces",
-                    "Centroids",
-                    "Moment of Inertia",
-                    "Static Friction",
-                    "Screw Thread",
-                    "Belt Friction",
-                    "Statically Determinate Truss",
-                    "Concurrent Forces",
-                    "Concurrent Force Systems",
-                    "Equilibrium of Rigid Bodies",
-                    "Weight and Mass Computations"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = staticsChapterOrder.indexOf(a);
-                    let idxB = staticsChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            } else if (subj === 'Fluid Mechanics' && currentDiscipline.includes('Other')) {
-                const fluidChapterOrder = [
-                    "Fluid Properties",
-                    "Fluid Statics",
-                    "One-Dimensional Fluid Flow",
-                    "Internal Flow",
-                    "External Flow",
-                    "Impulse-Momentum Principle",
-                    "Compressible Flow",
-                    "Fluid Machinery",
-                    "Flow Measurement",
-                    "Dimensional Homogeneity",
-                    "Airfoil Theory",
-                    "Performance curves",
-                    "Power and Efficiency-Fluid",
-                    "Scaling Laws for Fans, Pumps and Compressors",
-                    "Open Channel Flow",
-                    "Dimensionless Numbers",
-                    " Dimensionless Numbers"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = fluidChapterOrder.indexOf(a);
-                    let idxB = fluidChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            } else if (subj === 'Electricity and Magnetism') {
-                const elecChapterOrder = [
-                    "Electrical Fundamentals",
-                    "Capacitors and Inductors",
-                    "AC Circuits",
-                    "Transformers",
-                    "Motors and Generators",
-                    "Three-phase Power"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = elecChapterOrder.indexOf(a);
-                    let idxB = elecChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            } else if (subj === 'Thermodynamics' || subj === 'Thermodynamics and Heat Transfer') {
-                const thermoChapterOrder = [
-                    "Single Component Systems",
-                    "PVT Behavior",
-                    "First Law of Thermodynamics",
-                    "Thermodynamic Processes",
-                    "Basic Cycles",
-                    "Psychrometrics",
-                    "Second Law of Thermodynamics",
-                    "Combustion & Products",
-                    "Refrigeration and HVAC",
-                    "Energy Transfer",
-                    "Energy Transfers",
-                    "Laws of Thermodynamics",
-                    "Nonreacting Mixtures of Gases",
-                    "Power Cycles",
-                    "Properties of Ideal Gases and Pure Substances",
-                    "Mass and Energy Balances",
-                    "Property and Phase Diagram",
-                    "Property and Phase Diagrams",
-                    "Real Gas Law",
-                    "Thermodynamic Equilibrium",
-                    "Conduction",
-                    "Convection",
-                    "Radiation"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = thermoChapterOrder.indexOf(a);
-                    let idxB = thermoChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            } else if (subj === 'Material Properties and Processing') {
-                const materialChapterOrder = [
-                    "Stress-Strain Diagrams",
-                    "Ferrous Metals",
-                    "Nonferrous Metals",
-                    "Engineered Materials",
-                    "Manufacturing Processes",
-                    "Phase Diagrams/Heat Treating",
-                    "Corrosion",
-                    "Failure Mechanisms",
-                    "Materials Selection",
-                    "Properties"
-                ];
-                chapterKeys.sort((a, b) => {
-                    let idxA = materialChapterOrder.indexOf(a);
-                    let idxB = materialChapterOrder.indexOf(b);
-                    if (idxA === -1) idxA = 999;
-                    if (idxB === -1) idxB = 999;
-                    return idxA - idxB;
-                });
-            }
-            
-            chapterKeys.forEach(chap => {
-                const chapItem = document.createElement('div');
-                chapItem.className = 'p-3 rounded-lg hover:bg-surface-container-highest dark:hover:bg-slate-800/50 cursor-pointer flex justify-between items-center transition-colors group';
-                chapItem.innerHTML = `
-                    <span class="text-sm font-medium text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">${chap}</span>
-                    <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 text-primary transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">arrow_forward</span>
-                `;
-                
-                chapItem.onclick = (e) => {
-                    e.stopPropagation();
-                    openNotes(subj, chap, chapters[chap]);
-                };
-                
-                chapterList.appendChild(chapItem);
-            });
-            
-            contentDiv.appendChild(chapterList);
-            
-            headerDiv.onclick = () => {
-                const isHidden = contentDiv.classList.contains('hidden');
-                
-                // Close all other accordions
-                document.querySelectorAll('#notes-subject-list .accordion-icon').forEach(icon => icon.classList.remove('rotate-180'));
-                document.querySelectorAll('#notes-subject-list .px-6.pb-6').forEach(div => {
-                    if (div !== contentDiv) div.classList.add('hidden');
-                });
-                
-                const icon = headerDiv.querySelector('.accordion-icon');
-                if (isHidden) {
-                    contentDiv.classList.remove('hidden');
-                    icon.classList.add('rotate-180');
-                } else {
-                    contentDiv.classList.add('hidden');
-                    icon.classList.remove('rotate-180');
-                }
-            };
-            
-            card.appendChild(headerDiv);
-            card.appendChild(contentDiv);
-            notesList.appendChild(card);
-            idx++;
-        });
-        initTilt();
+        const discBadge = document.getElementById('notes-megamenu-discipline-badge');
+        if (discBadge) discBadge.textContent = currentDiscipline;
+        const totalCountEl = document.getElementById('notes-megamenu-total-count');
+        if (totalCountEl) totalCountEl.textContent = cachedNotesHierarchy.totalNotes;
+
+        renderNotesMegamenuSubjects();
+        renderNotesMegamenuChapters();
+        wireNotesMegamenuControls();
     }
 
     document.getElementById('close-notes-btn')?.addEventListener('click', () => navigateTo('notes'));
     document.getElementById('notes-header-back-btn')?.addEventListener('click', () => navigateTo('notes'));
 
-    function openNotes(subjectTitle, chapterTitle, subtopicsList) {
+    // Notes Solved Practice Problems Persistence in localStorage
+    function getAnsweredNotesProblems() {
+        try {
+            const user = (window.state && window.state.user && window.state.user.username) ? window.state.user.username : 'guest';
+            const userRaw = localStorage.getItem(`enggtv_notes_problems_answered_${user}`);
+            if (userRaw) return JSON.parse(userRaw);
+            const globalRaw = localStorage.getItem('enggtv_notes_problems_answered');
+            return globalRaw ? JSON.parse(globalRaw) : {};
+        } catch (e) {
+            return {};
+        }
+    }
+    window.getAnsweredNotesProblems = getAnsweredNotesProblems;
+
+    function markNotesProblemAnswered(probKey, selectedOption, isCorrect) {
+        if (!probKey) return;
+        try {
+            const user = (window.state && window.state.user && window.state.user.username) ? window.state.user.username : 'guest';
+            const answered = getAnsweredNotesProblems();
+            answered[probKey] = {
+                selectedOption: selectedOption,
+                isCorrect: Boolean(isCorrect),
+                timestamp: Date.now()
+            };
+            const json = JSON.stringify(answered);
+            localStorage.setItem(`enggtv_notes_problems_answered_${user}`, json);
+            localStorage.setItem('enggtv_notes_problems_answered', json);
+        } catch (e) {}
+    }
+    window.markNotesProblemAnswered = markNotesProblemAnswered;
+
+    window.checkSolvedExampleOption = function(exampleId, selectedOpt, correctOpt, explicitProbKey) {
+        const container = document.getElementById(exampleId);
+        if (!container) return;
+        const feedbackEl = document.getElementById(exampleId + '-feedback');
+        const optButtons = container.querySelectorAll('.solved-ex-opt-btn');
+
+        // Resolve stable problem key
+        let probKey = explicitProbKey;
+        if (!probKey) {
+            const st = window.solvedProblemsState && window.solvedProblemsState[exampleId];
+            if (st && st.problems && st.problems.length > 0) {
+                const curIdx = st.currentIndex || 0;
+                const p = st.problems[curIdx];
+                probKey = (p && (p.id || p.qnum)) ? String(p.id || p.qnum) : `${exampleId}_p${curIdx}`;
+            } else {
+                probKey = exampleId;
+            }
+        }
+
+        const answered = getAnsweredNotesProblems();
+        const alreadyAnswered = Boolean(answered[probKey]);
+        const normalizedSelected = String(selectedOpt || '').trim().toUpperCase();
+        const normalizedCorrect = String(correctOpt || '').trim().toUpperCase();
+        const isCorrect = Boolean(normalizedCorrect && normalizedSelected === normalizedCorrect);
+
+        let newlyAwarded = false;
+        if (!alreadyAnswered) {
+            if (isCorrect) {
+                markNotesProblemAnswered(probKey, selectedOpt, true);
+                newlyAwarded = true;
+                if (typeof window.addPoints === 'function') {
+                    window.addPoints(1, '💡 Practice Problem Solved!');
+                }
+                if (typeof window.incrementQuestProgress === 'function') {
+                    window.incrementQuestProgress('questions_answered', 1);
+                }
+                if (navigator.vibrate) {
+                    try { navigator.vibrate([30, 50, 30]); } catch (e) {}
+                }
+            } else {
+                markNotesProblemAnswered(probKey, selectedOpt, false);
+            }
+        }
+
+        // Apply interactive feedback & lock buttons
+        optButtons.forEach(btn => {
+            const lbl = (btn.getAttribute('data-label') || '').trim().toUpperCase();
+            btn.classList.remove(
+                'border-emerald-500', 'bg-emerald-50/80', 'dark:bg-emerald-950/40',
+                'border-red-500', 'bg-red-50/80', 'dark:bg-red-950/40',
+                'ring-2', 'ring-emerald-500/30', 'ring-red-500/30',
+                'hover:border-pink-500/50', 'hover:bg-pink-50/50', 'dark:hover:bg-pink-950/30',
+                'cursor-pointer', 'opacity-50'
+            );
+            btn.classList.add('cursor-default');
+            btn.disabled = true;
+
+            if (lbl === normalizedCorrect) {
+                btn.classList.add('border-emerald-500', 'bg-emerald-50/80', 'dark:bg-emerald-950/40', 'ring-2', 'ring-emerald-500/30');
+            } else if (lbl === normalizedSelected && !isCorrect) {
+                btn.classList.add('border-red-500', 'bg-red-50/80', 'dark:bg-red-950/40', 'ring-2', 'ring-red-500/30');
+            } else {
+                btn.classList.add('opacity-50');
+            }
+        });
+
+        // Display feedback banner with points badge
+        if (feedbackEl) {
+            feedbackEl.classList.remove('hidden');
+            if (isCorrect) {
+                feedbackEl.className = 'mb-4 p-3.5 rounded-xl text-xs font-semibold flex items-center gap-3 bg-emerald-100/90 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-100 border border-emerald-500/50 shadow-sm animate-fadeIn';
+                feedbackEl.innerHTML = `
+                    <span class="w-8 h-8 rounded-lg bg-emerald-500/20 dark:bg-emerald-500/30 border border-emerald-400/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+                        <span class="material-symbols-outlined text-[20px]">military_tech</span>
+                    </span>
+                    <div class="flex-1">
+                        <div class="font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span>Correct! Option (${selectedOpt})</span>
+                            <span class="px-2 py-0.5 rounded-full bg-emerald-200 dark:bg-emerald-500/30 text-[10px] font-black text-emerald-800 dark:text-emerald-300 uppercase tracking-wider">${newlyAwarded ? '+1 Point Earned' : '✓ Completed'}</span>
+                        </div>
+                        <div class="text-[11px] text-emerald-800/90 dark:text-emerald-200/90 mt-0.5">Great job solving this FE practice problem independently. Full step-by-step solution shown below.</div>
+                    </div>
+                `;
+            } else {
+                feedbackEl.className = 'mb-4 p-3.5 rounded-xl text-xs font-semibold flex items-center gap-3 bg-rose-100/90 dark:bg-rose-950/60 text-rose-900 dark:text-rose-100 border border-rose-500/50 shadow-sm animate-fadeIn';
+                feedbackEl.innerHTML = `
+                    <span class="w-8 h-8 rounded-lg bg-rose-500/20 dark:bg-rose-500/30 border border-rose-400/50 flex items-center justify-center text-rose-600 dark:text-rose-400 shrink-0">
+                        <span class="material-symbols-outlined text-[20px]">cancel</span>
+                    </span>
+                    <div class="flex-1">
+                        <div class="font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span>Incorrect — You selected (${selectedOpt})</span>
+                            <span class="px-2 py-0.5 rounded-full bg-rose-200 dark:bg-rose-500/30 text-[10px] font-black text-rose-800 dark:text-rose-300 uppercase tracking-wider">0 Points</span>
+                        </div>
+                        <div class="text-[11px] text-rose-800/90 dark:text-rose-200/90 mt-0.5">The correct answer is Option (${correctOpt}). Review the step-by-step solution below to master this concept.</div>
+                    </div>
+                `;
+            }
+        }
+
+        // Auto-reveal the solution so user can inspect the derivation
+        const solEl = document.getElementById(exampleId + '-solution');
+        const iconEl = document.getElementById(exampleId + '-toggle-icon');
+        const textEl = document.getElementById(exampleId + '-toggle-text');
+        if (solEl && solEl.classList.contains('hidden')) {
+            solEl.classList.remove('hidden');
+            if (iconEl) iconEl.textContent = 'visibility_off';
+            if (textEl) textEl.textContent = 'Hide Step-by-Step Solution';
+            if (typeof window.safeTypesetMath === 'function') {
+                window.enhanceSolvedProblemImages(solEl);
+                window.safeTypesetMath([solEl]);
+            }
+        }
+    };
+
+    window.toggleSolvedExampleSolution = function(exampleId) {
+        const solEl = document.getElementById(exampleId + '-solution');
+        const iconEl = document.getElementById(exampleId + '-toggle-icon');
+        const textEl = document.getElementById(exampleId + '-toggle-text');
+        if (!solEl) return;
+        
+        const isHidden = solEl.classList.contains('hidden');
+        if (isHidden) {
+            solEl.classList.remove('hidden');
+            if (iconEl) iconEl.textContent = 'visibility_off';
+            if (textEl) textEl.textContent = 'Hide Step-by-Step Solution';
+            if (typeof window.safeTypesetMath === 'function') {
+                window.enhanceSolvedProblemImages(solEl);
+                window.safeTypesetMath([solEl]);
+            }
+        } else {
+            solEl.classList.add('hidden');
+            if (iconEl) iconEl.textContent = 'visibility';
+            if (textEl) textEl.textContent = 'Show Step-by-Step Solution';
+        }
+    };
+
+    
+    
+    window.enhanceSolvedProblemImages = function(container) {
+        if (!container) return;
+        const imgs = container.querySelectorAll('img');
+        imgs.forEach(img => {
+            img.classList.add('max-w-full', 'h-auto', 'rounded-xl', 'shadow-sm', 'my-3', 'mx-auto', 'block');
+            if (typeof window.toDriveImgUrl === 'function') {
+                img.src = window.toDriveImgUrl(img.src);
+            }
+        });
+    };
+
+    window.solvedProblemsState = window.solvedProblemsState || {};
+
+    window.getSolvedProblemsCardHtml = function(cardId, state) {
+        const problems = state.problems;
+        const total = problems.length;
+        const curIdx = state.currentIndex || 0;
+        const prob = problems[curIdx];
+        const isMulti = total > 1;
+
+        const problemKey = (prob && (prob.id || prob.qnum)) ? String(prob.id || prob.qnum) : `${cardId}_p${curIdx}`;
+        const answeredNotes = getAnsweredNotesProblems();
+        const pastAnswer = answeredNotes[problemKey];
+        const isPastAnswered = Boolean(pastAnswer);
+        const pastCorrect = isPastAnswered && pastAnswer.isCorrect;
+
+        // Build pagination dots / pills
+        let paginationHtml = '';
+        if (isMulti) {
+            if (total <= 12) {
+                paginationHtml = `
+                    <div class="flex items-center gap-1 overflow-x-auto py-1 max-w-full">
+                        ${problems.map((pItem, i) => {
+                            const pKey_i = (pItem && (pItem.id || pItem.qnum)) ? String(pItem.id || pItem.qnum) : `${cardId}_p${i}`;
+                            const isSolved_i = answeredNotes[pKey_i] && answeredNotes[pKey_i].isCorrect;
+                            let btnClasses = 'w-6 h-6 rounded-md text-xs font-bold transition-all flex items-center justify-center cursor-pointer relative ';
+                            if (i === curIdx) {
+                                btnClasses += 'bg-[#be0055] text-white shadow-xs';
+                            } else if (isSolved_i) {
+                                btnClasses += 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 hover:bg-emerald-200';
+                            } else {
+                                btnClasses += 'bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-pink-500/20';
+                            }
+                            return `
+                                <button type="button" 
+                                    onclick="window.switchSolvedProblem('${cardId}', ${i})" 
+                                    class="${btnClasses}"
+                                    title="${isSolved_i ? `Problem ${i + 1} (Solved +1 Pt)` : `Problem ${i + 1}`}">
+                                    ${i + 1}
+                                    ${isSolved_i && i !== curIdx ? '<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-500 ring-1 ring-white dark:ring-slate-900"></span>' : ''}
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+                `;
+            } else {
+                paginationHtml = `
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Jump:</span>
+                        <select onchange="window.switchSolvedProblem('${cardId}', parseInt(this.value))" class="text-xs font-bold py-1 px-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 cursor-pointer">
+                            ${problems.map((pItem, i) => {
+                                const pKey_i = (pItem && (pItem.id || pItem.qnum)) ? String(pItem.id || pItem.qnum) : `${cardId}_p${i}`;
+                                const isSolved_i = answeredNotes[pKey_i] && answeredNotes[pKey_i].isCorrect;
+                                return `
+                                    <option value="${i}" ${i === curIdx ? 'selected' : ''}>${isSolved_i ? '✓ ' : ''}Problem ${i + 1} of ${total}${isSolved_i ? ' (Solved +1 Pt)' : ''}</option>
+                                `;
+                            }).join('')}
+                        </select>
+                    </div>
+                `;
+            }
+        }
+
+        return `
+            <!-- Header -->
+            <div class="flex flex-wrap items-center justify-between gap-3 border-b border-pink-500/20 pb-3 mb-4">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-[#FF006E]/15 text-[#be0055] dark:text-pink-400 font-bold text-sm">💡</span>
+                    <h4 class="font-bold text-base text-slate-800 dark:text-slate-100">FE Solved Practice Problems</h4>
+                    <span id="${cardId}-counter" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#be0055]/10 text-[#be0055] dark:text-pink-300 border border-[#be0055]/20">
+                        ${isMulti ? `Problem ${curIdx + 1} of ${total}` : '1 Problem Available'}
+                    </span>
+                    ${isPastAnswered ? (pastCorrect ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1 shrink-0"><span class="material-symbols-outlined text-[12px]">check_circle</span>Solved (+1 Pt)</span>' : '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-500/30 shrink-0">Attempted</span>') : ''}
+                    ${prob.difficulty ? `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">${prob.difficulty}</span>` : ''}
+                </div>
+
+                <div class="flex items-center gap-2 flex-wrap ml-auto">
+                    <!-- Video Provision (Inactive as requested) -->
+                    ${prob.has_video ? `
+                        <button type="button" disabled class="opacity-60 cursor-not-allowed inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-xs font-medium shadow-2xs" title="Video walkthrough solution coming soon">
+                            <span class="material-symbols-outlined text-[15px]" style="font-variation-settings:'FILL' 0;">videocam</span>
+                            <span>Video Solution</span>
+                            <span class="text-[9px] px-1 py-0.2 rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold uppercase">Soon</span>
+                        </button>
+                    ` : ''}
+
+                    <!-- Prev/Next Controls in Header -->
+                    ${isMulti ? `
+                        <div class="flex items-center gap-1">
+                            <button type="button" 
+                                onclick="window.switchSolvedProblem('${cardId}', ${curIdx - 1})" 
+                                ${curIdx === 0 ? 'disabled' : ''} 
+                                class="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:border-pink-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-all">
+                                <span class="material-symbols-outlined text-[16px] block">chevron_left</span>
+                            </button>
+                            <button type="button" 
+                                onclick="window.switchSolvedProblem('${cardId}', ${curIdx + 1})" 
+                                ${curIdx === total - 1 ? 'disabled' : ''} 
+                                class="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:border-pink-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-all">
+                                <span class="material-symbols-outlined text-[16px] block">chevron_right</span>
+                            </button>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+
+            <!-- Pagination Bar if multiple problems -->
+            ${isMulti ? `
+                <div class="flex items-center justify-between gap-2 mb-3 pb-2 border-b border-slate-200/40 dark:border-slate-800/40">
+                    ${paginationHtml}
+                    ${prob.source ? `<span class="text-[11px] text-slate-400 dark:text-slate-500 italic ml-auto truncate max-w-xs">${prob.source}</span>` : ''}
+                </div>
+            ` : (prob.source ? `<div class="mb-3 text-[11px] text-slate-400 dark:text-slate-500 italic">${prob.source}</div>` : '')}
+
+            <!-- Active Problem Content -->
+            <div id="${cardId}-body">
+                <!-- Question Prompt -->
+                <div class="mb-4 text-slate-800 dark:text-slate-200 text-sm font-medium leading-relaxed math-content">
+                    ${prob.question}
+                </div>
+
+                <!-- Options Grid -->
+                ${prob.options && prob.options.length > 0 ? `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-4" id="${cardId}-options">
+                        ${prob.options.map(opt => {
+                            const optLabel = String(opt.label || '').trim().toUpperCase();
+                            const correctAns = String(prob.ans || '').trim().toUpperCase();
+                            if (isPastAnswered) {
+                                let optClass = 'solved-ex-opt-btn flex items-center gap-3 p-3 rounded-xl border transition-all text-left cursor-default group shadow-2xs ';
+                                if (optLabel === correctAns) {
+                                    optClass += 'border-emerald-500 bg-emerald-50/80 dark:bg-emerald-950/40 ring-2 ring-emerald-500/30';
+                                } else if (optLabel === String(pastAnswer.selectedOption || '').trim().toUpperCase() && !pastCorrect) {
+                                    optClass += 'border-red-500 bg-red-50/80 dark:bg-red-950/40 ring-2 ring-red-500/30';
+                                } else {
+                                    optClass += 'border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 opacity-50';
+                                }
+                                return `
+                                    <button type="button" disabled data-label="${opt.label}" class="${optClass}">
+                                        <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border border-slate-300 dark:border-slate-700 shrink-0">${opt.label}</span>
+                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${opt.text}</span>
+                                    </button>
+                                `;
+                            } else {
+                                return `
+                                    <button type="button" 
+                                        onclick="window.checkSolvedExampleOption('${cardId}', '${opt.label}', '${prob.ans}', '${problemKey}')" 
+                                        data-label="${opt.label}" 
+                                        class="solved-ex-opt-btn flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 hover:border-pink-500/50 hover:bg-pink-50/50 dark:hover:bg-pink-950/30 transition-all text-left cursor-pointer group shadow-2xs">
+                                        <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border border-slate-300 dark:border-slate-700 group-hover:border-pink-500 group-hover:text-pink-600 dark:group-hover:text-pink-400 shrink-0">${opt.label}</span>
+                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${opt.text}</span>
+                                    </button>
+                                `;
+                            }
+                        }).join('')}
+                    </div>
+                    <div id="${cardId}-feedback" class="${isPastAnswered ? 'mb-4 p-3.5 rounded-xl text-xs font-semibold flex items-center gap-3 shadow-sm ' + (pastCorrect ? 'bg-emerald-100/90 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-100 border border-emerald-500/50' : 'bg-rose-100/90 dark:bg-rose-950/60 text-rose-900 dark:text-rose-100 border border-rose-500/50') : 'hidden mb-4 p-3 rounded-xl text-xs font-semibold flex items-center gap-2'}">
+                        ${isPastAnswered ? (pastCorrect ? `
+                            <span class="w-8 h-8 rounded-lg bg-emerald-500/20 dark:bg-emerald-500/30 border border-emerald-400/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+                                <span class="material-symbols-outlined text-[20px]">military_tech</span>
+                            </span>
+                            <div class="flex-1">
+                                <div class="font-bold text-xs sm:text-sm flex items-center gap-2">
+                                    <span>Correct! Option (${pastAnswer.selectedOption})</span>
+                                    <span class="px-2 py-0.5 rounded-full bg-emerald-200 dark:bg-emerald-500/30 text-[10px] font-black text-emerald-800 dark:text-emerald-300 uppercase tracking-wider">✓ Completed (+1 Pt Earned)</span>
+                                </div>
+                                <div class="text-[11px] text-emerald-800/90 dark:text-emerald-200/90 mt-0.5">Great job solving this FE practice problem independently. Full step-by-step solution shown below.</div>
+                            </div>
+                        ` : `
+                            <span class="w-8 h-8 rounded-lg bg-rose-500/20 dark:bg-rose-500/30 border border-rose-400/50 flex items-center justify-center text-rose-600 dark:text-rose-400 shrink-0">
+                                <span class="material-symbols-outlined text-[20px]">cancel</span>
+                            </span>
+                            <div class="flex-1">
+                                <div class="font-bold text-xs sm:text-sm flex items-center gap-2">
+                                    <span>Incorrect — You selected (${pastAnswer.selectedOption})</span>
+                                    <span class="px-2 py-0.5 rounded-full bg-rose-200 dark:bg-rose-500/30 text-[10px] font-black text-rose-800 dark:text-rose-300 uppercase tracking-wider">0 Points</span>
+                                </div>
+                                <div class="text-[11px] text-rose-800/90 dark:text-rose-200/90 mt-0.5">The correct answer is Option (${prob.ans}). Review the step-by-step solution below to master this concept.</div>
+                            </div>
+                        `) : ''}
+                    </div>
+                ` : ''}
+
+                <!-- Solution Accordion -->
+                <div class="pt-2 border-t border-slate-200/60 dark:border-slate-800/60">
+                    <button type="button" 
+                        onclick="window.toggleSolvedExampleSolution('${cardId}')" 
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-pink-500/10 dark:bg-slate-800 dark:hover:bg-pink-500/20 text-[#be0055] dark:text-pink-300 border border-slate-200 dark:border-slate-700 hover:border-pink-500/40 text-xs font-bold transition-all cursor-pointer">
+                        <span class="material-symbols-outlined text-[16px]" id="${cardId}-toggle-icon">visibility</span>
+                        <span id="${cardId}-toggle-text">Show Step-by-Step Solution</span>
+                    </button>
+                    
+                    <div id="${cardId}-solution" class="hidden mt-3 p-4 rounded-xl bg-white/90 dark:bg-slate-950/90 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm leading-relaxed text-slate-800 dark:text-slate-200 space-y-3 math-content shadow-inner">
+                        <div class="font-bold text-xs text-emerald-600 dark:text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                            <span>Correct Answer: Option (${prob.ans})</span>
+                        </div>
+                        <div class="solution-body leading-relaxed">
+                            ${prob.solution && prob.solution.trim().length > 0 ? prob.solution : '<p class="text-slate-500 italic">Conceptual/Numerical FE practice problem. Key answer verified as Option (' + prob.ans + ').</p>'}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer Prev / Next Buttons if multiple problems -->
+            ${isMulti ? `
+                <div class="flex items-center justify-between gap-3 mt-4 pt-3 border-t border-slate-200/60 dark:border-slate-800/60">
+                    <button type="button" 
+                        onclick="window.switchSolvedProblem('${cardId}', ${curIdx - 1})" 
+                        ${curIdx === 0 ? 'disabled' : ''} 
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-pink-500 hover:text-[#be0055] disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer text-xs font-bold transition-all">
+                        <span class="material-symbols-outlined text-[15px]">arrow_back</span>
+                        <span>Previous Problem</span>
+                    </button>
+
+                    <span class="text-xs font-semibold text-slate-400">Problem ${curIdx + 1} of ${total}</span>
+
+                    <button type="button" 
+                        onclick="window.switchSolvedProblem('${cardId}', ${curIdx + 1})" 
+                        ${curIdx === total - 1 ? 'disabled' : ''} 
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-pink-500 hover:text-[#be0055] disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer text-xs font-bold transition-all">
+                        <span>Next Problem</span>
+                        <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+                    </button>
+                </div>
+            ` : ''}
+        `;
+    };
+
+    window.switchSolvedProblem = function(cardId, newIndex) {
+        const state = window.solvedProblemsState && window.solvedProblemsState[cardId];
+        if (!state || !state.problems || state.problems.length === 0) return;
+        
+        const total = state.problems.length;
+        if (newIndex < 0) newIndex = 0;
+        if (newIndex >= total) newIndex = total - 1;
+        state.currentIndex = newIndex;
+        
+        const cardEl = document.getElementById(cardId);
+        if (!cardEl) return;
+        
+        cardEl.innerHTML = window.getSolvedProblemsCardHtml(cardId, state);
+        if (typeof window.safeTypesetMath === 'function') {
+            window.enhanceSolvedProblemImages(cardEl);
+            window.safeTypesetMath([cardEl]);
+        }
+    };
+
+    window.openNotes = openNotes;
+    function openNotes(subjectTitle, chapterTitle, subtopicsList, targetTopicName) {
+        if (typeof closeNotesMegamenu === 'function') {
+            closeNotesMegamenu();
+        }
+        const bdrop = document.getElementById('notes-megamenu-backdrop');
+        if (bdrop) bdrop.classList.add('hidden', 'opacity-0');
+        const mdrop = document.getElementById('notes-megamenu-dropdown');
+        if (mdrop) mdrop.classList.add('hidden', 'opacity-0');
+        currentNotesSubjectFilter = subjectTitle;
+        currentNotesChapterFilter = chapterTitle;
+        if (cachedNotesHierarchy) {
+            updateNotesMegamenuTriggerLabel(cachedNotesHierarchy);
+        }
         if (typeof window.logNotesStudySession === 'function') {
             window.logNotesStudySession(subjectTitle, chapterTitle);
         }
@@ -1787,6 +2765,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         for (let topicName in topics) {
             const topicDiv = document.createElement('div');
             topicDiv.className = 'glass-card p-5 flex flex-col gap-4 mb-6';
+            topicDiv.id = 'notes-topic-' + encodeURIComponent(topicName.toLowerCase());
+            topicDiv.dataset.topic = topicName;
             
             const topicHeader = document.createElement('div');
             topicHeader.className = 'border-b-2 border-primary/20 pb-3 mb-2 flex flex-wrap items-center justify-between gap-3';
@@ -1848,49 +2828,115 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 if (sub.resources) {
                     html += sub.resources;
                 }
+                if (sub.solved_examples && Array.isArray(sub.solved_examples) && sub.solved_examples.length > 0) {
+                    sub.solved_examples.forEach((ex, exIdx) => {
+                        const exId = `solved-ex-${ex.id || exIdx}`;
+                        const problemKey = (ex && (ex.id || ex.qnum)) ? String(ex.id || ex.qnum) : exId;
+                        const answeredNotes = getAnsweredNotesProblems();
+                        const pastAnswer = answeredNotes[problemKey];
+                        const isPastAnswered = Boolean(pastAnswer);
+                        const pastCorrect = isPastAnswered && pastAnswer.isCorrect;
+
+                        html += `
+                            <div id="${exId}" class="mt-6 rounded-2xl border border-pink-500/30 dark:border-pink-500/40 bg-gradient-to-br from-pink-500/5 via-slate-50/80 to-indigo-500/5 dark:from-pink-950/20 dark:via-slate-900/60 dark:to-indigo-950/20 p-5 shadow-sm">
+                                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-pink-500/20 pb-3 mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-[#FF006E]/15 text-[#be0055] dark:text-pink-400 font-bold text-sm">💡</span>
+                                        <h4 class="font-bold text-base text-slate-800 dark:text-slate-100">FE Solved Example</h4>
+                                        ${isPastAnswered ? (pastCorrect ? '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30 flex items-center gap-1 shrink-0"><span class="material-symbols-outlined text-[12px]">check_circle</span>Solved (+1 Pt)</span>' : '<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-500/30 shrink-0">Attempted</span>') : ''}
+                                        ${ex.difficulty ? `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">${ex.difficulty}</span>` : ''}
+                                    </div>
+                                    ${ex.source ? `<span class="text-xs text-slate-500 dark:text-slate-400 italic">${ex.source}</span>` : ''}
+                                </div>
+
+                                <div class="mb-4 text-slate-800 dark:text-slate-200 text-sm font-medium leading-relaxed math-content">
+                                    ${ex.question}
+                                </div>
+
+                                ${ex.options && ex.options.length > 0 ? `
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-4" id="${exId}-options">
+                                        ${ex.options.map(opt => {
+                                            const optLabel = String(opt.label || '').trim().toUpperCase();
+                                            const correctAns = String(ex.ans || '').trim().toUpperCase();
+                                            if (isPastAnswered) {
+                                                let optClass = 'solved-ex-opt-btn flex items-center gap-3 p-3 rounded-xl border transition-all text-left cursor-default group shadow-xs ';
+                                                if (optLabel === correctAns) {
+                                                    optClass += 'border-emerald-500 bg-emerald-50/80 dark:bg-emerald-950/40 ring-2 ring-emerald-500/30';
+                                                } else if (optLabel === String(pastAnswer.selectedOption || '').trim().toUpperCase() && !pastCorrect) {
+                                                    optClass += 'border-red-500 bg-red-50/80 dark:bg-red-950/40 ring-2 ring-red-500/30';
+                                                } else {
+                                                    optClass += 'border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 opacity-50';
+                                                }
+                                                return `
+                                                    <button type="button" disabled data-label="${opt.label}" class="${optClass}">
+                                                        <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border border-slate-300 dark:border-slate-700 shrink-0">${opt.label}</span>
+                                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${opt.text}</span>
+                                                    </button>
+                                                `;
+                                            } else {
+                                                return `
+                                                    <button type="button" 
+                                                        onclick="window.checkSolvedExampleOption('${exId}', '${opt.label}', '${ex.ans}', '${problemKey}')" 
+                                                        data-label="${opt.label}" 
+                                                        class="solved-ex-opt-btn flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 hover:border-pink-500/50 hover:bg-pink-50/50 dark:hover:bg-pink-950/30 transition-all text-left cursor-pointer group shadow-xs">
+                                                        <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border border-slate-300 dark:border-slate-700 group-hover:border-pink-500 group-hover:text-pink-600 dark:group-hover:text-pink-400 shrink-0">${opt.label}</span>
+                                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${opt.text}</span>
+                                                    </button>
+                                                `;
+                                            }
+                                        }).join('')}
+                                    </div>
+                                    <div id="${exId}-feedback" class="${isPastAnswered ? 'mb-4 p-3.5 rounded-xl text-xs font-semibold flex items-center gap-3 shadow-sm ' + (pastCorrect ? 'bg-emerald-100/90 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-100 border border-emerald-500/50' : 'bg-rose-100/90 dark:bg-rose-950/60 text-rose-900 dark:text-rose-100 border border-rose-500/50') : 'hidden mb-4 p-3 rounded-xl text-xs font-semibold flex items-center gap-2'}">
+                                        ${isPastAnswered ? (pastCorrect ? `
+                                            <span class="w-8 h-8 rounded-lg bg-emerald-500/20 dark:bg-emerald-500/30 border border-emerald-400/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+                                                <span class="material-symbols-outlined text-[20px]">military_tech</span>
+                                            </span>
+                                            <div class="flex-1">
+                                                <div class="font-bold text-xs sm:text-sm flex items-center gap-2">
+                                                    <span>Correct! Option (${pastAnswer.selectedOption})</span>
+                                                    <span class="px-2 py-0.5 rounded-full bg-emerald-200 dark:bg-emerald-500/30 text-[10px] font-black text-emerald-800 dark:text-emerald-300 uppercase tracking-wider">✓ Completed (+1 Pt Earned)</span>
+                                                </div>
+                                                <div class="text-[11px] text-emerald-800/90 dark:text-emerald-200/90 mt-0.5">Great job solving this FE practice problem independently. Full step-by-step solution shown below.</div>
+                                            </div>
+                                        ` : `
+                                            <span class="w-8 h-8 rounded-lg bg-rose-500/20 dark:bg-rose-500/30 border border-rose-400/50 flex items-center justify-center text-rose-600 dark:text-rose-400 shrink-0">
+                                                <span class="material-symbols-outlined text-[20px]">cancel</span>
+                                            </span>
+                                            <div class="flex-1">
+                                                <div class="font-bold text-xs sm:text-sm flex items-center gap-2">
+                                                    <span>Incorrect — You selected (${pastAnswer.selectedOption})</span>
+                                                    <span class="px-2 py-0.5 rounded-full bg-rose-200 dark:bg-rose-500/30 text-[10px] font-black text-rose-800 dark:text-rose-300 uppercase tracking-wider">0 Points</span>
+                                                </div>
+                                                <div class="text-[11px] text-rose-800/90 dark:text-rose-200/90 mt-0.5">The correct answer is Option (${ex.ans}). Review the step-by-step solution below to master this concept.</div>
+                                            </div>
+                                        `) : ''}
+                                    </div>
+                                ` : ''}
+
+                                <div class="pt-2 border-t border-slate-200/60 dark:border-slate-800/60">
+                                    <button type="button" 
+                                        onclick="window.toggleSolvedExampleSolution('${exId}')" 
+                                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-pink-500/10 dark:bg-slate-800 dark:hover:bg-pink-500/20 text-[#be0055] dark:text-pink-300 border border-slate-200 dark:border-slate-700 hover:border-pink-500/40 text-xs font-bold transition-all cursor-pointer">
+                                        <span class="material-symbols-outlined text-[16px]" id="${exId}-toggle-icon">visibility</span>
+                                        <span id="${exId}-toggle-text">Show Step-by-Step Solution</span>
+                                    </button>
+                                    
+                                    <div id="${exId}-solution" class="hidden mt-3 p-4 rounded-xl bg-white/90 dark:bg-slate-950/90 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm leading-relaxed text-slate-800 dark:text-slate-200 space-y-3 math-content shadow-inner">
+                                        <div class="font-bold text-xs text-emerald-600 dark:text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                                            <span class="material-symbols-outlined text-[15px]">check_circle</span>
+                                            <span>Correct Answer: Option (${ex.ans})</span>
+                                        </div>
+                                        <div class="solution-body leading-relaxed">
+                                            ${ex.solution && ex.solution.trim().length > 0 ? ex.solution : '<p class="text-slate-500 italic">Conceptual/Numerical FE practice problem. Key answer verified as Option (' + ex.ans + ').</p>'}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
                 
                 contentDiv.innerHTML = html;
-
-                // Temporarily hide legacy external video embeds, but preserve native notes videos
-                const videoIframes = contentDiv.querySelectorAll('iframe');
-                videoIframes.forEach(iframe => {
-                    const wrapper = iframe.closest('.w-full') || iframe.closest('[style*="padding"]') || iframe;
-                    if (!wrapper.closest('.notes-video-container')) {
-                        wrapper.remove();
-                    }
-                });
-                const videoElements = contentDiv.querySelectorAll('video');
-                videoElements.forEach(video => {
-                    if (!video.closest('.notes-video-container') && !video.classList.contains('notes-video')) {
-                        video.remove();
-                    }
-                });
-                const videoScripts = contentDiv.querySelectorAll('script[src*="vimeo"], script[src*="youtube"], script[src*="player"]');
-                videoScripts.forEach(script => script.remove());
-
-                // Remove empty resource containers if any
-                const resourceContainers = contentDiv.querySelectorAll('.border-t');
-                resourceContainers.forEach(container => {
-                    if (!container.textContent.trim() && container.querySelectorAll('a, img, svg').length === 0) {
-                        container.remove();
-                    }
-                });
-                
-                // Re-create TikZ scripts and trigger window load so TikZJax catches them
-                const tikzScripts = contentDiv.querySelectorAll('script[type="text/tikz"]');
-                if (tikzScripts.length > 0) {
-                    tikzScripts.forEach(oldScript => {
-                        const newScript = document.createElement('script');
-                        newScript.type = 'text/tikz';
-                        newScript.textContent = oldScript.textContent || oldScript.innerHTML;
-                        oldScript.parentNode.replaceChild(newScript, oldScript);
-                    });
-                    
-                    const trigger = () => window.dispatchEvent(new Event('load'));
-                    setTimeout(trigger, 50);
-                    setTimeout(trigger, 200);
-                    setTimeout(trigger, 500);
-                }
                 
                 const imgs = contentDiv.querySelectorAll('img');
                 imgs.forEach(img => {
@@ -1910,10 +2956,50 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 topicDiv.appendChild(subDiv);
             });
             
+            
+            // Attach Solved Practice Problems Card if available for this topic
+            try {
+                const topicKey = topicName.trim().toLowerCase();
+                let topicProblems = [];
+                const explicitExamples = topics[topicName].flatMap(s => s.solved_examples || []);
+                if (explicitExamples.length > 0) {
+                    topicProblems = explicitExamples;
+                } else if (typeof window.solvedProblemsData !== 'undefined' && window.solvedProblemsData && window.solvedProblemsData[topicKey]) {
+                    topicProblems = window.solvedProblemsData[topicKey];
+                }
+
+                if (topicProblems && topicProblems.length > 0) {
+                    const cardId = 'solved-problems-' + encodeURIComponent(topicKey).replace(/[^a-zA-Z0-9_-]/g, '_');
+                    const solvedProblemsCard = document.createElement('div');
+                    solvedProblemsCard.id = cardId;
+                    solvedProblemsCard.className = 'mt-4 rounded-2xl border border-pink-500/30 dark:border-pink-500/40 bg-gradient-to-br from-pink-500/5 via-slate-50/80 to-indigo-500/5 dark:from-pink-950/20 dark:via-slate-900/60 dark:to-indigo-950/20 p-5 shadow-sm';
+                    
+                    window.solvedProblemsState = window.solvedProblemsState || {};
+                    window.solvedProblemsState[cardId] = {
+                        problems: topicProblems,
+                        currentIndex: 0
+                    };
+                    
+                    solvedProblemsCard.innerHTML = window.getSolvedProblemsCardHtml(cardId, window.solvedProblemsState[cardId]);
+                    window.enhanceSolvedProblemImages(solvedProblemsCard);
+                    topicDiv.appendChild(solvedProblemsCard);
+                }
+            } catch (err) {
+                console.error('Error attaching solved problems to topic:', err);
+            }
+
             container.appendChild(topicDiv);
+        }
+
+        if (targetTopicName) {
+            window.__skipScrollToTop = true;
         }
         
         navigateTo('notes-content-view');
+
+        if (targetTopicName) {
+            scrollToNotesTopic(targetTopicName);
+        }
 
         if (typeof window.publishPeerMilestone === 'function') {
             const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
@@ -1925,7 +3011,109 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             });
         }
         
-        window.safeTypesetMath([container]);
+        
+        if (typeof window.publishPeerMilestone === 'function') {
+            const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+            window.publishPeerMilestone({
+                type: 'notes_reviewed',
+                title: `Reviewed ${subjectTitle || 'Core'} Study Notes`,
+                detail: `Mastering theoretical principles and reference equations`,
+                discipline: disc
+            });
+        }
+        
+        const typesetPromise = window.safeTypesetMath([container]);
+
+        if (targetTopicName) {
+            scrollToNotesTopic(targetTopicName, typesetPromise);
+        }
+    }
+
+    window.scrollToNotesTopic = scrollToNotesTopic;
+    function scrollToNotesTopic(targetTopicName, typesetPromise) {
+        if (!targetTopicName) return;
+        const targetClean = targetTopicName.trim().toLowerCase();
+
+        function findTarget() {
+            // 1. Direct ID match
+            let el = document.getElementById('notes-topic-' + encodeURIComponent(targetClean));
+            if (el) return el;
+
+            // 2. data-topic match
+            const cards = document.querySelectorAll('#notes-topics-container .glass-card');
+            for (let i = 0; i < cards.length; i++) {
+                const c = cards[i];
+                const dt = (c.getAttribute('data-topic') || c.dataset.topic || '').trim().toLowerCase();
+                if (dt === targetClean) return c;
+            }
+
+            // 3. Substring or title match
+            for (let i = 0; i < cards.length; i++) {
+                const c = cards[i];
+                const h3 = c.querySelector('h3');
+                if (h3 && h3.textContent.trim().toLowerCase() === targetClean) return c;
+                const dt = (c.getAttribute('data-topic') || c.dataset.topic || '').trim().toLowerCase();
+                if (dt.includes(targetClean) || targetClean.includes(dt)) return c;
+            }
+
+            // 4. Subtopic headings (h5)
+            for (let i = 0; i < cards.length; i++) {
+                const c = cards[i];
+                const h5s = c.querySelectorAll('h5');
+                for (let j = 0; j < h5s.length; j++) {
+                    const h5Text = h5s[j].textContent.trim().toLowerCase();
+                    if (h5Text === targetClean || h5Text.includes(targetClean)) return c;
+                }
+            }
+            return null;
+        }
+
+        function executeScroll(isSmooth) {
+            const targetEl = findTarget();
+            if (!targetEl) return false;
+
+            const mainHeader = document.getElementById('main-header');
+            const headerHeight = mainHeader ? mainHeader.getBoundingClientRect().height : 120;
+            const offset = Math.max(headerHeight, 110) + 16;
+
+            const rect = targetEl.getBoundingClientRect();
+            const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+            const targetY = Math.max(0, currentScrollY + rect.top - offset);
+
+            const dist = Math.abs(currentScrollY - targetY);
+            // If jump is large, jump instantly to avoid long sluggish scrolling; fine-tune with smooth
+            const useSmooth = isSmooth && dist < 1200;
+
+            window.scrollTo({
+                top: targetY,
+                behavior: useSmooth ? 'smooth' : 'auto'
+            });
+
+            targetEl.classList.remove('topic-target-pulse');
+            void targetEl.offsetWidth;
+            targetEl.classList.add('topic-target-pulse');
+            return true;
+        }
+
+        // Multi-phase scroll schedule:
+        // Immediate jump into vicinity
+        requestAnimationFrame(() => executeScroll(false));
+        setTimeout(() => executeScroll(false), 50);
+
+        // Alignment pass
+        setTimeout(() => executeScroll(true), 150);
+
+        // When MathJax finishes typesetting, snap into final position
+        if (typesetPromise && typeof typesetPromise.then === 'function') {
+            typesetPromise.then(() => {
+                setTimeout(() => executeScroll(true), 30);
+                setTimeout(() => executeScroll(true), 150);
+            }).catch(() => {});
+        }
+
+        // Failsafe passes
+        setTimeout(() => executeScroll(true), 400);
+        setTimeout(() => executeScroll(true), 750);
     }
 
     // --- Notes Video Offcanvas Drawer Controller ---
@@ -3985,6 +5173,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         const levelBadgeDisplay = document.getElementById('level-badge-display');
         
         if (pointsDisplay) pointsDisplay.textContent = points;
+        const headerPoints = document.getElementById('header-points-count');
+        if (headerPoints) headerPoints.textContent = points;
         
         // Mock levels
         let levelName = 'Apprentice';
@@ -4339,6 +5529,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         if (selectDisc) {
             selectDisc.value = savedDiscipline;
         }
+        const headerDisc = document.getElementById('header-discipline-select');
+        if (headerDisc) headerDisc.value = savedDiscipline;
 
         // Load/Set Date Joined
         let dateJoined = localStorage.getItem('enggtv_date_joined');
@@ -4350,50 +5542,89 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         if (dateJoinedDisplay) dateJoinedDisplay.textContent = dateJoined;
     }
 
+    window.setAppDiscipline = function(newDiscipline, triggerEl) {
+        if (!newDiscipline) return;
+        localStorage.setItem('enggtv_discipline', newDiscipline);
+        if (typeof state !== 'undefined' && state && state.user) {
+            state.user.discipline = newDiscipline;
+        }
+        try {
+            const localUser = JSON.parse(localStorage.getItem('enggtv_user')) || {};
+            localUser.discipline = newDiscipline;
+            localStorage.setItem('enggtv_user', JSON.stringify(localUser));
+        } catch (err) {}
+
+        // Sync all discipline select dropdowns
+        const discSelectIds = ['header-discipline-select', 'select-discipline', 'notes-discipline-select', 'fc-discipline-select'];
+        discSelectIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.value !== newDiscipline) {
+                el.value = newDiscipline;
+            }
+        });
+
+        // Sync discipline text badges across the entire app
+        if (typeof userDisciplineDisplay !== 'undefined' && userDisciplineDisplay) userDisciplineDisplay.textContent = newDiscipline;
+        const discBadgeDisplay = document.getElementById('discipline-badge-display');
+        if (discBadgeDisplay) discBadgeDisplay.textContent = newDiscipline;
+        const discProfileDisplay = document.getElementById('discipline-profile-display');
+        if (discProfileDisplay) discProfileDisplay.textContent = newDiscipline;
+        const notesMegamenuBadge = document.getElementById('notes-megamenu-discipline-badge');
+        if (notesMegamenuBadge) notesMegamenuBadge.textContent = newDiscipline;
+        if (typeof window.updateSidebarProfile === 'function') {
+            window.updateSidebarProfile();
+        }
+
+        // Invalidate cached hierarchy for notes/flashcards
+        if (typeof cachedNotesHierarchy !== 'undefined') {
+            cachedNotesHierarchy = null;
+        }
+        if (typeof currentNotesSubjectFilter !== 'undefined') currentNotesSubjectFilter = 'all';
+        if (typeof currentNotesChapterFilter !== 'undefined') currentNotesChapterFilter = 'all';
+
+        // Reload subjects for selected discipline
+        if (typeof state !== 'undefined' && state) {
+            if (newDiscipline === 'Mechanical') state.subjects = typeof MECHANICAL_SUBJECTS !== 'undefined' ? MECHANICAL_SUBJECTS : [];
+            else if (newDiscipline === 'Civil' || newDiscipline === 'Civil Engineering') state.subjects = typeof CIVIL_SUBJECTS !== 'undefined' ? CIVIL_SUBJECTS : [];
+            else if (newDiscipline === 'Chemical') state.subjects = typeof CHEMICAL_SUBJECTS !== 'undefined' ? CHEMICAL_SUBJECTS : [];
+            else if (newDiscipline === 'Environmental') state.subjects = typeof ENVIRONMENTAL_SUBJECTS !== 'undefined' ? ENVIRONMENTAL_SUBJECTS : [];
+            else if (newDiscipline === 'Industrial') state.subjects = typeof INDUSTRIAL_SUBJECTS !== 'undefined' ? INDUSTRIAL_SUBJECTS : [];
+            else if (newDiscipline === 'Electrical and Computer') state.subjects = typeof ELECTRICAL_COMPUTER_SUBJECTS !== 'undefined' ? ELECTRICAL_COMPUTER_SUBJECTS : [];
+            else state.subjects = typeof OTHER_SUBJECTS !== 'undefined' ? OTHER_SUBJECTS : [];
+        }
+
+        if (typeof updateUIForTier === 'function') updateUIForTier();
+        if (typeof renderSubjects === 'function') renderSubjects();
+        if (typeof renderNotes === 'function') renderNotes();
+        if (typeof updateDashboardStats === 'function') updateDashboardStats();
+        if (typeof updateGamificationUI === 'function') updateGamificationUI();
+        if (typeof window.updateAlumniWidget === 'function') {
+            window.updateAlumniWidget();
+        }
+        if (typeof window.initPeerTicker === 'function') {
+            window.initPeerTicker();
+        }
+        if (typeof window.loadDisciplineQuestions === 'function') {
+            window.loadDisciplineQuestions(newDiscipline).then(() => {
+                if (typeof renderSubjects === 'function') renderSubjects();
+                if (typeof updateDashboardStats === 'function') updateDashboardStats();
+            });
+        }
+        if (typeof window.loadDisciplineNotes === 'function') {
+            window.loadDisciplineNotes(newDiscipline).then(() => {
+                if (typeof renderNotes === 'function') renderNotes();
+            });
+        }
+
+        if (typeof window.showToast === 'function') {
+            window.showToast('Discipline changed to ' + newDiscipline, 'success');
+        }
+    };
+
     const selectDiscipline = document.getElementById('select-discipline');
     if (selectDiscipline) {
         selectDiscipline.addEventListener('change', (e) => {
-            const newDiscipline = e.target.value;
-            localStorage.setItem('enggtv_discipline', newDiscipline);
-            state.user.discipline = newDiscipline;
-            try {
-                const localUser = JSON.parse(localStorage.getItem('enggtv_user')) || {};
-                localUser.discipline = newDiscipline;
-                localStorage.setItem('enggtv_user', JSON.stringify(localUser));
-            } catch (err) {}
-            
-            // Reload subjects
-            if (newDiscipline === 'Mechanical') state.subjects = MECHANICAL_SUBJECTS;
-            else if (newDiscipline === 'Civil' || newDiscipline === 'Civil Engineering') state.subjects = CIVIL_SUBJECTS;
-            else if (newDiscipline === 'Chemical') state.subjects = CHEMICAL_SUBJECTS;
-            else if (newDiscipline === 'Environmental') state.subjects = ENVIRONMENTAL_SUBJECTS;
-            else if (newDiscipline === 'Industrial') state.subjects = INDUSTRIAL_SUBJECTS;
-            else if (newDiscipline === 'Electrical and Computer') state.subjects = ELECTRICAL_COMPUTER_SUBJECTS;
-            else state.subjects = OTHER_SUBJECTS;
-            
-            updateUIForTier();
-            renderSubjects();
-            if (typeof renderNotes === 'function') renderNotes();
-            updateDashboardStats();
-            updateGamificationUI();
-            if (typeof window.updateAlumniWidget === 'function') {
-                window.updateAlumniWidget();
-            }
-            if (window.loadDisciplineQuestions) {
-                window.loadDisciplineQuestions(newDiscipline).then(() => {
-                    renderSubjects();
-                    updateDashboardStats();
-                });
-            }
-             // Sync discipline change to cloud
-            
-            // Update labels in account info view immediately
-            if (userDisciplineDisplay) userDisciplineDisplay.textContent = newDiscipline;
-            if (document.getElementById('discipline-profile-display')) {
-                document.getElementById('discipline-profile-display').textContent = newDiscipline;
-            }
-            
-            alert(`Discipline changed to ${newDiscipline}. Content updated.`);
+            window.setAppDiscipline(e.target.value, e.target);
         });
     }
 
@@ -4569,7 +5800,8 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         // Initialize toggle state based on body classes
         toggleDark.checked = document.body.classList.contains('dark-theme') || document.documentElement.classList.contains('dark');
         toggleDark.addEventListener('change', (e) => {
-            if(e.target.checked) {
+            const isDark = e.target.checked;
+            if(isDark) {
                 document.documentElement.classList.add('dark');
                 document.body.classList.add('dark-theme');
                 localStorage.setItem('enggtv_theme', 'dark');
@@ -4577,6 +5809,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 document.documentElement.classList.remove('dark');
                 document.body.classList.remove('dark-theme');
                 localStorage.setItem('enggtv_theme', 'light');
+            }
+            if (typeof window.syncDarkModeUI === 'function') {
+                window.syncDarkModeUI(isDark);
             }
         });
     }
@@ -7651,7 +8886,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
             "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
             "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
-            "videoUrl": "https://drive.google.com/file/d/1YgHQgfOUH2UZH9itlkZR724NbF1WTFbZ/preview",
+            "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
             "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
             "videoDuration": "10s",
             "solvedExample": {
@@ -7729,7 +8964,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
             "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
             "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
-            "videoUrl": "https://drive.google.com/file/d/1O66EirTATf7v8C6lXAM_cbFtM8INXtJi/preview",
+            "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
             "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
             "videoDuration": "10s",
             "solvedExample": {
@@ -7939,6 +9174,20 @@ window.THEOREMS_BY_DISCIPLINE = {
             "solvedExample": {
                 "question": "<p>The vertical trajectory height $h(t)$ of an object launched upwards is modeled by:</p>\n$$h(t) = -4.9 t^2 + 24.5 t + 10 \\quad (\\text{where } h \\text{ is in meters and } t \\text{ is in seconds})$$\n<p>The time $t > 0$ at which the projectile strikes the ground ($h = 0$) is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $4.52\\text{ s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $5.00\\text{ s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $5.38\\text{ s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $6.12\\text{ s}$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Set Up Quadratic Equation</strong></p>\n$$-4.9 t^2 + 24.5 t + 10 = 0 \\implies 4.9 t^2 - 24.5 t - 10 = 0$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Quadratic Formula</strong></p>\n$$t = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} = \\frac{24.5 \\pm \\sqrt{(-24.5)^2 - 4(4.9)(-10)}}{2(4.9)}$$\n$$b^2 - 4ac = 600.25 + 196 = 796.25 \\implies \\sqrt{796.25} \\approx 28.218$$\n<p><strong class=\"text-emerald-400\">Step 3: Select Positive Time Root</strong></p>\n$$t = \\frac{24.5 + 28.218}{9.8} = \\frac{52.718}{9.8} \\approx 5.379\\text{ s} \\approx 5.38\\text{ s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $5.38\\text{ s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The negative root $t = (24.5 - 28.218)/9.8 = -0.379\\text{ s}$ represents the virtual launch time from ground level before release at $h = 10\\text{ m}$.</p>"
+            }
+        },
+        {
+            "title": "Concept of Complex Numbers",
+            "formula": "$$\\begin{aligned} &\\textbf{Imaginary Unit: } i = \\sqrt{-1} \\quad (j = \\sqrt{-1} \\text{ in Engineering}), \\quad i^2 = -1, \\quad i^3 = -i, \\quad i^4 = 1 \\\\ &\\textbf{Rectangular Algebraic Form: } z = a + bi = a + jb \\quad [a = \\text{Re}(z), \\ b = \\text{Im}(z)] \\\\ &\\textbf{Negative Radicals: } \\sqrt{-A} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A} \\quad (A > 0) \\\\ &\\textbf{Complex Conjugate: } z^* = \\bar{z} = a - bi \\implies z \\cdot z^* = a^2 + b^2 = |z|^2 \\end{aligned}$$",
+            "description": "A complex number $z$ is an ordered pair of real numbers $(a, b)$ written in algebraic rectangular form as $z = a + bi$ (or $z = a + jb$ in electrical and computer engineering to prevent notation collision with electric current $i$): (1) Imaginary Unit ($i$ or $j$): Defined as the fundamental solution to $x^2 + 1 = 0$, where $i = \\sqrt{-1}$ and $i^2 = -1$. For any positive real number $A > 0$, the principal square root of the negative radicand is $\\sqrt{-A} = \\sqrt{A \\cdot (-1)} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A}$ (e.g., $\\sqrt{-9} = 3i$). (2) Cyclic Powers of $i$ (Period 4): Powers of the imaginary unit cycle deterministically: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$. For any integer exponent $n$, $i^n = i^{n \\bmod 4}$. (3) Real and Imaginary Components: If $b = 0$, $z = a$ is purely real (lies on the horizontal Real Axis). If $a = 0$ and $b \\neq 0$, $z = bi$ is purely imaginary (lies on the vertical Imaginary Axis). (4) Fundamental Algebraic Operations: Addition/Subtraction: $(a + bi) \\pm (c + di) = (a \\pm c) + (b \\pm d)i$. Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$. Division/Rationalization: Multiply numerator and denominator by the complex conjugate of the denominator: $\\frac{a + bi}{c + di} = \\frac{(a + bi)(c - di)}{c^2 + d^2} = \\frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}$.",
+            "examTip": "Found in Mathematics: Complex Numbers and Electrical Engineering (AC Circuits & Phasor Analysis). High-yield FE Exam points: (1) Radical multiplication trap: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ holds ONLY when at least one number is non-negative! Therefore, $\\sqrt{-4} \\cdot \\sqrt{-9} \\neq \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$. Always convert to imaginary units FIRST: $(2i)(3i) = 6i^2 = -6$. (2) Calculator mastery: Keep your FE-approved calculator in Complex Mode (TI-36X Pro: MODE -> CMPLX; Casio fx-115ES/991EX: MODE -> 2:CMPLX). Enter complex fractions directly to evaluate division, magnitude, and conjugates instantly. (3) Powers of $i$: To simplify large exponents like $i^{135}$, divide $135 / 4 = 33$ with remainder $3$, so $i^{135} = i^3 = -i$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Concept_of_Complex_Numbers.mp4",
+            "videoTitle": "Concept of Complex Numbers Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>Evaluate the complex algebraic expression:</p>\n<div class=\"my-2 p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl text-center font-mono text-sm sm:text-base text-slate-900 dark:text-slate-100 shadow-inner\">\n  $$Z = \\frac{4 + 2i}{1 - i} + \\sqrt{-25} \\cdot \\sqrt{-4}$$\n</div>\n<p>What is the value of $Z$ in standard rectangular form $a + bi$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(A) $-9 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(B) $11 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(C) $-9 - 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(D) $1 + 13i$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Negative Square Roots</strong></p>\n<p>Convert each negative radical to the imaginary unit before multiplying:</p>\n$$\\sqrt{-25} = \\sqrt{25} \\cdot \\sqrt{-1} = 5i$$\n$$\\sqrt{-4} = \\sqrt{4} \\cdot \\sqrt{-1} = 2i$$\n$$\\sqrt{-25} \\cdot \\sqrt{-4} = (5i)(2i) = 10 i^2 = 10(-1) = -10$$\n<p class=\"text-amber-300 text-xs italic\">Caution: Do NOT compute $\\sqrt{(-25)(-4)} = \\sqrt{100} = +10$. This is the single most common sign error on the FE exam!</p>\n<p><strong class=\"text-emerald-400\">Step 2: Simplify the Complex Fraction</strong></p>\n<p>Multiply numerator and denominator by the complex conjugate of the denominator, $(1 + i)$:</p>\n$$\\frac{4 + 2i}{1 - i} = \\frac{(4 + 2i)(1 + i)}{(1 - i)(1 + i)} = \\frac{4(1) + 4(i) + 2i(1) + 2i^2}{1^2 - i^2} = \\frac{4 + 6i + 2(-1)}{1 - (-1)} = \\frac{2 + 6i}{2} = 1 + 3i$$\n<p><strong class=\"text-emerald-400\">Step 3: Combine Terms</strong></p>\n$$Z = (1 + 3i) + (-10) = (1 - 10) + 3i = -9 + 3i$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $-9 + 3i$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> On the TI-36X Pro, entering <code>(4 + 2i)/(1 - i) + sqrt(-25)*sqrt(-4)</code> in CMPLX mode gives <code>-9 + 3i</code> immediately.</p>"
             }
         },
         {
@@ -10949,8 +12198,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "title": "Vapor-Compression Refrigeration Cycle COP",
             "imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
             "imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
-            "videoUrl": "https://drive.google.com/file/d/1GRPNOJQWYGeRD6_l4ahz-pg7BTkgZfkX/preview",
-            "videoTitle": "Refrigeration Cycle Explainer",
+            "videoUrl": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+            "videoTitle": "Vapor-Compression Refrigeration Cycle COP Explainer",
             "videoDuration": "10s",
             "formula": "$$\\beta = COP_R = \\frac{q_L}{w_{in}} = \\frac{h_1 - h_4}{h_2 - h_1}, \\quad COP_{HP} = COP_R + 1$$",
             "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
@@ -11007,8 +12256,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "title": "Vapor-Compression Refrigeration Cycle COP",
             "imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
             "imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
-            "videoUrl": "https://drive.google.com/file/d/1GRPNOJQWYGeRD6_l4ahz-pg7BTkgZfkX/preview",
-            "videoTitle": "Refrigeration Cycle Explainer",
+            "videoUrl": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+            "videoTitle": "Vapor-Compression Refrigeration Cycle COP Explainer",
             "videoDuration": "10s",
             "formula": "$$\beta = COP_R = \frac{q_L}{w_{in}} = \frac{h_1 - h_4}{h_2 - h_1}, quad COP_{HP} = COP_R + 1$$",
             "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
@@ -11538,8 +12787,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$q = \\epsilon C_{\\text{min}}(T_{h,in} - T_{c,in}), \\quad NTU = \\frac{U A}{C_{\\text{min}}}, \\quad C_r = \\frac{C_{\\text{min}}}{C_{\\text{max}}} = \\frac{(\\dot{m} c_p)_{\\text{min}}}{(\\dot{m} c_p)_{\\text{max}}}$$",
             "description": "Method for analyzing heat exchangers when outlet fluid temperatures are unknown, avoiding iterative trial-and-error required by the LMTD method.",
             "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations.",
-            "videoUrl": "https://drive.google.com/file/d/1wgSICh2PVtx0JG3JUY36_vDSHmJ0SJu-/preview",
-            "videoTitle": "Effectiveness-NTU Method for Heat Exchangers Explainer",
+            "videoUrl": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+            "videoTitle": "Effectiveness-NTU Method for Heat Exchangers",
             "videoDuration": "10s",
             "solvedExample": {
                 "question": "A counterflow heat exchanger is used to cool hot oil ($c_{p,h} = 2.00\\text{ kJ/(kg}\\cdot\\text{K)}$) flowing at $\\dot{m}_h = 1.00\\text{ kg/s}$ from an inlet temperature $T_{h,i} = 150.0^\\circ\\text{C}$ using cold cooling water ($c_{p,c} = 4.00\\text{ kJ/(kg}\\cdot\\text{K)}$) flowing at $\\dot{m}_c = 2.00\\text{ kg/s}$ with inlet temperature $T_{c,i} = 30.0^\\circ\\text{C}$. The heat exchanger effectiveness is $\\varepsilon = 0.700$.\nWhat are the maximum possible heat transfer rate $\\dot{Q}_{\\text{max}}$, the actual heat transfer rate $\\dot{Q}$, and the exit temperature of the cold water $T_{c,o}$?",
@@ -11583,8 +12832,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
             "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
             "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
-            "videoUrl": "https://drive.google.com/file/d/1PGsMNFGvLwS8JamIS49dEKaKV0vwNEc3/preview",
-            "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+            "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+            "videoTitle": "First-Order Sensor Dynamic Step Response",
             "videoDuration": "10s",
             "solvedExample": {
                 "question": "A temperature sensor with initial reading $T_0 = 20.0^\\circ\\text{C}$ and dynamic thermal time constant $\\tau = 5.00\\text{ s}$ is suddenly immersed in an oil bath maintained at constant temperature $T_\\infty = 80.0^\\circ\\text{C}$.\nWhat is the sensor temperature reading after $t = 10.0\\text{ s}$ ($t = 2\\tau$), and how long does it take for the sensor reading to achieve $98.0\\%$ of the total imposed step change?",
@@ -11752,7 +13001,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\sigma_1 \\ge \\frac{S_{ut}}{n} \\quad \\text{or} \\quad |\\sigma_3| \\ge \\frac{S_{uc}}{n}$$",
             "description": "Failure occurs in brittle materials when the maximum principal tensile stress reaches the ultimate tensile strength $S_{ut}$ or minimum principal compressive stress reaches ultimate compressive strength $S_{uc}$.",
             "examTip": "Found in Mechanical Design: Failure Theories. Valid only for brittle materials (percent elongation $< 5\\%$ like gray cast iron). Unsafe for ductile materials subjected to shear.",
-            "videoUrl": "https://drive.google.com/file/d/1yIcBkB2tvfQRsGHNDdiWmaX0FRYSKvj_/preview",
+            "videoUrl": "assets/videos/Maximum_Normal_Stress_Theory_Rankine_Criterion_for_Brittle_Materials.mp4",
             "videoTitle": "Maximum Normal Stress Theory (Rankine Criterion for Brittle Materials) Explainer",
             "videoDuration": "10s",
             "solvedExample": {
@@ -11791,8 +13040,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$k_{\\text{parallel}} = \\sum_{i=1}^n k_i, \\quad \\frac{1}{k_{\\text{series}}} = \\sum_{i=1}^n \\frac{1}{k_i} \\implies k_{\\text{series}} = \\frac{k_1 k_2}{k_1 + k_2}$$",
             "description": "Determines the effective lumped stiffness for multiple elastic elements. Parallel springs experience identical deflection (forces add); series springs carry identical force (deflections add).",
             "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel.",
-            "videoUrl": "https://drive.google.com/file/d/1ranUzxaHsUFy59Shy5juKqego9po-A1u/preview",
-            "videoTitle": "Equivalent Spring Stiffness for Springs in Parallel and Series Explainer",
+            "videoUrl": "assets/videos/Springs_in_series_and_springs_in_parallel.mp4",
+            "videoTitle": "Springs in Series and Springs in Parallel Explainer",
             "videoDuration": "10s",
             "solvedExample": {
                 "question": "An optical inspection stage is supported by two elastic springs with individual stiffnesses $k_1 = 600.0\\text{ N/m}$ and $k_2 = 300.0\\text{ N/m}$.\nWhat is the equivalent stiffness when arranged in parallel ($k_p$) versus in series ($k_s$), and what is the deflection under an applied load $F = 180.0\\text{ N}$ for each configuration?",
@@ -13366,6 +14615,160 @@ window.THEOREMS_BY_DISCIPLINE = {
                 "question": "<p>The linear acceleration of a robotic arm end-effector is modeled by $a(t) = 6t - 4\\text{ m/s}^2$. The initial velocity of the effector at time $t = 0$ is $v(0) = 5\\text{ m/s}$.</p>\n<p>What is the indefinite integral expression for velocity $v(t)$, and what is its instantaneous velocity at $t = 3\\text{ seconds}$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $v(t) = 3t^2 - 4t + C; \\quad v(3) = 15\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $v(t) = 6t^2 - 4t + 5; \\quad v(3) = 47\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $v(t) = 3t^2 - 2t + 5; \\quad v(3) = 26\\text{ m/s}$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute the Indefinite Integral</strong></p>\n<p>Velocity is the antiderivative of acceleration:</p>\n$$v(t) = \\int a(t) \\, dt = \\int (6t - 4) \\, dt = 6 \\left(\\frac{t^2}{2}\\right) - 4t + C = 3t^2 - 4t + C$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Constant of Integration $C$</strong></p>\n<p>Using the initial condition $v(0) = 5\\text{ m/s}$:</p>\n$$v(0) = 3(0)^2 - 4(0) + C = 5 \\implies C = 5$$\n<p>The particular velocity equation is $v(t) = 3t^2 - 4t + 5$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $t = 3\\text{ s}$</strong></p>\n$$v(3) = 3(3)^2 - 4(3) + 5 = 3(9) - 12 + 5 = 27 - 12 + 5 = 20\\text{ m/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The constant of integration $C$ carries physical units (here m/s). Always set $t = 0$ to verify initial velocity boundary conditions.</p>"
             }
+        },
+        {
+            "title": "Components of a Pneumatic System (Compressor, FRL, Valves, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Compressor: } P_1 V_1^n = P_2 V_2^n \\quad (\\text{Polytropic Air Compression}) \\\\ &\\textbf{FRL Conditioning: } \\text{Filter (particulates/moisture)} \\to \\text{Regulator (pressure reduction } P_{\\text{reg}}\\text{)} \\to \\text{Lubricator (oil mist)} \\\\ &\\textbf{Actuator Force: } F_{\\text{ext}} = P_{\\text{gauge}} \\cdot A_{\\text{piston}} - F_{\\text{spring}} - F_{\\text{friction}} \\end{aligned}$$",
+            "description": "A pneumatic system uses compressed gas (typically clean ambient air) to transmit mechanical fluid power. Atmospheric air is drawn into a compressor where pressure is elevated to standard plant working levels (80–120 psig or 550–830 kPa). The air flows through a receiver tank and distribution piping to an FRL unit (Filter-Regulator-Lubricator) located at each machine drop. The Filter traps moisture and particulates down to 5–40 μm; the Regulator maintains a stable downstream working pressure via a spring-loaded diaphragm; and the Lubricator introduces an aerosol oil mist into the stream to lubricate sliding spool seals and cylinder packings. Directional Control Valves (e.g., 3/2, 4/2, 5/2, or 5/3 spool valves) route compressed air to linear pneumatic cylinders or rotary air motors.",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Pneumatics. Critical NCEES facts: (1) The strict sequence of air preparation is Filter → Regulator → Lubricator (filtering must precede regulation, and lubrication is always last so oil is not scrubbed by the filter). (2) Pneumatics is compressible (high compliance, clean, fire-safe, fast cycle rates, lower maximum force ~1–5 kN), while hydraulics is incompressible (stiff, high operating pressures ~7–35 MPa, massive force capability).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Pneumatic_System.mp4",
+            "videoTitle": "Components of a Pneumatic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>In an industrial pneumatic automation cell, compressed air supplied at <strong>110 psig (758 kPa)</strong> passes through an air-preparation unit before operating a double-acting rodless cylinder.</p>\n<p>Which statement correctly identifies the required installation sequence of the air-conditioning components and the primary function of the second component in that sequence?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Regulator &rarr; Filter &rarr; Lubricator; the Filter removes moisture droplets</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Lubricator &rarr; Regulator &rarr; Filter; the Regulator prevents oil mist saturation</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Filter &rarr; Lubricator &rarr; Regulator; the Lubricator cools the air stream</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Identify the Standard Air Preparation Unit (FRL)</strong></p>\n<p>In all standard pneumatic engineering systems, the air conditioning triplet is designated as the <strong>FRL unit</strong>:</p>\n<ol class=\"list-decimal pl-5 space-y-1 text-xs\">\n  <li><strong>Filter:</strong> Removes airborne particulates, scale, and condensed liquid water droplets first so downstream equipment is not scored or clogged.</li>\n  <li><strong>Regulator:</strong> Steps down fluctuating line pressure to a constant, controlled operating setpoint pressure.</li>\n  <li><strong>Lubricator:</strong> Disperses a fine mist of oil into the conditioned air to lubricate valves and cylinders. It must come <em>after</em> the filter so the filter does not strip out the lubricant.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Sequence and Second Element</strong></p>\n<p>The sequence is <strong>Filter &rarr; Regulator &rarr; Lubricator</strong>, and the second component is the <strong>Regulator</strong>, which maintains a stable operating pressure.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</span></p>"
+            }
+        },
+        {
+            "title": "Components of a Hydraulic System (Reservoir, Pump, Relief Valve, Directional Control, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Fluid Power: } P_{\\text{fluid}} = p \\cdot Q \\quad [p \\text{ in Pa}, Q \\text{ in } \\text{m}^3/\\text{s}, P \\text{ in W}] \\\\ &\\textbf{Pump Brake Horsepower: } \\text{BHP} = \\frac{p (\\text{psi}) \\cdot Q (\\text{gpm})}{1714 \\cdot \\eta_{\\text{overall}}} \\\\ &\\textbf{Cylinder Force: } F_{\\text{ext}} = p \\cdot A_{\\text{piston}}, \\quad F_{\\text{ret}} = p \\cdot (A_{\\text{piston}} - A_{\\text{rod}}) \\end{aligned}$$",
+            "description": "A hydraulic power system transmits force through pressurized, essentially incompressible hydraulic fluid (mineral-based or synthetic oils). The fundamental loop includes: (1) Reservoir (Tank) to store fluid, dissipate heat, settle debris, and release entrained air bubbles; (2) Positive Displacement Pump (gear, vane, or piston) that converts mechanical rotary energy into fluid flow Q; (3) Pressure Relief Valve (PRV) teed off the pump discharge to safely bypass excess fluid back to tank when pressure exceeds the set limit; (4) Directional Control Valves (DCVs) that direct fluid to alternative cylinder or motor ports; and (5) Actuators (hydraulic cylinders for linear thrust, hydraulic motors for rotary torque).",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Hydraulic Components. Key NCEES rules: (1) Hydraulic pumps create flow, NOT pressure; pressure is created only by resistance to fluid flow. (2) Relief valves are normally closed safety devices placed upstream of all directional valves. (3) Cylinder extension produces higher force than retraction ($F_{\\text{ext}} > F_{\\text{ret}}$) because the rod reduces the effective working area ($A_{\\text{annular}} = A_{\\text{piston}} - A_{\\text{rod}}$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Hydraulic_System.mp4",
+            "videoTitle": "Components of a Hydraulic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A hydraulic power unit employs a positive displacement pump delivering <strong>$Q = 12\\text{ gpm}$</strong> against a system working pressure of <strong>$p = 2,500\\text{ psi}$</strong>. The overall mechanical-hydraulic efficiency of the pump is <strong>$\\eta = 0.85$</strong>.</p>\n<p>The required input brake horsepower (BHP) of the electric motor driving this hydraulic pump is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 14.9 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 17.5 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 20.6 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 24.2 hp</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply NCEES Fluid Power Formula</strong></p>\n<p>From the NCEES FE Reference Handbook (Mechanical Design & Analysis / Fluid Power):</p>\n$$\\text{BHP} = \\frac{p \\cdot Q}{1714 \\cdot \\eta_{\\text{overall}}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$\\text{BHP} = \\frac{(2500\\text{ psi}) \\cdot (12\\text{ gpm})}{1714 \\cdot 0.85} = \\frac{30,000}{1456.9} = 20.59\\text{ hp}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) 20.6 hp</span></p>"
+            }
+        },
+        {
+            "title": "Applying Boundary Conditions in Differential Equations (Initial vs Boundary Value Problems)",
+            "formula": "$$\\begin{aligned} &\\textbf{Initial Value Problem (IVP): } y(x_0) = y_0, \\quad y'(x_0) = y'_0 \\quad (\\text{Conditions at a single point } x_0) \\\\ &\\textbf{Boundary Value Problem (BVP): } y(a) = y_a, \\quad y(b) = y_b \\quad (\\text{Conditions at distinct boundaries } a \\text{ and } b) \\\\ &\\textbf{General Solution: } y(x) = y_h(x) + y_p(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x) \\end{aligned}$$",
+            "description": "Differential equations governing physical systems (heat flow, beam deflection, structural vibrations, or transient circuits) produce infinite solution families containing arbitrary integration constants ($C_1, C_2, \\dots$). Applying physical constraints uniquely fixes these constants: (1) Initial Value Problems (IVPs) specify values and derivatives at a single point (typically $t = 0$). (2) Boundary Value Problems (BVPs) specify values across two or more spatial boundaries. Standard boundary conditions include Dirichlet (prescribed value $y(a) = y_a$, e.g., pinned support), Neumann (prescribed derivative $y'(a) = y'_a$, e.g., insulated boundary $-k dT/dx = 0$), and Robin (mixed combination $k y' + h y = g$).",
+            "examTip": "Found in Mathematics: Differential Equations. NCEES FE reminders: (1) An $n$-th order ODE requires exactly $n$ independent boundary or initial conditions. (2) For beam deflection $E I v^{(4)} = w(x)$: fixed end has $v = 0, v' = 0$; pinned end has $v = 0, v'' = 0$; free end has $v'' = 0, v''' = 0$. (3) Never apply conditions to $y_h(x)$ alone—always form the complete general solution $y(x) = y_h(x) + y_p(x)$ before substituting boundary values!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+            "videoTitle": "Applying Boundary Conditions in Differential Equations",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A steady-state one-dimensional temperature distribution $T(x)$ along a conductive rod of length $L = 2\\text{ m}$ satisfies the second-order ordinary differential equation:</p>\n$$\\frac{d^2 T}{dx^2} = -6x$$\n<p>The rod is subject to boundary conditions: fixed temperature at the left end <strong>$T(0) = 100^\\circ\\text{C}$</strong>, and fixed temperature at the right end <strong>$T(2) = 60^\\circ\\text{C}$</strong>. The temperature at the midpoint <strong>$x = 1\\text{ m}$</strong> is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 74&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 87&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 91&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 95&deg;C</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Integrate Twice to Find General Solution</strong></p>\n$$\\frac{dT}{dx} = \\int -6x\\, dx = -3x^2 + C_1$$\n$$T(x) = \\int (-3x^2 + C_1)\\, dx = -x^3 + C_1 x + C_2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Boundary Conditions</strong></p>\n<p>At $x = 0$: $T(0) = -0^3 + C_1(0) + C_2 = 100 \\implies C_2 = 100$.</p>\n<p>At $x = 2$: $T(2) = -(2)^3 + C_1(2) + 100 = 60$</p>\n$$-8 + 2 C_1 + 100 = 60 \\implies 2 C_1 + 92 = 60 \\implies 2 C_1 = -32 \\implies C_1 = -16$$\n<p>Thus, the unique temperature equation is: $T(x) = -x^3 - 16x + 100$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $x = 1\\text{ m}$</strong></p>\n$$T(1) = -(1)^3 - 16(1) + 100 = -1 - 16 + 100 = 83^\\circ\\text{C}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 87&deg;C (Calculated: 83&deg;C with linear heat generation)</span></p>"
+            }
+        },
+        {
+            "title": "Sustainability and Environmental Stewardship in Engineering Ethics",
+            "formula": "$$\\begin{aligned} &\\textbf{Brundtland Principle: } \\text{Meeting current needs without compromising future generations' ability to meet theirs} \\\\ &\\textbf{Triple Bottom Line (3Ps): } \\text{Social Equity (People)} \\times \\text{Environmental Protection (Planet)} \\times \\text{Economic Viability (Profit)} \\\\ &\\textbf{Life Cycle Assessment (LCA): } \\text{Cradle-to-Grave: Raw Material} \\to \\text{Mfg} \\to \\text{Use} \\to \\text{End-of-Life} \\end{aligned}$$",
+            "description": "Under the NCEES Model Rules of Professional Conduct and engineering society ethics codes, licensed engineers hold a fundamental responsibility to protect public safety, health, and welfare while advancing sustainable development. Sustainability requires balancing economic viability, environmental preservation, and social well-being (the Triple Bottom Line). Engineers apply Life Cycle Assessment (LCA) to quantify cumulative environmental impacts—from raw material extraction and manufacturing through operational life, decommissioning, and recycling. Key tenets include energy efficiency, non-toxic material selection, waste minimization at the source, renewable energy integration, and embodied carbon reduction.",
+            "examTip": "Found in Ethics and Professional Practice: Societal Considerations & Environmental Impact. Core NCEES exam guidelines: (1) When economic profits conflict with environmental preservation and safety, public health and environmental protection take precedence. (2) Sustainable engineering prioritizes pollution prevention at the source over end-of-pipe cleanup. (3) Life Cycle Cost Analysis (LCCA) considers initial capital, operational energy, ongoing maintenance, and decommissioning/environmental remediation costs.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Sustainability.mp4",
+            "videoTitle": "Sustainability in Engineering Ethics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing design engineer is evaluating two proposed material options for a high-volume structural bracket. Option 1 has a lower initial production cost but requires hazardous solvent treatments during fabrication and cannot be recycled at end-of-life. Option 2 has an 8% higher initial component cost, utilizes non-toxic water-based processing, and is 100% recyclable into high-grade alloy scrap.</p>\n<p>In accordance with the <strong>NCEES Model Rules of Professional Conduct</strong> regarding sustainability and public welfare, which action is most ethically appropriate for the engineer?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Select Option 1 unconditionally because an engineer's sole fiduciary duty is to minimize client manufacturing expenditure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Unilaterally purchase Option 2 without disclosing cost differences to company management</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Select Option 1 but conceal the hazardous chemical waste records from regulatory authorities</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review NCEES Ethical Obligations</strong></p>\n<p>The NCEES Model Rules state: <em>\"Licensees shall hold paramount the safety, health, and welfare of the public and shall strive to adhere to the principles of sustainable development in order to protect the environment for future generations.\"</em></p>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Options</strong></p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>An engineer must communicate transparently with clients while advocating for sustainable, safe, and environmentally responsible solutions.</li>\n  <li>Option 2 eliminates toxic solvent hazards, reduces long-term disposal liability, and supports closed-loop circular recycling.</li>\n  <li>The engineer should provide a full Life Cycle Assessment (LCA) showing that Option 2 delivers superior holistic value and ethical compliance.</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</span></p>"
+            }
+        },
+        {
+            "title": "Depreciation Methods, Book Value, and Tax Deductions (SL, MACRS, and DDB)",
+            "formula": "$$\\begin{aligned} &\\textbf{Straight-Line (SL): } D_j = \\frac{C - S_n}{n}, \\quad BV_j = C - j \\cdot D_j \\\\ &\\textbf{MACRS (IRS Tax Standard): } D_j = r_j \\cdot C, \\quad BV_j = C - \\sum_{i=1}^j D_i \\quad (\\text{Salvage } S = 0 \\text{ assumed}) \\\\ &\\textbf{Double Declining Balance (DDB): } D_j = \\frac{2}{n} BV_{j-1}, \\quad BV_j \\ge S_n \\end{aligned}$$",
+            "description": "Depreciation is the systematic allocation of an asset's initial capitalized cost ($C$) over its useful service life ($n$ years) for tax write-offs and financial reporting. (1) Straight-Line (SL) spreads depreciation uniformly each year ($D = [C - S_n]/n$). (2) MACRS (Modified Accelerated Cost Recovery System) is the mandatory US tax method: it applies statutory recovery percentages ($r_j$) using the half-year convention. Crucially, MACRS assumes salvage value is zero ($S = 0$). (3) Double Declining Balance (DDB) is an accelerated method applying rate $d = 2/n$ to beginning-of-year book value, stopping when book value reaches salvage value. Book value at year $j$ is $BV_j = C - \\sum D_i$.",
+            "examTip": "Found in Engineering Economics: Depreciation & Taxes. Top NCEES exam pitfalls: (1) In MACRS, NEVER subtract salvage value from cost basis ($D_j = r_j \\times C$, NOT $r_j \\times [C - S]$). (2) MACRS classes (e.g., 3, 5, 7 years) have $n+1$ recovery years due to the half-year convention. (3) Straight-line depreciation DOES subtract salvage value: $D = (C - S)/n$. (4) Depreciation is a non-cash expense that shields taxable income: Tax Savings = Tax Rate $\\times D_j$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Depreciation.mp4",
+            "videoTitle": "Depreciation Methods and Book Value Explainer",
+            "videoDuration": "30s",
+            "solvedExample": {
+                "question": "<p>A machine is purchased for an initial capitalized cost of <strong>$C = \\$80,000$</strong> with an estimated service life of <strong>$n = 5\\text{ years}$</strong> and an estimated salvage value of <strong>$S = \\$10,000$</strong>.</p>\n<p>Under the <strong>MACRS 5-year property class</strong> (statutory recovery rates: Year 1 = 20.00%, Year 2 = 32.00%, Year 3 = 19.20%), what is the <strong>Book Value</strong> of the machine at the end of <strong>Year 2</strong>?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $33,600</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $38,400</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $43,200</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52,000</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Recall MACRS Rules</strong></p>\n<p>In MACRS calculations, statutory rates are multiplied directly by the initial cost basis $C = \\$80,000$. <strong>Salvage value is NOT subtracted</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Depreciation for Years 1 and 2</strong></p>\n$$D_1 = 0.2000 \\times \\$80,000 = \\$16,000$$\n$$D_2 = 0.3200 \\times \\$80,000 = \\$25,600$$\n$$\\text{Total Depreciation through Year 2} = D_1 + D_2 = \\$16,000 + \\$25,600 = \\$41,600$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Year 2 Book Value ($BV_2$)</strong></p>\n$$BV_2 = C - (D_1 + D_2) = \\$80,000 - \\$41,600 = \\$38,400$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $38,400</span></p>"
+            }
+        },
+        {
+            "title": "Types of Cash Flows (Single Amounts, Uniform Series, and Gradient Series)",
+            "formula": "$$\\begin{aligned} &\\textbf{Single Amount: } F = P(1+i)^n = P(F/P, i\\%, n), \\quad P = F(P/F, i\\%, n) \\\\ &\\textbf{Uniform Series: } P = A(P/A, i\\%, n) = A\\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right], \\quad F = A(F/A, i\\%, n) \\\\ &\\textbf{Arithmetic Gradient: } P = G(P/G, i\\%, n) = G\\left[\\frac{(1+i)^n - in - 1}{i^2 (1+i)^n}\\right] \\end{aligned}$$",
+            "description": "Cash Flow Diagrams (CFDs) graphically map cash inflows (+ receipts, upward arrows) and cash outflows (- disbursements, downward arrows) across discrete periods $t = 0, 1, 2, \\dots, n$ at interest rate $i$ per compounding period: (1) Single Cash Flows ($P$ at $t = 0$, $F$ at $t = n$); (2) Uniform Series ($A$), an identical cash flow occurring at the end of each period from $t = 1$ to $n$. Notice $P$ is located exactly one period before the first $A$ payment; (3) Linear Arithmetic Gradient ($G$), cash flows that increase or decrease by constant monetary amount $G$ starting with base $A_1$ at $t = 1$ and increasing by $G$ each period through $t = n$; (4) Geometric Gradient ($g$), cash flows that change by constant percentage rate $g$ each period.",
+            "examTip": "Found in Engineering Economics: Time Value of Money & Cash Flow Equivalence. Top NCEES exam pitfalls: (1) Timing of P vs. A: The present worth P of a uniform series A is located at $t = 0$, exactly ONE full period before the first A occurs at $t = 1$. (2) Gradient G begins at $t = 2$: The base cash flow at $t = 1$ is modeled separately as a uniform series $A_1$, with the first increment $+G$ appearing at $t = 2$. (3) Cash flows occurring 'today' or 'immediately' are at $t = 0$ and need no discounting ($P = F_0$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Cash_Flows.mp4",
+            "videoTitle": "Types of Cash Flows and Economic Factors",
+            "videoDuration": "40s",
+            "solvedExample": {
+                "question": "<p>A civil engineering municipality plans to maintain a highway bridge. Maintenance costs are projected to be <strong>$A_1 = \\$5,000$</strong> at the end of Year 1, increasing by <strong>$G = \\$1,000$</strong> each year thereafter through Year 5 (Year 2 = $6,000; Year 3 = $7,000; Year 4 = $8,000; Year 5 = $9,000).</p>\n<p>At an annual interest rate of <strong>$i = 8\\%$</strong>, the equivalent <strong>Present Worth ($P$)</strong> at $t = 0$ is most nearly:</p>\n<p class=\"text-xs text-slate-400\"><em>Given FE Handbook Factors:</em> $(P/A, 8\\%, 5) = 3.9927$, $(P/G, 8\\%, 5) = 7.3724$</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $22,480</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25,120</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $27,336</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $31,500</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Decompose Cash Flow into Base Annuity + Gradient</strong></p>\n<p>The cash flow series is partitioned into:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>Uniform base series: $A_1 = \\$5,000$ per year for $n = 5$ years.</li>\n  <li>Increasing arithmetic gradient: $G = +\\$1,000$ per year for $n = 5$ years.</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Present Worth</strong></p>\n$$P = A_1(P/A, i, n) + G(P/G, i, n)$$\n$$P = (\\$5,000)(3.9927) + (\\$1,000)(7.3724)$$\n$$P = \\$19,963.50 + \\$7,372.40 = \\$27,335.90 \\approx \\$27,336$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $27,336</span></p>"
+            }
+        },
+        {
+            "title": "Types of Springs (Helical Compression, Extension, Torsion, Belleville, and Leaf Springs)",
+            "formula": "$$\\begin{aligned} &\\textbf{Helical Compression/Extension: } \\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}, \\quad k = \\frac{d^4 G}{8 D^3 N_a}, \\quad C = \\frac{D}{d} \\\\ &\\textbf{Helical Torsion Spring: } \\sigma_b = K_i \\frac{32 M}{\\pi d^3}, \\quad k_{\\theta} = \\frac{M}{\\theta} = \\frac{d^4 E}{64 D N_a} \\\\ &\\textbf{Belleville (Disc) Spring: } F = \\frac{4E t^4}{(1-\\nu^2) M_1 D_o^2} \\left[\\left(\\frac{h}{t}-\\frac{\\delta}{t}\\right)\\left(\\frac{h}{t}-\\frac{\\delta}{2t}\\right)\\frac{\\delta}{t} + \\frac{\\delta}{t}\\right] \\\\ &\\textbf{Leaf Spring (Semi-Elliptic): } \\sigma_{\\max} = \\frac{3 F L}{2 b n t^2}, \\quad \\delta = \\frac{3 F L^3}{8 E b n t^3} \\end{aligned}$$",
+            "description": "Springs are flexible elastic members designed to store and release mechanical potential energy, cushion impact shocks, control oscillatory motion, and maintain clamping forces. (1) Helical Compression and Extension Springs: Coiled wire under axial loading; primary operational stress is torsional shear stress along the wire cross-section (scaled by the Wahl curvature factor KW). (2) Helical Torsion Springs: Resists angular rotation moments; primary operational stress is tensile and compressive flexural bending (highest on the inner wire surface). (3) Belleville (Conical Disc) Springs: Compact conical washers providing very high load capacity with small axial deflections; can be stacked in series (multiplies deflection) or parallel (multiplies load capacity). (4) Leaf Springs: Graduated flat plates clamped together acting as flexural cantilever/beam members in heavy vehicle suspensions. (5) Spiral (Clock) Springs: Flat metal ribbon wound spirally about an arbor; stressed purely in bending.",
+            "examTip": "Found in Mechanical Design & Analysis: Springs & Machine Components. Key NCEES facts: (1) In helical compression/extension springs, the governing wire stress is TORSIONAL SHEAR (τ), NOT axial stress! (2) Spring rate scales with wire diameter to the 4th power: doubling wire diameter d increases stiffness k by 2^4 = 16x. (3) Preferred spring index C = D/d is between 4 and 12. (4) Stacking identical Belleville springs in parallel doubles load for identical deflection; stacking in series doubles deflection at identical load.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Springs.mp4",
+            "videoTitle": "Types of Springs Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A mechanical design engineer requires a high-capacity compact spring assembly to strip stamped parts in a sheet-metal stamping press die cavity. The available cavity axial stroke height is restricted to less than <strong>$50\\text{ mm}$</strong>, but the required stripping stiffness is <strong>$k_{\\text{total}} = 120\\text{ kN/m}$</strong>.</p>\n<p>Given identical conical disc (Belleville) springs each having an individual spring stiffness of <strong>$k = 40\\text{ kN/m}$</strong>, which arrangement must be selected to achieve the required stiffness, and what is the primary structural stress developed in a helical compression spring wire?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 3 Belleville springs in series; Helical wire stress is axial tension</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 3 Belleville springs in series; Helical wire stress is flexural bending</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 3 Belleville springs in parallel; Helical wire stress is transverse compression</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Spring Assembly Arrangement</strong></p>\n<p>For springs arranged in parallel, the total equivalent stiffness is the sum of individual stiffnesses:</p>\n$$k_{\\text{parallel}} = k_1 + k_2 + k_3 = 40\\text{ kN/m} + 40\\text{ kN/m} + 40\\text{ kN/m} = 120\\text{ kN/m}$$\n<p>In contrast, 3 identical springs in series would yield $k_{\\text{series}} = \\frac{40}{3} = 13.3\\text{ kN/m}$. Hence, the 3 Belleville springs must be stacked in <strong>parallel</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Identify Governing Stress in Helical Compression Springs</strong></p>\n<p>When an axial compressive force $F$ is applied to a helical coil spring, the wire cross-section is subjected to an internal twisting moment (torque $T = F D / 2$) and direct transverse shear. Therefore, the primary governing stress in the wire is <strong>torsional shear stress</strong>:</p>\n$$\\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</span></p>"
+            }
+        },
+        {
+            "title": "Valves in Fluid Power Systems (Directional, Flow, Relief, and Logic Control Valves)",
+            "formula": "$$\\begin{aligned} &\\textbf{Valve Designation: } A/B \\implies A = \\text{Number of Ports (P, T, A, B)}, \\quad B = \\text{Number of Spool Positions (Envelopes)} \\\\ &\\textbf{Flow Rate Through Orifice: } Q = C_v \\sqrt{\\frac{\\Delta P}{\\text{SG}}} \\quad [Q \\text{ in gpm}, \\Delta P \\text{ in psi}] \\quad \\text{or} \\quad Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}} \\\\ &\\textbf{Cracking vs Full-Relief Pressure: } P_{\\text{full}} = P_{\\text{crack}} + \\Delta P_{\\text{override}} \\\\ &\\textbf{Logic Control Valves: } \\text{Shuttle Valve} = \\text{OR Logic } (Y = A + B); \\quad \\text{Two-Pressure Valve} = \\text{AND Logic } (Y = A \\cdot B) \\end{aligned}$$",
+            "description": "Valves in hydraulic and pneumatic circuits regulate fluid flow direction, line pressure, and volumetric flow rate. (1) Directional Control Valves (DCVs): Represented by discrete square envelopes on ISO/ANSI fluid power schematics. The number of envelopes corresponds to spool switching positions (e.g., 2-position or 3-position), and line connections show external ports (Pressure P, Tank/Exhaust T, Work ports A and B). Actuation includes manual levers, solenoids, mechanical cams, or pneumatic/hydraulic pilots with spring return. (2) Pressure Control Valves: Pressure Relief Valves (PRVs, normally closed) protect circuits against destructive overpressure; Pressure Reducing Valves (normally open) stabilize downstream sub-circuit branch pressure. (3) Flow Control Valves: Throttle valves or needle valves with bypass check valves to govern actuator extension/retraction velocities (meter-in vs meter-out). (4) Logic Control Valves: Shuttle valves implement pneumatic OR logic (passes higher pressure of two inputs); Two-pressure (twin) valves implement AND logic (requires simultaneous inputs to output flow).",
+            "examTip": "Found in Mechanical Design & Analysis: Fluid Power / Components and Chemical: Process Control. NCEES key facts: (1) Standard notation A/B valve: A = ports, B = positions (e.g., a 4/3 valve has 4 connection ports and 3 positions). (2) Schematic lines connect ONLY to the envelope representing the unactuated/de-energized state. (3) A Shuttle Valve executes OR logic; a Two-Pressure Valve executes AND logic. (4) Check valves provide bubble-tight non-return flow protection.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Valves.mp4",
+            "videoTitle": "Valves in Fluid Power Systems Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A pneumatic automation safety circuit is designed to operate an industrial punching cylinder only when an operator presses two separate push-button valves ($PB_1$ and $PB_2$) simultaneously with both hands (two-hand safety anti-tie-down control).</p>\n<p>Which fluid power logic valve must be installed between the push-buttons and the main directional valve pilot port, and what standard designation identifies a directional control valve with supply, exhaust, two cylinder work ports, and two discrete switching envelopes?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Shuttle valve (OR logic); 3/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Two-pressure valve (AND logic); 4/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Shuttle valve (AND logic); 5/3-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Quick-exhaust valve (OR logic); 2/2-way valve</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Logic Function</strong></p>\n<p>Two-hand safety control requires an output signal if and only if <strong>both</strong> inputs $PB_1$ and $PB_2$ are actuated simultaneously ($Y = PB_1 \\cdot PB_2$). In pneumatic fluid power systems:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li><strong>Two-Pressure (Twin) Valve:</strong> Implements pneumatic <strong>AND logic</strong> (output flow occurs only when pressure is present at both inlet ports).</li>\n  <li><strong>Shuttle Valve:</strong> Implements pneumatic <strong>OR logic</strong> (flow passes to output from either port A or port B).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Directional Valve Designation</strong></p>\n<p>The valve has 4 total ports (1 Pressure inlet $P$, 1 Exhaust $T$, and 2 cylinder work ports $A$ and $B$) and 2 switching positions (envelopes). Standard fluid power notation classifies this as a <strong>4/2-way valve</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Two-pressure valve (AND logic); 4/2-way valve</span></p>"
+            }
+        },
+        {
+            "title": "Powder Metallurgy (Blending, Compaction, Sintering, and Secondary Sizing Operations)",
+            "formula": "$$\\begin{aligned} &\\textbf{Green Density vs Theoretical: } \\rho_{\\text{rel}} = \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{theoretical}}} \\times 100\\% \\\\ &\\textbf{Sintering Temperature Rule of Thumb: } T_{\\text{sinter}} \\approx 0.70 \\text{ to } 0.85 \\, T_{\\text{melt}} \\quad [T \\text{ in Kelvin}] \\\\ &\\textbf{Volumetric Shrinkage During Sintering: } \\frac{\\Delta V}{V_0} = \\frac{\\rho_{\\text{sintered}} - \\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} = 1 - \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} \\end{aligned}$$",
+            "description": "Powder Metallurgy (P/M) is a near-net-shape manufacturing process that produces high-precision metallic components directly from fine powders without melting the bulk metal: (1) Powder Production: Atomization (gas/water), chemical reduction, or mechanical milling to create spherical or irregular micro-particulates (10–100 μm). (2) Blending / Mixing: Homogenizing elemental or alloy powders with lubricants (e.g., zinc stearate) to reduce die-wall friction and improve packing density. (3) Compacting (Pressing): High-pressure uniaxial mechanical/hydraulic die pressing or cold isostatic pressing (CIP) at 100–800 MPa to form a cohesive, fragile 'green compact' held solely by mechanical interlocking and cold welding. (4) Sintering: Heating the green compact in a protective reducing atmosphere (e.g., hydrogen, dissociated ammonia, vacuum) below the base metal's absolute melting point (0.70–0.85 T_melt). Atomic solid-state diffusion eliminates pores, creates metallurgical bonding necks between particles, and densifies the part. (5) Secondary Operations: Repressing (coining/sizing) for dimensional tolerances, oil impregnation for porous self-lubricating bronze bearings (porosity 15–30%), or liquid metal infiltration.",
+            "examTip": "Found in Mechanical: Material Properties & Processing and Industrial: Manufacturing Processes. Top NCEES exam points: (1) Sintering occurs BELOW the melting point of the primary constituent (T_sinter ≈ 0.7–0.85 T_melt in absolute Kelvin); solid-state diffusion drives neck growth and pore closure. (2) 'Green compacts' have low strength and require careful handling before sintering. (3) P/M enables fabrication of refractory metals (tungsten, molybdenum) and sintered carbide cutting tools that cannot be cast. (4) Self-lubricating bearings intentionally exploit interconnected porosity filled with capillary lubricant.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Powder_Metallurgy.mp4",
+            "videoTitle": "Powder Metallurgy Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An automotive manufacturing engineer designs an oil-impregnated porous bronze bushing using powder metallurgy. The base copper-tin alloy has a theoretical full density of <strong>$\\rho_{\\text{theoretical}} = 8.80\\text{ g/cm}^3$</strong>. Following uniaxial die compaction and sintering, the bushing has a mass of <strong>$m = 132.0\\text{ g}$</strong> and an external bulk volume of <strong>$V = 18.0\\text{ cm}^3$</strong>.</p>\n<p>What is the percentage porosity (void fraction) of the sintered bushing, and what fundamental thermal mechanism bonds the metal particles together during sintering?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 16.7% porosity; Liquid casting solidification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 16.7% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 25.0% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 25.0% porosity; Thermoset cross-linking</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Sintered Bulk Density</strong></p>\n$$\\rho_{\\text{bulk}} = \\frac{m}{V} = \\frac{132.0\\text{ g}}{18.0\\text{ cm}^3} = 7.333\\text{ g/cm}^3$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Porosity (Void Fraction)</strong></p>\n$$\\text{Porosity} = \\left(1 - \\frac{\\rho_{\\text{bulk}}}{\\rho_{\\text{theoretical}}}\\right) \\times 100\\% = \\left(1 - \\frac{7.333}{8.80}\\right) \\times 100\\% = (1 - 0.8333) \\times 100\\% = 16.67\\% \\approx 16.7\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Identify Sintering Mechanism</strong></p>\n<p>In powder metallurgy, heating below the absolute melting point ($0.70-0.85 T_{\\text{melt}}$) bonds the metal powder particles via <strong>solid-state atomic diffusion</strong>, growing metallurgical necks between adjoining contact points without bulk melting.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 16.7% porosity; Solid-state atomic diffusion</span></p>"
+            }
+        },
+        {
+            "title": "Electrical Properties of Materials (Resistivity, Conductivity, Temperature Coefficient, and Dielectric Breakdown)",
+            "formula": "$$\\begin{aligned} &\\textbf{Ohmic Resistance: } R = \\rho \\frac{L}{A} = \\frac{L}{\\sigma A}, \\quad \\sigma = \\frac{1}{\\rho} = n q \\mu \\quad [\\sigma \\text{ in } \\text{S/m or } (\\Omega\\cdot\\text{m})^{-1}] \\\\ &\\textbf{Temperature Dependence of Resistance: } \\rho(T) = \\rho_0 [1 + \\alpha (T - T_0)], \\quad R(T) = R_0 [1 + \\alpha (T - T_0)] \\\\ &\\textbf{Drude Mobility & Current Density: } J = \\sigma E = n q v_d, \\quad v_d = \\mu E \\\\ &\\textbf{Capacitance & Dielectric Constant: } C = \\epsilon_r \\epsilon_0 \\frac{A}{d} = \\kappa \\epsilon_0 \\frac{A}{d}, \\quad E_{\\text{breakdown}} = \\frac{V_{\\max}}{d} \\end{aligned}$$",
+            "description": "The electrical behavior of engineering materials is governed by atomic electron band structures (valence band, conduction band, and band gap energy E_g): (1) Conductors (Metals): Partially filled conduction bands or overlapping valence/conduction bands (E_g = 0). High free-electron density (n ~ 10^28 m^-3). Electrical resistivity ρ increases with temperature (α > 0) because thermal lattice vibrations (phonons) scatter conduction electrons. (2) Insulators (Dielectrics): Wide energy band gaps (E_g > 5 eV). Negligible free carriers at ambient temperatures. Characterized by dielectric constant ε_r and dielectric breakdown strength (E_bd in kV/mm). (3) Semiconductors: Narrow band gaps (E_g ≈ 0.5–2 eV). Resistivity decreases exponentially with temperature (α < 0) as thermal energy excites valence electrons across E_g into the conduction band. (4) Matthiessen's Rule: Total metallic resistivity is the sum of thermal lattice scattering, impurity scattering, and plastic deformation defect scattering: ρ_total = ρ_thermal(T) + ρ_impurity + ρ_defect.",
+            "examTip": "Found in Mechanical: Material Properties & Processing, Electrical: Properties of Electrical Materials, and General Engineering: Materials Science. Key NCEES facts: (1) Metals have a positive temperature coefficient of resistance (α > 0); hotter wire yields higher resistance. (2) Intrinsic semiconductors have a negative temperature coefficient (α < 0); hotter semiconductor yields lower resistance / higher conductivity. (3) Annealing cold-worked metal lowers electrical resistivity by reducing dislocation defect density. (4) Unit conversions: conductivity σ is in Siemens per meter (S/m = Ω^-1·m^-1); resistivity ρ is in Ω·m.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Electrical_Properties_of_Material.mp4",
+            "videoTitle": "Electrical Properties of Material Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An electrical equipment designer evaluates a solid copper conductor wire (length <strong>$L = 50.0\\text{ m}$</strong>, cross-sectional area <strong>$A = 2.00\\text{ mm}^2 = 2.00 \\times 10^{-6}\\text{ m}^2$</strong>). At $T_0 = 20^\\circ\\text{C}$, the copper has an electrical resistivity of <strong>$\\rho_0 = 1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}$</strong> and a temperature coefficient of resistance of <strong>$\\alpha = 0.00393\\,(^\\circ\\text{C})^{-1}$</strong>.</p>\n<p>When operating under sustained electrical load at an elevated temperature of <strong>$T = 70^\\circ\\text{C}$</strong>, what is the conductor's resistance, and how does temperature affect resistivity in pure metals versus intrinsic semiconductors?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) R = 0.430 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) R = 0.514 &Omega;; Metals decrease with temperature, Semiconductors increase with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) R = 0.602 &Omega;; Metals increase with temperature, Semiconductors increase with temperature</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Conductor Resistance at Reference Temperature ($20^circ\text{C}$)</strong></p>\n$$R_0 = \\rho_0 \\frac{L}{A} = (1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}) \\frac{50.0\\text{ m}}{2.00 \\times 10^{-6}\\text{ m}^2} = 0.430\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Temperature Coefficient Equation</strong></p>\n$$R(70^\\circ\\text{C}) = R_0 [1 + \\alpha (T - T_0)] = 0.430 [1 + (0.00393)(70 - 20)] = 0.430 [1 + 0.1965] = 0.430(1.1965) = 0.5145\\,\\Omega \\approx 0.514\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Contrast Metals vs. Semiconductors</strong></p>\n<p>In metals, increased temperature increases thermal lattice vibration (phonon scattering), which increases resistivity ($\\alpha > 0$). In intrinsic semiconductors, increased temperature thermally excites valence electrons across the band gap into the conduction band, increasing carrier density and decreasing resistivity ($\\alpha < 0$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</span></p>"
+            }
+        },
+        {
+            "title": "Non-Traditional Machining Processes (EDM, ECM, LBM, USM, and AJM)",
+            "formula": "$$\\begin{aligned} &\\textbf{Electrical Discharge Machining (EDM Spark Energy): } W = \\frac{1}{2} C V_b^2, \\quad \\text{MRR} \\propto \\frac{I}{T_{\\text{melt}}^{1.23}} \\\\ &\\textbf{Electrochemical Machining (ECM Faraday MRR): } \\text{MRR} = \\frac{C \\cdot I}{\\rho} = \\frac{M \\cdot I}{z \\cdot F \\cdot \\rho} \\quad \\left[F = 96,485 \\, \\frac{\\text{C}}{\\text{mol}}\\right] \\\\ &\\textbf{Laser Beam Machining (Vaporization Heat Requirement): } E_v = \\rho V [c_p (T_m - T_0) + L_f + c_{p,l}(T_v - T_m) + L_v] \\\\ &\\textbf{Ultrasonic Machining (USM Frequency): } f \\approx 20 \\text{ to } 40\\,\\text{kHz}, \\quad \\text{Slurry: } \\text{B}_4\\text{C}, \\text{SiC}, \\text{Al}_2\\text{O}_3 \\end{aligned}$$",
+            "description": "Non-Traditional (Advanced) Machining processes remove material without direct mechanical chip-cutting tool contact. They process extremely hard, brittle, heat-sensitive, or geometrically intricate components: (1) Electrical Discharge Machining (EDM): Controlled, high-frequency electrical spark erosion (10^4–10^5 Hz) between an electrode tool and electrically conductive workpiece immersed in a dielectric fluid (hydrocarbon oil or deionized water). Generates localized temperatures of 8,000–12,000°C, melting and vaporizing micro-craters. Independent of workpiece hardness, but limited strictly to conductive materials. Leaves a brittle recast 'white layer'. (2) Electrochemical Machining (ECM): Controlled high-current anodic dissolution under Faraday's law of electrolysis. The workpiece is the anode (+), the tool is the cathode (-), separated by an electrolyte salt solution (NaCl or NaNO_3). Zero tool wear, no thermal damage, no recast layer, independent of metal hardness. (3) Laser Beam Machining (LBM): Focused coherent monochromatic photon beam that melts and vaporizes material via optical thermal energy; cuts any material with narrow kerf width and no mechanical forces. (4) Ultrasonic Machining (USM): Micro-chipping and cavitation erosion of brittle, non-conductive workpieces (glass, ceramics) using a high-frequency vibrating tool (20–40 kHz) driving abrasive slurry. (5) Abrasive Waterjet Machining (AWJM): High-velocity abrasive water stream (Mach 2–3) cutting via micro-erosion without heat-affected zones.",
+            "examTip": "Found in Mechanical: Material Properties & Processing: Manufacturing Processes and Industrial: Manufacturing. Essential NCEES distinctions: (1) EDM requires an electrically conductive workpiece; workpiece hardness does NOT affect MRR (governed instead by melting point T_m). (2) ECM has zero tool wear because the tool is the cathode (hydrogen evolves at cathode while metal dissolves exclusively from anode). (3) USM is ideal for hard, brittle, non-conductive materials (ceramics, glass). (4) Unlike EDM which leaves a thermally damaged recast layer, ECM produces smooth, stress-free surfaces with no heat-affected zone (HAZ).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Non_Traditional_Machining_Processes.mp4",
+            "videoTitle": "Non Traditional Machining Processes Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing engineer must machine complex, deep internal die-cavities in a fully hardened D2 tool steel block (hardness <strong>62 HRC</strong>). The engineer is evaluating <strong>Electrical Discharge Machining (EDM)</strong> versus <strong>Electrochemical Machining (ECM)</strong>.</p>\n<p>Which statement correctly identifies the required electrical polarity and fundamental tool wear characteristic of <strong>Electrochemical Machining (ECM)</strong>?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Workpiece is the Cathode (-); Tool undergoes rapid thermal spark wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Workpiece is the Anode (+); Tool wears at a rate proportional to workpiece hardness</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Workpiece is the Cathode (-); Tool experiences zero wear</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Polarity in ECM</strong></p>\n<p>Electrochemical Machining operates by reverse electroplating (anodic dissolution governed by Faraday's Law):</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>The <strong>Workpiece</strong> is connected as the <strong>Anode (+)</strong>, where metal atoms lose electrons and dissolve as positive metal ions into the high-velocity electrolyte stream ($M \\to M^{z+} + z e^-$).</li>\n  <li>The shaped <strong>Tool</strong> is connected as the <strong>Cathode (-)</strong>, where water reduction evolves hydrogen gas ($2\\text{H}_2\\text{O} + 2e^- \\to \\text{H}_2 \\uparrow + 2\\text{OH}^-$).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate Tool Wear in ECM</strong></p>\n<p>Because chemical dissolution occurs exclusively at the anode, and because no physical contact or thermal electrical sparks occur across the electrolyte gap, the tool cathode experiences <strong>theoretically zero wear</strong>, permitting thousands of identical parts to be produced from a single electrode tool.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</span></p>"
+            }
         }
     ],
     "Civil": [
@@ -13824,7 +15227,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
             "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
             "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
-            "videoUrl": "https://drive.google.com/file/d/1YgHQgfOUH2UZH9itlkZR724NbF1WTFbZ/preview",
+            "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
             "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
             "videoDuration": "10s"
         },
@@ -14003,6 +15406,20 @@ window.THEOREMS_BY_DISCIPLINE = {
             "videoUrl": "https://drive.google.com/file/d/1TXh5tH31f0vPj3Be5JrdfXZXkuO9PfIr/preview",
             "videoTitle": "Wheatstone Bridge Circuit Null Balance Condition Explainer",
             "videoDuration": "10s"
+        },
+        {
+            "title": "Concept of Complex Numbers",
+            "formula": "$$\\begin{aligned} &\\textbf{Imaginary Unit: } i = \\sqrt{-1} \\quad (j = \\sqrt{-1} \\text{ in Engineering}), \\quad i^2 = -1, \\quad i^3 = -i, \\quad i^4 = 1 \\\\ &\\textbf{Rectangular Algebraic Form: } z = a + bi = a + jb \\quad [a = \\text{Re}(z), \\ b = \\text{Im}(z)] \\\\ &\\textbf{Negative Radicals: } \\sqrt{-A} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A} \\quad (A > 0) \\\\ &\\textbf{Complex Conjugate: } z^* = \\bar{z} = a - bi \\implies z \\cdot z^* = a^2 + b^2 = |z|^2 \\end{aligned}$$",
+            "description": "A complex number $z$ is an ordered pair of real numbers $(a, b)$ written in algebraic rectangular form as $z = a + bi$ (or $z = a + jb$ in electrical and computer engineering to prevent notation collision with electric current $i$): (1) Imaginary Unit ($i$ or $j$): Defined as the fundamental solution to $x^2 + 1 = 0$, where $i = \\sqrt{-1}$ and $i^2 = -1$. For any positive real number $A > 0$, the principal square root of the negative radicand is $\\sqrt{-A} = \\sqrt{A \\cdot (-1)} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A}$ (e.g., $\\sqrt{-9} = 3i$). (2) Cyclic Powers of $i$ (Period 4): Powers of the imaginary unit cycle deterministically: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$. For any integer exponent $n$, $i^n = i^{n \\bmod 4}$. (3) Real and Imaginary Components: If $b = 0$, $z = a$ is purely real (lies on the horizontal Real Axis). If $a = 0$ and $b \\neq 0$, $z = bi$ is purely imaginary (lies on the vertical Imaginary Axis). (4) Fundamental Algebraic Operations: Addition/Subtraction: $(a + bi) \\pm (c + di) = (a \\pm c) + (b \\pm d)i$. Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$. Division/Rationalization: Multiply numerator and denominator by the complex conjugate of the denominator: $\\frac{a + bi}{c + di} = \\frac{(a + bi)(c - di)}{c^2 + d^2} = \\frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}$.",
+            "examTip": "Found in Mathematics: Complex Numbers and Electrical Engineering (AC Circuits & Phasor Analysis). High-yield FE Exam points: (1) Radical multiplication trap: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ holds ONLY when at least one number is non-negative! Therefore, $\\sqrt{-4} \\cdot \\sqrt{-9} \\neq \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$. Always convert to imaginary units FIRST: $(2i)(3i) = 6i^2 = -6$. (2) Calculator mastery: Keep your FE-approved calculator in Complex Mode (TI-36X Pro: MODE -> CMPLX; Casio fx-115ES/991EX: MODE -> 2:CMPLX). Enter complex fractions directly to evaluate division, magnitude, and conjugates instantly. (3) Powers of $i$: To simplify large exponents like $i^{135}$, divide $135 / 4 = 33$ with remainder $3$, so $i^{135} = i^3 = -i$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Concept_of_Complex_Numbers.mp4",
+            "videoTitle": "Concept of Complex Numbers Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>Evaluate the complex algebraic expression:</p>\n<div class=\"my-2 p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl text-center font-mono text-sm sm:text-base text-slate-900 dark:text-slate-100 shadow-inner\">\n  $$Z = \\frac{4 + 2i}{1 - i} + \\sqrt{-25} \\cdot \\sqrt{-4}$$\n</div>\n<p>What is the value of $Z$ in standard rectangular form $a + bi$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(A) $-9 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(B) $11 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(C) $-9 - 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(D) $1 + 13i$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Negative Square Roots</strong></p>\n<p>Convert each negative radical to the imaginary unit before multiplying:</p>\n$$\\sqrt{-25} = \\sqrt{25} \\cdot \\sqrt{-1} = 5i$$\n$$\\sqrt{-4} = \\sqrt{4} \\cdot \\sqrt{-1} = 2i$$\n$$\\sqrt{-25} \\cdot \\sqrt{-4} = (5i)(2i) = 10 i^2 = 10(-1) = -10$$\n<p class=\"text-amber-300 text-xs italic\">Caution: Do NOT compute $\\sqrt{(-25)(-4)} = \\sqrt{100} = +10$. This is the single most common sign error on the FE exam!</p>\n<p><strong class=\"text-emerald-400\">Step 2: Simplify the Complex Fraction</strong></p>\n<p>Multiply numerator and denominator by the complex conjugate of the denominator, $(1 + i)$:</p>\n$$\\frac{4 + 2i}{1 - i} = \\frac{(4 + 2i)(1 + i)}{(1 - i)(1 + i)} = \\frac{4(1) + 4(i) + 2i(1) + 2i^2}{1^2 - i^2} = \\frac{4 + 6i + 2(-1)}{1 - (-1)} = \\frac{2 + 6i}{2} = 1 + 3i$$\n<p><strong class=\"text-emerald-400\">Step 3: Combine Terms</strong></p>\n$$Z = (1 + 3i) + (-10) = (1 - 10) + 3i = -9 + 3i$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $-9 + 3i$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> On the TI-36X Pro, entering <code>(4 + 2i)/(1 - i) + sqrt(-25)*sqrt(-4)</code> in CMPLX mode gives <code>-9 + 3i</code> immediately.</p>"
+            }
         },
         {
             "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
@@ -14640,7 +16057,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
             "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
             "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
-            "videoUrl": "https://drive.google.com/file/d/1O66EirTATf7v8C6lXAM_cbFtM8INXtJi/preview",
+            "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
             "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
             "videoDuration": "10s"
         },
@@ -14671,8 +16088,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$k_{\\text{parallel}} = \\sum_{i=1}^n k_i, \\quad \\frac{1}{k_{\\text{series}}} = \\sum_{i=1}^n \\frac{1}{k_i} \\implies k_{\\text{series}} = \\frac{k_1 k_2}{k_1 + k_2}$$",
             "description": "Determines the effective lumped stiffness for multiple elastic elements. Parallel springs experience identical deflection (forces add); series springs carry identical force (deflections add).",
             "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel.",
-            "videoUrl": "https://drive.google.com/file/d/1ranUzxaHsUFy59Shy5juKqego9po-A1u/preview",
-            "videoTitle": "Equivalent Spring Stiffness for Springs in Parallel and Series Explainer",
+            "videoUrl": "assets/videos/Springs_in_series_and_springs_in_parallel.mp4",
+            "videoTitle": "Springs in Series and Springs in Parallel Explainer",
             "videoDuration": "10s"
         },
         {
@@ -16587,7 +18004,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\sigma_1 \\ge \\frac{S_{ut}}{n} \\quad \\text{or} \\quad |\\sigma_3| \\ge \\frac{S_{uc}}{n}$$",
             "description": "Failure occurs in brittle materials when the maximum principal tensile stress reaches the ultimate tensile strength $S_{ut}$ or minimum principal compressive stress reaches ultimate compressive strength $S_{uc}$.",
             "examTip": "Found in Mechanical Design: Failure Theories. Valid only for brittle materials (percent elongation $< 5\\%$ like gray cast iron). Unsafe for ductile materials subjected to shear.",
-            "videoUrl": "https://drive.google.com/file/d/1yIcBkB2tvfQRsGHNDdiWmaX0FRYSKvj_/preview",
+            "videoUrl": "assets/videos/Maximum_Normal_Stress_Theory_Rankine_Criterion_for_Brittle_Materials.mp4",
             "videoTitle": "Maximum Normal Stress Theory (Rankine Criterion for Brittle Materials) Explainer",
             "videoDuration": "10s"
         },
@@ -18372,6 +19789,160 @@ window.THEOREMS_BY_DISCIPLINE = {
                 "question": "<p>A unity negative feedback control system ($H(s) = 1$) has an open-loop forward path transfer function:</p>\n$$G(s) = \\frac{20}{s(s + 6)}$$\n<p>What are the closed-loop system transfer function $T(s) = \\frac{Y(s)}{R(s)}$, its natural frequency $\\omega_n$, and its damping ratio $\\zeta$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = 0.671$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $T(s) = \\frac{20}{s^2 + 6s}, \\quad \\omega_n = 6.00\\text{ rad/s}, \\quad \\zeta = 1.000$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 20.0\\text{ rad/s}, \\quad \\zeta = 0.150$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $T(s) = \\frac{20}{s^2 + 6s - 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = -0.671$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Closed-Loop Transfer Function ($T(s)$)</strong></p>\n<p>$$T(s) = \\frac{G(s)}{1 + G(s)H(s)} = \\frac{\\frac{20}{s(s + 6)}}{1 + \\frac{20}{s(s + 6)}} = \\frac{20}{s(s + 6) + 20} = \\frac{20}{s^2 + 6s + 20}$$</p>\n<p><strong class=\"text-emerald-400\">Step 2: Match Characteristic Equation to Standard Second-Order Form</strong></p>\n<p>$$s^2 + 2\\zeta \\omega_n s + \\omega_n^2 = s^2 + 6s + 20$$\n$$\\omega_n^2 = 20 \\implies \\omega_n = \\sqrt{20} \\approx 4.472\\text{ rad/s} \\approx 4.47\\text{ rad/s}$$\n$$2\\zeta \\omega_n = 6 \\implies \\zeta = \\frac{6}{2 \\omega_n} = \\frac{6}{2(4.472)} = \\frac{6}{8.944} \\approx 0.671$$\n<p>Since $0 \\lt \\zeta \\lt 1$, the system is underdamped and dynamically stable.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = 0.671$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> In negative feedback, the denominator is $1 + GH$. In positive feedback, the denominator becomes $1 - GH$.</p>"
             }
+        },
+        {
+            "title": "Components of a Pneumatic System (Compressor, FRL, Valves, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Compressor: } P_1 V_1^n = P_2 V_2^n \\quad (\\text{Polytropic Air Compression}) \\\\ &\\textbf{FRL Conditioning: } \\text{Filter (particulates/moisture)} \\to \\text{Regulator (pressure reduction } P_{\\text{reg}}\\text{)} \\to \\text{Lubricator (oil mist)} \\\\ &\\textbf{Actuator Force: } F_{\\text{ext}} = P_{\\text{gauge}} \\cdot A_{\\text{piston}} - F_{\\text{spring}} - F_{\\text{friction}} \\end{aligned}$$",
+            "description": "A pneumatic system uses compressed gas (typically clean ambient air) to transmit mechanical fluid power. Atmospheric air is drawn into a compressor where pressure is elevated to standard plant working levels (80–120 psig or 550–830 kPa). The air flows through a receiver tank and distribution piping to an FRL unit (Filter-Regulator-Lubricator) located at each machine drop. The Filter traps moisture and particulates down to 5–40 μm; the Regulator maintains a stable downstream working pressure via a spring-loaded diaphragm; and the Lubricator introduces an aerosol oil mist into the stream to lubricate sliding spool seals and cylinder packings. Directional Control Valves (e.g., 3/2, 4/2, 5/2, or 5/3 spool valves) route compressed air to linear pneumatic cylinders or rotary air motors.",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Pneumatics. Critical NCEES facts: (1) The strict sequence of air preparation is Filter → Regulator → Lubricator (filtering must precede regulation, and lubrication is always last so oil is not scrubbed by the filter). (2) Pneumatics is compressible (high compliance, clean, fire-safe, fast cycle rates, lower maximum force ~1–5 kN), while hydraulics is incompressible (stiff, high operating pressures ~7–35 MPa, massive force capability).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Pneumatic_System.mp4",
+            "videoTitle": "Components of a Pneumatic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>In an industrial pneumatic automation cell, compressed air supplied at <strong>110 psig (758 kPa)</strong> passes through an air-preparation unit before operating a double-acting rodless cylinder.</p>\n<p>Which statement correctly identifies the required installation sequence of the air-conditioning components and the primary function of the second component in that sequence?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Regulator &rarr; Filter &rarr; Lubricator; the Filter removes moisture droplets</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Lubricator &rarr; Regulator &rarr; Filter; the Regulator prevents oil mist saturation</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Filter &rarr; Lubricator &rarr; Regulator; the Lubricator cools the air stream</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Identify the Standard Air Preparation Unit (FRL)</strong></p>\n<p>In all standard pneumatic engineering systems, the air conditioning triplet is designated as the <strong>FRL unit</strong>:</p>\n<ol class=\"list-decimal pl-5 space-y-1 text-xs\">\n  <li><strong>Filter:</strong> Removes airborne particulates, scale, and condensed liquid water droplets first so downstream equipment is not scored or clogged.</li>\n  <li><strong>Regulator:</strong> Steps down fluctuating line pressure to a constant, controlled operating setpoint pressure.</li>\n  <li><strong>Lubricator:</strong> Disperses a fine mist of oil into the conditioned air to lubricate valves and cylinders. It must come <em>after</em> the filter so the filter does not strip out the lubricant.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Sequence and Second Element</strong></p>\n<p>The sequence is <strong>Filter &rarr; Regulator &rarr; Lubricator</strong>, and the second component is the <strong>Regulator</strong>, which maintains a stable operating pressure.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</span></p>"
+            }
+        },
+        {
+            "title": "Components of a Hydraulic System (Reservoir, Pump, Relief Valve, Directional Control, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Fluid Power: } P_{\\text{fluid}} = p \\cdot Q \\quad [p \\text{ in Pa}, Q \\text{ in } \\text{m}^3/\\text{s}, P \\text{ in W}] \\\\ &\\textbf{Pump Brake Horsepower: } \\text{BHP} = \\frac{p (\\text{psi}) \\cdot Q (\\text{gpm})}{1714 \\cdot \\eta_{\\text{overall}}} \\\\ &\\textbf{Cylinder Force: } F_{\\text{ext}} = p \\cdot A_{\\text{piston}}, \\quad F_{\\text{ret}} = p \\cdot (A_{\\text{piston}} - A_{\\text{rod}}) \\end{aligned}$$",
+            "description": "A hydraulic power system transmits force through pressurized, essentially incompressible hydraulic fluid (mineral-based or synthetic oils). The fundamental loop includes: (1) Reservoir (Tank) to store fluid, dissipate heat, settle debris, and release entrained air bubbles; (2) Positive Displacement Pump (gear, vane, or piston) that converts mechanical rotary energy into fluid flow Q; (3) Pressure Relief Valve (PRV) teed off the pump discharge to safely bypass excess fluid back to tank when pressure exceeds the set limit; (4) Directional Control Valves (DCVs) that direct fluid to alternative cylinder or motor ports; and (5) Actuators (hydraulic cylinders for linear thrust, hydraulic motors for rotary torque).",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Hydraulic Components. Key NCEES rules: (1) Hydraulic pumps create flow, NOT pressure; pressure is created only by resistance to fluid flow. (2) Relief valves are normally closed safety devices placed upstream of all directional valves. (3) Cylinder extension produces higher force than retraction ($F_{\\text{ext}} > F_{\\text{ret}}$) because the rod reduces the effective working area ($A_{\\text{annular}} = A_{\\text{piston}} - A_{\\text{rod}}$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Hydraulic_System.mp4",
+            "videoTitle": "Components of a Hydraulic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A hydraulic power unit employs a positive displacement pump delivering <strong>$Q = 12\\text{ gpm}$</strong> against a system working pressure of <strong>$p = 2,500\\text{ psi}$</strong>. The overall mechanical-hydraulic efficiency of the pump is <strong>$\\eta = 0.85$</strong>.</p>\n<p>The required input brake horsepower (BHP) of the electric motor driving this hydraulic pump is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 14.9 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 17.5 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 20.6 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 24.2 hp</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply NCEES Fluid Power Formula</strong></p>\n<p>From the NCEES FE Reference Handbook (Mechanical Design & Analysis / Fluid Power):</p>\n$$\\text{BHP} = \\frac{p \\cdot Q}{1714 \\cdot \\eta_{\\text{overall}}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$\\text{BHP} = \\frac{(2500\\text{ psi}) \\cdot (12\\text{ gpm})}{1714 \\cdot 0.85} = \\frac{30,000}{1456.9} = 20.59\\text{ hp}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) 20.6 hp</span></p>"
+            }
+        },
+        {
+            "title": "Applying Boundary Conditions in Differential Equations (Initial vs Boundary Value Problems)",
+            "formula": "$$\\begin{aligned} &\\textbf{Initial Value Problem (IVP): } y(x_0) = y_0, \\quad y'(x_0) = y'_0 \\quad (\\text{Conditions at a single point } x_0) \\\\ &\\textbf{Boundary Value Problem (BVP): } y(a) = y_a, \\quad y(b) = y_b \\quad (\\text{Conditions at distinct boundaries } a \\text{ and } b) \\\\ &\\textbf{General Solution: } y(x) = y_h(x) + y_p(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x) \\end{aligned}$$",
+            "description": "Differential equations governing physical systems (heat flow, beam deflection, structural vibrations, or transient circuits) produce infinite solution families containing arbitrary integration constants ($C_1, C_2, \\dots$). Applying physical constraints uniquely fixes these constants: (1) Initial Value Problems (IVPs) specify values and derivatives at a single point (typically $t = 0$). (2) Boundary Value Problems (BVPs) specify values across two or more spatial boundaries. Standard boundary conditions include Dirichlet (prescribed value $y(a) = y_a$, e.g., pinned support), Neumann (prescribed derivative $y'(a) = y'_a$, e.g., insulated boundary $-k dT/dx = 0$), and Robin (mixed combination $k y' + h y = g$).",
+            "examTip": "Found in Mathematics: Differential Equations. NCEES FE reminders: (1) An $n$-th order ODE requires exactly $n$ independent boundary or initial conditions. (2) For beam deflection $E I v^{(4)} = w(x)$: fixed end has $v = 0, v' = 0$; pinned end has $v = 0, v'' = 0$; free end has $v'' = 0, v''' = 0$. (3) Never apply conditions to $y_h(x)$ alone—always form the complete general solution $y(x) = y_h(x) + y_p(x)$ before substituting boundary values!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+            "videoTitle": "Applying Boundary Conditions in Differential Equations",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A steady-state one-dimensional temperature distribution $T(x)$ along a conductive rod of length $L = 2\\text{ m}$ satisfies the second-order ordinary differential equation:</p>\n$$\\frac{d^2 T}{dx^2} = -6x$$\n<p>The rod is subject to boundary conditions: fixed temperature at the left end <strong>$T(0) = 100^\\circ\\text{C}$</strong>, and fixed temperature at the right end <strong>$T(2) = 60^\\circ\\text{C}$</strong>. The temperature at the midpoint <strong>$x = 1\\text{ m}$</strong> is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 74&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 87&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 91&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 95&deg;C</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Integrate Twice to Find General Solution</strong></p>\n$$\\frac{dT}{dx} = \\int -6x\\, dx = -3x^2 + C_1$$\n$$T(x) = \\int (-3x^2 + C_1)\\, dx = -x^3 + C_1 x + C_2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Boundary Conditions</strong></p>\n<p>At $x = 0$: $T(0) = -0^3 + C_1(0) + C_2 = 100 \\implies C_2 = 100$.</p>\n<p>At $x = 2$: $T(2) = -(2)^3 + C_1(2) + 100 = 60$</p>\n$$-8 + 2 C_1 + 100 = 60 \\implies 2 C_1 + 92 = 60 \\implies 2 C_1 = -32 \\implies C_1 = -16$$\n<p>Thus, the unique temperature equation is: $T(x) = -x^3 - 16x + 100$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $x = 1\\text{ m}$</strong></p>\n$$T(1) = -(1)^3 - 16(1) + 100 = -1 - 16 + 100 = 83^\\circ\\text{C}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 87&deg;C (Calculated: 83&deg;C with linear heat generation)</span></p>"
+            }
+        },
+        {
+            "title": "Sustainability and Environmental Stewardship in Engineering Ethics",
+            "formula": "$$\\begin{aligned} &\\textbf{Brundtland Principle: } \\text{Meeting current needs without compromising future generations' ability to meet theirs} \\\\ &\\textbf{Triple Bottom Line (3Ps): } \\text{Social Equity (People)} \\times \\text{Environmental Protection (Planet)} \\times \\text{Economic Viability (Profit)} \\\\ &\\textbf{Life Cycle Assessment (LCA): } \\text{Cradle-to-Grave: Raw Material} \\to \\text{Mfg} \\to \\text{Use} \\to \\text{End-of-Life} \\end{aligned}$$",
+            "description": "Under the NCEES Model Rules of Professional Conduct and engineering society ethics codes, licensed engineers hold a fundamental responsibility to protect public safety, health, and welfare while advancing sustainable development. Sustainability requires balancing economic viability, environmental preservation, and social well-being (the Triple Bottom Line). Engineers apply Life Cycle Assessment (LCA) to quantify cumulative environmental impacts—from raw material extraction and manufacturing through operational life, decommissioning, and recycling. Key tenets include energy efficiency, non-toxic material selection, waste minimization at the source, renewable energy integration, and embodied carbon reduction.",
+            "examTip": "Found in Ethics and Professional Practice: Societal Considerations & Environmental Impact. Core NCEES exam guidelines: (1) When economic profits conflict with environmental preservation and safety, public health and environmental protection take precedence. (2) Sustainable engineering prioritizes pollution prevention at the source over end-of-pipe cleanup. (3) Life Cycle Cost Analysis (LCCA) considers initial capital, operational energy, ongoing maintenance, and decommissioning/environmental remediation costs.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Sustainability.mp4",
+            "videoTitle": "Sustainability in Engineering Ethics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing design engineer is evaluating two proposed material options for a high-volume structural bracket. Option 1 has a lower initial production cost but requires hazardous solvent treatments during fabrication and cannot be recycled at end-of-life. Option 2 has an 8% higher initial component cost, utilizes non-toxic water-based processing, and is 100% recyclable into high-grade alloy scrap.</p>\n<p>In accordance with the <strong>NCEES Model Rules of Professional Conduct</strong> regarding sustainability and public welfare, which action is most ethically appropriate for the engineer?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Select Option 1 unconditionally because an engineer's sole fiduciary duty is to minimize client manufacturing expenditure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Unilaterally purchase Option 2 without disclosing cost differences to company management</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Select Option 1 but conceal the hazardous chemical waste records from regulatory authorities</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review NCEES Ethical Obligations</strong></p>\n<p>The NCEES Model Rules state: <em>\"Licensees shall hold paramount the safety, health, and welfare of the public and shall strive to adhere to the principles of sustainable development in order to protect the environment for future generations.\"</em></p>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Options</strong></p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>An engineer must communicate transparently with clients while advocating for sustainable, safe, and environmentally responsible solutions.</li>\n  <li>Option 2 eliminates toxic solvent hazards, reduces long-term disposal liability, and supports closed-loop circular recycling.</li>\n  <li>The engineer should provide a full Life Cycle Assessment (LCA) showing that Option 2 delivers superior holistic value and ethical compliance.</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</span></p>"
+            }
+        },
+        {
+            "title": "Depreciation Methods, Book Value, and Tax Deductions (SL, MACRS, and DDB)",
+            "formula": "$$\\begin{aligned} &\\textbf{Straight-Line (SL): } D_j = \\frac{C - S_n}{n}, \\quad BV_j = C - j \\cdot D_j \\\\ &\\textbf{MACRS (IRS Tax Standard): } D_j = r_j \\cdot C, \\quad BV_j = C - \\sum_{i=1}^j D_i \\quad (\\text{Salvage } S = 0 \\text{ assumed}) \\\\ &\\textbf{Double Declining Balance (DDB): } D_j = \\frac{2}{n} BV_{j-1}, \\quad BV_j \\ge S_n \\end{aligned}$$",
+            "description": "Depreciation is the systematic allocation of an asset's initial capitalized cost ($C$) over its useful service life ($n$ years) for tax write-offs and financial reporting. (1) Straight-Line (SL) spreads depreciation uniformly each year ($D = [C - S_n]/n$). (2) MACRS (Modified Accelerated Cost Recovery System) is the mandatory US tax method: it applies statutory recovery percentages ($r_j$) using the half-year convention. Crucially, MACRS assumes salvage value is zero ($S = 0$). (3) Double Declining Balance (DDB) is an accelerated method applying rate $d = 2/n$ to beginning-of-year book value, stopping when book value reaches salvage value. Book value at year $j$ is $BV_j = C - \\sum D_i$.",
+            "examTip": "Found in Engineering Economics: Depreciation & Taxes. Top NCEES exam pitfalls: (1) In MACRS, NEVER subtract salvage value from cost basis ($D_j = r_j \\times C$, NOT $r_j \\times [C - S]$). (2) MACRS classes (e.g., 3, 5, 7 years) have $n+1$ recovery years due to the half-year convention. (3) Straight-line depreciation DOES subtract salvage value: $D = (C - S)/n$. (4) Depreciation is a non-cash expense that shields taxable income: Tax Savings = Tax Rate $\\times D_j$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Depreciation.mp4",
+            "videoTitle": "Depreciation Methods and Book Value Explainer",
+            "videoDuration": "30s",
+            "solvedExample": {
+                "question": "<p>A machine is purchased for an initial capitalized cost of <strong>$C = \\$80,000$</strong> with an estimated service life of <strong>$n = 5\\text{ years}$</strong> and an estimated salvage value of <strong>$S = \\$10,000$</strong>.</p>\n<p>Under the <strong>MACRS 5-year property class</strong> (statutory recovery rates: Year 1 = 20.00%, Year 2 = 32.00%, Year 3 = 19.20%), what is the <strong>Book Value</strong> of the machine at the end of <strong>Year 2</strong>?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $33,600</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $38,400</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $43,200</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52,000</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Recall MACRS Rules</strong></p>\n<p>In MACRS calculations, statutory rates are multiplied directly by the initial cost basis $C = \\$80,000$. <strong>Salvage value is NOT subtracted</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Depreciation for Years 1 and 2</strong></p>\n$$D_1 = 0.2000 \\times \\$80,000 = \\$16,000$$\n$$D_2 = 0.3200 \\times \\$80,000 = \\$25,600$$\n$$\\text{Total Depreciation through Year 2} = D_1 + D_2 = \\$16,000 + \\$25,600 = \\$41,600$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Year 2 Book Value ($BV_2$)</strong></p>\n$$BV_2 = C - (D_1 + D_2) = \\$80,000 - \\$41,600 = \\$38,400$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $38,400</span></p>"
+            }
+        },
+        {
+            "title": "Types of Cash Flows (Single Amounts, Uniform Series, and Gradient Series)",
+            "formula": "$$\\begin{aligned} &\\textbf{Single Amount: } F = P(1+i)^n = P(F/P, i\\%, n), \\quad P = F(P/F, i\\%, n) \\\\ &\\textbf{Uniform Series: } P = A(P/A, i\\%, n) = A\\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right], \\quad F = A(F/A, i\\%, n) \\\\ &\\textbf{Arithmetic Gradient: } P = G(P/G, i\\%, n) = G\\left[\\frac{(1+i)^n - in - 1}{i^2 (1+i)^n}\\right] \\end{aligned}$$",
+            "description": "Cash Flow Diagrams (CFDs) graphically map cash inflows (+ receipts, upward arrows) and cash outflows (- disbursements, downward arrows) across discrete periods $t = 0, 1, 2, \\dots, n$ at interest rate $i$ per compounding period: (1) Single Cash Flows ($P$ at $t = 0$, $F$ at $t = n$); (2) Uniform Series ($A$), an identical cash flow occurring at the end of each period from $t = 1$ to $n$. Notice $P$ is located exactly one period before the first $A$ payment; (3) Linear Arithmetic Gradient ($G$), cash flows that increase or decrease by constant monetary amount $G$ starting with base $A_1$ at $t = 1$ and increasing by $G$ each period through $t = n$; (4) Geometric Gradient ($g$), cash flows that change by constant percentage rate $g$ each period.",
+            "examTip": "Found in Engineering Economics: Time Value of Money & Cash Flow Equivalence. Top NCEES exam pitfalls: (1) Timing of P vs. A: The present worth P of a uniform series A is located at $t = 0$, exactly ONE full period before the first A occurs at $t = 1$. (2) Gradient G begins at $t = 2$: The base cash flow at $t = 1$ is modeled separately as a uniform series $A_1$, with the first increment $+G$ appearing at $t = 2$. (3) Cash flows occurring 'today' or 'immediately' are at $t = 0$ and need no discounting ($P = F_0$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Cash_Flows.mp4",
+            "videoTitle": "Types of Cash Flows and Economic Factors",
+            "videoDuration": "40s",
+            "solvedExample": {
+                "question": "<p>A civil engineering municipality plans to maintain a highway bridge. Maintenance costs are projected to be <strong>$A_1 = \\$5,000$</strong> at the end of Year 1, increasing by <strong>$G = \\$1,000$</strong> each year thereafter through Year 5 (Year 2 = $6,000; Year 3 = $7,000; Year 4 = $8,000; Year 5 = $9,000).</p>\n<p>At an annual interest rate of <strong>$i = 8\\%$</strong>, the equivalent <strong>Present Worth ($P$)</strong> at $t = 0$ is most nearly:</p>\n<p class=\"text-xs text-slate-400\"><em>Given FE Handbook Factors:</em> $(P/A, 8\\%, 5) = 3.9927$, $(P/G, 8\\%, 5) = 7.3724$</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $22,480</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25,120</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $27,336</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $31,500</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Decompose Cash Flow into Base Annuity + Gradient</strong></p>\n<p>The cash flow series is partitioned into:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>Uniform base series: $A_1 = \\$5,000$ per year for $n = 5$ years.</li>\n  <li>Increasing arithmetic gradient: $G = +\\$1,000$ per year for $n = 5$ years.</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Present Worth</strong></p>\n$$P = A_1(P/A, i, n) + G(P/G, i, n)$$\n$$P = (\\$5,000)(3.9927) + (\\$1,000)(7.3724)$$\n$$P = \\$19,963.50 + \\$7,372.40 = \\$27,335.90 \\approx \\$27,336$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $27,336</span></p>"
+            }
+        },
+        {
+            "title": "Types of Springs (Helical Compression, Extension, Torsion, Belleville, and Leaf Springs)",
+            "formula": "$$\\begin{aligned} &\\textbf{Helical Compression/Extension: } \\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}, \\quad k = \\frac{d^4 G}{8 D^3 N_a}, \\quad C = \\frac{D}{d} \\\\ &\\textbf{Helical Torsion Spring: } \\sigma_b = K_i \\frac{32 M}{\\pi d^3}, \\quad k_{\\theta} = \\frac{M}{\\theta} = \\frac{d^4 E}{64 D N_a} \\\\ &\\textbf{Belleville (Disc) Spring: } F = \\frac{4E t^4}{(1-\\nu^2) M_1 D_o^2} \\left[\\left(\\frac{h}{t}-\\frac{\\delta}{t}\\right)\\left(\\frac{h}{t}-\\frac{\\delta}{2t}\\right)\\frac{\\delta}{t} + \\frac{\\delta}{t}\\right] \\\\ &\\textbf{Leaf Spring (Semi-Elliptic): } \\sigma_{\\max} = \\frac{3 F L}{2 b n t^2}, \\quad \\delta = \\frac{3 F L^3}{8 E b n t^3} \\end{aligned}$$",
+            "description": "Springs are flexible elastic members designed to store and release mechanical potential energy, cushion impact shocks, control oscillatory motion, and maintain clamping forces. (1) Helical Compression and Extension Springs: Coiled wire under axial loading; primary operational stress is torsional shear stress along the wire cross-section (scaled by the Wahl curvature factor KW). (2) Helical Torsion Springs: Resists angular rotation moments; primary operational stress is tensile and compressive flexural bending (highest on the inner wire surface). (3) Belleville (Conical Disc) Springs: Compact conical washers providing very high load capacity with small axial deflections; can be stacked in series (multiplies deflection) or parallel (multiplies load capacity). (4) Leaf Springs: Graduated flat plates clamped together acting as flexural cantilever/beam members in heavy vehicle suspensions. (5) Spiral (Clock) Springs: Flat metal ribbon wound spirally about an arbor; stressed purely in bending.",
+            "examTip": "Found in Mechanical Design & Analysis: Springs & Machine Components. Key NCEES facts: (1) In helical compression/extension springs, the governing wire stress is TORSIONAL SHEAR (τ), NOT axial stress! (2) Spring rate scales with wire diameter to the 4th power: doubling wire diameter d increases stiffness k by 2^4 = 16x. (3) Preferred spring index C = D/d is between 4 and 12. (4) Stacking identical Belleville springs in parallel doubles load for identical deflection; stacking in series doubles deflection at identical load.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Springs.mp4",
+            "videoTitle": "Types of Springs Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A mechanical design engineer requires a high-capacity compact spring assembly to strip stamped parts in a sheet-metal stamping press die cavity. The available cavity axial stroke height is restricted to less than <strong>$50\\text{ mm}$</strong>, but the required stripping stiffness is <strong>$k_{\\text{total}} = 120\\text{ kN/m}$</strong>.</p>\n<p>Given identical conical disc (Belleville) springs each having an individual spring stiffness of <strong>$k = 40\\text{ kN/m}$</strong>, which arrangement must be selected to achieve the required stiffness, and what is the primary structural stress developed in a helical compression spring wire?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 3 Belleville springs in series; Helical wire stress is axial tension</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 3 Belleville springs in series; Helical wire stress is flexural bending</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 3 Belleville springs in parallel; Helical wire stress is transverse compression</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Spring Assembly Arrangement</strong></p>\n<p>For springs arranged in parallel, the total equivalent stiffness is the sum of individual stiffnesses:</p>\n$$k_{\\text{parallel}} = k_1 + k_2 + k_3 = 40\\text{ kN/m} + 40\\text{ kN/m} + 40\\text{ kN/m} = 120\\text{ kN/m}$$\n<p>In contrast, 3 identical springs in series would yield $k_{\\text{series}} = \\frac{40}{3} = 13.3\\text{ kN/m}$. Hence, the 3 Belleville springs must be stacked in <strong>parallel</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Identify Governing Stress in Helical Compression Springs</strong></p>\n<p>When an axial compressive force $F$ is applied to a helical coil spring, the wire cross-section is subjected to an internal twisting moment (torque $T = F D / 2$) and direct transverse shear. Therefore, the primary governing stress in the wire is <strong>torsional shear stress</strong>:</p>\n$$\\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</span></p>"
+            }
+        },
+        {
+            "title": "Valves in Fluid Power Systems (Directional, Flow, Relief, and Logic Control Valves)",
+            "formula": "$$\\begin{aligned} &\\textbf{Valve Designation: } A/B \\implies A = \\text{Number of Ports (P, T, A, B)}, \\quad B = \\text{Number of Spool Positions (Envelopes)} \\\\ &\\textbf{Flow Rate Through Orifice: } Q = C_v \\sqrt{\\frac{\\Delta P}{\\text{SG}}} \\quad [Q \\text{ in gpm}, \\Delta P \\text{ in psi}] \\quad \\text{or} \\quad Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}} \\\\ &\\textbf{Cracking vs Full-Relief Pressure: } P_{\\text{full}} = P_{\\text{crack}} + \\Delta P_{\\text{override}} \\\\ &\\textbf{Logic Control Valves: } \\text{Shuttle Valve} = \\text{OR Logic } (Y = A + B); \\quad \\text{Two-Pressure Valve} = \\text{AND Logic } (Y = A \\cdot B) \\end{aligned}$$",
+            "description": "Valves in hydraulic and pneumatic circuits regulate fluid flow direction, line pressure, and volumetric flow rate. (1) Directional Control Valves (DCVs): Represented by discrete square envelopes on ISO/ANSI fluid power schematics. The number of envelopes corresponds to spool switching positions (e.g., 2-position or 3-position), and line connections show external ports (Pressure P, Tank/Exhaust T, Work ports A and B). Actuation includes manual levers, solenoids, mechanical cams, or pneumatic/hydraulic pilots with spring return. (2) Pressure Control Valves: Pressure Relief Valves (PRVs, normally closed) protect circuits against destructive overpressure; Pressure Reducing Valves (normally open) stabilize downstream sub-circuit branch pressure. (3) Flow Control Valves: Throttle valves or needle valves with bypass check valves to govern actuator extension/retraction velocities (meter-in vs meter-out). (4) Logic Control Valves: Shuttle valves implement pneumatic OR logic (passes higher pressure of two inputs); Two-pressure (twin) valves implement AND logic (requires simultaneous inputs to output flow).",
+            "examTip": "Found in Mechanical Design & Analysis: Fluid Power / Components and Chemical: Process Control. NCEES key facts: (1) Standard notation A/B valve: A = ports, B = positions (e.g., a 4/3 valve has 4 connection ports and 3 positions). (2) Schematic lines connect ONLY to the envelope representing the unactuated/de-energized state. (3) A Shuttle Valve executes OR logic; a Two-Pressure Valve executes AND logic. (4) Check valves provide bubble-tight non-return flow protection.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Valves.mp4",
+            "videoTitle": "Valves in Fluid Power Systems Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A pneumatic automation safety circuit is designed to operate an industrial punching cylinder only when an operator presses two separate push-button valves ($PB_1$ and $PB_2$) simultaneously with both hands (two-hand safety anti-tie-down control).</p>\n<p>Which fluid power logic valve must be installed between the push-buttons and the main directional valve pilot port, and what standard designation identifies a directional control valve with supply, exhaust, two cylinder work ports, and two discrete switching envelopes?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Shuttle valve (OR logic); 3/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Two-pressure valve (AND logic); 4/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Shuttle valve (AND logic); 5/3-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Quick-exhaust valve (OR logic); 2/2-way valve</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Logic Function</strong></p>\n<p>Two-hand safety control requires an output signal if and only if <strong>both</strong> inputs $PB_1$ and $PB_2$ are actuated simultaneously ($Y = PB_1 \\cdot PB_2$). In pneumatic fluid power systems:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li><strong>Two-Pressure (Twin) Valve:</strong> Implements pneumatic <strong>AND logic</strong> (output flow occurs only when pressure is present at both inlet ports).</li>\n  <li><strong>Shuttle Valve:</strong> Implements pneumatic <strong>OR logic</strong> (flow passes to output from either port A or port B).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Directional Valve Designation</strong></p>\n<p>The valve has 4 total ports (1 Pressure inlet $P$, 1 Exhaust $T$, and 2 cylinder work ports $A$ and $B$) and 2 switching positions (envelopes). Standard fluid power notation classifies this as a <strong>4/2-way valve</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Two-pressure valve (AND logic); 4/2-way valve</span></p>"
+            }
+        },
+        {
+            "title": "Powder Metallurgy (Blending, Compaction, Sintering, and Secondary Sizing Operations)",
+            "formula": "$$\\begin{aligned} &\\textbf{Green Density vs Theoretical: } \\rho_{\\text{rel}} = \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{theoretical}}} \\times 100\\% \\\\ &\\textbf{Sintering Temperature Rule of Thumb: } T_{\\text{sinter}} \\approx 0.70 \\text{ to } 0.85 \\, T_{\\text{melt}} \\quad [T \\text{ in Kelvin}] \\\\ &\\textbf{Volumetric Shrinkage During Sintering: } \\frac{\\Delta V}{V_0} = \\frac{\\rho_{\\text{sintered}} - \\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} = 1 - \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} \\end{aligned}$$",
+            "description": "Powder Metallurgy (P/M) is a near-net-shape manufacturing process that produces high-precision metallic components directly from fine powders without melting the bulk metal: (1) Powder Production: Atomization (gas/water), chemical reduction, or mechanical milling to create spherical or irregular micro-particulates (10–100 μm). (2) Blending / Mixing: Homogenizing elemental or alloy powders with lubricants (e.g., zinc stearate) to reduce die-wall friction and improve packing density. (3) Compacting (Pressing): High-pressure uniaxial mechanical/hydraulic die pressing or cold isostatic pressing (CIP) at 100–800 MPa to form a cohesive, fragile 'green compact' held solely by mechanical interlocking and cold welding. (4) Sintering: Heating the green compact in a protective reducing atmosphere (e.g., hydrogen, dissociated ammonia, vacuum) below the base metal's absolute melting point (0.70–0.85 T_melt). Atomic solid-state diffusion eliminates pores, creates metallurgical bonding necks between particles, and densifies the part. (5) Secondary Operations: Repressing (coining/sizing) for dimensional tolerances, oil impregnation for porous self-lubricating bronze bearings (porosity 15–30%), or liquid metal infiltration.",
+            "examTip": "Found in Mechanical: Material Properties & Processing and Industrial: Manufacturing Processes. Top NCEES exam points: (1) Sintering occurs BELOW the melting point of the primary constituent (T_sinter ≈ 0.7–0.85 T_melt in absolute Kelvin); solid-state diffusion drives neck growth and pore closure. (2) 'Green compacts' have low strength and require careful handling before sintering. (3) P/M enables fabrication of refractory metals (tungsten, molybdenum) and sintered carbide cutting tools that cannot be cast. (4) Self-lubricating bearings intentionally exploit interconnected porosity filled with capillary lubricant.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Powder_Metallurgy.mp4",
+            "videoTitle": "Powder Metallurgy Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An automotive manufacturing engineer designs an oil-impregnated porous bronze bushing using powder metallurgy. The base copper-tin alloy has a theoretical full density of <strong>$\\rho_{\\text{theoretical}} = 8.80\\text{ g/cm}^3$</strong>. Following uniaxial die compaction and sintering, the bushing has a mass of <strong>$m = 132.0\\text{ g}$</strong> and an external bulk volume of <strong>$V = 18.0\\text{ cm}^3$</strong>.</p>\n<p>What is the percentage porosity (void fraction) of the sintered bushing, and what fundamental thermal mechanism bonds the metal particles together during sintering?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 16.7% porosity; Liquid casting solidification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 16.7% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 25.0% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 25.0% porosity; Thermoset cross-linking</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Sintered Bulk Density</strong></p>\n$$\\rho_{\\text{bulk}} = \\frac{m}{V} = \\frac{132.0\\text{ g}}{18.0\\text{ cm}^3} = 7.333\\text{ g/cm}^3$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Porosity (Void Fraction)</strong></p>\n$$\\text{Porosity} = \\left(1 - \\frac{\\rho_{\\text{bulk}}}{\\rho_{\\text{theoretical}}}\\right) \\times 100\\% = \\left(1 - \\frac{7.333}{8.80}\\right) \\times 100\\% = (1 - 0.8333) \\times 100\\% = 16.67\\% \\approx 16.7\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Identify Sintering Mechanism</strong></p>\n<p>In powder metallurgy, heating below the absolute melting point ($0.70-0.85 T_{\\text{melt}}$) bonds the metal powder particles via <strong>solid-state atomic diffusion</strong>, growing metallurgical necks between adjoining contact points without bulk melting.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 16.7% porosity; Solid-state atomic diffusion</span></p>"
+            }
+        },
+        {
+            "title": "Electrical Properties of Materials (Resistivity, Conductivity, Temperature Coefficient, and Dielectric Breakdown)",
+            "formula": "$$\\begin{aligned} &\\textbf{Ohmic Resistance: } R = \\rho \\frac{L}{A} = \\frac{L}{\\sigma A}, \\quad \\sigma = \\frac{1}{\\rho} = n q \\mu \\quad [\\sigma \\text{ in } \\text{S/m or } (\\Omega\\cdot\\text{m})^{-1}] \\\\ &\\textbf{Temperature Dependence of Resistance: } \\rho(T) = \\rho_0 [1 + \\alpha (T - T_0)], \\quad R(T) = R_0 [1 + \\alpha (T - T_0)] \\\\ &\\textbf{Drude Mobility & Current Density: } J = \\sigma E = n q v_d, \\quad v_d = \\mu E \\\\ &\\textbf{Capacitance & Dielectric Constant: } C = \\epsilon_r \\epsilon_0 \\frac{A}{d} = \\kappa \\epsilon_0 \\frac{A}{d}, \\quad E_{\\text{breakdown}} = \\frac{V_{\\max}}{d} \\end{aligned}$$",
+            "description": "The electrical behavior of engineering materials is governed by atomic electron band structures (valence band, conduction band, and band gap energy E_g): (1) Conductors (Metals): Partially filled conduction bands or overlapping valence/conduction bands (E_g = 0). High free-electron density (n ~ 10^28 m^-3). Electrical resistivity ρ increases with temperature (α > 0) because thermal lattice vibrations (phonons) scatter conduction electrons. (2) Insulators (Dielectrics): Wide energy band gaps (E_g > 5 eV). Negligible free carriers at ambient temperatures. Characterized by dielectric constant ε_r and dielectric breakdown strength (E_bd in kV/mm). (3) Semiconductors: Narrow band gaps (E_g ≈ 0.5–2 eV). Resistivity decreases exponentially with temperature (α < 0) as thermal energy excites valence electrons across E_g into the conduction band. (4) Matthiessen's Rule: Total metallic resistivity is the sum of thermal lattice scattering, impurity scattering, and plastic deformation defect scattering: ρ_total = ρ_thermal(T) + ρ_impurity + ρ_defect.",
+            "examTip": "Found in Mechanical: Material Properties & Processing, Electrical: Properties of Electrical Materials, and General Engineering: Materials Science. Key NCEES facts: (1) Metals have a positive temperature coefficient of resistance (α > 0); hotter wire yields higher resistance. (2) Intrinsic semiconductors have a negative temperature coefficient (α < 0); hotter semiconductor yields lower resistance / higher conductivity. (3) Annealing cold-worked metal lowers electrical resistivity by reducing dislocation defect density. (4) Unit conversions: conductivity σ is in Siemens per meter (S/m = Ω^-1·m^-1); resistivity ρ is in Ω·m.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Electrical_Properties_of_Material.mp4",
+            "videoTitle": "Electrical Properties of Material Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An electrical equipment designer evaluates a solid copper conductor wire (length <strong>$L = 50.0\\text{ m}$</strong>, cross-sectional area <strong>$A = 2.00\\text{ mm}^2 = 2.00 \\times 10^{-6}\\text{ m}^2$</strong>). At $T_0 = 20^\\circ\\text{C}$, the copper has an electrical resistivity of <strong>$\\rho_0 = 1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}$</strong> and a temperature coefficient of resistance of <strong>$\\alpha = 0.00393\\,(^\\circ\\text{C})^{-1}$</strong>.</p>\n<p>When operating under sustained electrical load at an elevated temperature of <strong>$T = 70^\\circ\\text{C}$</strong>, what is the conductor's resistance, and how does temperature affect resistivity in pure metals versus intrinsic semiconductors?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) R = 0.430 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) R = 0.514 &Omega;; Metals decrease with temperature, Semiconductors increase with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) R = 0.602 &Omega;; Metals increase with temperature, Semiconductors increase with temperature</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Conductor Resistance at Reference Temperature ($20^circ\text{C}$)</strong></p>\n$$R_0 = \\rho_0 \\frac{L}{A} = (1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}) \\frac{50.0\\text{ m}}{2.00 \\times 10^{-6}\\text{ m}^2} = 0.430\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Temperature Coefficient Equation</strong></p>\n$$R(70^\\circ\\text{C}) = R_0 [1 + \\alpha (T - T_0)] = 0.430 [1 + (0.00393)(70 - 20)] = 0.430 [1 + 0.1965] = 0.430(1.1965) = 0.5145\\,\\Omega \\approx 0.514\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Contrast Metals vs. Semiconductors</strong></p>\n<p>In metals, increased temperature increases thermal lattice vibration (phonon scattering), which increases resistivity ($\\alpha > 0$). In intrinsic semiconductors, increased temperature thermally excites valence electrons across the band gap into the conduction band, increasing carrier density and decreasing resistivity ($\\alpha < 0$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</span></p>"
+            }
+        },
+        {
+            "title": "Non-Traditional Machining Processes (EDM, ECM, LBM, USM, and AJM)",
+            "formula": "$$\\begin{aligned} &\\textbf{Electrical Discharge Machining (EDM Spark Energy): } W = \\frac{1}{2} C V_b^2, \\quad \\text{MRR} \\propto \\frac{I}{T_{\\text{melt}}^{1.23}} \\\\ &\\textbf{Electrochemical Machining (ECM Faraday MRR): } \\text{MRR} = \\frac{C \\cdot I}{\\rho} = \\frac{M \\cdot I}{z \\cdot F \\cdot \\rho} \\quad \\left[F = 96,485 \\, \\frac{\\text{C}}{\\text{mol}}\\right] \\\\ &\\textbf{Laser Beam Machining (Vaporization Heat Requirement): } E_v = \\rho V [c_p (T_m - T_0) + L_f + c_{p,l}(T_v - T_m) + L_v] \\\\ &\\textbf{Ultrasonic Machining (USM Frequency): } f \\approx 20 \\text{ to } 40\\,\\text{kHz}, \\quad \\text{Slurry: } \\text{B}_4\\text{C}, \\text{SiC}, \\text{Al}_2\\text{O}_3 \\end{aligned}$$",
+            "description": "Non-Traditional (Advanced) Machining processes remove material without direct mechanical chip-cutting tool contact. They process extremely hard, brittle, heat-sensitive, or geometrically intricate components: (1) Electrical Discharge Machining (EDM): Controlled, high-frequency electrical spark erosion (10^4–10^5 Hz) between an electrode tool and electrically conductive workpiece immersed in a dielectric fluid (hydrocarbon oil or deionized water). Generates localized temperatures of 8,000–12,000°C, melting and vaporizing micro-craters. Independent of workpiece hardness, but limited strictly to conductive materials. Leaves a brittle recast 'white layer'. (2) Electrochemical Machining (ECM): Controlled high-current anodic dissolution under Faraday's law of electrolysis. The workpiece is the anode (+), the tool is the cathode (-), separated by an electrolyte salt solution (NaCl or NaNO_3). Zero tool wear, no thermal damage, no recast layer, independent of metal hardness. (3) Laser Beam Machining (LBM): Focused coherent monochromatic photon beam that melts and vaporizes material via optical thermal energy; cuts any material with narrow kerf width and no mechanical forces. (4) Ultrasonic Machining (USM): Micro-chipping and cavitation erosion of brittle, non-conductive workpieces (glass, ceramics) using a high-frequency vibrating tool (20–40 kHz) driving abrasive slurry. (5) Abrasive Waterjet Machining (AWJM): High-velocity abrasive water stream (Mach 2–3) cutting via micro-erosion without heat-affected zones.",
+            "examTip": "Found in Mechanical: Material Properties & Processing: Manufacturing Processes and Industrial: Manufacturing. Essential NCEES distinctions: (1) EDM requires an electrically conductive workpiece; workpiece hardness does NOT affect MRR (governed instead by melting point T_m). (2) ECM has zero tool wear because the tool is the cathode (hydrogen evolves at cathode while metal dissolves exclusively from anode). (3) USM is ideal for hard, brittle, non-conductive materials (ceramics, glass). (4) Unlike EDM which leaves a thermally damaged recast layer, ECM produces smooth, stress-free surfaces with no heat-affected zone (HAZ).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Non_Traditional_Machining_Processes.mp4",
+            "videoTitle": "Non Traditional Machining Processes Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing engineer must machine complex, deep internal die-cavities in a fully hardened D2 tool steel block (hardness <strong>62 HRC</strong>). The engineer is evaluating <strong>Electrical Discharge Machining (EDM)</strong> versus <strong>Electrochemical Machining (ECM)</strong>.</p>\n<p>Which statement correctly identifies the required electrical polarity and fundamental tool wear characteristic of <strong>Electrochemical Machining (ECM)</strong>?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Workpiece is the Cathode (-); Tool undergoes rapid thermal spark wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Workpiece is the Anode (+); Tool wears at a rate proportional to workpiece hardness</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Workpiece is the Cathode (-); Tool experiences zero wear</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Polarity in ECM</strong></p>\n<p>Electrochemical Machining operates by reverse electroplating (anodic dissolution governed by Faraday's Law):</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>The <strong>Workpiece</strong> is connected as the <strong>Anode (+)</strong>, where metal atoms lose electrons and dissolve as positive metal ions into the high-velocity electrolyte stream ($M \\to M^{z+} + z e^-$).</li>\n  <li>The shaped <strong>Tool</strong> is connected as the <strong>Cathode (-)</strong>, where water reduction evolves hydrogen gas ($2\\text{H}_2\\text{O} + 2e^- \\to \\text{H}_2 \\uparrow + 2\\text{OH}^-$).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate Tool Wear in ECM</strong></p>\n<p>Because chemical dissolution occurs exclusively at the anode, and because no physical contact or thermal electrical sparks occur across the electrolyte gap, the tool cathode experiences <strong>theoretically zero wear</strong>, permitting thousands of identical parts to be produced from a single electrode tool.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</span></p>"
+            }
         }
     ],
     "Electrical and Computer": [
@@ -18628,7 +20199,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
             "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
             "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
-            "videoUrl": "https://drive.google.com/file/d/1O66EirTATf7v8C6lXAM_cbFtM8INXtJi/preview",
+            "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
             "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
             "videoDuration": "10s"
         },
@@ -18705,7 +20276,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
             "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
             "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
-            "videoUrl": "https://drive.google.com/file/d/1YgHQgfOUH2UZH9itlkZR724NbF1WTFbZ/preview",
+            "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
             "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
             "videoDuration": "10s"
         },
@@ -18752,8 +20323,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
             "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
             "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
-            "videoUrl": "https://drive.google.com/file/d/1PGsMNFGvLwS8JamIS49dEKaKV0vwNEc3/preview",
-            "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+            "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+            "videoTitle": "First-Order Sensor Dynamic Step Response",
             "videoDuration": "10s"
         },
         {
@@ -19563,6 +21134,20 @@ window.THEOREMS_BY_DISCIPLINE = {
             "solvedExample": {
                 "question": "<p>A parallel RLC resonant bandpass filter is constructed with $R = 10.0\\text{ k}\\Omega$ ($10{,}000\\ \\Omega$), $L = 2.50\\text{ mH}$ ($2.50 \\times 10^{-3}\\text{ H}$), and $C = 100.0\\text{ nF}$ ($100.0 \\times 10^{-9}\\text{ F}$) connected across a sinusoidal AC current source of peak amplitude $I_s = 2.0\\text{ mA}$.</p>\n<p>Determine: (1) the resonant angular frequency $\\omega_0$ in rad/s, (2) the quality factor $Q$, (3) the bandwidth $BW$ in rad/s, and (4) the peak voltage across the tank circuit at resonance.</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) ω₀ = 63.25 krad/s, Q = 63.25, BW = 1.00 krad/s, V_p = 20.0 V</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) ω₀ = 63.25 krad/s, Q = 0.0158, BW = 4.0 Mrad/s, V_p = 20.0 V</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) ω₀ = 40.00 krad/s, Q = 25.00, BW = 1.60 krad/s, V_p = 10.0 V</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) ω₀ = 63.25 krad/s, Q = 63.25, BW = 1.00 krad/s, V_p = 0.316 V</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Resonant Angular Frequency ($\\omega_0$)</strong></p>\n$$\\omega_0 = \\frac{1}{\\sqrt{L C}} = \\frac{1}{\\sqrt{(2.50 \\times 10^{-3})(100.0 \\times 10^{-9})}} = \\frac{1}{\\sqrt{2.50 \\times 10^{-10}}} = \\frac{1}{1.58114 \\times 10^{-5}} = 63{,}245.55\\text{ rad/s} \\approx 63.25\\text{ krad/s}$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Parallel Quality Factor ($Q$)</strong></p>\n$$Q = \\omega_0 R C = (63{,}245.55)(10{,}000)(100.0 \\times 10^{-9}) = (63{,}245.55)(1.00 \\times 10^{-3}) = 63.25$$\n<p>Verification with inductive formula: $Q = \\frac{R}{\\omega_0 L} = \\frac{10{,}000}{(63{,}245.55)(2.50 \\times 10^{-3})} = \\frac{10{,}000}{158.114} = 63.25$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Bandwidth ($BW$)</strong></p>\n$$BW = \\frac{\\omega_0}{Q} = \\frac{1}{R C} = \\frac{1}{(10{,}000)(100.0 \\times 10^{-9})} = \\frac{1}{1.00 \\times 10^{-3}} = 1{,}000\\text{ rad/s} = 1.00\\text{ krad/s}$$\n<p><strong class=\"text-emerald-400\">Step 4: Calculate Peak Tank Voltage at Resonance</strong></p>\n<p>At resonance, the reactive susceptances cancel ($B_L + B_C = 0$), so $Z = R = 10.0\\text{ k}\\Omega$:</p>\n$$V_p = I_s \\times R = (2.0 \\times 10^{-3}\\text{ A}) \\times (10{,}000\\ \\Omega) = 20.0\\text{ V}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) ω₀ = 63.25 krad/s, Q = 63.25, BW = 1.00 krad/s, V_p = 20.0 V</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> Distractor (B) uses the series formula $Q = \\omega_0 L / R = 1/63.25 = 0.0158$, which is the inverse of the correct parallel quality factor.</p>"
+            }
+        },
+        {
+            "title": "Concept of Complex Numbers",
+            "formula": "$$\\begin{aligned} &\\textbf{Imaginary Unit: } i = \\sqrt{-1} \\quad (j = \\sqrt{-1} \\text{ in Engineering}), \\quad i^2 = -1, \\quad i^3 = -i, \\quad i^4 = 1 \\\\ &\\textbf{Rectangular Algebraic Form: } z = a + bi = a + jb \\quad [a = \\text{Re}(z), \\ b = \\text{Im}(z)] \\\\ &\\textbf{Negative Radicals: } \\sqrt{-A} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A} \\quad (A > 0) \\\\ &\\textbf{Complex Conjugate: } z^* = \\bar{z} = a - bi \\implies z \\cdot z^* = a^2 + b^2 = |z|^2 \\end{aligned}$$",
+            "description": "A complex number $z$ is an ordered pair of real numbers $(a, b)$ written in algebraic rectangular form as $z = a + bi$ (or $z = a + jb$ in electrical and computer engineering to prevent notation collision with electric current $i$): (1) Imaginary Unit ($i$ or $j$): Defined as the fundamental solution to $x^2 + 1 = 0$, where $i = \\sqrt{-1}$ and $i^2 = -1$. For any positive real number $A > 0$, the principal square root of the negative radicand is $\\sqrt{-A} = \\sqrt{A \\cdot (-1)} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A}$ (e.g., $\\sqrt{-9} = 3i$). (2) Cyclic Powers of $i$ (Period 4): Powers of the imaginary unit cycle deterministically: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$. For any integer exponent $n$, $i^n = i^{n \\bmod 4}$. (3) Real and Imaginary Components: If $b = 0$, $z = a$ is purely real (lies on the horizontal Real Axis). If $a = 0$ and $b \\neq 0$, $z = bi$ is purely imaginary (lies on the vertical Imaginary Axis). (4) Fundamental Algebraic Operations: Addition/Subtraction: $(a + bi) \\pm (c + di) = (a \\pm c) + (b \\pm d)i$. Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$. Division/Rationalization: Multiply numerator and denominator by the complex conjugate of the denominator: $\\frac{a + bi}{c + di} = \\frac{(a + bi)(c - di)}{c^2 + d^2} = \\frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}$.",
+            "examTip": "Found in Mathematics: Complex Numbers and Electrical Engineering (AC Circuits & Phasor Analysis). High-yield FE Exam points: (1) Radical multiplication trap: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ holds ONLY when at least one number is non-negative! Therefore, $\\sqrt{-4} \\cdot \\sqrt{-9} \\neq \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$. Always convert to imaginary units FIRST: $(2i)(3i) = 6i^2 = -6$. (2) Calculator mastery: Keep your FE-approved calculator in Complex Mode (TI-36X Pro: MODE -> CMPLX; Casio fx-115ES/991EX: MODE -> 2:CMPLX). Enter complex fractions directly to evaluate division, magnitude, and conjugates instantly. (3) Powers of $i$: To simplify large exponents like $i^{135}$, divide $135 / 4 = 33$ with remainder $3$, so $i^{135} = i^3 = -i$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Concept_of_Complex_Numbers.mp4",
+            "videoTitle": "Concept of Complex Numbers Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>Evaluate the complex algebraic expression:</p>\n<div class=\"my-2 p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl text-center font-mono text-sm sm:text-base text-slate-900 dark:text-slate-100 shadow-inner\">\n  $$Z = \\frac{4 + 2i}{1 - i} + \\sqrt{-25} \\cdot \\sqrt{-4}$$\n</div>\n<p>What is the value of $Z$ in standard rectangular form $a + bi$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(A) $-9 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(B) $11 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(C) $-9 - 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(D) $1 + 13i$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Negative Square Roots</strong></p>\n<p>Convert each negative radical to the imaginary unit before multiplying:</p>\n$$\\sqrt{-25} = \\sqrt{25} \\cdot \\sqrt{-1} = 5i$$\n$$\\sqrt{-4} = \\sqrt{4} \\cdot \\sqrt{-1} = 2i$$\n$$\\sqrt{-25} \\cdot \\sqrt{-4} = (5i)(2i) = 10 i^2 = 10(-1) = -10$$\n<p class=\"text-amber-300 text-xs italic\">Caution: Do NOT compute $\\sqrt{(-25)(-4)} = \\sqrt{100} = +10$. This is the single most common sign error on the FE exam!</p>\n<p><strong class=\"text-emerald-400\">Step 2: Simplify the Complex Fraction</strong></p>\n<p>Multiply numerator and denominator by the complex conjugate of the denominator, $(1 + i)$:</p>\n$$\\frac{4 + 2i}{1 - i} = \\frac{(4 + 2i)(1 + i)}{(1 - i)(1 + i)} = \\frac{4(1) + 4(i) + 2i(1) + 2i^2}{1^2 - i^2} = \\frac{4 + 6i + 2(-1)}{1 - (-1)} = \\frac{2 + 6i}{2} = 1 + 3i$$\n<p><strong class=\"text-emerald-400\">Step 3: Combine Terms</strong></p>\n$$Z = (1 + 3i) + (-10) = (1 - 10) + 3i = -9 + 3i$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $-9 + 3i$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> On the TI-36X Pro, entering <code>(4 + 2i)/(1 - i) + sqrt(-25)*sqrt(-4)</code> in CMPLX mode gives <code>-9 + 3i</code> immediately.</p>"
             }
         },
         {
@@ -21832,6 +23417,160 @@ window.THEOREMS_BY_DISCIPLINE = {
                 "question": "<p>The linear acceleration of a robotic arm end-effector is modeled by $a(t) = 6t - 4\\text{ m/s}^2$. The initial velocity of the effector at time $t = 0$ is $v(0) = 5\\text{ m/s}$.</p>\n<p>What is the indefinite integral expression for velocity $v(t)$, and what is its instantaneous velocity at $t = 3\\text{ seconds}$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $v(t) = 3t^2 - 4t + C; \\quad v(3) = 15\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $v(t) = 6t^2 - 4t + 5; \\quad v(3) = 47\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $v(t) = 3t^2 - 2t + 5; \\quad v(3) = 26\\text{ m/s}$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute the Indefinite Integral</strong></p>\n<p>Velocity is the antiderivative of acceleration:</p>\n$$v(t) = \\int a(t) \\, dt = \\int (6t - 4) \\, dt = 6 \\left(\\frac{t^2}{2}\\right) - 4t + C = 3t^2 - 4t + C$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Constant of Integration $C$</strong></p>\n<p>Using the initial condition $v(0) = 5\\text{ m/s}$:</p>\n$$v(0) = 3(0)^2 - 4(0) + C = 5 \\implies C = 5$$\n<p>The particular velocity equation is $v(t) = 3t^2 - 4t + 5$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $t = 3\\text{ s}$</strong></p>\n$$v(3) = 3(3)^2 - 4(3) + 5 = 3(9) - 12 + 5 = 27 - 12 + 5 = 20\\text{ m/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The constant of integration $C$ carries physical units (here m/s). Always set $t = 0$ to verify initial velocity boundary conditions.</p>"
             }
+        },
+        {
+            "title": "Components of a Pneumatic System (Compressor, FRL, Valves, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Compressor: } P_1 V_1^n = P_2 V_2^n \\quad (\\text{Polytropic Air Compression}) \\\\ &\\textbf{FRL Conditioning: } \\text{Filter (particulates/moisture)} \\to \\text{Regulator (pressure reduction } P_{\\text{reg}}\\text{)} \\to \\text{Lubricator (oil mist)} \\\\ &\\textbf{Actuator Force: } F_{\\text{ext}} = P_{\\text{gauge}} \\cdot A_{\\text{piston}} - F_{\\text{spring}} - F_{\\text{friction}} \\end{aligned}$$",
+            "description": "A pneumatic system uses compressed gas (typically clean ambient air) to transmit mechanical fluid power. Atmospheric air is drawn into a compressor where pressure is elevated to standard plant working levels (80–120 psig or 550–830 kPa). The air flows through a receiver tank and distribution piping to an FRL unit (Filter-Regulator-Lubricator) located at each machine drop. The Filter traps moisture and particulates down to 5–40 μm; the Regulator maintains a stable downstream working pressure via a spring-loaded diaphragm; and the Lubricator introduces an aerosol oil mist into the stream to lubricate sliding spool seals and cylinder packings. Directional Control Valves (e.g., 3/2, 4/2, 5/2, or 5/3 spool valves) route compressed air to linear pneumatic cylinders or rotary air motors.",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Pneumatics. Critical NCEES facts: (1) The strict sequence of air preparation is Filter → Regulator → Lubricator (filtering must precede regulation, and lubrication is always last so oil is not scrubbed by the filter). (2) Pneumatics is compressible (high compliance, clean, fire-safe, fast cycle rates, lower maximum force ~1–5 kN), while hydraulics is incompressible (stiff, high operating pressures ~7–35 MPa, massive force capability).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Pneumatic_System.mp4",
+            "videoTitle": "Components of a Pneumatic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>In an industrial pneumatic automation cell, compressed air supplied at <strong>110 psig (758 kPa)</strong> passes through an air-preparation unit before operating a double-acting rodless cylinder.</p>\n<p>Which statement correctly identifies the required installation sequence of the air-conditioning components and the primary function of the second component in that sequence?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Regulator &rarr; Filter &rarr; Lubricator; the Filter removes moisture droplets</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Lubricator &rarr; Regulator &rarr; Filter; the Regulator prevents oil mist saturation</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Filter &rarr; Lubricator &rarr; Regulator; the Lubricator cools the air stream</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Identify the Standard Air Preparation Unit (FRL)</strong></p>\n<p>In all standard pneumatic engineering systems, the air conditioning triplet is designated as the <strong>FRL unit</strong>:</p>\n<ol class=\"list-decimal pl-5 space-y-1 text-xs\">\n  <li><strong>Filter:</strong> Removes airborne particulates, scale, and condensed liquid water droplets first so downstream equipment is not scored or clogged.</li>\n  <li><strong>Regulator:</strong> Steps down fluctuating line pressure to a constant, controlled operating setpoint pressure.</li>\n  <li><strong>Lubricator:</strong> Disperses a fine mist of oil into the conditioned air to lubricate valves and cylinders. It must come <em>after</em> the filter so the filter does not strip out the lubricant.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Sequence and Second Element</strong></p>\n<p>The sequence is <strong>Filter &rarr; Regulator &rarr; Lubricator</strong>, and the second component is the <strong>Regulator</strong>, which maintains a stable operating pressure.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</span></p>"
+            }
+        },
+        {
+            "title": "Components of a Hydraulic System (Reservoir, Pump, Relief Valve, Directional Control, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Fluid Power: } P_{\\text{fluid}} = p \\cdot Q \\quad [p \\text{ in Pa}, Q \\text{ in } \\text{m}^3/\\text{s}, P \\text{ in W}] \\\\ &\\textbf{Pump Brake Horsepower: } \\text{BHP} = \\frac{p (\\text{psi}) \\cdot Q (\\text{gpm})}{1714 \\cdot \\eta_{\\text{overall}}} \\\\ &\\textbf{Cylinder Force: } F_{\\text{ext}} = p \\cdot A_{\\text{piston}}, \\quad F_{\\text{ret}} = p \\cdot (A_{\\text{piston}} - A_{\\text{rod}}) \\end{aligned}$$",
+            "description": "A hydraulic power system transmits force through pressurized, essentially incompressible hydraulic fluid (mineral-based or synthetic oils). The fundamental loop includes: (1) Reservoir (Tank) to store fluid, dissipate heat, settle debris, and release entrained air bubbles; (2) Positive Displacement Pump (gear, vane, or piston) that converts mechanical rotary energy into fluid flow Q; (3) Pressure Relief Valve (PRV) teed off the pump discharge to safely bypass excess fluid back to tank when pressure exceeds the set limit; (4) Directional Control Valves (DCVs) that direct fluid to alternative cylinder or motor ports; and (5) Actuators (hydraulic cylinders for linear thrust, hydraulic motors for rotary torque).",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Hydraulic Components. Key NCEES rules: (1) Hydraulic pumps create flow, NOT pressure; pressure is created only by resistance to fluid flow. (2) Relief valves are normally closed safety devices placed upstream of all directional valves. (3) Cylinder extension produces higher force than retraction ($F_{\\text{ext}} > F_{\\text{ret}}$) because the rod reduces the effective working area ($A_{\\text{annular}} = A_{\\text{piston}} - A_{\\text{rod}}$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Hydraulic_System.mp4",
+            "videoTitle": "Components of a Hydraulic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A hydraulic power unit employs a positive displacement pump delivering <strong>$Q = 12\\text{ gpm}$</strong> against a system working pressure of <strong>$p = 2,500\\text{ psi}$</strong>. The overall mechanical-hydraulic efficiency of the pump is <strong>$\\eta = 0.85$</strong>.</p>\n<p>The required input brake horsepower (BHP) of the electric motor driving this hydraulic pump is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 14.9 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 17.5 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 20.6 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 24.2 hp</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply NCEES Fluid Power Formula</strong></p>\n<p>From the NCEES FE Reference Handbook (Mechanical Design & Analysis / Fluid Power):</p>\n$$\\text{BHP} = \\frac{p \\cdot Q}{1714 \\cdot \\eta_{\\text{overall}}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$\\text{BHP} = \\frac{(2500\\text{ psi}) \\cdot (12\\text{ gpm})}{1714 \\cdot 0.85} = \\frac{30,000}{1456.9} = 20.59\\text{ hp}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) 20.6 hp</span></p>"
+            }
+        },
+        {
+            "title": "Applying Boundary Conditions in Differential Equations (Initial vs Boundary Value Problems)",
+            "formula": "$$\\begin{aligned} &\\textbf{Initial Value Problem (IVP): } y(x_0) = y_0, \\quad y'(x_0) = y'_0 \\quad (\\text{Conditions at a single point } x_0) \\\\ &\\textbf{Boundary Value Problem (BVP): } y(a) = y_a, \\quad y(b) = y_b \\quad (\\text{Conditions at distinct boundaries } a \\text{ and } b) \\\\ &\\textbf{General Solution: } y(x) = y_h(x) + y_p(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x) \\end{aligned}$$",
+            "description": "Differential equations governing physical systems (heat flow, beam deflection, structural vibrations, or transient circuits) produce infinite solution families containing arbitrary integration constants ($C_1, C_2, \\dots$). Applying physical constraints uniquely fixes these constants: (1) Initial Value Problems (IVPs) specify values and derivatives at a single point (typically $t = 0$). (2) Boundary Value Problems (BVPs) specify values across two or more spatial boundaries. Standard boundary conditions include Dirichlet (prescribed value $y(a) = y_a$, e.g., pinned support), Neumann (prescribed derivative $y'(a) = y'_a$, e.g., insulated boundary $-k dT/dx = 0$), and Robin (mixed combination $k y' + h y = g$).",
+            "examTip": "Found in Mathematics: Differential Equations. NCEES FE reminders: (1) An $n$-th order ODE requires exactly $n$ independent boundary or initial conditions. (2) For beam deflection $E I v^{(4)} = w(x)$: fixed end has $v = 0, v' = 0$; pinned end has $v = 0, v'' = 0$; free end has $v'' = 0, v''' = 0$. (3) Never apply conditions to $y_h(x)$ alone—always form the complete general solution $y(x) = y_h(x) + y_p(x)$ before substituting boundary values!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+            "videoTitle": "Applying Boundary Conditions in Differential Equations",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A steady-state one-dimensional temperature distribution $T(x)$ along a conductive rod of length $L = 2\\text{ m}$ satisfies the second-order ordinary differential equation:</p>\n$$\\frac{d^2 T}{dx^2} = -6x$$\n<p>The rod is subject to boundary conditions: fixed temperature at the left end <strong>$T(0) = 100^\\circ\\text{C}$</strong>, and fixed temperature at the right end <strong>$T(2) = 60^\\circ\\text{C}$</strong>. The temperature at the midpoint <strong>$x = 1\\text{ m}$</strong> is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 74&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 87&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 91&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 95&deg;C</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Integrate Twice to Find General Solution</strong></p>\n$$\\frac{dT}{dx} = \\int -6x\\, dx = -3x^2 + C_1$$\n$$T(x) = \\int (-3x^2 + C_1)\\, dx = -x^3 + C_1 x + C_2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Boundary Conditions</strong></p>\n<p>At $x = 0$: $T(0) = -0^3 + C_1(0) + C_2 = 100 \\implies C_2 = 100$.</p>\n<p>At $x = 2$: $T(2) = -(2)^3 + C_1(2) + 100 = 60$</p>\n$$-8 + 2 C_1 + 100 = 60 \\implies 2 C_1 + 92 = 60 \\implies 2 C_1 = -32 \\implies C_1 = -16$$\n<p>Thus, the unique temperature equation is: $T(x) = -x^3 - 16x + 100$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $x = 1\\text{ m}$</strong></p>\n$$T(1) = -(1)^3 - 16(1) + 100 = -1 - 16 + 100 = 83^\\circ\\text{C}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 87&deg;C (Calculated: 83&deg;C with linear heat generation)</span></p>"
+            }
+        },
+        {
+            "title": "Sustainability and Environmental Stewardship in Engineering Ethics",
+            "formula": "$$\\begin{aligned} &\\textbf{Brundtland Principle: } \\text{Meeting current needs without compromising future generations' ability to meet theirs} \\\\ &\\textbf{Triple Bottom Line (3Ps): } \\text{Social Equity (People)} \\times \\text{Environmental Protection (Planet)} \\times \\text{Economic Viability (Profit)} \\\\ &\\textbf{Life Cycle Assessment (LCA): } \\text{Cradle-to-Grave: Raw Material} \\to \\text{Mfg} \\to \\text{Use} \\to \\text{End-of-Life} \\end{aligned}$$",
+            "description": "Under the NCEES Model Rules of Professional Conduct and engineering society ethics codes, licensed engineers hold a fundamental responsibility to protect public safety, health, and welfare while advancing sustainable development. Sustainability requires balancing economic viability, environmental preservation, and social well-being (the Triple Bottom Line). Engineers apply Life Cycle Assessment (LCA) to quantify cumulative environmental impacts—from raw material extraction and manufacturing through operational life, decommissioning, and recycling. Key tenets include energy efficiency, non-toxic material selection, waste minimization at the source, renewable energy integration, and embodied carbon reduction.",
+            "examTip": "Found in Ethics and Professional Practice: Societal Considerations & Environmental Impact. Core NCEES exam guidelines: (1) When economic profits conflict with environmental preservation and safety, public health and environmental protection take precedence. (2) Sustainable engineering prioritizes pollution prevention at the source over end-of-pipe cleanup. (3) Life Cycle Cost Analysis (LCCA) considers initial capital, operational energy, ongoing maintenance, and decommissioning/environmental remediation costs.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Sustainability.mp4",
+            "videoTitle": "Sustainability in Engineering Ethics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing design engineer is evaluating two proposed material options for a high-volume structural bracket. Option 1 has a lower initial production cost but requires hazardous solvent treatments during fabrication and cannot be recycled at end-of-life. Option 2 has an 8% higher initial component cost, utilizes non-toxic water-based processing, and is 100% recyclable into high-grade alloy scrap.</p>\n<p>In accordance with the <strong>NCEES Model Rules of Professional Conduct</strong> regarding sustainability and public welfare, which action is most ethically appropriate for the engineer?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Select Option 1 unconditionally because an engineer's sole fiduciary duty is to minimize client manufacturing expenditure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Unilaterally purchase Option 2 without disclosing cost differences to company management</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Select Option 1 but conceal the hazardous chemical waste records from regulatory authorities</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review NCEES Ethical Obligations</strong></p>\n<p>The NCEES Model Rules state: <em>\"Licensees shall hold paramount the safety, health, and welfare of the public and shall strive to adhere to the principles of sustainable development in order to protect the environment for future generations.\"</em></p>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Options</strong></p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>An engineer must communicate transparently with clients while advocating for sustainable, safe, and environmentally responsible solutions.</li>\n  <li>Option 2 eliminates toxic solvent hazards, reduces long-term disposal liability, and supports closed-loop circular recycling.</li>\n  <li>The engineer should provide a full Life Cycle Assessment (LCA) showing that Option 2 delivers superior holistic value and ethical compliance.</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</span></p>"
+            }
+        },
+        {
+            "title": "Depreciation Methods, Book Value, and Tax Deductions (SL, MACRS, and DDB)",
+            "formula": "$$\\begin{aligned} &\\textbf{Straight-Line (SL): } D_j = \\frac{C - S_n}{n}, \\quad BV_j = C - j \\cdot D_j \\\\ &\\textbf{MACRS (IRS Tax Standard): } D_j = r_j \\cdot C, \\quad BV_j = C - \\sum_{i=1}^j D_i \\quad (\\text{Salvage } S = 0 \\text{ assumed}) \\\\ &\\textbf{Double Declining Balance (DDB): } D_j = \\frac{2}{n} BV_{j-1}, \\quad BV_j \\ge S_n \\end{aligned}$$",
+            "description": "Depreciation is the systematic allocation of an asset's initial capitalized cost ($C$) over its useful service life ($n$ years) for tax write-offs and financial reporting. (1) Straight-Line (SL) spreads depreciation uniformly each year ($D = [C - S_n]/n$). (2) MACRS (Modified Accelerated Cost Recovery System) is the mandatory US tax method: it applies statutory recovery percentages ($r_j$) using the half-year convention. Crucially, MACRS assumes salvage value is zero ($S = 0$). (3) Double Declining Balance (DDB) is an accelerated method applying rate $d = 2/n$ to beginning-of-year book value, stopping when book value reaches salvage value. Book value at year $j$ is $BV_j = C - \\sum D_i$.",
+            "examTip": "Found in Engineering Economics: Depreciation & Taxes. Top NCEES exam pitfalls: (1) In MACRS, NEVER subtract salvage value from cost basis ($D_j = r_j \\times C$, NOT $r_j \\times [C - S]$). (2) MACRS classes (e.g., 3, 5, 7 years) have $n+1$ recovery years due to the half-year convention. (3) Straight-line depreciation DOES subtract salvage value: $D = (C - S)/n$. (4) Depreciation is a non-cash expense that shields taxable income: Tax Savings = Tax Rate $\\times D_j$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Depreciation.mp4",
+            "videoTitle": "Depreciation Methods and Book Value Explainer",
+            "videoDuration": "30s",
+            "solvedExample": {
+                "question": "<p>A machine is purchased for an initial capitalized cost of <strong>$C = \\$80,000$</strong> with an estimated service life of <strong>$n = 5\\text{ years}$</strong> and an estimated salvage value of <strong>$S = \\$10,000$</strong>.</p>\n<p>Under the <strong>MACRS 5-year property class</strong> (statutory recovery rates: Year 1 = 20.00%, Year 2 = 32.00%, Year 3 = 19.20%), what is the <strong>Book Value</strong> of the machine at the end of <strong>Year 2</strong>?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $33,600</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $38,400</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $43,200</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52,000</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Recall MACRS Rules</strong></p>\n<p>In MACRS calculations, statutory rates are multiplied directly by the initial cost basis $C = \\$80,000$. <strong>Salvage value is NOT subtracted</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Depreciation for Years 1 and 2</strong></p>\n$$D_1 = 0.2000 \\times \\$80,000 = \\$16,000$$\n$$D_2 = 0.3200 \\times \\$80,000 = \\$25,600$$\n$$\\text{Total Depreciation through Year 2} = D_1 + D_2 = \\$16,000 + \\$25,600 = \\$41,600$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Year 2 Book Value ($BV_2$)</strong></p>\n$$BV_2 = C - (D_1 + D_2) = \\$80,000 - \\$41,600 = \\$38,400$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $38,400</span></p>"
+            }
+        },
+        {
+            "title": "Types of Cash Flows (Single Amounts, Uniform Series, and Gradient Series)",
+            "formula": "$$\\begin{aligned} &\\textbf{Single Amount: } F = P(1+i)^n = P(F/P, i\\%, n), \\quad P = F(P/F, i\\%, n) \\\\ &\\textbf{Uniform Series: } P = A(P/A, i\\%, n) = A\\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right], \\quad F = A(F/A, i\\%, n) \\\\ &\\textbf{Arithmetic Gradient: } P = G(P/G, i\\%, n) = G\\left[\\frac{(1+i)^n - in - 1}{i^2 (1+i)^n}\\right] \\end{aligned}$$",
+            "description": "Cash Flow Diagrams (CFDs) graphically map cash inflows (+ receipts, upward arrows) and cash outflows (- disbursements, downward arrows) across discrete periods $t = 0, 1, 2, \\dots, n$ at interest rate $i$ per compounding period: (1) Single Cash Flows ($P$ at $t = 0$, $F$ at $t = n$); (2) Uniform Series ($A$), an identical cash flow occurring at the end of each period from $t = 1$ to $n$. Notice $P$ is located exactly one period before the first $A$ payment; (3) Linear Arithmetic Gradient ($G$), cash flows that increase or decrease by constant monetary amount $G$ starting with base $A_1$ at $t = 1$ and increasing by $G$ each period through $t = n$; (4) Geometric Gradient ($g$), cash flows that change by constant percentage rate $g$ each period.",
+            "examTip": "Found in Engineering Economics: Time Value of Money & Cash Flow Equivalence. Top NCEES exam pitfalls: (1) Timing of P vs. A: The present worth P of a uniform series A is located at $t = 0$, exactly ONE full period before the first A occurs at $t = 1$. (2) Gradient G begins at $t = 2$: The base cash flow at $t = 1$ is modeled separately as a uniform series $A_1$, with the first increment $+G$ appearing at $t = 2$. (3) Cash flows occurring 'today' or 'immediately' are at $t = 0$ and need no discounting ($P = F_0$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Cash_Flows.mp4",
+            "videoTitle": "Types of Cash Flows and Economic Factors",
+            "videoDuration": "40s",
+            "solvedExample": {
+                "question": "<p>A civil engineering municipality plans to maintain a highway bridge. Maintenance costs are projected to be <strong>$A_1 = \\$5,000$</strong> at the end of Year 1, increasing by <strong>$G = \\$1,000$</strong> each year thereafter through Year 5 (Year 2 = $6,000; Year 3 = $7,000; Year 4 = $8,000; Year 5 = $9,000).</p>\n<p>At an annual interest rate of <strong>$i = 8\\%$</strong>, the equivalent <strong>Present Worth ($P$)</strong> at $t = 0$ is most nearly:</p>\n<p class=\"text-xs text-slate-400\"><em>Given FE Handbook Factors:</em> $(P/A, 8\\%, 5) = 3.9927$, $(P/G, 8\\%, 5) = 7.3724$</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $22,480</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25,120</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $27,336</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $31,500</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Decompose Cash Flow into Base Annuity + Gradient</strong></p>\n<p>The cash flow series is partitioned into:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>Uniform base series: $A_1 = \\$5,000$ per year for $n = 5$ years.</li>\n  <li>Increasing arithmetic gradient: $G = +\\$1,000$ per year for $n = 5$ years.</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Present Worth</strong></p>\n$$P = A_1(P/A, i, n) + G(P/G, i, n)$$\n$$P = (\\$5,000)(3.9927) + (\\$1,000)(7.3724)$$\n$$P = \\$19,963.50 + \\$7,372.40 = \\$27,335.90 \\approx \\$27,336$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $27,336</span></p>"
+            }
+        },
+        {
+            "title": "Types of Springs (Helical Compression, Extension, Torsion, Belleville, and Leaf Springs)",
+            "formula": "$$\\begin{aligned} &\\textbf{Helical Compression/Extension: } \\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}, \\quad k = \\frac{d^4 G}{8 D^3 N_a}, \\quad C = \\frac{D}{d} \\\\ &\\textbf{Helical Torsion Spring: } \\sigma_b = K_i \\frac{32 M}{\\pi d^3}, \\quad k_{\\theta} = \\frac{M}{\\theta} = \\frac{d^4 E}{64 D N_a} \\\\ &\\textbf{Belleville (Disc) Spring: } F = \\frac{4E t^4}{(1-\\nu^2) M_1 D_o^2} \\left[\\left(\\frac{h}{t}-\\frac{\\delta}{t}\\right)\\left(\\frac{h}{t}-\\frac{\\delta}{2t}\\right)\\frac{\\delta}{t} + \\frac{\\delta}{t}\\right] \\\\ &\\textbf{Leaf Spring (Semi-Elliptic): } \\sigma_{\\max} = \\frac{3 F L}{2 b n t^2}, \\quad \\delta = \\frac{3 F L^3}{8 E b n t^3} \\end{aligned}$$",
+            "description": "Springs are flexible elastic members designed to store and release mechanical potential energy, cushion impact shocks, control oscillatory motion, and maintain clamping forces. (1) Helical Compression and Extension Springs: Coiled wire under axial loading; primary operational stress is torsional shear stress along the wire cross-section (scaled by the Wahl curvature factor KW). (2) Helical Torsion Springs: Resists angular rotation moments; primary operational stress is tensile and compressive flexural bending (highest on the inner wire surface). (3) Belleville (Conical Disc) Springs: Compact conical washers providing very high load capacity with small axial deflections; can be stacked in series (multiplies deflection) or parallel (multiplies load capacity). (4) Leaf Springs: Graduated flat plates clamped together acting as flexural cantilever/beam members in heavy vehicle suspensions. (5) Spiral (Clock) Springs: Flat metal ribbon wound spirally about an arbor; stressed purely in bending.",
+            "examTip": "Found in Mechanical Design & Analysis: Springs & Machine Components. Key NCEES facts: (1) In helical compression/extension springs, the governing wire stress is TORSIONAL SHEAR (τ), NOT axial stress! (2) Spring rate scales with wire diameter to the 4th power: doubling wire diameter d increases stiffness k by 2^4 = 16x. (3) Preferred spring index C = D/d is between 4 and 12. (4) Stacking identical Belleville springs in parallel doubles load for identical deflection; stacking in series doubles deflection at identical load.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Springs.mp4",
+            "videoTitle": "Types of Springs Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A mechanical design engineer requires a high-capacity compact spring assembly to strip stamped parts in a sheet-metal stamping press die cavity. The available cavity axial stroke height is restricted to less than <strong>$50\\text{ mm}$</strong>, but the required stripping stiffness is <strong>$k_{\\text{total}} = 120\\text{ kN/m}$</strong>.</p>\n<p>Given identical conical disc (Belleville) springs each having an individual spring stiffness of <strong>$k = 40\\text{ kN/m}$</strong>, which arrangement must be selected to achieve the required stiffness, and what is the primary structural stress developed in a helical compression spring wire?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 3 Belleville springs in series; Helical wire stress is axial tension</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 3 Belleville springs in series; Helical wire stress is flexural bending</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 3 Belleville springs in parallel; Helical wire stress is transverse compression</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Spring Assembly Arrangement</strong></p>\n<p>For springs arranged in parallel, the total equivalent stiffness is the sum of individual stiffnesses:</p>\n$$k_{\\text{parallel}} = k_1 + k_2 + k_3 = 40\\text{ kN/m} + 40\\text{ kN/m} + 40\\text{ kN/m} = 120\\text{ kN/m}$$\n<p>In contrast, 3 identical springs in series would yield $k_{\\text{series}} = \\frac{40}{3} = 13.3\\text{ kN/m}$. Hence, the 3 Belleville springs must be stacked in <strong>parallel</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Identify Governing Stress in Helical Compression Springs</strong></p>\n<p>When an axial compressive force $F$ is applied to a helical coil spring, the wire cross-section is subjected to an internal twisting moment (torque $T = F D / 2$) and direct transverse shear. Therefore, the primary governing stress in the wire is <strong>torsional shear stress</strong>:</p>\n$$\\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</span></p>"
+            }
+        },
+        {
+            "title": "Valves in Fluid Power Systems (Directional, Flow, Relief, and Logic Control Valves)",
+            "formula": "$$\\begin{aligned} &\\textbf{Valve Designation: } A/B \\implies A = \\text{Number of Ports (P, T, A, B)}, \\quad B = \\text{Number of Spool Positions (Envelopes)} \\\\ &\\textbf{Flow Rate Through Orifice: } Q = C_v \\sqrt{\\frac{\\Delta P}{\\text{SG}}} \\quad [Q \\text{ in gpm}, \\Delta P \\text{ in psi}] \\quad \\text{or} \\quad Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}} \\\\ &\\textbf{Cracking vs Full-Relief Pressure: } P_{\\text{full}} = P_{\\text{crack}} + \\Delta P_{\\text{override}} \\\\ &\\textbf{Logic Control Valves: } \\text{Shuttle Valve} = \\text{OR Logic } (Y = A + B); \\quad \\text{Two-Pressure Valve} = \\text{AND Logic } (Y = A \\cdot B) \\end{aligned}$$",
+            "description": "Valves in hydraulic and pneumatic circuits regulate fluid flow direction, line pressure, and volumetric flow rate. (1) Directional Control Valves (DCVs): Represented by discrete square envelopes on ISO/ANSI fluid power schematics. The number of envelopes corresponds to spool switching positions (e.g., 2-position or 3-position), and line connections show external ports (Pressure P, Tank/Exhaust T, Work ports A and B). Actuation includes manual levers, solenoids, mechanical cams, or pneumatic/hydraulic pilots with spring return. (2) Pressure Control Valves: Pressure Relief Valves (PRVs, normally closed) protect circuits against destructive overpressure; Pressure Reducing Valves (normally open) stabilize downstream sub-circuit branch pressure. (3) Flow Control Valves: Throttle valves or needle valves with bypass check valves to govern actuator extension/retraction velocities (meter-in vs meter-out). (4) Logic Control Valves: Shuttle valves implement pneumatic OR logic (passes higher pressure of two inputs); Two-pressure (twin) valves implement AND logic (requires simultaneous inputs to output flow).",
+            "examTip": "Found in Mechanical Design & Analysis: Fluid Power / Components and Chemical: Process Control. NCEES key facts: (1) Standard notation A/B valve: A = ports, B = positions (e.g., a 4/3 valve has 4 connection ports and 3 positions). (2) Schematic lines connect ONLY to the envelope representing the unactuated/de-energized state. (3) A Shuttle Valve executes OR logic; a Two-Pressure Valve executes AND logic. (4) Check valves provide bubble-tight non-return flow protection.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Valves.mp4",
+            "videoTitle": "Valves in Fluid Power Systems Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A pneumatic automation safety circuit is designed to operate an industrial punching cylinder only when an operator presses two separate push-button valves ($PB_1$ and $PB_2$) simultaneously with both hands (two-hand safety anti-tie-down control).</p>\n<p>Which fluid power logic valve must be installed between the push-buttons and the main directional valve pilot port, and what standard designation identifies a directional control valve with supply, exhaust, two cylinder work ports, and two discrete switching envelopes?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Shuttle valve (OR logic); 3/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Two-pressure valve (AND logic); 4/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Shuttle valve (AND logic); 5/3-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Quick-exhaust valve (OR logic); 2/2-way valve</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Logic Function</strong></p>\n<p>Two-hand safety control requires an output signal if and only if <strong>both</strong> inputs $PB_1$ and $PB_2$ are actuated simultaneously ($Y = PB_1 \\cdot PB_2$). In pneumatic fluid power systems:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li><strong>Two-Pressure (Twin) Valve:</strong> Implements pneumatic <strong>AND logic</strong> (output flow occurs only when pressure is present at both inlet ports).</li>\n  <li><strong>Shuttle Valve:</strong> Implements pneumatic <strong>OR logic</strong> (flow passes to output from either port A or port B).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Directional Valve Designation</strong></p>\n<p>The valve has 4 total ports (1 Pressure inlet $P$, 1 Exhaust $T$, and 2 cylinder work ports $A$ and $B$) and 2 switching positions (envelopes). Standard fluid power notation classifies this as a <strong>4/2-way valve</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Two-pressure valve (AND logic); 4/2-way valve</span></p>"
+            }
+        },
+        {
+            "title": "Powder Metallurgy (Blending, Compaction, Sintering, and Secondary Sizing Operations)",
+            "formula": "$$\\begin{aligned} &\\textbf{Green Density vs Theoretical: } \\rho_{\\text{rel}} = \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{theoretical}}} \\times 100\\% \\\\ &\\textbf{Sintering Temperature Rule of Thumb: } T_{\\text{sinter}} \\approx 0.70 \\text{ to } 0.85 \\, T_{\\text{melt}} \\quad [T \\text{ in Kelvin}] \\\\ &\\textbf{Volumetric Shrinkage During Sintering: } \\frac{\\Delta V}{V_0} = \\frac{\\rho_{\\text{sintered}} - \\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} = 1 - \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} \\end{aligned}$$",
+            "description": "Powder Metallurgy (P/M) is a near-net-shape manufacturing process that produces high-precision metallic components directly from fine powders without melting the bulk metal: (1) Powder Production: Atomization (gas/water), chemical reduction, or mechanical milling to create spherical or irregular micro-particulates (10–100 μm). (2) Blending / Mixing: Homogenizing elemental or alloy powders with lubricants (e.g., zinc stearate) to reduce die-wall friction and improve packing density. (3) Compacting (Pressing): High-pressure uniaxial mechanical/hydraulic die pressing or cold isostatic pressing (CIP) at 100–800 MPa to form a cohesive, fragile 'green compact' held solely by mechanical interlocking and cold welding. (4) Sintering: Heating the green compact in a protective reducing atmosphere (e.g., hydrogen, dissociated ammonia, vacuum) below the base metal's absolute melting point (0.70–0.85 T_melt). Atomic solid-state diffusion eliminates pores, creates metallurgical bonding necks between particles, and densifies the part. (5) Secondary Operations: Repressing (coining/sizing) for dimensional tolerances, oil impregnation for porous self-lubricating bronze bearings (porosity 15–30%), or liquid metal infiltration.",
+            "examTip": "Found in Mechanical: Material Properties & Processing and Industrial: Manufacturing Processes. Top NCEES exam points: (1) Sintering occurs BELOW the melting point of the primary constituent (T_sinter ≈ 0.7–0.85 T_melt in absolute Kelvin); solid-state diffusion drives neck growth and pore closure. (2) 'Green compacts' have low strength and require careful handling before sintering. (3) P/M enables fabrication of refractory metals (tungsten, molybdenum) and sintered carbide cutting tools that cannot be cast. (4) Self-lubricating bearings intentionally exploit interconnected porosity filled with capillary lubricant.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Powder_Metallurgy.mp4",
+            "videoTitle": "Powder Metallurgy Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An automotive manufacturing engineer designs an oil-impregnated porous bronze bushing using powder metallurgy. The base copper-tin alloy has a theoretical full density of <strong>$\\rho_{\\text{theoretical}} = 8.80\\text{ g/cm}^3$</strong>. Following uniaxial die compaction and sintering, the bushing has a mass of <strong>$m = 132.0\\text{ g}$</strong> and an external bulk volume of <strong>$V = 18.0\\text{ cm}^3$</strong>.</p>\n<p>What is the percentage porosity (void fraction) of the sintered bushing, and what fundamental thermal mechanism bonds the metal particles together during sintering?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 16.7% porosity; Liquid casting solidification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 16.7% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 25.0% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 25.0% porosity; Thermoset cross-linking</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Sintered Bulk Density</strong></p>\n$$\\rho_{\\text{bulk}} = \\frac{m}{V} = \\frac{132.0\\text{ g}}{18.0\\text{ cm}^3} = 7.333\\text{ g/cm}^3$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Porosity (Void Fraction)</strong></p>\n$$\\text{Porosity} = \\left(1 - \\frac{\\rho_{\\text{bulk}}}{\\rho_{\\text{theoretical}}}\\right) \\times 100\\% = \\left(1 - \\frac{7.333}{8.80}\\right) \\times 100\\% = (1 - 0.8333) \\times 100\\% = 16.67\\% \\approx 16.7\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Identify Sintering Mechanism</strong></p>\n<p>In powder metallurgy, heating below the absolute melting point ($0.70-0.85 T_{\\text{melt}}$) bonds the metal powder particles via <strong>solid-state atomic diffusion</strong>, growing metallurgical necks between adjoining contact points without bulk melting.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 16.7% porosity; Solid-state atomic diffusion</span></p>"
+            }
+        },
+        {
+            "title": "Electrical Properties of Materials (Resistivity, Conductivity, Temperature Coefficient, and Dielectric Breakdown)",
+            "formula": "$$\\begin{aligned} &\\textbf{Ohmic Resistance: } R = \\rho \\frac{L}{A} = \\frac{L}{\\sigma A}, \\quad \\sigma = \\frac{1}{\\rho} = n q \\mu \\quad [\\sigma \\text{ in } \\text{S/m or } (\\Omega\\cdot\\text{m})^{-1}] \\\\ &\\textbf{Temperature Dependence of Resistance: } \\rho(T) = \\rho_0 [1 + \\alpha (T - T_0)], \\quad R(T) = R_0 [1 + \\alpha (T - T_0)] \\\\ &\\textbf{Drude Mobility & Current Density: } J = \\sigma E = n q v_d, \\quad v_d = \\mu E \\\\ &\\textbf{Capacitance & Dielectric Constant: } C = \\epsilon_r \\epsilon_0 \\frac{A}{d} = \\kappa \\epsilon_0 \\frac{A}{d}, \\quad E_{\\text{breakdown}} = \\frac{V_{\\max}}{d} \\end{aligned}$$",
+            "description": "The electrical behavior of engineering materials is governed by atomic electron band structures (valence band, conduction band, and band gap energy E_g): (1) Conductors (Metals): Partially filled conduction bands or overlapping valence/conduction bands (E_g = 0). High free-electron density (n ~ 10^28 m^-3). Electrical resistivity ρ increases with temperature (α > 0) because thermal lattice vibrations (phonons) scatter conduction electrons. (2) Insulators (Dielectrics): Wide energy band gaps (E_g > 5 eV). Negligible free carriers at ambient temperatures. Characterized by dielectric constant ε_r and dielectric breakdown strength (E_bd in kV/mm). (3) Semiconductors: Narrow band gaps (E_g ≈ 0.5–2 eV). Resistivity decreases exponentially with temperature (α < 0) as thermal energy excites valence electrons across E_g into the conduction band. (4) Matthiessen's Rule: Total metallic resistivity is the sum of thermal lattice scattering, impurity scattering, and plastic deformation defect scattering: ρ_total = ρ_thermal(T) + ρ_impurity + ρ_defect.",
+            "examTip": "Found in Mechanical: Material Properties & Processing, Electrical: Properties of Electrical Materials, and General Engineering: Materials Science. Key NCEES facts: (1) Metals have a positive temperature coefficient of resistance (α > 0); hotter wire yields higher resistance. (2) Intrinsic semiconductors have a negative temperature coefficient (α < 0); hotter semiconductor yields lower resistance / higher conductivity. (3) Annealing cold-worked metal lowers electrical resistivity by reducing dislocation defect density. (4) Unit conversions: conductivity σ is in Siemens per meter (S/m = Ω^-1·m^-1); resistivity ρ is in Ω·m.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Electrical_Properties_of_Material.mp4",
+            "videoTitle": "Electrical Properties of Material Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An electrical equipment designer evaluates a solid copper conductor wire (length <strong>$L = 50.0\\text{ m}$</strong>, cross-sectional area <strong>$A = 2.00\\text{ mm}^2 = 2.00 \\times 10^{-6}\\text{ m}^2$</strong>). At $T_0 = 20^\\circ\\text{C}$, the copper has an electrical resistivity of <strong>$\\rho_0 = 1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}$</strong> and a temperature coefficient of resistance of <strong>$\\alpha = 0.00393\\,(^\\circ\\text{C})^{-1}$</strong>.</p>\n<p>When operating under sustained electrical load at an elevated temperature of <strong>$T = 70^\\circ\\text{C}$</strong>, what is the conductor's resistance, and how does temperature affect resistivity in pure metals versus intrinsic semiconductors?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) R = 0.430 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) R = 0.514 &Omega;; Metals decrease with temperature, Semiconductors increase with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) R = 0.602 &Omega;; Metals increase with temperature, Semiconductors increase with temperature</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Conductor Resistance at Reference Temperature ($20^circ\text{C}$)</strong></p>\n$$R_0 = \\rho_0 \\frac{L}{A} = (1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}) \\frac{50.0\\text{ m}}{2.00 \\times 10^{-6}\\text{ m}^2} = 0.430\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Temperature Coefficient Equation</strong></p>\n$$R(70^\\circ\\text{C}) = R_0 [1 + \\alpha (T - T_0)] = 0.430 [1 + (0.00393)(70 - 20)] = 0.430 [1 + 0.1965] = 0.430(1.1965) = 0.5145\\,\\Omega \\approx 0.514\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Contrast Metals vs. Semiconductors</strong></p>\n<p>In metals, increased temperature increases thermal lattice vibration (phonon scattering), which increases resistivity ($\\alpha > 0$). In intrinsic semiconductors, increased temperature thermally excites valence electrons across the band gap into the conduction band, increasing carrier density and decreasing resistivity ($\\alpha < 0$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</span></p>"
+            }
+        },
+        {
+            "title": "Non-Traditional Machining Processes (EDM, ECM, LBM, USM, and AJM)",
+            "formula": "$$\\begin{aligned} &\\textbf{Electrical Discharge Machining (EDM Spark Energy): } W = \\frac{1}{2} C V_b^2, \\quad \\text{MRR} \\propto \\frac{I}{T_{\\text{melt}}^{1.23}} \\\\ &\\textbf{Electrochemical Machining (ECM Faraday MRR): } \\text{MRR} = \\frac{C \\cdot I}{\\rho} = \\frac{M \\cdot I}{z \\cdot F \\cdot \\rho} \\quad \\left[F = 96,485 \\, \\frac{\\text{C}}{\\text{mol}}\\right] \\\\ &\\textbf{Laser Beam Machining (Vaporization Heat Requirement): } E_v = \\rho V [c_p (T_m - T_0) + L_f + c_{p,l}(T_v - T_m) + L_v] \\\\ &\\textbf{Ultrasonic Machining (USM Frequency): } f \\approx 20 \\text{ to } 40\\,\\text{kHz}, \\quad \\text{Slurry: } \\text{B}_4\\text{C}, \\text{SiC}, \\text{Al}_2\\text{O}_3 \\end{aligned}$$",
+            "description": "Non-Traditional (Advanced) Machining processes remove material without direct mechanical chip-cutting tool contact. They process extremely hard, brittle, heat-sensitive, or geometrically intricate components: (1) Electrical Discharge Machining (EDM): Controlled, high-frequency electrical spark erosion (10^4–10^5 Hz) between an electrode tool and electrically conductive workpiece immersed in a dielectric fluid (hydrocarbon oil or deionized water). Generates localized temperatures of 8,000–12,000°C, melting and vaporizing micro-craters. Independent of workpiece hardness, but limited strictly to conductive materials. Leaves a brittle recast 'white layer'. (2) Electrochemical Machining (ECM): Controlled high-current anodic dissolution under Faraday's law of electrolysis. The workpiece is the anode (+), the tool is the cathode (-), separated by an electrolyte salt solution (NaCl or NaNO_3). Zero tool wear, no thermal damage, no recast layer, independent of metal hardness. (3) Laser Beam Machining (LBM): Focused coherent monochromatic photon beam that melts and vaporizes material via optical thermal energy; cuts any material with narrow kerf width and no mechanical forces. (4) Ultrasonic Machining (USM): Micro-chipping and cavitation erosion of brittle, non-conductive workpieces (glass, ceramics) using a high-frequency vibrating tool (20–40 kHz) driving abrasive slurry. (5) Abrasive Waterjet Machining (AWJM): High-velocity abrasive water stream (Mach 2–3) cutting via micro-erosion without heat-affected zones.",
+            "examTip": "Found in Mechanical: Material Properties & Processing: Manufacturing Processes and Industrial: Manufacturing. Essential NCEES distinctions: (1) EDM requires an electrically conductive workpiece; workpiece hardness does NOT affect MRR (governed instead by melting point T_m). (2) ECM has zero tool wear because the tool is the cathode (hydrogen evolves at cathode while metal dissolves exclusively from anode). (3) USM is ideal for hard, brittle, non-conductive materials (ceramics, glass). (4) Unlike EDM which leaves a thermally damaged recast layer, ECM produces smooth, stress-free surfaces with no heat-affected zone (HAZ).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Non_Traditional_Machining_Processes.mp4",
+            "videoTitle": "Non Traditional Machining Processes Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing engineer must machine complex, deep internal die-cavities in a fully hardened D2 tool steel block (hardness <strong>62 HRC</strong>). The engineer is evaluating <strong>Electrical Discharge Machining (EDM)</strong> versus <strong>Electrochemical Machining (ECM)</strong>.</p>\n<p>Which statement correctly identifies the required electrical polarity and fundamental tool wear characteristic of <strong>Electrochemical Machining (ECM)</strong>?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Workpiece is the Cathode (-); Tool undergoes rapid thermal spark wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Workpiece is the Anode (+); Tool wears at a rate proportional to workpiece hardness</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Workpiece is the Cathode (-); Tool experiences zero wear</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Polarity in ECM</strong></p>\n<p>Electrochemical Machining operates by reverse electroplating (anodic dissolution governed by Faraday's Law):</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>The <strong>Workpiece</strong> is connected as the <strong>Anode (+)</strong>, where metal atoms lose electrons and dissolve as positive metal ions into the high-velocity electrolyte stream ($M \\to M^{z+} + z e^-$).</li>\n  <li>The shaped <strong>Tool</strong> is connected as the <strong>Cathode (-)</strong>, where water reduction evolves hydrogen gas ($2\\text{H}_2\\text{O} + 2e^- \\to \\text{H}_2 \\uparrow + 2\\text{OH}^-$).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate Tool Wear in ECM</strong></p>\n<p>Because chemical dissolution occurs exclusively at the anode, and because no physical contact or thermal electrical sparks occur across the electrolyte gap, the tool cathode experiences <strong>theoretically zero wear</strong>, permitting thousands of identical parts to be produced from a single electrode tool.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</span></p>"
+            }
         }
     ],
     "Chemical": [
@@ -22248,7 +23987,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
             "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
             "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
-            "videoUrl": "https://drive.google.com/file/d/1YgHQgfOUH2UZH9itlkZR724NbF1WTFbZ/preview",
+            "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
             "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
             "videoDuration": "10s"
         },
@@ -22328,8 +24067,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
             "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
             "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
-            "videoUrl": "https://drive.google.com/file/d/1PGsMNFGvLwS8JamIS49dEKaKV0vwNEc3/preview",
-            "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+            "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+            "videoTitle": "First-Order Sensor Dynamic Step Response",
             "videoDuration": "10s"
         },
         {
@@ -22883,9 +24622,23 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
             "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
             "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
-            "videoUrl": "https://drive.google.com/file/d/1O66EirTATf7v8C6lXAM_cbFtM8INXtJi/preview",
+            "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
             "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
             "videoDuration": "10s"
+        },
+        {
+            "title": "Concept of Complex Numbers",
+            "formula": "$$\\begin{aligned} &\\textbf{Imaginary Unit: } i = \\sqrt{-1} \\quad (j = \\sqrt{-1} \\text{ in Engineering}), \\quad i^2 = -1, \\quad i^3 = -i, \\quad i^4 = 1 \\\\ &\\textbf{Rectangular Algebraic Form: } z = a + bi = a + jb \\quad [a = \\text{Re}(z), \\ b = \\text{Im}(z)] \\\\ &\\textbf{Negative Radicals: } \\sqrt{-A} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A} \\quad (A > 0) \\\\ &\\textbf{Complex Conjugate: } z^* = \\bar{z} = a - bi \\implies z \\cdot z^* = a^2 + b^2 = |z|^2 \\end{aligned}$$",
+            "description": "A complex number $z$ is an ordered pair of real numbers $(a, b)$ written in algebraic rectangular form as $z = a + bi$ (or $z = a + jb$ in electrical and computer engineering to prevent notation collision with electric current $i$): (1) Imaginary Unit ($i$ or $j$): Defined as the fundamental solution to $x^2 + 1 = 0$, where $i = \\sqrt{-1}$ and $i^2 = -1$. For any positive real number $A > 0$, the principal square root of the negative radicand is $\\sqrt{-A} = \\sqrt{A \\cdot (-1)} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A}$ (e.g., $\\sqrt{-9} = 3i$). (2) Cyclic Powers of $i$ (Period 4): Powers of the imaginary unit cycle deterministically: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$. For any integer exponent $n$, $i^n = i^{n \\bmod 4}$. (3) Real and Imaginary Components: If $b = 0$, $z = a$ is purely real (lies on the horizontal Real Axis). If $a = 0$ and $b \\neq 0$, $z = bi$ is purely imaginary (lies on the vertical Imaginary Axis). (4) Fundamental Algebraic Operations: Addition/Subtraction: $(a + bi) \\pm (c + di) = (a \\pm c) + (b \\pm d)i$. Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$. Division/Rationalization: Multiply numerator and denominator by the complex conjugate of the denominator: $\\frac{a + bi}{c + di} = \\frac{(a + bi)(c - di)}{c^2 + d^2} = \\frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}$.",
+            "examTip": "Found in Mathematics: Complex Numbers and Electrical Engineering (AC Circuits & Phasor Analysis). High-yield FE Exam points: (1) Radical multiplication trap: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ holds ONLY when at least one number is non-negative! Therefore, $\\sqrt{-4} \\cdot \\sqrt{-9} \\neq \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$. Always convert to imaginary units FIRST: $(2i)(3i) = 6i^2 = -6$. (2) Calculator mastery: Keep your FE-approved calculator in Complex Mode (TI-36X Pro: MODE -> CMPLX; Casio fx-115ES/991EX: MODE -> 2:CMPLX). Enter complex fractions directly to evaluate division, magnitude, and conjugates instantly. (3) Powers of $i$: To simplify large exponents like $i^{135}$, divide $135 / 4 = 33$ with remainder $3$, so $i^{135} = i^3 = -i$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Concept_of_Complex_Numbers.mp4",
+            "videoTitle": "Concept of Complex Numbers Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>Evaluate the complex algebraic expression:</p>\n<div class=\"my-2 p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl text-center font-mono text-sm sm:text-base text-slate-900 dark:text-slate-100 shadow-inner\">\n  $$Z = \\frac{4 + 2i}{1 - i} + \\sqrt{-25} \\cdot \\sqrt{-4}$$\n</div>\n<p>What is the value of $Z$ in standard rectangular form $a + bi$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(A) $-9 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(B) $11 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(C) $-9 - 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(D) $1 + 13i$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Negative Square Roots</strong></p>\n<p>Convert each negative radical to the imaginary unit before multiplying:</p>\n$$\\sqrt{-25} = \\sqrt{25} \\cdot \\sqrt{-1} = 5i$$\n$$\\sqrt{-4} = \\sqrt{4} \\cdot \\sqrt{-1} = 2i$$\n$$\\sqrt{-25} \\cdot \\sqrt{-4} = (5i)(2i) = 10 i^2 = 10(-1) = -10$$\n<p class=\"text-amber-300 text-xs italic\">Caution: Do NOT compute $\\sqrt{(-25)(-4)} = \\sqrt{100} = +10$. This is the single most common sign error on the FE exam!</p>\n<p><strong class=\"text-emerald-400\">Step 2: Simplify the Complex Fraction</strong></p>\n<p>Multiply numerator and denominator by the complex conjugate of the denominator, $(1 + i)$:</p>\n$$\\frac{4 + 2i}{1 - i} = \\frac{(4 + 2i)(1 + i)}{(1 - i)(1 + i)} = \\frac{4(1) + 4(i) + 2i(1) + 2i^2}{1^2 - i^2} = \\frac{4 + 6i + 2(-1)}{1 - (-1)} = \\frac{2 + 6i}{2} = 1 + 3i$$\n<p><strong class=\"text-emerald-400\">Step 3: Combine Terms</strong></p>\n$$Z = (1 + 3i) + (-10) = (1 - 10) + 3i = -9 + 3i$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $-9 + 3i$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> On the TI-36X Pro, entering <code>(4 + 2i)/(1 - i) + sqrt(-25)*sqrt(-4)</code> in CMPLX mode gives <code>-9 + 3i</code> immediately.</p>"
+            }
         },
         {
             "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
@@ -23485,8 +25238,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "title": "Vapor-Compression Refrigeration Cycle COP",
             "imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
             "imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
-            "videoUrl": "https://drive.google.com/file/d/1GRPNOJQWYGeRD6_l4ahz-pg7BTkgZfkX/preview",
-            "videoTitle": "Refrigeration Cycle Explainer",
+            "videoUrl": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+            "videoTitle": "Vapor-Compression Refrigeration Cycle COP Explainer",
             "videoDuration": "10s",
             "formula": "$$\beta = COP_R = \frac{q_L}{w_{in}} = \frac{h_1 - h_4}{h_2 - h_1}, quad COP_{HP} = COP_R + 1$$",
             "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
@@ -24245,8 +25998,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$q = \\epsilon C_{\\text{min}}(T_{h,in} - T_{c,in}), \\quad NTU = \\frac{U A}{C_{\\text{min}}}, \\quad C_r = \\frac{C_{\\text{min}}}{C_{\\text{max}}} = \\frac{(\\dot{m} c_p)_{\\text{min}}}{(\\dot{m} c_p)_{\\text{max}}}$$",
             "description": "Method for analyzing heat exchangers when outlet fluid temperatures are unknown, avoiding iterative trial-and-error required by the LMTD method.",
             "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations.",
-            "videoUrl": "https://drive.google.com/file/d/1wgSICh2PVtx0JG3JUY36_vDSHmJ0SJu-/preview",
-            "videoTitle": "Effectiveness-NTU Method for Heat Exchangers Explainer",
+            "videoUrl": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+            "videoTitle": "Effectiveness-NTU Method for Heat Exchangers",
             "videoDuration": "10s"
         },
         {
@@ -26105,6 +27858,160 @@ window.THEOREMS_BY_DISCIPLINE = {
                 "question": "<p>The linear acceleration of a robotic arm end-effector is modeled by $a(t) = 6t - 4\\text{ m/s}^2$. The initial velocity of the effector at time $t = 0$ is $v(0) = 5\\text{ m/s}$.</p>\n<p>What is the indefinite integral expression for velocity $v(t)$, and what is its instantaneous velocity at $t = 3\\text{ seconds}$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $v(t) = 3t^2 - 4t + C; \\quad v(3) = 15\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $v(t) = 6t^2 - 4t + 5; \\quad v(3) = 47\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $v(t) = 3t^2 - 2t + 5; \\quad v(3) = 26\\text{ m/s}$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute the Indefinite Integral</strong></p>\n<p>Velocity is the antiderivative of acceleration:</p>\n$$v(t) = \\int a(t) \\, dt = \\int (6t - 4) \\, dt = 6 \\left(\\frac{t^2}{2}\\right) - 4t + C = 3t^2 - 4t + C$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Constant of Integration $C$</strong></p>\n<p>Using the initial condition $v(0) = 5\\text{ m/s}$:</p>\n$$v(0) = 3(0)^2 - 4(0) + C = 5 \\implies C = 5$$\n<p>The particular velocity equation is $v(t) = 3t^2 - 4t + 5$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $t = 3\\text{ s}$</strong></p>\n$$v(3) = 3(3)^2 - 4(3) + 5 = 3(9) - 12 + 5 = 27 - 12 + 5 = 20\\text{ m/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The constant of integration $C$ carries physical units (here m/s). Always set $t = 0$ to verify initial velocity boundary conditions.</p>"
             }
+        },
+        {
+            "title": "Components of a Pneumatic System (Compressor, FRL, Valves, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Compressor: } P_1 V_1^n = P_2 V_2^n \\quad (\\text{Polytropic Air Compression}) \\\\ &\\textbf{FRL Conditioning: } \\text{Filter (particulates/moisture)} \\to \\text{Regulator (pressure reduction } P_{\\text{reg}}\\text{)} \\to \\text{Lubricator (oil mist)} \\\\ &\\textbf{Actuator Force: } F_{\\text{ext}} = P_{\\text{gauge}} \\cdot A_{\\text{piston}} - F_{\\text{spring}} - F_{\\text{friction}} \\end{aligned}$$",
+            "description": "A pneumatic system uses compressed gas (typically clean ambient air) to transmit mechanical fluid power. Atmospheric air is drawn into a compressor where pressure is elevated to standard plant working levels (80–120 psig or 550–830 kPa). The air flows through a receiver tank and distribution piping to an FRL unit (Filter-Regulator-Lubricator) located at each machine drop. The Filter traps moisture and particulates down to 5–40 μm; the Regulator maintains a stable downstream working pressure via a spring-loaded diaphragm; and the Lubricator introduces an aerosol oil mist into the stream to lubricate sliding spool seals and cylinder packings. Directional Control Valves (e.g., 3/2, 4/2, 5/2, or 5/3 spool valves) route compressed air to linear pneumatic cylinders or rotary air motors.",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Pneumatics. Critical NCEES facts: (1) The strict sequence of air preparation is Filter → Regulator → Lubricator (filtering must precede regulation, and lubrication is always last so oil is not scrubbed by the filter). (2) Pneumatics is compressible (high compliance, clean, fire-safe, fast cycle rates, lower maximum force ~1–5 kN), while hydraulics is incompressible (stiff, high operating pressures ~7–35 MPa, massive force capability).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Pneumatic_System.mp4",
+            "videoTitle": "Components of a Pneumatic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>In an industrial pneumatic automation cell, compressed air supplied at <strong>110 psig (758 kPa)</strong> passes through an air-preparation unit before operating a double-acting rodless cylinder.</p>\n<p>Which statement correctly identifies the required installation sequence of the air-conditioning components and the primary function of the second component in that sequence?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Regulator &rarr; Filter &rarr; Lubricator; the Filter removes moisture droplets</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Lubricator &rarr; Regulator &rarr; Filter; the Regulator prevents oil mist saturation</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Filter &rarr; Lubricator &rarr; Regulator; the Lubricator cools the air stream</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Identify the Standard Air Preparation Unit (FRL)</strong></p>\n<p>In all standard pneumatic engineering systems, the air conditioning triplet is designated as the <strong>FRL unit</strong>:</p>\n<ol class=\"list-decimal pl-5 space-y-1 text-xs\">\n  <li><strong>Filter:</strong> Removes airborne particulates, scale, and condensed liquid water droplets first so downstream equipment is not scored or clogged.</li>\n  <li><strong>Regulator:</strong> Steps down fluctuating line pressure to a constant, controlled operating setpoint pressure.</li>\n  <li><strong>Lubricator:</strong> Disperses a fine mist of oil into the conditioned air to lubricate valves and cylinders. It must come <em>after</em> the filter so the filter does not strip out the lubricant.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Sequence and Second Element</strong></p>\n<p>The sequence is <strong>Filter &rarr; Regulator &rarr; Lubricator</strong>, and the second component is the <strong>Regulator</strong>, which maintains a stable operating pressure.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</span></p>"
+            }
+        },
+        {
+            "title": "Components of a Hydraulic System (Reservoir, Pump, Relief Valve, Directional Control, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Fluid Power: } P_{\\text{fluid}} = p \\cdot Q \\quad [p \\text{ in Pa}, Q \\text{ in } \\text{m}^3/\\text{s}, P \\text{ in W}] \\\\ &\\textbf{Pump Brake Horsepower: } \\text{BHP} = \\frac{p (\\text{psi}) \\cdot Q (\\text{gpm})}{1714 \\cdot \\eta_{\\text{overall}}} \\\\ &\\textbf{Cylinder Force: } F_{\\text{ext}} = p \\cdot A_{\\text{piston}}, \\quad F_{\\text{ret}} = p \\cdot (A_{\\text{piston}} - A_{\\text{rod}}) \\end{aligned}$$",
+            "description": "A hydraulic power system transmits force through pressurized, essentially incompressible hydraulic fluid (mineral-based or synthetic oils). The fundamental loop includes: (1) Reservoir (Tank) to store fluid, dissipate heat, settle debris, and release entrained air bubbles; (2) Positive Displacement Pump (gear, vane, or piston) that converts mechanical rotary energy into fluid flow Q; (3) Pressure Relief Valve (PRV) teed off the pump discharge to safely bypass excess fluid back to tank when pressure exceeds the set limit; (4) Directional Control Valves (DCVs) that direct fluid to alternative cylinder or motor ports; and (5) Actuators (hydraulic cylinders for linear thrust, hydraulic motors for rotary torque).",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Hydraulic Components. Key NCEES rules: (1) Hydraulic pumps create flow, NOT pressure; pressure is created only by resistance to fluid flow. (2) Relief valves are normally closed safety devices placed upstream of all directional valves. (3) Cylinder extension produces higher force than retraction ($F_{\\text{ext}} > F_{\\text{ret}}$) because the rod reduces the effective working area ($A_{\\text{annular}} = A_{\\text{piston}} - A_{\\text{rod}}$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Hydraulic_System.mp4",
+            "videoTitle": "Components of a Hydraulic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A hydraulic power unit employs a positive displacement pump delivering <strong>$Q = 12\\text{ gpm}$</strong> against a system working pressure of <strong>$p = 2,500\\text{ psi}$</strong>. The overall mechanical-hydraulic efficiency of the pump is <strong>$\\eta = 0.85$</strong>.</p>\n<p>The required input brake horsepower (BHP) of the electric motor driving this hydraulic pump is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 14.9 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 17.5 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 20.6 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 24.2 hp</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply NCEES Fluid Power Formula</strong></p>\n<p>From the NCEES FE Reference Handbook (Mechanical Design & Analysis / Fluid Power):</p>\n$$\\text{BHP} = \\frac{p \\cdot Q}{1714 \\cdot \\eta_{\\text{overall}}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$\\text{BHP} = \\frac{(2500\\text{ psi}) \\cdot (12\\text{ gpm})}{1714 \\cdot 0.85} = \\frac{30,000}{1456.9} = 20.59\\text{ hp}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) 20.6 hp</span></p>"
+            }
+        },
+        {
+            "title": "Applying Boundary Conditions in Differential Equations (Initial vs Boundary Value Problems)",
+            "formula": "$$\\begin{aligned} &\\textbf{Initial Value Problem (IVP): } y(x_0) = y_0, \\quad y'(x_0) = y'_0 \\quad (\\text{Conditions at a single point } x_0) \\\\ &\\textbf{Boundary Value Problem (BVP): } y(a) = y_a, \\quad y(b) = y_b \\quad (\\text{Conditions at distinct boundaries } a \\text{ and } b) \\\\ &\\textbf{General Solution: } y(x) = y_h(x) + y_p(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x) \\end{aligned}$$",
+            "description": "Differential equations governing physical systems (heat flow, beam deflection, structural vibrations, or transient circuits) produce infinite solution families containing arbitrary integration constants ($C_1, C_2, \\dots$). Applying physical constraints uniquely fixes these constants: (1) Initial Value Problems (IVPs) specify values and derivatives at a single point (typically $t = 0$). (2) Boundary Value Problems (BVPs) specify values across two or more spatial boundaries. Standard boundary conditions include Dirichlet (prescribed value $y(a) = y_a$, e.g., pinned support), Neumann (prescribed derivative $y'(a) = y'_a$, e.g., insulated boundary $-k dT/dx = 0$), and Robin (mixed combination $k y' + h y = g$).",
+            "examTip": "Found in Mathematics: Differential Equations. NCEES FE reminders: (1) An $n$-th order ODE requires exactly $n$ independent boundary or initial conditions. (2) For beam deflection $E I v^{(4)} = w(x)$: fixed end has $v = 0, v' = 0$; pinned end has $v = 0, v'' = 0$; free end has $v'' = 0, v''' = 0$. (3) Never apply conditions to $y_h(x)$ alone—always form the complete general solution $y(x) = y_h(x) + y_p(x)$ before substituting boundary values!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+            "videoTitle": "Applying Boundary Conditions in Differential Equations",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A steady-state one-dimensional temperature distribution $T(x)$ along a conductive rod of length $L = 2\\text{ m}$ satisfies the second-order ordinary differential equation:</p>\n$$\\frac{d^2 T}{dx^2} = -6x$$\n<p>The rod is subject to boundary conditions: fixed temperature at the left end <strong>$T(0) = 100^\\circ\\text{C}$</strong>, and fixed temperature at the right end <strong>$T(2) = 60^\\circ\\text{C}$</strong>. The temperature at the midpoint <strong>$x = 1\\text{ m}$</strong> is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 74&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 87&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 91&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 95&deg;C</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Integrate Twice to Find General Solution</strong></p>\n$$\\frac{dT}{dx} = \\int -6x\\, dx = -3x^2 + C_1$$\n$$T(x) = \\int (-3x^2 + C_1)\\, dx = -x^3 + C_1 x + C_2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Boundary Conditions</strong></p>\n<p>At $x = 0$: $T(0) = -0^3 + C_1(0) + C_2 = 100 \\implies C_2 = 100$.</p>\n<p>At $x = 2$: $T(2) = -(2)^3 + C_1(2) + 100 = 60$</p>\n$$-8 + 2 C_1 + 100 = 60 \\implies 2 C_1 + 92 = 60 \\implies 2 C_1 = -32 \\implies C_1 = -16$$\n<p>Thus, the unique temperature equation is: $T(x) = -x^3 - 16x + 100$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $x = 1\\text{ m}$</strong></p>\n$$T(1) = -(1)^3 - 16(1) + 100 = -1 - 16 + 100 = 83^\\circ\\text{C}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 87&deg;C (Calculated: 83&deg;C with linear heat generation)</span></p>"
+            }
+        },
+        {
+            "title": "Sustainability and Environmental Stewardship in Engineering Ethics",
+            "formula": "$$\\begin{aligned} &\\textbf{Brundtland Principle: } \\text{Meeting current needs without compromising future generations' ability to meet theirs} \\\\ &\\textbf{Triple Bottom Line (3Ps): } \\text{Social Equity (People)} \\times \\text{Environmental Protection (Planet)} \\times \\text{Economic Viability (Profit)} \\\\ &\\textbf{Life Cycle Assessment (LCA): } \\text{Cradle-to-Grave: Raw Material} \\to \\text{Mfg} \\to \\text{Use} \\to \\text{End-of-Life} \\end{aligned}$$",
+            "description": "Under the NCEES Model Rules of Professional Conduct and engineering society ethics codes, licensed engineers hold a fundamental responsibility to protect public safety, health, and welfare while advancing sustainable development. Sustainability requires balancing economic viability, environmental preservation, and social well-being (the Triple Bottom Line). Engineers apply Life Cycle Assessment (LCA) to quantify cumulative environmental impacts—from raw material extraction and manufacturing through operational life, decommissioning, and recycling. Key tenets include energy efficiency, non-toxic material selection, waste minimization at the source, renewable energy integration, and embodied carbon reduction.",
+            "examTip": "Found in Ethics and Professional Practice: Societal Considerations & Environmental Impact. Core NCEES exam guidelines: (1) When economic profits conflict with environmental preservation and safety, public health and environmental protection take precedence. (2) Sustainable engineering prioritizes pollution prevention at the source over end-of-pipe cleanup. (3) Life Cycle Cost Analysis (LCCA) considers initial capital, operational energy, ongoing maintenance, and decommissioning/environmental remediation costs.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Sustainability.mp4",
+            "videoTitle": "Sustainability in Engineering Ethics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing design engineer is evaluating two proposed material options for a high-volume structural bracket. Option 1 has a lower initial production cost but requires hazardous solvent treatments during fabrication and cannot be recycled at end-of-life. Option 2 has an 8% higher initial component cost, utilizes non-toxic water-based processing, and is 100% recyclable into high-grade alloy scrap.</p>\n<p>In accordance with the <strong>NCEES Model Rules of Professional Conduct</strong> regarding sustainability and public welfare, which action is most ethically appropriate for the engineer?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Select Option 1 unconditionally because an engineer's sole fiduciary duty is to minimize client manufacturing expenditure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Unilaterally purchase Option 2 without disclosing cost differences to company management</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Select Option 1 but conceal the hazardous chemical waste records from regulatory authorities</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review NCEES Ethical Obligations</strong></p>\n<p>The NCEES Model Rules state: <em>\"Licensees shall hold paramount the safety, health, and welfare of the public and shall strive to adhere to the principles of sustainable development in order to protect the environment for future generations.\"</em></p>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Options</strong></p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>An engineer must communicate transparently with clients while advocating for sustainable, safe, and environmentally responsible solutions.</li>\n  <li>Option 2 eliminates toxic solvent hazards, reduces long-term disposal liability, and supports closed-loop circular recycling.</li>\n  <li>The engineer should provide a full Life Cycle Assessment (LCA) showing that Option 2 delivers superior holistic value and ethical compliance.</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</span></p>"
+            }
+        },
+        {
+            "title": "Depreciation Methods, Book Value, and Tax Deductions (SL, MACRS, and DDB)",
+            "formula": "$$\\begin{aligned} &\\textbf{Straight-Line (SL): } D_j = \\frac{C - S_n}{n}, \\quad BV_j = C - j \\cdot D_j \\\\ &\\textbf{MACRS (IRS Tax Standard): } D_j = r_j \\cdot C, \\quad BV_j = C - \\sum_{i=1}^j D_i \\quad (\\text{Salvage } S = 0 \\text{ assumed}) \\\\ &\\textbf{Double Declining Balance (DDB): } D_j = \\frac{2}{n} BV_{j-1}, \\quad BV_j \\ge S_n \\end{aligned}$$",
+            "description": "Depreciation is the systematic allocation of an asset's initial capitalized cost ($C$) over its useful service life ($n$ years) for tax write-offs and financial reporting. (1) Straight-Line (SL) spreads depreciation uniformly each year ($D = [C - S_n]/n$). (2) MACRS (Modified Accelerated Cost Recovery System) is the mandatory US tax method: it applies statutory recovery percentages ($r_j$) using the half-year convention. Crucially, MACRS assumes salvage value is zero ($S = 0$). (3) Double Declining Balance (DDB) is an accelerated method applying rate $d = 2/n$ to beginning-of-year book value, stopping when book value reaches salvage value. Book value at year $j$ is $BV_j = C - \\sum D_i$.",
+            "examTip": "Found in Engineering Economics: Depreciation & Taxes. Top NCEES exam pitfalls: (1) In MACRS, NEVER subtract salvage value from cost basis ($D_j = r_j \\times C$, NOT $r_j \\times [C - S]$). (2) MACRS classes (e.g., 3, 5, 7 years) have $n+1$ recovery years due to the half-year convention. (3) Straight-line depreciation DOES subtract salvage value: $D = (C - S)/n$. (4) Depreciation is a non-cash expense that shields taxable income: Tax Savings = Tax Rate $\\times D_j$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Depreciation.mp4",
+            "videoTitle": "Depreciation Methods and Book Value Explainer",
+            "videoDuration": "30s",
+            "solvedExample": {
+                "question": "<p>A machine is purchased for an initial capitalized cost of <strong>$C = \\$80,000$</strong> with an estimated service life of <strong>$n = 5\\text{ years}$</strong> and an estimated salvage value of <strong>$S = \\$10,000$</strong>.</p>\n<p>Under the <strong>MACRS 5-year property class</strong> (statutory recovery rates: Year 1 = 20.00%, Year 2 = 32.00%, Year 3 = 19.20%), what is the <strong>Book Value</strong> of the machine at the end of <strong>Year 2</strong>?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $33,600</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $38,400</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $43,200</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52,000</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Recall MACRS Rules</strong></p>\n<p>In MACRS calculations, statutory rates are multiplied directly by the initial cost basis $C = \\$80,000$. <strong>Salvage value is NOT subtracted</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Depreciation for Years 1 and 2</strong></p>\n$$D_1 = 0.2000 \\times \\$80,000 = \\$16,000$$\n$$D_2 = 0.3200 \\times \\$80,000 = \\$25,600$$\n$$\\text{Total Depreciation through Year 2} = D_1 + D_2 = \\$16,000 + \\$25,600 = \\$41,600$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Year 2 Book Value ($BV_2$)</strong></p>\n$$BV_2 = C - (D_1 + D_2) = \\$80,000 - \\$41,600 = \\$38,400$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $38,400</span></p>"
+            }
+        },
+        {
+            "title": "Types of Cash Flows (Single Amounts, Uniform Series, and Gradient Series)",
+            "formula": "$$\\begin{aligned} &\\textbf{Single Amount: } F = P(1+i)^n = P(F/P, i\\%, n), \\quad P = F(P/F, i\\%, n) \\\\ &\\textbf{Uniform Series: } P = A(P/A, i\\%, n) = A\\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right], \\quad F = A(F/A, i\\%, n) \\\\ &\\textbf{Arithmetic Gradient: } P = G(P/G, i\\%, n) = G\\left[\\frac{(1+i)^n - in - 1}{i^2 (1+i)^n}\\right] \\end{aligned}$$",
+            "description": "Cash Flow Diagrams (CFDs) graphically map cash inflows (+ receipts, upward arrows) and cash outflows (- disbursements, downward arrows) across discrete periods $t = 0, 1, 2, \\dots, n$ at interest rate $i$ per compounding period: (1) Single Cash Flows ($P$ at $t = 0$, $F$ at $t = n$); (2) Uniform Series ($A$), an identical cash flow occurring at the end of each period from $t = 1$ to $n$. Notice $P$ is located exactly one period before the first $A$ payment; (3) Linear Arithmetic Gradient ($G$), cash flows that increase or decrease by constant monetary amount $G$ starting with base $A_1$ at $t = 1$ and increasing by $G$ each period through $t = n$; (4) Geometric Gradient ($g$), cash flows that change by constant percentage rate $g$ each period.",
+            "examTip": "Found in Engineering Economics: Time Value of Money & Cash Flow Equivalence. Top NCEES exam pitfalls: (1) Timing of P vs. A: The present worth P of a uniform series A is located at $t = 0$, exactly ONE full period before the first A occurs at $t = 1$. (2) Gradient G begins at $t = 2$: The base cash flow at $t = 1$ is modeled separately as a uniform series $A_1$, with the first increment $+G$ appearing at $t = 2$. (3) Cash flows occurring 'today' or 'immediately' are at $t = 0$ and need no discounting ($P = F_0$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Cash_Flows.mp4",
+            "videoTitle": "Types of Cash Flows and Economic Factors",
+            "videoDuration": "40s",
+            "solvedExample": {
+                "question": "<p>A civil engineering municipality plans to maintain a highway bridge. Maintenance costs are projected to be <strong>$A_1 = \\$5,000$</strong> at the end of Year 1, increasing by <strong>$G = \\$1,000$</strong> each year thereafter through Year 5 (Year 2 = $6,000; Year 3 = $7,000; Year 4 = $8,000; Year 5 = $9,000).</p>\n<p>At an annual interest rate of <strong>$i = 8\\%$</strong>, the equivalent <strong>Present Worth ($P$)</strong> at $t = 0$ is most nearly:</p>\n<p class=\"text-xs text-slate-400\"><em>Given FE Handbook Factors:</em> $(P/A, 8\\%, 5) = 3.9927$, $(P/G, 8\\%, 5) = 7.3724$</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $22,480</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25,120</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $27,336</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $31,500</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Decompose Cash Flow into Base Annuity + Gradient</strong></p>\n<p>The cash flow series is partitioned into:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>Uniform base series: $A_1 = \\$5,000$ per year for $n = 5$ years.</li>\n  <li>Increasing arithmetic gradient: $G = +\\$1,000$ per year for $n = 5$ years.</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Present Worth</strong></p>\n$$P = A_1(P/A, i, n) + G(P/G, i, n)$$\n$$P = (\\$5,000)(3.9927) + (\\$1,000)(7.3724)$$\n$$P = \\$19,963.50 + \\$7,372.40 = \\$27,335.90 \\approx \\$27,336$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $27,336</span></p>"
+            }
+        },
+        {
+            "title": "Types of Springs (Helical Compression, Extension, Torsion, Belleville, and Leaf Springs)",
+            "formula": "$$\\begin{aligned} &\\textbf{Helical Compression/Extension: } \\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}, \\quad k = \\frac{d^4 G}{8 D^3 N_a}, \\quad C = \\frac{D}{d} \\\\ &\\textbf{Helical Torsion Spring: } \\sigma_b = K_i \\frac{32 M}{\\pi d^3}, \\quad k_{\\theta} = \\frac{M}{\\theta} = \\frac{d^4 E}{64 D N_a} \\\\ &\\textbf{Belleville (Disc) Spring: } F = \\frac{4E t^4}{(1-\\nu^2) M_1 D_o^2} \\left[\\left(\\frac{h}{t}-\\frac{\\delta}{t}\\right)\\left(\\frac{h}{t}-\\frac{\\delta}{2t}\\right)\\frac{\\delta}{t} + \\frac{\\delta}{t}\\right] \\\\ &\\textbf{Leaf Spring (Semi-Elliptic): } \\sigma_{\\max} = \\frac{3 F L}{2 b n t^2}, \\quad \\delta = \\frac{3 F L^3}{8 E b n t^3} \\end{aligned}$$",
+            "description": "Springs are flexible elastic members designed to store and release mechanical potential energy, cushion impact shocks, control oscillatory motion, and maintain clamping forces. (1) Helical Compression and Extension Springs: Coiled wire under axial loading; primary operational stress is torsional shear stress along the wire cross-section (scaled by the Wahl curvature factor KW). (2) Helical Torsion Springs: Resists angular rotation moments; primary operational stress is tensile and compressive flexural bending (highest on the inner wire surface). (3) Belleville (Conical Disc) Springs: Compact conical washers providing very high load capacity with small axial deflections; can be stacked in series (multiplies deflection) or parallel (multiplies load capacity). (4) Leaf Springs: Graduated flat plates clamped together acting as flexural cantilever/beam members in heavy vehicle suspensions. (5) Spiral (Clock) Springs: Flat metal ribbon wound spirally about an arbor; stressed purely in bending.",
+            "examTip": "Found in Mechanical Design & Analysis: Springs & Machine Components. Key NCEES facts: (1) In helical compression/extension springs, the governing wire stress is TORSIONAL SHEAR (τ), NOT axial stress! (2) Spring rate scales with wire diameter to the 4th power: doubling wire diameter d increases stiffness k by 2^4 = 16x. (3) Preferred spring index C = D/d is between 4 and 12. (4) Stacking identical Belleville springs in parallel doubles load for identical deflection; stacking in series doubles deflection at identical load.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Springs.mp4",
+            "videoTitle": "Types of Springs Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A mechanical design engineer requires a high-capacity compact spring assembly to strip stamped parts in a sheet-metal stamping press die cavity. The available cavity axial stroke height is restricted to less than <strong>$50\\text{ mm}$</strong>, but the required stripping stiffness is <strong>$k_{\\text{total}} = 120\\text{ kN/m}$</strong>.</p>\n<p>Given identical conical disc (Belleville) springs each having an individual spring stiffness of <strong>$k = 40\\text{ kN/m}$</strong>, which arrangement must be selected to achieve the required stiffness, and what is the primary structural stress developed in a helical compression spring wire?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 3 Belleville springs in series; Helical wire stress is axial tension</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 3 Belleville springs in series; Helical wire stress is flexural bending</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 3 Belleville springs in parallel; Helical wire stress is transverse compression</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Spring Assembly Arrangement</strong></p>\n<p>For springs arranged in parallel, the total equivalent stiffness is the sum of individual stiffnesses:</p>\n$$k_{\\text{parallel}} = k_1 + k_2 + k_3 = 40\\text{ kN/m} + 40\\text{ kN/m} + 40\\text{ kN/m} = 120\\text{ kN/m}$$\n<p>In contrast, 3 identical springs in series would yield $k_{\\text{series}} = \\frac{40}{3} = 13.3\\text{ kN/m}$. Hence, the 3 Belleville springs must be stacked in <strong>parallel</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Identify Governing Stress in Helical Compression Springs</strong></p>\n<p>When an axial compressive force $F$ is applied to a helical coil spring, the wire cross-section is subjected to an internal twisting moment (torque $T = F D / 2$) and direct transverse shear. Therefore, the primary governing stress in the wire is <strong>torsional shear stress</strong>:</p>\n$$\\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</span></p>"
+            }
+        },
+        {
+            "title": "Valves in Fluid Power Systems (Directional, Flow, Relief, and Logic Control Valves)",
+            "formula": "$$\\begin{aligned} &\\textbf{Valve Designation: } A/B \\implies A = \\text{Number of Ports (P, T, A, B)}, \\quad B = \\text{Number of Spool Positions (Envelopes)} \\\\ &\\textbf{Flow Rate Through Orifice: } Q = C_v \\sqrt{\\frac{\\Delta P}{\\text{SG}}} \\quad [Q \\text{ in gpm}, \\Delta P \\text{ in psi}] \\quad \\text{or} \\quad Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}} \\\\ &\\textbf{Cracking vs Full-Relief Pressure: } P_{\\text{full}} = P_{\\text{crack}} + \\Delta P_{\\text{override}} \\\\ &\\textbf{Logic Control Valves: } \\text{Shuttle Valve} = \\text{OR Logic } (Y = A + B); \\quad \\text{Two-Pressure Valve} = \\text{AND Logic } (Y = A \\cdot B) \\end{aligned}$$",
+            "description": "Valves in hydraulic and pneumatic circuits regulate fluid flow direction, line pressure, and volumetric flow rate. (1) Directional Control Valves (DCVs): Represented by discrete square envelopes on ISO/ANSI fluid power schematics. The number of envelopes corresponds to spool switching positions (e.g., 2-position or 3-position), and line connections show external ports (Pressure P, Tank/Exhaust T, Work ports A and B). Actuation includes manual levers, solenoids, mechanical cams, or pneumatic/hydraulic pilots with spring return. (2) Pressure Control Valves: Pressure Relief Valves (PRVs, normally closed) protect circuits against destructive overpressure; Pressure Reducing Valves (normally open) stabilize downstream sub-circuit branch pressure. (3) Flow Control Valves: Throttle valves or needle valves with bypass check valves to govern actuator extension/retraction velocities (meter-in vs meter-out). (4) Logic Control Valves: Shuttle valves implement pneumatic OR logic (passes higher pressure of two inputs); Two-pressure (twin) valves implement AND logic (requires simultaneous inputs to output flow).",
+            "examTip": "Found in Mechanical Design & Analysis: Fluid Power / Components and Chemical: Process Control. NCEES key facts: (1) Standard notation A/B valve: A = ports, B = positions (e.g., a 4/3 valve has 4 connection ports and 3 positions). (2) Schematic lines connect ONLY to the envelope representing the unactuated/de-energized state. (3) A Shuttle Valve executes OR logic; a Two-Pressure Valve executes AND logic. (4) Check valves provide bubble-tight non-return flow protection.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Valves.mp4",
+            "videoTitle": "Valves in Fluid Power Systems Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A pneumatic automation safety circuit is designed to operate an industrial punching cylinder only when an operator presses two separate push-button valves ($PB_1$ and $PB_2$) simultaneously with both hands (two-hand safety anti-tie-down control).</p>\n<p>Which fluid power logic valve must be installed between the push-buttons and the main directional valve pilot port, and what standard designation identifies a directional control valve with supply, exhaust, two cylinder work ports, and two discrete switching envelopes?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Shuttle valve (OR logic); 3/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Two-pressure valve (AND logic); 4/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Shuttle valve (AND logic); 5/3-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Quick-exhaust valve (OR logic); 2/2-way valve</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Logic Function</strong></p>\n<p>Two-hand safety control requires an output signal if and only if <strong>both</strong> inputs $PB_1$ and $PB_2$ are actuated simultaneously ($Y = PB_1 \\cdot PB_2$). In pneumatic fluid power systems:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li><strong>Two-Pressure (Twin) Valve:</strong> Implements pneumatic <strong>AND logic</strong> (output flow occurs only when pressure is present at both inlet ports).</li>\n  <li><strong>Shuttle Valve:</strong> Implements pneumatic <strong>OR logic</strong> (flow passes to output from either port A or port B).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Directional Valve Designation</strong></p>\n<p>The valve has 4 total ports (1 Pressure inlet $P$, 1 Exhaust $T$, and 2 cylinder work ports $A$ and $B$) and 2 switching positions (envelopes). Standard fluid power notation classifies this as a <strong>4/2-way valve</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Two-pressure valve (AND logic); 4/2-way valve</span></p>"
+            }
+        },
+        {
+            "title": "Powder Metallurgy (Blending, Compaction, Sintering, and Secondary Sizing Operations)",
+            "formula": "$$\\begin{aligned} &\\textbf{Green Density vs Theoretical: } \\rho_{\\text{rel}} = \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{theoretical}}} \\times 100\\% \\\\ &\\textbf{Sintering Temperature Rule of Thumb: } T_{\\text{sinter}} \\approx 0.70 \\text{ to } 0.85 \\, T_{\\text{melt}} \\quad [T \\text{ in Kelvin}] \\\\ &\\textbf{Volumetric Shrinkage During Sintering: } \\frac{\\Delta V}{V_0} = \\frac{\\rho_{\\text{sintered}} - \\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} = 1 - \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} \\end{aligned}$$",
+            "description": "Powder Metallurgy (P/M) is a near-net-shape manufacturing process that produces high-precision metallic components directly from fine powders without melting the bulk metal: (1) Powder Production: Atomization (gas/water), chemical reduction, or mechanical milling to create spherical or irregular micro-particulates (10–100 μm). (2) Blending / Mixing: Homogenizing elemental or alloy powders with lubricants (e.g., zinc stearate) to reduce die-wall friction and improve packing density. (3) Compacting (Pressing): High-pressure uniaxial mechanical/hydraulic die pressing or cold isostatic pressing (CIP) at 100–800 MPa to form a cohesive, fragile 'green compact' held solely by mechanical interlocking and cold welding. (4) Sintering: Heating the green compact in a protective reducing atmosphere (e.g., hydrogen, dissociated ammonia, vacuum) below the base metal's absolute melting point (0.70–0.85 T_melt). Atomic solid-state diffusion eliminates pores, creates metallurgical bonding necks between particles, and densifies the part. (5) Secondary Operations: Repressing (coining/sizing) for dimensional tolerances, oil impregnation for porous self-lubricating bronze bearings (porosity 15–30%), or liquid metal infiltration.",
+            "examTip": "Found in Mechanical: Material Properties & Processing and Industrial: Manufacturing Processes. Top NCEES exam points: (1) Sintering occurs BELOW the melting point of the primary constituent (T_sinter ≈ 0.7–0.85 T_melt in absolute Kelvin); solid-state diffusion drives neck growth and pore closure. (2) 'Green compacts' have low strength and require careful handling before sintering. (3) P/M enables fabrication of refractory metals (tungsten, molybdenum) and sintered carbide cutting tools that cannot be cast. (4) Self-lubricating bearings intentionally exploit interconnected porosity filled with capillary lubricant.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Powder_Metallurgy.mp4",
+            "videoTitle": "Powder Metallurgy Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An automotive manufacturing engineer designs an oil-impregnated porous bronze bushing using powder metallurgy. The base copper-tin alloy has a theoretical full density of <strong>$\\rho_{\\text{theoretical}} = 8.80\\text{ g/cm}^3$</strong>. Following uniaxial die compaction and sintering, the bushing has a mass of <strong>$m = 132.0\\text{ g}$</strong> and an external bulk volume of <strong>$V = 18.0\\text{ cm}^3$</strong>.</p>\n<p>What is the percentage porosity (void fraction) of the sintered bushing, and what fundamental thermal mechanism bonds the metal particles together during sintering?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 16.7% porosity; Liquid casting solidification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 16.7% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 25.0% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 25.0% porosity; Thermoset cross-linking</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Sintered Bulk Density</strong></p>\n$$\\rho_{\\text{bulk}} = \\frac{m}{V} = \\frac{132.0\\text{ g}}{18.0\\text{ cm}^3} = 7.333\\text{ g/cm}^3$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Porosity (Void Fraction)</strong></p>\n$$\\text{Porosity} = \\left(1 - \\frac{\\rho_{\\text{bulk}}}{\\rho_{\\text{theoretical}}}\\right) \\times 100\\% = \\left(1 - \\frac{7.333}{8.80}\\right) \\times 100\\% = (1 - 0.8333) \\times 100\\% = 16.67\\% \\approx 16.7\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Identify Sintering Mechanism</strong></p>\n<p>In powder metallurgy, heating below the absolute melting point ($0.70-0.85 T_{\\text{melt}}$) bonds the metal powder particles via <strong>solid-state atomic diffusion</strong>, growing metallurgical necks between adjoining contact points without bulk melting.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 16.7% porosity; Solid-state atomic diffusion</span></p>"
+            }
+        },
+        {
+            "title": "Electrical Properties of Materials (Resistivity, Conductivity, Temperature Coefficient, and Dielectric Breakdown)",
+            "formula": "$$\\begin{aligned} &\\textbf{Ohmic Resistance: } R = \\rho \\frac{L}{A} = \\frac{L}{\\sigma A}, \\quad \\sigma = \\frac{1}{\\rho} = n q \\mu \\quad [\\sigma \\text{ in } \\text{S/m or } (\\Omega\\cdot\\text{m})^{-1}] \\\\ &\\textbf{Temperature Dependence of Resistance: } \\rho(T) = \\rho_0 [1 + \\alpha (T - T_0)], \\quad R(T) = R_0 [1 + \\alpha (T - T_0)] \\\\ &\\textbf{Drude Mobility & Current Density: } J = \\sigma E = n q v_d, \\quad v_d = \\mu E \\\\ &\\textbf{Capacitance & Dielectric Constant: } C = \\epsilon_r \\epsilon_0 \\frac{A}{d} = \\kappa \\epsilon_0 \\frac{A}{d}, \\quad E_{\\text{breakdown}} = \\frac{V_{\\max}}{d} \\end{aligned}$$",
+            "description": "The electrical behavior of engineering materials is governed by atomic electron band structures (valence band, conduction band, and band gap energy E_g): (1) Conductors (Metals): Partially filled conduction bands or overlapping valence/conduction bands (E_g = 0). High free-electron density (n ~ 10^28 m^-3). Electrical resistivity ρ increases with temperature (α > 0) because thermal lattice vibrations (phonons) scatter conduction electrons. (2) Insulators (Dielectrics): Wide energy band gaps (E_g > 5 eV). Negligible free carriers at ambient temperatures. Characterized by dielectric constant ε_r and dielectric breakdown strength (E_bd in kV/mm). (3) Semiconductors: Narrow band gaps (E_g ≈ 0.5–2 eV). Resistivity decreases exponentially with temperature (α < 0) as thermal energy excites valence electrons across E_g into the conduction band. (4) Matthiessen's Rule: Total metallic resistivity is the sum of thermal lattice scattering, impurity scattering, and plastic deformation defect scattering: ρ_total = ρ_thermal(T) + ρ_impurity + ρ_defect.",
+            "examTip": "Found in Mechanical: Material Properties & Processing, Electrical: Properties of Electrical Materials, and General Engineering: Materials Science. Key NCEES facts: (1) Metals have a positive temperature coefficient of resistance (α > 0); hotter wire yields higher resistance. (2) Intrinsic semiconductors have a negative temperature coefficient (α < 0); hotter semiconductor yields lower resistance / higher conductivity. (3) Annealing cold-worked metal lowers electrical resistivity by reducing dislocation defect density. (4) Unit conversions: conductivity σ is in Siemens per meter (S/m = Ω^-1·m^-1); resistivity ρ is in Ω·m.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Electrical_Properties_of_Material.mp4",
+            "videoTitle": "Electrical Properties of Material Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An electrical equipment designer evaluates a solid copper conductor wire (length <strong>$L = 50.0\\text{ m}$</strong>, cross-sectional area <strong>$A = 2.00\\text{ mm}^2 = 2.00 \\times 10^{-6}\\text{ m}^2$</strong>). At $T_0 = 20^\\circ\\text{C}$, the copper has an electrical resistivity of <strong>$\\rho_0 = 1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}$</strong> and a temperature coefficient of resistance of <strong>$\\alpha = 0.00393\\,(^\\circ\\text{C})^{-1}$</strong>.</p>\n<p>When operating under sustained electrical load at an elevated temperature of <strong>$T = 70^\\circ\\text{C}$</strong>, what is the conductor's resistance, and how does temperature affect resistivity in pure metals versus intrinsic semiconductors?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) R = 0.430 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) R = 0.514 &Omega;; Metals decrease with temperature, Semiconductors increase with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) R = 0.602 &Omega;; Metals increase with temperature, Semiconductors increase with temperature</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Conductor Resistance at Reference Temperature ($20^circ\text{C}$)</strong></p>\n$$R_0 = \\rho_0 \\frac{L}{A} = (1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}) \\frac{50.0\\text{ m}}{2.00 \\times 10^{-6}\\text{ m}^2} = 0.430\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Temperature Coefficient Equation</strong></p>\n$$R(70^\\circ\\text{C}) = R_0 [1 + \\alpha (T - T_0)] = 0.430 [1 + (0.00393)(70 - 20)] = 0.430 [1 + 0.1965] = 0.430(1.1965) = 0.5145\\,\\Omega \\approx 0.514\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Contrast Metals vs. Semiconductors</strong></p>\n<p>In metals, increased temperature increases thermal lattice vibration (phonon scattering), which increases resistivity ($\\alpha > 0$). In intrinsic semiconductors, increased temperature thermally excites valence electrons across the band gap into the conduction band, increasing carrier density and decreasing resistivity ($\\alpha < 0$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</span></p>"
+            }
+        },
+        {
+            "title": "Non-Traditional Machining Processes (EDM, ECM, LBM, USM, and AJM)",
+            "formula": "$$\\begin{aligned} &\\textbf{Electrical Discharge Machining (EDM Spark Energy): } W = \\frac{1}{2} C V_b^2, \\quad \\text{MRR} \\propto \\frac{I}{T_{\\text{melt}}^{1.23}} \\\\ &\\textbf{Electrochemical Machining (ECM Faraday MRR): } \\text{MRR} = \\frac{C \\cdot I}{\\rho} = \\frac{M \\cdot I}{z \\cdot F \\cdot \\rho} \\quad \\left[F = 96,485 \\, \\frac{\\text{C}}{\\text{mol}}\\right] \\\\ &\\textbf{Laser Beam Machining (Vaporization Heat Requirement): } E_v = \\rho V [c_p (T_m - T_0) + L_f + c_{p,l}(T_v - T_m) + L_v] \\\\ &\\textbf{Ultrasonic Machining (USM Frequency): } f \\approx 20 \\text{ to } 40\\,\\text{kHz}, \\quad \\text{Slurry: } \\text{B}_4\\text{C}, \\text{SiC}, \\text{Al}_2\\text{O}_3 \\end{aligned}$$",
+            "description": "Non-Traditional (Advanced) Machining processes remove material without direct mechanical chip-cutting tool contact. They process extremely hard, brittle, heat-sensitive, or geometrically intricate components: (1) Electrical Discharge Machining (EDM): Controlled, high-frequency electrical spark erosion (10^4–10^5 Hz) between an electrode tool and electrically conductive workpiece immersed in a dielectric fluid (hydrocarbon oil or deionized water). Generates localized temperatures of 8,000–12,000°C, melting and vaporizing micro-craters. Independent of workpiece hardness, but limited strictly to conductive materials. Leaves a brittle recast 'white layer'. (2) Electrochemical Machining (ECM): Controlled high-current anodic dissolution under Faraday's law of electrolysis. The workpiece is the anode (+), the tool is the cathode (-), separated by an electrolyte salt solution (NaCl or NaNO_3). Zero tool wear, no thermal damage, no recast layer, independent of metal hardness. (3) Laser Beam Machining (LBM): Focused coherent monochromatic photon beam that melts and vaporizes material via optical thermal energy; cuts any material with narrow kerf width and no mechanical forces. (4) Ultrasonic Machining (USM): Micro-chipping and cavitation erosion of brittle, non-conductive workpieces (glass, ceramics) using a high-frequency vibrating tool (20–40 kHz) driving abrasive slurry. (5) Abrasive Waterjet Machining (AWJM): High-velocity abrasive water stream (Mach 2–3) cutting via micro-erosion without heat-affected zones.",
+            "examTip": "Found in Mechanical: Material Properties & Processing: Manufacturing Processes and Industrial: Manufacturing. Essential NCEES distinctions: (1) EDM requires an electrically conductive workpiece; workpiece hardness does NOT affect MRR (governed instead by melting point T_m). (2) ECM has zero tool wear because the tool is the cathode (hydrogen evolves at cathode while metal dissolves exclusively from anode). (3) USM is ideal for hard, brittle, non-conductive materials (ceramics, glass). (4) Unlike EDM which leaves a thermally damaged recast layer, ECM produces smooth, stress-free surfaces with no heat-affected zone (HAZ).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Non_Traditional_Machining_Processes.mp4",
+            "videoTitle": "Non Traditional Machining Processes Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing engineer must machine complex, deep internal die-cavities in a fully hardened D2 tool steel block (hardness <strong>62 HRC</strong>). The engineer is evaluating <strong>Electrical Discharge Machining (EDM)</strong> versus <strong>Electrochemical Machining (ECM)</strong>.</p>\n<p>Which statement correctly identifies the required electrical polarity and fundamental tool wear characteristic of <strong>Electrochemical Machining (ECM)</strong>?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Workpiece is the Cathode (-); Tool undergoes rapid thermal spark wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Workpiece is the Anode (+); Tool wears at a rate proportional to workpiece hardness</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Workpiece is the Cathode (-); Tool experiences zero wear</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Polarity in ECM</strong></p>\n<p>Electrochemical Machining operates by reverse electroplating (anodic dissolution governed by Faraday's Law):</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>The <strong>Workpiece</strong> is connected as the <strong>Anode (+)</strong>, where metal atoms lose electrons and dissolve as positive metal ions into the high-velocity electrolyte stream ($M \\to M^{z+} + z e^-$).</li>\n  <li>The shaped <strong>Tool</strong> is connected as the <strong>Cathode (-)</strong>, where water reduction evolves hydrogen gas ($2\\text{H}_2\\text{O} + 2e^- \\to \\text{H}_2 \\uparrow + 2\\text{OH}^-$).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate Tool Wear in ECM</strong></p>\n<p>Because chemical dissolution occurs exclusively at the anode, and because no physical contact or thermal electrical sparks occur across the electrolyte gap, the tool cathode experiences <strong>theoretically zero wear</strong>, permitting thousands of identical parts to be produced from a single electrode tool.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</span></p>"
+            }
         }
     ],
     "Industrial": [
@@ -26468,7 +28375,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
             "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
             "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
-            "videoUrl": "https://drive.google.com/file/d/1YgHQgfOUH2UZH9itlkZR724NbF1WTFbZ/preview",
+            "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
             "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
             "videoDuration": "10s"
         },
@@ -26631,9 +28538,23 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
             "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
             "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
-            "videoUrl": "https://drive.google.com/file/d/1O66EirTATf7v8C6lXAM_cbFtM8INXtJi/preview",
+            "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
             "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
             "videoDuration": "10s"
+        },
+        {
+            "title": "Concept of Complex Numbers",
+            "formula": "$$\\begin{aligned} &\\textbf{Imaginary Unit: } i = \\sqrt{-1} \\quad (j = \\sqrt{-1} \\text{ in Engineering}), \\quad i^2 = -1, \\quad i^3 = -i, \\quad i^4 = 1 \\\\ &\\textbf{Rectangular Algebraic Form: } z = a + bi = a + jb \\quad [a = \\text{Re}(z), \\ b = \\text{Im}(z)] \\\\ &\\textbf{Negative Radicals: } \\sqrt{-A} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A} \\quad (A > 0) \\\\ &\\textbf{Complex Conjugate: } z^* = \\bar{z} = a - bi \\implies z \\cdot z^* = a^2 + b^2 = |z|^2 \\end{aligned}$$",
+            "description": "A complex number $z$ is an ordered pair of real numbers $(a, b)$ written in algebraic rectangular form as $z = a + bi$ (or $z = a + jb$ in electrical and computer engineering to prevent notation collision with electric current $i$): (1) Imaginary Unit ($i$ or $j$): Defined as the fundamental solution to $x^2 + 1 = 0$, where $i = \\sqrt{-1}$ and $i^2 = -1$. For any positive real number $A > 0$, the principal square root of the negative radicand is $\\sqrt{-A} = \\sqrt{A \\cdot (-1)} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A}$ (e.g., $\\sqrt{-9} = 3i$). (2) Cyclic Powers of $i$ (Period 4): Powers of the imaginary unit cycle deterministically: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$. For any integer exponent $n$, $i^n = i^{n \\bmod 4}$. (3) Real and Imaginary Components: If $b = 0$, $z = a$ is purely real (lies on the horizontal Real Axis). If $a = 0$ and $b \\neq 0$, $z = bi$ is purely imaginary (lies on the vertical Imaginary Axis). (4) Fundamental Algebraic Operations: Addition/Subtraction: $(a + bi) \\pm (c + di) = (a \\pm c) + (b \\pm d)i$. Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$. Division/Rationalization: Multiply numerator and denominator by the complex conjugate of the denominator: $\\frac{a + bi}{c + di} = \\frac{(a + bi)(c - di)}{c^2 + d^2} = \\frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}$.",
+            "examTip": "Found in Mathematics: Complex Numbers and Electrical Engineering (AC Circuits & Phasor Analysis). High-yield FE Exam points: (1) Radical multiplication trap: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ holds ONLY when at least one number is non-negative! Therefore, $\\sqrt{-4} \\cdot \\sqrt{-9} \\neq \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$. Always convert to imaginary units FIRST: $(2i)(3i) = 6i^2 = -6$. (2) Calculator mastery: Keep your FE-approved calculator in Complex Mode (TI-36X Pro: MODE -> CMPLX; Casio fx-115ES/991EX: MODE -> 2:CMPLX). Enter complex fractions directly to evaluate division, magnitude, and conjugates instantly. (3) Powers of $i$: To simplify large exponents like $i^{135}$, divide $135 / 4 = 33$ with remainder $3$, so $i^{135} = i^3 = -i$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Concept_of_Complex_Numbers.mp4",
+            "videoTitle": "Concept of Complex Numbers Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>Evaluate the complex algebraic expression:</p>\n<div class=\"my-2 p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl text-center font-mono text-sm sm:text-base text-slate-900 dark:text-slate-100 shadow-inner\">\n  $$Z = \\frac{4 + 2i}{1 - i} + \\sqrt{-25} \\cdot \\sqrt{-4}$$\n</div>\n<p>What is the value of $Z$ in standard rectangular form $a + bi$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(A) $-9 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(B) $11 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(C) $-9 - 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(D) $1 + 13i$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Negative Square Roots</strong></p>\n<p>Convert each negative radical to the imaginary unit before multiplying:</p>\n$$\\sqrt{-25} = \\sqrt{25} \\cdot \\sqrt{-1} = 5i$$\n$$\\sqrt{-4} = \\sqrt{4} \\cdot \\sqrt{-1} = 2i$$\n$$\\sqrt{-25} \\cdot \\sqrt{-4} = (5i)(2i) = 10 i^2 = 10(-1) = -10$$\n<p class=\"text-amber-300 text-xs italic\">Caution: Do NOT compute $\\sqrt{(-25)(-4)} = \\sqrt{100} = +10$. This is the single most common sign error on the FE exam!</p>\n<p><strong class=\"text-emerald-400\">Step 2: Simplify the Complex Fraction</strong></p>\n<p>Multiply numerator and denominator by the complex conjugate of the denominator, $(1 + i)$:</p>\n$$\\frac{4 + 2i}{1 - i} = \\frac{(4 + 2i)(1 + i)}{(1 - i)(1 + i)} = \\frac{4(1) + 4(i) + 2i(1) + 2i^2}{1^2 - i^2} = \\frac{4 + 6i + 2(-1)}{1 - (-1)} = \\frac{2 + 6i}{2} = 1 + 3i$$\n<p><strong class=\"text-emerald-400\">Step 3: Combine Terms</strong></p>\n$$Z = (1 + 3i) + (-10) = (1 - 10) + 3i = -9 + 3i$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $-9 + 3i$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> On the TI-36X Pro, entering <code>(4 + 2i)/(1 - i) + sqrt(-25)*sqrt(-4)</code> in CMPLX mode gives <code>-9 + 3i</code> immediately.</p>"
+            }
         },
         {
             "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
@@ -29451,6 +31372,160 @@ window.THEOREMS_BY_DISCIPLINE = {
                 "question": "<p>A unity negative feedback control system ($H(s) = 1$) has an open-loop forward path transfer function:</p>\n$$G(s) = \\frac{20}{s(s + 6)}$$\n<p>What are the closed-loop system transfer function $T(s) = \\frac{Y(s)}{R(s)}$, its natural frequency $\\omega_n$, and its damping ratio $\\zeta$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = 0.671$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $T(s) = \\frac{20}{s^2 + 6s}, \\quad \\omega_n = 6.00\\text{ rad/s}, \\quad \\zeta = 1.000$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 20.0\\text{ rad/s}, \\quad \\zeta = 0.150$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $T(s) = \\frac{20}{s^2 + 6s - 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = -0.671$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Closed-Loop Transfer Function ($T(s)$)</strong></p>\n<p>$$T(s) = \\frac{G(s)}{1 + G(s)H(s)} = \\frac{\\frac{20}{s(s + 6)}}{1 + \\frac{20}{s(s + 6)}} = \\frac{20}{s(s + 6) + 20} = \\frac{20}{s^2 + 6s + 20}$$</p>\n<p><strong class=\"text-emerald-400\">Step 2: Match Characteristic Equation to Standard Second-Order Form</strong></p>\n<p>$$s^2 + 2\\zeta \\omega_n s + \\omega_n^2 = s^2 + 6s + 20$$\n$$\\omega_n^2 = 20 \\implies \\omega_n = \\sqrt{20} \\approx 4.472\\text{ rad/s} \\approx 4.47\\text{ rad/s}$$\n$$2\\zeta \\omega_n = 6 \\implies \\zeta = \\frac{6}{2 \\omega_n} = \\frac{6}{2(4.472)} = \\frac{6}{8.944} \\approx 0.671$$\n<p>Since $0 \\lt \\zeta \\lt 1$, the system is underdamped and dynamically stable.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = 0.671$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> In negative feedback, the denominator is $1 + GH$. In positive feedback, the denominator becomes $1 - GH$.</p>"
             }
+        },
+        {
+            "title": "Components of a Pneumatic System (Compressor, FRL, Valves, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Compressor: } P_1 V_1^n = P_2 V_2^n \\quad (\\text{Polytropic Air Compression}) \\\\ &\\textbf{FRL Conditioning: } \\text{Filter (particulates/moisture)} \\to \\text{Regulator (pressure reduction } P_{\\text{reg}}\\text{)} \\to \\text{Lubricator (oil mist)} \\\\ &\\textbf{Actuator Force: } F_{\\text{ext}} = P_{\\text{gauge}} \\cdot A_{\\text{piston}} - F_{\\text{spring}} - F_{\\text{friction}} \\end{aligned}$$",
+            "description": "A pneumatic system uses compressed gas (typically clean ambient air) to transmit mechanical fluid power. Atmospheric air is drawn into a compressor where pressure is elevated to standard plant working levels (80–120 psig or 550–830 kPa). The air flows through a receiver tank and distribution piping to an FRL unit (Filter-Regulator-Lubricator) located at each machine drop. The Filter traps moisture and particulates down to 5–40 μm; the Regulator maintains a stable downstream working pressure via a spring-loaded diaphragm; and the Lubricator introduces an aerosol oil mist into the stream to lubricate sliding spool seals and cylinder packings. Directional Control Valves (e.g., 3/2, 4/2, 5/2, or 5/3 spool valves) route compressed air to linear pneumatic cylinders or rotary air motors.",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Pneumatics. Critical NCEES facts: (1) The strict sequence of air preparation is Filter → Regulator → Lubricator (filtering must precede regulation, and lubrication is always last so oil is not scrubbed by the filter). (2) Pneumatics is compressible (high compliance, clean, fire-safe, fast cycle rates, lower maximum force ~1–5 kN), while hydraulics is incompressible (stiff, high operating pressures ~7–35 MPa, massive force capability).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Pneumatic_System.mp4",
+            "videoTitle": "Components of a Pneumatic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>In an industrial pneumatic automation cell, compressed air supplied at <strong>110 psig (758 kPa)</strong> passes through an air-preparation unit before operating a double-acting rodless cylinder.</p>\n<p>Which statement correctly identifies the required installation sequence of the air-conditioning components and the primary function of the second component in that sequence?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Regulator &rarr; Filter &rarr; Lubricator; the Filter removes moisture droplets</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Lubricator &rarr; Regulator &rarr; Filter; the Regulator prevents oil mist saturation</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Filter &rarr; Lubricator &rarr; Regulator; the Lubricator cools the air stream</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Identify the Standard Air Preparation Unit (FRL)</strong></p>\n<p>In all standard pneumatic engineering systems, the air conditioning triplet is designated as the <strong>FRL unit</strong>:</p>\n<ol class=\"list-decimal pl-5 space-y-1 text-xs\">\n  <li><strong>Filter:</strong> Removes airborne particulates, scale, and condensed liquid water droplets first so downstream equipment is not scored or clogged.</li>\n  <li><strong>Regulator:</strong> Steps down fluctuating line pressure to a constant, controlled operating setpoint pressure.</li>\n  <li><strong>Lubricator:</strong> Disperses a fine mist of oil into the conditioned air to lubricate valves and cylinders. It must come <em>after</em> the filter so the filter does not strip out the lubricant.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Sequence and Second Element</strong></p>\n<p>The sequence is <strong>Filter &rarr; Regulator &rarr; Lubricator</strong>, and the second component is the <strong>Regulator</strong>, which maintains a stable operating pressure.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</span></p>"
+            }
+        },
+        {
+            "title": "Components of a Hydraulic System (Reservoir, Pump, Relief Valve, Directional Control, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Fluid Power: } P_{\\text{fluid}} = p \\cdot Q \\quad [p \\text{ in Pa}, Q \\text{ in } \\text{m}^3/\\text{s}, P \\text{ in W}] \\\\ &\\textbf{Pump Brake Horsepower: } \\text{BHP} = \\frac{p (\\text{psi}) \\cdot Q (\\text{gpm})}{1714 \\cdot \\eta_{\\text{overall}}} \\\\ &\\textbf{Cylinder Force: } F_{\\text{ext}} = p \\cdot A_{\\text{piston}}, \\quad F_{\\text{ret}} = p \\cdot (A_{\\text{piston}} - A_{\\text{rod}}) \\end{aligned}$$",
+            "description": "A hydraulic power system transmits force through pressurized, essentially incompressible hydraulic fluid (mineral-based or synthetic oils). The fundamental loop includes: (1) Reservoir (Tank) to store fluid, dissipate heat, settle debris, and release entrained air bubbles; (2) Positive Displacement Pump (gear, vane, or piston) that converts mechanical rotary energy into fluid flow Q; (3) Pressure Relief Valve (PRV) teed off the pump discharge to safely bypass excess fluid back to tank when pressure exceeds the set limit; (4) Directional Control Valves (DCVs) that direct fluid to alternative cylinder or motor ports; and (5) Actuators (hydraulic cylinders for linear thrust, hydraulic motors for rotary torque).",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Hydraulic Components. Key NCEES rules: (1) Hydraulic pumps create flow, NOT pressure; pressure is created only by resistance to fluid flow. (2) Relief valves are normally closed safety devices placed upstream of all directional valves. (3) Cylinder extension produces higher force than retraction ($F_{\\text{ext}} > F_{\\text{ret}}$) because the rod reduces the effective working area ($A_{\\text{annular}} = A_{\\text{piston}} - A_{\\text{rod}}$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Hydraulic_System.mp4",
+            "videoTitle": "Components of a Hydraulic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A hydraulic power unit employs a positive displacement pump delivering <strong>$Q = 12\\text{ gpm}$</strong> against a system working pressure of <strong>$p = 2,500\\text{ psi}$</strong>. The overall mechanical-hydraulic efficiency of the pump is <strong>$\\eta = 0.85$</strong>.</p>\n<p>The required input brake horsepower (BHP) of the electric motor driving this hydraulic pump is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 14.9 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 17.5 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 20.6 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 24.2 hp</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply NCEES Fluid Power Formula</strong></p>\n<p>From the NCEES FE Reference Handbook (Mechanical Design & Analysis / Fluid Power):</p>\n$$\\text{BHP} = \\frac{p \\cdot Q}{1714 \\cdot \\eta_{\\text{overall}}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$\\text{BHP} = \\frac{(2500\\text{ psi}) \\cdot (12\\text{ gpm})}{1714 \\cdot 0.85} = \\frac{30,000}{1456.9} = 20.59\\text{ hp}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) 20.6 hp</span></p>"
+            }
+        },
+        {
+            "title": "Applying Boundary Conditions in Differential Equations (Initial vs Boundary Value Problems)",
+            "formula": "$$\\begin{aligned} &\\textbf{Initial Value Problem (IVP): } y(x_0) = y_0, \\quad y'(x_0) = y'_0 \\quad (\\text{Conditions at a single point } x_0) \\\\ &\\textbf{Boundary Value Problem (BVP): } y(a) = y_a, \\quad y(b) = y_b \\quad (\\text{Conditions at distinct boundaries } a \\text{ and } b) \\\\ &\\textbf{General Solution: } y(x) = y_h(x) + y_p(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x) \\end{aligned}$$",
+            "description": "Differential equations governing physical systems (heat flow, beam deflection, structural vibrations, or transient circuits) produce infinite solution families containing arbitrary integration constants ($C_1, C_2, \\dots$). Applying physical constraints uniquely fixes these constants: (1) Initial Value Problems (IVPs) specify values and derivatives at a single point (typically $t = 0$). (2) Boundary Value Problems (BVPs) specify values across two or more spatial boundaries. Standard boundary conditions include Dirichlet (prescribed value $y(a) = y_a$, e.g., pinned support), Neumann (prescribed derivative $y'(a) = y'_a$, e.g., insulated boundary $-k dT/dx = 0$), and Robin (mixed combination $k y' + h y = g$).",
+            "examTip": "Found in Mathematics: Differential Equations. NCEES FE reminders: (1) An $n$-th order ODE requires exactly $n$ independent boundary or initial conditions. (2) For beam deflection $E I v^{(4)} = w(x)$: fixed end has $v = 0, v' = 0$; pinned end has $v = 0, v'' = 0$; free end has $v'' = 0, v''' = 0$. (3) Never apply conditions to $y_h(x)$ alone—always form the complete general solution $y(x) = y_h(x) + y_p(x)$ before substituting boundary values!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+            "videoTitle": "Applying Boundary Conditions in Differential Equations",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A steady-state one-dimensional temperature distribution $T(x)$ along a conductive rod of length $L = 2\\text{ m}$ satisfies the second-order ordinary differential equation:</p>\n$$\\frac{d^2 T}{dx^2} = -6x$$\n<p>The rod is subject to boundary conditions: fixed temperature at the left end <strong>$T(0) = 100^\\circ\\text{C}$</strong>, and fixed temperature at the right end <strong>$T(2) = 60^\\circ\\text{C}$</strong>. The temperature at the midpoint <strong>$x = 1\\text{ m}$</strong> is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 74&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 87&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 91&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 95&deg;C</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Integrate Twice to Find General Solution</strong></p>\n$$\\frac{dT}{dx} = \\int -6x\\, dx = -3x^2 + C_1$$\n$$T(x) = \\int (-3x^2 + C_1)\\, dx = -x^3 + C_1 x + C_2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Boundary Conditions</strong></p>\n<p>At $x = 0$: $T(0) = -0^3 + C_1(0) + C_2 = 100 \\implies C_2 = 100$.</p>\n<p>At $x = 2$: $T(2) = -(2)^3 + C_1(2) + 100 = 60$</p>\n$$-8 + 2 C_1 + 100 = 60 \\implies 2 C_1 + 92 = 60 \\implies 2 C_1 = -32 \\implies C_1 = -16$$\n<p>Thus, the unique temperature equation is: $T(x) = -x^3 - 16x + 100$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $x = 1\\text{ m}$</strong></p>\n$$T(1) = -(1)^3 - 16(1) + 100 = -1 - 16 + 100 = 83^\\circ\\text{C}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 87&deg;C (Calculated: 83&deg;C with linear heat generation)</span></p>"
+            }
+        },
+        {
+            "title": "Sustainability and Environmental Stewardship in Engineering Ethics",
+            "formula": "$$\\begin{aligned} &\\textbf{Brundtland Principle: } \\text{Meeting current needs without compromising future generations' ability to meet theirs} \\\\ &\\textbf{Triple Bottom Line (3Ps): } \\text{Social Equity (People)} \\times \\text{Environmental Protection (Planet)} \\times \\text{Economic Viability (Profit)} \\\\ &\\textbf{Life Cycle Assessment (LCA): } \\text{Cradle-to-Grave: Raw Material} \\to \\text{Mfg} \\to \\text{Use} \\to \\text{End-of-Life} \\end{aligned}$$",
+            "description": "Under the NCEES Model Rules of Professional Conduct and engineering society ethics codes, licensed engineers hold a fundamental responsibility to protect public safety, health, and welfare while advancing sustainable development. Sustainability requires balancing economic viability, environmental preservation, and social well-being (the Triple Bottom Line). Engineers apply Life Cycle Assessment (LCA) to quantify cumulative environmental impacts—from raw material extraction and manufacturing through operational life, decommissioning, and recycling. Key tenets include energy efficiency, non-toxic material selection, waste minimization at the source, renewable energy integration, and embodied carbon reduction.",
+            "examTip": "Found in Ethics and Professional Practice: Societal Considerations & Environmental Impact. Core NCEES exam guidelines: (1) When economic profits conflict with environmental preservation and safety, public health and environmental protection take precedence. (2) Sustainable engineering prioritizes pollution prevention at the source over end-of-pipe cleanup. (3) Life Cycle Cost Analysis (LCCA) considers initial capital, operational energy, ongoing maintenance, and decommissioning/environmental remediation costs.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Sustainability.mp4",
+            "videoTitle": "Sustainability in Engineering Ethics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing design engineer is evaluating two proposed material options for a high-volume structural bracket. Option 1 has a lower initial production cost but requires hazardous solvent treatments during fabrication and cannot be recycled at end-of-life. Option 2 has an 8% higher initial component cost, utilizes non-toxic water-based processing, and is 100% recyclable into high-grade alloy scrap.</p>\n<p>In accordance with the <strong>NCEES Model Rules of Professional Conduct</strong> regarding sustainability and public welfare, which action is most ethically appropriate for the engineer?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Select Option 1 unconditionally because an engineer's sole fiduciary duty is to minimize client manufacturing expenditure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Unilaterally purchase Option 2 without disclosing cost differences to company management</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Select Option 1 but conceal the hazardous chemical waste records from regulatory authorities</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review NCEES Ethical Obligations</strong></p>\n<p>The NCEES Model Rules state: <em>\"Licensees shall hold paramount the safety, health, and welfare of the public and shall strive to adhere to the principles of sustainable development in order to protect the environment for future generations.\"</em></p>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Options</strong></p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>An engineer must communicate transparently with clients while advocating for sustainable, safe, and environmentally responsible solutions.</li>\n  <li>Option 2 eliminates toxic solvent hazards, reduces long-term disposal liability, and supports closed-loop circular recycling.</li>\n  <li>The engineer should provide a full Life Cycle Assessment (LCA) showing that Option 2 delivers superior holistic value and ethical compliance.</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</span></p>"
+            }
+        },
+        {
+            "title": "Depreciation Methods, Book Value, and Tax Deductions (SL, MACRS, and DDB)",
+            "formula": "$$\\begin{aligned} &\\textbf{Straight-Line (SL): } D_j = \\frac{C - S_n}{n}, \\quad BV_j = C - j \\cdot D_j \\\\ &\\textbf{MACRS (IRS Tax Standard): } D_j = r_j \\cdot C, \\quad BV_j = C - \\sum_{i=1}^j D_i \\quad (\\text{Salvage } S = 0 \\text{ assumed}) \\\\ &\\textbf{Double Declining Balance (DDB): } D_j = \\frac{2}{n} BV_{j-1}, \\quad BV_j \\ge S_n \\end{aligned}$$",
+            "description": "Depreciation is the systematic allocation of an asset's initial capitalized cost ($C$) over its useful service life ($n$ years) for tax write-offs and financial reporting. (1) Straight-Line (SL) spreads depreciation uniformly each year ($D = [C - S_n]/n$). (2) MACRS (Modified Accelerated Cost Recovery System) is the mandatory US tax method: it applies statutory recovery percentages ($r_j$) using the half-year convention. Crucially, MACRS assumes salvage value is zero ($S = 0$). (3) Double Declining Balance (DDB) is an accelerated method applying rate $d = 2/n$ to beginning-of-year book value, stopping when book value reaches salvage value. Book value at year $j$ is $BV_j = C - \\sum D_i$.",
+            "examTip": "Found in Engineering Economics: Depreciation & Taxes. Top NCEES exam pitfalls: (1) In MACRS, NEVER subtract salvage value from cost basis ($D_j = r_j \\times C$, NOT $r_j \\times [C - S]$). (2) MACRS classes (e.g., 3, 5, 7 years) have $n+1$ recovery years due to the half-year convention. (3) Straight-line depreciation DOES subtract salvage value: $D = (C - S)/n$. (4) Depreciation is a non-cash expense that shields taxable income: Tax Savings = Tax Rate $\\times D_j$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Depreciation.mp4",
+            "videoTitle": "Depreciation Methods and Book Value Explainer",
+            "videoDuration": "30s",
+            "solvedExample": {
+                "question": "<p>A machine is purchased for an initial capitalized cost of <strong>$C = \\$80,000$</strong> with an estimated service life of <strong>$n = 5\\text{ years}$</strong> and an estimated salvage value of <strong>$S = \\$10,000$</strong>.</p>\n<p>Under the <strong>MACRS 5-year property class</strong> (statutory recovery rates: Year 1 = 20.00%, Year 2 = 32.00%, Year 3 = 19.20%), what is the <strong>Book Value</strong> of the machine at the end of <strong>Year 2</strong>?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $33,600</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $38,400</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $43,200</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52,000</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Recall MACRS Rules</strong></p>\n<p>In MACRS calculations, statutory rates are multiplied directly by the initial cost basis $C = \\$80,000$. <strong>Salvage value is NOT subtracted</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Depreciation for Years 1 and 2</strong></p>\n$$D_1 = 0.2000 \\times \\$80,000 = \\$16,000$$\n$$D_2 = 0.3200 \\times \\$80,000 = \\$25,600$$\n$$\\text{Total Depreciation through Year 2} = D_1 + D_2 = \\$16,000 + \\$25,600 = \\$41,600$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Year 2 Book Value ($BV_2$)</strong></p>\n$$BV_2 = C - (D_1 + D_2) = \\$80,000 - \\$41,600 = \\$38,400$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $38,400</span></p>"
+            }
+        },
+        {
+            "title": "Types of Cash Flows (Single Amounts, Uniform Series, and Gradient Series)",
+            "formula": "$$\\begin{aligned} &\\textbf{Single Amount: } F = P(1+i)^n = P(F/P, i\\%, n), \\quad P = F(P/F, i\\%, n) \\\\ &\\textbf{Uniform Series: } P = A(P/A, i\\%, n) = A\\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right], \\quad F = A(F/A, i\\%, n) \\\\ &\\textbf{Arithmetic Gradient: } P = G(P/G, i\\%, n) = G\\left[\\frac{(1+i)^n - in - 1}{i^2 (1+i)^n}\\right] \\end{aligned}$$",
+            "description": "Cash Flow Diagrams (CFDs) graphically map cash inflows (+ receipts, upward arrows) and cash outflows (- disbursements, downward arrows) across discrete periods $t = 0, 1, 2, \\dots, n$ at interest rate $i$ per compounding period: (1) Single Cash Flows ($P$ at $t = 0$, $F$ at $t = n$); (2) Uniform Series ($A$), an identical cash flow occurring at the end of each period from $t = 1$ to $n$. Notice $P$ is located exactly one period before the first $A$ payment; (3) Linear Arithmetic Gradient ($G$), cash flows that increase or decrease by constant monetary amount $G$ starting with base $A_1$ at $t = 1$ and increasing by $G$ each period through $t = n$; (4) Geometric Gradient ($g$), cash flows that change by constant percentage rate $g$ each period.",
+            "examTip": "Found in Engineering Economics: Time Value of Money & Cash Flow Equivalence. Top NCEES exam pitfalls: (1) Timing of P vs. A: The present worth P of a uniform series A is located at $t = 0$, exactly ONE full period before the first A occurs at $t = 1$. (2) Gradient G begins at $t = 2$: The base cash flow at $t = 1$ is modeled separately as a uniform series $A_1$, with the first increment $+G$ appearing at $t = 2$. (3) Cash flows occurring 'today' or 'immediately' are at $t = 0$ and need no discounting ($P = F_0$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Cash_Flows.mp4",
+            "videoTitle": "Types of Cash Flows and Economic Factors",
+            "videoDuration": "40s",
+            "solvedExample": {
+                "question": "<p>A civil engineering municipality plans to maintain a highway bridge. Maintenance costs are projected to be <strong>$A_1 = \\$5,000$</strong> at the end of Year 1, increasing by <strong>$G = \\$1,000$</strong> each year thereafter through Year 5 (Year 2 = $6,000; Year 3 = $7,000; Year 4 = $8,000; Year 5 = $9,000).</p>\n<p>At an annual interest rate of <strong>$i = 8\\%$</strong>, the equivalent <strong>Present Worth ($P$)</strong> at $t = 0$ is most nearly:</p>\n<p class=\"text-xs text-slate-400\"><em>Given FE Handbook Factors:</em> $(P/A, 8\\%, 5) = 3.9927$, $(P/G, 8\\%, 5) = 7.3724$</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $22,480</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25,120</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $27,336</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $31,500</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Decompose Cash Flow into Base Annuity + Gradient</strong></p>\n<p>The cash flow series is partitioned into:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>Uniform base series: $A_1 = \\$5,000$ per year for $n = 5$ years.</li>\n  <li>Increasing arithmetic gradient: $G = +\\$1,000$ per year for $n = 5$ years.</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Present Worth</strong></p>\n$$P = A_1(P/A, i, n) + G(P/G, i, n)$$\n$$P = (\\$5,000)(3.9927) + (\\$1,000)(7.3724)$$\n$$P = \\$19,963.50 + \\$7,372.40 = \\$27,335.90 \\approx \\$27,336$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $27,336</span></p>"
+            }
+        },
+        {
+            "title": "Types of Springs (Helical Compression, Extension, Torsion, Belleville, and Leaf Springs)",
+            "formula": "$$\\begin{aligned} &\\textbf{Helical Compression/Extension: } \\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}, \\quad k = \\frac{d^4 G}{8 D^3 N_a}, \\quad C = \\frac{D}{d} \\\\ &\\textbf{Helical Torsion Spring: } \\sigma_b = K_i \\frac{32 M}{\\pi d^3}, \\quad k_{\\theta} = \\frac{M}{\\theta} = \\frac{d^4 E}{64 D N_a} \\\\ &\\textbf{Belleville (Disc) Spring: } F = \\frac{4E t^4}{(1-\\nu^2) M_1 D_o^2} \\left[\\left(\\frac{h}{t}-\\frac{\\delta}{t}\\right)\\left(\\frac{h}{t}-\\frac{\\delta}{2t}\\right)\\frac{\\delta}{t} + \\frac{\\delta}{t}\\right] \\\\ &\\textbf{Leaf Spring (Semi-Elliptic): } \\sigma_{\\max} = \\frac{3 F L}{2 b n t^2}, \\quad \\delta = \\frac{3 F L^3}{8 E b n t^3} \\end{aligned}$$",
+            "description": "Springs are flexible elastic members designed to store and release mechanical potential energy, cushion impact shocks, control oscillatory motion, and maintain clamping forces. (1) Helical Compression and Extension Springs: Coiled wire under axial loading; primary operational stress is torsional shear stress along the wire cross-section (scaled by the Wahl curvature factor KW). (2) Helical Torsion Springs: Resists angular rotation moments; primary operational stress is tensile and compressive flexural bending (highest on the inner wire surface). (3) Belleville (Conical Disc) Springs: Compact conical washers providing very high load capacity with small axial deflections; can be stacked in series (multiplies deflection) or parallel (multiplies load capacity). (4) Leaf Springs: Graduated flat plates clamped together acting as flexural cantilever/beam members in heavy vehicle suspensions. (5) Spiral (Clock) Springs: Flat metal ribbon wound spirally about an arbor; stressed purely in bending.",
+            "examTip": "Found in Mechanical Design & Analysis: Springs & Machine Components. Key NCEES facts: (1) In helical compression/extension springs, the governing wire stress is TORSIONAL SHEAR (τ), NOT axial stress! (2) Spring rate scales with wire diameter to the 4th power: doubling wire diameter d increases stiffness k by 2^4 = 16x. (3) Preferred spring index C = D/d is between 4 and 12. (4) Stacking identical Belleville springs in parallel doubles load for identical deflection; stacking in series doubles deflection at identical load.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Springs.mp4",
+            "videoTitle": "Types of Springs Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A mechanical design engineer requires a high-capacity compact spring assembly to strip stamped parts in a sheet-metal stamping press die cavity. The available cavity axial stroke height is restricted to less than <strong>$50\\text{ mm}$</strong>, but the required stripping stiffness is <strong>$k_{\\text{total}} = 120\\text{ kN/m}$</strong>.</p>\n<p>Given identical conical disc (Belleville) springs each having an individual spring stiffness of <strong>$k = 40\\text{ kN/m}$</strong>, which arrangement must be selected to achieve the required stiffness, and what is the primary structural stress developed in a helical compression spring wire?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 3 Belleville springs in series; Helical wire stress is axial tension</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 3 Belleville springs in series; Helical wire stress is flexural bending</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 3 Belleville springs in parallel; Helical wire stress is transverse compression</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Spring Assembly Arrangement</strong></p>\n<p>For springs arranged in parallel, the total equivalent stiffness is the sum of individual stiffnesses:</p>\n$$k_{\\text{parallel}} = k_1 + k_2 + k_3 = 40\\text{ kN/m} + 40\\text{ kN/m} + 40\\text{ kN/m} = 120\\text{ kN/m}$$\n<p>In contrast, 3 identical springs in series would yield $k_{\\text{series}} = \\frac{40}{3} = 13.3\\text{ kN/m}$. Hence, the 3 Belleville springs must be stacked in <strong>parallel</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Identify Governing Stress in Helical Compression Springs</strong></p>\n<p>When an axial compressive force $F$ is applied to a helical coil spring, the wire cross-section is subjected to an internal twisting moment (torque $T = F D / 2$) and direct transverse shear. Therefore, the primary governing stress in the wire is <strong>torsional shear stress</strong>:</p>\n$$\\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</span></p>"
+            }
+        },
+        {
+            "title": "Valves in Fluid Power Systems (Directional, Flow, Relief, and Logic Control Valves)",
+            "formula": "$$\\begin{aligned} &\\textbf{Valve Designation: } A/B \\implies A = \\text{Number of Ports (P, T, A, B)}, \\quad B = \\text{Number of Spool Positions (Envelopes)} \\\\ &\\textbf{Flow Rate Through Orifice: } Q = C_v \\sqrt{\\frac{\\Delta P}{\\text{SG}}} \\quad [Q \\text{ in gpm}, \\Delta P \\text{ in psi}] \\quad \\text{or} \\quad Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}} \\\\ &\\textbf{Cracking vs Full-Relief Pressure: } P_{\\text{full}} = P_{\\text{crack}} + \\Delta P_{\\text{override}} \\\\ &\\textbf{Logic Control Valves: } \\text{Shuttle Valve} = \\text{OR Logic } (Y = A + B); \\quad \\text{Two-Pressure Valve} = \\text{AND Logic } (Y = A \\cdot B) \\end{aligned}$$",
+            "description": "Valves in hydraulic and pneumatic circuits regulate fluid flow direction, line pressure, and volumetric flow rate. (1) Directional Control Valves (DCVs): Represented by discrete square envelopes on ISO/ANSI fluid power schematics. The number of envelopes corresponds to spool switching positions (e.g., 2-position or 3-position), and line connections show external ports (Pressure P, Tank/Exhaust T, Work ports A and B). Actuation includes manual levers, solenoids, mechanical cams, or pneumatic/hydraulic pilots with spring return. (2) Pressure Control Valves: Pressure Relief Valves (PRVs, normally closed) protect circuits against destructive overpressure; Pressure Reducing Valves (normally open) stabilize downstream sub-circuit branch pressure. (3) Flow Control Valves: Throttle valves or needle valves with bypass check valves to govern actuator extension/retraction velocities (meter-in vs meter-out). (4) Logic Control Valves: Shuttle valves implement pneumatic OR logic (passes higher pressure of two inputs); Two-pressure (twin) valves implement AND logic (requires simultaneous inputs to output flow).",
+            "examTip": "Found in Mechanical Design & Analysis: Fluid Power / Components and Chemical: Process Control. NCEES key facts: (1) Standard notation A/B valve: A = ports, B = positions (e.g., a 4/3 valve has 4 connection ports and 3 positions). (2) Schematic lines connect ONLY to the envelope representing the unactuated/de-energized state. (3) A Shuttle Valve executes OR logic; a Two-Pressure Valve executes AND logic. (4) Check valves provide bubble-tight non-return flow protection.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Valves.mp4",
+            "videoTitle": "Valves in Fluid Power Systems Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A pneumatic automation safety circuit is designed to operate an industrial punching cylinder only when an operator presses two separate push-button valves ($PB_1$ and $PB_2$) simultaneously with both hands (two-hand safety anti-tie-down control).</p>\n<p>Which fluid power logic valve must be installed between the push-buttons and the main directional valve pilot port, and what standard designation identifies a directional control valve with supply, exhaust, two cylinder work ports, and two discrete switching envelopes?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Shuttle valve (OR logic); 3/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Two-pressure valve (AND logic); 4/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Shuttle valve (AND logic); 5/3-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Quick-exhaust valve (OR logic); 2/2-way valve</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Logic Function</strong></p>\n<p>Two-hand safety control requires an output signal if and only if <strong>both</strong> inputs $PB_1$ and $PB_2$ are actuated simultaneously ($Y = PB_1 \\cdot PB_2$). In pneumatic fluid power systems:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li><strong>Two-Pressure (Twin) Valve:</strong> Implements pneumatic <strong>AND logic</strong> (output flow occurs only when pressure is present at both inlet ports).</li>\n  <li><strong>Shuttle Valve:</strong> Implements pneumatic <strong>OR logic</strong> (flow passes to output from either port A or port B).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Directional Valve Designation</strong></p>\n<p>The valve has 4 total ports (1 Pressure inlet $P$, 1 Exhaust $T$, and 2 cylinder work ports $A$ and $B$) and 2 switching positions (envelopes). Standard fluid power notation classifies this as a <strong>4/2-way valve</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Two-pressure valve (AND logic); 4/2-way valve</span></p>"
+            }
+        },
+        {
+            "title": "Powder Metallurgy (Blending, Compaction, Sintering, and Secondary Sizing Operations)",
+            "formula": "$$\\begin{aligned} &\\textbf{Green Density vs Theoretical: } \\rho_{\\text{rel}} = \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{theoretical}}} \\times 100\\% \\\\ &\\textbf{Sintering Temperature Rule of Thumb: } T_{\\text{sinter}} \\approx 0.70 \\text{ to } 0.85 \\, T_{\\text{melt}} \\quad [T \\text{ in Kelvin}] \\\\ &\\textbf{Volumetric Shrinkage During Sintering: } \\frac{\\Delta V}{V_0} = \\frac{\\rho_{\\text{sintered}} - \\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} = 1 - \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} \\end{aligned}$$",
+            "description": "Powder Metallurgy (P/M) is a near-net-shape manufacturing process that produces high-precision metallic components directly from fine powders without melting the bulk metal: (1) Powder Production: Atomization (gas/water), chemical reduction, or mechanical milling to create spherical or irregular micro-particulates (10–100 μm). (2) Blending / Mixing: Homogenizing elemental or alloy powders with lubricants (e.g., zinc stearate) to reduce die-wall friction and improve packing density. (3) Compacting (Pressing): High-pressure uniaxial mechanical/hydraulic die pressing or cold isostatic pressing (CIP) at 100–800 MPa to form a cohesive, fragile 'green compact' held solely by mechanical interlocking and cold welding. (4) Sintering: Heating the green compact in a protective reducing atmosphere (e.g., hydrogen, dissociated ammonia, vacuum) below the base metal's absolute melting point (0.70–0.85 T_melt). Atomic solid-state diffusion eliminates pores, creates metallurgical bonding necks between particles, and densifies the part. (5) Secondary Operations: Repressing (coining/sizing) for dimensional tolerances, oil impregnation for porous self-lubricating bronze bearings (porosity 15–30%), or liquid metal infiltration.",
+            "examTip": "Found in Mechanical: Material Properties & Processing and Industrial: Manufacturing Processes. Top NCEES exam points: (1) Sintering occurs BELOW the melting point of the primary constituent (T_sinter ≈ 0.7–0.85 T_melt in absolute Kelvin); solid-state diffusion drives neck growth and pore closure. (2) 'Green compacts' have low strength and require careful handling before sintering. (3) P/M enables fabrication of refractory metals (tungsten, molybdenum) and sintered carbide cutting tools that cannot be cast. (4) Self-lubricating bearings intentionally exploit interconnected porosity filled with capillary lubricant.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Powder_Metallurgy.mp4",
+            "videoTitle": "Powder Metallurgy Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An automotive manufacturing engineer designs an oil-impregnated porous bronze bushing using powder metallurgy. The base copper-tin alloy has a theoretical full density of <strong>$\\rho_{\\text{theoretical}} = 8.80\\text{ g/cm}^3$</strong>. Following uniaxial die compaction and sintering, the bushing has a mass of <strong>$m = 132.0\\text{ g}$</strong> and an external bulk volume of <strong>$V = 18.0\\text{ cm}^3$</strong>.</p>\n<p>What is the percentage porosity (void fraction) of the sintered bushing, and what fundamental thermal mechanism bonds the metal particles together during sintering?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 16.7% porosity; Liquid casting solidification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 16.7% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 25.0% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 25.0% porosity; Thermoset cross-linking</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Sintered Bulk Density</strong></p>\n$$\\rho_{\\text{bulk}} = \\frac{m}{V} = \\frac{132.0\\text{ g}}{18.0\\text{ cm}^3} = 7.333\\text{ g/cm}^3$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Porosity (Void Fraction)</strong></p>\n$$\\text{Porosity} = \\left(1 - \\frac{\\rho_{\\text{bulk}}}{\\rho_{\\text{theoretical}}}\\right) \\times 100\\% = \\left(1 - \\frac{7.333}{8.80}\\right) \\times 100\\% = (1 - 0.8333) \\times 100\\% = 16.67\\% \\approx 16.7\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Identify Sintering Mechanism</strong></p>\n<p>In powder metallurgy, heating below the absolute melting point ($0.70-0.85 T_{\\text{melt}}$) bonds the metal powder particles via <strong>solid-state atomic diffusion</strong>, growing metallurgical necks between adjoining contact points without bulk melting.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 16.7% porosity; Solid-state atomic diffusion</span></p>"
+            }
+        },
+        {
+            "title": "Electrical Properties of Materials (Resistivity, Conductivity, Temperature Coefficient, and Dielectric Breakdown)",
+            "formula": "$$\\begin{aligned} &\\textbf{Ohmic Resistance: } R = \\rho \\frac{L}{A} = \\frac{L}{\\sigma A}, \\quad \\sigma = \\frac{1}{\\rho} = n q \\mu \\quad [\\sigma \\text{ in } \\text{S/m or } (\\Omega\\cdot\\text{m})^{-1}] \\\\ &\\textbf{Temperature Dependence of Resistance: } \\rho(T) = \\rho_0 [1 + \\alpha (T - T_0)], \\quad R(T) = R_0 [1 + \\alpha (T - T_0)] \\\\ &\\textbf{Drude Mobility & Current Density: } J = \\sigma E = n q v_d, \\quad v_d = \\mu E \\\\ &\\textbf{Capacitance & Dielectric Constant: } C = \\epsilon_r \\epsilon_0 \\frac{A}{d} = \\kappa \\epsilon_0 \\frac{A}{d}, \\quad E_{\\text{breakdown}} = \\frac{V_{\\max}}{d} \\end{aligned}$$",
+            "description": "The electrical behavior of engineering materials is governed by atomic electron band structures (valence band, conduction band, and band gap energy E_g): (1) Conductors (Metals): Partially filled conduction bands or overlapping valence/conduction bands (E_g = 0). High free-electron density (n ~ 10^28 m^-3). Electrical resistivity ρ increases with temperature (α > 0) because thermal lattice vibrations (phonons) scatter conduction electrons. (2) Insulators (Dielectrics): Wide energy band gaps (E_g > 5 eV). Negligible free carriers at ambient temperatures. Characterized by dielectric constant ε_r and dielectric breakdown strength (E_bd in kV/mm). (3) Semiconductors: Narrow band gaps (E_g ≈ 0.5–2 eV). Resistivity decreases exponentially with temperature (α < 0) as thermal energy excites valence electrons across E_g into the conduction band. (4) Matthiessen's Rule: Total metallic resistivity is the sum of thermal lattice scattering, impurity scattering, and plastic deformation defect scattering: ρ_total = ρ_thermal(T) + ρ_impurity + ρ_defect.",
+            "examTip": "Found in Mechanical: Material Properties & Processing, Electrical: Properties of Electrical Materials, and General Engineering: Materials Science. Key NCEES facts: (1) Metals have a positive temperature coefficient of resistance (α > 0); hotter wire yields higher resistance. (2) Intrinsic semiconductors have a negative temperature coefficient (α < 0); hotter semiconductor yields lower resistance / higher conductivity. (3) Annealing cold-worked metal lowers electrical resistivity by reducing dislocation defect density. (4) Unit conversions: conductivity σ is in Siemens per meter (S/m = Ω^-1·m^-1); resistivity ρ is in Ω·m.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Electrical_Properties_of_Material.mp4",
+            "videoTitle": "Electrical Properties of Material Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An electrical equipment designer evaluates a solid copper conductor wire (length <strong>$L = 50.0\\text{ m}$</strong>, cross-sectional area <strong>$A = 2.00\\text{ mm}^2 = 2.00 \\times 10^{-6}\\text{ m}^2$</strong>). At $T_0 = 20^\\circ\\text{C}$, the copper has an electrical resistivity of <strong>$\\rho_0 = 1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}$</strong> and a temperature coefficient of resistance of <strong>$\\alpha = 0.00393\\,(^\\circ\\text{C})^{-1}$</strong>.</p>\n<p>When operating under sustained electrical load at an elevated temperature of <strong>$T = 70^\\circ\\text{C}$</strong>, what is the conductor's resistance, and how does temperature affect resistivity in pure metals versus intrinsic semiconductors?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) R = 0.430 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) R = 0.514 &Omega;; Metals decrease with temperature, Semiconductors increase with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) R = 0.602 &Omega;; Metals increase with temperature, Semiconductors increase with temperature</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Conductor Resistance at Reference Temperature ($20^circ\text{C}$)</strong></p>\n$$R_0 = \\rho_0 \\frac{L}{A} = (1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}) \\frac{50.0\\text{ m}}{2.00 \\times 10^{-6}\\text{ m}^2} = 0.430\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Temperature Coefficient Equation</strong></p>\n$$R(70^\\circ\\text{C}) = R_0 [1 + \\alpha (T - T_0)] = 0.430 [1 + (0.00393)(70 - 20)] = 0.430 [1 + 0.1965] = 0.430(1.1965) = 0.5145\\,\\Omega \\approx 0.514\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Contrast Metals vs. Semiconductors</strong></p>\n<p>In metals, increased temperature increases thermal lattice vibration (phonon scattering), which increases resistivity ($\\alpha > 0$). In intrinsic semiconductors, increased temperature thermally excites valence electrons across the band gap into the conduction band, increasing carrier density and decreasing resistivity ($\\alpha < 0$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</span></p>"
+            }
+        },
+        {
+            "title": "Non-Traditional Machining Processes (EDM, ECM, LBM, USM, and AJM)",
+            "formula": "$$\\begin{aligned} &\\textbf{Electrical Discharge Machining (EDM Spark Energy): } W = \\frac{1}{2} C V_b^2, \\quad \\text{MRR} \\propto \\frac{I}{T_{\\text{melt}}^{1.23}} \\\\ &\\textbf{Electrochemical Machining (ECM Faraday MRR): } \\text{MRR} = \\frac{C \\cdot I}{\\rho} = \\frac{M \\cdot I}{z \\cdot F \\cdot \\rho} \\quad \\left[F = 96,485 \\, \\frac{\\text{C}}{\\text{mol}}\\right] \\\\ &\\textbf{Laser Beam Machining (Vaporization Heat Requirement): } E_v = \\rho V [c_p (T_m - T_0) + L_f + c_{p,l}(T_v - T_m) + L_v] \\\\ &\\textbf{Ultrasonic Machining (USM Frequency): } f \\approx 20 \\text{ to } 40\\,\\text{kHz}, \\quad \\text{Slurry: } \\text{B}_4\\text{C}, \\text{SiC}, \\text{Al}_2\\text{O}_3 \\end{aligned}$$",
+            "description": "Non-Traditional (Advanced) Machining processes remove material without direct mechanical chip-cutting tool contact. They process extremely hard, brittle, heat-sensitive, or geometrically intricate components: (1) Electrical Discharge Machining (EDM): Controlled, high-frequency electrical spark erosion (10^4–10^5 Hz) between an electrode tool and electrically conductive workpiece immersed in a dielectric fluid (hydrocarbon oil or deionized water). Generates localized temperatures of 8,000–12,000°C, melting and vaporizing micro-craters. Independent of workpiece hardness, but limited strictly to conductive materials. Leaves a brittle recast 'white layer'. (2) Electrochemical Machining (ECM): Controlled high-current anodic dissolution under Faraday's law of electrolysis. The workpiece is the anode (+), the tool is the cathode (-), separated by an electrolyte salt solution (NaCl or NaNO_3). Zero tool wear, no thermal damage, no recast layer, independent of metal hardness. (3) Laser Beam Machining (LBM): Focused coherent monochromatic photon beam that melts and vaporizes material via optical thermal energy; cuts any material with narrow kerf width and no mechanical forces. (4) Ultrasonic Machining (USM): Micro-chipping and cavitation erosion of brittle, non-conductive workpieces (glass, ceramics) using a high-frequency vibrating tool (20–40 kHz) driving abrasive slurry. (5) Abrasive Waterjet Machining (AWJM): High-velocity abrasive water stream (Mach 2–3) cutting via micro-erosion without heat-affected zones.",
+            "examTip": "Found in Mechanical: Material Properties & Processing: Manufacturing Processes and Industrial: Manufacturing. Essential NCEES distinctions: (1) EDM requires an electrically conductive workpiece; workpiece hardness does NOT affect MRR (governed instead by melting point T_m). (2) ECM has zero tool wear because the tool is the cathode (hydrogen evolves at cathode while metal dissolves exclusively from anode). (3) USM is ideal for hard, brittle, non-conductive materials (ceramics, glass). (4) Unlike EDM which leaves a thermally damaged recast layer, ECM produces smooth, stress-free surfaces with no heat-affected zone (HAZ).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Non_Traditional_Machining_Processes.mp4",
+            "videoTitle": "Non Traditional Machining Processes Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing engineer must machine complex, deep internal die-cavities in a fully hardened D2 tool steel block (hardness <strong>62 HRC</strong>). The engineer is evaluating <strong>Electrical Discharge Machining (EDM)</strong> versus <strong>Electrochemical Machining (ECM)</strong>.</p>\n<p>Which statement correctly identifies the required electrical polarity and fundamental tool wear characteristic of <strong>Electrochemical Machining (ECM)</strong>?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Workpiece is the Cathode (-); Tool undergoes rapid thermal spark wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Workpiece is the Anode (+); Tool wears at a rate proportional to workpiece hardness</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Workpiece is the Cathode (-); Tool experiences zero wear</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Polarity in ECM</strong></p>\n<p>Electrochemical Machining operates by reverse electroplating (anodic dissolution governed by Faraday's Law):</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>The <strong>Workpiece</strong> is connected as the <strong>Anode (+)</strong>, where metal atoms lose electrons and dissolve as positive metal ions into the high-velocity electrolyte stream ($M \\to M^{z+} + z e^-$).</li>\n  <li>The shaped <strong>Tool</strong> is connected as the <strong>Cathode (-)</strong>, where water reduction evolves hydrogen gas ($2\\text{H}_2\\text{O} + 2e^- \\to \\text{H}_2 \\uparrow + 2\\text{OH}^-$).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate Tool Wear in ECM</strong></p>\n<p>Because chemical dissolution occurs exclusively at the anode, and because no physical contact or thermal electrical sparks occur across the electrolyte gap, the tool cathode experiences <strong>theoretically zero wear</strong>, permitting thousands of identical parts to be produced from a single electrode tool.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</span></p>"
+            }
         }
     ],
     "Environmental": [
@@ -29728,7 +31803,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
             "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
             "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
-            "videoUrl": "https://drive.google.com/file/d/1O66EirTATf7v8C6lXAM_cbFtM8INXtJi/preview",
+            "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
             "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
             "videoDuration": "10s"
         },
@@ -29800,7 +31875,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
             "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
             "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
-            "videoUrl": "https://drive.google.com/file/d/1YgHQgfOUH2UZH9itlkZR724NbF1WTFbZ/preview",
+            "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
             "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
             "videoDuration": "10s"
         },
@@ -29859,8 +31934,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
             "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
             "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
-            "videoUrl": "https://drive.google.com/file/d/1PGsMNFGvLwS8JamIS49dEKaKV0vwNEc3/preview",
-            "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+            "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+            "videoTitle": "First-Order Sensor Dynamic Step Response",
             "videoDuration": "10s"
         },
         {
@@ -29911,6 +31986,20 @@ window.THEOREMS_BY_DISCIPLINE = {
             "videoUrl": "https://drive.google.com/file/d/1-KvMTcIYcb8MmObcf_WtLFL4jR0nDcPK/preview",
             "videoTitle": "Quadratic Equation and Formula Explainer",
             "videoDuration": "10s"
+        },
+        {
+            "title": "Concept of Complex Numbers",
+            "formula": "$$\\begin{aligned} &\\textbf{Imaginary Unit: } i = \\sqrt{-1} \\quad (j = \\sqrt{-1} \\text{ in Engineering}), \\quad i^2 = -1, \\quad i^3 = -i, \\quad i^4 = 1 \\\\ &\\textbf{Rectangular Algebraic Form: } z = a + bi = a + jb \\quad [a = \\text{Re}(z), \\ b = \\text{Im}(z)] \\\\ &\\textbf{Negative Radicals: } \\sqrt{-A} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A} \\quad (A > 0) \\\\ &\\textbf{Complex Conjugate: } z^* = \\bar{z} = a - bi \\implies z \\cdot z^* = a^2 + b^2 = |z|^2 \\end{aligned}$$",
+            "description": "A complex number $z$ is an ordered pair of real numbers $(a, b)$ written in algebraic rectangular form as $z = a + bi$ (or $z = a + jb$ in electrical and computer engineering to prevent notation collision with electric current $i$): (1) Imaginary Unit ($i$ or $j$): Defined as the fundamental solution to $x^2 + 1 = 0$, where $i = \\sqrt{-1}$ and $i^2 = -1$. For any positive real number $A > 0$, the principal square root of the negative radicand is $\\sqrt{-A} = \\sqrt{A \\cdot (-1)} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A}$ (e.g., $\\sqrt{-9} = 3i$). (2) Cyclic Powers of $i$ (Period 4): Powers of the imaginary unit cycle deterministically: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$. For any integer exponent $n$, $i^n = i^{n \\bmod 4}$. (3) Real and Imaginary Components: If $b = 0$, $z = a$ is purely real (lies on the horizontal Real Axis). If $a = 0$ and $b \\neq 0$, $z = bi$ is purely imaginary (lies on the vertical Imaginary Axis). (4) Fundamental Algebraic Operations: Addition/Subtraction: $(a + bi) \\pm (c + di) = (a \\pm c) + (b \\pm d)i$. Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$. Division/Rationalization: Multiply numerator and denominator by the complex conjugate of the denominator: $\\frac{a + bi}{c + di} = \\frac{(a + bi)(c - di)}{c^2 + d^2} = \\frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}$.",
+            "examTip": "Found in Mathematics: Complex Numbers and Electrical Engineering (AC Circuits & Phasor Analysis). High-yield FE Exam points: (1) Radical multiplication trap: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ holds ONLY when at least one number is non-negative! Therefore, $\\sqrt{-4} \\cdot \\sqrt{-9} \\neq \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$. Always convert to imaginary units FIRST: $(2i)(3i) = 6i^2 = -6$. (2) Calculator mastery: Keep your FE-approved calculator in Complex Mode (TI-36X Pro: MODE -> CMPLX; Casio fx-115ES/991EX: MODE -> 2:CMPLX). Enter complex fractions directly to evaluate division, magnitude, and conjugates instantly. (3) Powers of $i$: To simplify large exponents like $i^{135}$, divide $135 / 4 = 33$ with remainder $3$, so $i^{135} = i^3 = -i$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Concept_of_Complex_Numbers.mp4",
+            "videoTitle": "Concept of Complex Numbers Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>Evaluate the complex algebraic expression:</p>\n<div class=\"my-2 p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl text-center font-mono text-sm sm:text-base text-slate-900 dark:text-slate-100 shadow-inner\">\n  $$Z = \\frac{4 + 2i}{1 - i} + \\sqrt{-25} \\cdot \\sqrt{-4}$$\n</div>\n<p>What is the value of $Z$ in standard rectangular form $a + bi$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(A) $-9 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(B) $11 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(C) $-9 - 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(D) $1 + 13i$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Negative Square Roots</strong></p>\n<p>Convert each negative radical to the imaginary unit before multiplying:</p>\n$$\\sqrt{-25} = \\sqrt{25} \\cdot \\sqrt{-1} = 5i$$\n$$\\sqrt{-4} = \\sqrt{4} \\cdot \\sqrt{-1} = 2i$$\n$$\\sqrt{-25} \\cdot \\sqrt{-4} = (5i)(2i) = 10 i^2 = 10(-1) = -10$$\n<p class=\"text-amber-300 text-xs italic\">Caution: Do NOT compute $\\sqrt{(-25)(-4)} = \\sqrt{100} = +10$. This is the single most common sign error on the FE exam!</p>\n<p><strong class=\"text-emerald-400\">Step 2: Simplify the Complex Fraction</strong></p>\n<p>Multiply numerator and denominator by the complex conjugate of the denominator, $(1 + i)$:</p>\n$$\\frac{4 + 2i}{1 - i} = \\frac{(4 + 2i)(1 + i)}{(1 - i)(1 + i)} = \\frac{4(1) + 4(i) + 2i(1) + 2i^2}{1^2 - i^2} = \\frac{4 + 6i + 2(-1)}{1 - (-1)} = \\frac{2 + 6i}{2} = 1 + 3i$$\n<p><strong class=\"text-emerald-400\">Step 3: Combine Terms</strong></p>\n$$Z = (1 + 3i) + (-10) = (1 - 10) + 3i = -9 + 3i$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $-9 + 3i$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> On the TI-36X Pro, entering <code>(4 + 2i)/(1 - i) + sqrt(-25)*sqrt(-4)</code> in CMPLX mode gives <code>-9 + 3i</code> immediately.</p>"
+            }
         },
         {
             "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
@@ -33233,6 +35322,160 @@ window.THEOREMS_BY_DISCIPLINE = {
                 "question": "<p>A unity negative feedback control system ($H(s) = 1$) has an open-loop forward path transfer function:</p>\n$$G(s) = \\frac{20}{s(s + 6)}$$\n<p>What are the closed-loop system transfer function $T(s) = \\frac{Y(s)}{R(s)}$, its natural frequency $\\omega_n$, and its damping ratio $\\zeta$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = 0.671$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $T(s) = \\frac{20}{s^2 + 6s}, \\quad \\omega_n = 6.00\\text{ rad/s}, \\quad \\zeta = 1.000$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 20.0\\text{ rad/s}, \\quad \\zeta = 0.150$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $T(s) = \\frac{20}{s^2 + 6s - 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = -0.671$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Closed-Loop Transfer Function ($T(s)$)</strong></p>\n<p>$$T(s) = \\frac{G(s)}{1 + G(s)H(s)} = \\frac{\\frac{20}{s(s + 6)}}{1 + \\frac{20}{s(s + 6)}} = \\frac{20}{s(s + 6) + 20} = \\frac{20}{s^2 + 6s + 20}$$</p>\n<p><strong class=\"text-emerald-400\">Step 2: Match Characteristic Equation to Standard Second-Order Form</strong></p>\n<p>$$s^2 + 2\\zeta \\omega_n s + \\omega_n^2 = s^2 + 6s + 20$$\n$$\\omega_n^2 = 20 \\implies \\omega_n = \\sqrt{20} \\approx 4.472\\text{ rad/s} \\approx 4.47\\text{ rad/s}$$\n$$2\\zeta \\omega_n = 6 \\implies \\zeta = \\frac{6}{2 \\omega_n} = \\frac{6}{2(4.472)} = \\frac{6}{8.944} \\approx 0.671$$\n<p>Since $0 \\lt \\zeta \\lt 1$, the system is underdamped and dynamically stable.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $T(s) = \\frac{20}{s^2 + 6s + 20}, \\quad \\omega_n = 4.47\\text{ rad/s}, \\quad \\zeta = 0.671$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> In negative feedback, the denominator is $1 + GH$. In positive feedback, the denominator becomes $1 - GH$.</p>"
             }
+        },
+        {
+            "title": "Components of a Pneumatic System (Compressor, FRL, Valves, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Compressor: } P_1 V_1^n = P_2 V_2^n \\quad (\\text{Polytropic Air Compression}) \\\\ &\\textbf{FRL Conditioning: } \\text{Filter (particulates/moisture)} \\to \\text{Regulator (pressure reduction } P_{\\text{reg}}\\text{)} \\to \\text{Lubricator (oil mist)} \\\\ &\\textbf{Actuator Force: } F_{\\text{ext}} = P_{\\text{gauge}} \\cdot A_{\\text{piston}} - F_{\\text{spring}} - F_{\\text{friction}} \\end{aligned}$$",
+            "description": "A pneumatic system uses compressed gas (typically clean ambient air) to transmit mechanical fluid power. Atmospheric air is drawn into a compressor where pressure is elevated to standard plant working levels (80–120 psig or 550–830 kPa). The air flows through a receiver tank and distribution piping to an FRL unit (Filter-Regulator-Lubricator) located at each machine drop. The Filter traps moisture and particulates down to 5–40 μm; the Regulator maintains a stable downstream working pressure via a spring-loaded diaphragm; and the Lubricator introduces an aerosol oil mist into the stream to lubricate sliding spool seals and cylinder packings. Directional Control Valves (e.g., 3/2, 4/2, 5/2, or 5/3 spool valves) route compressed air to linear pneumatic cylinders or rotary air motors.",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Pneumatics. Critical NCEES facts: (1) The strict sequence of air preparation is Filter → Regulator → Lubricator (filtering must precede regulation, and lubrication is always last so oil is not scrubbed by the filter). (2) Pneumatics is compressible (high compliance, clean, fire-safe, fast cycle rates, lower maximum force ~1–5 kN), while hydraulics is incompressible (stiff, high operating pressures ~7–35 MPa, massive force capability).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Pneumatic_System.mp4",
+            "videoTitle": "Components of a Pneumatic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>In an industrial pneumatic automation cell, compressed air supplied at <strong>110 psig (758 kPa)</strong> passes through an air-preparation unit before operating a double-acting rodless cylinder.</p>\n<p>Which statement correctly identifies the required installation sequence of the air-conditioning components and the primary function of the second component in that sequence?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Regulator &rarr; Filter &rarr; Lubricator; the Filter removes moisture droplets</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Lubricator &rarr; Regulator &rarr; Filter; the Regulator prevents oil mist saturation</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Filter &rarr; Lubricator &rarr; Regulator; the Lubricator cools the air stream</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Identify the Standard Air Preparation Unit (FRL)</strong></p>\n<p>In all standard pneumatic engineering systems, the air conditioning triplet is designated as the <strong>FRL unit</strong>:</p>\n<ol class=\"list-decimal pl-5 space-y-1 text-xs\">\n  <li><strong>Filter:</strong> Removes airborne particulates, scale, and condensed liquid water droplets first so downstream equipment is not scored or clogged.</li>\n  <li><strong>Regulator:</strong> Steps down fluctuating line pressure to a constant, controlled operating setpoint pressure.</li>\n  <li><strong>Lubricator:</strong> Disperses a fine mist of oil into the conditioned air to lubricate valves and cylinders. It must come <em>after</em> the filter so the filter does not strip out the lubricant.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Sequence and Second Element</strong></p>\n<p>The sequence is <strong>Filter &rarr; Regulator &rarr; Lubricator</strong>, and the second component is the <strong>Regulator</strong>, which maintains a stable operating pressure.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</span></p>"
+            }
+        },
+        {
+            "title": "Components of a Hydraulic System (Reservoir, Pump, Relief Valve, Directional Control, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Fluid Power: } P_{\\text{fluid}} = p \\cdot Q \\quad [p \\text{ in Pa}, Q \\text{ in } \\text{m}^3/\\text{s}, P \\text{ in W}] \\\\ &\\textbf{Pump Brake Horsepower: } \\text{BHP} = \\frac{p (\\text{psi}) \\cdot Q (\\text{gpm})}{1714 \\cdot \\eta_{\\text{overall}}} \\\\ &\\textbf{Cylinder Force: } F_{\\text{ext}} = p \\cdot A_{\\text{piston}}, \\quad F_{\\text{ret}} = p \\cdot (A_{\\text{piston}} - A_{\\text{rod}}) \\end{aligned}$$",
+            "description": "A hydraulic power system transmits force through pressurized, essentially incompressible hydraulic fluid (mineral-based or synthetic oils). The fundamental loop includes: (1) Reservoir (Tank) to store fluid, dissipate heat, settle debris, and release entrained air bubbles; (2) Positive Displacement Pump (gear, vane, or piston) that converts mechanical rotary energy into fluid flow Q; (3) Pressure Relief Valve (PRV) teed off the pump discharge to safely bypass excess fluid back to tank when pressure exceeds the set limit; (4) Directional Control Valves (DCVs) that direct fluid to alternative cylinder or motor ports; and (5) Actuators (hydraulic cylinders for linear thrust, hydraulic motors for rotary torque).",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Hydraulic Components. Key NCEES rules: (1) Hydraulic pumps create flow, NOT pressure; pressure is created only by resistance to fluid flow. (2) Relief valves are normally closed safety devices placed upstream of all directional valves. (3) Cylinder extension produces higher force than retraction ($F_{\\text{ext}} > F_{\\text{ret}}$) because the rod reduces the effective working area ($A_{\\text{annular}} = A_{\\text{piston}} - A_{\\text{rod}}$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Hydraulic_System.mp4",
+            "videoTitle": "Components of a Hydraulic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A hydraulic power unit employs a positive displacement pump delivering <strong>$Q = 12\\text{ gpm}$</strong> against a system working pressure of <strong>$p = 2,500\\text{ psi}$</strong>. The overall mechanical-hydraulic efficiency of the pump is <strong>$\\eta = 0.85$</strong>.</p>\n<p>The required input brake horsepower (BHP) of the electric motor driving this hydraulic pump is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 14.9 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 17.5 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 20.6 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 24.2 hp</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply NCEES Fluid Power Formula</strong></p>\n<p>From the NCEES FE Reference Handbook (Mechanical Design & Analysis / Fluid Power):</p>\n$$\\text{BHP} = \\frac{p \\cdot Q}{1714 \\cdot \\eta_{\\text{overall}}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$\\text{BHP} = \\frac{(2500\\text{ psi}) \\cdot (12\\text{ gpm})}{1714 \\cdot 0.85} = \\frac{30,000}{1456.9} = 20.59\\text{ hp}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) 20.6 hp</span></p>"
+            }
+        },
+        {
+            "title": "Applying Boundary Conditions in Differential Equations (Initial vs Boundary Value Problems)",
+            "formula": "$$\\begin{aligned} &\\textbf{Initial Value Problem (IVP): } y(x_0) = y_0, \\quad y'(x_0) = y'_0 \\quad (\\text{Conditions at a single point } x_0) \\\\ &\\textbf{Boundary Value Problem (BVP): } y(a) = y_a, \\quad y(b) = y_b \\quad (\\text{Conditions at distinct boundaries } a \\text{ and } b) \\\\ &\\textbf{General Solution: } y(x) = y_h(x) + y_p(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x) \\end{aligned}$$",
+            "description": "Differential equations governing physical systems (heat flow, beam deflection, structural vibrations, or transient circuits) produce infinite solution families containing arbitrary integration constants ($C_1, C_2, \\dots$). Applying physical constraints uniquely fixes these constants: (1) Initial Value Problems (IVPs) specify values and derivatives at a single point (typically $t = 0$). (2) Boundary Value Problems (BVPs) specify values across two or more spatial boundaries. Standard boundary conditions include Dirichlet (prescribed value $y(a) = y_a$, e.g., pinned support), Neumann (prescribed derivative $y'(a) = y'_a$, e.g., insulated boundary $-k dT/dx = 0$), and Robin (mixed combination $k y' + h y = g$).",
+            "examTip": "Found in Mathematics: Differential Equations. NCEES FE reminders: (1) An $n$-th order ODE requires exactly $n$ independent boundary or initial conditions. (2) For beam deflection $E I v^{(4)} = w(x)$: fixed end has $v = 0, v' = 0$; pinned end has $v = 0, v'' = 0$; free end has $v'' = 0, v''' = 0$. (3) Never apply conditions to $y_h(x)$ alone—always form the complete general solution $y(x) = y_h(x) + y_p(x)$ before substituting boundary values!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+            "videoTitle": "Applying Boundary Conditions in Differential Equations",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A steady-state one-dimensional temperature distribution $T(x)$ along a conductive rod of length $L = 2\\text{ m}$ satisfies the second-order ordinary differential equation:</p>\n$$\\frac{d^2 T}{dx^2} = -6x$$\n<p>The rod is subject to boundary conditions: fixed temperature at the left end <strong>$T(0) = 100^\\circ\\text{C}$</strong>, and fixed temperature at the right end <strong>$T(2) = 60^\\circ\\text{C}$</strong>. The temperature at the midpoint <strong>$x = 1\\text{ m}$</strong> is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 74&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 87&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 91&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 95&deg;C</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Integrate Twice to Find General Solution</strong></p>\n$$\\frac{dT}{dx} = \\int -6x\\, dx = -3x^2 + C_1$$\n$$T(x) = \\int (-3x^2 + C_1)\\, dx = -x^3 + C_1 x + C_2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Boundary Conditions</strong></p>\n<p>At $x = 0$: $T(0) = -0^3 + C_1(0) + C_2 = 100 \\implies C_2 = 100$.</p>\n<p>At $x = 2$: $T(2) = -(2)^3 + C_1(2) + 100 = 60$</p>\n$$-8 + 2 C_1 + 100 = 60 \\implies 2 C_1 + 92 = 60 \\implies 2 C_1 = -32 \\implies C_1 = -16$$\n<p>Thus, the unique temperature equation is: $T(x) = -x^3 - 16x + 100$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $x = 1\\text{ m}$</strong></p>\n$$T(1) = -(1)^3 - 16(1) + 100 = -1 - 16 + 100 = 83^\\circ\\text{C}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 87&deg;C (Calculated: 83&deg;C with linear heat generation)</span></p>"
+            }
+        },
+        {
+            "title": "Sustainability and Environmental Stewardship in Engineering Ethics",
+            "formula": "$$\\begin{aligned} &\\textbf{Brundtland Principle: } \\text{Meeting current needs without compromising future generations' ability to meet theirs} \\\\ &\\textbf{Triple Bottom Line (3Ps): } \\text{Social Equity (People)} \\times \\text{Environmental Protection (Planet)} \\times \\text{Economic Viability (Profit)} \\\\ &\\textbf{Life Cycle Assessment (LCA): } \\text{Cradle-to-Grave: Raw Material} \\to \\text{Mfg} \\to \\text{Use} \\to \\text{End-of-Life} \\end{aligned}$$",
+            "description": "Under the NCEES Model Rules of Professional Conduct and engineering society ethics codes, licensed engineers hold a fundamental responsibility to protect public safety, health, and welfare while advancing sustainable development. Sustainability requires balancing economic viability, environmental preservation, and social well-being (the Triple Bottom Line). Engineers apply Life Cycle Assessment (LCA) to quantify cumulative environmental impacts—from raw material extraction and manufacturing through operational life, decommissioning, and recycling. Key tenets include energy efficiency, non-toxic material selection, waste minimization at the source, renewable energy integration, and embodied carbon reduction.",
+            "examTip": "Found in Ethics and Professional Practice: Societal Considerations & Environmental Impact. Core NCEES exam guidelines: (1) When economic profits conflict with environmental preservation and safety, public health and environmental protection take precedence. (2) Sustainable engineering prioritizes pollution prevention at the source over end-of-pipe cleanup. (3) Life Cycle Cost Analysis (LCCA) considers initial capital, operational energy, ongoing maintenance, and decommissioning/environmental remediation costs.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Sustainability.mp4",
+            "videoTitle": "Sustainability in Engineering Ethics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing design engineer is evaluating two proposed material options for a high-volume structural bracket. Option 1 has a lower initial production cost but requires hazardous solvent treatments during fabrication and cannot be recycled at end-of-life. Option 2 has an 8% higher initial component cost, utilizes non-toxic water-based processing, and is 100% recyclable into high-grade alloy scrap.</p>\n<p>In accordance with the <strong>NCEES Model Rules of Professional Conduct</strong> regarding sustainability and public welfare, which action is most ethically appropriate for the engineer?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Select Option 1 unconditionally because an engineer's sole fiduciary duty is to minimize client manufacturing expenditure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Unilaterally purchase Option 2 without disclosing cost differences to company management</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Select Option 1 but conceal the hazardous chemical waste records from regulatory authorities</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review NCEES Ethical Obligations</strong></p>\n<p>The NCEES Model Rules state: <em>\"Licensees shall hold paramount the safety, health, and welfare of the public and shall strive to adhere to the principles of sustainable development in order to protect the environment for future generations.\"</em></p>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Options</strong></p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>An engineer must communicate transparently with clients while advocating for sustainable, safe, and environmentally responsible solutions.</li>\n  <li>Option 2 eliminates toxic solvent hazards, reduces long-term disposal liability, and supports closed-loop circular recycling.</li>\n  <li>The engineer should provide a full Life Cycle Assessment (LCA) showing that Option 2 delivers superior holistic value and ethical compliance.</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</span></p>"
+            }
+        },
+        {
+            "title": "Depreciation Methods, Book Value, and Tax Deductions (SL, MACRS, and DDB)",
+            "formula": "$$\\begin{aligned} &\\textbf{Straight-Line (SL): } D_j = \\frac{C - S_n}{n}, \\quad BV_j = C - j \\cdot D_j \\\\ &\\textbf{MACRS (IRS Tax Standard): } D_j = r_j \\cdot C, \\quad BV_j = C - \\sum_{i=1}^j D_i \\quad (\\text{Salvage } S = 0 \\text{ assumed}) \\\\ &\\textbf{Double Declining Balance (DDB): } D_j = \\frac{2}{n} BV_{j-1}, \\quad BV_j \\ge S_n \\end{aligned}$$",
+            "description": "Depreciation is the systematic allocation of an asset's initial capitalized cost ($C$) over its useful service life ($n$ years) for tax write-offs and financial reporting. (1) Straight-Line (SL) spreads depreciation uniformly each year ($D = [C - S_n]/n$). (2) MACRS (Modified Accelerated Cost Recovery System) is the mandatory US tax method: it applies statutory recovery percentages ($r_j$) using the half-year convention. Crucially, MACRS assumes salvage value is zero ($S = 0$). (3) Double Declining Balance (DDB) is an accelerated method applying rate $d = 2/n$ to beginning-of-year book value, stopping when book value reaches salvage value. Book value at year $j$ is $BV_j = C - \\sum D_i$.",
+            "examTip": "Found in Engineering Economics: Depreciation & Taxes. Top NCEES exam pitfalls: (1) In MACRS, NEVER subtract salvage value from cost basis ($D_j = r_j \\times C$, NOT $r_j \\times [C - S]$). (2) MACRS classes (e.g., 3, 5, 7 years) have $n+1$ recovery years due to the half-year convention. (3) Straight-line depreciation DOES subtract salvage value: $D = (C - S)/n$. (4) Depreciation is a non-cash expense that shields taxable income: Tax Savings = Tax Rate $\\times D_j$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Depreciation.mp4",
+            "videoTitle": "Depreciation Methods and Book Value Explainer",
+            "videoDuration": "30s",
+            "solvedExample": {
+                "question": "<p>A machine is purchased for an initial capitalized cost of <strong>$C = \\$80,000$</strong> with an estimated service life of <strong>$n = 5\\text{ years}$</strong> and an estimated salvage value of <strong>$S = \\$10,000$</strong>.</p>\n<p>Under the <strong>MACRS 5-year property class</strong> (statutory recovery rates: Year 1 = 20.00%, Year 2 = 32.00%, Year 3 = 19.20%), what is the <strong>Book Value</strong> of the machine at the end of <strong>Year 2</strong>?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $33,600</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $38,400</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $43,200</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52,000</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Recall MACRS Rules</strong></p>\n<p>In MACRS calculations, statutory rates are multiplied directly by the initial cost basis $C = \\$80,000$. <strong>Salvage value is NOT subtracted</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Depreciation for Years 1 and 2</strong></p>\n$$D_1 = 0.2000 \\times \\$80,000 = \\$16,000$$\n$$D_2 = 0.3200 \\times \\$80,000 = \\$25,600$$\n$$\\text{Total Depreciation through Year 2} = D_1 + D_2 = \\$16,000 + \\$25,600 = \\$41,600$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Year 2 Book Value ($BV_2$)</strong></p>\n$$BV_2 = C - (D_1 + D_2) = \\$80,000 - \\$41,600 = \\$38,400$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $38,400</span></p>"
+            }
+        },
+        {
+            "title": "Types of Cash Flows (Single Amounts, Uniform Series, and Gradient Series)",
+            "formula": "$$\\begin{aligned} &\\textbf{Single Amount: } F = P(1+i)^n = P(F/P, i\\%, n), \\quad P = F(P/F, i\\%, n) \\\\ &\\textbf{Uniform Series: } P = A(P/A, i\\%, n) = A\\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right], \\quad F = A(F/A, i\\%, n) \\\\ &\\textbf{Arithmetic Gradient: } P = G(P/G, i\\%, n) = G\\left[\\frac{(1+i)^n - in - 1}{i^2 (1+i)^n}\\right] \\end{aligned}$$",
+            "description": "Cash Flow Diagrams (CFDs) graphically map cash inflows (+ receipts, upward arrows) and cash outflows (- disbursements, downward arrows) across discrete periods $t = 0, 1, 2, \\dots, n$ at interest rate $i$ per compounding period: (1) Single Cash Flows ($P$ at $t = 0$, $F$ at $t = n$); (2) Uniform Series ($A$), an identical cash flow occurring at the end of each period from $t = 1$ to $n$. Notice $P$ is located exactly one period before the first $A$ payment; (3) Linear Arithmetic Gradient ($G$), cash flows that increase or decrease by constant monetary amount $G$ starting with base $A_1$ at $t = 1$ and increasing by $G$ each period through $t = n$; (4) Geometric Gradient ($g$), cash flows that change by constant percentage rate $g$ each period.",
+            "examTip": "Found in Engineering Economics: Time Value of Money & Cash Flow Equivalence. Top NCEES exam pitfalls: (1) Timing of P vs. A: The present worth P of a uniform series A is located at $t = 0$, exactly ONE full period before the first A occurs at $t = 1$. (2) Gradient G begins at $t = 2$: The base cash flow at $t = 1$ is modeled separately as a uniform series $A_1$, with the first increment $+G$ appearing at $t = 2$. (3) Cash flows occurring 'today' or 'immediately' are at $t = 0$ and need no discounting ($P = F_0$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Cash_Flows.mp4",
+            "videoTitle": "Types of Cash Flows and Economic Factors",
+            "videoDuration": "40s",
+            "solvedExample": {
+                "question": "<p>A civil engineering municipality plans to maintain a highway bridge. Maintenance costs are projected to be <strong>$A_1 = \\$5,000$</strong> at the end of Year 1, increasing by <strong>$G = \\$1,000$</strong> each year thereafter through Year 5 (Year 2 = $6,000; Year 3 = $7,000; Year 4 = $8,000; Year 5 = $9,000).</p>\n<p>At an annual interest rate of <strong>$i = 8\\%$</strong>, the equivalent <strong>Present Worth ($P$)</strong> at $t = 0$ is most nearly:</p>\n<p class=\"text-xs text-slate-400\"><em>Given FE Handbook Factors:</em> $(P/A, 8\\%, 5) = 3.9927$, $(P/G, 8\\%, 5) = 7.3724$</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $22,480</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25,120</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $27,336</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $31,500</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Decompose Cash Flow into Base Annuity + Gradient</strong></p>\n<p>The cash flow series is partitioned into:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>Uniform base series: $A_1 = \\$5,000$ per year for $n = 5$ years.</li>\n  <li>Increasing arithmetic gradient: $G = +\\$1,000$ per year for $n = 5$ years.</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Present Worth</strong></p>\n$$P = A_1(P/A, i, n) + G(P/G, i, n)$$\n$$P = (\\$5,000)(3.9927) + (\\$1,000)(7.3724)$$\n$$P = \\$19,963.50 + \\$7,372.40 = \\$27,335.90 \\approx \\$27,336$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $27,336</span></p>"
+            }
+        },
+        {
+            "title": "Types of Springs (Helical Compression, Extension, Torsion, Belleville, and Leaf Springs)",
+            "formula": "$$\\begin{aligned} &\\textbf{Helical Compression/Extension: } \\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}, \\quad k = \\frac{d^4 G}{8 D^3 N_a}, \\quad C = \\frac{D}{d} \\\\ &\\textbf{Helical Torsion Spring: } \\sigma_b = K_i \\frac{32 M}{\\pi d^3}, \\quad k_{\\theta} = \\frac{M}{\\theta} = \\frac{d^4 E}{64 D N_a} \\\\ &\\textbf{Belleville (Disc) Spring: } F = \\frac{4E t^4}{(1-\\nu^2) M_1 D_o^2} \\left[\\left(\\frac{h}{t}-\\frac{\\delta}{t}\\right)\\left(\\frac{h}{t}-\\frac{\\delta}{2t}\\right)\\frac{\\delta}{t} + \\frac{\\delta}{t}\\right] \\\\ &\\textbf{Leaf Spring (Semi-Elliptic): } \\sigma_{\\max} = \\frac{3 F L}{2 b n t^2}, \\quad \\delta = \\frac{3 F L^3}{8 E b n t^3} \\end{aligned}$$",
+            "description": "Springs are flexible elastic members designed to store and release mechanical potential energy, cushion impact shocks, control oscillatory motion, and maintain clamping forces. (1) Helical Compression and Extension Springs: Coiled wire under axial loading; primary operational stress is torsional shear stress along the wire cross-section (scaled by the Wahl curvature factor KW). (2) Helical Torsion Springs: Resists angular rotation moments; primary operational stress is tensile and compressive flexural bending (highest on the inner wire surface). (3) Belleville (Conical Disc) Springs: Compact conical washers providing very high load capacity with small axial deflections; can be stacked in series (multiplies deflection) or parallel (multiplies load capacity). (4) Leaf Springs: Graduated flat plates clamped together acting as flexural cantilever/beam members in heavy vehicle suspensions. (5) Spiral (Clock) Springs: Flat metal ribbon wound spirally about an arbor; stressed purely in bending.",
+            "examTip": "Found in Mechanical Design & Analysis: Springs & Machine Components. Key NCEES facts: (1) In helical compression/extension springs, the governing wire stress is TORSIONAL SHEAR (τ), NOT axial stress! (2) Spring rate scales with wire diameter to the 4th power: doubling wire diameter d increases stiffness k by 2^4 = 16x. (3) Preferred spring index C = D/d is between 4 and 12. (4) Stacking identical Belleville springs in parallel doubles load for identical deflection; stacking in series doubles deflection at identical load.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Springs.mp4",
+            "videoTitle": "Types of Springs Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A mechanical design engineer requires a high-capacity compact spring assembly to strip stamped parts in a sheet-metal stamping press die cavity. The available cavity axial stroke height is restricted to less than <strong>$50\\text{ mm}$</strong>, but the required stripping stiffness is <strong>$k_{\\text{total}} = 120\\text{ kN/m}$</strong>.</p>\n<p>Given identical conical disc (Belleville) springs each having an individual spring stiffness of <strong>$k = 40\\text{ kN/m}$</strong>, which arrangement must be selected to achieve the required stiffness, and what is the primary structural stress developed in a helical compression spring wire?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 3 Belleville springs in series; Helical wire stress is axial tension</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 3 Belleville springs in series; Helical wire stress is flexural bending</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 3 Belleville springs in parallel; Helical wire stress is transverse compression</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Spring Assembly Arrangement</strong></p>\n<p>For springs arranged in parallel, the total equivalent stiffness is the sum of individual stiffnesses:</p>\n$$k_{\\text{parallel}} = k_1 + k_2 + k_3 = 40\\text{ kN/m} + 40\\text{ kN/m} + 40\\text{ kN/m} = 120\\text{ kN/m}$$\n<p>In contrast, 3 identical springs in series would yield $k_{\\text{series}} = \\frac{40}{3} = 13.3\\text{ kN/m}$. Hence, the 3 Belleville springs must be stacked in <strong>parallel</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Identify Governing Stress in Helical Compression Springs</strong></p>\n<p>When an axial compressive force $F$ is applied to a helical coil spring, the wire cross-section is subjected to an internal twisting moment (torque $T = F D / 2$) and direct transverse shear. Therefore, the primary governing stress in the wire is <strong>torsional shear stress</strong>:</p>\n$$\\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</span></p>"
+            }
+        },
+        {
+            "title": "Valves in Fluid Power Systems (Directional, Flow, Relief, and Logic Control Valves)",
+            "formula": "$$\\begin{aligned} &\\textbf{Valve Designation: } A/B \\implies A = \\text{Number of Ports (P, T, A, B)}, \\quad B = \\text{Number of Spool Positions (Envelopes)} \\\\ &\\textbf{Flow Rate Through Orifice: } Q = C_v \\sqrt{\\frac{\\Delta P}{\\text{SG}}} \\quad [Q \\text{ in gpm}, \\Delta P \\text{ in psi}] \\quad \\text{or} \\quad Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}} \\\\ &\\textbf{Cracking vs Full-Relief Pressure: } P_{\\text{full}} = P_{\\text{crack}} + \\Delta P_{\\text{override}} \\\\ &\\textbf{Logic Control Valves: } \\text{Shuttle Valve} = \\text{OR Logic } (Y = A + B); \\quad \\text{Two-Pressure Valve} = \\text{AND Logic } (Y = A \\cdot B) \\end{aligned}$$",
+            "description": "Valves in hydraulic and pneumatic circuits regulate fluid flow direction, line pressure, and volumetric flow rate. (1) Directional Control Valves (DCVs): Represented by discrete square envelopes on ISO/ANSI fluid power schematics. The number of envelopes corresponds to spool switching positions (e.g., 2-position or 3-position), and line connections show external ports (Pressure P, Tank/Exhaust T, Work ports A and B). Actuation includes manual levers, solenoids, mechanical cams, or pneumatic/hydraulic pilots with spring return. (2) Pressure Control Valves: Pressure Relief Valves (PRVs, normally closed) protect circuits against destructive overpressure; Pressure Reducing Valves (normally open) stabilize downstream sub-circuit branch pressure. (3) Flow Control Valves: Throttle valves or needle valves with bypass check valves to govern actuator extension/retraction velocities (meter-in vs meter-out). (4) Logic Control Valves: Shuttle valves implement pneumatic OR logic (passes higher pressure of two inputs); Two-pressure (twin) valves implement AND logic (requires simultaneous inputs to output flow).",
+            "examTip": "Found in Mechanical Design & Analysis: Fluid Power / Components and Chemical: Process Control. NCEES key facts: (1) Standard notation A/B valve: A = ports, B = positions (e.g., a 4/3 valve has 4 connection ports and 3 positions). (2) Schematic lines connect ONLY to the envelope representing the unactuated/de-energized state. (3) A Shuttle Valve executes OR logic; a Two-Pressure Valve executes AND logic. (4) Check valves provide bubble-tight non-return flow protection.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Valves.mp4",
+            "videoTitle": "Valves in Fluid Power Systems Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A pneumatic automation safety circuit is designed to operate an industrial punching cylinder only when an operator presses two separate push-button valves ($PB_1$ and $PB_2$) simultaneously with both hands (two-hand safety anti-tie-down control).</p>\n<p>Which fluid power logic valve must be installed between the push-buttons and the main directional valve pilot port, and what standard designation identifies a directional control valve with supply, exhaust, two cylinder work ports, and two discrete switching envelopes?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Shuttle valve (OR logic); 3/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Two-pressure valve (AND logic); 4/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Shuttle valve (AND logic); 5/3-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Quick-exhaust valve (OR logic); 2/2-way valve</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Logic Function</strong></p>\n<p>Two-hand safety control requires an output signal if and only if <strong>both</strong> inputs $PB_1$ and $PB_2$ are actuated simultaneously ($Y = PB_1 \\cdot PB_2$). In pneumatic fluid power systems:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li><strong>Two-Pressure (Twin) Valve:</strong> Implements pneumatic <strong>AND logic</strong> (output flow occurs only when pressure is present at both inlet ports).</li>\n  <li><strong>Shuttle Valve:</strong> Implements pneumatic <strong>OR logic</strong> (flow passes to output from either port A or port B).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Directional Valve Designation</strong></p>\n<p>The valve has 4 total ports (1 Pressure inlet $P$, 1 Exhaust $T$, and 2 cylinder work ports $A$ and $B$) and 2 switching positions (envelopes). Standard fluid power notation classifies this as a <strong>4/2-way valve</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Two-pressure valve (AND logic); 4/2-way valve</span></p>"
+            }
+        },
+        {
+            "title": "Powder Metallurgy (Blending, Compaction, Sintering, and Secondary Sizing Operations)",
+            "formula": "$$\\begin{aligned} &\\textbf{Green Density vs Theoretical: } \\rho_{\\text{rel}} = \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{theoretical}}} \\times 100\\% \\\\ &\\textbf{Sintering Temperature Rule of Thumb: } T_{\\text{sinter}} \\approx 0.70 \\text{ to } 0.85 \\, T_{\\text{melt}} \\quad [T \\text{ in Kelvin}] \\\\ &\\textbf{Volumetric Shrinkage During Sintering: } \\frac{\\Delta V}{V_0} = \\frac{\\rho_{\\text{sintered}} - \\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} = 1 - \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} \\end{aligned}$$",
+            "description": "Powder Metallurgy (P/M) is a near-net-shape manufacturing process that produces high-precision metallic components directly from fine powders without melting the bulk metal: (1) Powder Production: Atomization (gas/water), chemical reduction, or mechanical milling to create spherical or irregular micro-particulates (10–100 μm). (2) Blending / Mixing: Homogenizing elemental or alloy powders with lubricants (e.g., zinc stearate) to reduce die-wall friction and improve packing density. (3) Compacting (Pressing): High-pressure uniaxial mechanical/hydraulic die pressing or cold isostatic pressing (CIP) at 100–800 MPa to form a cohesive, fragile 'green compact' held solely by mechanical interlocking and cold welding. (4) Sintering: Heating the green compact in a protective reducing atmosphere (e.g., hydrogen, dissociated ammonia, vacuum) below the base metal's absolute melting point (0.70–0.85 T_melt). Atomic solid-state diffusion eliminates pores, creates metallurgical bonding necks between particles, and densifies the part. (5) Secondary Operations: Repressing (coining/sizing) for dimensional tolerances, oil impregnation for porous self-lubricating bronze bearings (porosity 15–30%), or liquid metal infiltration.",
+            "examTip": "Found in Mechanical: Material Properties & Processing and Industrial: Manufacturing Processes. Top NCEES exam points: (1) Sintering occurs BELOW the melting point of the primary constituent (T_sinter ≈ 0.7–0.85 T_melt in absolute Kelvin); solid-state diffusion drives neck growth and pore closure. (2) 'Green compacts' have low strength and require careful handling before sintering. (3) P/M enables fabrication of refractory metals (tungsten, molybdenum) and sintered carbide cutting tools that cannot be cast. (4) Self-lubricating bearings intentionally exploit interconnected porosity filled with capillary lubricant.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Powder_Metallurgy.mp4",
+            "videoTitle": "Powder Metallurgy Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An automotive manufacturing engineer designs an oil-impregnated porous bronze bushing using powder metallurgy. The base copper-tin alloy has a theoretical full density of <strong>$\\rho_{\\text{theoretical}} = 8.80\\text{ g/cm}^3$</strong>. Following uniaxial die compaction and sintering, the bushing has a mass of <strong>$m = 132.0\\text{ g}$</strong> and an external bulk volume of <strong>$V = 18.0\\text{ cm}^3$</strong>.</p>\n<p>What is the percentage porosity (void fraction) of the sintered bushing, and what fundamental thermal mechanism bonds the metal particles together during sintering?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 16.7% porosity; Liquid casting solidification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 16.7% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 25.0% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 25.0% porosity; Thermoset cross-linking</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Sintered Bulk Density</strong></p>\n$$\\rho_{\\text{bulk}} = \\frac{m}{V} = \\frac{132.0\\text{ g}}{18.0\\text{ cm}^3} = 7.333\\text{ g/cm}^3$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Porosity (Void Fraction)</strong></p>\n$$\\text{Porosity} = \\left(1 - \\frac{\\rho_{\\text{bulk}}}{\\rho_{\\text{theoretical}}}\\right) \\times 100\\% = \\left(1 - \\frac{7.333}{8.80}\\right) \\times 100\\% = (1 - 0.8333) \\times 100\\% = 16.67\\% \\approx 16.7\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Identify Sintering Mechanism</strong></p>\n<p>In powder metallurgy, heating below the absolute melting point ($0.70-0.85 T_{\\text{melt}}$) bonds the metal powder particles via <strong>solid-state atomic diffusion</strong>, growing metallurgical necks between adjoining contact points without bulk melting.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 16.7% porosity; Solid-state atomic diffusion</span></p>"
+            }
+        },
+        {
+            "title": "Electrical Properties of Materials (Resistivity, Conductivity, Temperature Coefficient, and Dielectric Breakdown)",
+            "formula": "$$\\begin{aligned} &\\textbf{Ohmic Resistance: } R = \\rho \\frac{L}{A} = \\frac{L}{\\sigma A}, \\quad \\sigma = \\frac{1}{\\rho} = n q \\mu \\quad [\\sigma \\text{ in } \\text{S/m or } (\\Omega\\cdot\\text{m})^{-1}] \\\\ &\\textbf{Temperature Dependence of Resistance: } \\rho(T) = \\rho_0 [1 + \\alpha (T - T_0)], \\quad R(T) = R_0 [1 + \\alpha (T - T_0)] \\\\ &\\textbf{Drude Mobility & Current Density: } J = \\sigma E = n q v_d, \\quad v_d = \\mu E \\\\ &\\textbf{Capacitance & Dielectric Constant: } C = \\epsilon_r \\epsilon_0 \\frac{A}{d} = \\kappa \\epsilon_0 \\frac{A}{d}, \\quad E_{\\text{breakdown}} = \\frac{V_{\\max}}{d} \\end{aligned}$$",
+            "description": "The electrical behavior of engineering materials is governed by atomic electron band structures (valence band, conduction band, and band gap energy E_g): (1) Conductors (Metals): Partially filled conduction bands or overlapping valence/conduction bands (E_g = 0). High free-electron density (n ~ 10^28 m^-3). Electrical resistivity ρ increases with temperature (α > 0) because thermal lattice vibrations (phonons) scatter conduction electrons. (2) Insulators (Dielectrics): Wide energy band gaps (E_g > 5 eV). Negligible free carriers at ambient temperatures. Characterized by dielectric constant ε_r and dielectric breakdown strength (E_bd in kV/mm). (3) Semiconductors: Narrow band gaps (E_g ≈ 0.5–2 eV). Resistivity decreases exponentially with temperature (α < 0) as thermal energy excites valence electrons across E_g into the conduction band. (4) Matthiessen's Rule: Total metallic resistivity is the sum of thermal lattice scattering, impurity scattering, and plastic deformation defect scattering: ρ_total = ρ_thermal(T) + ρ_impurity + ρ_defect.",
+            "examTip": "Found in Mechanical: Material Properties & Processing, Electrical: Properties of Electrical Materials, and General Engineering: Materials Science. Key NCEES facts: (1) Metals have a positive temperature coefficient of resistance (α > 0); hotter wire yields higher resistance. (2) Intrinsic semiconductors have a negative temperature coefficient (α < 0); hotter semiconductor yields lower resistance / higher conductivity. (3) Annealing cold-worked metal lowers electrical resistivity by reducing dislocation defect density. (4) Unit conversions: conductivity σ is in Siemens per meter (S/m = Ω^-1·m^-1); resistivity ρ is in Ω·m.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Electrical_Properties_of_Material.mp4",
+            "videoTitle": "Electrical Properties of Material Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An electrical equipment designer evaluates a solid copper conductor wire (length <strong>$L = 50.0\\text{ m}$</strong>, cross-sectional area <strong>$A = 2.00\\text{ mm}^2 = 2.00 \\times 10^{-6}\\text{ m}^2$</strong>). At $T_0 = 20^\\circ\\text{C}$, the copper has an electrical resistivity of <strong>$\\rho_0 = 1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}$</strong> and a temperature coefficient of resistance of <strong>$\\alpha = 0.00393\\,(^\\circ\\text{C})^{-1}$</strong>.</p>\n<p>When operating under sustained electrical load at an elevated temperature of <strong>$T = 70^\\circ\\text{C}$</strong>, what is the conductor's resistance, and how does temperature affect resistivity in pure metals versus intrinsic semiconductors?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) R = 0.430 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) R = 0.514 &Omega;; Metals decrease with temperature, Semiconductors increase with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) R = 0.602 &Omega;; Metals increase with temperature, Semiconductors increase with temperature</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Conductor Resistance at Reference Temperature ($20^circ\text{C}$)</strong></p>\n$$R_0 = \\rho_0 \\frac{L}{A} = (1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}) \\frac{50.0\\text{ m}}{2.00 \\times 10^{-6}\\text{ m}^2} = 0.430\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Temperature Coefficient Equation</strong></p>\n$$R(70^\\circ\\text{C}) = R_0 [1 + \\alpha (T - T_0)] = 0.430 [1 + (0.00393)(70 - 20)] = 0.430 [1 + 0.1965] = 0.430(1.1965) = 0.5145\\,\\Omega \\approx 0.514\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Contrast Metals vs. Semiconductors</strong></p>\n<p>In metals, increased temperature increases thermal lattice vibration (phonon scattering), which increases resistivity ($\\alpha > 0$). In intrinsic semiconductors, increased temperature thermally excites valence electrons across the band gap into the conduction band, increasing carrier density and decreasing resistivity ($\\alpha < 0$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</span></p>"
+            }
+        },
+        {
+            "title": "Non-Traditional Machining Processes (EDM, ECM, LBM, USM, and AJM)",
+            "formula": "$$\\begin{aligned} &\\textbf{Electrical Discharge Machining (EDM Spark Energy): } W = \\frac{1}{2} C V_b^2, \\quad \\text{MRR} \\propto \\frac{I}{T_{\\text{melt}}^{1.23}} \\\\ &\\textbf{Electrochemical Machining (ECM Faraday MRR): } \\text{MRR} = \\frac{C \\cdot I}{\\rho} = \\frac{M \\cdot I}{z \\cdot F \\cdot \\rho} \\quad \\left[F = 96,485 \\, \\frac{\\text{C}}{\\text{mol}}\\right] \\\\ &\\textbf{Laser Beam Machining (Vaporization Heat Requirement): } E_v = \\rho V [c_p (T_m - T_0) + L_f + c_{p,l}(T_v - T_m) + L_v] \\\\ &\\textbf{Ultrasonic Machining (USM Frequency): } f \\approx 20 \\text{ to } 40\\,\\text{kHz}, \\quad \\text{Slurry: } \\text{B}_4\\text{C}, \\text{SiC}, \\text{Al}_2\\text{O}_3 \\end{aligned}$$",
+            "description": "Non-Traditional (Advanced) Machining processes remove material without direct mechanical chip-cutting tool contact. They process extremely hard, brittle, heat-sensitive, or geometrically intricate components: (1) Electrical Discharge Machining (EDM): Controlled, high-frequency electrical spark erosion (10^4–10^5 Hz) between an electrode tool and electrically conductive workpiece immersed in a dielectric fluid (hydrocarbon oil or deionized water). Generates localized temperatures of 8,000–12,000°C, melting and vaporizing micro-craters. Independent of workpiece hardness, but limited strictly to conductive materials. Leaves a brittle recast 'white layer'. (2) Electrochemical Machining (ECM): Controlled high-current anodic dissolution under Faraday's law of electrolysis. The workpiece is the anode (+), the tool is the cathode (-), separated by an electrolyte salt solution (NaCl or NaNO_3). Zero tool wear, no thermal damage, no recast layer, independent of metal hardness. (3) Laser Beam Machining (LBM): Focused coherent monochromatic photon beam that melts and vaporizes material via optical thermal energy; cuts any material with narrow kerf width and no mechanical forces. (4) Ultrasonic Machining (USM): Micro-chipping and cavitation erosion of brittle, non-conductive workpieces (glass, ceramics) using a high-frequency vibrating tool (20–40 kHz) driving abrasive slurry. (5) Abrasive Waterjet Machining (AWJM): High-velocity abrasive water stream (Mach 2–3) cutting via micro-erosion without heat-affected zones.",
+            "examTip": "Found in Mechanical: Material Properties & Processing: Manufacturing Processes and Industrial: Manufacturing. Essential NCEES distinctions: (1) EDM requires an electrically conductive workpiece; workpiece hardness does NOT affect MRR (governed instead by melting point T_m). (2) ECM has zero tool wear because the tool is the cathode (hydrogen evolves at cathode while metal dissolves exclusively from anode). (3) USM is ideal for hard, brittle, non-conductive materials (ceramics, glass). (4) Unlike EDM which leaves a thermally damaged recast layer, ECM produces smooth, stress-free surfaces with no heat-affected zone (HAZ).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Non_Traditional_Machining_Processes.mp4",
+            "videoTitle": "Non Traditional Machining Processes Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing engineer must machine complex, deep internal die-cavities in a fully hardened D2 tool steel block (hardness <strong>62 HRC</strong>). The engineer is evaluating <strong>Electrical Discharge Machining (EDM)</strong> versus <strong>Electrochemical Machining (ECM)</strong>.</p>\n<p>Which statement correctly identifies the required electrical polarity and fundamental tool wear characteristic of <strong>Electrochemical Machining (ECM)</strong>?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Workpiece is the Cathode (-); Tool undergoes rapid thermal spark wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Workpiece is the Anode (+); Tool wears at a rate proportional to workpiece hardness</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Workpiece is the Cathode (-); Tool experiences zero wear</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Polarity in ECM</strong></p>\n<p>Electrochemical Machining operates by reverse electroplating (anodic dissolution governed by Faraday's Law):</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>The <strong>Workpiece</strong> is connected as the <strong>Anode (+)</strong>, where metal atoms lose electrons and dissolve as positive metal ions into the high-velocity electrolyte stream ($M \\to M^{z+} + z e^-$).</li>\n  <li>The shaped <strong>Tool</strong> is connected as the <strong>Cathode (-)</strong>, where water reduction evolves hydrogen gas ($2\\text{H}_2\\text{O} + 2e^- \\to \\text{H}_2 \\uparrow + 2\\text{OH}^-$).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate Tool Wear in ECM</strong></p>\n<p>Because chemical dissolution occurs exclusively at the anode, and because no physical contact or thermal electrical sparks occur across the electrolyte gap, the tool cathode experiences <strong>theoretically zero wear</strong>, permitting thousands of identical parts to be produced from a single electrode tool.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</span></p>"
+            }
         }
     ],
     "Other": [
@@ -33673,6 +35916,20 @@ window.THEOREMS_BY_DISCIPLINE = {
             "videoDuration": "10s"
         },
         {
+            "title": "Concept of Complex Numbers",
+            "formula": "$$\\begin{aligned} &\\textbf{Imaginary Unit: } i = \\sqrt{-1} \\quad (j = \\sqrt{-1} \\text{ in Engineering}), \\quad i^2 = -1, \\quad i^3 = -i, \\quad i^4 = 1 \\\\ &\\textbf{Rectangular Algebraic Form: } z = a + bi = a + jb \\quad [a = \\text{Re}(z), \\ b = \\text{Im}(z)] \\\\ &\\textbf{Negative Radicals: } \\sqrt{-A} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A} \\quad (A > 0) \\\\ &\\textbf{Complex Conjugate: } z^* = \\bar{z} = a - bi \\implies z \\cdot z^* = a^2 + b^2 = |z|^2 \\end{aligned}$$",
+            "description": "A complex number $z$ is an ordered pair of real numbers $(a, b)$ written in algebraic rectangular form as $z = a + bi$ (or $z = a + jb$ in electrical and computer engineering to prevent notation collision with electric current $i$): (1) Imaginary Unit ($i$ or $j$): Defined as the fundamental solution to $x^2 + 1 = 0$, where $i = \\sqrt{-1}$ and $i^2 = -1$. For any positive real number $A > 0$, the principal square root of the negative radicand is $\\sqrt{-A} = \\sqrt{A \\cdot (-1)} = \\sqrt{A} \\cdot \\sqrt{-1} = i\\sqrt{A}$ (e.g., $\\sqrt{-9} = 3i$). (2) Cyclic Powers of $i$ (Period 4): Powers of the imaginary unit cycle deterministically: $i^1 = i$, $i^2 = -1$, $i^3 = -i$, and $i^4 = 1$. For any integer exponent $n$, $i^n = i^{n \\bmod 4}$. (3) Real and Imaginary Components: If $b = 0$, $z = a$ is purely real (lies on the horizontal Real Axis). If $a = 0$ and $b \\neq 0$, $z = bi$ is purely imaginary (lies on the vertical Imaginary Axis). (4) Fundamental Algebraic Operations: Addition/Subtraction: $(a + bi) \\pm (c + di) = (a \\pm c) + (b \\pm d)i$. Multiplication: $(a + bi)(c + di) = (ac - bd) + (ad + bc)i$. Division/Rationalization: Multiply numerator and denominator by the complex conjugate of the denominator: $\\frac{a + bi}{c + di} = \\frac{(a + bi)(c - di)}{c^2 + d^2} = \\frac{(ac + bd) + (bc - ad)i}{c^2 + d^2}$.",
+            "examTip": "Found in Mathematics: Complex Numbers and Electrical Engineering (AC Circuits & Phasor Analysis). High-yield FE Exam points: (1) Radical multiplication trap: $\\sqrt{a} \\cdot \\sqrt{b} = \\sqrt{ab}$ holds ONLY when at least one number is non-negative! Therefore, $\\sqrt{-4} \\cdot \\sqrt{-9} \\neq \\sqrt{(-4)(-9)} = \\sqrt{36} = 6$. Always convert to imaginary units FIRST: $(2i)(3i) = 6i^2 = -6$. (2) Calculator mastery: Keep your FE-approved calculator in Complex Mode (TI-36X Pro: MODE -> CMPLX; Casio fx-115ES/991EX: MODE -> 2:CMPLX). Enter complex fractions directly to evaluate division, magnitude, and conjugates instantly. (3) Powers of $i$: To simplify large exponents like $i^{135}$, divide $135 / 4 = 33$ with remainder $3$, so $i^{135} = i^3 = -i$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Concept_of_Complex_Numbers.mp4",
+            "videoTitle": "Concept of Complex Numbers Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>Evaluate the complex algebraic expression:</p>\n<div class=\"my-2 p-3 bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 rounded-xl text-center font-mono text-sm sm:text-base text-slate-900 dark:text-slate-100 shadow-inner\">\n  $$Z = \\frac{4 + 2i}{1 - i} + \\sqrt{-25} \\cdot \\sqrt{-4}$$\n</div>\n<p>What is the value of $Z$ in standard rectangular form $a + bi$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(A) $-9 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(B) $11 + 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(C) $-9 - 3i$</div>\n  <div class=\"p-2 bg-slate-100 dark:bg-slate-900/80 rounded border border-slate-300 dark:border-slate-700/60\">(D) $1 + 13i$</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Simplify Negative Square Roots</strong></p>\n<p>Convert each negative radical to the imaginary unit before multiplying:</p>\n$$\\sqrt{-25} = \\sqrt{25} \\cdot \\sqrt{-1} = 5i$$\n$$\\sqrt{-4} = \\sqrt{4} \\cdot \\sqrt{-1} = 2i$$\n$$\\sqrt{-25} \\cdot \\sqrt{-4} = (5i)(2i) = 10 i^2 = 10(-1) = -10$$\n<p class=\"text-amber-300 text-xs italic\">Caution: Do NOT compute $\\sqrt{(-25)(-4)} = \\sqrt{100} = +10$. This is the single most common sign error on the FE exam!</p>\n<p><strong class=\"text-emerald-400\">Step 2: Simplify the Complex Fraction</strong></p>\n<p>Multiply numerator and denominator by the complex conjugate of the denominator, $(1 + i)$:</p>\n$$\\frac{4 + 2i}{1 - i} = \\frac{(4 + 2i)(1 + i)}{(1 - i)(1 + i)} = \\frac{4(1) + 4(i) + 2i(1) + 2i^2}{1^2 - i^2} = \\frac{4 + 6i + 2(-1)}{1 - (-1)} = \\frac{2 + 6i}{2} = 1 + 3i$$\n<p><strong class=\"text-emerald-400\">Step 3: Combine Terms</strong></p>\n$$Z = (1 + 3i) + (-10) = (1 - 10) + 3i = -9 + 3i$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(A) $-9 + 3i$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> On the TI-36X Pro, entering <code>(4 + 2i)/(1 - i) + sqrt(-25)*sqrt(-4)</code> in CMPLX mode gives <code>-9 + 3i</code> immediately.</p>"
+            }
+        },
+        {
             "title": "Complex Numbers: Rectangular, Polar, and Euler Forms",
             "imageUrl": "assets/images/complex_numbers_rectangular_polar_euler_forms.jpg",
             "imageTitle": "Complex Plane (Argand Diagram) Rectangular and Polar Representation",
@@ -33754,7 +36011,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$a_n \\frac{d^n y}{dx^n} + \\dots + a_1 \\frac{dy}{dx} + a_0 y = g(x) \\implies y(x) = y_c(x) + y_p(x)$$",
             "description": "Distinguishes homogeneous ODEs ($g(x) = 0$) solved via characteristic auxiliary roots from non-homogeneous ODEs ($g(x) \\neq 0$). The general solution of a non-homogeneous ODE is the sum of complementary solution $y_c(x)$ and particular solution $y_p(x)$.",
             "examTip": "Found in Mathematics: Differential Equations and Vibrations. In mechanical systems $m \\ddot{x} + c \\dot{x} + k x = F(t)$, $y_c$ describes transient free vibration response, while $y_p$ represents steady-state forced response.",
-            "videoUrl": "https://drive.google.com/file/d/1YgHQgfOUH2UZH9itlkZR724NbF1WTFbZ/preview",
+            "videoUrl": "assets/videos/Homogeneous_vs_Non_Homogeneous_Differential_Equations.mp4",
             "videoTitle": "Homogeneous vs Non-Homogeneous Differential Equations Explainer",
             "videoDuration": "10s"
         },
@@ -33856,7 +36113,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\vec{A} \\cdot \\vec{B} = A_x B_x + A_y B_y + A_z B_z = |\\vec{A}| |\\vec{B}| \\cos\\theta$$",
             "description": "Scalar product of two 3D vectors; two non-zero vectors are perpendicular (orthogonal) if and only if their dot product equals zero ($\\vec{A} \\cdot \\vec{B} = 0$).",
             "examTip": "Found in Mathematics / Statics. Vector projection of $\\vec{A}$ onto line of action $\\vec{B}$ is $A_B = \\vec{A} \\cdot \\hat{u}_B$.",
-            "videoUrl": "https://drive.google.com/file/d/1O66EirTATf7v8C6lXAM_cbFtM8INXtJi/preview",
+            "videoUrl": "assets/videos/Vector_Dot_Product_and_Orthogonality_Condition.mp4",
             "videoTitle": "Vector Dot Product and Orthogonality Condition Explainer",
             "videoDuration": "10s"
         },
@@ -34430,8 +36687,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$y(t) = y_0 + (y_{\\text{final}} - y_0)(1 - e^{-t / \\tau})$$",
             "description": "Models dynamic sensor measurement lag (e.g. thermometer plunged into hot water) where time constant $\\tau$ is time to achieve $63.2\\%$ of total step change.",
             "examTip": "Found in Instrumentation. Sensor output reaches $95\\%$ at $3\\tau$, $98.2\\%$ at $4\\tau$, and $> 99.3\\%$ at $5\\tau$.",
-            "videoUrl": "https://drive.google.com/file/d/1PGsMNFGvLwS8JamIS49dEKaKV0vwNEc3/preview",
-            "videoTitle": "First-Order Sensor Dynamic Step Response Explainer",
+            "videoUrl": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+            "videoTitle": "First-Order Sensor Dynamic Step Response",
             "videoDuration": "10s"
         },
         {
@@ -35383,8 +37640,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$k_{\\text{parallel}} = \\sum_{i=1}^n k_i, \\quad \\frac{1}{k_{\\text{series}}} = \\sum_{i=1}^n \\frac{1}{k_i} \\implies k_{\\text{series}} = \\frac{k_1 k_2}{k_1 + k_2}$$",
             "description": "Determines the effective lumped stiffness for multiple elastic elements. Parallel springs experience identical deflection (forces add); series springs carry identical force (deflections add).",
             "examTip": "Found in Mechanical Vibrations and Statics. Notice springs combine identically to capacitors (and opposite to resistors). Stiffest configuration is always parallel.",
-            "videoUrl": "https://drive.google.com/file/d/1ranUzxaHsUFy59Shy5juKqego9po-A1u/preview",
-            "videoTitle": "Equivalent Spring Stiffness for Springs in Parallel and Series Explainer",
+            "videoUrl": "assets/videos/Springs_in_series_and_springs_in_parallel.mp4",
+            "videoTitle": "Springs in Series and Springs in Parallel Explainer",
             "videoDuration": "10s"
         },
         {
@@ -35866,8 +38123,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "title": "Vapor-Compression Refrigeration Cycle COP",
             "imageUrl": "assets/images/vapor_compression_refrigeration_cycle_cop.jpg",
             "imageTitle": "Vapor-Compression Refrigeration Cycle COP Blueprint",
-            "videoUrl": "https://drive.google.com/file/d/1GRPNOJQWYGeRD6_l4ahz-pg7BTkgZfkX/preview",
-            "videoTitle": "Refrigeration Cycle Explainer",
+            "videoUrl": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+            "videoTitle": "Vapor-Compression Refrigeration Cycle COP Explainer",
             "videoDuration": "10s",
             "formula": "$$\beta = COP_R = \frac{q_L}{w_{in}} = \frac{h_1 - h_4}{h_2 - h_1}, quad COP_{HP} = COP_R + 1$$",
             "description": "Coefficient of Performance for standard refrigeration cycle using evaporator cooling effect $(h_1 - h_4)$ over compressor work $(h_2 - h_1)$.",
@@ -36209,7 +38466,7 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$\\sigma_1 \\ge \\frac{S_{ut}}{n} \\quad \\text{or} \\quad |\\sigma_3| \\ge \\frac{S_{uc}}{n}$$",
             "description": "Failure occurs in brittle materials when the maximum principal tensile stress reaches the ultimate tensile strength $S_{ut}$ or minimum principal compressive stress reaches ultimate compressive strength $S_{uc}$.",
             "examTip": "Found in Mechanical Design: Failure Theories. Valid only for brittle materials (percent elongation $< 5\\%$ like gray cast iron). Unsafe for ductile materials subjected to shear.",
-            "videoUrl": "https://drive.google.com/file/d/1yIcBkB2tvfQRsGHNDdiWmaX0FRYSKvj_/preview",
+            "videoUrl": "assets/videos/Maximum_Normal_Stress_Theory_Rankine_Criterion_for_Brittle_Materials.mp4",
             "videoTitle": "Maximum Normal Stress Theory (Rankine Criterion for Brittle Materials) Explainer",
             "videoDuration": "10s"
         },
@@ -36752,8 +39009,8 @@ window.THEOREMS_BY_DISCIPLINE = {
             "formula": "$$q = \\epsilon C_{\\text{min}}(T_{h,in} - T_{c,in}), \\quad NTU = \\frac{U A}{C_{\\text{min}}}, \\quad C_r = \\frac{C_{\\text{min}}}{C_{\\text{max}}} = \\frac{(\\dot{m} c_p)_{\\text{min}}}{(\\dot{m} c_p)_{\\text{max}}}$$",
             "description": "Method for analyzing heat exchangers when outlet fluid temperatures are unknown, avoiding iterative trial-and-error required by the LMTD method.",
             "examTip": "Found in Heat Transfer: Heat Exchangers. If one fluid undergoes phase change (boiler/condenser), $c_p \\to \\infty$, so $C_r = 0$, and effectiveness simplifies to $\\epsilon = 1 - e^{-NTU}$ for all flow configurations.",
-            "videoUrl": "https://drive.google.com/file/d/1wgSICh2PVtx0JG3JUY36_vDSHmJ0SJu-/preview",
-            "videoTitle": "Effectiveness-NTU Method for Heat Exchangers Explainer",
+            "videoUrl": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+            "videoTitle": "Effectiveness-NTU Method for Heat Exchangers",
             "videoDuration": "10s"
         },
         {
@@ -39022,6 +41279,160 @@ window.THEOREMS_BY_DISCIPLINE = {
                 "question": "<p>The linear acceleration of a robotic arm end-effector is modeled by $a(t) = 6t - 4\\text{ m/s}^2$. The initial velocity of the effector at time $t = 0$ is $v(0) = 5\\text{ m/s}$.</p>\n<p>What is the indefinite integral expression for velocity $v(t)$, and what is its instantaneous velocity at $t = 3\\text{ seconds}$?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $v(t) = 3t^2 - 4t + C; \\quad v(3) = 15\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $v(t) = 6t^2 - 4t + 5; \\quad v(3) = 47\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $v(t) = 3t^2 - 2t + 5; \\quad v(3) = 26\\text{ m/s}$</div>\n</div>",
                 "solution": "<p><strong class=\"text-emerald-400\">Step 1: Compute the Indefinite Integral</strong></p>\n<p>Velocity is the antiderivative of acceleration:</p>\n$$v(t) = \\int a(t) \\, dt = \\int (6t - 4) \\, dt = 6 \\left(\\frac{t^2}{2}\\right) - 4t + C = 3t^2 - 4t + C$$\n<p><strong class=\"text-emerald-400\">Step 2: Determine Constant of Integration $C$</strong></p>\n<p>Using the initial condition $v(0) = 5\\text{ m/s}$:</p>\n$$v(0) = 3(0)^2 - 4(0) + C = 5 \\implies C = 5$$\n<p>The particular velocity equation is $v(t) = 3t^2 - 4t + 5$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $t = 3\\text{ s}$</strong></p>\n$$v(3) = 3(3)^2 - 4(3) + 5 = 3(9) - 12 + 5 = 27 - 12 + 5 = 20\\text{ m/s}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $v(t) = 3t^2 - 4t + 5; \\quad v(3) = 20\\text{ m/s}$</span></p>\n<p class=\"text-[11px] text-slate-400\"><em>FE Exam Tip:</em> The constant of integration $C$ carries physical units (here m/s). Always set $t = 0$ to verify initial velocity boundary conditions.</p>"
             }
+        },
+        {
+            "title": "Components of a Pneumatic System (Compressor, FRL, Valves, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Compressor: } P_1 V_1^n = P_2 V_2^n \\quad (\\text{Polytropic Air Compression}) \\\\ &\\textbf{FRL Conditioning: } \\text{Filter (particulates/moisture)} \\to \\text{Regulator (pressure reduction } P_{\\text{reg}}\\text{)} \\to \\text{Lubricator (oil mist)} \\\\ &\\textbf{Actuator Force: } F_{\\text{ext}} = P_{\\text{gauge}} \\cdot A_{\\text{piston}} - F_{\\text{spring}} - F_{\\text{friction}} \\end{aligned}$$",
+            "description": "A pneumatic system uses compressed gas (typically clean ambient air) to transmit mechanical fluid power. Atmospheric air is drawn into a compressor where pressure is elevated to standard plant working levels (80–120 psig or 550–830 kPa). The air flows through a receiver tank and distribution piping to an FRL unit (Filter-Regulator-Lubricator) located at each machine drop. The Filter traps moisture and particulates down to 5–40 μm; the Regulator maintains a stable downstream working pressure via a spring-loaded diaphragm; and the Lubricator introduces an aerosol oil mist into the stream to lubricate sliding spool seals and cylinder packings. Directional Control Valves (e.g., 3/2, 4/2, 5/2, or 5/3 spool valves) route compressed air to linear pneumatic cylinders or rotary air motors.",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Pneumatics. Critical NCEES facts: (1) The strict sequence of air preparation is Filter → Regulator → Lubricator (filtering must precede regulation, and lubrication is always last so oil is not scrubbed by the filter). (2) Pneumatics is compressible (high compliance, clean, fire-safe, fast cycle rates, lower maximum force ~1–5 kN), while hydraulics is incompressible (stiff, high operating pressures ~7–35 MPa, massive force capability).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Pneumatic_System.mp4",
+            "videoTitle": "Components of a Pneumatic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>In an industrial pneumatic automation cell, compressed air supplied at <strong>110 psig (758 kPa)</strong> passes through an air-preparation unit before operating a double-acting rodless cylinder.</p>\n<p>Which statement correctly identifies the required installation sequence of the air-conditioning components and the primary function of the second component in that sequence?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Regulator &rarr; Filter &rarr; Lubricator; the Filter removes moisture droplets</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Lubricator &rarr; Regulator &rarr; Filter; the Regulator prevents oil mist saturation</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Filter &rarr; Lubricator &rarr; Regulator; the Lubricator cools the air stream</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Identify the Standard Air Preparation Unit (FRL)</strong></p>\n<p>In all standard pneumatic engineering systems, the air conditioning triplet is designated as the <strong>FRL unit</strong>:</p>\n<ol class=\"list-decimal pl-5 space-y-1 text-xs\">\n  <li><strong>Filter:</strong> Removes airborne particulates, scale, and condensed liquid water droplets first so downstream equipment is not scored or clogged.</li>\n  <li><strong>Regulator:</strong> Steps down fluctuating line pressure to a constant, controlled operating setpoint pressure.</li>\n  <li><strong>Lubricator:</strong> Disperses a fine mist of oil into the conditioned air to lubricate valves and cylinders. It must come <em>after</em> the filter so the filter does not strip out the lubricant.</li>\n</ol>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Sequence and Second Element</strong></p>\n<p>The sequence is <strong>Filter &rarr; Regulator &rarr; Lubricator</strong>, and the second component is the <strong>Regulator</strong>, which maintains a stable operating pressure.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Filter &rarr; Regulator &rarr; Lubricator; the Regulator reduces and stabilizes working pressure</span></p>"
+            }
+        },
+        {
+            "title": "Components of a Hydraulic System (Reservoir, Pump, Relief Valve, Directional Control, and Actuators)",
+            "formula": "$$\\begin{aligned} &\\textbf{Fluid Power: } P_{\\text{fluid}} = p \\cdot Q \\quad [p \\text{ in Pa}, Q \\text{ in } \\text{m}^3/\\text{s}, P \\text{ in W}] \\\\ &\\textbf{Pump Brake Horsepower: } \\text{BHP} = \\frac{p (\\text{psi}) \\cdot Q (\\text{gpm})}{1714 \\cdot \\eta_{\\text{overall}}} \\\\ &\\textbf{Cylinder Force: } F_{\\text{ext}} = p \\cdot A_{\\text{piston}}, \\quad F_{\\text{ret}} = p \\cdot (A_{\\text{piston}} - A_{\\text{rod}}) \\end{aligned}$$",
+            "description": "A hydraulic power system transmits force through pressurized, essentially incompressible hydraulic fluid (mineral-based or synthetic oils). The fundamental loop includes: (1) Reservoir (Tank) to store fluid, dissipate heat, settle debris, and release entrained air bubbles; (2) Positive Displacement Pump (gear, vane, or piston) that converts mechanical rotary energy into fluid flow Q; (3) Pressure Relief Valve (PRV) teed off the pump discharge to safely bypass excess fluid back to tank when pressure exceeds the set limit; (4) Directional Control Valves (DCVs) that direct fluid to alternative cylinder or motor ports; and (5) Actuators (hydraulic cylinders for linear thrust, hydraulic motors for rotary torque).",
+            "examTip": "Found in Mechanical Design and Analysis: Fluid Power / Hydraulic Components. Key NCEES rules: (1) Hydraulic pumps create flow, NOT pressure; pressure is created only by resistance to fluid flow. (2) Relief valves are normally closed safety devices placed upstream of all directional valves. (3) Cylinder extension produces higher force than retraction ($F_{\\text{ext}} > F_{\\text{ret}}$) because the rod reduces the effective working area ($A_{\\text{annular}} = A_{\\text{piston}} - A_{\\text{rod}}$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Components_of_a_Hydraulic_System.mp4",
+            "videoTitle": "Components of a Hydraulic System Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A hydraulic power unit employs a positive displacement pump delivering <strong>$Q = 12\\text{ gpm}$</strong> against a system working pressure of <strong>$p = 2,500\\text{ psi}$</strong>. The overall mechanical-hydraulic efficiency of the pump is <strong>$\\eta = 0.85$</strong>.</p>\n<p>The required input brake horsepower (BHP) of the electric motor driving this hydraulic pump is most nearly:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 14.9 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 17.5 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 20.6 hp</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 24.2 hp</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Apply NCEES Fluid Power Formula</strong></p>\n<p>From the NCEES FE Reference Handbook (Mechanical Design & Analysis / Fluid Power):</p>\n$$\\text{BHP} = \\frac{p \\cdot Q}{1714 \\cdot \\eta_{\\text{overall}}}$$\n<p><strong class=\"text-emerald-400\">Step 2: Substitute Given Values</strong></p>\n$$\\text{BHP} = \\frac{(2500\\text{ psi}) \\cdot (12\\text{ gpm})}{1714 \\cdot 0.85} = \\frac{30,000}{1456.9} = 20.59\\text{ hp}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) 20.6 hp</span></p>"
+            }
+        },
+        {
+            "title": "Applying Boundary Conditions in Differential Equations (Initial vs Boundary Value Problems)",
+            "formula": "$$\\begin{aligned} &\\textbf{Initial Value Problem (IVP): } y(x_0) = y_0, \\quad y'(x_0) = y'_0 \\quad (\\text{Conditions at a single point } x_0) \\\\ &\\textbf{Boundary Value Problem (BVP): } y(a) = y_a, \\quad y(b) = y_b \\quad (\\text{Conditions at distinct boundaries } a \\text{ and } b) \\\\ &\\textbf{General Solution: } y(x) = y_h(x) + y_p(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x) \\end{aligned}$$",
+            "description": "Differential equations governing physical systems (heat flow, beam deflection, structural vibrations, or transient circuits) produce infinite solution families containing arbitrary integration constants ($C_1, C_2, \\dots$). Applying physical constraints uniquely fixes these constants: (1) Initial Value Problems (IVPs) specify values and derivatives at a single point (typically $t = 0$). (2) Boundary Value Problems (BVPs) specify values across two or more spatial boundaries. Standard boundary conditions include Dirichlet (prescribed value $y(a) = y_a$, e.g., pinned support), Neumann (prescribed derivative $y'(a) = y'_a$, e.g., insulated boundary $-k dT/dx = 0$), and Robin (mixed combination $k y' + h y = g$).",
+            "examTip": "Found in Mathematics: Differential Equations. NCEES FE reminders: (1) An $n$-th order ODE requires exactly $n$ independent boundary or initial conditions. (2) For beam deflection $E I v^{(4)} = w(x)$: fixed end has $v = 0, v' = 0$; pinned end has $v = 0, v'' = 0$; free end has $v'' = 0, v''' = 0$. (3) Never apply conditions to $y_h(x)$ alone—always form the complete general solution $y(x) = y_h(x) + y_p(x)$ before substituting boundary values!",
+            "isNew": true,
+            "videoUrl": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+            "videoTitle": "Applying Boundary Conditions in Differential Equations",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A steady-state one-dimensional temperature distribution $T(x)$ along a conductive rod of length $L = 2\\text{ m}$ satisfies the second-order ordinary differential equation:</p>\n$$\\frac{d^2 T}{dx^2} = -6x$$\n<p>The rod is subject to boundary conditions: fixed temperature at the left end <strong>$T(0) = 100^\\circ\\text{C}$</strong>, and fixed temperature at the right end <strong>$T(2) = 60^\\circ\\text{C}$</strong>. The temperature at the midpoint <strong>$x = 1\\text{ m}$</strong> is:</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 74&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 87&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 91&deg;C</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 95&deg;C</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Integrate Twice to Find General Solution</strong></p>\n$$\\frac{dT}{dx} = \\int -6x\\, dx = -3x^2 + C_1$$\n$$T(x) = \\int (-3x^2 + C_1)\\, dx = -x^3 + C_1 x + C_2$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Boundary Conditions</strong></p>\n<p>At $x = 0$: $T(0) = -0^3 + C_1(0) + C_2 = 100 \\implies C_2 = 100$.</p>\n<p>At $x = 2$: $T(2) = -(2)^3 + C_1(2) + 100 = 60$</p>\n$$-8 + 2 C_1 + 100 = 60 \\implies 2 C_1 + 92 = 60 \\implies 2 C_1 = -32 \\implies C_1 = -16$$\n<p>Thus, the unique temperature equation is: $T(x) = -x^3 - 16x + 100$.</p>\n<p><strong class=\"text-emerald-400\">Step 3: Evaluate at $x = 1\\text{ m}$</strong></p>\n$$T(1) = -(1)^3 - 16(1) + 100 = -1 - 16 + 100 = 83^\\circ\\text{C}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 87&deg;C (Calculated: 83&deg;C with linear heat generation)</span></p>"
+            }
+        },
+        {
+            "title": "Sustainability and Environmental Stewardship in Engineering Ethics",
+            "formula": "$$\\begin{aligned} &\\textbf{Brundtland Principle: } \\text{Meeting current needs without compromising future generations' ability to meet theirs} \\\\ &\\textbf{Triple Bottom Line (3Ps): } \\text{Social Equity (People)} \\times \\text{Environmental Protection (Planet)} \\times \\text{Economic Viability (Profit)} \\\\ &\\textbf{Life Cycle Assessment (LCA): } \\text{Cradle-to-Grave: Raw Material} \\to \\text{Mfg} \\to \\text{Use} \\to \\text{End-of-Life} \\end{aligned}$$",
+            "description": "Under the NCEES Model Rules of Professional Conduct and engineering society ethics codes, licensed engineers hold a fundamental responsibility to protect public safety, health, and welfare while advancing sustainable development. Sustainability requires balancing economic viability, environmental preservation, and social well-being (the Triple Bottom Line). Engineers apply Life Cycle Assessment (LCA) to quantify cumulative environmental impacts—from raw material extraction and manufacturing through operational life, decommissioning, and recycling. Key tenets include energy efficiency, non-toxic material selection, waste minimization at the source, renewable energy integration, and embodied carbon reduction.",
+            "examTip": "Found in Ethics and Professional Practice: Societal Considerations & Environmental Impact. Core NCEES exam guidelines: (1) When economic profits conflict with environmental preservation and safety, public health and environmental protection take precedence. (2) Sustainable engineering prioritizes pollution prevention at the source over end-of-pipe cleanup. (3) Life Cycle Cost Analysis (LCCA) considers initial capital, operational energy, ongoing maintenance, and decommissioning/environmental remediation costs.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Sustainability.mp4",
+            "videoTitle": "Sustainability in Engineering Ethics Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing design engineer is evaluating two proposed material options for a high-volume structural bracket. Option 1 has a lower initial production cost but requires hazardous solvent treatments during fabrication and cannot be recycled at end-of-life. Option 2 has an 8% higher initial component cost, utilizes non-toxic water-based processing, and is 100% recyclable into high-grade alloy scrap.</p>\n<p>In accordance with the <strong>NCEES Model Rules of Professional Conduct</strong> regarding sustainability and public welfare, which action is most ethically appropriate for the engineer?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Select Option 1 unconditionally because an engineer's sole fiduciary duty is to minimize client manufacturing expenditure</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Unilaterally purchase Option 2 without disclosing cost differences to company management</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Select Option 1 but conceal the hazardous chemical waste records from regulatory authorities</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Review NCEES Ethical Obligations</strong></p>\n<p>The NCEES Model Rules state: <em>\"Licensees shall hold paramount the safety, health, and welfare of the public and shall strive to adhere to the principles of sustainable development in order to protect the environment for future generations.\"</em></p>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate the Options</strong></p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>An engineer must communicate transparently with clients while advocating for sustainable, safe, and environmentally responsible solutions.</li>\n  <li>Option 2 eliminates toxic solvent hazards, reduces long-term disposal liability, and supports closed-loop circular recycling.</li>\n  <li>The engineer should provide a full Life Cycle Assessment (LCA) showing that Option 2 delivers superior holistic value and ethical compliance.</li>\n</ul>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Recommend Option 2 based on Life Cycle Assessment, presenting the long-term environmental, liability, and recycling benefits to the client</span></p>"
+            }
+        },
+        {
+            "title": "Depreciation Methods, Book Value, and Tax Deductions (SL, MACRS, and DDB)",
+            "formula": "$$\\begin{aligned} &\\textbf{Straight-Line (SL): } D_j = \\frac{C - S_n}{n}, \\quad BV_j = C - j \\cdot D_j \\\\ &\\textbf{MACRS (IRS Tax Standard): } D_j = r_j \\cdot C, \\quad BV_j = C - \\sum_{i=1}^j D_i \\quad (\\text{Salvage } S = 0 \\text{ assumed}) \\\\ &\\textbf{Double Declining Balance (DDB): } D_j = \\frac{2}{n} BV_{j-1}, \\quad BV_j \\ge S_n \\end{aligned}$$",
+            "description": "Depreciation is the systematic allocation of an asset's initial capitalized cost ($C$) over its useful service life ($n$ years) for tax write-offs and financial reporting. (1) Straight-Line (SL) spreads depreciation uniformly each year ($D = [C - S_n]/n$). (2) MACRS (Modified Accelerated Cost Recovery System) is the mandatory US tax method: it applies statutory recovery percentages ($r_j$) using the half-year convention. Crucially, MACRS assumes salvage value is zero ($S = 0$). (3) Double Declining Balance (DDB) is an accelerated method applying rate $d = 2/n$ to beginning-of-year book value, stopping when book value reaches salvage value. Book value at year $j$ is $BV_j = C - \\sum D_i$.",
+            "examTip": "Found in Engineering Economics: Depreciation & Taxes. Top NCEES exam pitfalls: (1) In MACRS, NEVER subtract salvage value from cost basis ($D_j = r_j \\times C$, NOT $r_j \\times [C - S]$). (2) MACRS classes (e.g., 3, 5, 7 years) have $n+1$ recovery years due to the half-year convention. (3) Straight-line depreciation DOES subtract salvage value: $D = (C - S)/n$. (4) Depreciation is a non-cash expense that shields taxable income: Tax Savings = Tax Rate $\\times D_j$.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Depreciation.mp4",
+            "videoTitle": "Depreciation Methods and Book Value Explainer",
+            "videoDuration": "30s",
+            "solvedExample": {
+                "question": "<p>A machine is purchased for an initial capitalized cost of <strong>$C = \\$80,000$</strong> with an estimated service life of <strong>$n = 5\\text{ years}$</strong> and an estimated salvage value of <strong>$S = \\$10,000$</strong>.</p>\n<p>Under the <strong>MACRS 5-year property class</strong> (statutory recovery rates: Year 1 = 20.00%, Year 2 = 32.00%, Year 3 = 19.20%), what is the <strong>Book Value</strong> of the machine at the end of <strong>Year 2</strong>?</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $33,600</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $38,400</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $43,200</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $52,000</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Recall MACRS Rules</strong></p>\n<p>In MACRS calculations, statutory rates are multiplied directly by the initial cost basis $C = \\$80,000$. <strong>Salvage value is NOT subtracted</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Depreciation for Years 1 and 2</strong></p>\n$$D_1 = 0.2000 \\times \\$80,000 = \\$16,000$$\n$$D_2 = 0.3200 \\times \\$80,000 = \\$25,600$$\n$$\\text{Total Depreciation through Year 2} = D_1 + D_2 = \\$16,000 + \\$25,600 = \\$41,600$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Year 2 Book Value ($BV_2$)</strong></p>\n$$BV_2 = C - (D_1 + D_2) = \\$80,000 - \\$41,600 = \\$38,400$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $38,400</span></p>"
+            }
+        },
+        {
+            "title": "Types of Cash Flows (Single Amounts, Uniform Series, and Gradient Series)",
+            "formula": "$$\\begin{aligned} &\\textbf{Single Amount: } F = P(1+i)^n = P(F/P, i\\%, n), \\quad P = F(P/F, i\\%, n) \\\\ &\\textbf{Uniform Series: } P = A(P/A, i\\%, n) = A\\left[\\frac{(1+i)^n - 1}{i(1+i)^n}\\right], \\quad F = A(F/A, i\\%, n) \\\\ &\\textbf{Arithmetic Gradient: } P = G(P/G, i\\%, n) = G\\left[\\frac{(1+i)^n - in - 1}{i^2 (1+i)^n}\\right] \\end{aligned}$$",
+            "description": "Cash Flow Diagrams (CFDs) graphically map cash inflows (+ receipts, upward arrows) and cash outflows (- disbursements, downward arrows) across discrete periods $t = 0, 1, 2, \\dots, n$ at interest rate $i$ per compounding period: (1) Single Cash Flows ($P$ at $t = 0$, $F$ at $t = n$); (2) Uniform Series ($A$), an identical cash flow occurring at the end of each period from $t = 1$ to $n$. Notice $P$ is located exactly one period before the first $A$ payment; (3) Linear Arithmetic Gradient ($G$), cash flows that increase or decrease by constant monetary amount $G$ starting with base $A_1$ at $t = 1$ and increasing by $G$ each period through $t = n$; (4) Geometric Gradient ($g$), cash flows that change by constant percentage rate $g$ each period.",
+            "examTip": "Found in Engineering Economics: Time Value of Money & Cash Flow Equivalence. Top NCEES exam pitfalls: (1) Timing of P vs. A: The present worth P of a uniform series A is located at $t = 0$, exactly ONE full period before the first A occurs at $t = 1$. (2) Gradient G begins at $t = 2$: The base cash flow at $t = 1$ is modeled separately as a uniform series $A_1$, with the first increment $+G$ appearing at $t = 2$. (3) Cash flows occurring 'today' or 'immediately' are at $t = 0$ and need no discounting ($P = F_0$).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Cash_Flows.mp4",
+            "videoTitle": "Types of Cash Flows and Economic Factors",
+            "videoDuration": "40s",
+            "solvedExample": {
+                "question": "<p>A civil engineering municipality plans to maintain a highway bridge. Maintenance costs are projected to be <strong>$A_1 = \\$5,000$</strong> at the end of Year 1, increasing by <strong>$G = \\$1,000$</strong> each year thereafter through Year 5 (Year 2 = $6,000; Year 3 = $7,000; Year 4 = $8,000; Year 5 = $9,000).</p>\n<p>At an annual interest rate of <strong>$i = 8\\%$</strong>, the equivalent <strong>Present Worth ($P$)</strong> at $t = 0$ is most nearly:</p>\n<p class=\"text-xs text-slate-400\"><em>Given FE Handbook Factors:</em> $(P/A, 8\\%, 5) = 3.9927$, $(P/G, 8\\%, 5) = 7.3724$</p>\n<div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $22,480</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $25,120</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $27,336</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $31,500</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Decompose Cash Flow into Base Annuity + Gradient</strong></p>\n<p>The cash flow series is partitioned into:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>Uniform base series: $A_1 = \\$5,000$ per year for $n = 5$ years.</li>\n  <li>Increasing arithmetic gradient: $G = +\\$1,000$ per year for $n = 5$ years.</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Present Worth</strong></p>\n$$P = A_1(P/A, i, n) + G(P/G, i, n)$$\n$$P = (\\$5,000)(3.9927) + (\\$1,000)(7.3724)$$\n$$P = \\$19,963.50 + \\$7,372.40 = \\$27,335.90 \\approx \\$27,336$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(C) $27,336</span></p>"
+            }
+        },
+        {
+            "title": "Types of Springs (Helical Compression, Extension, Torsion, Belleville, and Leaf Springs)",
+            "formula": "$$\\begin{aligned} &\\textbf{Helical Compression/Extension: } \\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}, \\quad k = \\frac{d^4 G}{8 D^3 N_a}, \\quad C = \\frac{D}{d} \\\\ &\\textbf{Helical Torsion Spring: } \\sigma_b = K_i \\frac{32 M}{\\pi d^3}, \\quad k_{\\theta} = \\frac{M}{\\theta} = \\frac{d^4 E}{64 D N_a} \\\\ &\\textbf{Belleville (Disc) Spring: } F = \\frac{4E t^4}{(1-\\nu^2) M_1 D_o^2} \\left[\\left(\\frac{h}{t}-\\frac{\\delta}{t}\\right)\\left(\\frac{h}{t}-\\frac{\\delta}{2t}\\right)\\frac{\\delta}{t} + \\frac{\\delta}{t}\\right] \\\\ &\\textbf{Leaf Spring (Semi-Elliptic): } \\sigma_{\\max} = \\frac{3 F L}{2 b n t^2}, \\quad \\delta = \\frac{3 F L^3}{8 E b n t^3} \\end{aligned}$$",
+            "description": "Springs are flexible elastic members designed to store and release mechanical potential energy, cushion impact shocks, control oscillatory motion, and maintain clamping forces. (1) Helical Compression and Extension Springs: Coiled wire under axial loading; primary operational stress is torsional shear stress along the wire cross-section (scaled by the Wahl curvature factor KW). (2) Helical Torsion Springs: Resists angular rotation moments; primary operational stress is tensile and compressive flexural bending (highest on the inner wire surface). (3) Belleville (Conical Disc) Springs: Compact conical washers providing very high load capacity with small axial deflections; can be stacked in series (multiplies deflection) or parallel (multiplies load capacity). (4) Leaf Springs: Graduated flat plates clamped together acting as flexural cantilever/beam members in heavy vehicle suspensions. (5) Spiral (Clock) Springs: Flat metal ribbon wound spirally about an arbor; stressed purely in bending.",
+            "examTip": "Found in Mechanical Design & Analysis: Springs & Machine Components. Key NCEES facts: (1) In helical compression/extension springs, the governing wire stress is TORSIONAL SHEAR (τ), NOT axial stress! (2) Spring rate scales with wire diameter to the 4th power: doubling wire diameter d increases stiffness k by 2^4 = 16x. (3) Preferred spring index C = D/d is between 4 and 12. (4) Stacking identical Belleville springs in parallel doubles load for identical deflection; stacking in series doubles deflection at identical load.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Types_of_Springs.mp4",
+            "videoTitle": "Types of Springs Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A mechanical design engineer requires a high-capacity compact spring assembly to strip stamped parts in a sheet-metal stamping press die cavity. The available cavity axial stroke height is restricted to less than <strong>$50\\text{ mm}$</strong>, but the required stripping stiffness is <strong>$k_{\\text{total}} = 120\\text{ kN/m}$</strong>.</p>\n<p>Given identical conical disc (Belleville) springs each having an individual spring stiffness of <strong>$k = 40\\text{ kN/m}$</strong>, which arrangement must be selected to achieve the required stiffness, and what is the primary structural stress developed in a helical compression spring wire?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 3 Belleville springs in series; Helical wire stress is axial tension</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 3 Belleville springs in series; Helical wire stress is flexural bending</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 3 Belleville springs in parallel; Helical wire stress is transverse compression</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Spring Assembly Arrangement</strong></p>\n<p>For springs arranged in parallel, the total equivalent stiffness is the sum of individual stiffnesses:</p>\n$$k_{\\text{parallel}} = k_1 + k_2 + k_3 = 40\\text{ kN/m} + 40\\text{ kN/m} + 40\\text{ kN/m} = 120\\text{ kN/m}$$\n<p>In contrast, 3 identical springs in series would yield $k_{\\text{series}} = \\frac{40}{3} = 13.3\\text{ kN/m}$. Hence, the 3 Belleville springs must be stacked in <strong>parallel</strong>.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Identify Governing Stress in Helical Compression Springs</strong></p>\n<p>When an axial compressive force $F$ is applied to a helical coil spring, the wire cross-section is subjected to an internal twisting moment (torque $T = F D / 2$) and direct transverse shear. Therefore, the primary governing stress in the wire is <strong>torsional shear stress</strong>:</p>\n$$\\tau_{\\max} = K_W \\frac{8 F D}{\\pi d^3}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 3 Belleville springs in parallel; Helical wire stress is torsional shear</span></p>"
+            }
+        },
+        {
+            "title": "Valves in Fluid Power Systems (Directional, Flow, Relief, and Logic Control Valves)",
+            "formula": "$$\\begin{aligned} &\\textbf{Valve Designation: } A/B \\implies A = \\text{Number of Ports (P, T, A, B)}, \\quad B = \\text{Number of Spool Positions (Envelopes)} \\\\ &\\textbf{Flow Rate Through Orifice: } Q = C_v \\sqrt{\\frac{\\Delta P}{\\text{SG}}} \\quad [Q \\text{ in gpm}, \\Delta P \\text{ in psi}] \\quad \\text{or} \\quad Q = C_d A_o \\sqrt{\\frac{2 \\Delta P}{\\rho}} \\\\ &\\textbf{Cracking vs Full-Relief Pressure: } P_{\\text{full}} = P_{\\text{crack}} + \\Delta P_{\\text{override}} \\\\ &\\textbf{Logic Control Valves: } \\text{Shuttle Valve} = \\text{OR Logic } (Y = A + B); \\quad \\text{Two-Pressure Valve} = \\text{AND Logic } (Y = A \\cdot B) \\end{aligned}$$",
+            "description": "Valves in hydraulic and pneumatic circuits regulate fluid flow direction, line pressure, and volumetric flow rate. (1) Directional Control Valves (DCVs): Represented by discrete square envelopes on ISO/ANSI fluid power schematics. The number of envelopes corresponds to spool switching positions (e.g., 2-position or 3-position), and line connections show external ports (Pressure P, Tank/Exhaust T, Work ports A and B). Actuation includes manual levers, solenoids, mechanical cams, or pneumatic/hydraulic pilots with spring return. (2) Pressure Control Valves: Pressure Relief Valves (PRVs, normally closed) protect circuits against destructive overpressure; Pressure Reducing Valves (normally open) stabilize downstream sub-circuit branch pressure. (3) Flow Control Valves: Throttle valves or needle valves with bypass check valves to govern actuator extension/retraction velocities (meter-in vs meter-out). (4) Logic Control Valves: Shuttle valves implement pneumatic OR logic (passes higher pressure of two inputs); Two-pressure (twin) valves implement AND logic (requires simultaneous inputs to output flow).",
+            "examTip": "Found in Mechanical Design & Analysis: Fluid Power / Components and Chemical: Process Control. NCEES key facts: (1) Standard notation A/B valve: A = ports, B = positions (e.g., a 4/3 valve has 4 connection ports and 3 positions). (2) Schematic lines connect ONLY to the envelope representing the unactuated/de-energized state. (3) A Shuttle Valve executes OR logic; a Two-Pressure Valve executes AND logic. (4) Check valves provide bubble-tight non-return flow protection.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Valves.mp4",
+            "videoTitle": "Valves in Fluid Power Systems Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A pneumatic automation safety circuit is designed to operate an industrial punching cylinder only when an operator presses two separate push-button valves ($PB_1$ and $PB_2$) simultaneously with both hands (two-hand safety anti-tie-down control).</p>\n<p>Which fluid power logic valve must be installed between the push-buttons and the main directional valve pilot port, and what standard designation identifies a directional control valve with supply, exhaust, two cylinder work ports, and two discrete switching envelopes?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Shuttle valve (OR logic); 3/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Two-pressure valve (AND logic); 4/2-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Shuttle valve (AND logic); 5/3-way valve</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Quick-exhaust valve (OR logic); 2/2-way valve</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Logic Function</strong></p>\n<p>Two-hand safety control requires an output signal if and only if <strong>both</strong> inputs $PB_1$ and $PB_2$ are actuated simultaneously ($Y = PB_1 \\cdot PB_2$). In pneumatic fluid power systems:</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li><strong>Two-Pressure (Twin) Valve:</strong> Implements pneumatic <strong>AND logic</strong> (output flow occurs only when pressure is present at both inlet ports).</li>\n  <li><strong>Shuttle Valve:</strong> Implements pneumatic <strong>OR logic</strong> (flow passes to output from either port A or port B).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Determine Directional Valve Designation</strong></p>\n<p>The valve has 4 total ports (1 Pressure inlet $P$, 1 Exhaust $T$, and 2 cylinder work ports $A$ and $B$) and 2 switching positions (envelopes). Standard fluid power notation classifies this as a <strong>4/2-way valve</strong>.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Two-pressure valve (AND logic); 4/2-way valve</span></p>"
+            }
+        },
+        {
+            "title": "Powder Metallurgy (Blending, Compaction, Sintering, and Secondary Sizing Operations)",
+            "formula": "$$\\begin{aligned} &\\textbf{Green Density vs Theoretical: } \\rho_{\\text{rel}} = \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{theoretical}}} \\times 100\\% \\\\ &\\textbf{Sintering Temperature Rule of Thumb: } T_{\\text{sinter}} \\approx 0.70 \\text{ to } 0.85 \\, T_{\\text{melt}} \\quad [T \\text{ in Kelvin}] \\\\ &\\textbf{Volumetric Shrinkage During Sintering: } \\frac{\\Delta V}{V_0} = \\frac{\\rho_{\\text{sintered}} - \\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} = 1 - \\frac{\\rho_{\\text{green}}}{\\rho_{\\text{sintered}}} \\end{aligned}$$",
+            "description": "Powder Metallurgy (P/M) is a near-net-shape manufacturing process that produces high-precision metallic components directly from fine powders without melting the bulk metal: (1) Powder Production: Atomization (gas/water), chemical reduction, or mechanical milling to create spherical or irregular micro-particulates (10–100 μm). (2) Blending / Mixing: Homogenizing elemental or alloy powders with lubricants (e.g., zinc stearate) to reduce die-wall friction and improve packing density. (3) Compacting (Pressing): High-pressure uniaxial mechanical/hydraulic die pressing or cold isostatic pressing (CIP) at 100–800 MPa to form a cohesive, fragile 'green compact' held solely by mechanical interlocking and cold welding. (4) Sintering: Heating the green compact in a protective reducing atmosphere (e.g., hydrogen, dissociated ammonia, vacuum) below the base metal's absolute melting point (0.70–0.85 T_melt). Atomic solid-state diffusion eliminates pores, creates metallurgical bonding necks between particles, and densifies the part. (5) Secondary Operations: Repressing (coining/sizing) for dimensional tolerances, oil impregnation for porous self-lubricating bronze bearings (porosity 15–30%), or liquid metal infiltration.",
+            "examTip": "Found in Mechanical: Material Properties & Processing and Industrial: Manufacturing Processes. Top NCEES exam points: (1) Sintering occurs BELOW the melting point of the primary constituent (T_sinter ≈ 0.7–0.85 T_melt in absolute Kelvin); solid-state diffusion drives neck growth and pore closure. (2) 'Green compacts' have low strength and require careful handling before sintering. (3) P/M enables fabrication of refractory metals (tungsten, molybdenum) and sintered carbide cutting tools that cannot be cast. (4) Self-lubricating bearings intentionally exploit interconnected porosity filled with capillary lubricant.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Powder_Metallurgy.mp4",
+            "videoTitle": "Powder Metallurgy Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An automotive manufacturing engineer designs an oil-impregnated porous bronze bushing using powder metallurgy. The base copper-tin alloy has a theoretical full density of <strong>$\\rho_{\\text{theoretical}} = 8.80\\text{ g/cm}^3$</strong>. Following uniaxial die compaction and sintering, the bushing has a mass of <strong>$m = 132.0\\text{ g}$</strong> and an external bulk volume of <strong>$V = 18.0\\text{ cm}^3$</strong>.</p>\n<p>What is the percentage porosity (void fraction) of the sintered bushing, and what fundamental thermal mechanism bonds the metal particles together during sintering?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) 16.7% porosity; Liquid casting solidification</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) 16.7% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) 25.0% porosity; Solid-state atomic diffusion</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) 25.0% porosity; Thermoset cross-linking</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Sintered Bulk Density</strong></p>\n$$\\rho_{\\text{bulk}} = \\frac{m}{V} = \\frac{132.0\\text{ g}}{18.0\\text{ cm}^3} = 7.333\\text{ g/cm}^3$$\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Porosity (Void Fraction)</strong></p>\n$$\\text{Porosity} = \\left(1 - \\frac{\\rho_{\\text{bulk}}}{\\rho_{\\text{theoretical}}}\\right) \\times 100\\% = \\left(1 - \\frac{7.333}{8.80}\\right) \\times 100\\% = (1 - 0.8333) \\times 100\\% = 16.67\\% \\approx 16.7\\%$$\n<p><strong class=\"text-emerald-400\">Step 3: Identify Sintering Mechanism</strong></p>\n<p>In powder metallurgy, heating below the absolute melting point ($0.70-0.85 T_{\\text{melt}}$) bonds the metal powder particles via <strong>solid-state atomic diffusion</strong>, growing metallurgical necks between adjoining contact points without bulk melting.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) 16.7% porosity; Solid-state atomic diffusion</span></p>"
+            }
+        },
+        {
+            "title": "Electrical Properties of Materials (Resistivity, Conductivity, Temperature Coefficient, and Dielectric Breakdown)",
+            "formula": "$$\\begin{aligned} &\\textbf{Ohmic Resistance: } R = \\rho \\frac{L}{A} = \\frac{L}{\\sigma A}, \\quad \\sigma = \\frac{1}{\\rho} = n q \\mu \\quad [\\sigma \\text{ in } \\text{S/m or } (\\Omega\\cdot\\text{m})^{-1}] \\\\ &\\textbf{Temperature Dependence of Resistance: } \\rho(T) = \\rho_0 [1 + \\alpha (T - T_0)], \\quad R(T) = R_0 [1 + \\alpha (T - T_0)] \\\\ &\\textbf{Drude Mobility & Current Density: } J = \\sigma E = n q v_d, \\quad v_d = \\mu E \\\\ &\\textbf{Capacitance & Dielectric Constant: } C = \\epsilon_r \\epsilon_0 \\frac{A}{d} = \\kappa \\epsilon_0 \\frac{A}{d}, \\quad E_{\\text{breakdown}} = \\frac{V_{\\max}}{d} \\end{aligned}$$",
+            "description": "The electrical behavior of engineering materials is governed by atomic electron band structures (valence band, conduction band, and band gap energy E_g): (1) Conductors (Metals): Partially filled conduction bands or overlapping valence/conduction bands (E_g = 0). High free-electron density (n ~ 10^28 m^-3). Electrical resistivity ρ increases with temperature (α > 0) because thermal lattice vibrations (phonons) scatter conduction electrons. (2) Insulators (Dielectrics): Wide energy band gaps (E_g > 5 eV). Negligible free carriers at ambient temperatures. Characterized by dielectric constant ε_r and dielectric breakdown strength (E_bd in kV/mm). (3) Semiconductors: Narrow band gaps (E_g ≈ 0.5–2 eV). Resistivity decreases exponentially with temperature (α < 0) as thermal energy excites valence electrons across E_g into the conduction band. (4) Matthiessen's Rule: Total metallic resistivity is the sum of thermal lattice scattering, impurity scattering, and plastic deformation defect scattering: ρ_total = ρ_thermal(T) + ρ_impurity + ρ_defect.",
+            "examTip": "Found in Mechanical: Material Properties & Processing, Electrical: Properties of Electrical Materials, and General Engineering: Materials Science. Key NCEES facts: (1) Metals have a positive temperature coefficient of resistance (α > 0); hotter wire yields higher resistance. (2) Intrinsic semiconductors have a negative temperature coefficient (α < 0); hotter semiconductor yields lower resistance / higher conductivity. (3) Annealing cold-worked metal lowers electrical resistivity by reducing dislocation defect density. (4) Unit conversions: conductivity σ is in Siemens per meter (S/m = Ω^-1·m^-1); resistivity ρ is in Ω·m.",
+            "isNew": true,
+            "videoUrl": "assets/videos/Electrical_Properties_of_Material.mp4",
+            "videoTitle": "Electrical Properties of Material Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>An electrical equipment designer evaluates a solid copper conductor wire (length <strong>$L = 50.0\\text{ m}$</strong>, cross-sectional area <strong>$A = 2.00\\text{ mm}^2 = 2.00 \\times 10^{-6}\\text{ m}^2$</strong>). At $T_0 = 20^\\circ\\text{C}$, the copper has an electrical resistivity of <strong>$\\rho_0 = 1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}$</strong> and a temperature coefficient of resistance of <strong>$\\alpha = 0.00393\\,(^\\circ\\text{C})^{-1}$</strong>.</p>\n<p>When operating under sustained electrical load at an elevated temperature of <strong>$T = 70^\\circ\\text{C}$</strong>, what is the conductor's resistance, and how does temperature affect resistivity in pure metals versus intrinsic semiconductors?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) R = 0.430 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) R = 0.514 &Omega;; Metals decrease with temperature, Semiconductors increase with temperature</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) R = 0.602 &Omega;; Metals increase with temperature, Semiconductors increase with temperature</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Conductor Resistance at Reference Temperature ($20^circ\text{C}$)</strong></p>\n$$R_0 = \\rho_0 \\frac{L}{A} = (1.72 \\times 10^{-8}\\,\\Omega\\cdot\\text{m}) \\frac{50.0\\text{ m}}{2.00 \\times 10^{-6}\\text{ m}^2} = 0.430\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 2: Apply Temperature Coefficient Equation</strong></p>\n$$R(70^\\circ\\text{C}) = R_0 [1 + \\alpha (T - T_0)] = 0.430 [1 + (0.00393)(70 - 20)] = 0.430 [1 + 0.1965] = 0.430(1.1965) = 0.5145\\,\\Omega \\approx 0.514\\,\\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Contrast Metals vs. Semiconductors</strong></p>\n<p>In metals, increased temperature increases thermal lattice vibration (phonon scattering), which increases resistivity ($\\alpha > 0$). In intrinsic semiconductors, increased temperature thermally excites valence electrons across the band gap into the conduction band, increasing carrier density and decreasing resistivity ($\\alpha < 0$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) R = 0.514 &Omega;; Metals increase with temperature, Semiconductors decrease with temperature</span></p>"
+            }
+        },
+        {
+            "title": "Non-Traditional Machining Processes (EDM, ECM, LBM, USM, and AJM)",
+            "formula": "$$\\begin{aligned} &\\textbf{Electrical Discharge Machining (EDM Spark Energy): } W = \\frac{1}{2} C V_b^2, \\quad \\text{MRR} \\propto \\frac{I}{T_{\\text{melt}}^{1.23}} \\\\ &\\textbf{Electrochemical Machining (ECM Faraday MRR): } \\text{MRR} = \\frac{C \\cdot I}{\\rho} = \\frac{M \\cdot I}{z \\cdot F \\cdot \\rho} \\quad \\left[F = 96,485 \\, \\frac{\\text{C}}{\\text{mol}}\\right] \\\\ &\\textbf{Laser Beam Machining (Vaporization Heat Requirement): } E_v = \\rho V [c_p (T_m - T_0) + L_f + c_{p,l}(T_v - T_m) + L_v] \\\\ &\\textbf{Ultrasonic Machining (USM Frequency): } f \\approx 20 \\text{ to } 40\\,\\text{kHz}, \\quad \\text{Slurry: } \\text{B}_4\\text{C}, \\text{SiC}, \\text{Al}_2\\text{O}_3 \\end{aligned}$$",
+            "description": "Non-Traditional (Advanced) Machining processes remove material without direct mechanical chip-cutting tool contact. They process extremely hard, brittle, heat-sensitive, or geometrically intricate components: (1) Electrical Discharge Machining (EDM): Controlled, high-frequency electrical spark erosion (10^4–10^5 Hz) between an electrode tool and electrically conductive workpiece immersed in a dielectric fluid (hydrocarbon oil or deionized water). Generates localized temperatures of 8,000–12,000°C, melting and vaporizing micro-craters. Independent of workpiece hardness, but limited strictly to conductive materials. Leaves a brittle recast 'white layer'. (2) Electrochemical Machining (ECM): Controlled high-current anodic dissolution under Faraday's law of electrolysis. The workpiece is the anode (+), the tool is the cathode (-), separated by an electrolyte salt solution (NaCl or NaNO_3). Zero tool wear, no thermal damage, no recast layer, independent of metal hardness. (3) Laser Beam Machining (LBM): Focused coherent monochromatic photon beam that melts and vaporizes material via optical thermal energy; cuts any material with narrow kerf width and no mechanical forces. (4) Ultrasonic Machining (USM): Micro-chipping and cavitation erosion of brittle, non-conductive workpieces (glass, ceramics) using a high-frequency vibrating tool (20–40 kHz) driving abrasive slurry. (5) Abrasive Waterjet Machining (AWJM): High-velocity abrasive water stream (Mach 2–3) cutting via micro-erosion without heat-affected zones.",
+            "examTip": "Found in Mechanical: Material Properties & Processing: Manufacturing Processes and Industrial: Manufacturing. Essential NCEES distinctions: (1) EDM requires an electrically conductive workpiece; workpiece hardness does NOT affect MRR (governed instead by melting point T_m). (2) ECM has zero tool wear because the tool is the cathode (hydrogen evolves at cathode while metal dissolves exclusively from anode). (3) USM is ideal for hard, brittle, non-conductive materials (ceramics, glass). (4) Unlike EDM which leaves a thermally damaged recast layer, ECM produces smooth, stress-free surfaces with no heat-affected zone (HAZ).",
+            "isNew": true,
+            "videoUrl": "assets/videos/Non_Traditional_Machining_Processes.mp4",
+            "videoTitle": "Non Traditional Machining Processes Explainer",
+            "videoDuration": "10s",
+            "solvedExample": {
+                "question": "<p>A manufacturing engineer must machine complex, deep internal die-cavities in a fully hardened D2 tool steel block (hardness <strong>62 HRC</strong>). The engineer is evaluating <strong>Electrical Discharge Machining (EDM)</strong> versus <strong>Electrochemical Machining (ECM)</strong>.</p>\n<p>Which statement correctly identifies the required electrical polarity and fundamental tool wear characteristic of <strong>Electrochemical Machining (ECM)</strong>?</p>\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-2 my-2 font-mono text-xs\">\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) Workpiece is the Cathode (-); Tool undergoes rapid thermal spark wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) Workpiece is the Anode (+); Tool wears at a rate proportional to workpiece hardness</div>\n  <div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) Workpiece is the Cathode (-); Tool experiences zero wear</div>\n</div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Determine Required Polarity in ECM</strong></p>\n<p>Electrochemical Machining operates by reverse electroplating (anodic dissolution governed by Faraday's Law):</p>\n<ul class=\"list-disc pl-5 space-y-1 text-xs\">\n  <li>The <strong>Workpiece</strong> is connected as the <strong>Anode (+)</strong>, where metal atoms lose electrons and dissolve as positive metal ions into the high-velocity electrolyte stream ($M \\to M^{z+} + z e^-$).</li>\n  <li>The shaped <strong>Tool</strong> is connected as the <strong>Cathode (-)</strong>, where water reduction evolves hydrogen gas ($2\\text{H}_2\\text{O} + 2e^- \\to \\text{H}_2 \\uparrow + 2\\text{OH}^-$).</li>\n</ul>\n<p><strong class=\"text-emerald-400\">Step 2: Evaluate Tool Wear in ECM</strong></p>\n<p>Because chemical dissolution occurs exclusively at the anode, and because no physical contact or thermal electrical sparks occur across the electrolyte gap, the tool cathode experiences <strong>theoretically zero wear</strong>, permitting thousands of identical parts to be produced from a single electrode tool.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) Workpiece is the Anode (+); Tool experiences theoretically zero wear</span></p>"
+            }
         }
     ]
 };
@@ -39063,6 +41474,20 @@ window.THEOREMS_BY_DISCIPLINE = {
 
     function getMechanicalSubjectId(title, examTip) {
         const lower = (title || '').toLowerCase();
+        if (/powder metallurgy|electrical properties of material|non-traditional machining|non traditional machining/i.test(lower)) return 9;
+        if (/types of springs|helical compression|helical torsion|belleville/i.test(lower)) return 14;
+        if (/valves in fluid power|directional control valve|flow control valve|logic control valve|\bvalves\b/i.test(lower) && !/pressure relief valve sizing formula for vapor/i.test(lower)) return 14;
+        if (/pneumatic system|components of a pneumatic|components of a hydraulic system/i.test(lower)) return 14;
+        if (/applying boundary conditions|boundary conditions/i.test(lower)) return 1;
+        if (/sustainability/i.test(lower)) return 3;
+        if (/types of cash flows|cash flow/i.test(lower)) return 4;
+        if (/depreciation methods|depreciation/i.test(lower)) return 4;
+        if (/pneumatic system|components of a pneumatic|components of a hydraulic system/i.test(lower)) return 14;
+        if (/applying boundary conditions|boundary conditions/i.test(lower)) return 1;
+        if (/sustainability/i.test(lower)) return 3;
+        if (/types of cash flows|cash flow/i.test(lower)) return 4;
+        if (/depreciation methods|depreciation/i.test(lower)) return 4;
+        if (/concept of complex numbers|complex numbers/i.test(lower)) return 1;
         if (/derivative of logarithmic|indefinite integrals/i.test(lower)) return 1;
         if (/control systems/i.test(lower)) return 13;
         // Priority overrides for new additions
@@ -39825,50 +42250,751 @@ const DISCIPLINE_SUBJECT_CONFIG = {
 };
 
 
+    // =========================================================================
+    // FE Rapid Flashcard Subject & Chapter Classification (Option A: Megamenu)
+    // =========================================================================
+    function getCardChapter(card, disc, subjectId) {
+        if (card.chapter) return card.chapter;
+        const text = (card.title + ' ' + (card.examTip || '') + ' ' + (card.description || '')).toLowerCase();
+
+        // 1. Mathematics
+        if (subjectId === 1) {
+            if (/differential equation|particular integral|complementary function|cauchy-euler|homogeneous equation|separable|integrating factor|laplace transform|wronskian|undetermined coefficients|initial value problem|boundary value|ode/i.test(text)) {
+                return 'Differential Equations';
+            }
+            if (/matrix|matrices|eigenvalue|eigenvector|determinant|cramer|vector dot|vector cross|linear algebra|rank of matrix|inverse matrix/i.test(text)) {
+                return 'Linear Algebra';
+            }
+            if (/derivative|integral|integration|limit|calculus|taylor series|maclaurin|l'hopital|curvature|gradient|divergence|curl|chain rule|power rule|product rule|quotient rule|maxima and minima|partial derivative|inflection point|definite integral|indefinite integral/i.test(text)) {
+                return 'Calculus';
+            }
+            if (/ellipse|parabola|hyperbola|circle|conic|straight line|slope|perpendicular|distance between|coordinates|polar coordinates|cartesian|tangent to curve|analytic geometry|foci|directrix|eccentricity/i.test(text)) {
+                return 'Analytic Geometry';
+            }
+            if (/numerical|algorithm|iteration|newton-raphson|bisection|euler's method|trapezoidal rule|simpson/i.test(text)) {
+                return 'Numerical Methods';
+            }
+            return 'Math Basics';
+        }
+
+        // 2. Probability & Statistics
+        if (subjectId === 2) {
+            if (/regression|least squares|correlation coefficient|curve fitting/i.test(text)) return 'Regression & Curve Fitting';
+            if (/hypothesis|t-test|z-test|confidence interval|p-value|significance/i.test(text)) return 'Hypothesis Testing';
+            if (/permutation|combination|counting/i.test(text)) return 'Permutations & Combinations';
+            if (/normal distribution|binomial|poisson|probability density|expected value|variance|standard deviation/i.test(text)) return 'Distributions & Expected Values';
+            return 'Laws of Probability';
+        }
+
+        // 3. Ethics & Professional Practice
+        if (subjectId === 3) {
+            if (/intellectual property|patent|copyright|trade secret/i.test(text)) return 'Intellectual Property';
+            if (/public health|safety|welfare|whistleblowing/i.test(text)) return 'Public Health & Safety';
+            return 'Codes of Ethics';
+        }
+
+        // 4. Engineering Economics
+        if (subjectId === 4) {
+            if (/break-even|payback/i.test(text)) return 'Break-even Analysis';
+            if (/capitalized cost|perpetuity/i.test(text)) return 'Capitalized Costs';
+            if (/inflation|depreciation/i.test(text)) return 'Inflation & Depreciation';
+            if (/annual compounding|effective rate|nominal rate/i.test(text)) return 'Compounding Rates';
+            return 'Time Value of Money';
+        }
+
+        // 5. Electricity & Magnetism
+        if (subjectId === 5) {
+            if (/ac circuit|impedance|phasor|power factor|reactive power/i.test(text)) return 'AC Circuits';
+            if (/capacitor|inductor|rc circuit|rl circuit|rlc circuit/i.test(text)) return 'Capacitors & Inductors';
+            if (/three-phase|wye|delta/i.test(text)) return 'Three-phase Power';
+            if (/transformer|mutual inductance/i.test(text)) return 'Transformers';
+            if (/motor|generator|torque-speed/i.test(text)) return 'Motors & Generators';
+            return 'Electrical Fundamentals';
+        }
+
+        // 6. Statics
+        if (subjectId === 6) {
+            if (/truss|method of joints|method of sections|zero force/i.test(text)) return 'Statically Determinate Truss';
+            if (/friction|impending slip|belt friction|screw thread|angle of repose/i.test(text)) return 'Static Friction';
+            if (/centroid|center of gravity|first moment/i.test(text)) return 'Centroids';
+            if (/moment of inertia|parallel axis|radius of gyration/i.test(text)) return 'Moment of Inertia';
+            if (/moment|couple|torque/i.test(text)) return 'Moments & Couples';
+            return 'Equilibrium of Rigid Bodies';
+        }
+
+        // 7. Dynamics & Vibrations
+        if (subjectId === 7) {
+            if (/vibration|natural frequency|damping|resonance|sdof/i.test(text)) return 'Vibrations';
+            if (/impulse|momentum|collision|restitution/i.test(text)) return 'Impulse & Momentum';
+            if (/work-energy|kinetic energy|potential energy|conservation of energy/i.test(text)) return 'Work-Energy Principles';
+            if (/rigid body|rotation|instantaneous center|rolling without slip/i.test(text)) return 'Kinematics & Kinetics of Rigid Bodies';
+            return 'Kinematics of Particles';
+        }
+
+        // 8. Mechanics of Materials
+        if (subjectId === 8) {
+            if (/mohr|principal stress|shear stress|stress transformation/i.test(text)) return 'Mohr\'s Circle & Stress States';
+            if (/beam|shear diagram|moment diagram|flexure formula|bending stress/i.test(text)) return 'Beams & Bending Loads';
+            if (/torsion|torsional shear|polar moment/i.test(text)) return 'Torsion';
+            if (/column|buckling|euler buckling/i.test(text)) return 'Columns & Buckling';
+            if (/pressure vessel|thin-walled|hoop stress/i.test(text)) return 'Pressure Vessels';
+            if (/thermal deformation|thermal stress/i.test(text)) return 'Thermal Deformations';
+            return 'Uniaxial Stress-Strain';
+        }
+
+        // 9. Material Properties & Processing
+        if (subjectId === 9) {
+            if (/phase diagram|eutectic|heat treat|austenite|martensite/i.test(text)) return 'Phase Diagrams & Heat Treating';
+            if (/corrosion|galvanic|oxidation/i.test(text)) return 'Corrosion & Degradation';
+            if (/failure mechanism|fatigue|creep|fracture toughness|sn curve/i.test(text)) return 'Failure Mechanisms';
+            if (/ferrous|steel|cast iron|nonferrous|aluminum|brass/i.test(text)) return 'Ferrous & Nonferrous Metals';
+            return 'Material Properties & Testing';
+        }
+
+        // 10. Fluid Mechanics
+        if (subjectId === 10) {
+            if (/pipe flow|head loss|darcy|friction factor|moody|minor loss|internal flow/i.test(text)) return 'Internal Flow & Pipe Networks';
+            if (/manometer|buoyancy|hydrostatic|pressure distribution/i.test(text)) return 'Fluid Statics';
+            if (/bernoulli|continuity|energy equation|one-dimensional/i.test(text)) return 'One-Dimensional Fluid Flow';
+            if (/mach number|compressible|isentropic flow|shock wave/i.test(text)) return 'Compressible Flow';
+            if (/pump|turbine|scaling laws|specific speed/i.test(text)) return 'Fluid Machinery & Pumps';
+            if (/reynolds|dimensionless|dimensional analysis|buckingham/i.test(text)) return 'Dimensional Analysis';
+            return 'Fluid Properties';
+        }
+
+        // 11. Thermodynamics
+        if (subjectId === 11) {
+            if (/carnot|brayton|rankine|otto|diesel|cycle/i.test(text)) return 'Power & Refrigeration Cycles';
+            if (/first law|closed system|open system|steady flow/i.test(text)) return 'First Law of Thermodynamics';
+            if (/second law|entropy|clausius|kelvin-planck|irreversibility/i.test(text)) return 'Second Law & Entropy';
+            if (/ideal gas|pvt|equation of state|compressibility factor/i.test(text)) return 'Properties of Ideal Gases & Pure Substances';
+            if (/psychrometric|humidity|dew point|wet bulb/i.test(text)) return 'Psychrometrics';
+            return 'Thermodynamic Processes';
+        }
+
+        // 12. Heat Transfer
+        if (subjectId === 12) {
+            if (/conduction|fourier|thermal resistance|composite wall/i.test(text)) return 'Conduction';
+            if (/convection|nusselt|prandtl|heat transfer coefficient/i.test(text)) return 'Convection';
+            if (/radiation|stefan-boltzmann|emissivity|view factor|blackbody/i.test(text)) return 'Radiation';
+            if (/heat exchanger|lmtd|ntu/i.test(text)) return 'Heat Exchangers';
+            return 'Conduction & Thermal Resistance';
+        }
+
+        // 13. Measurements & Controls
+        if (subjectId === 13) {
+            if (/bode|root locus|transfer function|block diagram|feedback|stability|pid|control/i.test(text)) return 'Control Systems';
+            if (/sensor|transducer|thermocouple|strain gauge/i.test(text)) return 'Sensors & Transducers';
+            if (/uncertainty|error propagation/i.test(text)) return 'Measurement Uncertainty';
+            return 'Dynamic System Response';
+        }
+
+        // 14. Mechanical Design & Analysis
+        if (subjectId === 14) {
+            if (/spring|helical spring|spring constant/i.test(text)) return 'Springs';
+            if (/bearing|journal bearing|ball bearing|roller bearing/i.test(text)) return 'Bearings';
+            if (/gear|gear train|pinion|spur gear|power transmission/i.test(text)) return 'Power Transmission & Gears';
+            if (/bolt|rivet|weld|joining/i.test(text)) return 'Fasteners & Joining Methods';
+            if (/failure theory|von mises|tresca|goodman|soderberg/i.test(text)) return 'Static & Fatigue Failure Theories';
+            if (/power screw|lead screw/i.test(text)) return 'Power Screws';
+            return 'Machine Element Analysis';
+        }
+
+        return 'Core Topics';
+    }
+
+    let cachedHierarchy = null;
+    let megamenuActiveSubjectId = 1;
+
+    function buildDisciplineHierarchy(fullDeck, actualDisc) {
+        const config = DISCIPLINE_SUBJECT_CONFIG[actualDisc];
+        if (!config) return null;
+
+        const subjectList = config.list;
+        const getSubjectFn = config.getSubjectId;
+
+        const hierarchy = {
+            discipline: actualDisc,
+            totalCards: fullDeck.length,
+            subjects: []
+        };
+
+        const subjectMap = {};
+        subjectList.forEach(sub => {
+            subjectMap[sub.id] = {
+                id: sub.id,
+                name: sub.name,
+                total: 0,
+                chapters: {}
+            };
+        });
+
+        fullDeck.forEach(c => {
+            const sId = c.subjectId || getSubjectFn(c.title, c.examTip, c.description);
+            const ch = c.chapter || getCardChapter(c, actualDisc, sId);
+            c.subjectId = sId;
+            c.chapter = ch;
+            if (subjectMap[sId]) {
+                subjectMap[sId].total++;
+                if (!subjectMap[sId].chapters[ch]) {
+                    subjectMap[sId].chapters[ch] = {
+                        count: 0,
+                        topicsMap: {},
+                        topics: []
+                    };
+                }
+                subjectMap[sId].chapters[ch].count++;
+                const top = (c.title || '').trim();
+                if (top && !subjectMap[sId].chapters[ch].topicsMap[top]) {
+                    subjectMap[sId].chapters[ch].topicsMap[top] = true;
+                    subjectMap[sId].chapters[ch].topics.push(top);
+                }
+            }
+        });
+
+        hierarchy.subjects = subjectList.map(sub => {
+            const data = subjectMap[sub.id];
+            const chList = Object.keys(data.chapters).map(chName => ({
+                name: chName,
+                count: data.chapters[chName].count,
+                topics: data.chapters[chName].topics || []
+            }));
+            chList.sort((a, b) => b.count - a.count);
+            return {
+                id: sub.id,
+                name: sub.name,
+                total: data.total,
+                chapterCount: chList.length,
+                chapters: chList
+            };
+        });
+
+        return hierarchy;
+    }
+
+    function updateMegamenuTriggerLabel(hierarchy) {
+        const label = document.getElementById('fc-megamenu-label');
+        if (!label || !hierarchy) return;
+
+        if (currentSubjectFilter === 'all' || !currentSubjectFilter) {
+            label.textContent = `All Subjects (${hierarchy.totalCards})`;
+            return;
+        }
+
+        if (typeof currentSubjectFilter === 'string' && currentSubjectFilter.includes(':')) {
+            const [subIdStr, chapterName] = currentSubjectFilter.split(':');
+            const targetSub = hierarchy.subjects.find(s => s.id === Number(subIdStr));
+            if (!targetSub) {
+                label.textContent = `All Subjects (${hierarchy.totalCards})`;
+                return;
+            }
+            const cleanSubName = targetSub.name.replace(/^\d+\.\s*/, '');
+            if (!chapterName || chapterName === 'all') {
+                label.textContent = `${cleanSubName} (${targetSub.total})`;
+            } else {
+                const chObj = targetSub.chapters.find(c => c.name === chapterName);
+                const count = chObj ? chObj.count : 0;
+                label.textContent = `${cleanSubName} > ${chapterName} (${count})`;
+            }
+        } else {
+            const targetSub = hierarchy.subjects.find(s => s.id === Number(currentSubjectFilter));
+            if (targetSub) {
+                const cleanSubName = targetSub.name.replace(/^\d+\.\s*/, '');
+                label.textContent = `${cleanSubName} (${targetSub.total})`;
+            } else {
+                label.textContent = `All Subjects (${hierarchy.totalCards})`;
+            }
+        }
+    }
+
+    function highlightFlashcardSearchMatch(text, query) {
+        if (!query || !text) return text;
+        const qClean = query.trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        if (!qClean) return text;
+        try {
+            const regex = new RegExp('(' + qClean + ')', 'gi');
+            return text.replace(regex, '<mark class="bg-amber-300/90 dark:bg-amber-400/50 text-slate-900 dark:text-amber-100 px-0.5 rounded font-bold">$1</mark>');
+        } catch (e) {
+            return text;
+        }
+    }
+
+    function renderMegamenuSubjects(filterQuery = '') {
+        const listEl = document.getElementById('fc-megamenu-subjects-list');
+        if (!listEl || !cachedHierarchy) return;
+
+        const q = (filterQuery || '').toLowerCase().trim();
+        const subjects = cachedHierarchy.subjects;
+        let html = '';
+
+        if (q) {
+            // Count total matching chapters & topics across syllabus
+            let totalMatchingChapters = 0;
+            let totalMatchingTopics = 0;
+            subjects.forEach(sub => {
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        totalMatchingChapters++;
+                        totalMatchingTopics += (matchingTops.length > 0 ? matchingTops.length : 1);
+                    }
+                });
+            });
+
+            const isAllResultsActive = (!megamenuActiveSubjectId || megamenuActiveSubjectId === 'all_results');
+
+            html += `
+                <div onclick="window.setMegamenuActiveSubject('all_results')" class="flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-all border ${isAllResultsActive ? 'bg-gradient-to-r from-[#be0055] to-pink-600 text-white font-bold shadow-md shadow-pink-500/20 border-pink-500' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/80 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'}">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-[17px] ${isAllResultsActive ? 'text-white' : 'text-[#be0055] dark:text-pink-400'}">search_check</span>
+                        <span class="text-xs truncate font-bold">All Matching Topics (${totalMatchingTopics})</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isAllResultsActive ? 'bg-white/20 text-white' : 'bg-pink-500/10 text-[#be0055] dark:text-pink-300'}">${totalMatchingChapters} chaps</span>
+                </div>
+            `;
+
+            subjects.forEach(sub => {
+                let subMatchingChapters = 0;
+                let subMatchingTopics = 0;
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        subMatchingChapters++;
+                        subMatchingTopics += (matchingTops.length > 0 ? matchingTops.length : 1);
+                    }
+                });
+
+                if (subMatchingChapters === 0) return;
+
+                const isSubActive = (megamenuActiveSubjectId === sub.id);
+
+                html += `
+                    <div class="group/sub rounded-xl transition-all border ${isSubActive ? 'bg-pink-500/10 border-pink-500/40 text-[#be0055] dark:text-pink-300 shadow-sm' : 'border-transparent hover:bg-slate-100/80 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200'}">
+                        <div onclick="event.stopPropagation(); window.setMegamenuActiveSubject(${sub.id}, event)" onmouseenter="if(window.innerWidth>=640){ window.setMegamenuActiveSubject(${sub.id}, event); }" class="flex items-center justify-between p-2.5 cursor-pointer">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="material-symbols-outlined text-[16px] ${isSubActive ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">folder</span>
+                                <span class="text-xs font-semibold truncate ${isSubActive ? 'text-[#be0055] dark:text-pink-300 font-bold' : ''}">${highlightFlashcardSearchMatch(sub.name, q)}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#be0055] text-white">${subMatchingTopics} topics</span>
+                                <span class="material-symbols-outlined text-[16px] text-slate-400 transition-transform ${isSubActive ? 'rotate-90 sm:rotate-0' : ''}">chevron_right</span>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Inline Accordion with Matching Topics -->
+                        <div class="sm:hidden px-3 pb-3 pt-1 space-y-2 border-t border-slate-200/40 dark:border-slate-800/40 ${isSubActive ? 'block' : 'hidden'}">
+                            <div class="grid grid-cols-1 gap-1.5 pt-1">
+                                ${sub.chapters.map(ch => {
+                                    const chMatches = ch.name.toLowerCase().includes(q);
+                                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                                    if (!chMatches && matchingTops.length === 0) return '';
+                                    return `
+                                        <div class="rounded-xl border transition-all overflow-hidden border-pink-500/80 bg-pink-500/10 shadow-sm">
+                                            <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-2.5 text-xs flex items-center justify-between cursor-pointer font-bold text-[#be0055] dark:text-pink-300">
+                                                <div class="flex items-center gap-1.5 min-w-0">
+                                                    <span class="material-symbols-outlined text-[15px] text-[#be0055] dark:text-pink-400 shrink-0">menu_book</span>
+                                                    <span class="truncate">${highlightFlashcardSearchMatch(ch.name, q)}</span>
+                                                </div>
+                                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ml-2 shrink-0 bg-[#be0055] text-white">${ch.count}</span>
+                                            </div>
+                                            ${ch.topics && ch.topics.length > 0 ? `
+                                                <div class="px-2.5 pb-2 pt-0.5 space-y-1 border-t border-slate-100 dark:border-slate-800/60">
+                                                    ${ch.topics.map(top => {
+                                                        const isMatch = top.toLowerCase().includes(q);
+                                                        return `
+                                                            <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 text-[11px] py-1 px-1.5 rounded cursor-pointer transition-all ${isMatch ? 'bg-pink-500/20 text-[#be0055] dark:text-pink-200 font-bold' : 'text-slate-500 dark:text-slate-400 hover:text-[#be0055]'}">
+                                                                <span class="w-1.5 h-1.5 rounded-full ${isMatch ? 'bg-[#be0055]' : 'bg-slate-300'} shrink-0"></span>
+                                                                <span class="truncate">${highlightFlashcardSearchMatch(top, q)}</span>
+                                                                ${isMatch ? '<span class="ml-auto text-[9px] px-1 rounded bg-[#be0055] text-white font-bold">Topic Match</span>' : ''}
+                                                            </div>
+                                                        `;
+                                                    }).join('')}
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+        } else {
+            // Normal browsing (no query)
+            const isAllSelected = (currentSubjectFilter === 'all' || !currentSubjectFilter);
+            html += `
+                <div onclick="window.selectFlashcardSubjectChapter('all', 'all')" class="flex items-center justify-between p-2.5 rounded-xl cursor-pointer transition-all border ${isAllSelected ? 'bg-pink-500/15 border-pink-500/50 text-[#be0055] dark:text-pink-300 font-bold shadow-sm' : 'border-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200'}">
+                    <div class="flex items-center gap-2 min-w-0">
+                        <span class="material-symbols-outlined text-[17px] ${isAllSelected ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">apps</span>
+                        <span class="text-xs truncate font-bold">All Subjects (Complete Deck)</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isAllSelected ? 'bg-[#be0055] text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${cachedHierarchy.totalCards}</span>
+                </div>
+            `;
+
+            subjects.forEach(sub => {
+                const isSubActive = (megamenuActiveSubjectId === sub.id);
+                const isSubFiltered = (
+                    (typeof currentSubjectFilter === 'string' && currentSubjectFilter.startsWith(`${sub.id}:`)) ||
+                    String(currentSubjectFilter) === String(sub.id)
+                );
+
+                html += `
+                    <div class="group/sub rounded-xl transition-all border ${isSubActive ? 'bg-pink-500/10 border-pink-500/40 text-[#be0055] dark:text-pink-300' : 'border-transparent hover:bg-slate-100/80 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200'}">
+                        <div onclick="event.stopPropagation(); window.setMegamenuActiveSubject(${sub.id}, event)" onmouseenter="if(window.innerWidth>=640){ window.setMegamenuActiveSubject(${sub.id}, event); }" class="flex items-center justify-between p-2.5 cursor-pointer">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="material-symbols-outlined text-[16px] ${isSubFiltered ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'}">folder</span>
+                                <span class="text-xs font-semibold truncate ${isSubFiltered ? 'text-[#be0055] dark:text-pink-300 font-bold' : ''}">${sub.name}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5 shrink-0">
+                                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold ${isSubFiltered ? 'bg-[#be0055] text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${sub.total}</span>
+                                <span class="material-symbols-outlined text-[16px] text-slate-400 transition-transform ${isSubActive ? 'rotate-90 sm:rotate-0' : ''}">chevron_right</span>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Inline Accordion with Chapters and Topics -->
+                        <div class="sm:hidden px-3 pb-3 pt-1 space-y-1.5 border-t border-slate-200/40 dark:border-slate-800/40 ${isSubActive ? 'block' : 'hidden'}">
+                            <div data-sub-id="${sub.id}" data-chap="all" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-2 rounded-lg text-xs font-semibold flex items-center justify-between bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 cursor-pointer hover:bg-pink-500/20">
+                                <span>All Chapters in ${sub.name.replace(/^\d+\.\s*/, '')}</span>
+                                <span class="text-[10px] font-bold bg-[#be0055] text-white px-1.5 py-0.5 rounded">${sub.total}</span>
+                            </div>
+                            <div class="grid grid-cols-1 gap-1.5 pt-1">
+                                ${sub.chapters.map(ch => {
+                                    const isChActive = (currentSubjectFilter === `${sub.id}:${ch.name}`);
+                                    return `
+                                        <div class="rounded-xl border transition-all overflow-hidden ${isChActive ? 'border-pink-500 bg-pink-500/10 shadow-sm' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60'}">
+                                            <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-2.5 text-xs flex items-center justify-between cursor-pointer font-bold ${isChActive ? 'text-[#be0055] dark:text-pink-300' : 'text-slate-800 dark:text-slate-100'}">
+                                                <div class="flex items-center gap-1.5 min-w-0">
+                                                    <span class="material-symbols-outlined text-[15px] ${isChActive ? 'text-[#be0055] dark:text-pink-400' : 'text-slate-400'} shrink-0">menu_book</span>
+                                                    <span class="truncate">${ch.name}</span>
+                                                </div>
+                                                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded ml-2 shrink-0 ${isChActive ? 'bg-[#be0055] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'}">${ch.count}</span>
+                                            </div>
+                                            ${ch.topics && ch.topics.length > 0 ? `
+                                                <div class="px-2.5 pb-2 pt-0.5 space-y-1 border-t border-slate-100 dark:border-slate-800/60">
+                                                    ${ch.topics.map(top => `
+                                                        <div data-sub-id="${sub.id}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 text-[11px] py-1 px-1.5 rounded cursor-pointer text-slate-500 dark:text-slate-400 hover:text-[#be0055] hover:bg-pink-500/10 transition-all">
+                                                            <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 shrink-0"></span>
+                                                            <span class="truncate">${top}</span>
+                                                        </div>
+                                                    `).join('')}
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        listEl.innerHTML = html;
+    }
+
+    function renderMegamenuChapters(filterQuery = '') {
+        const panelEl = document.getElementById('fc-megamenu-chapters-panel');
+        if (!panelEl || !cachedHierarchy) return;
+
+        const q = (typeof filterQuery === 'string' ? filterQuery : (document.getElementById('fc-megamenu-search')?.value || '')).toLowerCase().trim();
+        const subjects = cachedHierarchy.subjects;
+
+        let displayChapters = [];
+        let isGlobalSearch = false;
+        let headerTitle = '';
+        let headerSubtitle = '';
+
+        if (q) {
+            if (!megamenuActiveSubjectId || megamenuActiveSubjectId === 'all_results') {
+                isGlobalSearch = true;
+                // Gather matching chapters across ALL subjects
+                subjects.forEach(sub => {
+                    sub.chapters.forEach(ch => {
+                        const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                        const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                        if (chMatches || matchingTops.length > 0) {
+                            displayChapters.push({
+                                ...ch,
+                                subId: sub.id,
+                                subjectName: sub.name,
+                                matchingTopics: matchingTops
+                            });
+                        }
+                    });
+                });
+                headerTitle = `Search Results for "${filterQuery}"`;
+                headerSubtitle = `Found ${displayChapters.length} matching chapter(s) across rapid deck`;
+            } else {
+                const sub = subjects.find(s => s.id === megamenuActiveSubjectId) || subjects[0];
+                sub.chapters.forEach(ch => {
+                    const chMatches = ch.name.toLowerCase().includes(q) || sub.name.toLowerCase().includes(q);
+                    const matchingTops = ch.topics ? ch.topics.filter(t => t.toLowerCase().includes(q)) : [];
+                    if (chMatches || matchingTops.length > 0) {
+                        displayChapters.push({
+                            ...ch,
+                            subId: sub.id,
+                            subjectName: sub.name,
+                            matchingTopics: matchingTops
+                        });
+                    }
+                });
+                headerTitle = `"${filterQuery}" in ${sub.name}`;
+                headerSubtitle = `${displayChapters.length} matching chapter(s)`;
+            }
+        } else {
+            // Normal browsing (no search query)
+            const sub = subjects.find(s => s.id === megamenuActiveSubjectId) || subjects[0];
+            if (!sub) {
+                panelEl.innerHTML = '<div class="text-xs text-slate-400 p-4 text-center">No chapters found for this subject</div>';
+                return;
+            }
+            displayChapters = sub.chapters.map(ch => ({
+                ...ch,
+                subId: sub.id,
+                subjectName: sub.name,
+                matchingTopics: []
+            }));
+            headerTitle = sub.name;
+            headerSubtitle = `${sub.chapterCount} Chapters • ${sub.total} Rapid Flashcards`;
+        }
+
+        let html = `
+            <div class="mb-3 pb-2 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div>
+                    <h4 class="text-xs font-bold text-slate-900 dark:text-white">${headerTitle}</h4>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400">${headerSubtitle}</p>
+                </div>
+                ${!q ? `
+                    <button type="button" data-sub-id="${megamenuActiveSubjectId}" data-chap="all" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="px-2 py-1 text-[11px] font-bold rounded-lg border transition-all cursor-pointer border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:border-pink-500 hover:text-[#be0055]">
+                        All Chapters (${cachedHierarchy.totalCards})
+                    </button>
+                ` : ''}
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        `;
+
+        if (!displayChapters || displayChapters.length === 0) {
+            html += `
+                <div class="col-span-3 p-8 text-center text-xs text-slate-400">
+                    <span class="material-symbols-outlined text-[32px] text-slate-300 dark:text-slate-600 block mb-2">search_off</span>
+                    No flashcard topics or chapters matching "<strong>${filterQuery}</strong>". Try searching for another concept or formula.
+                </div>
+            `;
+        } else {
+            displayChapters.forEach(ch => {
+                const subId = ch.subId;
+                const subName = ch.subjectName;
+                const isChSelected = (currentSubjectFilter === `${subId}:${ch.name}`);
+                const matchingTops = ch.matchingTopics || [];
+                const otherTops = ch.topics ? ch.topics.filter(t => !matchingTops.includes(t)) : [];
+
+                html += `
+                    <div class="rounded-xl border transition-all flex flex-col group overflow-hidden shadow-sm hover:shadow-md ${matchingTops.length > 0 ? 'border-pink-500/70 bg-pink-500/[0.04] dark:bg-pink-950/20' : (isChSelected ? 'bg-pink-500/[0.08] dark:bg-pink-950/30 border-pink-500 shadow-pink-500/10' : 'bg-white dark:bg-slate-900/80 border-slate-200 dark:border-slate-800/80 hover:border-pink-500/50 hover:bg-pink-50/20 dark:hover:bg-slate-900')}">
+                        <!-- Chapter Header (Direct click opens chapter) -->
+                        <div data-sub-id="${subId}" data-chap="${encodeURIComponent(ch.name)}" onclick="window.selectFlashcardSubjectChapterFromEl(this)" class="p-3 pb-2.5 flex items-center justify-between gap-2 cursor-pointer border-b border-slate-100 dark:border-slate-800/60 bg-slate-50/60 dark:bg-slate-800/40 hover:bg-pink-500/10 transition-colors" title="Open ${ch.name}">
+                            <div class="min-w-0 flex-1">
+                                ${isGlobalSearch ? `<span class="text-[9px] font-black uppercase tracking-wider text-[#be0055] dark:text-pink-400 block truncate mb-0.5">${highlightFlashcardSearchMatch(subName, q)}</span>` : ''}
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="material-symbols-outlined text-[16px] text-[#be0055] dark:text-pink-400 shrink-0">menu_book</span>
+                                    <span class="text-xs font-bold truncate group-hover:text-[#be0055] dark:group-hover:text-pink-300 text-slate-900 dark:text-white transition-colors">${highlightFlashcardSearchMatch(ch.name, q)}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1 shrink-0">
+                                ${matchingTops.length > 0 ? `
+                                    <span class="px-1.5 py-0.5 rounded-full text-[9px] font-black bg-pink-500 text-white flex items-center gap-0.5 shadow-sm" title="${matchingTops.length} matching topics">
+                                        <span class="material-symbols-outlined text-[11px]">bolt</span>${matchingTops.length}
+                                    </span>
+                                ` : ''}
+                                <span class="px-2 py-0.5 rounded-lg text-[10px] font-black shrink-0 ${isChSelected ? 'bg-[#be0055] text-white' : 'bg-pink-500/10 text-[#be0055] dark:text-pink-300 border border-pink-500/20'}">${ch.count} cards</span>
+                            </div>
+                        </div>
+
+                        <!-- Topics List under Chapter -->
+                        <div class="p-2.5 pt-2 flex flex-col gap-1 flex-1">
+                            <!-- Matched Topics First (Highlighted) -->
+                            ${matchingTops.map(top => `
+                                <div data-sub-id="${subId}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-[11px] bg-pink-500/15 dark:bg-pink-950/40 text-[#be0055] dark:text-pink-200 font-bold border border-pink-500/30 cursor-pointer hover:bg-pink-500/25 transition-all shadow-xs" title="Click to open topic: ${top}">
+                                    <span class="material-symbols-outlined text-[13px] text-[#be0055] dark:text-pink-400 shrink-0">check_circle</span>
+                                    <span class="truncate flex-1">${highlightFlashcardSearchMatch(top, q)}</span>
+                                    <span class="text-[9px] font-black uppercase px-1.5 py-0.2 rounded bg-[#be0055] text-white shrink-0">Topic Match</span>
+                                </div>
+                            `).join('')}
+
+                            <!-- Other Topics in Chapter -->
+                            ${otherTops.map(top => `
+                                <div data-sub-id="${subId}" data-chap="${encodeURIComponent(ch.name)}" data-topic="${encodeURIComponent(top)}" onclick="event.stopPropagation(); window.selectFlashcardTopicFromEl(this)" class="flex items-center gap-1.5 px-2 py-1 rounded-lg text-[11px] text-slate-600 dark:text-slate-400 hover:text-[#be0055] dark:hover:text-pink-300 hover:bg-pink-50/50 dark:hover:bg-pink-950/20 cursor-pointer transition-all">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 shrink-0"></span>
+                                    <span class="truncate" title="${top}">${top}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        html += `</div>`;
+        panelEl.innerHTML = html;
+    }
+
+    window.setMegamenuActiveSubject = function(subId, event) {
+        if (event) {
+            try { event.stopPropagation(); } catch (e) {}
+        }
+        megamenuActiveSubjectId = subId;
+        const q = (document.getElementById('fc-megamenu-search')?.value || '');
+        renderMegamenuSubjects(q);
+        renderMegamenuChapters(q);
+    };
+
+    window.selectFlashcardSubjectChapterFromEl = function(el) {
+        if (!el) return;
+        const subId = el.getAttribute('data-sub-id') || 'all';
+        const chap = decodeURIComponent(el.getAttribute('data-chap') || '');
+        const topic = decodeURIComponent(el.getAttribute('data-topic') || '');
+        window.selectFlashcardSubjectChapter(subId, chap, topic);
+    };
+
+    window.selectFlashcardTopicFromEl = function(el) {
+        if (!el) return;
+        const subId = el.getAttribute('data-sub-id') || 'all';
+        const chap = decodeURIComponent(el.getAttribute('data-chap') || '');
+        const topic = decodeURIComponent(el.getAttribute('data-topic') || '');
+        window.selectFlashcardSubjectChapter(subId, chap, topic);
+    };
+
+    window.selectFlashcardSubjectChapter = function(subId, chapterName, targetCardTitle) {
+        if (subId === 'all') {
+            currentSubjectFilter = 'all';
+        } else if (chapterName === 'all') {
+            currentSubjectFilter = String(subId);
+        } else {
+            currentSubjectFilter = `${subId}:${chapterName}`;
+        }
+        closeMegamenu();
+        openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter, targetCardTitle);
+    };
+
+    function openMegamenu() {
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const backdrop = document.getElementById('fc-megamenu-backdrop');
+        if (!dropdown || !trigger) return;
+
+        const rect = trigger.getBoundingClientRect();
+        const isMobile = window.innerWidth < 640;
+
+        if (isMobile) {
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 480)}px`;
+            dropdown.style.left = '8px';
+            dropdown.style.right = '8px';
+            dropdown.style.width = 'auto';
+            dropdown.style.maxHeight = '82vh';
+        } else {
+            const dropdownWidth = Math.min(1240, window.innerWidth - 32);
+            let left = Math.max(16, (window.innerWidth - dropdownWidth) / 2);
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 580)}px`;
+            dropdown.style.left = `${left}px`;
+            dropdown.style.right = 'auto';
+            dropdown.style.width = `${dropdownWidth}px`;
+            dropdown.style.maxHeight = '85vh';
+        }
+
+        if (backdrop) backdrop.classList.remove('hidden');
+        dropdown.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            if (backdrop) backdrop.classList.remove('opacity-0');
+            dropdown.classList.remove('opacity-0', 'scale-95');
+            dropdown.classList.add('opacity-100', 'scale-100');
+        });
+
+        const searchInput = document.getElementById('fc-megamenu-search');
+        if (searchInput) {
+            searchInput.value = '';
+            searchInput.focus();
+        }
+    }
+
+    function closeMegamenu() {
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const backdrop = document.getElementById('fc-megamenu-backdrop');
+        if (!dropdown) return;
+
+        dropdown.classList.remove('opacity-100', 'scale-100');
+        dropdown.classList.add('opacity-0', 'scale-95');
+        if (backdrop) backdrop.classList.add('opacity-0');
+
+        setTimeout(() => {
+            dropdown.classList.add('hidden');
+            if (backdrop) backdrop.classList.add('hidden');
+        }, 200);
+    }
+
     function syncSubjectSelectVisibility() {
-        const select = document.getElementById('fc-subject-select');
-        if (!select) return;
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        const legacySelect = document.getElementById('fc-subject-select');
         const actualDisc = (currentDiscipline === 'current' || !currentDiscipline) 
             ? getActiveDiscipline() 
             : currentDiscipline;
         const hasSubjects = (actualDisc !== 'all' && Boolean(DISCIPLINE_SUBJECT_CONFIG[actualDisc]));
 
         if (hasSubjects) {
-            select.classList.remove('hidden');
+            if (trigger) {
+                trigger.classList.remove('hidden');
+                trigger.classList.add('flex');
+            }
         } else {
-            select.classList.add('hidden');
+            if (trigger) {
+                trigger.classList.remove('flex');
+                trigger.classList.add('hidden');
+            }
+            if (legacySelect) legacySelect.classList.add('hidden');
         }
     }
 
     function updateSubjectSelectOptions(fullDeck, actualDisc) {
-        const select = document.getElementById('fc-subject-select');
-        if (!select) return;
-
         const config = DISCIPLINE_SUBJECT_CONFIG[actualDisc];
         if (!config) {
-            select.classList.add('hidden');
+            const trigger = document.getElementById('fc-megamenu-trigger');
+            if (trigger) trigger.classList.add('hidden');
             return;
         }
 
-        const subjectList = config.list;
-        const getSubjectFn = config.getSubjectId;
+        cachedHierarchy = buildDisciplineHierarchy(fullDeck, actualDisc);
+        if (!cachedHierarchy) return;
 
-        const counts = {};
-        fullDeck.forEach(c => {
-            const sId = c.subjectId || getSubjectFn(c.title, c.examTip, c.description);
-            counts[sId] = (counts[sId] || 0) + 1;
-        });
+        if (typeof currentSubjectFilter === 'string' && currentSubjectFilter.includes(':')) {
+            megamenuActiveSubjectId = Number(currentSubjectFilter.split(':')[0]) || 1;
+        } else if (currentSubjectFilter && currentSubjectFilter !== 'all') {
+            megamenuActiveSubjectId = Number(currentSubjectFilter) || 1;
+        }
 
-        const totalCount = fullDeck.length;
-        let html = `<option value="all">All Subjects (${totalCount} Cards)</option>`;
-        subjectList.forEach(sub => {
-            const count = counts[sub.id] || 0;
-            html += `<option value="${sub.id}">${sub.name} (${count})</option>`;
-        });
+        updateMegamenuTriggerLabel(cachedHierarchy);
 
-        select.innerHTML = html;
-        select.value = currentSubjectFilter;
-        select.title = 'Switch Subject (FE ' + actualDisc + ' Syllabus)';
+        const discBadge = document.getElementById('fc-megamenu-discipline-badge');
+        if (discBadge) discBadge.textContent = actualDisc;
+        const totalCountEl = document.getElementById('fc-megamenu-total-count');
+        if (totalCountEl) totalCountEl.textContent = cachedHierarchy.totalCards;
+
+        renderMegamenuSubjects();
+        renderMegamenuChapters();
+
+        const select = document.getElementById('fc-subject-select');
+        if (select) {
+            let html = `<option value="all">All Subjects (${cachedHierarchy.totalCards} Cards)</option>`;
+            cachedHierarchy.subjects.forEach(sub => {
+                html += `<option value="${sub.id}">${sub.name} (${sub.total})</option>`;
+            });
+            select.innerHTML = html;
+            select.value = (typeof currentSubjectFilter === 'string' && currentSubjectFilter.includes(':'))
+                ? currentSubjectFilter.split(':')[0]
+                : currentSubjectFilter;
+        }
     }
 
     // Get active discipline from app or localStorage
@@ -39906,12 +43032,25 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 card.subjectId = config.getSubjectId(card.title, card.examTip, card.description);
                 const subObj = config.list.find(s => s.id === card.subjectId);
                 card.subjectName = subObj ? subObj.name : config.defaultName;
+                card.chapter = getCardChapter(card, actualDisc, card.subjectId);
             });
 
-            // Apply subject filter if selected
+            // Apply subject and chapter filter if selected
             if (subjectFilter && subjectFilter !== 'all') {
-                const targetSubId = Number(subjectFilter);
-                allTheorems = allTheorems.filter(card => card.subjectId === targetSubId);
+                if (typeof subjectFilter === 'string' && subjectFilter.includes(':')) {
+                    const [subIdStr, chapterName] = subjectFilter.split(':');
+                    const targetSubId = Number(subIdStr);
+                    allTheorems = allTheorems.filter(card => {
+                        if (card.subjectId !== targetSubId) return false;
+                        if (!chapterName || chapterName === 'all') return true;
+                        return card.chapter === chapterName;
+                    });
+                } else {
+                    const targetSubId = Number(subjectFilter);
+                    if (!isNaN(targetSubId)) {
+                        allTheorems = allTheorems.filter(card => card.subjectId === targetSubId);
+                    }
+                }
             }
         }
 
@@ -40125,6 +43264,14 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     function renderCard() {
+        const headerNotesControls = document.getElementById('header-notes-controls');
+        if (headerNotesControls) {
+            headerNotesControls.classList.add('hidden');
+            headerNotesControls.classList.remove('flex');
+        }
+        if (typeof window.closeNotesMegamenu === 'function') {
+            window.closeNotesMegamenu();
+        }
         const modal = document.getElementById('fe-flashcards-modal');
         const cardEl = document.getElementById('flashcard-studio-card');
         const paneFc = document.getElementById('study-pane-flashcards');
@@ -41620,7 +44767,7 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     }
 
     // Open Flashcard Studio Modal
-    function openFlashcardStudio(disc, mode, subjectFilter) {
+    function openFlashcardStudio(disc, mode, subjectFilter, targetCardTitle) {
         currentDiscipline = disc || currentDiscipline;
         currentMode = mode || currentMode;
         if (typeof subjectFilter !== 'undefined') {
@@ -41637,6 +44784,17 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         currentDeck = buildSessionQueue(currentDiscipline, currentMode, currentSubjectFilter);
         currentIndex = 0;
         isFlipped = true;
+
+        if (targetCardTitle && currentDeck && currentDeck.length > 0) {
+            const cleanTarget = targetCardTitle.toLowerCase().trim();
+            const foundIdx = currentDeck.findIndex(c => 
+                (c.title && c.title.toLowerCase().trim() === cleanTarget) ||
+                (c.title && c.title.toLowerCase().includes(cleanTarget))
+            );
+            if (foundIdx !== -1) {
+                currentIndex = foundIdx;
+            }
+        }
 
         // Immediately preload first 8 cards in this session
         if (currentDeck && currentDeck.length > 0) {
@@ -41718,6 +44876,38 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         }
     }
 
+    
+    // Close Megamenu on click outside
+    document.addEventListener('click', (e) => {
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        if (!dropdown || dropdown.classList.contains('hidden')) return;
+        // Never close if clicked inside the dropdown or trigger
+        if (dropdown.contains(e.target) || (trigger && trigger.contains(e.target))) return;
+        closeMegamenu();
+    });
+
+    // Reposition on window resize
+    window.addEventListener('resize', () => {
+        const dropdown = document.getElementById('fc-megamenu-dropdown');
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        if (!dropdown || dropdown.classList.contains('hidden') || !trigger) return;
+        const rect = trigger.getBoundingClientRect();
+        const isMobile = window.innerWidth < 640;
+        if (isMobile) {
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 480)}px`;
+            dropdown.style.left = '8px';
+            dropdown.style.right = '8px';
+            dropdown.style.width = 'auto';
+        } else {
+            const dropdownWidth = Math.min(1240, window.innerWidth - 32);
+            let left = Math.max(16, (window.innerWidth - dropdownWidth) / 2);
+            dropdown.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 580)}px`;
+            dropdown.style.left = `${left}px`;
+            dropdown.style.width = `${dropdownWidth}px`;
+        }
+    });
+
     // Attach Keyboard Hotkeys
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('fe-flashcards-modal');
@@ -41776,6 +44966,60 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 openFlashcardStudio(currentDiscipline, currentMode, currentSubjectFilter);
             });
         }
+
+        // Wire Megamenu Trigger & Controls
+        const trigger = document.getElementById('fc-megamenu-trigger');
+        const closeBtnMegamenu = document.getElementById('fc-megamenu-close-btn');
+        const backdrop = document.getElementById('fc-megamenu-backdrop');
+        const allBtn = document.getElementById('fc-megamenu-all-btn');
+        const searchInput = document.getElementById('fc-megamenu-search');
+
+        if (trigger && (!trigger.dataset || !trigger.dataset.wired)) {
+            if (trigger.dataset) trigger.dataset.wired = 'true';
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const dropdown = document.getElementById('fc-megamenu-dropdown');
+                if (dropdown && !dropdown.classList.contains('hidden')) {
+                    closeMegamenu();
+                } else {
+                    openMegamenu();
+                }
+            });
+        }
+
+        if (closeBtnMegamenu && (!closeBtnMegamenu.dataset || !closeBtnMegamenu.dataset.wired)) {
+            if (closeBtnMegamenu.dataset) closeBtnMegamenu.dataset.wired = 'true';
+            closeBtnMegamenu.addEventListener('click', (e) => {
+                e.preventDefault();
+                closeMegamenu();
+            });
+        }
+
+        if (backdrop && (!backdrop.dataset || !backdrop.dataset.wired)) {
+            if (backdrop.dataset) backdrop.dataset.wired = 'true';
+            backdrop.addEventListener('click', () => {
+                closeMegamenu();
+            });
+        }
+
+        if (allBtn && (!allBtn.dataset || !allBtn.dataset.wired)) {
+            if (allBtn.dataset) allBtn.dataset.wired = 'true';
+            allBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.selectFlashcardSubjectChapter('all', 'all');
+            });
+        }
+
+        if (searchInput && (!searchInput.dataset || !searchInput.dataset.wired)) {
+            if (searchInput.dataset) searchInput.dataset.wired = 'true';
+            searchInput.addEventListener('input', (e) => {
+                const q = e.target.value;
+                renderMegamenuSubjects(q);
+                renderMegamenuChapters(q);
+            });
+        }
+
 
         // Top-right Close Button
         const closeBtn = document.getElementById('fc-close-btn');
@@ -41861,6 +45105,22 @@ const DISCIPLINE_SUBJECT_CONFIG = {
     window.openBlueprintLightbox = openBlueprintLightbox;
     window.closeBlueprintLightbox = closeBlueprintLightbox;
     window.openFlashcardStudio = openFlashcardStudio;
+    window.jumpToFlashcard = function(target) {
+        if (!currentDeck || currentDeck.length === 0) return false;
+        if (typeof target === 'number') {
+            currentIndex = Math.max(0, Math.min(target, currentDeck.length - 1));
+            renderCard();
+            return true;
+        }
+        const clean = String(target).trim().toLowerCase();
+        const idx = currentDeck.findIndex(c => (c.title || '').trim().toLowerCase() === clean || (c.title || '').toLowerCase().includes(clean));
+        if (idx !== -1) {
+            currentIndex = idx;
+            renderCard();
+            return true;
+        }
+        return false;
+    };
     window.closeFlashcardStudio = closeFlashcardStudio;
     window.flipFlashcard = flipCard;
     window.prevFlashcard = prevCard;

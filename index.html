@@ -154,14 +154,14 @@
         }
     </script>
     <!-- TopAppBar Section -->
-<header id="main-header" class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm docked full-width top-0 z-50 fixed w-full">
+<header id="main-header" class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm docked full-width top-0 z-[10070] fixed w-full">
 <div class="flex justify-between items-center w-full px-3 sm:px-5 py-2 sm:py-2.5 gap-2 sm:gap-4">
     <!-- Left: Avatar + Logo -->
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <div id="header-avatar-container" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-primary-container shrink-0">
+        <div id="header-avatar-container" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-primary-container shrink-0">
             <img id="header-avatar-img" class="w-full h-full object-cover" data-alt="Portrait of a young male engineering student with a friendly expression in a modern bright setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe2S82u2sZJ3xmW3cB9zBfpog-Qu3ypJ-ZTjq6ymCTfI96k-XIcFqQH3_f-tnsCfhMQ8xlR31x9mShYD9i8-wV6691uWOysJOwRmYJOT1Ri-FqPpcoLhpq1mI6oavBfjrHajem7t3UOUFVx768eyERSx9s7OsNOezurrmnjosEF6xlDNMD4mV6KEGawwDBhd8IsqV63tn97lLQ5B0aCocCRUAL3iKJJLR_byQT4Dg_BIwq5vtnwpwp3QJNAE0FMVnXpM1IfkQKccq4"/>
         </div>
-        <div class="h-8 sm:h-9 w-28 sm:w-36 flex items-center justify-start shrink-0">
+        <div class="h-7 sm:h-9 w-20 sm:w-36 flex items-center justify-start shrink-0">
             <img class="h-full w-full object-contain" src="engg_tv_logo.png" alt="Engg.tv Logo"/>
         </div>
         <h1 id="page-title" class="hidden font-headline-md text-headline-md text-on-surface">Dashboard</h1>
@@ -188,11 +188,12 @@
 
         <!-- Tab Set 2: Study (Study Notes vs Rapid Flashcards) -->
         <div id="header-tabs-notes" class="header-tab-bar hidden items-center gap-1 sm:gap-2 max-w-full overflow-x-auto no-scrollbar">
-            <!-- Mode Switcher Pill -->
+            <!-- Merged Mode Switcher Pill: Study Notes (Megamenu Trigger) + Rapid Flashcards -->
             <div class="flex items-center p-0.5 sm:p-1 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800 shadow-sm gap-0.5 sm:gap-1 bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-md shrink-0">
-                <button id="study-tab-btn-notes" onclick="window.switchStudyMode('notes')" class="study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm whitespace-nowrap" type="button">
+                <button id="study-tab-btn-notes" onclick="window.onStudyNotesTabClick && window.onStudyNotesTabClick(event)" class="study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm whitespace-nowrap group" type="button" title="Browse Study Notes Syllabus">
                     <span class="material-symbols-outlined text-[15px] sm:text-[17px]">menu_book</span>
-                    <span>Study Notes</span>
+                    <span id="study-notes-btn-text">Study Notes</span>
+                    <span class="material-symbols-outlined text-[14px] sm:text-[15px] opacity-80 group-hover:translate-y-0.5 transition-transform">expand_more</span>
                 </button>
                 <button id="study-tab-btn-flashcards" onclick="window.switchStudyMode('flashcards')" class="study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white/40 dark:hover:bg-slate-800/40 whitespace-nowrap" type="button">
                     <span class="material-symbols-outlined text-[15px] sm:text-[17px]">style</span>
@@ -200,34 +201,27 @@
                 </button>
             </div>
 
-            <!-- Flashcard Controls Toolbar in Persistent Top Bar (Moved from above video to maximize real estate) -->
+            <!-- Hidden container for JS backward compatibility -->
+            <div id="header-notes-controls" class="hidden"></div>
+            <select id="notes-discipline-select" class="hidden"><option value="Mechanical">Mechanical</option></select>
+            <div id="notes-megamenu-container" class="hidden">
+                <button id="notes-megamenu-trigger" class="hidden"><span id="notes-megamenu-label">All Subjects</span></button>
+            </div>
+
             <div id="header-fc-controls" class="hidden items-center gap-1 sm:gap-1.5 shrink-0">
-                <!-- Discipline Selector -->
-                <select id="fc-discipline-select" class="text-[10px] sm:text-xs bg-white dark:bg-slate-800/90 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700/80 rounded-xl px-2 py-1 font-bold cursor-pointer focus:outline-none focus:border-purple-500 transition-colors shadow-sm">
-                    <option value="current">Current Discipline</option>
-                    <option value="Mechanical">Mechanical</option>
-                    <option value="Civil">Civil</option>
-                    <option value="Electrical and Computer">Electrical & Computer</option>
-                    <option value="Chemical">Chemical</option>
-                    <option value="Industrial">Industrial</option>
-                    <option value="Environmental">Environmental</option>
-                    <option value="Other">Other Disciplines</option>
-                </select>
-
-                <!-- Subject Selector -->
-                <select id="fc-subject-select" class="hidden text-[10px] sm:text-xs bg-white dark:bg-slate-800/90 text-purple-700 dark:text-purple-200 border border-purple-300 dark:border-purple-500/40 rounded-xl px-2 py-1 font-bold cursor-pointer focus:outline-none focus:border-purple-400 transition-colors max-w-[150px] sm:max-w-[190px] truncate shadow-sm" title="Switch Subject (FE Syllabus)">
-                    <option value="all">All Subjects</option>
-                </select>
-
-                <!-- Progress Pill -->
+                <select id="fc-discipline-select" class="hidden"><option value="current">Current Discipline</option></select>
+                <div id="fc-megamenu-container" class="relative inline-flex items-center">
+                    <button id="fc-megamenu-trigger" type="button" class="hidden items-center gap-1.5 px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-bold rounded-xl border border-pink-500/40 bg-white dark:bg-slate-800/90 text-pink-600 dark:text-pink-300 hover:border-pink-500 hover:bg-pink-50 dark:hover:bg-pink-950/30 transition-all cursor-pointer shadow-sm max-w-[170px] sm:max-w-[270px] truncate group" title="Browse by Subject & Chapter (FE Syllabus)">
+                        <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-[#be0055] dark:text-pink-400 shrink-0 group-hover:scale-110 transition-transform">category</span>
+                        <span id="fc-megamenu-label" class="truncate font-semibold text-slate-800 dark:text-slate-100">All Subjects (421)</span>
+                        <span class="material-symbols-outlined text-[14px] sm:text-[15px] text-slate-400 shrink-0 ml-auto group-hover:translate-y-0.5 transition-transform">expand_more</span>
+                    </button>
+                    <select id="fc-subject-select" class="hidden"><option value="all">All Subjects</option></select>
+                </div>
                 <span id="fc-progress-text" class="text-[10px] sm:text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 px-2 sm:px-2.5 py-1 rounded-xl whitespace-nowrap shadow-sm">Card 1 of 419</span>
-
-                <!-- Shuffle Button -->
                 <button id="fc-shuffle-btn" onclick="window.shuffleFlashcards && window.shuffleFlashcards()" class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-purple-600/30 text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-300 flex items-center justify-center transition-colors cursor-pointer shrink-0 border border-slate-200 dark:border-slate-700/80 shadow-sm" title="Shuffle Cards">
                     <span class="material-symbols-outlined text-[15px] sm:text-[17px]">shuffle</span>
                 </button>
-
-                <!-- Hidden Mode select for JS backward compatibility -->
                 <select id="fc-mode-select" class="hidden"><option value="recall">Formula Recall</option><option value="identify">Formula Identifier</option></select>
             </div>
         </div>
@@ -250,11 +244,38 @@
 
     </div>
 
-    <!-- Right: Cloud Sync Status Indicator -->
-    <div id="cloud-sync-indicator" class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-xs font-semibold cursor-default transition-all duration-300 shadow-sm shrink-0" title="Progress is saved locally in your browser.">
-        <span id="sync-icon" class="material-symbols-outlined text-[16px] text-slate-400 dark:text-slate-500">cloud_off</span>
-        <span id="sync-text" class="hidden sm:inline text-[10px] tracking-wider uppercase font-bold text-slate-500 dark:text-slate-400">Offline</span>
-        <span id="sync-dot" class="w-2.5 h-2.5 rounded-full border border-white dark:border-slate-800 bg-slate-400 dark:bg-slate-600 transition-all duration-300"></span>
+        <!-- Right: Global Utilities (Discipline, Total Points, Dark Mode Toggle, Cloud Sync) -->
+    <div id="header-utilities-container" class="flex items-center gap-1 sm:gap-2 shrink-0">
+        <!-- Changing Discipline (Global) -->
+        <div class="relative inline-flex items-center">
+            <select id="header-discipline-select" onchange="window.setAppDiscipline && window.setAppDiscipline(this.value, this)" class="text-[10px] sm:text-xs bg-white dark:bg-slate-800/95 text-slate-800 dark:text-slate-100 border border-slate-300/80 dark:border-slate-700/80 rounded-xl px-1.5 sm:px-2 py-1 font-bold cursor-pointer focus:outline-none focus:border-primary transition-all shadow-sm max-w-[85px] sm:max-w-[130px] md:max-w-[150px] truncate" title="Change FE Discipline">
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Electrical and Computer">Electrical & Computer</option>
+                <option value="Chemical">Chemical</option>
+                <option value="Industrial">Industrial</option>
+                <option value="Environmental">Environmental</option>
+                <option value="Other">Other Disciplines</option>
+            </select>
+        </div>
+
+        <!-- Total Points Badge -->
+        <div id="header-points-badge" onclick="navigateTo && navigateTo('achievements-view')" class="flex items-center gap-1 px-1.5 sm:px-2.5 py-1 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-[10px] sm:text-xs font-bold cursor-pointer hover:bg-amber-500/20 active:scale-95 transition-all shadow-sm shrink-0" title="Total Points - Click to view Achievements & Leaderboard">
+            <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-amber-500" style="font-variation-settings:'FILL' 1;">stars</span>
+            <span id="header-points-count" class="font-bold">0</span><span class="hidden sm:inline font-bold text-[10px] sm:text-xs">&nbsp;pts</span>
+        </div>
+
+        <!-- Dark Mode Toggle -->
+        <button id="header-theme-toggle" type="button" onclick="window.toggleDarkMode && window.toggleDarkMode()" class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700/80 flex items-center justify-center text-slate-700 dark:text-slate-200 transition-all cursor-pointer shadow-sm active:scale-90 shrink-0" title="Toggle Light / Dark Mode" aria-label="Toggle Light / Dark Mode">
+            <span id="header-theme-icon" class="material-symbols-outlined text-[15px] sm:text-[17px]">dark_mode</span>
+        </button>
+
+        <!-- Cloud Sync Status Indicator -->
+        <div id="cloud-sync-indicator" class="hidden md:flex items-center gap-1.5 px-2 sm:px-2.5 py-1 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-xs font-semibold cursor-default transition-all duration-300 shadow-sm shrink-0" title="Progress is saved locally in your browser.">
+            <span id="sync-icon" class="material-symbols-outlined text-[15px] text-slate-400 dark:text-slate-500">cloud_off</span>
+            <span id="sync-text" class="hidden lg:inline text-[10px] tracking-wider uppercase font-bold text-slate-500 dark:text-slate-400">Offline</span>
+            <span id="sync-dot" class="w-2 h-2 rounded-full border border-white dark:border-slate-800 bg-slate-400 dark:bg-slate-600 transition-all duration-300"></span>
+        </div>
     </div>
 </div>
 <script>
@@ -275,7 +296,7 @@
         }
 
         if (notesTabs) {
-            if (pageId === 'notes') {
+            if (pageId === 'notes' || pageId === 'notes-content-view') {
                 notesTabs.classList.remove('hidden');
                 notesTabs.classList.add('flex');
             } else {
@@ -313,19 +334,73 @@
 </script>
 </div>
 <!-- Persistent Study Notes Bar (Subject, Chapter & Back Arrow) -->
-<div id="notes-header-subbar" class="hidden border-t border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 sm:px-6 py-2.5 items-center gap-3 transition-all shadow-sm">
-    <button id="notes-header-back-btn" type="button" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center transition-all shrink-0 cursor-pointer shadow-sm active:scale-95 border border-slate-200 dark:border-slate-700" title="Back to Study Notes">
-        <span class="material-symbols-outlined text-slate-700 dark:text-slate-200 text-[20px]">arrow_back</span>
+<div id="notes-header-subbar" class="hidden border-t border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-3 sm:px-5 py-2 sm:py-2.5 items-center gap-2 sm:gap-3 transition-all shadow-sm">
+    <button id="notes-header-back-btn" type="button" onclick="navigateTo && navigateTo('notes')" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center transition-all shrink-0 cursor-pointer shadow-sm active:scale-95 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200" title="Back to Study Notes">
+        <span class="material-symbols-outlined text-[18px] sm:text-[20px]">arrow_back</span>
     </button>
-    <div class="min-w-0 flex-1">
-        <span id="notes-header-subject" class="font-label-caps text-label-caps text-amber-500 dark:text-amber-400 uppercase tracking-wider block truncate text-[11px] font-bold">Subject</span>
-        <h2 id="notes-header-title" class="font-title-lg text-title-lg text-slate-900 dark:text-slate-100 truncate font-bold text-sm sm:text-base leading-tight">Chapter Name</h2>
+    <div class="min-w-0 flex-1 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+            <span id="notes-header-subject" class="font-label-caps text-label-caps text-amber-500 dark:text-amber-400 uppercase tracking-wider block truncate text-[10px] sm:text-[11px] font-bold">Subject</span>
+            <h2 id="notes-header-title" class="font-title-lg text-title-lg text-slate-900 dark:text-slate-100 truncate font-bold text-xs sm:text-sm md:text-base leading-tight">Chapter Name</h2>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+            <button id="notes-subbar-browse-btn" type="button" onclick="event.stopPropagation(); window.openNotesMegamenu && window.openNotesMegamenu()" class="flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-xl text-[11px] sm:text-xs font-bold border border-pink-500/40 bg-pink-500/10 text-[#be0055] dark:text-pink-300 hover:bg-pink-500/20 transition-all cursor-pointer shadow-sm" title="Browse other chapters in syllabus">
+                <span class="material-symbols-outlined text-[15px] sm:text-[16px]">menu_book</span>
+                <span class="hidden sm:inline">Browse Syllabus</span>
+                <span class="sm:hidden">Chapters</span>
+            </button>
+        </div>
     </div>
 </div>
     <!-- Persistent Top Bar Flashcard Session Progress Bar -->
     <div id="header-fc-progress-container" class="hidden absolute bottom-0 left-0 right-0 h-1 bg-slate-200/80 dark:bg-slate-800/80 overflow-hidden">
         <div id="fc-session-progress-bar" class="bg-gradient-to-r from-purple-500 via-indigo-500 to-[#FF006E] h-full transition-all duration-300" style="width: 1%"></div>
     </div>
+
+<script>
+    // Theme Manager
+    window.syncDarkModeUI = function(isDark) {
+        if (typeof isDark === 'undefined') {
+            isDark = document.documentElement.classList.contains('dark') || document.body.classList.contains('dark-theme');
+        }
+        var icon = document.getElementById('header-theme-icon');
+        var btn = document.getElementById('header-theme-toggle');
+        if (icon) {
+            icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        }
+        if (btn) {
+            btn.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        }
+        var toggleDark = document.getElementById('toggle-dark-mode');
+        if (toggleDark && toggleDark.checked !== isDark) {
+            toggleDark.checked = isDark;
+        }
+    };
+
+    window.toggleDarkMode = function() {
+        var isCurrentlyDark = document.documentElement.classList.contains('dark') || document.body.classList.contains('dark-theme');
+        var newDark = !isCurrentlyDark;
+        if (newDark) {
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('enggtv_theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('enggtv_theme', 'light');
+        }
+        window.syncDarkModeUI(newDark);
+    };
+
+    // Initialize Header Discipline and Theme on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+        var savedDisc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+        var discSelect = document.getElementById('header-discipline-select');
+        if (discSelect) discSelect.value = savedDisc;
+        window.syncDarkModeUI();
+    });
+</script>
+
 </header>
     <main class="px-3 sm:px-4 md:px-6 lg:px-8 xl:px-12 pt-20 pb-28 flex flex-col gap-stack-lg w-full max-w-xl md:max-w-4xl lg:max-w-[96vw] xl:max-w-[94vw] 2xl:max-w-[1650px] mx-auto overflow-x-hidden">
         <section id="dashboard" class="page active">
@@ -1055,14 +1130,9 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                 <section id="notes" class="page">
             
 
-            <!-- PANE 1: STUDY NOTES & HANDBOOKS -->
+            <!-- PANE 1: STUDY NOTES & HANDBOOKS (Clean canvas - navigation via top menu) -->
             <div id="study-pane-notes" class="w-full transition-opacity duration-200">
-                <div class="mb-stack-lg mt-2 min-w-0">
-                    <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider mb-stack-sm block">Study Material</span>
-                    <h1 id="notes-page-title" class="font-display-lg text-display-lg text-on-surface dark:text-slate-100 leading-tight break-words">Mechanical Notes</h1>
-                    <p id="notes-page-desc" class="font-body-sm text-body-sm text-on-surface-variant dark:text-slate-400 mt-2 break-words">Comprehensive study notes and formulas for Mechanical Engineering.</p>
-                </div>
-                <div id="notes-subject-list" class="flex flex-col gap-6"></div>
+                <div id="notes-subject-list" class="w-full"></div>
             </div>
 
             <!-- PANE 2: FE RAPID FLASHCARDS PAGE -->
@@ -1314,8 +1384,68 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
         <!-- Segmented Study Mode Switcher Controller Script -->
         <script>
             // Segmented Study Mode Switcher: Study Notes is the absolute default
+            window.onStudyNotesTabClick = function(event) {
+                if (event) {
+                    try { event.stopPropagation(); } catch (e) {}
+                }
+                var activePage = document.querySelector('section.page.active');
+                var activePageId = activePage ? activePage.id : '';
+                if (activePageId !== 'notes' && activePageId !== 'notes-content-view') {
+                    if (typeof window.navigateTo === 'function') {
+                        window.navigateTo('notes');
+                    }
+                }
+                if (typeof window.switchStudyMode === 'function') {
+                    window.switchStudyMode('notes');
+                }
+                var dropdown = document.getElementById('notes-megamenu-dropdown');
+                if (dropdown && !dropdown.classList.contains('hidden')) {
+                    if (typeof window.closeNotesMegamenu === 'function') {
+                        window.closeNotesMegamenu();
+                    }
+                } else {
+                    if (typeof window.openNotesMegamenu === 'function') {
+                        window.openNotesMegamenu();
+                    }
+                }
+            };
+
             window.switchStudyMode = function(mode) {
                 if (mode !== 'flashcards') mode = 'notes';
+
+                // If switching to flashcards, ensure the active page transitions to section#notes (e.g. from notes-content-view)
+                if (mode === 'flashcards') {
+                    var activePage = document.querySelector('section.page.active');
+                    if (activePage && activePage.id !== 'notes') {
+                        var pages = document.querySelectorAll('.page');
+                        pages.forEach(function(p) {
+                            p.classList.remove('active');
+                            if (p.id === 'notes') p.classList.add('active');
+                        });
+                        var notesSubbar = document.getElementById('notes-header-subbar');
+                        if (notesSubbar) {
+                            notesSubbar.classList.add('hidden');
+                            notesSubbar.classList.remove('flex');
+                        }
+                        document.body.classList.remove('notes-view-active');
+                        if (typeof window.updateHeaderContextualTabs === 'function') {
+                            window.updateHeaderContextualTabs('notes');
+                        }
+                        var allNavLinks = document.querySelectorAll('.nav-links li, #bottom-nav li');
+                        allNavLinks.forEach(function(link) {
+                            var targetPage = link.getAttribute('data-page');
+                            if (targetPage === 'notes') {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                        window.scrollTo(0, 0);
+                    }
+                    if (typeof window.closeNotesMegamenu === 'function') {
+                        window.closeNotesMegamenu();
+                    }
+                }
                 
                 var btnNotes = document.getElementById('study-tab-btn-notes');
                 var btnFc = document.getElementById('study-tab-btn-flashcards');
@@ -1323,10 +1453,11 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                 var paneFc = document.getElementById('study-pane-flashcards');
                 var headerFcControls = document.getElementById('header-fc-controls');
                 var headerFcProgress = document.getElementById('header-fc-progress-container');
+                var headerNotesControls = document.getElementById('header-notes-controls');
 
                 if (btnNotes && btnFc) {
                     if (mode === 'notes') {
-                        btnNotes.className = 'study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm whitespace-nowrap';
+                        btnNotes.className = 'study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm whitespace-nowrap group';
                         btnFc.className = 'study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white/40 dark:hover:bg-slate-800/40 whitespace-nowrap';
                         if (headerFcControls) {
                             headerFcControls.classList.add('hidden');
@@ -1335,15 +1466,29 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                         if (headerFcProgress) {
                             headerFcProgress.classList.add('hidden');
                         }
+                        if (headerNotesControls) {
+                            headerNotesControls.classList.add('hidden');
+                            headerNotesControls.classList.remove('flex');
+                        }
+                        if (typeof window.closeMegamenu === 'function') {
+                            window.closeMegamenu();
+                        }
                     } else {
                         btnFc.className = 'study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-white bg-primary shadow-sm whitespace-nowrap';
-                        btnNotes.className = 'study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white/40 dark:hover:bg-slate-800/40 whitespace-nowrap';
+                        btnNotes.className = 'study-tab-btn flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition-all cursor-pointer text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:bg-white/40 dark:hover:bg-slate-800/40 whitespace-nowrap group';
                         if (headerFcControls) {
                             headerFcControls.classList.remove('hidden');
                             headerFcControls.classList.add('flex');
                         }
                         if (headerFcProgress) {
                             headerFcProgress.classList.remove('hidden');
+                        }
+                        if (headerNotesControls) {
+                            headerNotesControls.classList.add('hidden');
+                            headerNotesControls.classList.remove('flex');
+                        }
+                        if (typeof window.closeNotesMegamenu === 'function') {
+                            window.closeNotesMegamenu();
                         }
                     }
                 }
@@ -2253,11 +2398,28 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="js/data-manager.js?v=5"></script>
     <script src="questions_common.js?v=4"></script>
     <script src="js/questions-loader.js?v=4"></script>
-    <script src="notes.js?v=107" defer></script>
+    <script src="js/notes-loader.js?v=2"></script>
     <script src="advanced_questions.js?v=3" defer></script>
     <script src="exam_questions.js?v=3" defer></script>
+    <script>
+        // High-performance background idle loader for solved problems
+        window.loadSolvedProblemsData = function() {
+            if (window.__spLoaded || window.__spLoading) return;
+            window.__spLoading = true;
+            const s = document.createElement('script');
+            s.src = 'js/solved-problems-data.js?v=4';
+            s.async = true;
+            s.onload = () => { window.__spLoaded = true; delete window.__spLoading; };
+            document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => setTimeout(window.loadSolvedProblemsData, 600), { timeout: 2500 });
+        } else {
+            setTimeout(window.loadSolvedProblemsData, 1000);
+        }
+    </script>
     <script src="js/particles.js"></script>
-    <script src="app.js?v=179"></script>
+    <script src="app.js?v=173"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -2295,7 +2457,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=257').then(registration => {
+          navigator.serviceWorker.register('./sw.js?v=260').then(registration => {
             registration.update();
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, err => {
@@ -2860,6 +3022,105 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
             </div>
         </div>
     </div>
+
+    <!-- FE Rapid Flashcard Subject & Chapter Megamenu Flyout (Option A) -->
+    <div id="fc-megamenu-backdrop" class="hidden opacity-0 fixed inset-0 z-[10055] bg-black/50 backdrop-blur-[2px] transition-opacity duration-200"></div>
+    <div id="fc-megamenu-dropdown" onclick="event.stopPropagation()" class="hidden opacity-0 scale-95 fixed z-[10060] w-[96vw] max-w-[1240px] bg-white/95 dark:bg-[#0c1222]/95 backdrop-blur-2xl border border-pink-500/30 rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col transition-all duration-200">
+        <!-- Top Header -->
+        <div class="px-4 py-3 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-50/80 dark:bg-slate-900/80 flex items-center justify-between gap-3 shrink-0">
+            <div class="flex items-center gap-2.5 min-w-0">
+                <span class="w-8 h-8 rounded-xl bg-pink-500/10 text-[#be0055] dark:text-pink-400 flex items-center justify-center shrink-0 border border-pink-500/20">
+                    <span class="material-symbols-outlined text-[19px]">account_tree</span>
+                </span>
+                <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                        <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">FE Rapid Flashcard Syllabus</h3>
+                        <span id="fc-megamenu-discipline-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/15 text-[#be0055] dark:text-pink-300 border border-pink-500/30 shrink-0">Mechanical</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Select a subject or chapter to focus your rapid card review</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="fc-megamenu-all-btn" type="button" class="px-2.5 py-1 text-[11px] font-bold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:border-pink-500 hover:text-[#be0055] dark:hover:text-pink-400 transition-colors cursor-pointer shadow-sm">
+                    Show All (<span id="fc-megamenu-total-count">421</span>)
+                </button>
+                <button id="fc-megamenu-close-btn" type="button" class="w-7 h-7 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 flex items-center justify-center transition-colors cursor-pointer" title="Close (Esc)">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Live Search Bar -->
+        <div class="px-4 py-2 border-b border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900/40">
+            <div class="relative flex items-center">
+                <span class="material-symbols-outlined absolute left-2.5 text-[16px] text-slate-400 pointer-events-none">search</span>
+                <input id="fc-megamenu-search" type="text" placeholder="Search topics, chapters, or formulas (e.g. Kinetic Friction, Bernoulli, Laplace, Carnot)..." class="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-100 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 rounded-xl border border-slate-200 dark:border-slate-700/60 focus:outline-none focus:border-pink-500 dark:focus:border-pink-500 transition-colors placeholder:text-slate-400">
+            </div>
+        </div>
+
+        <!-- Body: Two-Column Flyout for Desktop / Accordion for Mobile -->
+        <div class="flex-1 flex flex-col sm:flex-row overflow-hidden max-h-[70vh] sm:max-h-[540px]">
+            <!-- Left: Subjects List Rail -->
+            <div id="fc-megamenu-subjects-list" class="w-full sm:w-[32%] lg:w-[28%] border-b sm:border-b-0 sm:border-r border-slate-200 dark:border-slate-800 overflow-y-auto p-2 space-y-1">
+                <!-- Dynamically populated -->
+            </div>
+
+            <!-- Right: Chapters Panel -->
+            <div id="fc-megamenu-chapters-panel" class="hidden sm:flex sm:w-[68%] lg:w-[72%] flex-col overflow-y-auto p-3.5 bg-slate-50/50 dark:bg-slate-950/40">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FE Study Notes Subject & Chapter Megamenu Flyout -->
+    <div id="notes-megamenu-backdrop" class="hidden opacity-0 fixed inset-0 z-[10055] bg-black/50 backdrop-blur-[2px] transition-opacity duration-200"></div>
+    <div id="notes-megamenu-dropdown" onclick="event.stopPropagation()" class="hidden opacity-0 scale-95 fixed z-[10060] w-[96vw] max-w-[1240px] bg-white/95 dark:bg-[#0c1222]/95 backdrop-blur-2xl border border-pink-500/30 rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col transition-all duration-200">
+        <!-- Top Header -->
+        <div class="px-4 py-3 border-b border-slate-200/80 dark:border-slate-800/80 bg-slate-50/80 dark:bg-slate-900/80 flex items-center justify-between gap-3 shrink-0">
+            <div class="flex items-center gap-2.5 min-w-0">
+                <span class="w-8 h-8 rounded-xl bg-pink-500/10 text-[#be0055] dark:text-pink-400 flex items-center justify-center shrink-0 border border-pink-500/20">
+                    <span class="material-symbols-outlined text-[19px]">menu_book</span>
+                </span>
+                <div class="min-w-0">
+                    <div class="flex items-center gap-2">
+                        <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">FE Study Notes Syllabus</h3>
+                        <span id="notes-megamenu-discipline-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/15 text-[#be0055] dark:text-pink-300 border border-pink-500/30 shrink-0">Mechanical</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 truncate">Select a subject or chapter to browse study notes & formulas</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button id="notes-megamenu-all-btn" type="button" class="px-2.5 py-1 text-[11px] font-bold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:border-pink-500 hover:text-[#be0055] dark:hover:text-pink-400 transition-colors cursor-pointer shadow-sm">
+                    Show All (<span id="notes-megamenu-total-count">0</span>)
+                </button>
+                <button id="notes-megamenu-close-btn" type="button" class="w-7 h-7 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 flex items-center justify-center transition-colors cursor-pointer" title="Close (Esc)">
+                    <span class="material-symbols-outlined text-[18px]">close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Live Search Bar -->
+        <div class="px-4 py-2 border-b border-slate-200/60 dark:border-slate-800/60 bg-white dark:bg-slate-900/40">
+            <div class="relative flex items-center">
+                <span class="material-symbols-outlined absolute left-2.5 text-[16px] text-slate-400 pointer-events-none">search</span>
+                <input id="notes-megamenu-search" type="text" placeholder="Search topics, chapters, or formulas (e.g. Kinetic Friction, Bernoulli, Laplace, Carnot)..." class="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-100 dark:bg-slate-800/80 text-slate-800 dark:text-slate-100 rounded-xl border border-slate-200 dark:border-slate-700/60 focus:outline-none focus:border-pink-500 dark:focus:border-pink-500 transition-colors placeholder:text-slate-400">
+            </div>
+        </div>
+
+        <!-- Body: Two-Column Flyout for Desktop / Accordion for Mobile -->
+        <div class="flex-1 flex flex-col sm:flex-row overflow-hidden max-h-[70vh] sm:max-h-[540px]">
+            <!-- Left: Subjects List Rail -->
+            <div id="notes-megamenu-subjects-list" class="w-full sm:w-[32%] lg:w-[28%] border-b sm:border-b-0 sm:border-r border-slate-200 dark:border-slate-800 overflow-y-auto p-2 space-y-1">
+                <!-- Dynamically populated -->
+            </div>
+
+            <!-- Right: Chapters Panel -->
+            <div id="notes-megamenu-chapters-panel" class="hidden sm:flex sm:w-[68%] lg:w-[72%] flex-col overflow-y-auto p-3.5 bg-slate-50/50 dark:bg-slate-950/40">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
 
     <!-- Notes Video Offcanvas Drawer (Slides from Right) -->
     <div id="notes-video-drawer-backdrop" onclick="window.closeNotesVideoDrawer && window.closeNotesVideoDrawer()" class="hidden opacity-0 fixed inset-0 z-[10040] bg-slate-950/70 backdrop-blur-sm transition-opacity duration-300"></div>
