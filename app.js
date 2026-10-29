@@ -6463,65 +6463,345 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
 
 
-    // Offline Sync Trigger
-    window.triggerOfflineSync = function() {
-        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-            window.showToast("Caching Assets", "Downloading resources for offline mode...", "cloud_download");
-            
-            const messageChannel = new MessageChannel();
-            const timeoutId = setTimeout(() => {
-                window.showToast("Offline Ready", "Study materials are now available offline.", "cloud_done");
-            }, 4000);
-            
-            messageChannel.port1.onmessage = (event) => {
-                if (event.data && event.data.success) {
-                    clearTimeout(timeoutId);
-                    window.showToast("Offline Ready", "Study materials are now available offline.", "cloud_done");
-                }
-            };
-            
-            // Collect all local images from QUESTIONS and ADVANCED_QUESTIONS
-            const imageUrls = [];
-            try {
-                if (typeof QUESTIONS !== 'undefined') {
-                    Object.values(QUESTIONS).flat().forEach(q => {
-                        if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
-                        if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
-                    });
-                }
-                if (typeof ADVANCED_QUESTIONS !== 'undefined') {
-                    Object.values(ADVANCED_QUESTIONS).flat().forEach(q => {
-                        if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
-                        if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
-                    });
-                }
-                if (typeof EXAM_QUESTIONS !== 'undefined') {
-                    Object.values(EXAM_QUESTIONS).flat().forEach(q => {
-                        if (q.local_question_image) imageUrls.push('./' + q.local_question_image);
-                        if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image);
-                    });
-                }
-            } catch (e) { console.error("Could not collect local images", e); }
+    // ===== OFFLINE SYNC PROGRESS UI BANNER =====
+    function getOrCreateOfflineSyncBanner() {
+        let banner = document.getElementById('offline-sync-progress-banner');
+        if (banner) return banner;
 
-            navigator.serviceWorker.controller.postMessage({
-                type: 'CACHE_ASSETS',
-                urls: [
-                    './',
-                    './index.html',
-                    './app.js',
-                    './questions.js',
-                    './advanced_questions.js',
-                    './exam_questions.js',
-                    './style.css',
-                    ...imageUrls
-                ]
-            }, [messageChannel.port2]);
-        } else {
-            window.showToast("Cannot Sync", "Service Worker is not active. Please reload the page first.", "error");
+        banner = document.createElement('div');
+        banner.id = 'offline-sync-progress-banner';
+        banner.className = 'fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[99999] w-[calc(100vw-2.5rem)] sm:w-96 bg-slate-900/95 dark:bg-[#1C120A]/95 text-slate-100 rounded-2xl shadow-2xl border border-amber-500/30 backdrop-blur-xl p-4 transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none';
+        banner.innerHTML = `
+            <div class="flex items-center justify-between gap-3 mb-2">
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <span id="sync-banner-icon" class="material-symbols-outlined text-amber-400 animate-spin text-xl shrink-0">sync</span>
+                    <div class="min-w-0">
+                        <h4 id="sync-banner-title" class="text-xs font-bold uppercase tracking-wider text-amber-200 truncate">Caching Offline Assets</h4>
+                        <p id="sync-banner-sub" class="text-[11px] text-slate-400 truncate">Preparing download queue...</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <span id="sync-banner-percent" class="text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">0%</span>
+                    <button id="sync-banner-close-btn" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800/80 transition-colors cursor-pointer" title="Dismiss banner">
+                        <span class="material-symbols-outlined text-base">close</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Progress Bar Track -->
+            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden my-2 border border-slate-700/50">
+                <div id="sync-banner-progress-fill" class="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400 rounded-full transition-all duration-200" style="width: 0%;"></div>
+            </div>
+            <!-- Progress Details -->
+            <div class="flex justify-between items-center text-[10px] text-slate-400 mt-1 font-mono">
+                <span id="sync-banner-count">0 / 0 cached</span>
+                <span id="sync-banner-file" class="truncate max-w-[170px] text-slate-500 text-right">Connecting...</span>
+            </div>
+        `;
+
+        document.body.appendChild(banner);
+
+        const closeBtn = banner.querySelector('#sync-banner-close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                banner.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+            });
+        }
+
+        return banner;
+    }
+
+    function showOfflineSyncBanner(disciplineName) {
+        const banner = getOrCreateOfflineSyncBanner();
+        banner.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        banner.classList.add('translate-y-0', 'opacity-100');
+
+        const icon = document.getElementById('sync-banner-icon');
+        const title = document.getElementById('sync-banner-title');
+        const sub = document.getElementById('sync-banner-sub');
+        const bar = document.getElementById('sync-banner-progress-fill');
+        const percent = document.getElementById('sync-banner-percent');
+        const count = document.getElementById('sync-banner-count');
+        const file = document.getElementById('sync-banner-file');
+
+        if (icon) {
+            icon.className = 'material-symbols-outlined text-amber-400 animate-spin text-xl shrink-0';
+            icon.textContent = 'sync';
+        }
+        if (title) title.textContent = disciplineName ? ('Caching ' + disciplineName + ' FE') : 'Caching Offline Assets';
+        if (sub) sub.textContent = 'Preparing filtered question bank & diagrams...';
+        if (bar) {
+            bar.style.width = '0%';
+            bar.className = 'h-full bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400 rounded-full transition-all duration-200';
+        }
+        if (percent) {
+            percent.textContent = '0%';
+            percent.className = 'text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30';
+        }
+        if (count) count.textContent = '0 / 0 cached';
+        if (file) file.textContent = 'Starting...';
+    }
+
+    // Attach global listeners for progress & completion
+    window.addEventListener('offline-sync-progress', (e) => {
+        const data = e.detail;
+        if (!data) return;
+
+        const banner = getOrCreateOfflineSyncBanner();
+        banner.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        banner.classList.add('translate-y-0', 'opacity-100');
+
+        const bar = document.getElementById('sync-banner-progress-fill');
+        const percent = document.getElementById('sync-banner-percent');
+        const count = document.getElementById('sync-banner-count');
+        const file = document.getElementById('sync-banner-file');
+        const sub = document.getElementById('sync-banner-sub');
+
+        const pct = Math.min(100, Math.max(0, data.percent || 0));
+        if (bar) bar.style.width = pct + '%';
+        if (percent) percent.textContent = pct + '%';
+        if (count) count.textContent = data.completed + ' / ' + data.total + ' cached';
+        if (sub) sub.textContent = 'Downloading ' + data.completed + ' of ' + data.total + ' items...';
+
+        if (file && data.currentUrl) {
+            const cleanName = data.currentUrl.split('/').pop() || data.currentUrl;
+            file.textContent = cleanName;
+        }
+    });
+
+    window.addEventListener('offline-sync-complete', (e) => {
+        const data = e.detail || {};
+        const banner = getOrCreateOfflineSyncBanner();
+
+        const icon = document.getElementById('sync-banner-icon');
+        const title = document.getElementById('sync-banner-title');
+        const sub = document.getElementById('sync-banner-sub');
+        const bar = document.getElementById('sync-banner-progress-fill');
+        const percent = document.getElementById('sync-banner-percent');
+        const file = document.getElementById('sync-banner-file');
+
+        if (icon) {
+            icon.className = 'material-symbols-outlined text-emerald-400 text-xl shrink-0';
+            icon.textContent = 'check_circle';
+        }
+        if (title) title.textContent = (data.discipline ? data.discipline + ' FE ' : '') + 'Offline Ready!';
+        if (sub) sub.textContent = 'Package saved to device cache for offline study';
+        if (bar) {
+            bar.style.width = '100%';
+            bar.className = 'h-full bg-emerald-400 rounded-full transition-all duration-300';
+        }
+        if (percent) {
+            percent.textContent = '100%';
+            percent.className = 'text-xs font-mono font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+        }
+        if (file) file.textContent = 'Ready offline ✅';
+
+        // Auto-dismiss banner after 4.5 seconds
+        setTimeout(() => {
+            if (banner && !window.isOfflineSyncing) {
+                banner.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+            }
+        }, 4500);
+    });
+
+    // Offline Sync State
+    window.isOfflineSyncing = false;
+    window.offlineSyncProgress = { completed: 0, total: 0, percent: 0, currentUrl: '', discipline: '' };
+
+    // Offline Sync Trigger - Discipline-Specific Caching
+    window.triggerOfflineSync = async function() {
+        if (window.isOfflineSyncing) {
+            window.showToast("Sync In Progress", "Offline assets are currently downloading. Please wait...", "sync");
+            return;
+        }
+
+        if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller) {
+            window.showToast("Cannot Sync", "Service Worker is not active yet. Please reload the page first.", "error");
+            return;
+        }
+
+        // Identify active discipline (e.g. Mechanical, Civil, Electrical, etc.)
+        const activeDiscipline = localStorage.getItem('enggtv_discipline') || window.currentDiscipline || 'Mechanical';
+        const discKey = window.normalizeDiscipline ? window.normalizeDiscipline(activeDiscipline) : (String(activeDiscipline).toLowerCase().includes('mech') ? 'mechanical' : 'other');
+
+        window.isOfflineSyncing = true;
+        window.offlineSyncProgress = { completed: 0, total: 0, percent: 0, currentUrl: '', discipline: activeDiscipline };
+
+        showOfflineSyncBanner(activeDiscipline);
+
+        const syncBtn = document.getElementById('btn-offline-sync');
+        const originalBtnHtml = syncBtn ? syncBtn.innerHTML : '';
+        if (syncBtn) {
+            syncBtn.disabled = true;
+            syncBtn.classList.add('opacity-80', 'cursor-not-allowed');
+            syncBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-[#F59E0B] animate-spin">sync</span> <span id="offline-sync-btn-text">Preparing ' + activeDiscipline + '...</span>';
+        }
+
+        window.showToast("Syncing " + activeDiscipline + " FE", "Gathering question banks and diagrams...", "cloud_download");
+
+        // Ensure questions for the active discipline are loaded into memory first
+        if (window.loadDisciplineQuestions) {
+            try {
+                await window.loadDisciplineQuestions(activeDiscipline);
+            } catch (err) {
+                console.warn("Could not pre-load discipline questions script:", err);
+            }
+        }
+
+        // Collect local images strictly for the active discipline questions
+        const imageUrls = [];
+        try {
+            if (typeof QUESTIONS !== 'undefined') {
+                Object.values(QUESTIONS).flat().forEach(q => {
+                    if (q.local_question_image) imageUrls.push('./' + q.local_question_image.replace(/^\.?\//, ''));
+                    if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image.replace(/^\.?\//, ''));
+                });
+            }
+            if (typeof ADVANCED_QUESTIONS !== 'undefined') {
+                Object.values(ADVANCED_QUESTIONS).flat().forEach(q => {
+                    if (q.local_question_image) imageUrls.push('./' + q.local_question_image.replace(/^\.?\//, ''));
+                    if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image.replace(/^\.?\//, ''));
+                });
+            }
+            if (typeof EXAM_QUESTIONS !== 'undefined') {
+                Object.values(EXAM_QUESTIONS).flat().forEach(q => {
+                    if (q.local_question_image) imageUrls.push('./' + q.local_question_image.replace(/^\.?\//, ''));
+                    if (q.local_solution_image) imageUrls.push('./' + q.local_solution_image.replace(/^\.?\//, ''));
+                });
+            }
+        } catch (e) {
+            console.error("Could not collect discipline local images", e);
+        }
+
+        // Core App Shell + Active Discipline Question Bank + Active Discipline Notes
+        const coreAppShell = [
+            './',
+            './index.html',
+            './app.js',
+            './style.css',
+            './manifest.json',
+            './questions_common.js',
+            './js/questions-loader.js',
+            './js/data-manager.js',
+            './js/dashboard-tabs.js',
+            './js/fe-theorems-data.js',
+            './js/fe-flashcards.js',
+            './js/daily-motivation.js',
+            './js/featured-video.js',
+            './js/zen-study.js',
+            './js/alumni-spotlight.js',
+            './js/study-calendar.js',
+            './js/weakness-srs.js',
+            './js/daily-quests.js',
+            './js/achievements.js',
+            './js/onboarding.js',
+            './js/global-search.js',
+            './js/particles.js',
+            './js/scratchpad.js'
+        ];
+
+        const disciplineSpecificFiles = [
+            './questions_' + discKey + '.js',
+            './notes_data/notes_' + discKey + '.js'
+        ];
+
+        // Deduplicate all asset URLs
+        const allTargetUrls = Array.from(new Set([
+            ...coreAppShell,
+            ...disciplineSpecificFiles,
+            ...imageUrls
+        ].filter(Boolean)));
+
+        const messageChannel = new MessageChannel();
+
+        messageChannel.port1.onmessage = (event) => {
+            const data = event.data;
+            if (!data) return;
+
+            if (data.type === 'CACHE_PROGRESS') {
+                window.offlineSyncProgress = {
+                    completed: data.completed,
+                    total: data.total,
+                    percent: data.percent,
+                    currentUrl: data.currentUrl,
+                    discipline: activeDiscipline
+                };
+
+                const btnText = document.getElementById('offline-sync-btn-text');
+                if (btnText) {
+                    btnText.textContent = 'Syncing ' + data.percent + '%';
+                }
+
+                window.dispatchEvent(new CustomEvent('offline-sync-progress', { detail: { ...data, discipline: activeDiscipline } }));
+            } else if (data.type === 'CACHE_COMPLETE' || data.success) {
+                window.isOfflineSyncing = false;
+                if (syncBtn) {
+                    syncBtn.disabled = false;
+                    syncBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+                    syncBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-emerald-400">cloud_done</span> ' + activeDiscipline + ' Offline Ready';
+                    setTimeout(() => {
+                        if (syncBtn && !window.isOfflineSyncing) {
+                            syncBtn.innerHTML = originalBtnHtml;
+                        }
+                    }, 4000);
+                }
+
+                window.showToast("Offline Ready", 'Successfully cached ' + activeDiscipline + ' FE (' + (data.completed || allTargetUrls.length) + ' assets) for offline study.', "cloud_done");
+                window.dispatchEvent(new CustomEvent('offline-sync-complete', { detail: { ...data, discipline: activeDiscipline } }));
+            }
+        };
+
+        navigator.serviceWorker.controller.postMessage({
+            type: 'CACHE_ASSETS',
+            urls: allTargetUrls
+        }, [messageChannel.port2]);
+    };
+    // ===== ON-DEMAND OFFLINE VIDEO CACHING =====
+    window.isVideoCachedOffline = async function(videoUrl) {
+        if (!videoUrl || !('caches' in window)) return false;
+        try {
+            const cleanUrl = videoUrl.split('?')[0];
+            const cache = await caches.open('engg-prep-offline-videos');
+            const match = (await cache.match(cleanUrl)) || (await cache.match(videoUrl));
+            return Boolean(match);
+        } catch (e) {
+            return false;
         }
     };
 
-    
+    window.toggleCacheVideoOffline = async function(videoUrl, videoTitle) {
+        if (!videoUrl) return false;
+        if (!('caches' in window)) {
+            window.showToast("Offline Video", "Cache storage not supported in this browser.", "error");
+            return false;
+        }
+
+        const cleanUrl = videoUrl.split('?')[0];
+        const cache = await caches.open('engg-prep-offline-videos');
+        const isCached = await window.isVideoCachedOffline(cleanUrl);
+
+        if (isCached) {
+            await cache.delete(cleanUrl);
+            await cache.delete(videoUrl);
+            window.showToast("Video Removed", (videoTitle || 'Video') + ' removed from offline cache.', "delete");
+            window.dispatchEvent(new CustomEvent('offline-video-updated', { detail: { videoUrl: cleanUrl, isCached: false } }));
+            return false;
+        } else {
+            window.showToast("Saving Video Offline", 'Downloading ' + (videoTitle || 'video') + ' (~2.5 MB)...', "download");
+            try {
+                const response = await fetch(cleanUrl);
+                if (!response.ok && response.status !== 0) throw new Error("HTTP " + response.status);
+                await cache.put(cleanUrl, response);
+                window.showToast("Video Ready Offline! 🎬", (videoTitle || 'Video') + ' saved for offline viewing.', "offline_pin");
+                window.dispatchEvent(new CustomEvent('offline-video-updated', { detail: { videoUrl: cleanUrl, isCached: true } }));
+                return true;
+            } catch (err) {
+                console.error("Failed to cache video:", err);
+                window.showToast("Download Failed", "Could not cache video. Check internet connection.", "error");
+                return false;
+            }
+        }
+    };
+
     // ===== NATIVE SHARE API =====
     window.shareApp = async function() {
         const shareData = {
@@ -44246,6 +44526,47 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 videoDur.textContent = card.videoDuration || '10s';
             }
             activeMediaTab = 'video';
+
+        // Update on-demand offline video save button
+        const cacheVidBtn = document.getElementById('fc-btn-cache-video');
+        if (cacheVidBtn) {
+            if (card && card.videoUrl && !card.videoUrl.includes('drive.google.com')) {
+                cacheVidBtn.classList.remove('hidden');
+                cacheVidBtn.classList.add('flex');
+                const updateBtnUi = async () => {
+                    const isSaved = window.isVideoCachedOffline ? await window.isVideoCachedOffline(card.videoUrl) : false;
+                    const icon = document.getElementById('fc-cache-video-icon');
+                    const label = document.getElementById('fc-cache-video-label');
+                    if (isSaved) {
+                        if (icon) { icon.textContent = 'offline_pin'; icon.className = 'material-symbols-outlined text-[13px] text-emerald-400'; }
+                        if (label) { label.textContent = 'Saved'; label.className = 'text-emerald-300'; }
+                        cacheVidBtn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border border-emerald-500/50 bg-emerald-950/40 text-emerald-300 cursor-pointer shadow-sm';
+                        cacheVidBtn.title = 'Saved offline on your device. Click to remove.';
+                    } else {
+                        if (icon) { icon.textContent = 'download_for_offline'; icon.className = 'material-symbols-outlined text-[13px] text-amber-400'; }
+                        if (label) { label.textContent = 'Save Offline'; label.className = 'text-slate-300'; }
+                        cacheVidBtn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border border-slate-700 bg-slate-800/90 text-slate-300 hover:text-white hover:border-amber-400 cursor-pointer shadow-sm';
+                        cacheVidBtn.title = 'Save this 10s video for offline playback (~2.5 MB)';
+                    }
+                };
+                updateBtnUi();
+                cacheVidBtn.onclick = async (e) => {
+                    if (e && e.stopPropagation) e.stopPropagation();
+                    cacheVidBtn.disabled = true;
+                    const icon = document.getElementById('fc-cache-video-icon');
+                    if (icon) { icon.textContent = 'sync'; icon.className = 'material-symbols-outlined text-[13px] text-amber-400 animate-spin'; }
+                    if (window.toggleCacheVideoOffline) {
+                        await window.toggleCacheVideoOffline(card.videoUrl, card.title);
+                    }
+                    await updateBtnUi();
+                    cacheVidBtn.disabled = false;
+                };
+            } else {
+                cacheVidBtn.classList.add('hidden');
+                cacheVidBtn.classList.remove('flex');
+            }
+        }
+
             playBackVideo();
         } else if (hasImage) {
             // Blueprint fallback on back only if no video exists

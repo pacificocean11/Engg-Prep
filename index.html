@@ -1225,6 +1225,10 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                                                     <span class="material-symbols-outlined text-[13px]">closed_caption</span>
                                                     <span id="fc-caption-status-text">CC On</span>
                                                 </button>
+                                                <button id="fc-btn-cache-video" type="button" class="hidden items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border border-slate-700 bg-slate-800/90 text-slate-300 hover:text-white hover:border-amber-400 cursor-pointer shadow-sm" title="Save this video for offline playback">
+                                                    <span id="fc-cache-video-icon" class="material-symbols-outlined text-[13px] text-amber-400">download_for_offline</span>
+                                                    <span id="fc-cache-video-label">Save Offline</span>
+                                                </button>
                                                 <span id="fc-back-video-duration" class="text-[10px] font-mono text-pink-300 bg-pink-950/60 border border-[#FF006E]/40 px-2 py-0.5 rounded-full">10s</span>
                                             </div>
                                         </div>
@@ -2464,7 +2468,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=260').then(registration => {
+          navigator.serviceWorker.register('./sw.js?v=262').then(registration => {
             registration.update();
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, err => {
@@ -3141,6 +3145,10 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
                 </div>
                 <h3 id="notes-video-drawer-title" class="text-sm sm:text-base font-bold text-white truncate mt-1">Video Demonstration</h3>
             </div>
+            <button id="notes-video-cache-btn" type="button" class="hidden items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold transition-all border border-slate-700 bg-slate-800/90 text-slate-300 hover:text-white hover:border-amber-400 cursor-pointer shadow-sm mr-1">
+                <span id="notes-video-cache-icon" class="material-symbols-outlined text-[13px] text-amber-400">download_for_offline</span>
+                <span id="notes-video-cache-label">Save Offline</span>
+            </button>
             <button id="notes-video-drawer-close" type="button" onclick="window.closeNotesVideoDrawer && window.closeNotesVideoDrawer()" class="w-8 h-8 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors cursor-pointer shrink-0" title="Close Drawer (Esc)">
                 <span class="material-symbols-outlined text-[20px]">close</span>
             </button>
@@ -3178,6 +3186,44 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
         if (!drawer || (!player && !driveFrame)) return;
         
         if (titleEl) titleEl.textContent = videoTitle || 'Concept Demonstration';
+
+            const drawerCacheBtn = document.getElementById('notes-video-cache-btn');
+            if (drawerCacheBtn) {
+                if (videoUrl && !videoUrl.includes('drive.google.com')) {
+                    drawerCacheBtn.classList.remove('hidden');
+                    drawerCacheBtn.classList.add('flex');
+                    const updateDrawerBtn = async () => {
+                        const isSaved = window.isVideoCachedOffline ? await window.isVideoCachedOffline(videoUrl) : false;
+                        const icon = document.getElementById('notes-video-cache-icon');
+                        const label = document.getElementById('notes-video-cache-label');
+                        if (isSaved) {
+                            if (icon) { icon.textContent = 'offline_pin'; icon.className = 'material-symbols-outlined text-[13px] text-emerald-400'; }
+                            if (label) { label.textContent = 'Saved Offline'; label.className = 'text-emerald-300'; }
+                            drawerCacheBtn.className = 'flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold transition-all border border-emerald-500/50 bg-emerald-950/40 text-emerald-300 cursor-pointer shadow-sm mr-1';
+                            drawerCacheBtn.title = 'Saved offline on your device. Click to remove.';
+                        } else {
+                            if (icon) { icon.textContent = 'download_for_offline'; icon.className = 'material-symbols-outlined text-[13px] text-amber-400'; }
+                            if (label) { label.textContent = 'Save Offline'; label.className = 'text-slate-300'; }
+                            drawerCacheBtn.className = 'flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold transition-all border border-slate-700 bg-slate-800/90 text-slate-300 hover:text-white hover:border-amber-400 cursor-pointer shadow-sm mr-1';
+                            drawerCacheBtn.title = 'Save this video for offline playback (~2.5 MB)';
+                        }
+                    };
+                    updateDrawerBtn();
+                    drawerCacheBtn.onclick = async () => {
+                        drawerCacheBtn.disabled = true;
+                        const icon = document.getElementById('notes-video-cache-icon');
+                        if (icon) { icon.textContent = 'sync'; icon.className = 'material-symbols-outlined text-[13px] text-amber-400 animate-spin'; }
+                        if (window.toggleCacheVideoOffline) {
+                            await window.toggleCacheVideoOffline(videoUrl, videoTitle);
+                        }
+                        await updateDrawerBtn();
+                        drawerCacheBtn.disabled = false;
+                    };
+                } else {
+                    drawerCacheBtn.classList.add('hidden');
+                    drawerCacheBtn.classList.remove('flex');
+                }
+            }
         if (descEl) descEl.textContent = desc ? 'Animated conceptual walkthrough for ' + desc + '.' : 'Watch the animation to visualize key engineering processes and reference formulas.';
         
         const isDrive = videoUrl && (videoUrl.includes('drive.google.com') || videoUrl.includes('drive.usercontent.google.com') || videoUrl.startsWith('/api/drive-stream/'));
