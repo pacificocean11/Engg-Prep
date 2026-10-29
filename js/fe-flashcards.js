@@ -32,6 +32,12 @@
 
     function getMechanicalSubjectId(title, examTip) {
         const lower = (title || '').toLowerCase();
+        if (/limit gauges|limit gauge|riveted joints|riveted joint/i.test(lower)) return 14;
+        if (/linear variable differential|\blvdt\b/i.test(lower)) return 13;
+        if (/cyclic process/i.test(lower)) return 11;
+        if (/incomplete combustion/i.test(lower)) return 11;
+        if (/computer numerical control|\bcnc\b/i.test(lower)) return 9;
+        if (/material selection factors|material selection/i.test(lower)) return 9;
         if (/powder metallurgy|electrical properties of material|non-traditional machining|non traditional machining/i.test(lower)) return 9;
         if (/types of springs|helical compression|helical torsion|belleville/i.test(lower)) return 14;
         if (/valves in fluid power|directional control valve|flow control valve|logic control valve|\bvalves\b/i.test(lower) && !/pressure relief valve sizing formula for vapor/i.test(lower)) return 14;
@@ -2142,6 +2148,47 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 videoDur.textContent = card.videoDuration || '10s';
             }
             activeMediaTab = 'video';
+
+        // Update on-demand offline video save button
+        const cacheVidBtn = document.getElementById('fc-btn-cache-video');
+        if (cacheVidBtn) {
+            if (card && card.videoUrl && !card.videoUrl.includes('drive.google.com')) {
+                cacheVidBtn.classList.remove('hidden');
+                cacheVidBtn.classList.add('flex');
+                const updateBtnUi = async () => {
+                    const isSaved = window.isVideoCachedOffline ? await window.isVideoCachedOffline(card.videoUrl) : false;
+                    const icon = document.getElementById('fc-cache-video-icon');
+                    const label = document.getElementById('fc-cache-video-label');
+                    if (isSaved) {
+                        if (icon) { icon.textContent = 'offline_pin'; icon.className = 'material-symbols-outlined text-[13px] text-emerald-400'; }
+                        if (label) { label.textContent = 'Saved'; label.className = 'text-emerald-300'; }
+                        cacheVidBtn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border border-emerald-500/50 bg-emerald-950/40 text-emerald-300 cursor-pointer shadow-sm';
+                        cacheVidBtn.title = 'Saved offline on your device. Click to remove.';
+                    } else {
+                        if (icon) { icon.textContent = 'download_for_offline'; icon.className = 'material-symbols-outlined text-[13px] text-amber-400'; }
+                        if (label) { label.textContent = 'Save Offline'; label.className = 'text-slate-300'; }
+                        cacheVidBtn.className = 'flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold transition-all border border-slate-700 bg-slate-800/90 text-slate-300 hover:text-white hover:border-amber-400 cursor-pointer shadow-sm';
+                        cacheVidBtn.title = 'Save this 10s video for offline playback (~2.5 MB)';
+                    }
+                };
+                updateBtnUi();
+                cacheVidBtn.onclick = async (e) => {
+                    if (e && e.stopPropagation) e.stopPropagation();
+                    cacheVidBtn.disabled = true;
+                    const icon = document.getElementById('fc-cache-video-icon');
+                    if (icon) { icon.textContent = 'sync'; icon.className = 'material-symbols-outlined text-[13px] text-amber-400 animate-spin'; }
+                    if (window.toggleCacheVideoOffline) {
+                        await window.toggleCacheVideoOffline(card.videoUrl, card.title);
+                    }
+                    await updateBtnUi();
+                    cacheVidBtn.disabled = false;
+                };
+            } else {
+                cacheVidBtn.classList.add('hidden');
+                cacheVidBtn.classList.remove('flex');
+            }
+        }
+
             playBackVideo();
         } else if (hasImage) {
             // Blueprint fallback on back only if no video exists
