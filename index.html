@@ -2398,6 +2398,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
     <script src="js/data-manager.js?v=6"></script>
     <script src="questions_common.js?v=4"></script>
     <script src="js/questions-loader.js?v=4"></script>
+    <script src="js/ingest-solved-problems.js?v=1"></script>
     <script src="js/notes-loader.js?v=2"></script>
     <script src="advanced_questions.js?v=3" defer></script>
     <script src="exam_questions.js?v=3" defer></script>
@@ -2409,7 +2410,13 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId, persist
             const s = document.createElement('script');
             s.src = 'js/solved-problems-data.js?v=4';
             s.async = true;
-            s.onload = () => { window.__spLoaded = true; delete window.__spLoading; };
+            s.onload = () => { 
+                window.__spLoaded = true; 
+                delete window.__spLoading; 
+                if (typeof window.ingestSolvedProblems === 'function') {
+                    window.ingestSolvedProblems();
+                }
+            };
             document.head.appendChild(s);
         };
         if ('requestIdleCallback' in window) {
