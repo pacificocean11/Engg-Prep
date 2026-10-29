@@ -1460,7 +1460,9 @@
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/CNC.mp4",
+    "videoTitle": "CNC"
   },
   {
     "discipline": "Other",
@@ -1524,7 +1526,9 @@
     "important": "",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Material_Selection_Factors.mp4",
+    "videoTitle": "Material Selection Factors"
   },
   {
     "discipline": "Other",
@@ -2685,7 +2689,9 @@
       "https://drive.google.com/file/d/1EMP4VqIVLLmrZcOSPFNMDv6MPzl1YKGh/view?usp=sharing",
       "https://upload.wikimedia.org/wikipedia/commons/0/07/Lvdt_how.gif"
     ],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/LVDT.mp4",
+    "videoTitle": "LVDT"
   },
   {
     "discipline": "Other",
@@ -3731,7 +3737,9 @@
     "important": "\\[A/F = \\dfrac{\\textrm{mass of air}}{\\textrm{mass of fuel}}\\]",
     "resources": "",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Incomplete_Combustion.mp4",
+    "videoTitle": "Incomplete Combustion"
   },
   {
     "discipline": "Other",
@@ -4017,7 +4025,9 @@
     "important": "",
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/16_wOcLacDnC37HOQO2r_bGpIM44zohoa/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
-    "local_images": []
+    "local_images": [],
+    "video": "assets/videos/Cyclic_Process.mp4",
+    "videoTitle": "Cyclic Process"
   },
   {
     "discipline": "Other",
