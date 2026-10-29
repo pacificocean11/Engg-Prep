@@ -133,6 +133,7 @@ async function syncToFirebase() {
         const lightActivity = (window.state.recentActivity || []).map(a => ({
             id: a.id,
             title: a.title,
+            subjectId: a.subjectId || (a.minimalSnapshot && a.minimalSnapshot.subjectId) || null,
             score: a.score,
             accuracy: a.accuracy,
             attempted: a.attempted,
@@ -507,3 +508,4 @@ window.setupFirestoreSyncListener = setupFirestoreSyncListener;
 window.syncToFirebase = syncToFirebase;
 window.mergeProgress = mergeProgress;
 window.loadFromFirebase = loadFromFirebase;
+

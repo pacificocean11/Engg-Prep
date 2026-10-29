@@ -60,6 +60,9 @@
             if (typeof window.updateDashboardStats === 'function') {
                 window.updateDashboardStats();
             }
+            if (typeof window.renderDiagnosticReport === 'function') {
+                window.renderDiagnosticReport();
+            }
         }
     }
 

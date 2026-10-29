@@ -33,6 +33,9 @@
                 window.__LOADED_DISCIPLINES__[key] = true;
                 delete window.__PENDING_DISCIPLINES__[key];
                 console.log(`⚡ Questions loaded for discipline: ${key}`);
+                if (window.ensureSolvedProblemsIngested) {
+                    window.ensureSolvedProblemsIngested();
+                }
                 resolve();
             };
             script.onerror = (err) => {
@@ -52,6 +55,10 @@
 
     // Helper: Ensure questions for a given subjectId are loaded
     window.ensureSubjectQuestionsLoaded = async function(subjectId) {
+        if (window.ensureSolvedProblemsIngested) {
+            await window.ensureSolvedProblemsIngested();
+        }
+
         if (window.QUESTIONS && window.QUESTIONS[subjectId] && window.QUESTIONS[subjectId].length > 0) {
             return true;
         }
@@ -76,10 +83,16 @@
         }
 
         await loadDisciplineQuestions(targetDisc);
+        if (window.ensureSolvedProblemsIngested) {
+            await window.ensureSolvedProblemsIngested();
+        }
         return !!(window.QUESTIONS && window.QUESTIONS[subjectId]);
     };
 
     // Immediately load the active user's discipline
     const initialDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
     window.currentDisciplinePromise = loadDisciplineQuestions(initialDiscipline);
+    if (window.ensureSolvedProblemsIngested) {
+        window.ensureSolvedProblemsIngested();
+    }
 })();
