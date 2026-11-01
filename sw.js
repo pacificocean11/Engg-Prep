@@ -1,4 +1,4 @@
-const CACHE_NAME = 'engg-prep-cache-v262';
+const CACHE_NAME = 'engg-prep-cache-v264';
 const APP_SHELL = [
   './',
   './index.html',
@@ -11,6 +11,8 @@ const APP_SHELL = [
   './questions_common.js',
   './js/questions-loader.js',
   './app.js',
+  './js/fe-theorems-data.js',
+  './js/tv-hub.js',
   './js/particles.js',
   './js/scratchpad.js',
   './js/global-search.js',

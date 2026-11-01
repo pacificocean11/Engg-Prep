@@ -624,8 +624,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12Lp7qzmuQzS9Oa18PSUEQkjzQUtIxCi-/preview",
-    "videoTitle": "Orifice"
+    "video": "assets/videos/Orifice.mp4",
+    "videoTitle": "Orifice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Orifice.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -845,7 +847,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ceramics.mp4",
-    "videoTitle": "Ceramics (Structure, Properties, and Processing)"
+    "videoTitle": "Ceramics (Structure, Properties, and Processing)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ceramics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -908,8 +912,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CWPTy-8IpxadLlIEZ2dSFRssRwUiqkRB/preview",
-    "videoTitle": "Straight Lines Slope-Point Form"
+    "video": "assets/videos/Straight Lines Slope point form.mp4",
+    "videoTitle": "Straight Lines Slope-Point Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight%20Lines%20Slope%20point%20form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -923,7 +929,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slope_Intercept_Form.mp4",
-    "videoTitle": "Slope Intercept Form"
+    "videoTitle": "Slope Intercept Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slope_Intercept_Form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -954,8 +962,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cNOXQpV48eEX_VWPz78-O11v59yrNgsE/preview",
-    "videoTitle": "Parallel and Perpendicular Lines"
+    "video": "assets/videos/Parallel and Perpendicular lines.mp4",
+    "videoTitle": "Parallel and Perpendicular Lines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel%20and%20Perpendicular%20lines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -986,8 +996,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IP8Yhigkvi9sIu-VenHpKHZHa53B4Hvp/preview",
-    "videoTitle": "Distance Formula"
+    "video": "assets/videos/Distance Formula.mp4",
+    "videoTitle": "Distance Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distance%20Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -1013,7 +1025,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Control_Systems.mp4",
-    "videoTitle": "Control Systems"
+    "videoTitle": "Control Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Control_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -1051,7 +1065,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Control_Systems.mp4",
-    "videoTitle": "Control Systems"
+    "videoTitle": "Control Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Control_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -1065,7 +1081,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Control_Systems.mp4",
-    "videoTitle": "Control Systems"
+    "videoTitle": "Control Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Control_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -1199,7 +1217,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Control_Systems.mp4",
-    "videoTitle": "Control Systems"
+    "videoTitle": "Control Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Control_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -1837,7 +1857,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Components_of_a_Pneumatic_System.mp4",
-    "videoTitle": "Components of a Pneumatic System"
+    "videoTitle": "Components of a Pneumatic System",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Components_of_a_Pneumatic_System.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Chemical",
@@ -2055,7 +2077,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
-    "videoTitle": "First Angle vs. Third Angle Orthographic Projection"
+    "videoTitle": "First Angle vs. Third Angle Orthographic Projection",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2143,7 +2167,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Elastic_vs_inelastic_collision.mp4",
-    "videoTitle": "Elastic vs. Inelastic Collisions"
+    "videoTitle": "Elastic vs. Inelastic Collisions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Elastic_vs_inelastic_collision.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2181,7 +2207,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
-    "videoTitle": "Principle of Angular Impulse and Momentum"
+    "videoTitle": "Principle of Angular Impulse and Momentum",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2195,7 +2223,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Constant_Acceleration_Motion.mp4",
-    "videoTitle": "Constant Acceleration Motion"
+    "videoTitle": "Constant Acceleration Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Constant_Acceleration_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2208,8 +2238,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1t_P0ozmf8IlnajRLyhlQmfhnIHDOmC77/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1fvQWePO1Z6ZCT5TIDBhkc4ZB70iU3iAd/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1KI4YK6t5-Q_PHKbJ2ToGTNcUbygw5V3c/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IqpzONYTYiCMeLsr6PK7r3BYsbeRJQns/preview",
-    "videoTitle": "Instantaneous Velocity and Acceleration"
+    "video": "assets/videos/Instantaneous velocity and acceleration.mp4",
+    "videoTitle": "Instantaneous Velocity and Acceleration",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Instantaneous%20velocity%20and%20acceleration.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2222,8 +2254,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1B81ctQhaPHRnZwmpia_iTrwFA2Hk8Ouw/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1lIAVKi1lYapMkjEbLcU-fYDvpdBc7W-i/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1003485097?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Projectile Motion\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/192mmL6O2DVobblf055ATqe0x66JxjOEk/preview",
-    "videoTitle": "Projectile Motion"
+    "video": "assets/videos/Projectile_Motion.mp4",
+    "videoTitle": "Projectile Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Projectile_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2238,8 +2272,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/c/c1/Relative_motion.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/15IfHNmWezBbWrf3wCHoq0HcU0tNqOdup/preview",
-    "videoTitle": "Relative Motion"
+    "video": "assets/videos/Relative_Motion.mp4",
+    "videoTitle": "Relative Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Relative_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2255,7 +2291,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
-    "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion"
+    "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2268,8 +2306,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1GB8UO1hxOwDrTapN-s_I6MTA7kG7DO46/preview",
-    "videoTitle": "Uniform Circular Motion"
+    "video": "assets/videos/Uniform Circular Motion (Centripetal Acceleration and Force).mp4",
+    "videoTitle": "Uniform Circular Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Uniform%20Circular%20Motion%20(Centripetal%20Acceleration%20and%20Force).mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2282,8 +2322,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1S34KULdPKKAdtYBgtrVTzETYzvL_L_SH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/586138549?h=022c85ccf9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Motion under Variable Acceleration\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1STqLCaNLTcu8Ag1hmGdPfMK5A-cPbzIT/preview",
-    "videoTitle": "Variable Acceleration Motion"
+    "video": "assets/videos/Variable Acceleration Motion.mp4",
+    "videoTitle": "Variable Acceleration Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Variable%20Acceleration%20Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2296,8 +2338,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1ChnjmIDXl6BCWdEfmtRP4HdcgW7cMyix/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1OMRd4lu8UCclBLyB0daCkdZFQ-KGIK_G/preview",
-    "videoTitle": "Instantaneous Center of Rotation"
+    "video": "assets/videos/Instantaneous_Center_of_Rotation.mp4",
+    "videoTitle": "Instantaneous Center of Rotation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Instantaneous_Center_of_Rotation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2311,7 +2355,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Instantaneous_Centers_of_Various_Types_of_Links.mp4",
-    "videoTitle": "Instantaneous Centers of Various Types of Links"
+    "videoTitle": "Instantaneous Centers of Various Types of Links",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Instantaneous_Centers_of_Various_Types_of_Links.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2325,7 +2371,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Kennedy's Rule.mp4",
-    "videoTitle": "Kennedy's Rule"
+    "videoTitle": "Kennedy's Rule",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kennedy's%20Rule.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2339,7 +2387,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Constant_Acceleration_Rotational_Motion_Equations.mp4",
-    "videoTitle": "Constant Acceleration Rotational Motion Equations"
+    "videoTitle": "Constant Acceleration Rotational Motion Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Constant_Acceleration_Rotational_Motion_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2365,7 +2415,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Static_vs_kinetic_friction.mp4",
-    "videoTitle": "Static vs. Kinetic Friction (Coulomb Friction Laws)"
+    "videoTitle": "Static vs. Kinetic Friction (Coulomb Friction Laws)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Static_vs_kinetic_friction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2379,7 +2431,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
-    "videoTitle": "Newton's Second Law for a Particle"
+    "videoTitle": "Newton's Second Law for a Particle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2454,8 +2508,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1nk3OHicxEJCGujEUd3yjk4dxP4BYj4Nc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1Z5rHb-ft_SLyq3w7pgUtoBvIWKBgVtSc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/153VL3D0bIkQY1nxj9AfdhumZ0Ty2auZI/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1xjaFx2gLXqZBPfmEDar0TUURxHddX7sc/preview",
-    "videoTitle": "Kinetic Energy"
+    "video": "assets/videos/Kinetic Energy.mp4",
+    "videoTitle": "Kinetic Energy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kinetic%20Energy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2523,7 +2579,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
-    "videoTitle": "Work-Energy Principle (Rigid Body Dynamics)"
+    "videoTitle": "Work-Energy Principle (Rigid Body Dynamics)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2551,7 +2609,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
-    "videoTitle": "Capitalized Cost for Infinite Project Life"
+    "videoTitle": "Capitalized Cost for Infinite Project Life",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2565,7 +2625,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Sunk_Costs.mp4",
-    "videoTitle": "Sunk Costs"
+    "videoTitle": "Sunk Costs",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Sunk_Costs.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2593,7 +2655,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Overhead_Analysis.mp4",
-    "videoTitle": "Overhead Analysis"
+    "videoTitle": "Overhead Analysis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Overhead_Analysis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2606,8 +2670,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1zy-vrGqIgApv6unKhp9Zp0rqzxW0js1h/preview",
-    "videoTitle": "Simple Payback Period"
+    "video": "assets/videos/Simple Payback Period.mp4",
+    "videoTitle": "Simple Payback Period",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simple%20Payback%20Period.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2621,7 +2687,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Inflation_Fishers_equation.mp4",
-    "videoTitle": "Inflation: Fisher's Equation"
+    "videoTitle": "Inflation: Fisher's Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inflation_Fishers_equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2635,7 +2703,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
-    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2665,7 +2735,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Straight_Line_Depreciation_Method.mp4",
-    "videoTitle": "Straight Line Depreciation Method"
+    "videoTitle": "Straight Line Depreciation Method",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight_Line_Depreciation_Method.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2679,7 +2751,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
-    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation"
+    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2693,7 +2767,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ethical_and_Legal_Considerations.mp4",
-    "videoTitle": "Ethical and Legal Considerations in Engineering Practice"
+    "videoTitle": "Ethical and Legal Considerations in Engineering Practice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ethical_and_Legal_Considerations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2707,7 +2783,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
-    "videoTitle": "NCEES Model Rules of Professional Conduct"
+    "videoTitle": "NCEES Model Rules of Professional Conduct",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2721,7 +2799,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Professional_and_Technical_Societies.mp4",
-    "videoTitle": "Professional and Technical Societies"
+    "videoTitle": "Professional and Technical Societies",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Professional_and_Technical_Societies.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2735,7 +2815,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
-    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol"
+    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2772,8 +2854,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12Lp7qzmuQzS9Oa18PSUEQkjzQUtIxCi-/preview",
-    "videoTitle": "Orifice"
+    "video": "assets/videos/Orifice.mp4",
+    "videoTitle": "Orifice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Orifice.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2786,8 +2870,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzdq9SWd7ObbO6uWTwKx0kzO27khHXeC/preview",
-    "videoTitle": "Pitot Tube"
+    "video": "assets/videos/Pitot_Tube.mp4",
+    "videoTitle": "Pitot Tube",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Pitot_Tube.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2800,8 +2886,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tLlpmiObYyLvabX6Bvpwu1WleldZ8-eo/preview",
-    "videoTitle": "Venturi Meter"
+    "video": "assets/videos/Venturi Meter.mp4",
+    "videoTitle": "Venturi Meter",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Venturi%20Meter.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2829,7 +2917,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Specific_Gravity.mp4",
-    "videoTitle": "Specific Gravity"
+    "videoTitle": "Specific Gravity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Specific_Gravity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2857,7 +2947,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Newton's Law of Viscosity.mp4",
-    "videoTitle": "Newton's Law of Viscosity"
+    "videoTitle": "Newton's Law of Viscosity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Law%20of%20Viscosity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2887,7 +2979,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
-    "videoTitle": "Newtonian vs Non-Newtonian Fluids"
+    "videoTitle": "Newtonian vs Non-Newtonian Fluids",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2902,8 +2996,10 @@ const notesData = [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21581&authkey=%21AOQoVTXCapx5-0Y&width=323&height=292"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12aHG3Ob330Ac-IzQ85WDsH8pCVf8ZxUo/preview",
-    "videoTitle": "Capillarity"
+    "video": "assets/videos/Capillarity.mp4",
+    "videoTitle": "Capillarity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capillarity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2918,8 +3014,10 @@ const notesData = [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21576&authkey=%21AGreDbrHBEU13q0&width=323&height=315"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1aAD3iUE8Hxw2AEBRYz0gj-j0S7Cw4s6F/preview",
-    "videoTitle": "Surface Tension"
+    "video": "assets/videos/Surface_Tension.mp4",
+    "videoTitle": "Surface Tension",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Tension.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2932,8 +3030,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13-s9u7Y89PobjB55_5Qx_Gd8IBllU4dO/preview",
-    "videoTitle": "Archimedes Principle of Buoyancy"
+    "video": "assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "videoTitle": "Archimedes Principle of Buoyancy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -2972,8 +3072,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1yRQ3znNWJKAqslwewqKb1McPGW60Cjci/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1ClJo-X2k_L2Sp9aCdqegYN77RNP4xpTe/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/18CKfsok7cvEdl0iVVZ9X_Vs-y6uRr8XC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:58.06% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/586137569?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=d27233e3bb\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Pressure_Measurement.mp4\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzsLR6mCzXoag9l5DUwDO2GqSoeI7oaH/preview",
-    "videoTitle": "Manometers"
+    "video": "assets/videos/Manometers.mp4",
+    "videoTitle": "Manometers",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Manometers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3003,7 +3105,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Darcy_Weisbach_Equation.mp4",
-    "videoTitle": "Darcy Weisbach Equation"
+    "videoTitle": "Darcy Weisbach Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Darcy_Weisbach_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3020,7 +3124,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
-    "videoTitle": "Minor Head Loss in Piping Systems"
+    "videoTitle": "Minor Head Loss in Piping Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3071,8 +3177,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/4/44/Toky.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pA6SxF80zasGtncKcp7BM0-7h8N1WzKF/preview",
-    "videoTitle": "Reynold's Number"
+    "video": "assets/videos/Reynolds_Number.mp4",
+    "videoTitle": "Reynold's Number",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Reynolds_Number.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3136,7 +3244,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Impulse_Momentum_Principle.mp4",
-    "videoTitle": "Impulse Momentum Principle"
+    "videoTitle": "Impulse Momentum Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Impulse_Momentum_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3162,7 +3272,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Bernoullis_Principle.mp4",
-    "videoTitle": "Bernoulli’s Principle"
+    "videoTitle": "Bernoulli’s Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Bernoullis_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3175,8 +3287,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1fE_30I4cUD6W3XvH9csrrVMIvv7Rq9il/preview",
-    "videoTitle": "Continuity Equation"
+    "video": "assets/videos/Continuity_Equation.mp4",
+    "videoTitle": "Continuity Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Continuity_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3228,7 +3342,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-    "videoTitle": "Net Positive Suction Head (NPSH)"
+    "videoTitle": "Net Positive Suction Head (NPSH)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3570,7 +3686,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
-    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere"
+    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3595,8 +3713,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1waiM_TELnv9dJAfTWQgHwe72Z82mcw4U/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1b012mQwo34rZQMwGVorfM6_SkdREaqic/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1QdOQlqTHaEib-of2Yan46NvlTpc58FnP/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1d4YM5heNS94lHyKI0Ln4u0pF418EwJ9h/preview",
-    "videoTitle": "Logarithmic Identities"
+    "video": "assets/videos/Logarithmic Identities.mp4",
+    "videoTitle": "Logarithmic Identities",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Logarithmic%20Identities.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3610,7 +3730,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Concept_of_Complex_Numbers.mp4",
-    "videoTitle": "Concept of Complex Numbers Explainer"
+    "videoTitle": "Concept of Complex Numbers Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Concept_of_Complex_Numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3624,7 +3746,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
-    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3679,8 +3803,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1a-iuYNXcxyazntG-kP1ZxEHaAB2na5Mw/preview",
-    "videoTitle": "Law of Sines"
+    "video": "assets/videos/Law_of_Sines.mp4",
+    "videoTitle": "Law of Sines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Law_of_Sines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3694,7 +3820,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Double Angles"
+    "videoTitle": "Trigonometric Ratios of Double Angles",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3710,7 +3838,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3751,8 +3881,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/1/10/Conic_Section_%28parameters_%CE%B8%2C%CF%95%29.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1lS5mnQYDEV6jiDDiF1V6G3f5g-tgCi3F/preview",
-    "videoTitle": "Eccentricities of Conic Sections"
+    "video": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "videoTitle": "Eccentricities of Conic Sections",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3817,8 +3949,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CWPTy-8IpxadLlIEZ2dSFRssRwUiqkRB/preview",
-    "videoTitle": "Straight Lines Slope-Point Form"
+    "video": "assets/videos/Straight Lines Slope point form.mp4",
+    "videoTitle": "Straight Lines Slope-Point Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight%20Lines%20Slope%20point%20form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3832,7 +3966,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slope_Intercept_Form.mp4",
-    "videoTitle": "Slope Intercept Form"
+    "videoTitle": "Slope Intercept Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slope_Intercept_Form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3863,8 +3999,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cNOXQpV48eEX_VWPz78-O11v59yrNgsE/preview",
-    "videoTitle": "Parallel and Perpendicular Lines"
+    "video": "assets/videos/Parallel and Perpendicular lines.mp4",
+    "videoTitle": "Parallel and Perpendicular Lines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel%20and%20Perpendicular%20lines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3895,8 +4033,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IP8Yhigkvi9sIu-VenHpKHZHa53B4Hvp/preview",
-    "videoTitle": "Distance Formula"
+    "video": "assets/videos/Distance Formula.mp4",
+    "videoTitle": "Distance Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distance%20Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3910,7 +4050,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
-    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives"
+    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3924,7 +4066,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
-    "videoTitle": "Curvature of any Curve in Terms of Derivatives"
+    "videoTitle": "Curvature of any Curve in Terms of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3938,7 +4082,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Basic_rules_of_derivatives.mp4",
-    "videoTitle": "Basic Rules of Derivatives"
+    "videoTitle": "Basic Rules of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Basic_rules_of_derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3952,7 +4098,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
-    "videoTitle": "Product and Quotient Rules for Derivatives"
+    "videoTitle": "Product and Quotient Rules for Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3966,7 +4114,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Chain_Rule_for_Differentiation.mp4",
-    "videoTitle": "Chain Rule for Differentiation"
+    "videoTitle": "Chain Rule for Differentiation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Chain_Rule_for_Differentiation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3980,7 +4130,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -3994,7 +4146,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4008,7 +4162,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4022,7 +4178,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4050,7 +4208,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
-    "videoTitle": "Derivative of Logarithmic Functions"
+    "videoTitle": "Derivative of Logarithmic Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4090,7 +4250,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Dot_Product.mp4",
-    "videoTitle": "Properties of Dot Product"
+    "videoTitle": "Properties of Dot Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Dot_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4116,7 +4278,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Cross_Product.mp4",
-    "videoTitle": "Properties of Cross Product"
+    "videoTitle": "Properties of Cross Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Cross_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4141,8 +4305,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12dFZ3zXiz9cuefrdoES1u0t110WpHVP5/preview",
-    "videoTitle": "Divergence of a Vector Field"
+    "video": "assets/videos/Divergence of a Vector Field.mp4",
+    "videoTitle": "Divergence of a Vector Field",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Divergence%20of%20a%20Vector%20Field.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4155,8 +4321,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1ODzbMTs6qhufTo1SYlUm3qdbU79HGVB9/preview",
-    "videoTitle": "Curl of a Vector Field and Irrotational Fields"
+    "video": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "videoTitle": "Curl of a Vector Field and Irrotational Fields",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4169,8 +4337,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/13hV2n-x0oPIDrjOO3ng4AM4QafrJh2Ri/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13uHiKJMZCI6cfehtAlx8zJrAgqshejRG/preview",
-    "videoTitle": "Inverse of a Matrix"
+    "video": "assets/videos/Inverse_of_a_Matrix.mp4",
+    "videoTitle": "Inverse of a Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inverse_of_a_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4196,7 +4366,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Identity_Matrix.mp4",
-    "videoTitle": "Properties of Identity Matrix"
+    "videoTitle": "Properties of Identity Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Identity_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4238,7 +4410,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Permutations_with_Repetition.mp4",
-    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Permutations_with_Repetition.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4287,8 +4461,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1rjejkpzaRigrtkkK3VAMAztLS3crG1io/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1h-74w9jTOJwg8CujUnkoS16_yimSzWNc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1LOOUIjtIUjjngnd9iT_ZWqga3jsyUe8i/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1003484364?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Binomial Distributions\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pCuVWsQq3sCBT-iX89BlgYZvifnR-lx0/preview",
-    "videoTitle": "Binomial Distribution"
+    "video": "assets/videos/Binomial_Distribution.mp4",
+    "videoTitle": "Binomial Distribution",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Binomial_Distribution.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4302,7 +4478,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Expected_Values.mp4",
-    "videoTitle": "Expected Values"
+    "videoTitle": "Expected Values",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected_Values.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4315,8 +4493,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1x98FMuTm_acKnZW_4S5tXuQfYWoVTX1K/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1dB2u-9XEXOVQl-96oKrCQm6lTQvfLDOF/preview",
-    "videoTitle": "Expected Value of a Continuous Function"
+    "video": "assets/videos/Expected Value.mp4",
+    "videoTitle": "Expected Value of a Continuous Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected%20Value.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4348,7 +4528,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
-    "videoTitle": "Standard Normal Distribution (Z Transformation)"
+    "videoTitle": "Standard Normal Distribution (Z Transformation)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4364,7 +4546,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Probability_Density_Function.mp4",
-    "videoTitle": "Probability Density Function"
+    "videoTitle": "Probability Density Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Probability_Density_Function.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4380,7 +4564,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Cumulative_Distribution_Functions.mp4",
-    "videoTitle": "Cumulative Distribution Functions"
+    "videoTitle": "Cumulative Distribution Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cumulative_Distribution_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4418,7 +4604,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
-    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4432,7 +4620,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Mode_of_a_sample.mp4",
-    "videoTitle": "Mode of a Sample"
+    "videoTitle": "Mode of a Sample",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Mode_of_a_sample.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4509,8 +4699,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1uDwYAXPIbbF7BJqJCmCXAwdIrufYJePQ/preview",
-    "videoTitle": "Null Hypothesis"
+    "video": "assets/videos/Null_Hypothesis.mp4",
+    "videoTitle": "Null Hypothesis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Null_Hypothesis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4666,7 +4858,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Poissons_Ratio_and_Lateral_Strain_Contraction.mp4",
-    "videoTitle": "Poisson's Ratio and Lateral Strain Contraction"
+    "videoTitle": "Poisson's Ratio and Lateral Strain Contraction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Poissons_Ratio_and_Lateral_Strain_Contraction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4680,7 +4874,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Bending_Formula.mp4",
-    "videoTitle": "Bending Formula"
+    "videoTitle": "Bending Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Bending_Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4754,7 +4950,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Torsion_Formula.mp4",
-    "videoTitle": "Torsion Formula"
+    "videoTitle": "Torsion Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Torsion_Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4803,8 +5001,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1zXQI2hjU8hnN62yijImPFMXZRvK9iKr9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1CRQWN_JD1cZ2HR37kWjygYG29pbk-3rr/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1j79Ig7DcU-uU_wTURaiFYqOJsSItwf1J/preview",
-    "videoTitle": "Euler’s Critical Buckling Load"
+    "video": "assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "videoTitle": "Euler’s Critical Buckling Load",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4818,7 +5018,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slenderness_Ratio.mp4",
-    "videoTitle": "Slenderness Ratio"
+    "videoTitle": "Slenderness Ratio",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slenderness_Ratio.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4831,8 +5033,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1zXQI2hjU8hnN62yijImPFMXZRvK9iKr9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1CRQWN_JD1cZ2HR37kWjygYG29pbk-3rr/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1j79Ig7DcU-uU_wTURaiFYqOJsSItwf1J/preview",
-    "videoTitle": "Euler’s Critical Buckling Load"
+    "video": "assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "videoTitle": "Euler’s Critical Buckling Load",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4860,7 +5064,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Mohr_s_Circle.mp4",
-    "videoTitle": "Mohr's Circle"
+    "videoTitle": "Mohr's Circle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Mohr_s_Circle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4941,8 +5147,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/c/c0/I-beam_diagram_moment_by_addition.jpg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1F838BbwpemjTH8uzu1Lgx__8J9bZFksT/preview",
-    "videoTitle": "Centroid of Composite Planar Areas"
+    "video": "assets/videos/Centroid_of_Composite_Planar_Areas.mp4",
+    "videoTitle": "Centroid of Composite Planar Areas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Centroid_of_Composite_Planar_Areas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -4994,7 +5202,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Lami's Theorem for Concurrent Forces.mp4",
-    "videoTitle": "Concurrent Forces"
+    "videoTitle": "Concurrent Forces",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Lami's%20Theorem%20for%20Concurrent%20Forces.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5089,8 +5299,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1vdB5XFnIURWDnNDFnzyB3NUtoJVt3m7T/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1BrYQyMkxs-5Uk7UoWZ8h5KzRGl_ZnzXL/preview",
-    "videoTitle": "Polar Moment of Inertia"
+    "video": "assets/videos/Polar_Moment_of_Inertia.mp4",
+    "videoTitle": "Polar Moment of Inertia",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Polar_Moment_of_Inertia.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5103,8 +5315,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1NhgbEIOXeYSTdcvJpIMOW6IgWV_I-e2d/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1vJbTITV2lyUgAcDsRsVoEUFzERAXZSqc/preview",
-    "videoTitle": "Product of Inertia"
+    "video": "assets/videos/Product_of_Inertia.mp4",
+    "videoTitle": "Product of Inertia",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_of_Inertia.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5117,8 +5331,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1GMhhN6AmtxHd0m_zBOevlRCV7kHP8hn_/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cT8Ykmm_dF-EZk0EP4oSNpMapOY3Jla3/preview",
-    "videoTitle": "Radius of Gyration"
+    "video": "assets/videos/Radius_of_Gyration.mp4",
+    "videoTitle": "Radius of Gyration",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Gyration.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5160,7 +5376,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Resolution_of_a_Force.mp4",
-    "videoTitle": "Resolution of a Force"
+    "videoTitle": "Resolution of a Force",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Resolution_of_a_Force.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5198,7 +5416,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Limiting_friction.mp4",
-    "videoTitle": "Limiting Friction"
+    "videoTitle": "Limiting Friction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Limiting_friction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5211,8 +5431,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pj6H3y1cT-nQU6wK0QshCwDbYq3TdwQN/preview",
-    "videoTitle": "Method of Joints"
+    "video": "assets/videos/Method of Joints.mp4",
+    "videoTitle": "Method of Joints",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Method%20of%20Joints.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5253,8 +5475,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/10WJ7VURrhRrR9wSUabVNaw6sxTgHzJLh/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1A73JV4dCaBeAltghzO-LEGMwfBthoIzw/preview",
-    "videoTitle": "2D Static Equilibrium Equations"
+    "video": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
+    "videoTitle": "2D Static Equilibrium Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/2D_Static_Equilibrium_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5557,8 +5781,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/18jyTwZ3ump8brBRCJsp-VcxnpR_Hn0xp/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1BXgFTdRIplddLPDgtIEdrjylQtbs03hO/preview",
-    "videoTitle": "Compass Rule for Closed Traverse Balancing"
+    "video": "assets/videos/Compass_Rule_for_Closed_Traverse_Balancing.mp4",
+    "videoTitle": "Compass Rule for Closed Traverse Balancing",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Compass_Rule_for_Closed_Traverse_Balancing.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5632,7 +5858,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stopping_Sight_Distance.mp4",
-    "videoTitle": "Stopping Sight Distance (SSD)"
+    "videoTitle": "Stopping Sight Distance (SSD)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stopping_Sight_Distance.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -5789,8 +6017,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1Rf9WsINgmpdN1zrVHr3N5d07thHQSE9g/preview",
-    "videoTitle": "Manning's Equation"
+    "video": "assets/videos/Mannings_Equation.mp4",
+    "videoTitle": "Manning's Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Mannings_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Civil",
@@ -6165,8 +6395,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1k2f71cfuPZL_0Vq8szEqmVxoBKkiD2cE/preview",
-    "videoTitle": "Thevenin Theorem"
+    "video": "assets/videos/Thevenin_Theorem.mp4",
+    "videoTitle": "Thevenin Theorem",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Thevenin_Theorem.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -6299,8 +6531,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1JzEgiWLejNtezLjGSyiTD9HiiaQ4qzuZ/preview",
-    "videoTitle": "Fourier series"
+    "video": "assets/videos/Fourier Series.mp4",
+    "videoTitle": "Fourier series",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Fourier%20Series.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -6614,7 +6848,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Control_Systems.mp4",
-    "videoTitle": "Control Systems"
+    "videoTitle": "Control Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Control_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7134,7 +7370,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
-    "videoTitle": "Capitalized Cost for Infinite Project Life"
+    "videoTitle": "Capitalized Cost for Infinite Project Life",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7148,7 +7386,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Sunk_Costs.mp4",
-    "videoTitle": "Sunk Costs"
+    "videoTitle": "Sunk Costs",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Sunk_Costs.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7176,7 +7416,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Overhead_Analysis.mp4",
-    "videoTitle": "Overhead Analysis"
+    "videoTitle": "Overhead Analysis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Overhead_Analysis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7189,8 +7431,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1zy-vrGqIgApv6unKhp9Zp0rqzxW0js1h/preview",
-    "videoTitle": "Simple Payback Period"
+    "video": "assets/videos/Simple Payback Period.mp4",
+    "videoTitle": "Simple Payback Period",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simple%20Payback%20Period.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7204,7 +7448,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Inflation_Fishers_equation.mp4",
-    "videoTitle": "Inflation: Fisher's Equation"
+    "videoTitle": "Inflation: Fisher's Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inflation_Fishers_equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7218,7 +7464,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
-    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7284,7 +7532,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Straight_Line_Depreciation_Method.mp4",
-    "videoTitle": "Straight Line Depreciation Method"
+    "videoTitle": "Straight Line Depreciation Method",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight_Line_Depreciation_Method.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7298,7 +7548,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
-    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation"
+    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7323,8 +7575,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1VmieIGb_P-HxuB0tGfzyvypw_Z45f5ig/preview",
-    "videoTitle": "Design Patent vs. Utility Patent"
+    "video": "assets/videos/Design patent vs utility patent.mp4",
+    "videoTitle": "Design Patent vs. Utility Patent",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Design%20patent%20vs%20utility%20patent.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7352,7 +7606,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trademarks.mp4",
-    "videoTitle": "Trademarks and Brand Protection Explainer"
+    "videoTitle": "Trademarks and Brand Protection Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trademarks.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7545,8 +7801,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/1/10/Conic_Section_%28parameters_%CE%B8%2C%CF%95%29.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1lS5mnQYDEV6jiDDiF1V6G3f5g-tgCi3F/preview",
-    "videoTitle": "Eccentricities of Conic Sections"
+    "video": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "videoTitle": "Eccentricities of Conic Sections",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7611,8 +7869,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CWPTy-8IpxadLlIEZ2dSFRssRwUiqkRB/preview",
-    "videoTitle": "Straight Lines Slope-Point Form"
+    "video": "assets/videos/Straight Lines Slope point form.mp4",
+    "videoTitle": "Straight Lines Slope-Point Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight%20Lines%20Slope%20point%20form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7626,7 +7886,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slope_Intercept_Form.mp4",
-    "videoTitle": "Slope Intercept Form"
+    "videoTitle": "Slope Intercept Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slope_Intercept_Form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7657,8 +7919,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cNOXQpV48eEX_VWPz78-O11v59yrNgsE/preview",
-    "videoTitle": "Parallel and Perpendicular Lines"
+    "video": "assets/videos/Parallel and Perpendicular lines.mp4",
+    "videoTitle": "Parallel and Perpendicular Lines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel%20and%20Perpendicular%20lines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7689,8 +7953,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IP8Yhigkvi9sIu-VenHpKHZHa53B4Hvp/preview",
-    "videoTitle": "Distance Formula"
+    "video": "assets/videos/Distance Formula.mp4",
+    "videoTitle": "Distance Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distance%20Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7704,7 +7970,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
-    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives"
+    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7718,7 +7986,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
-    "videoTitle": "Curvature of any Curve in Terms of Derivatives"
+    "videoTitle": "Curvature of any Curve in Terms of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7732,7 +8002,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Basic_rules_of_derivatives.mp4",
-    "videoTitle": "Basic Rules of Derivatives"
+    "videoTitle": "Basic Rules of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Basic_rules_of_derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7746,7 +8018,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
-    "videoTitle": "Product and Quotient Rules for Derivatives"
+    "videoTitle": "Product and Quotient Rules for Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7760,7 +8034,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Chain_Rule_for_Differentiation.mp4",
-    "videoTitle": "Chain Rule for Differentiation"
+    "videoTitle": "Chain Rule for Differentiation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Chain_Rule_for_Differentiation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7774,7 +8050,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7788,7 +8066,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7802,7 +8082,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7816,7 +8098,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7844,7 +8128,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
-    "videoTitle": "Derivative of Logarithmic Functions"
+    "videoTitle": "Derivative of Logarithmic Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7870,7 +8156,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/De Moiver's theorem.mp4",
-    "videoTitle": "De Moivers Theorem"
+    "videoTitle": "De Moivers Theorem",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/De%20Moiver's%20theorem.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7910,7 +8198,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Concept_of_Complex_Numbers.mp4",
-    "videoTitle": "Concept of Complex Numbers Explainer"
+    "videoTitle": "Concept of Complex Numbers Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Concept_of_Complex_Numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7924,7 +8214,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
-    "videoTitle": "Applying Boundary Conditions in Differential Equations"
+    "videoTitle": "Applying Boundary Conditions in Differential Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7952,7 +8244,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
-    "videoTitle": "Degree and Order of Differential Equation"
+    "videoTitle": "Degree and Order of Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -7966,7 +8260,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
-    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation"
+    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8005,8 +8301,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tReoY6iUhquk45PNx6csfELITLRtTpAz/preview",
-    "videoTitle": "Matrix of Relation"
+    "video": "assets/videos/Matrix of Relation.mp4",
+    "videoTitle": "Matrix of Relation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Matrix%20of%20Relation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8058,7 +8356,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Dot_Product.mp4",
-    "videoTitle": "Properties of Dot Product"
+    "videoTitle": "Properties of Dot Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Dot_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8084,7 +8384,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Cross_Product.mp4",
-    "videoTitle": "Properties of Cross Product"
+    "videoTitle": "Properties of Cross Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Cross_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8109,8 +8411,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12dFZ3zXiz9cuefrdoES1u0t110WpHVP5/preview",
-    "videoTitle": "Divergence of a Vector Field"
+    "video": "assets/videos/Divergence of a Vector Field.mp4",
+    "videoTitle": "Divergence of a Vector Field",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Divergence%20of%20a%20Vector%20Field.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8123,8 +8427,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1ODzbMTs6qhufTo1SYlUm3qdbU79HGVB9/preview",
-    "videoTitle": "Curl of a Vector Field and Irrotational Fields"
+    "video": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "videoTitle": "Curl of a Vector Field and Irrotational Fields",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8137,8 +8443,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/13hV2n-x0oPIDrjOO3ng4AM4QafrJh2Ri/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13uHiKJMZCI6cfehtAlx8zJrAgqshejRG/preview",
-    "videoTitle": "Inverse of a Matrix"
+    "video": "assets/videos/Inverse_of_a_Matrix.mp4",
+    "videoTitle": "Inverse of a Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inverse_of_a_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8164,7 +8472,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Identity_Matrix.mp4",
-    "videoTitle": "Properties of Identity Matrix"
+    "videoTitle": "Properties of Identity Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Identity_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8204,7 +8514,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
-    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere"
+    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8229,8 +8541,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1waiM_TELnv9dJAfTWQgHwe72Z82mcw4U/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1b012mQwo34rZQMwGVorfM6_SkdREaqic/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1QdOQlqTHaEib-of2Yan46NvlTpc58FnP/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1d4YM5heNS94lHyKI0Ln4u0pF418EwJ9h/preview",
-    "videoTitle": "Logarithmic Identities"
+    "video": "assets/videos/Logarithmic Identities.mp4",
+    "videoTitle": "Logarithmic Identities",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Logarithmic%20Identities.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8244,7 +8558,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Concept_of_Complex_Numbers.mp4",
-    "videoTitle": "Concept of Complex Numbers Explainer"
+    "videoTitle": "Concept of Complex Numbers Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Concept_of_Complex_Numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8258,7 +8574,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
-    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8313,8 +8631,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1a-iuYNXcxyazntG-kP1ZxEHaAB2na5Mw/preview",
-    "videoTitle": "Law of Sines"
+    "video": "assets/videos/Law_of_Sines.mp4",
+    "videoTitle": "Law of Sines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Law_of_Sines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8328,7 +8648,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Double Angles"
+    "videoTitle": "Trigonometric Ratios of Double Angles",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8344,7 +8666,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8384,7 +8708,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newton's Method for Root Extraction.mp4",
-    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)"
+    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Method%20for%20Root%20Extraction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8397,8 +8723,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1B-2mkWPAHV0jcPeQYdrtx66yZcUhDqNu/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kY-Pblove05BCW_njh1N76zX3_0rrJee/preview",
-    "videoTitle": "Simpson's Rule"
+    "video": "assets/videos/Simpsons_Rule.mp4",
+    "videoTitle": "Simpson's Rule",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simpsons_Rule.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8412,7 +8740,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
-    "videoTitle": "Taylor and Maclaurin Series Expansion"
+    "videoTitle": "Taylor and Maclaurin Series Expansion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -8733,8 +9063,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1M7vj_s8jUAES1EkppbOqWL72SrpgqyuL/preview",
-    "videoTitle": "Nyquist Theorem"
+    "video": "assets/videos/Nyquist_Theorem.mp4",
+    "videoTitle": "Nyquist Theorem",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Nyquist_Theorem.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Electrical and Computer",
@@ -10328,7 +10660,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Types_of_Cash_Flows.mp4",
-    "videoTitle": "Types of Cash Flows and Economic Factors"
+    "videoTitle": "Types of Cash Flows and Economic Factors",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Types_of_Cash_Flows.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -10342,7 +10676,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Depreciation.mp4",
-    "videoTitle": "Depreciation Methods and Book Value"
+    "videoTitle": "Depreciation Methods and Book Value",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -10356,7 +10692,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Depreciation.mp4",
-    "videoTitle": "Depreciation Methods and Book Value"
+    "videoTitle": "Depreciation Methods and Book Value",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -10369,8 +10707,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1U0KDcANUhzlb1QGB8FbEmNCdd9wPcqdx/preview",
-    "videoTitle": "MACRS Depreciation"
+    "video": "assets/videos/MACRS_Depreciation.mp4",
+    "videoTitle": "MACRS Depreciation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/MACRS_Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -10412,7 +10752,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Straight_Line_Depreciation_Method.mp4",
-    "videoTitle": "Straight Line Depreciation Method"
+    "videoTitle": "Straight Line Depreciation Method",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight_Line_Depreciation_Method.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -10426,7 +10768,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
-    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation"
+    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11140,7 +11484,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
-    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere"
+    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11153,8 +11499,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CWPTy-8IpxadLlIEZ2dSFRssRwUiqkRB/preview",
-    "videoTitle": "Straight Lines Slope-Point Form"
+    "video": "assets/videos/Straight Lines Slope point form.mp4",
+    "videoTitle": "Straight Lines Slope-Point Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight%20Lines%20Slope%20point%20form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11168,7 +11516,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slope_Intercept_Form.mp4",
-    "videoTitle": "Slope Intercept Form"
+    "videoTitle": "Slope Intercept Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slope_Intercept_Form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11199,8 +11549,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cNOXQpV48eEX_VWPz78-O11v59yrNgsE/preview",
-    "videoTitle": "Parallel and Perpendicular Lines"
+    "video": "assets/videos/Parallel and Perpendicular lines.mp4",
+    "videoTitle": "Parallel and Perpendicular Lines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel%20and%20Perpendicular%20lines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11231,8 +11583,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IP8Yhigkvi9sIu-VenHpKHZHa53B4Hvp/preview",
-    "videoTitle": "Distance Formula"
+    "video": "assets/videos/Distance Formula.mp4",
+    "videoTitle": "Distance Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distance%20Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11368,7 +11722,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Littles_Law_for_Queueing_and_Work_in_Progress.mp4",
-    "videoTitle": "Little's Law for Queueing and Work-in-Progress"
+    "videoTitle": "Little's Law for Queueing and Work-in-Progress",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Littles_Law_for_Queueing_and_Work_in_Progress.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11434,7 +11790,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Control_Systems.mp4",
-    "videoTitle": "Control Systems"
+    "videoTitle": "Control Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Control_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Industrial",
@@ -11784,7 +12142,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Work Sampling Required Observations Sample Size.mp4",
-    "videoTitle": "Work Sampling"
+    "videoTitle": "Work Sampling",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Work%20Sampling%20Required%20Observations%20Sample%20Size.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11827,7 +12187,9 @@ const notesData = [
         "difficulty": "Numerical",
         "source": "FE Mathematics Exam Practice (Problem #1697)"
       }
-    ]
+    ],
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Concept_of_Complex_Numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11841,7 +12203,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
-    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11885,7 +12249,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Law_of_Cosines.mp4",
-    "videoTitle": "Law of Cosines for General Triangles"
+    "videoTitle": "Law of Cosines for General Triangles",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Law_of_Cosines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11898,8 +12264,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1a-iuYNXcxyazntG-kP1ZxEHaAB2na5Mw/preview",
-    "videoTitle": "Law of Sines"
+    "video": "assets/videos/Law_of_Sines.mp4",
+    "videoTitle": "Law of Sines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Law_of_Sines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11913,7 +12281,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Double Angles"
+    "videoTitle": "Trigonometric Ratios of Double Angles",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11929,7 +12299,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11942,8 +12314,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1waiM_TELnv9dJAfTWQgHwe72Z82mcw4U/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1b012mQwo34rZQMwGVorfM6_SkdREaqic/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1QdOQlqTHaEib-of2Yan46NvlTpc58FnP/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1d4YM5heNS94lHyKI0Ln4u0pF418EwJ9h/preview",
-    "videoTitle": "Logarithmic Identities"
+    "video": "assets/videos/Logarithmic Identities.mp4",
+    "videoTitle": "Logarithmic Identities",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Logarithmic%20Identities.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11969,7 +12343,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
-    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere"
+    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -11994,8 +12370,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CWPTy-8IpxadLlIEZ2dSFRssRwUiqkRB/preview",
-    "videoTitle": "Straight Lines Slope-Point Form"
+    "video": "assets/videos/Straight Lines Slope point form.mp4",
+    "videoTitle": "Straight Lines Slope-Point Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight%20Lines%20Slope%20point%20form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12009,7 +12387,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slope_Intercept_Form.mp4",
-    "videoTitle": "Slope Intercept Form"
+    "videoTitle": "Slope Intercept Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slope_Intercept_Form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12040,8 +12420,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cNOXQpV48eEX_VWPz78-O11v59yrNgsE/preview",
-    "videoTitle": "Parallel and Perpendicular Lines"
+    "video": "assets/videos/Parallel and Perpendicular lines.mp4",
+    "videoTitle": "Parallel and Perpendicular Lines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel%20and%20Perpendicular%20lines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12072,8 +12454,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IP8Yhigkvi9sIu-VenHpKHZHa53B4Hvp/preview",
-    "videoTitle": "Distance Formula"
+    "video": "assets/videos/Distance Formula.mp4",
+    "videoTitle": "Distance Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distance%20Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12102,8 +12486,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/1/10/Conic_Section_%28parameters_%CE%B8%2C%CF%95%29.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1lS5mnQYDEV6jiDDiF1V6G3f5g-tgCi3F/preview",
-    "videoTitle": "Eccentricities of Conic Sections"
+    "video": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "videoTitle": "Eccentricities of Conic Sections",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12195,7 +12581,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Basic_rules_of_derivatives.mp4",
-    "videoTitle": "Basic Rules of Derivatives"
+    "videoTitle": "Basic Rules of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Basic_rules_of_derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12209,7 +12597,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
-    "videoTitle": "Product and Quotient Rules for Derivatives"
+    "videoTitle": "Product and Quotient Rules for Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12223,7 +12613,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Chain_Rule_for_Differentiation.mp4",
-    "videoTitle": "Chain Rule for Differentiation"
+    "videoTitle": "Chain Rule for Differentiation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Chain_Rule_for_Differentiation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12237,7 +12629,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
-    "videoTitle": "Derivative of Logarithmic Functions"
+    "videoTitle": "Derivative of Logarithmic Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12251,7 +12645,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
-    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives"
+    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12265,7 +12661,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
-    "videoTitle": "Curvature of any Curve in Terms of Derivatives"
+    "videoTitle": "Curvature of any Curve in Terms of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12279,7 +12677,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12293,7 +12693,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12307,7 +12709,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12321,7 +12725,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12335,7 +12741,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
-    "videoTitle": "Degree and Order of Differential Equation"
+    "videoTitle": "Degree and Order of Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12363,7 +12771,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
-    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation"
+    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12391,7 +12801,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
-    "videoTitle": "Applying Boundary Conditions in Differential Equations"
+    "videoTitle": "Applying Boundary Conditions in Differential Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12417,7 +12829,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Identity_Matrix.mp4",
-    "videoTitle": "Properties of Identity Matrix"
+    "videoTitle": "Properties of Identity Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Identity_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12430,8 +12844,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/13hV2n-x0oPIDrjOO3ng4AM4QafrJh2Ri/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13uHiKJMZCI6cfehtAlx8zJrAgqshejRG/preview",
-    "videoTitle": "Inverse of a Matrix"
+    "video": "assets/videos/Inverse_of_a_Matrix.mp4",
+    "videoTitle": "Inverse of a Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inverse_of_a_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12485,7 +12901,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Dot_Product.mp4",
-    "videoTitle": "Properties of Dot Product"
+    "videoTitle": "Properties of Dot Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Dot_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12511,7 +12929,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Cross_Product.mp4",
-    "videoTitle": "Properties of Cross Product"
+    "videoTitle": "Properties of Cross Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Cross_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12536,8 +12956,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12dFZ3zXiz9cuefrdoES1u0t110WpHVP5/preview",
-    "videoTitle": "Divergence of a Vector Field"
+    "video": "assets/videos/Divergence of a Vector Field.mp4",
+    "videoTitle": "Divergence of a Vector Field",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Divergence%20of%20a%20Vector%20Field.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12550,8 +12972,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1ODzbMTs6qhufTo1SYlUm3qdbU79HGVB9/preview",
-    "videoTitle": "Curl of a Vector Field and Irrotational Fields"
+    "video": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "videoTitle": "Curl of a Vector Field and Irrotational Fields",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12567,7 +12991,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newton's Method for Root Extraction.mp4",
-    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)"
+    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Method%20for%20Root%20Extraction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12618,8 +13044,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1B-2mkWPAHV0jcPeQYdrtx66yZcUhDqNu/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kY-Pblove05BCW_njh1N76zX3_0rrJee/preview",
-    "videoTitle": "Simpson's Rule"
+    "video": "assets/videos/Simpsons_Rule.mp4",
+    "videoTitle": "Simpson's Rule",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simpsons_Rule.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12633,7 +13061,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
-    "videoTitle": "Taylor and Maclaurin Series Expansion"
+    "videoTitle": "Taylor and Maclaurin Series Expansion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12647,7 +13077,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Flowchart_Symbols.mp4",
-    "videoTitle": "Flowchart Symbols"
+    "videoTitle": "Flowchart Symbols",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Flowchart_Symbols.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12699,7 +13131,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Geometric_Mean.mp4",
-    "videoTitle": "Geometric Mean and Compounded Growth Rates"
+    "videoTitle": "Geometric Mean and Compounded Growth Rates",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Geometric_Mean.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12713,7 +13147,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
-    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12727,7 +13163,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Mode_of_a_sample.mp4",
-    "videoTitle": "Mode of a Sample"
+    "videoTitle": "Mode of a Sample",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Mode_of_a_sample.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12769,7 +13207,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Permutations_with_Repetition.mp4",
-    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Permutations_with_Repetition.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12821,7 +13261,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Probability_Density_Function.mp4",
-    "videoTitle": "Probability Density Function"
+    "videoTitle": "Probability Density Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Probability_Density_Function.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12837,7 +13279,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Cumulative_Distribution_Functions.mp4",
-    "videoTitle": "Cumulative Distribution Functions"
+    "videoTitle": "Cumulative Distribution Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cumulative_Distribution_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12850,8 +13294,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1rjejkpzaRigrtkkK3VAMAztLS3crG1io/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1h-74w9jTOJwg8CujUnkoS16_yimSzWNc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1LOOUIjtIUjjngnd9iT_ZWqga3jsyUe8i/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1003484364?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Binomial Distributions\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pCuVWsQq3sCBT-iX89BlgYZvifnR-lx0/preview",
-    "videoTitle": "Binomial Distribution"
+    "video": "assets/videos/Binomial_Distribution.mp4",
+    "videoTitle": "Binomial Distribution",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Binomial_Distribution.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12883,7 +13329,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
-    "videoTitle": "Standard Normal Distribution (Z Transformation)"
+    "videoTitle": "Standard Normal Distribution (Z Transformation)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12897,7 +13345,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
-    "videoTitle": "Student’s t-Confidence Interval for Unknown Variance"
+    "videoTitle": "Student’s t-Confidence Interval for Unknown Variance",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Students_t_Confidence_Interval_for_Unknown_Variance.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12911,7 +13361,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Expected_Values.mp4",
-    "videoTitle": "Expected Values"
+    "videoTitle": "Expected Values",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected_Values.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12924,8 +13376,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1x98FMuTm_acKnZW_4S5tXuQfYWoVTX1K/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1dB2u-9XEXOVQl-96oKrCQm6lTQvfLDOF/preview",
-    "videoTitle": "Expected Value of a Continuous Function"
+    "video": "assets/videos/Expected Value.mp4",
+    "videoTitle": "Expected Value of a Continuous Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected%20Value.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -12964,8 +13418,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1uDwYAXPIbbF7BJqJCmCXAwdIrufYJePQ/preview",
-    "videoTitle": "Null Hypothesis"
+    "video": "assets/videos/Null_Hypothesis.mp4",
+    "videoTitle": "Null Hypothesis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Null_Hypothesis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13029,7 +13485,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ethical_and_Legal_Considerations.mp4",
-    "videoTitle": "Ethical and Legal Considerations in Engineering Practice"
+    "videoTitle": "Ethical and Legal Considerations in Engineering Practice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ethical_and_Legal_Considerations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13043,7 +13501,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
-    "videoTitle": "NCEES Model Rules of Professional Conduct"
+    "videoTitle": "NCEES Model Rules of Professional Conduct",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13057,7 +13517,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Professional_and_Technical_Societies.mp4",
-    "videoTitle": "Professional and Technical Societies"
+    "videoTitle": "Professional and Technical Societies",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Professional_and_Technical_Societies.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13071,7 +13533,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
-    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol"
+    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13096,8 +13560,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1VmieIGb_P-HxuB0tGfzyvypw_Z45f5ig/preview",
-    "videoTitle": "Design Patent vs. Utility Patent"
+    "video": "assets/videos/Design patent vs utility patent.mp4",
+    "videoTitle": "Design Patent vs. Utility Patent",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Design%20patent%20vs%20utility%20patent.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13125,7 +13591,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trademarks.mp4",
-    "videoTitle": "Trademarks and Brand Protection Explainer"
+    "videoTitle": "Trademarks and Brand Protection Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trademarks.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13151,7 +13619,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Sustainability.mp4",
-    "videoTitle": "Sustainability in Engineering Ethics"
+    "videoTitle": "Sustainability in Engineering Ethics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Sustainability.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13179,7 +13649,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
-    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13193,7 +13665,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Inflation_Fishers_equation.mp4",
-    "videoTitle": "Inflation: Fisher's Equation"
+    "videoTitle": "Inflation: Fisher's Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inflation_Fishers_equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13207,7 +13681,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
-    "videoTitle": "Capitalized Cost for Infinite Project Life"
+    "videoTitle": "Capitalized Cost for Infinite Project Life",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13235,7 +13711,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Incremental_Costs.mp4",
-    "videoTitle": "Incremental Costs and Differential Economic Analysis"
+    "videoTitle": "Incremental Costs and Differential Economic Analysis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Incremental_Costs.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13249,7 +13727,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Sunk_Costs.mp4",
-    "videoTitle": "Sunk Costs"
+    "videoTitle": "Sunk Costs",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Sunk_Costs.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13277,7 +13757,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Overhead_Analysis.mp4",
-    "videoTitle": "Overhead Analysis"
+    "videoTitle": "Overhead Analysis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Overhead_Analysis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13290,8 +13772,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1zy-vrGqIgApv6unKhp9Zp0rqzxW0js1h/preview",
-    "videoTitle": "Simple Payback Period"
+    "video": "assets/videos/Simple Payback Period.mp4",
+    "videoTitle": "Simple Payback Period",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simple%20Payback%20Period.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13307,7 +13791,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Straight_Line_Depreciation_Method.mp4",
-    "videoTitle": "Straight Line Depreciation Method"
+    "videoTitle": "Straight Line Depreciation Method",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight_Line_Depreciation_Method.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13321,7 +13807,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
-    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation"
+    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13337,7 +13825,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Coulombs_Law_in_electrostatics.mp4",
-    "videoTitle": "Coulomb’s Law of Electrostatic Force and Field Intensity"
+    "videoTitle": "Coulomb’s Law of Electrostatic Force and Field Intensity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Coulombs_Law_in_electrostatics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13389,7 +13879,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Biot_Savart_Law_for_Magnetic_Fields.mp4",
-    "videoTitle": "Biot-Savart Law for Magnetic Fields"
+    "videoTitle": "Biot-Savart Law for Magnetic Fields",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Biot_Savart_Law_for_Magnetic_Fields.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13403,7 +13895,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ohms_Law.mp4",
-    "videoTitle": "Ohm's Law"
+    "videoTitle": "Ohm's Law",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ohms_Law.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13417,7 +13911,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Specific_Resistance_of_a_Conductor.mp4",
-    "videoTitle": "Specific Resistance of a Conductor (Resistivity)"
+    "videoTitle": "Specific Resistance of a Conductor (Resistivity)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Specific_Resistance_of_a_Conductor.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13431,7 +13927,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Equivalent_Resistance_in_Series_and_Parallel_Networks.mp4",
-    "videoTitle": "Equivalent Resistance in Series and Parallel Networks"
+    "videoTitle": "Equivalent Resistance in Series and Parallel Networks",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Equivalent_Resistance_in_Series_and_Parallel_Networks.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13459,7 +13957,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
-    "videoTitle": "Kirchhoff's Current and Voltage Laws"
+    "videoTitle": "Kirchhoff's Current and Voltage Laws",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13475,7 +13975,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
-    "videoTitle": "Kirchhoff's Current and Voltage Laws"
+    "videoTitle": "Kirchhoff's Current and Voltage Laws",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13489,7 +13991,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Capacitance_of_a_parallel_plate_capacitor.mp4",
-    "videoTitle": "Capacitance of a Parallel Plate Capacitor"
+    "videoTitle": "Capacitance of a Parallel Plate Capacitor",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capacitance_of_a_parallel_plate_capacitor.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13657,7 +14161,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
-    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios"
+    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13683,7 +14189,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Synchronous_Speed_of_an_AC_motor.mp4",
-    "videoTitle": "Synchronous Speed of an AC Motor"
+    "videoTitle": "Synchronous Speed of an AC Motor",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Synchronous_Speed_of_an_AC_motor.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13697,7 +14205,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slip_of_an_induction_machine.mp4",
-    "videoTitle": "Slip of an Induction Machine"
+    "videoTitle": "Slip of an Induction Machine",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slip_of_an_induction_machine.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13711,7 +14221,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/DC_Shunt_Motor_Torque_Speed_Characteristic_and_Speed_Regulation.mp4",
-    "videoTitle": "DC Shunt Motor Torque Speed Characteristic and Speed Regulation"
+    "videoTitle": "DC Shunt Motor Torque Speed Characteristic and Speed Regulation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/DC_Shunt_Motor_Torque_Speed_Characteristic_and_Speed_Regulation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13773,7 +14285,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Resolution_of_a_Force.mp4",
-    "videoTitle": "Resolution of a Force"
+    "videoTitle": "Resolution of a Force",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Resolution_of_a_Force.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13789,7 +14303,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Moments_Couples.mp4",
-    "videoTitle": "Moments (Couples)"
+    "videoTitle": "Moments (Couples)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Moments_Couples.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13816,8 +14332,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/10WJ7VURrhRrR9wSUabVNaw6sxTgHzJLh/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1A73JV4dCaBeAltghzO-LEGMwfBthoIzw/preview",
-    "videoTitle": "2D Static Equilibrium Equations"
+    "video": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
+    "videoTitle": "2D Static Equilibrium Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/2D_Static_Equilibrium_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13871,7 +14389,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Lami's Theorem for Concurrent Forces.mp4",
-    "videoTitle": "Concurrent Forces"
+    "videoTitle": "Concurrent Forces",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Lami's%20Theorem%20for%20Concurrent%20Forces.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13924,8 +14444,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/c/c0/I-beam_diagram_moment_by_addition.jpg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1F838BbwpemjTH8uzu1Lgx__8J9bZFksT/preview",
-    "videoTitle": "Centroid of Composite Planar Areas"
+    "video": "assets/videos/Centroid_of_Composite_Planar_Areas.mp4",
+    "videoTitle": "Centroid of Composite Planar Areas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Centroid_of_Composite_Planar_Areas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -13994,8 +14516,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1vdB5XFnIURWDnNDFnzyB3NUtoJVt3m7T/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1BrYQyMkxs-5Uk7UoWZ8h5KzRGl_ZnzXL/preview",
-    "videoTitle": "Polar Moment of Inertia"
+    "video": "assets/videos/Polar_Moment_of_Inertia.mp4",
+    "videoTitle": "Polar Moment of Inertia",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Polar_Moment_of_Inertia.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14008,8 +14532,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1NhgbEIOXeYSTdcvJpIMOW6IgWV_I-e2d/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1vJbTITV2lyUgAcDsRsVoEUFzERAXZSqc/preview",
-    "videoTitle": "Product of Inertia"
+    "video": "assets/videos/Product_of_Inertia.mp4",
+    "videoTitle": "Product of Inertia",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_of_Inertia.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14022,8 +14548,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1GMhhN6AmtxHd0m_zBOevlRCV7kHP8hn_/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cT8Ykmm_dF-EZk0EP4oSNpMapOY3Jla3/preview",
-    "videoTitle": "Radius of Gyration"
+    "video": "assets/videos/Radius_of_Gyration.mp4",
+    "videoTitle": "Radius of Gyration",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Gyration.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14037,7 +14565,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Limiting_friction.mp4",
-    "videoTitle": "Limiting Friction"
+    "videoTitle": "Limiting Friction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Limiting_friction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14076,8 +14606,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pj6H3y1cT-nQU6wK0QshCwDbYq3TdwQN/preview",
-    "videoTitle": "Method of Joints"
+    "video": "assets/videos/Method of Joints.mp4",
+    "videoTitle": "Method of Joints",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Method%20of%20Joints.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14119,7 +14651,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Constant_Acceleration_Motion.mp4",
-    "videoTitle": "Constant Acceleration Motion"
+    "videoTitle": "Constant Acceleration Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Constant_Acceleration_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14132,8 +14666,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1t_P0ozmf8IlnajRLyhlQmfhnIHDOmC77/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1fvQWePO1Z6ZCT5TIDBhkc4ZB70iU3iAd/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1KI4YK6t5-Q_PHKbJ2ToGTNcUbygw5V3c/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IqpzONYTYiCMeLsr6PK7r3BYsbeRJQns/preview",
-    "videoTitle": "Instantaneous Velocity and Acceleration"
+    "video": "assets/videos/Instantaneous velocity and acceleration.mp4",
+    "videoTitle": "Instantaneous Velocity and Acceleration",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Instantaneous%20velocity%20and%20acceleration.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14146,8 +14682,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1B81ctQhaPHRnZwmpia_iTrwFA2Hk8Ouw/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1lIAVKi1lYapMkjEbLcU-fYDvpdBc7W-i/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1003485097?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Projectile Motion\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/192mmL6O2DVobblf055ATqe0x66JxjOEk/preview",
-    "videoTitle": "Projectile Motion"
+    "video": "assets/videos/Projectile_Motion.mp4",
+    "videoTitle": "Projectile Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Projectile_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14162,8 +14700,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/c/c1/Relative_motion.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/15IfHNmWezBbWrf3wCHoq0HcU0tNqOdup/preview",
-    "videoTitle": "Relative Motion"
+    "video": "assets/videos/Relative_Motion.mp4",
+    "videoTitle": "Relative Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Relative_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14179,7 +14719,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
-    "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion"
+    "videoTitle": "Normal and Tangential Acceleration in Curvilinear Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Normal_and_Tangential_Acceleration_in_Curvilinear_Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14192,8 +14734,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1GB8UO1hxOwDrTapN-s_I6MTA7kG7DO46/preview",
-    "videoTitle": "Uniform Circular Motion"
+    "video": "assets/videos/Uniform Circular Motion (Centripetal Acceleration and Force).mp4",
+    "videoTitle": "Uniform Circular Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Uniform%20Circular%20Motion%20(Centripetal%20Acceleration%20and%20Force).mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14206,8 +14750,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1S34KULdPKKAdtYBgtrVTzETYzvL_L_SH/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.88% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/586138549?h=022c85ccf9&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Motion under Variable Acceleration\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1STqLCaNLTcu8Ag1hmGdPfMK5A-cPbzIT/preview",
-    "videoTitle": "Variable Acceleration Motion"
+    "video": "assets/videos/Variable Acceleration Motion.mp4",
+    "videoTitle": "Variable Acceleration Motion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Variable%20Acceleration%20Motion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14221,7 +14767,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Static_vs_kinetic_friction.mp4",
-    "videoTitle": "Static vs. Kinetic Friction (Coulomb Friction Laws)"
+    "videoTitle": "Static vs. Kinetic Friction (Coulomb Friction Laws)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Static_vs_kinetic_friction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14235,7 +14783,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
-    "videoTitle": "Newton's Second Law for a Particle"
+    "videoTitle": "Newton's Second Law for a Particle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newtons_Second_Law_for_a_Particle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14248,8 +14798,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1nk3OHicxEJCGujEUd3yjk4dxP4BYj4Nc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1Z5rHb-ft_SLyq3w7pgUtoBvIWKBgVtSc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/153VL3D0bIkQY1nxj9AfdhumZ0Ty2auZI/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1xjaFx2gLXqZBPfmEDar0TUURxHddX7sc/preview",
-    "videoTitle": "Kinetic Energy"
+    "video": "assets/videos/Kinetic Energy.mp4",
+    "videoTitle": "Kinetic Energy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kinetic%20Energy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14317,7 +14869,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Elastic_vs_inelastic_collision.mp4",
-    "videoTitle": "Elastic vs. Inelastic Collisions"
+    "videoTitle": "Elastic vs. Inelastic Collisions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Elastic_vs_inelastic_collision.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14354,8 +14908,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1ChnjmIDXl6BCWdEfmtRP4HdcgW7cMyix/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1OMRd4lu8UCclBLyB0daCkdZFQ-KGIK_G/preview",
-    "videoTitle": "Instantaneous Center of Rotation"
+    "video": "assets/videos/Instantaneous_Center_of_Rotation.mp4",
+    "videoTitle": "Instantaneous Center of Rotation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Instantaneous_Center_of_Rotation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14369,7 +14925,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Instantaneous_Centers_of_Various_Types_of_Links.mp4",
-    "videoTitle": "Instantaneous Centers of Various Types of Links"
+    "videoTitle": "Instantaneous Centers of Various Types of Links",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Instantaneous_Centers_of_Various_Types_of_Links.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14383,7 +14941,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Kennedy's Rule.mp4",
-    "videoTitle": "Kennedy's Rule"
+    "videoTitle": "Kennedy's Rule",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kennedy's%20Rule.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14397,7 +14957,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Constant_Acceleration_Rotational_Motion_Equations.mp4",
-    "videoTitle": "Constant Acceleration Rotational Motion Equations"
+    "videoTitle": "Constant Acceleration Rotational Motion Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Constant_Acceleration_Rotational_Motion_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14423,7 +14985,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Inversion_of_a_Mechanism.mp4",
-    "videoTitle": "Inversion of a Mechanism"
+    "videoTitle": "Inversion of a Mechanism",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inversion_of_a_Mechanism.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14499,7 +15063,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
-    "videoTitle": "Work-Energy Principle (Rigid Body Dynamics)"
+    "videoTitle": "Work-Energy Principle (Rigid Body Dynamics)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Work_Energy_Principle_Rigid_Body_Dynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14513,7 +15079,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
-    "videoTitle": "Principle of Angular Impulse and Momentum"
+    "videoTitle": "Principle of Angular Impulse and Momentum",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Angular_Impulse_and_Momentum_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14541,7 +15109,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Damped_Free_Vibrations.mp4",
-    "videoTitle": "Damped Free Vibrations (SDOF System Response)"
+    "videoTitle": "Damped Free Vibrations (SDOF System Response)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Damped_Free_Vibrations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14595,7 +15165,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Mohr_s_Circle.mp4",
-    "videoTitle": "Mohr's Circle"
+    "videoTitle": "Mohr's Circle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Mohr_s_Circle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14659,7 +15231,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Poissons_Ratio_and_Lateral_Strain_Contraction.mp4",
-    "videoTitle": "Poisson's Ratio and Lateral Strain Contraction"
+    "videoTitle": "Poisson's Ratio and Lateral Strain Contraction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Poissons_Ratio_and_Lateral_Strain_Contraction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14673,7 +15247,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Bending_Formula.mp4",
-    "videoTitle": "Bending Formula"
+    "videoTitle": "Bending Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Bending_Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14734,8 +15310,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1agHkRBiPwokhtfQ_ph5TQD7YNYTo2jYq/preview",
-    "videoTitle": "Pressure Vessels"
+    "video": "assets/videos/Pressure_Vessels.mp4",
+    "videoTitle": "Pressure Vessels",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Pressure_Vessels.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14815,7 +15393,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Torsion_Formula.mp4",
-    "videoTitle": "Torsion Formula"
+    "videoTitle": "Torsion Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Torsion_Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14902,8 +15482,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1zXQI2hjU8hnN62yijImPFMXZRvK9iKr9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1CRQWN_JD1cZ2HR37kWjygYG29pbk-3rr/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1j79Ig7DcU-uU_wTURaiFYqOJsSItwf1J/preview",
-    "videoTitle": "Euler’s Critical Buckling Load"
+    "video": "assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "videoTitle": "Euler’s Critical Buckling Load",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14917,7 +15499,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slenderness_Ratio.mp4",
-    "videoTitle": "Slenderness Ratio"
+    "videoTitle": "Slenderness Ratio",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slenderness_Ratio.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14930,8 +15514,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1zXQI2hjU8hnN62yijImPFMXZRvK9iKr9/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1CRQWN_JD1cZ2HR37kWjygYG29pbk-3rr/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1j79Ig7DcU-uU_wTURaiFYqOJsSItwf1J/preview",
-    "videoTitle": "Euler’s Critical Buckling Load"
+    "video": "assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "videoTitle": "Euler’s Critical Buckling Load",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eulers_Critical_Buckling_Load.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14957,7 +15543,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Electrical_Properties_of_Material.mp4",
-    "videoTitle": "Electrical Properties of Material"
+    "videoTitle": "Electrical Properties of Material",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Electrical_Properties_of_Material.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14983,7 +15571,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Hardness_of_a_Material.mp4",
-    "videoTitle": "Hardness of a Material"
+    "videoTitle": "Hardness of a Material",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Hardness_of_a_Material.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -14997,7 +15587,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Malleability_and_Ductility.mp4",
-    "videoTitle": "Malleability and Ductility"
+    "videoTitle": "Malleability and Ductility",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Malleability_and_Ductility.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15047,7 +15639,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stainless_Steel.mp4",
-    "videoTitle": "Stainless Steel"
+    "videoTitle": "Stainless Steel",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stainless_Steel.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15061,7 +15655,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Cast_Iron.mp4",
-    "videoTitle": "Cast Iron"
+    "videoTitle": "Cast Iron",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cast_Iron.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15087,7 +15683,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Elastomers_and_Fibres.mp4",
-    "videoTitle": "Elastomers and Fibres"
+    "videoTitle": "Elastomers and Fibres",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Elastomers_and_Fibres.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15101,7 +15699,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Thermoplastics_vs_Thermosetting_Plastics.mp4",
-    "videoTitle": "Thermoplastics vs. Thermosetting Plastics"
+    "videoTitle": "Thermoplastics vs. Thermosetting Plastics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Thermoplastics_vs_Thermosetting_Plastics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15127,7 +15727,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/CNC.mp4",
-    "videoTitle": "CNC"
+    "videoTitle": "CNC",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/CNC.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15165,7 +15767,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Non_Traditional_Machining_Processes.mp4",
-    "videoTitle": "Non-Traditional Machining Processes"
+    "videoTitle": "Non-Traditional Machining Processes",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Non_Traditional_Machining_Processes.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15179,7 +15783,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Powder_Metallurgy.mp4",
-    "videoTitle": "Powder Metallurgy"
+    "videoTitle": "Powder Metallurgy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Powder_Metallurgy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15192,8 +15798,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1H2q4O0x2aEMYfnIrKDmPJSDv7SrershX/preview",
-    "videoTitle": "Peritectic vs Peritectoid Reaction"
+    "video": "assets/videos/Peritectic vs peritectoid reaction.mp4",
+    "videoTitle": "Peritectic vs Peritectoid Reaction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Peritectic%20vs%20peritectoid%20reaction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15219,7 +15827,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Difference_between_quenching_and_annealing.mp4",
-    "videoTitle": "Difference between Quenching and Annealing"
+    "videoTitle": "Difference between Quenching and Annealing",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Difference_between_quenching_and_annealing.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15246,8 +15856,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1UtZjntN1_n39wInNDAKpKu5UgecYrAvx/preview",
-    "videoTitle": "Iron-Carbon Microstructures"
+    "video": "assets/videos/Iron-Carbon Microstructures (Ferrite, Austenite, Cementite, Pearlite, Martensite).mp4",
+    "videoTitle": "Iron-Carbon Microstructures",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Iron-Carbon%20Microstructures%20(Ferrite%2C%20Austenite%2C%20Cementite%2C%20Pearlite%2C%20Martensite).mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15299,7 +15911,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Methods_for_Controlling_Corrosion.mp4",
-    "videoTitle": "Methods for Controlling Corrosion"
+    "videoTitle": "Methods for Controlling Corrosion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Methods_for_Controlling_Corrosion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15324,8 +15938,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1lec3Jqg-I3KOohVUwWz6qLXRH4PnLnqX/preview",
-    "videoTitle": "Corrosion Terminology"
+    "video": "assets/videos/Corrosion Terminology.mp4",
+    "videoTitle": "Corrosion Terminology",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Corrosion%20Terminology.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15362,8 +15978,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1WP8mW5fRY7GiVGO1dvSCOOPCwXMTJvcS/preview",
-    "videoTitle": "Failure by Creep"
+    "video": "assets/videos/Failure by Creep.mp4",
+    "videoTitle": "Failure by Creep",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Failure%20by%20Creep.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15391,7 +16009,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Material_Selection_Factors.mp4",
-    "videoTitle": "Material Selection Factors"
+    "videoTitle": "Material Selection Factors",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Material_Selection_Factors.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15407,7 +16027,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Specific_Gravity.mp4",
-    "videoTitle": "Specific Gravity"
+    "videoTitle": "Specific Gravity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Specific_Gravity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15435,7 +16057,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Newton's Law of Viscosity.mp4",
-    "videoTitle": "Newton's Law of Viscosity"
+    "videoTitle": "Newton's Law of Viscosity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Law%20of%20Viscosity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15465,7 +16089,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
-    "videoTitle": "Newtonian vs Non-Newtonian Fluids"
+    "videoTitle": "Newtonian vs Non-Newtonian Fluids",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15473,7 +16099,7 @@ const notesData = [
     "chapter": "Fluid Properties",
     "topic": "Surface Tension and Capillarity",
     "subtopic": "Capillarity",
-    "video": "https://drive.google.com/file/d/12aHG3Ob330Ac-IzQ85WDsH8pCVf8ZxUo/preview",
+    "video": "assets/videos/Capillarity.mp4",
     "videoTitle": "Capillarity & Capillary Rise in Fluid Columns",
     "content_html": "<div class=\"notes-image-container my-4 text-center flex flex-col items-center\"><center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21581&authkey=%21AOQoVTXCapx5-0Y&width=323&height=292\" width=\"323\" height=\"292\" /></center>\r\n<center><img src=\"https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21570&authkey=%21APWq79faLJnDMCo&width=323&height=292\" width=\"323\" height=\"292\" /></center></div>The capillary rise h is approximated by</p>\r\n\r\n<div class=\"text-center\">\r\n  <button type=\"button\" class=\"btn btn-light shadow-lg\">$h = \\dfrac{4\\sigma \\cos \\beta}{\\gamma d}$ <span class=\"text-muted\">&emsp; &emsp; &emsp; Page 178</span></button>\r\n</div><br/>\r\n\r\n<p>where,<br />\r\n<span class=\"math inline\">\\(\\beta\\)</span> = angle made by the liquid with the wetted tube wall.<br />\r\n<span class=\"math inline\">\\(\\gamma\\)</span> = specific weight of the liquid<br />\r\n<span class=\"math inline\">\\(\\sigma\\)</span> = surface tension<br />\r\nd= diameter of the capillary tube<br />\r\nh = height of the liquid in the vertical tube</p>",
     "important": "Surface Tension: \\[\\sigma = \\dfrac{F}{L}\\]\r\n\r\nCapillary rise: \\[h = \\dfrac{4\\sigma \\cos \\beta}{\\gamma d}\\]",
@@ -15481,7 +16107,9 @@ const notesData = [
     "images": [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21581&authkey=%21AOQoVTXCapx5-0Y&width=323&height=292"
     ],
-    "local_images": []
+    "local_images": [],
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capillarity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15496,8 +16124,10 @@ const notesData = [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21576&authkey=%21AGreDbrHBEU13q0&width=323&height=315"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1aAD3iUE8Hxw2AEBRYz0gj-j0S7Cw4s6F/preview",
-    "videoTitle": "Surface Tension"
+    "video": "assets/videos/Surface_Tension.mp4",
+    "videoTitle": "Surface Tension",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Tension.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15510,8 +16140,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13-s9u7Y89PobjB55_5Qx_Gd8IBllU4dO/preview",
-    "videoTitle": "Archimedes Principle of Buoyancy"
+    "video": "assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "videoTitle": "Archimedes Principle of Buoyancy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15550,8 +16182,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1yRQ3znNWJKAqslwewqKb1McPGW60Cjci/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1ClJo-X2k_L2Sp9aCdqegYN77RNP4xpTe/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/18CKfsok7cvEdl0iVVZ9X_Vs-y6uRr8XC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:58.06% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/586137569?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=d27233e3bb\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Pressure_Measurement.mp4\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzsLR6mCzXoag9l5DUwDO2GqSoeI7oaH/preview",
-    "videoTitle": "Manometers"
+    "video": "assets/videos/Manometers.mp4",
+    "videoTitle": "Manometers",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Manometers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15579,7 +16213,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Bernoullis_Principle.mp4",
-    "videoTitle": "Bernoulli’s Principle"
+    "videoTitle": "Bernoulli’s Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Bernoullis_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15592,8 +16228,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1fE_30I4cUD6W3XvH9csrrVMIvv7Rq9il/preview",
-    "videoTitle": "Continuity Equation"
+    "video": "assets/videos/Continuity_Equation.mp4",
+    "videoTitle": "Continuity Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Continuity_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15621,7 +16259,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Darcy_Weisbach_Equation.mp4",
-    "videoTitle": "Darcy Weisbach Equation"
+    "videoTitle": "Darcy Weisbach Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Darcy_Weisbach_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15638,7 +16278,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
-    "videoTitle": "Minor Head Loss in Piping Systems"
+    "videoTitle": "Minor Head Loss in Piping Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15689,8 +16331,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/4/44/Toky.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pA6SxF80zasGtncKcp7BM0-7h8N1WzKF/preview",
-    "videoTitle": "Reynold's Number"
+    "video": "assets/videos/Reynolds_Number.mp4",
+    "videoTitle": "Reynold's Number",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Reynolds_Number.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15704,7 +16348,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Boundary_Layer_Displacement_and_Momentum_Thickness.mp4",
-    "videoTitle": "Boundary Layer Displacement and Momentum Thickness"
+    "videoTitle": "Boundary Layer Displacement and Momentum Thickness",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Boundary_Layer_Displacement_and_Momentum_Thickness.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15768,7 +16414,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Impulse_Momentum_Principle.mp4",
-    "videoTitle": "Impulse Momentum Principle"
+    "videoTitle": "Impulse Momentum Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Impulse_Momentum_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15794,7 +16442,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stagnation_Temperature.mp4",
-    "videoTitle": "Stagnation Temperature"
+    "videoTitle": "Stagnation Temperature",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stagnation_Temperature.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15808,7 +16458,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Dimensionless_numbers.mp4",
-    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Dimensionless_numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15881,8 +16533,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12Lp7qzmuQzS9Oa18PSUEQkjzQUtIxCi-/preview",
-    "videoTitle": "Orifice"
+    "video": "assets/videos/Orifice.mp4",
+    "videoTitle": "Orifice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Orifice.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15895,8 +16549,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzdq9SWd7ObbO6uWTwKx0kzO27khHXeC/preview",
-    "videoTitle": "Pitot Tube"
+    "video": "assets/videos/Pitot_Tube.mp4",
+    "videoTitle": "Pitot Tube",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Pitot_Tube.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -15909,8 +16565,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tLlpmiObYyLvabX6Bvpwu1WleldZ8-eo/preview",
-    "videoTitle": "Venturi Meter"
+    "video": "assets/videos/Venturi Meter.mp4",
+    "videoTitle": "Venturi Meter",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Venturi%20Meter.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16010,7 +16668,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-    "videoTitle": "Net Positive Suction Head (NPSH)"
+    "videoTitle": "Net Positive Suction Head (NPSH)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16066,7 +16726,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Meyers_formula_for_specific_heats.mp4",
-    "videoTitle": "Mayer's Formula for Specific Heats (cp - cv = R)"
+    "videoTitle": "Mayer's Formula for Specific Heats (cp - cv = R)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Meyers_formula_for_specific_heats.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16106,7 +16768,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Cyclic_Process.mp4",
-    "videoTitle": "Cyclic Process"
+    "videoTitle": "Cyclic Process",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cyclic_Process.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16161,8 +16825,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1ljAEUM0ASaI7LChBJV4T_Gke9CgmgAv5/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/586135800?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=c91db03215\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Thermodynamic_Processes.mp4\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/15LeV5yiMLmQO0FTPkBCr0q9wPZKUhG33/preview",
-    "videoTitle": "First Law of Thermodynamics"
+    "video": "assets/videos/First_Law_of_Thermodynamics.mp4",
+    "videoTitle": "First Law of Thermodynamics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/First_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16213,8 +16879,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1JdFTgLdKXg5L3DOuPe_mBPo5pQ6J2N0H/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cG60zb6mBUt6Y63JHE0kSslGHLak1PQ4/preview",
-    "videoTitle": "Carnot Cycle"
+    "video": "assets/videos/Carnot_Cycle.mp4",
+    "videoTitle": "Carnot Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Carnot_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16227,8 +16895,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Azz9MXUmBUXqqDCb3oToxP0TwRLLXEe6/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/194xD7T3M-qTE5AUYe3vYxhtlbYSKIb3d/preview",
-    "videoTitle": "Coefficient of Performance"
+    "video": "assets/videos/Coefficient of Performance (COP).mp4",
+    "videoTitle": "Coefficient of Performance",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Coefficient%20of%20Performance%20(COP).mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16242,7 +16912,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ideal_Diesel_Cycle_Thermal_Efficiency.mp4",
-    "videoTitle": "Ideal Diesel Cycle Thermal Efficiency"
+    "videoTitle": "Ideal Diesel Cycle Thermal Efficiency",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ideal_Diesel_Cycle_Thermal_Efficiency.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16256,7 +16928,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Otto_Cycle.mp4",
-    "videoTitle": "Otto Cycle"
+    "videoTitle": "Otto Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Otto_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16270,7 +16944,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Rankine_Cycle.mp4",
-    "videoTitle": "Rankine Cycle"
+    "videoTitle": "Rankine Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Rankine_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16284,7 +16960,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/HVAC_Processes.mp4",
-    "videoTitle": "HVAC Processes"
+    "videoTitle": "HVAC Processes",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/HVAC_Processes.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16298,7 +16976,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Psychrometric_Chart.mp4",
-    "videoTitle": "Reading Psychrometric Chart"
+    "videoTitle": "Reading Psychrometric Chart",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Psychrometric_Chart.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16312,7 +16992,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
-    "videoTitle": "Absolute Humidity vs. Relative Humidity"
+    "videoTitle": "Absolute Humidity vs. Relative Humidity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16326,7 +17008,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Dry_Bulb_Wet_Bulb_and_Dew_Point_Temperature.mp4",
-    "videoTitle": "Dry Bulb, Wet Bulb and Dew Point Temperature"
+    "videoTitle": "Dry Bulb, Wet Bulb and Dew Point Temperature",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Dry_Bulb_Wet_Bulb_and_Dew_Point_Temperature.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16340,7 +17024,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Entropy.mp4",
-    "videoTitle": "Entropy"
+    "videoTitle": "Entropy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Entropy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16428,7 +17114,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Incomplete_Combustion.mp4",
-    "videoTitle": "Incomplete Combustion"
+    "videoTitle": "Incomplete Combustion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Incomplete_Combustion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16441,7 +17129,9 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4"
+    "video": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16455,7 +17145,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Refrigeration_Cycle.mp4",
-    "videoTitle": "Refrigeration Cycle"
+    "videoTitle": "Refrigeration Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Refrigeration_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16507,7 +17199,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Second_Law_of_Thermodynamics.mp4",
-    "videoTitle": "Second Law of Thermodynamics (Clausius, Kelvin-Planck, and Entropy)"
+    "videoTitle": "Second Law of Thermodynamics (Clausius, Kelvin-Planck, and Entropy)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Second_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16521,7 +17215,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Third_Law_of_Thermodynamics.mp4",
-    "videoTitle": "Third Law of Thermodynamics (Absolute Entropy and Absolute Zero)"
+    "videoTitle": "Third Law of Thermodynamics (Absolute Entropy and Absolute Zero)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Third_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16534,8 +17230,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/830495536?h=519aec9806&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Zeroth Law of Thermodynamics\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1ubuq5HFHEHoMI5HqtZb98mQhW_0T_55j/preview",
-    "videoTitle": "Zeroth Law of Thermodynamics"
+    "video": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
+    "videoTitle": "Zeroth Law of Thermodynamics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16585,7 +17283,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
-    "videoTitle": "Properties for Two Phase Vapor Liquid Systems"
+    "videoTitle": "Properties for Two Phase Vapor Liquid Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16611,7 +17311,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Heat_transfer_through_Composite_Plane_Wall.mp4",
-    "videoTitle": "Heat Transfer Through Composite Plane Wall"
+    "videoTitle": "Heat Transfer Through Composite Plane Wall",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Heat_transfer_through_Composite_Plane_Wall.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16624,8 +17326,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1yTkjVoLOSFEpiSn96fFXCQEgbPjW5bJM/preview",
-    "videoTitle": "Conduction through a Cylindrical Wall"
+    "video": "assets/videos/Conduction Through a Cylindrical Wall.mp4",
+    "videoTitle": "Conduction through a Cylindrical Wall",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Conduction%20Through%20a%20Cylindrical%20Wall.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16653,7 +17357,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Heat_transfer_through_Fins.mp4",
-    "videoTitle": "Heat Transfer Through Fins (Extended Surfaces)"
+    "videoTitle": "Heat Transfer Through Fins (Extended Surfaces)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Heat_transfer_through_Fins.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16692,8 +17398,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/10hrpdoyd0ct0M64CXJMYMKuyVjPyViSL/preview",
-    "videoTitle": "Biot Number for Transient Conduction"
+    "video": "assets/videos/Biot_Number_for_Transient_Conduction.mp4",
+    "videoTitle": "Biot Number for Transient Conduction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Biot_Number_for_Transient_Conduction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16719,7 +17427,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Thermal_Resistance_of_an_Object.mp4",
-    "videoTitle": "Thermal Resistance of an Object"
+    "videoTitle": "Thermal Resistance of an Object",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Thermal_Resistance_of_an_Object.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16747,7 +17457,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Dimensionless_numbers.mp4",
-    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Dimensionless_numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16809,7 +17521,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Types_of_convection.mp4",
-    "videoTitle": "Types of Convection (Natural, Forced, and Phase Change)"
+    "videoTitle": "Types of Convection (Natural, Forced, and Phase Change)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Types_of_convection.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16823,7 +17537,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
-    "videoTitle": "Effectiveness-NTU Method for Heat Exchangers"
+    "videoTitle": "Effectiveness-NTU Method for Heat Exchangers",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16848,8 +17564,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1w4U6uNC1BslGjpnqefT7eQ_jtTRNrhtG/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CnG927K0q3eRdfzpiMV-wM3rowDCiEdo/preview",
-    "videoTitle": "LMTD"
+    "video": "assets/videos/LMTD.mp4",
+    "videoTitle": "LMTD",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/LMTD.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16863,7 +17581,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
-    "videoTitle": "Effectiveness-NTU Method for Heat Exchangers"
+    "videoTitle": "Effectiveness-NTU Method for Heat Exchangers",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Effectiveness_NTU_Method_for_Heat_Exchangers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16888,8 +17608,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/11ZBhqYCfE0EOQ8q6nPqAYrNHRXNJGmwC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1K5uPWj3LtxjlV8Xtq23lylQ_4Seyw-kC/preview",
-    "videoTitle": "Net Energy Exchange by Radiation between Two Bodies"
+    "video": "assets/videos/Net Energy Exchange by Radiation between Two Bodies.mp4",
+    "videoTitle": "Net Energy Exchange by Radiation between Two Bodies",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Net%20Energy%20Exchange%20by%20Radiation%20between%20Two%20Bodies.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16902,8 +17624,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1-f0SpdPCoDt-TZoTGQxMF9mGbrl_V-wF/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/139QUemJguL77OKTWj_66DD9aMh1mP1yn/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/11FoF9hDZJ19SK2une6R_tJeRfgPNrxoZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1vW6dXW31Nvxn2Ul7TTOb4VIvheWfBCrT/preview",
-    "videoTitle": "Black Body vs. Grey Body vs. Opaque Body"
+    "video": "assets/videos/Black Body vs. Grey Body vs. Opaque Body.mp4",
+    "videoTitle": "Black Body vs. Grey Body vs. Opaque Body",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Black%20Body%20vs.%20Grey%20Body%20vs.%20Opaque%20Body.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16917,7 +17641,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Radiation_View_Factor_Reciprocity_Relation.mp4",
-    "videoTitle": "Radiation View Factor Reciprocity Relation"
+    "videoTitle": "Radiation View Factor Reciprocity Relation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radiation_View_Factor_Reciprocity_Relation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16931,7 +17657,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stefan_Boltzmann_Law.mp4",
-    "videoTitle": "Stefan-Boltzmann Law"
+    "videoTitle": "Stefan-Boltzmann Law",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stefan_Boltzmann_Law.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16948,7 +17676,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/LVDT.mp4",
-    "videoTitle": "LVDT"
+    "videoTitle": "LVDT",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/LVDT.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -16974,7 +17704,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Piezoelectric_effect.mp4",
-    "videoTitle": "Piezoelectric Effect"
+    "videoTitle": "Piezoelectric Effect",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Piezoelectric_effect.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17000,7 +17732,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Temperature_Sensors_Thermocouple_vs_RTD_vs_Thermistor.mp4",
-    "videoTitle": "Temperature Sensors: Thermocouple vs RTD vs Thermistor"
+    "videoTitle": "Temperature Sensors: Thermocouple vs RTD vs Thermistor",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Temperature_Sensors_Thermocouple_vs_RTD_vs_Thermistor.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17014,7 +17748,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Strain_Gauge_Gauge_Factor_Equation.mp4",
-    "videoTitle": "Strain Gauge Gauge Factor Equation"
+    "videoTitle": "Strain Gauge Gauge Factor Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Strain_Gauge_Gauge_Factor_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17066,7 +17802,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Control_Systems.mp4",
-    "videoTitle": "Control Systems"
+    "videoTitle": "Control Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Control_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17122,7 +17860,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
-    "videoTitle": "First-Order Sensor Dynamic Step Response"
+    "videoTitle": "First-Order Sensor Dynamic Step Response",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/First_Order_Sensor_Dynamic_Step_Response.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17138,7 +17878,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Damped_Free_Vibrations.mp4",
-    "videoTitle": "Damped Free Vibrations (SDOF System Response)"
+    "videoTitle": "Damped Free Vibrations (SDOF System Response)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Damped_Free_Vibrations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17175,7 +17917,9 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Springs_in_series_and_springs_in_parallel.mp4"
+    "video": "assets/videos/Springs_in_series_and_springs_in_parallel.mp4",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Springs_in_series_and_springs_in_parallel.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17225,7 +17969,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Types_of_Springs.mp4",
-    "videoTitle": "Types of Springs"
+    "videoTitle": "Types of Springs",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Types_of_Springs.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17239,7 +17985,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Types_of_bearings.mp4",
-    "videoTitle": "Types of Bearings"
+    "videoTitle": "Types of Bearings",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Types_of_bearings.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17253,7 +18001,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4",
-    "videoTitle": "Rolling Element Bearing Rated Life L10"
+    "videoTitle": "Rolling Element Bearing Rated Life L10",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17291,7 +18041,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Power_Screws_Lifting_Torque_and_Efficiency.mp4",
-    "videoTitle": "Power Screws Lifting Torque and Efficiency"
+    "videoTitle": "Power Screws Lifting Torque and Efficiency",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Power_Screws_Lifting_Torque_and_Efficiency.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17317,7 +18069,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Types_of_Gears.mp4",
-    "videoTitle": "Types of Gears"
+    "videoTitle": "Types of Gears",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Types_of_Gears.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17403,7 +18157,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Riveted_Joints.mp4",
-    "videoTitle": "Riveted Joints"
+    "videoTitle": "Riveted Joints",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Riveted_Joints.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17465,7 +18221,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Feature_Control_Frame_in_Manufacturing.mp4",
-    "videoTitle": "Feature Control Frame in Manufacturing"
+    "videoTitle": "Feature Control Frame in Manufacturing",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Feature_Control_Frame_in_Manufacturing.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17479,7 +18237,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Limit_Gauges.mp4",
-    "videoTitle": "Limit Gauges"
+    "videoTitle": "Limit Gauges",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Limit_Gauges.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17504,8 +18264,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/10GazrdMmtvCx-uFGfrXOPRQZTjDqg16_/preview",
-    "videoTitle": "Types of Fits"
+    "video": "assets/videos/Types_of_Fits.mp4",
+    "videoTitle": "Types of Fits",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Types_of_Fits.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17542,7 +18304,9 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Maximum_Normal_Stress_Theory_Rankine_Criterion_for_Brittle_Materials.mp4"
+    "video": "assets/videos/Maximum_Normal_Stress_Theory_Rankine_Criterion_for_Brittle_Materials.mp4",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Maximum_Normal_Stress_Theory_Rankine_Criterion_for_Brittle_Materials.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17570,7 +18334,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Distortion_Energy_Theory_von_Mises_Yield_Criterion_for_Ductile_Metals.mp4",
-    "videoTitle": "Distortion Energy Theory (von Mises Yield Criterion) for Ductile Metals"
+    "videoTitle": "Distortion Energy Theory (von Mises Yield Criterion) for Ductile Metals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distortion_Energy_Theory_von_Mises_Yield_Criterion_for_Ductile_Metals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17608,7 +18374,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Soderberg_Theory.mp4",
-    "videoTitle": "Soderberg Theory"
+    "videoTitle": "Soderberg Theory",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Soderberg_Theory.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17622,7 +18390,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
-    "videoTitle": "Modified Goodman Fatigue Failure Criterion"
+    "videoTitle": "Modified Goodman Fatigue Failure Criterion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Modified_Goodman_Fatigue_Failure_Criterion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17636,7 +18406,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Series_System_Reliability_Modeling.mp4",
-    "videoTitle": "Series System Reliability Modeling"
+    "videoTitle": "Series System Reliability Modeling",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Series_System_Reliability_Modeling.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17650,7 +18422,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Parallel_System_Reliability_Formulation.mp4",
-    "videoTitle": "Parallel System Reliability Formulation"
+    "videoTitle": "Parallel System Reliability Formulation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel_System_Reliability_Formulation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17664,7 +18438,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Components_of_a_Hydraulic_System.mp4",
-    "videoTitle": "Components of a Hydraulic System"
+    "videoTitle": "Components of a Hydraulic System",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Components_of_a_Hydraulic_System.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17678,7 +18454,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Components_of_a_Pneumatic_System.mp4",
-    "videoTitle": "Components of a Pneumatic System"
+    "videoTitle": "Components of a Pneumatic System",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Components_of_a_Pneumatic_System.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17704,7 +18482,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Valves.mp4",
-    "videoTitle": "Valves in Fluid Power Systems"
+    "videoTitle": "Valves in Fluid Power Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Valves.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -17736,7 +18516,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
-    "videoTitle": "First Angle vs. Third Angle Orthographic Projection"
+    "videoTitle": "First Angle vs. Third Angle Orthographic Projection",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/First_Angle_vs_Third_Angle_Projection.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Mechanical",
@@ -18088,7 +18870,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Coulombs_Law_in_electrostatics.mp4",
-    "videoTitle": "Coulomb’s Law of Electrostatic Force and Field Intensity"
+    "videoTitle": "Coulomb’s Law of Electrostatic Force and Field Intensity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Coulombs_Law_in_electrostatics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18130,7 +18914,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
-    "videoTitle": "Kirchhoff's Current and Voltage Laws"
+    "videoTitle": "Kirchhoff's Current and Voltage Laws",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18146,7 +18932,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
-    "videoTitle": "Kirchhoff's Current and Voltage Laws"
+    "videoTitle": "Kirchhoff's Current and Voltage Laws",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Kirchhoffs_Current_and_Voltage_Laws.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18160,7 +18948,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Biot_Savart_Law_for_Magnetic_Fields.mp4",
-    "videoTitle": "Biot-Savart Law for Magnetic Fields"
+    "videoTitle": "Biot-Savart Law for Magnetic Fields",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Biot_Savart_Law_for_Magnetic_Fields.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18186,7 +18976,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ohms_Law.mp4",
-    "videoTitle": "Ohm's Law"
+    "videoTitle": "Ohm's Law",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ohms_Law.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18200,7 +18992,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Equivalent_Resistance_in_Series_and_Parallel_Networks.mp4",
-    "videoTitle": "Equivalent Resistance in Series and Parallel Networks"
+    "videoTitle": "Equivalent Resistance in Series and Parallel Networks",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Equivalent_Resistance_in_Series_and_Parallel_Networks.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18226,7 +19020,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Synchronous_Speed_of_an_AC_motor.mp4",
-    "videoTitle": "Synchronous Speed of an AC Motor"
+    "videoTitle": "Synchronous Speed of an AC Motor",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Synchronous_Speed_of_an_AC_motor.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18240,7 +19036,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slip_of_an_induction_machine.mp4",
-    "videoTitle": "Slip of an Induction Machine"
+    "videoTitle": "Slip of an Induction Machine",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slip_of_an_induction_machine.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18254,7 +19052,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/DC_Shunt_Motor_Torque_Speed_Characteristic_and_Speed_Regulation.mp4",
-    "videoTitle": "DC Shunt Motor Torque Speed Characteristic and Speed Regulation"
+    "videoTitle": "DC Shunt Motor Torque Speed Characteristic and Speed Regulation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/DC_Shunt_Motor_Torque_Speed_Characteristic_and_Speed_Regulation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18316,7 +19116,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
-    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios"
+    "videoTitle": "Ideal Transformer Voltage, Current, and Impedance Turns Ratios",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ideal_Transformer_Voltage_Current_and_Impedance_Turns_Ratios.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18344,7 +19146,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
-    "videoTitle": "Capitalized Cost for Infinite Project Life"
+    "videoTitle": "Capitalized Cost for Infinite Project Life",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18358,7 +19162,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Sunk_Costs.mp4",
-    "videoTitle": "Sunk Costs"
+    "videoTitle": "Sunk Costs",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Sunk_Costs.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18386,7 +19192,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Overhead_Analysis.mp4",
-    "videoTitle": "Overhead Analysis"
+    "videoTitle": "Overhead Analysis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Overhead_Analysis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18399,8 +19207,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1zy-vrGqIgApv6unKhp9Zp0rqzxW0js1h/preview",
-    "videoTitle": "Simple Payback Period"
+    "video": "assets/videos/Simple Payback Period.mp4",
+    "videoTitle": "Simple Payback Period",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simple%20Payback%20Period.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18414,7 +19224,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Inflation_Fishers_equation.mp4",
-    "videoTitle": "Inflation: Fisher's Equation"
+    "videoTitle": "Inflation: Fisher's Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inflation_Fishers_equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18428,7 +19240,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
-    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18458,7 +19272,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Straight_Line_Depreciation_Method.mp4",
-    "videoTitle": "Straight Line Depreciation Method"
+    "videoTitle": "Straight Line Depreciation Method",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight_Line_Depreciation_Method.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18472,7 +19288,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
-    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation"
+    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18498,7 +19316,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stagnation_Temperature.mp4",
-    "videoTitle": "Stagnation Temperature"
+    "videoTitle": "Stagnation Temperature",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stagnation_Temperature.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18587,8 +19407,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12Lp7qzmuQzS9Oa18PSUEQkjzQUtIxCi-/preview",
-    "videoTitle": "Orifice"
+    "video": "assets/videos/Orifice.mp4",
+    "videoTitle": "Orifice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Orifice.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18601,8 +19423,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzdq9SWd7ObbO6uWTwKx0kzO27khHXeC/preview",
-    "videoTitle": "Pitot Tube"
+    "video": "assets/videos/Pitot_Tube.mp4",
+    "videoTitle": "Pitot Tube",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Pitot_Tube.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18615,8 +19439,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tLlpmiObYyLvabX6Bvpwu1WleldZ8-eo/preview",
-    "videoTitle": "Venturi Meter"
+    "video": "assets/videos/Venturi Meter.mp4",
+    "videoTitle": "Venturi Meter",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Venturi%20Meter.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18692,7 +19518,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Specific_Gravity.mp4",
-    "videoTitle": "Specific Gravity"
+    "videoTitle": "Specific Gravity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Specific_Gravity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18720,7 +19548,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Newton's Law of Viscosity.mp4",
-    "videoTitle": "Newton's Law of Viscosity"
+    "videoTitle": "Newton's Law of Viscosity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Law%20of%20Viscosity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18750,7 +19580,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
-    "videoTitle": "Newtonian vs Non-Newtonian Fluids"
+    "videoTitle": "Newtonian vs Non-Newtonian Fluids",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18765,8 +19597,10 @@ const notesData = [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21581&authkey=%21AOQoVTXCapx5-0Y&width=323&height=292"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12aHG3Ob330Ac-IzQ85WDsH8pCVf8ZxUo/preview",
-    "videoTitle": "Capillarity"
+    "video": "assets/videos/Capillarity.mp4",
+    "videoTitle": "Capillarity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capillarity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18781,8 +19615,10 @@ const notesData = [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21576&authkey=%21AGreDbrHBEU13q0&width=323&height=315"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1aAD3iUE8Hxw2AEBRYz0gj-j0S7Cw4s6F/preview",
-    "videoTitle": "Surface Tension"
+    "video": "assets/videos/Surface_Tension.mp4",
+    "videoTitle": "Surface Tension",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Tension.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18795,8 +19631,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13-s9u7Y89PobjB55_5Qx_Gd8IBllU4dO/preview",
-    "videoTitle": "Archimedes Principle of Buoyancy"
+    "video": "assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "videoTitle": "Archimedes Principle of Buoyancy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18835,8 +19673,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1yRQ3znNWJKAqslwewqKb1McPGW60Cjci/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1ClJo-X2k_L2Sp9aCdqegYN77RNP4xpTe/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/18CKfsok7cvEdl0iVVZ9X_Vs-y6uRr8XC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:58.06% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/586137569?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=d27233e3bb\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Pressure_Measurement.mp4\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzsLR6mCzXoag9l5DUwDO2GqSoeI7oaH/preview",
-    "videoTitle": "Manometers"
+    "video": "assets/videos/Manometers.mp4",
+    "videoTitle": "Manometers",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Manometers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18914,7 +19754,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Impulse_Momentum_Principle.mp4",
-    "videoTitle": "Impulse Momentum Principle"
+    "videoTitle": "Impulse Momentum Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Impulse_Momentum_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18942,7 +19784,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Darcy_Weisbach_Equation.mp4",
-    "videoTitle": "Darcy Weisbach Equation"
+    "videoTitle": "Darcy Weisbach Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Darcy_Weisbach_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -18959,7 +19803,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
-    "videoTitle": "Minor Head Loss in Piping Systems"
+    "videoTitle": "Minor Head Loss in Piping Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19010,8 +19856,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/4/44/Toky.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pA6SxF80zasGtncKcp7BM0-7h8N1WzKF/preview",
-    "videoTitle": "Reynold's Number"
+    "video": "assets/videos/Reynolds_Number.mp4",
+    "videoTitle": "Reynold's Number",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Reynolds_Number.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19025,7 +19873,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Bernoullis_Principle.mp4",
-    "videoTitle": "Bernoulli’s Principle"
+    "videoTitle": "Bernoulli’s Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Bernoullis_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19038,8 +19888,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1fE_30I4cUD6W3XvH9csrrVMIvv7Rq9il/preview",
-    "videoTitle": "Continuity Equation"
+    "video": "assets/videos/Continuity_Equation.mp4",
+    "videoTitle": "Continuity Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Continuity_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19103,7 +19955,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-    "videoTitle": "Net Positive Suction Head (NPSH)"
+    "videoTitle": "Net Positive Suction Head (NPSH)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19145,7 +19999,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Methods_for_Controlling_Corrosion.mp4",
-    "videoTitle": "Methods for Controlling Corrosion"
+    "videoTitle": "Methods for Controlling Corrosion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Methods_for_Controlling_Corrosion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19170,8 +20026,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1lec3Jqg-I3KOohVUwWz6qLXRH4PnLnqX/preview",
-    "videoTitle": "Corrosion Terminology"
+    "video": "assets/videos/Corrosion Terminology.mp4",
+    "videoTitle": "Corrosion Terminology",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Corrosion%20Terminology.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19197,7 +20055,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Elastomers_and_Fibres.mp4",
-    "videoTitle": "Elastomers and Fibres"
+    "videoTitle": "Elastomers and Fibres",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Elastomers_and_Fibres.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19211,7 +20071,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Thermoplastics_vs_Thermosetting_Plastics.mp4",
-    "videoTitle": "Thermoplastics vs. Thermosetting Plastics"
+    "videoTitle": "Thermoplastics vs. Thermosetting Plastics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Thermoplastics_vs_Thermosetting_Plastics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19236,8 +20098,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1WP8mW5fRY7GiVGO1dvSCOOPCwXMTJvcS/preview",
-    "videoTitle": "Failure by Creep"
+    "video": "assets/videos/Failure by Creep.mp4",
+    "videoTitle": "Failure by Creep",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Failure%20by%20Creep.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19265,7 +20129,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stainless_Steel.mp4",
-    "videoTitle": "Stainless Steel"
+    "videoTitle": "Stainless Steel",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stainless_Steel.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19279,7 +20145,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Cast_Iron.mp4",
-    "videoTitle": "Cast Iron"
+    "videoTitle": "Cast Iron",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cast_Iron.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19305,7 +20173,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/CNC.mp4",
-    "videoTitle": "CNC"
+    "videoTitle": "CNC",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/CNC.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19343,7 +20213,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Non_Traditional_Machining_Processes.mp4",
-    "videoTitle": "Non-Traditional Machining Processes"
+    "videoTitle": "Non-Traditional Machining Processes",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Non_Traditional_Machining_Processes.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19357,7 +20229,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Powder_Metallurgy.mp4",
-    "videoTitle": "Powder Metallurgy"
+    "videoTitle": "Powder Metallurgy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Powder_Metallurgy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19371,7 +20245,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Material_Selection_Factors.mp4",
-    "videoTitle": "Material Selection Factors"
+    "videoTitle": "Material Selection Factors",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Material_Selection_Factors.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19396,8 +20272,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1H2q4O0x2aEMYfnIrKDmPJSDv7SrershX/preview",
-    "videoTitle": "Peritectic vs Peritectoid Reaction"
+    "video": "assets/videos/Peritectic vs peritectoid reaction.mp4",
+    "videoTitle": "Peritectic vs Peritectoid Reaction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Peritectic%20vs%20peritectoid%20reaction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19423,7 +20301,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Difference_between_quenching_and_annealing.mp4",
-    "videoTitle": "Difference between Quenching and Annealing"
+    "videoTitle": "Difference between Quenching and Annealing",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Difference_between_quenching_and_annealing.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19450,8 +20330,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1UtZjntN1_n39wInNDAKpKu5UgecYrAvx/preview",
-    "videoTitle": "Iron-Carbon Microstructures"
+    "video": "assets/videos/Iron-Carbon Microstructures (Ferrite, Austenite, Cementite, Pearlite, Martensite).mp4",
+    "videoTitle": "Iron-Carbon Microstructures",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Iron-Carbon%20Microstructures%20(Ferrite%2C%20Austenite%2C%20Cementite%2C%20Pearlite%2C%20Martensite).mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19539,7 +20421,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Flowchart_Symbols.mp4",
-    "videoTitle": "Flowchart Symbols"
+    "videoTitle": "Flowchart Symbols",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Flowchart_Symbols.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19606,8 +20490,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/1/10/Conic_Section_%28parameters_%CE%B8%2C%CF%95%29.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1lS5mnQYDEV6jiDDiF1V6G3f5g-tgCi3F/preview",
-    "videoTitle": "Eccentricities of Conic Sections"
+    "video": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "videoTitle": "Eccentricities of Conic Sections",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19672,8 +20558,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CWPTy-8IpxadLlIEZ2dSFRssRwUiqkRB/preview",
-    "videoTitle": "Straight Lines Slope-Point Form"
+    "video": "assets/videos/Straight Lines Slope point form.mp4",
+    "videoTitle": "Straight Lines Slope-Point Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight%20Lines%20Slope%20point%20form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19687,7 +20575,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slope_Intercept_Form.mp4",
-    "videoTitle": "Slope Intercept Form"
+    "videoTitle": "Slope Intercept Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slope_Intercept_Form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19718,8 +20608,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cNOXQpV48eEX_VWPz78-O11v59yrNgsE/preview",
-    "videoTitle": "Parallel and Perpendicular Lines"
+    "video": "assets/videos/Parallel and Perpendicular lines.mp4",
+    "videoTitle": "Parallel and Perpendicular Lines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel%20and%20Perpendicular%20lines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19750,8 +20642,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IP8Yhigkvi9sIu-VenHpKHZHa53B4Hvp/preview",
-    "videoTitle": "Distance Formula"
+    "video": "assets/videos/Distance Formula.mp4",
+    "videoTitle": "Distance Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distance%20Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19777,7 +20671,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
-    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere"
+    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19802,8 +20698,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1waiM_TELnv9dJAfTWQgHwe72Z82mcw4U/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1b012mQwo34rZQMwGVorfM6_SkdREaqic/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1QdOQlqTHaEib-of2Yan46NvlTpc58FnP/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1d4YM5heNS94lHyKI0Ln4u0pF418EwJ9h/preview",
-    "videoTitle": "Logarithmic Identities"
+    "video": "assets/videos/Logarithmic Identities.mp4",
+    "videoTitle": "Logarithmic Identities",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Logarithmic%20Identities.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19817,7 +20715,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Concept_of_Complex_Numbers.mp4",
-    "videoTitle": "Concept of Complex Numbers Explainer"
+    "videoTitle": "Concept of Complex Numbers Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Concept_of_Complex_Numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19831,7 +20731,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
-    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19875,7 +20777,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Law_of_Cosines.mp4",
-    "videoTitle": "Law of Cosines for General Triangles"
+    "videoTitle": "Law of Cosines for General Triangles",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Law_of_Cosines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19888,8 +20792,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1a-iuYNXcxyazntG-kP1ZxEHaAB2na5Mw/preview",
-    "videoTitle": "Law of Sines"
+    "video": "assets/videos/Law_of_Sines.mp4",
+    "videoTitle": "Law of Sines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Law_of_Sines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19903,7 +20809,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Double Angles"
+    "videoTitle": "Trigonometric Ratios of Double Angles",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19919,7 +20827,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19933,7 +20843,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
-    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives"
+    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19947,7 +20859,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
-    "videoTitle": "Curvature of any Curve in Terms of Derivatives"
+    "videoTitle": "Curvature of any Curve in Terms of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19961,7 +20875,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Basic_rules_of_derivatives.mp4",
-    "videoTitle": "Basic Rules of Derivatives"
+    "videoTitle": "Basic Rules of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Basic_rules_of_derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19975,7 +20891,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
-    "videoTitle": "Product and Quotient Rules for Derivatives"
+    "videoTitle": "Product and Quotient Rules for Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -19989,7 +20907,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Chain_Rule_for_Differentiation.mp4",
-    "videoTitle": "Chain Rule for Differentiation"
+    "videoTitle": "Chain Rule for Differentiation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Chain_Rule_for_Differentiation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20003,7 +20923,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20017,7 +20939,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20031,7 +20955,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20045,7 +20971,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20073,7 +21001,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
-    "videoTitle": "Derivative of Logarithmic Functions"
+    "videoTitle": "Derivative of Logarithmic Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20087,7 +21017,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
-    "videoTitle": "Applying Boundary Conditions in Differential Equations"
+    "videoTitle": "Applying Boundary Conditions in Differential Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20115,7 +21047,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
-    "videoTitle": "Degree and Order of Differential Equation"
+    "videoTitle": "Degree and Order of Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20129,7 +21063,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
-    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation"
+    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20183,7 +21119,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Dot_Product.mp4",
-    "videoTitle": "Properties of Dot Product"
+    "videoTitle": "Properties of Dot Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Dot_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20209,7 +21147,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Cross_Product.mp4",
-    "videoTitle": "Properties of Cross Product"
+    "videoTitle": "Properties of Cross Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Cross_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20234,8 +21174,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12dFZ3zXiz9cuefrdoES1u0t110WpHVP5/preview",
-    "videoTitle": "Divergence of a Vector Field"
+    "video": "assets/videos/Divergence of a Vector Field.mp4",
+    "videoTitle": "Divergence of a Vector Field",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Divergence%20of%20a%20Vector%20Field.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20248,8 +21190,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1ODzbMTs6qhufTo1SYlUm3qdbU79HGVB9/preview",
-    "videoTitle": "Curl of a Vector Field and Irrotational Fields"
+    "video": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "videoTitle": "Curl of a Vector Field and Irrotational Fields",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20262,8 +21206,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/13hV2n-x0oPIDrjOO3ng4AM4QafrJh2Ri/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13uHiKJMZCI6cfehtAlx8zJrAgqshejRG/preview",
-    "videoTitle": "Inverse of a Matrix"
+    "video": "assets/videos/Inverse_of_a_Matrix.mp4",
+    "videoTitle": "Inverse of a Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inverse_of_a_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20289,7 +21235,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Identity_Matrix.mp4",
-    "videoTitle": "Properties of Identity Matrix"
+    "videoTitle": "Properties of Identity Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Identity_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20343,7 +21291,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newton's Method for Root Extraction.mp4",
-    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)"
+    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Method%20for%20Root%20Extraction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20356,8 +21306,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1B-2mkWPAHV0jcPeQYdrtx66yZcUhDqNu/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kY-Pblove05BCW_njh1N76zX3_0rrJee/preview",
-    "videoTitle": "Simpson's Rule"
+    "video": "assets/videos/Simpsons_Rule.mp4",
+    "videoTitle": "Simpson's Rule",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simpsons_Rule.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20371,7 +21323,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
-    "videoTitle": "Taylor and Maclaurin Series Expansion"
+    "videoTitle": "Taylor and Maclaurin Series Expansion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20534,7 +21488,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/LVDT.mp4",
-    "videoTitle": "LVDT"
+    "videoTitle": "LVDT",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/LVDT.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20573,8 +21529,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1uDwYAXPIbbF7BJqJCmCXAwdIrufYJePQ/preview",
-    "videoTitle": "Null Hypothesis"
+    "video": "assets/videos/Null_Hypothesis.mp4",
+    "videoTitle": "Null Hypothesis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Null_Hypothesis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20636,7 +21594,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
-    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20650,7 +21610,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Mode_of_a_sample.mp4",
-    "videoTitle": "Mode of a Sample"
+    "videoTitle": "Mode of a Sample",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Mode_of_a_sample.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20692,7 +21654,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Permutations_with_Repetition.mp4",
-    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Permutations_with_Repetition.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20705,8 +21669,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1rjejkpzaRigrtkkK3VAMAztLS3crG1io/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1h-74w9jTOJwg8CujUnkoS16_yimSzWNc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1LOOUIjtIUjjngnd9iT_ZWqga3jsyUe8i/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1003484364?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Binomial Distributions\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pCuVWsQq3sCBT-iX89BlgYZvifnR-lx0/preview",
-    "videoTitle": "Binomial Distribution"
+    "video": "assets/videos/Binomial_Distribution.mp4",
+    "videoTitle": "Binomial Distribution",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Binomial_Distribution.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20720,7 +21686,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Expected_Values.mp4",
-    "videoTitle": "Expected Values"
+    "videoTitle": "Expected Values",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected_Values.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20733,8 +21701,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1x98FMuTm_acKnZW_4S5tXuQfYWoVTX1K/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1dB2u-9XEXOVQl-96oKrCQm6lTQvfLDOF/preview",
-    "videoTitle": "Expected Value of a Continuous Function"
+    "video": "assets/videos/Expected Value.mp4",
+    "videoTitle": "Expected Value of a Continuous Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected%20Value.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20766,7 +21736,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
-    "videoTitle": "Standard Normal Distribution (Z Transformation)"
+    "videoTitle": "Standard Normal Distribution (Z Transformation)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20782,7 +21754,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Probability_Density_Function.mp4",
-    "videoTitle": "Probability Density Function"
+    "videoTitle": "Probability Density Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Probability_Density_Function.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20798,7 +21772,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Cumulative_Distribution_Functions.mp4",
-    "videoTitle": "Cumulative Distribution Functions"
+    "videoTitle": "Cumulative Distribution Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cumulative_Distribution_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20885,8 +21861,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kH-2NipDBQd6ISi-ErAViXn3m6yckWeE/preview",
-    "videoTitle": "Carcinogens"
+    "video": "assets/videos/Carcinogens.mp4",
+    "videoTitle": "Carcinogens",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Carcinogens.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -20899,8 +21877,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/19k-qyzR72Mzw57sdnhnpMTO2PAslrYeS/preview",
-    "videoTitle": "Industrial Hygiene Exposure Limits (PEL/TLV)"
+    "video": "assets/videos/Exposure Limits.mp4",
+    "videoTitle": "Industrial Hygiene Exposure Limits (PEL/TLV)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Exposure%20Limits.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21123,8 +22103,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/c/c0/I-beam_diagram_moment_by_addition.jpg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1F838BbwpemjTH8uzu1Lgx__8J9bZFksT/preview",
-    "videoTitle": "Centroid of Composite Planar Areas"
+    "video": "assets/videos/Centroid_of_Composite_Planar_Areas.mp4",
+    "videoTitle": "Centroid of Composite Planar Areas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Centroid_of_Composite_Planar_Areas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21176,7 +22158,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Lami's Theorem for Concurrent Forces.mp4",
-    "videoTitle": "Concurrent Forces"
+    "videoTitle": "Concurrent Forces",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Lami's%20Theorem%20for%20Concurrent%20Forces.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21271,8 +22255,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1vdB5XFnIURWDnNDFnzyB3NUtoJVt3m7T/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1BrYQyMkxs-5Uk7UoWZ8h5KzRGl_ZnzXL/preview",
-    "videoTitle": "Polar Moment of Inertia"
+    "video": "assets/videos/Polar_Moment_of_Inertia.mp4",
+    "videoTitle": "Polar Moment of Inertia",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Polar_Moment_of_Inertia.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21285,8 +22271,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1NhgbEIOXeYSTdcvJpIMOW6IgWV_I-e2d/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1vJbTITV2lyUgAcDsRsVoEUFzERAXZSqc/preview",
-    "videoTitle": "Product of Inertia"
+    "video": "assets/videos/Product_of_Inertia.mp4",
+    "videoTitle": "Product of Inertia",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_of_Inertia.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21299,8 +22287,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1GMhhN6AmtxHd0m_zBOevlRCV7kHP8hn_/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cT8Ykmm_dF-EZk0EP4oSNpMapOY3Jla3/preview",
-    "videoTitle": "Radius of Gyration"
+    "video": "assets/videos/Radius_of_Gyration.mp4",
+    "videoTitle": "Radius of Gyration",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Gyration.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21342,7 +22332,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Resolution_of_a_Force.mp4",
-    "videoTitle": "Resolution of a Force"
+    "videoTitle": "Resolution of a Force",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Resolution_of_a_Force.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21380,7 +22372,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Limiting_friction.mp4",
-    "videoTitle": "Limiting Friction"
+    "videoTitle": "Limiting Friction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Limiting_friction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21393,8 +22387,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pj6H3y1cT-nQU6wK0QshCwDbYq3TdwQN/preview",
-    "videoTitle": "Method of Joints"
+    "video": "assets/videos/Method of Joints.mp4",
+    "videoTitle": "Method of Joints",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Method%20of%20Joints.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21435,8 +22431,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/10WJ7VURrhRrR9wSUabVNaw6sxTgHzJLh/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1A73JV4dCaBeAltghzO-LEGMwfBthoIzw/preview",
-    "videoTitle": "2D Static Equilibrium Equations"
+    "video": "assets/videos/2D_Static_Equilibrium_Equations.mp4",
+    "videoTitle": "2D Static Equilibrium Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/2D_Static_Equilibrium_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21461,8 +22459,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1JdFTgLdKXg5L3DOuPe_mBPo5pQ6J2N0H/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cG60zb6mBUt6Y63JHE0kSslGHLak1PQ4/preview",
-    "videoTitle": "Carnot Cycle"
+    "video": "assets/videos/Carnot_Cycle.mp4",
+    "videoTitle": "Carnot Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Carnot_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21475,8 +22475,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1Azz9MXUmBUXqqDCb3oToxP0TwRLLXEe6/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/194xD7T3M-qTE5AUYe3vYxhtlbYSKIb3d/preview",
-    "videoTitle": "Coefficient of Performance"
+    "video": "assets/videos/Coefficient of Performance (COP).mp4",
+    "videoTitle": "Coefficient of Performance",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Coefficient%20of%20Performance%20(COP).mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21490,7 +22492,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ideal_Diesel_Cycle_Thermal_Efficiency.mp4",
-    "videoTitle": "Ideal Diesel Cycle Thermal Efficiency"
+    "videoTitle": "Ideal Diesel Cycle Thermal Efficiency",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ideal_Diesel_Cycle_Thermal_Efficiency.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21504,7 +22508,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Otto_Cycle.mp4",
-    "videoTitle": "Otto Cycle"
+    "videoTitle": "Otto Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Otto_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21518,7 +22524,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Rankine_Cycle.mp4",
-    "videoTitle": "Rankine Cycle"
+    "videoTitle": "Rankine Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Rankine_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21532,7 +22540,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Dimensionless_numbers.mp4",
-    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Dimensionless_numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21582,7 +22592,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Incomplete_Combustion.mp4",
-    "videoTitle": "Incomplete Combustion"
+    "videoTitle": "Incomplete Combustion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Incomplete_Combustion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21608,7 +22620,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Heat_transfer_through_Composite_Plane_Wall.mp4",
-    "videoTitle": "Heat Transfer Through Composite Plane Wall"
+    "videoTitle": "Heat Transfer Through Composite Plane Wall",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Heat_transfer_through_Composite_Plane_Wall.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21648,7 +22662,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Heat_transfer_through_Fins.mp4",
-    "videoTitle": "Heat Transfer Through Fins (Extended Surfaces)"
+    "videoTitle": "Heat Transfer Through Fins (Extended Surfaces)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Heat_transfer_through_Fins.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21687,8 +22703,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/10hrpdoyd0ct0M64CXJMYMKuyVjPyViSL/preview",
-    "videoTitle": "Biot Number for Transient Conduction"
+    "video": "assets/videos/Biot_Number_for_Transient_Conduction.mp4",
+    "videoTitle": "Biot Number for Transient Conduction",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Biot_Number_for_Transient_Conduction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21714,7 +22732,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Thermal_Resistance_of_an_Object.mp4",
-    "videoTitle": "Thermal Resistance of an Object"
+    "videoTitle": "Thermal Resistance of an Object",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Thermal_Resistance_of_an_Object.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21740,7 +22760,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Dimensionless_numbers.mp4",
-    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer"
+    "videoTitle": "Dimensionless Numbers in Fluid Mechanics and Heat Transfer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Dimensionless_numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21789,8 +22811,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1RoHnDLk1ozekDO7dA-cpnzWkWMuR3x6m/preview",
-    "videoTitle": "Newton's Law of Cooling"
+    "video": "assets/videos/Newtons_Law_of_Cooling.mp4",
+    "videoTitle": "Newton's Law of Cooling",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newtons_Law_of_Cooling.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21804,7 +22828,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Types_of_convection.mp4",
-    "videoTitle": "Types of Convection (Natural, Forced, and Phase Change)"
+    "videoTitle": "Types of Convection (Natural, Forced, and Phase Change)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Types_of_convection.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21870,7 +22896,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Cyclic_Process.mp4",
-    "videoTitle": "Cyclic Process"
+    "videoTitle": "Cyclic Process",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cyclic_Process.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21925,8 +22953,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1ljAEUM0ASaI7LChBJV4T_Gke9CgmgAv5/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/586135800?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=c91db03215\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Thermodynamic_Processes.mp4\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/15LeV5yiMLmQO0FTPkBCr0q9wPZKUhG33/preview",
-    "videoTitle": "First Law of Thermodynamics"
+    "video": "assets/videos/First_Law_of_Thermodynamics.mp4",
+    "videoTitle": "First Law of Thermodynamics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/First_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21952,7 +22982,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Second_Law_of_Thermodynamics.mp4",
-    "videoTitle": "Second Law of Thermodynamics (Clausius, Kelvin-Planck, and Entropy)"
+    "videoTitle": "Second Law of Thermodynamics (Clausius, Kelvin-Planck, and Entropy)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Second_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21966,7 +22998,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Third_Law_of_Thermodynamics.mp4",
-    "videoTitle": "Third Law of Thermodynamics (Absolute Entropy and Absolute Zero)"
+    "videoTitle": "Third Law of Thermodynamics (Absolute Entropy and Absolute Zero)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Third_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -21979,8 +23013,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/830495536?h=519aec9806&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Zeroth Law of Thermodynamics\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1ubuq5HFHEHoMI5HqtZb98mQhW_0T_55j/preview",
-    "videoTitle": "Zeroth Law of Thermodynamics"
+    "video": "assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
+    "videoTitle": "Zeroth Law of Thermodynamics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Zeroth_Law_of_Thermodynamics.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22056,7 +23092,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
-    "videoTitle": "Properties for Two Phase Vapor Liquid Systems"
+    "videoTitle": "Properties for Two Phase Vapor Liquid Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_for_Two_Phase_vapor_liquid_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22106,7 +23144,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/HVAC_Processes.mp4",
-    "videoTitle": "HVAC Processes"
+    "videoTitle": "HVAC Processes",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/HVAC_Processes.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22120,7 +23160,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Psychrometric_Chart.mp4",
-    "videoTitle": "Reading Psychrometric Chart"
+    "videoTitle": "Reading Psychrometric Chart",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Psychrometric_Chart.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22134,7 +23176,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
-    "videoTitle": "Absolute Humidity vs. Relative Humidity"
+    "videoTitle": "Absolute Humidity vs. Relative Humidity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Absolute_Humidity_vs_Relative_Humidity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22148,7 +23192,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Dry_Bulb_Wet_Bulb_and_Dew_Point_Temperature.mp4",
-    "videoTitle": "Dry Bulb, Wet Bulb and Dew Point Temperature"
+    "videoTitle": "Dry Bulb, Wet Bulb and Dew Point Temperature",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Dry_Bulb_Wet_Bulb_and_Dew_Point_Temperature.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22162,7 +23208,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Meyers_formula_for_specific_heats.mp4",
-    "videoTitle": "Mayer's Formula for Specific Heats (cp - cv = R)"
+    "videoTitle": "Mayer's Formula for Specific Heats (cp - cv = R)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Meyers_formula_for_specific_heats.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22199,8 +23247,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1-f0SpdPCoDt-TZoTGQxMF9mGbrl_V-wF/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/139QUemJguL77OKTWj_66DD9aMh1mP1yn/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/11FoF9hDZJ19SK2une6R_tJeRfgPNrxoZ/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1vW6dXW31Nvxn2Ul7TTOb4VIvheWfBCrT/preview",
-    "videoTitle": "Black Body vs. Grey Body vs. Opaque Body"
+    "video": "assets/videos/Black Body vs. Grey Body vs. Opaque Body.mp4",
+    "videoTitle": "Black Body vs. Grey Body vs. Opaque Body",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Black%20Body%20vs.%20Grey%20Body%20vs.%20Opaque%20Body.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22214,7 +23264,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Radiation_View_Factor_Reciprocity_Relation.mp4",
-    "videoTitle": "Radiation View Factor Reciprocity Relation"
+    "videoTitle": "Radiation View Factor Reciprocity Relation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radiation_View_Factor_Reciprocity_Relation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22228,7 +23280,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stefan_Boltzmann_Law.mp4",
-    "videoTitle": "Stefan-Boltzmann Law"
+    "videoTitle": "Stefan-Boltzmann Law",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stefan_Boltzmann_Law.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22255,7 +23309,9 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4"
+    "video": "assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Vapor_Compression_Refrigeration_Cycle_COP.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22269,7 +23325,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Refrigeration_Cycle.mp4",
-    "videoTitle": "Refrigeration Cycle"
+    "videoTitle": "Refrigeration Cycle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Refrigeration_Cycle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22283,7 +23341,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Entropy.mp4",
-    "videoTitle": "Entropy"
+    "videoTitle": "Entropy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Entropy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Other",
@@ -22452,8 +23512,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/1/10/Conic_Section_%28parameters_%CE%B8%2C%CF%95%29.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1lS5mnQYDEV6jiDDiF1V6G3f5g-tgCi3F/preview",
-    "videoTitle": "Eccentricities of Conic Sections"
+    "video": "assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "videoTitle": "Eccentricities of Conic Sections",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Eccentricities_of_Conic_Sections.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22518,8 +23580,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1CWPTy-8IpxadLlIEZ2dSFRssRwUiqkRB/preview",
-    "videoTitle": "Straight Lines Slope-Point Form"
+    "video": "assets/videos/Straight Lines Slope point form.mp4",
+    "videoTitle": "Straight Lines Slope-Point Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight%20Lines%20Slope%20point%20form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22533,7 +23597,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Slope_Intercept_Form.mp4",
-    "videoTitle": "Slope Intercept Form"
+    "videoTitle": "Slope Intercept Form",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Slope_Intercept_Form.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22564,8 +23630,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/2/26/Slopes_of_perpendicular_lines.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1cNOXQpV48eEX_VWPz78-O11v59yrNgsE/preview",
-    "videoTitle": "Parallel and Perpendicular Lines"
+    "video": "assets/videos/Parallel and Perpendicular lines.mp4",
+    "videoTitle": "Parallel and Perpendicular Lines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Parallel%20and%20Perpendicular%20lines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22596,8 +23664,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/6/67/Distance_Formula.svg"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1IP8Yhigkvi9sIu-VenHpKHZHa53B4Hvp/preview",
-    "videoTitle": "Distance Formula"
+    "video": "assets/videos/Distance Formula.mp4",
+    "videoTitle": "Distance Formula",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Distance%20Formula.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22623,7 +23693,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
-    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere"
+    "videoTitle": "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22648,8 +23720,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1waiM_TELnv9dJAfTWQgHwe72Z82mcw4U/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1b012mQwo34rZQMwGVorfM6_SkdREaqic/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1QdOQlqTHaEib-of2Yan46NvlTpc58FnP/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1d4YM5heNS94lHyKI0Ln4u0pF418EwJ9h/preview",
-    "videoTitle": "Logarithmic Identities"
+    "video": "assets/videos/Logarithmic Identities.mp4",
+    "videoTitle": "Logarithmic Identities",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Logarithmic%20Identities.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22663,7 +23737,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Concept_of_Complex_Numbers.mp4",
-    "videoTitle": "Concept of Complex Numbers Explainer"
+    "videoTitle": "Concept of Complex Numbers Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Concept_of_Complex_Numbers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22677,7 +23753,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Addition_Formulas.mp4",
-    "videoTitle": "Trigonometric Addition and Subtraction Formulas"
+    "videoTitle": "Trigonometric Addition and Subtraction Formulas",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Addition_Formulas.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22732,8 +23810,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1a-iuYNXcxyazntG-kP1ZxEHaAB2na5Mw/preview",
-    "videoTitle": "Law of Sines"
+    "video": "assets/videos/Law_of_Sines.mp4",
+    "videoTitle": "Law of Sines",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Law_of_Sines.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22747,7 +23827,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Double Angles"
+    "videoTitle": "Trigonometric Ratios of Double Angles",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Double_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22763,7 +23845,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
-    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)"
+    "videoTitle": "Trigonometric Ratios of Negative Angles (Odd-Even Identities)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trigonometric_Ratios_of_Negative_Angles.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22777,7 +23861,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
-    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives"
+    "videoTitle": "Radius of Curvature Formula in Terms of First and Second Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22791,7 +23877,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
-    "videoTitle": "Curvature of any Curve in Terms of Derivatives"
+    "videoTitle": "Curvature of any Curve in Terms of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curvature_of_any_Curve_in_Terms_of_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22805,7 +23893,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Basic_rules_of_derivatives.mp4",
-    "videoTitle": "Basic Rules of Derivatives"
+    "videoTitle": "Basic Rules of Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Basic_rules_of_derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22819,7 +23909,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
-    "videoTitle": "Product and Quotient Rules for Derivatives"
+    "videoTitle": "Product and Quotient Rules for Derivatives",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22833,7 +23925,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Chain_Rule_for_Differentiation.mp4",
-    "videoTitle": "Chain Rule for Differentiation"
+    "videoTitle": "Chain Rule for Differentiation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Chain_Rule_for_Differentiation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22847,7 +23941,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22861,7 +23957,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22875,7 +23973,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22889,7 +23989,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Indefinite_Integrals.mp4",
-    "videoTitle": "Indefinite Integrals"
+    "videoTitle": "Indefinite Integrals",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Indefinite_Integrals.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22917,7 +24019,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Derivative_of_Logarithmic_Functions.mp4",
-    "videoTitle": "Derivative of Logarithmic Functions"
+    "videoTitle": "Derivative of Logarithmic Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Derivative_of_Logarithmic_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22931,7 +24035,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
-    "videoTitle": "Applying Boundary Conditions in Differential Equations"
+    "videoTitle": "Applying Boundary Conditions in Differential Equations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Applying_Boundary_Conditions_in_Differential_Equations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22959,7 +24065,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
-    "videoTitle": "Degree and Order of Differential Equation"
+    "videoTitle": "Degree and Order of Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Degree_and_Order_of_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -22973,7 +24081,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
-    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation"
+    "videoTitle": "Complementary Function and Particular Integral of a Differential Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Complementary_Function_and_Particular_Integral_of_a_Differential_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23027,7 +24137,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Dot_Product.mp4",
-    "videoTitle": "Properties of Dot Product"
+    "videoTitle": "Properties of Dot Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Dot_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23053,7 +24165,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Cross_Product.mp4",
-    "videoTitle": "Properties of Cross Product"
+    "videoTitle": "Properties of Cross Product",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Cross_Product.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23078,8 +24192,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12dFZ3zXiz9cuefrdoES1u0t110WpHVP5/preview",
-    "videoTitle": "Divergence of a Vector Field"
+    "video": "assets/videos/Divergence of a Vector Field.mp4",
+    "videoTitle": "Divergence of a Vector Field",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Divergence%20of%20a%20Vector%20Field.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23092,8 +24208,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1F1-8HUk4PGwYi7Cwpcn2P82bQOrHJjjs/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1JOjJmm2GWoDGI0eXe5eYi_PYbM8YefbC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1wRRxxZDqaLxY4brwsCRPxs8upbrlxTYv/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:57.97% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/580162392?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Gradient_Divergence_Curl\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1ODzbMTs6qhufTo1SYlUm3qdbU79HGVB9/preview",
-    "videoTitle": "Curl of a Vector Field and Irrotational Fields"
+    "video": "assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "videoTitle": "Curl of a Vector Field and Irrotational Fields",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Curl_of_a_Vector_Field_and_Irrotational_Fields.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23106,8 +24224,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/13hV2n-x0oPIDrjOO3ng4AM4QafrJh2Ri/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13uHiKJMZCI6cfehtAlx8zJrAgqshejRG/preview",
-    "videoTitle": "Inverse of a Matrix"
+    "video": "assets/videos/Inverse_of_a_Matrix.mp4",
+    "videoTitle": "Inverse of a Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inverse_of_a_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23133,7 +24253,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Properties_of_Identity_Matrix.mp4",
-    "videoTitle": "Properties of Identity Matrix"
+    "videoTitle": "Properties of Identity Matrix",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Properties_of_Identity_Matrix.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23187,7 +24309,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newton's Method for Root Extraction.mp4",
-    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)"
+    "videoTitle": "Newton's Method of Root Extraction (Newton's Method of Root Extraction)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Method%20for%20Root%20Extraction.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23200,8 +24324,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1B-2mkWPAHV0jcPeQYdrtx66yZcUhDqNu/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1kY-Pblove05BCW_njh1N76zX3_0rrJee/preview",
-    "videoTitle": "Simpson's Rule"
+    "video": "assets/videos/Simpsons_Rule.mp4",
+    "videoTitle": "Simpson's Rule",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simpsons_Rule.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23215,7 +24341,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
-    "videoTitle": "Taylor and Maclaurin Series Expansion"
+    "videoTitle": "Taylor and Maclaurin Series Expansion",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Taylor_and_Maclaurin_Series_Expansion.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23268,8 +24396,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1uDwYAXPIbbF7BJqJCmCXAwdIrufYJePQ/preview",
-    "videoTitle": "Null Hypothesis"
+    "video": "assets/videos/Null_Hypothesis.mp4",
+    "videoTitle": "Null Hypothesis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Null_Hypothesis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23331,7 +24461,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
-    "videoTitle": "Median of a Sample for Odd and Even Number of Observations"
+    "videoTitle": "Median of a Sample for Odd and Even Number of Observations",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Median_of_a_sample_for_odd_and_even_number_of_observations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23345,7 +24477,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Mode_of_a_sample.mp4",
-    "videoTitle": "Mode of a Sample"
+    "videoTitle": "Mode of a Sample",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Mode_of_a_sample.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23387,7 +24521,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Permutations_with_Repetition.mp4",
-    "videoTitle": "Permutations with Repetition (Multinomial Permutations)"
+    "videoTitle": "Permutations with Repetition (Multinomial Permutations)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Permutations_with_Repetition.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23400,8 +24536,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1rjejkpzaRigrtkkK3VAMAztLS3crG1io/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1h-74w9jTOJwg8CujUnkoS16_yimSzWNc/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/1LOOUIjtIUjjngnd9iT_ZWqga3jsyUe8i/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1003484364?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Binomial Distributions\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pCuVWsQq3sCBT-iX89BlgYZvifnR-lx0/preview",
-    "videoTitle": "Binomial Distribution"
+    "video": "assets/videos/Binomial_Distribution.mp4",
+    "videoTitle": "Binomial Distribution",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Binomial_Distribution.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23415,7 +24553,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Expected_Values.mp4",
-    "videoTitle": "Expected Values"
+    "videoTitle": "Expected Values",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected_Values.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23428,8 +24568,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1x98FMuTm_acKnZW_4S5tXuQfYWoVTX1K/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1dB2u-9XEXOVQl-96oKrCQm6lTQvfLDOF/preview",
-    "videoTitle": "Expected Value of a Continuous Function"
+    "video": "assets/videos/Expected Value.mp4",
+    "videoTitle": "Expected Value of a Continuous Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Expected%20Value.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23461,7 +24603,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
-    "videoTitle": "Standard Normal Distribution (Z Transformation)"
+    "videoTitle": "Standard Normal Distribution (Z Transformation)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Standard_Normal_Distribution_Z_Transformation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23477,7 +24621,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Probability_Density_Function.mp4",
-    "videoTitle": "Probability Density Function"
+    "videoTitle": "Probability Density Function",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Probability_Density_Function.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23493,7 +24639,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Cumulative_Distribution_Functions.mp4",
-    "videoTitle": "Cumulative Distribution Functions"
+    "videoTitle": "Cumulative Distribution Functions",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cumulative_Distribution_Functions.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23569,7 +24717,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Ethical_and_Legal_Considerations.mp4",
-    "videoTitle": "Ethical and Legal Considerations in Engineering Practice"
+    "videoTitle": "Ethical and Legal Considerations in Engineering Practice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Ethical_and_Legal_Considerations.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23583,7 +24733,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
-    "videoTitle": "NCEES Model Rules of Professional Conduct"
+    "videoTitle": "NCEES Model Rules of Professional Conduct",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23597,7 +24749,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Professional_and_Technical_Societies.mp4",
-    "videoTitle": "Professional and Technical Societies"
+    "videoTitle": "Professional and Technical Societies",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Professional_and_Technical_Societies.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23622,8 +24776,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1VmieIGb_P-HxuB0tGfzyvypw_Z45f5ig/preview",
-    "videoTitle": "Design Patent vs. Utility Patent"
+    "video": "assets/videos/Design patent vs utility patent.mp4",
+    "videoTitle": "Design Patent vs. Utility Patent",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Design%20patent%20vs%20utility%20patent.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23651,7 +24807,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Trademarks.mp4",
-    "videoTitle": "Trademarks and Brand Protection Explainer"
+    "videoTitle": "Trademarks and Brand Protection Explainer",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Trademarks.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23665,7 +24823,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
-    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol"
+    "videoTitle": "Whistleblowing and Public Safety Escalation Protocol",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23691,7 +24851,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Sustainability.mp4",
-    "videoTitle": "Sustainability in Engineering Ethics"
+    "videoTitle": "Sustainability in Engineering Ethics",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Sustainability.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23719,7 +24881,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
-    "videoTitle": "Capitalized Cost for Infinite Project Life"
+    "videoTitle": "Capitalized Cost for Infinite Project Life",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23733,7 +24897,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Sunk_Costs.mp4",
-    "videoTitle": "Sunk Costs"
+    "videoTitle": "Sunk Costs",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Sunk_Costs.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23761,7 +24927,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Overhead_Analysis.mp4",
-    "videoTitle": "Overhead Analysis"
+    "videoTitle": "Overhead Analysis",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Overhead_Analysis.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23774,8 +24942,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1zy-vrGqIgApv6unKhp9Zp0rqzxW0js1h/preview",
-    "videoTitle": "Simple Payback Period"
+    "video": "assets/videos/Simple Payback Period.mp4",
+    "videoTitle": "Simple Payback Period",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Simple%20Payback%20Period.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23789,7 +24959,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Inflation_Fishers_equation.mp4",
-    "videoTitle": "Inflation: Fisher's Equation"
+    "videoTitle": "Inflation: Fisher's Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Inflation_Fishers_equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23803,7 +24975,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
-    "videoTitle": "Nominal vs. Effective Annual Interest Rate"
+    "videoTitle": "Nominal vs. Effective Annual Interest Rate",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23833,7 +25007,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Straight_Line_Depreciation_Method.mp4",
-    "videoTitle": "Straight Line Depreciation Method"
+    "videoTitle": "Straight Line Depreciation Method",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Straight_Line_Depreciation_Method.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23847,7 +25023,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
-    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation"
+    "videoTitle": "Modified Accelerated Cost Recovery System (MACRS) Depreciation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Modified_Accelerated_Cost_Recovery_System_MACRS_Depreciation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23873,7 +25051,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Stagnation_Temperature.mp4",
-    "videoTitle": "Stagnation Temperature"
+    "videoTitle": "Stagnation Temperature",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Stagnation_Temperature.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23962,8 +25142,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12Lp7qzmuQzS9Oa18PSUEQkjzQUtIxCi-/preview",
-    "videoTitle": "Orifice"
+    "video": "assets/videos/Orifice.mp4",
+    "videoTitle": "Orifice",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Orifice.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23976,8 +25158,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzdq9SWd7ObbO6uWTwKx0kzO27khHXeC/preview",
-    "videoTitle": "Pitot Tube"
+    "video": "assets/videos/Pitot_Tube.mp4",
+    "videoTitle": "Pitot Tube",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Pitot_Tube.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -23990,8 +25174,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tLlpmiObYyLvabX6Bvpwu1WleldZ8-eo/preview",
-    "videoTitle": "Venturi Meter"
+    "video": "assets/videos/Venturi Meter.mp4",
+    "videoTitle": "Venturi Meter",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Venturi%20Meter.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24067,7 +25253,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Specific_Gravity.mp4",
-    "videoTitle": "Specific Gravity"
+    "videoTitle": "Specific Gravity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Specific_Gravity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24095,7 +25283,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Newton's Law of Viscosity.mp4",
-    "videoTitle": "Newton's Law of Viscosity"
+    "videoTitle": "Newton's Law of Viscosity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newton's%20Law%20of%20Viscosity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24125,7 +25315,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
-    "videoTitle": "Newtonian vs Non-Newtonian Fluids"
+    "videoTitle": "Newtonian vs Non-Newtonian Fluids",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Newtonian_vs_Non_Newtonian_Fluid.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24140,8 +25332,10 @@ const notesData = [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21581&authkey=%21AOQoVTXCapx5-0Y&width=323&height=292"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/12aHG3Ob330Ac-IzQ85WDsH8pCVf8ZxUo/preview",
-    "videoTitle": "Capillarity"
+    "video": "assets/videos/Capillarity.mp4",
+    "videoTitle": "Capillarity",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Capillarity.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24156,8 +25350,10 @@ const notesData = [
       "https://onedrive.live.com/embed?resid=9C913AE725AFDEB1%21576&authkey=%21AGreDbrHBEU13q0&width=323&height=315"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1aAD3iUE8Hxw2AEBRYz0gj-j0S7Cw4s6F/preview",
-    "videoTitle": "Surface Tension"
+    "video": "assets/videos/Surface_Tension.mp4",
+    "videoTitle": "Surface Tension",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Surface_Tension.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24170,8 +25366,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/13-s9u7Y89PobjB55_5Qx_Gd8IBllU4dO/preview",
-    "videoTitle": "Archimedes Principle of Buoyancy"
+    "video": "assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "videoTitle": "Archimedes Principle of Buoyancy",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Archimedes_Principle_of_Buoyancy.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24210,8 +25408,10 @@ const notesData = [
     "resources": "<div class=\"mt-4 pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-2\"><a href=\"https://drive.google.com/file/d/1yRQ3znNWJKAqslwewqKb1McPGW60Cjci/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded text-xs font-bold hover:bg-blue-200 transition-colors\">📄 Homework</a><a href=\"https://drive.google.com/file/d/1ClJo-X2k_L2Sp9aCdqegYN77RNP4xpTe/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 rounded text-xs font-bold hover:bg-green-200 transition-colors\">✅ Solution</a><a href=\"https://drive.google.com/file/d/18CKfsok7cvEdl0iVVZ9X_Vs-y6uRr8XC/preview\" target=\"_blank\" class=\"px-3 py-1.5 bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded text-xs font-bold hover:bg-purple-200 transition-colors\">👨‍🏫 Tutoring</a><!-- <div class=\"w-full mt-2\"><div style=\"padding:58.06% 0 0 0;position:relative;\"><iframe allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" src=\"https://player.vimeo.com/video/586137569?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;h=d27233e3bb\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Pressure_Measurement.mp4\"></iframe></div>\r\n<script src=\"https://player.vimeo.com/api/player.js\"></script></div> --></div>",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1tzsLR6mCzXoag9l5DUwDO2GqSoeI7oaH/preview",
-    "videoTitle": "Manometers"
+    "video": "assets/videos/Manometers.mp4",
+    "videoTitle": "Manometers",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Manometers.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24289,7 +25489,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Impulse_Momentum_Principle.mp4",
-    "videoTitle": "Impulse Momentum Principle"
+    "videoTitle": "Impulse Momentum Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Impulse_Momentum_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24317,7 +25519,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Darcy_Weisbach_Equation.mp4",
-    "videoTitle": "Darcy Weisbach Equation"
+    "videoTitle": "Darcy Weisbach Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Darcy_Weisbach_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24334,7 +25538,9 @@ const notesData = [
     ],
     "local_images": [],
     "video": "assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
-    "videoTitle": "Minor Head Loss in Piping Systems"
+    "videoTitle": "Minor Head Loss in Piping Systems",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Minor_Head_Loss_in_Piping_Systems.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24385,8 +25591,10 @@ const notesData = [
       "https://upload.wikimedia.org/wikipedia/commons/4/44/Toky.png"
     ],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1pA6SxF80zasGtncKcp7BM0-7h8N1WzKF/preview",
-    "videoTitle": "Reynold's Number"
+    "video": "assets/videos/Reynolds_Number.mp4",
+    "videoTitle": "Reynold's Number",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Reynolds_Number.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24400,7 +25608,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Bernoullis_Principle.mp4",
-    "videoTitle": "Bernoulli’s Principle"
+    "videoTitle": "Bernoulli’s Principle",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Bernoullis_Principle.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24413,8 +25623,10 @@ const notesData = [
     "resources": "",
     "images": [],
     "local_images": [],
-    "video": "https://drive.google.com/file/d/1fE_30I4cUD6W3XvH9csrrVMIvv7Rq9il/preview",
-    "videoTitle": "Continuity Equation"
+    "video": "assets/videos/Continuity_Equation.mp4",
+    "videoTitle": "Continuity Equation",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Continuity_Equation.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24478,7 +25690,9 @@ const notesData = [
     "images": [],
     "local_images": [],
     "video": "assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
-    "videoTitle": "Net Positive Suction Head (NPSH)"
+    "videoTitle": "Net Positive Suction Head (NPSH)",
+    "videoGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Net_Positive_Suction_Head_NPSH.mp4",
+    "isVideoGithub": true
   },
   {
     "discipline": "Environmental",
@@ -24561,5 +25775,5 @@ const notesData = [
 ];
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = notesData;
+    module.exports = notesData;
 }
