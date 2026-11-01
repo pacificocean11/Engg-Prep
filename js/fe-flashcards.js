@@ -2022,7 +2022,19 @@ const DISCIPLINE_SUBJECT_CONFIG = {
         const backVideoContainer = document.getElementById('fc-back-video-container');
         const backImgContainer = document.getElementById('fc-back-image-container');
 
-                function setFlashcardVideoSource(videoUrl) {
+        function resolveVideoUrl(url) {
+            if (!url) return '';
+            if (url.startsWith('assets/videos/') || url.includes('raw.githubusercontent.com')) {
+                const filename = url.split('/').pop();
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+                    return `assets/videos/${filename}`;
+                }
+                return `https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/${encodeURIComponent(filename)}`;
+            }
+            return url;
+        }
+
+        function setFlashcardVideoSource(videoUrl) {
             const backVideo = document.getElementById('fc-back-video');
             const driveFrame = document.getElementById('fc-back-drive-frame');
             if (!videoUrl) {
@@ -2039,13 +2051,14 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 return;
             }
 
-            const isDrive = videoUrl.includes('drive.google.com') || videoUrl.includes('drive.usercontent.google.com') || videoUrl.startsWith('/api/drive-stream/');
-            let targetSrc = videoUrl;
+            const cleanUrl = resolveVideoUrl(videoUrl);
+            const isDrive = cleanUrl.includes('drive.google.com') || cleanUrl.includes('drive.usercontent.google.com') || cleanUrl.startsWith('/api/drive-stream/');
+            let targetSrc = cleanUrl;
             let driveId = '';
             if (isDrive) {
-                const m = videoUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
+                const m = cleanUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
                 if (m) driveId = m[1];
-                targetSrc = driveId ? ('/api/drive-stream/' + driveId) : videoUrl;
+                targetSrc = driveId ? ('/api/drive-stream/' + driveId) : cleanUrl;
             }
 
             if (backVideo) {
@@ -2066,6 +2079,8 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                             driveFrame.classList.remove('hidden');
                         }
                     };
+                } else {
+                    backVideo.onerror = null;
                 }
 
                 if (typeof playBackVideo === 'function') {

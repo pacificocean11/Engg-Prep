@@ -4,15 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // ================================================================
     // SMART WEAKNESS ANALYZER & SPACED REPETITION SYSTEM (SRS)
     // ================================================================
-    const WEAKNESS_KEY = () => `enggtv_weakness_${state.user.username}`;
-    const SRS_KEY = () => `enggtv_srs_${state.user.username}`;
+    const getActiveUsername = () => (state && state.user && state.user.username) || 'guest';
+    const WEAKNESS_KEY = () => `enggtv_weakness_${getActiveUsername()}`;
+    const SRS_KEY = () => `enggtv_srs_${getActiveUsername()}`;
 
     /**
      * Called at the end of finishQuiz/navigation.
      * Records wrong-answer topic data into localStorage per user.
      */
     function recordWeaknessData() {
-        if (!state.user || !state.user.username) return;
         const rawData = (() => {
             try { return JSON.parse(localStorage.getItem(WEAKNESS_KEY())) || {}; }
             catch (e) { return {}; }
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function recordSRS(question, isCorrect) {
-        if (!question || !question.title || !state.user || !state.user.username) return;
+        if (!question || !question.title) return;
         let srsData = JSON.parse(localStorage.getItem(SRS_KEY()) || '{}');
         const qId = question.title; // Unique identifier
 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         srsData[qId] = item;
         localStorage.setItem(SRS_KEY(), JSON.stringify(srsData));
-        if (state.currentPage === 'dashboard') renderSRSCard();
+        if (state.currentPage === 'dashboard' || state.currentPage === 'feedback') renderSRSCard();
     }
 
     function renderSRSCard() {
@@ -256,12 +256,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 recordWeaknessData();
             }
             _origNav(pageId);
-            if (pageId === 'dashboard') {
+            if (pageId === 'dashboard' || pageId === 'feedback') {
                 renderSRSCard();
                 renderFocusZone();
             }
         };
     }
+
+    window.renderSRSCard = renderSRSCard;
+    window.renderFocusZone = renderFocusZone;
 
     // Initial render of SRS and Focus Zone
     renderSRSCard();

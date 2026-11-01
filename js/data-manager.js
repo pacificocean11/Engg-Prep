@@ -159,6 +159,14 @@ async function syncToFirebase() {
             dateJoined: dateJoined,
             country: country
         };
+        try {
+            const weaknessRaw = localStorage.getItem(`enggtv_weakness_${window.state.user.username}`);
+            if (weaknessRaw) payload.weaknessData = JSON.parse(weaknessRaw);
+        } catch (e) {}
+        try {
+            const srsRaw = localStorage.getItem(`enggtv_srs_${window.state.user.username}`);
+            if (srsRaw) payload.srsData = JSON.parse(srsRaw);
+        } catch (e) {}
         if (avatar) payload.avatar = avatar; else payload.avatar = null;
         if (profilePic) payload.profilePic = profilePic; else payload.profilePic = null;
         if (examDate) payload.examDate = examDate;
@@ -484,6 +492,23 @@ async function loadFromFirebase() {
                 const examDateInput = document.getElementById('exam-date-input');
                 if (examDateInput) examDateInput.value = data.examDate;
                 if (window.startCountdownGlobal) window.startCountdownGlobal(data.examDate);
+            }
+
+            if (data.weaknessData && typeof data.weaknessData === 'object') {
+                try {
+                    const localKey = `enggtv_weakness_${window.state.user.username}`;
+                    const localWeakness = JSON.parse(localStorage.getItem(localKey)) || {};
+                    const mergedWeakness = { ...data.weaknessData, ...localWeakness };
+                    localStorage.setItem(localKey, JSON.stringify(mergedWeakness));
+                } catch (e) {}
+            }
+            if (data.srsData && typeof data.srsData === 'object') {
+                try {
+                    const localKey = `enggtv_srs_${window.state.user.username}`;
+                    const localSRS = JSON.parse(localStorage.getItem(localKey)) || {};
+                    const mergedSRS = { ...data.srsData, ...localSRS };
+                    localStorage.setItem(localKey, JSON.stringify(mergedSRS));
+                } catch (e) {}
             }
 
             if (window.updateDashboardStats) window.updateDashboardStats();
