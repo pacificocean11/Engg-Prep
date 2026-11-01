@@ -2560,7 +2560,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
     </script>
     <script src="js/particles.js"></script>
     <script src="js/fe-theorems-data.js?v=6"></script>
-    <script src="app.js?v=176"></script>
+    <script src="app.js?v=178"></script>
     <script src="js/global-search.js"></script>
     <script src="js/onboarding.js"></script>
     <script src="js/achievements.js"></script>
@@ -2598,7 +2598,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js?v=264').then(registration => {
+          navigator.serviceWorker.register('./sw.js?v=266').then(registration => {
             registration.update();
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
           }, err => {
@@ -3310,10 +3310,8 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
             if (!url) return '';
             if (url.startsWith('assets/videos/') || url.includes('raw.githubusercontent.com')) {
                 const filename = url.split('/').pop();
-                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-                    return 'assets/videos/' + filename;
-                }
-                return 'https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/' + encodeURIComponent(filename);
+                const decoded = decodeURIComponent(filename);
+                return 'assets/videos/' + encodeURI(decoded);
             }
             return url;
         };
@@ -3368,6 +3366,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
             }
         if (descEl) descEl.textContent = desc ? 'Animated conceptual walkthrough for ' + desc + '.' : 'Watch the animation to visualize key engineering processes and reference formulas.';
         
+        const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
         const isDrive = videoUrl && (videoUrl.includes('drive.google.com') || videoUrl.includes('drive.usercontent.google.com') || videoUrl.startsWith('/api/drive-stream/'));
         
         if (isDrive) {
@@ -3375,7 +3374,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
             const m = videoUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
             if (m) driveId = m[1];
 
-            if (player && driveId) {
+            if (isLocalHost && player && driveId) {
                 if (driveFrame) {
                     driveFrame.src = '';
                     driveFrame.classList.add('hidden');
@@ -3397,13 +3396,16 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
                 const p = player.play();
                 if (p !== undefined) {
                     p.catch(() => {
-                        // If browser blocks unmuted autoplay, mute and play
                         player.muted = true;
                         player.play().catch(() => {});
                     });
                 }
             } else if (driveFrame && driveId) {
-                if (player) player.classList.add('hidden');
+                if (player) {
+                    player.pause();
+                    player.removeAttribute('src');
+                    player.classList.add('hidden');
+                }
                 driveFrame.src = 'https://drive.google.com/file/d/' + driveId + '/preview';
                 driveFrame.classList.remove('hidden');
             }
@@ -3470,7 +3472,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
     </script>
 
     <script src="js/fe-simulator.js?v=5"></script>
-    <script src="js/tv-hub.js?v=4"></script>
+    <script src="js/tv-hub.js?v=6"></script>
     <script src="js/ai-evaluator.js?v=2"></script>
 </body>
 
