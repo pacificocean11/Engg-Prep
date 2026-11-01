@@ -2026,10 +2026,8 @@ const DISCIPLINE_SUBJECT_CONFIG = {
             if (!url) return '';
             if (url.startsWith('assets/videos/') || url.includes('raw.githubusercontent.com')) {
                 const filename = url.split('/').pop();
-                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-                    return `assets/videos/${filename}`;
-                }
-                return `https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/${encodeURIComponent(filename)}`;
+                const decoded = decodeURIComponent(filename);
+                return `assets/videos/${encodeURI(decoded)}`;
             }
             return url;
         }
@@ -2051,46 +2049,80 @@ const DISCIPLINE_SUBJECT_CONFIG = {
                 return;
             }
 
-            const cleanUrl = resolveVideoUrl(videoUrl);
-            const isDrive = cleanUrl.includes('drive.google.com') || cleanUrl.includes('drive.usercontent.google.com') || cleanUrl.startsWith('/api/drive-stream/');
-            let targetSrc = cleanUrl;
+            const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+            
+            // On localhost, all local files exist. On live GitHub Pages, only files uploaded to the repository exist.
+            const hasLocalMp4 = isLocalHost 
+                ? (videoUrl.startsWith('assets/videos/') || Boolean(card && card.mp4File)) 
+                : Boolean(card && card.isUploadedToGithub);
+
+            const driveUrl = (card && card.driveUrl) || (videoUrl.includes('drive.google.com') ? videoUrl : '');
             let driveId = '';
-            if (isDrive) {
-                const m = cleanUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
+            if (driveUrl) {
+                const m = driveUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
                 if (m) driveId = m[1];
-                targetSrc = driveId ? ('/api/drive-stream/' + driveId) : cleanUrl;
             }
 
-            if (backVideo) {
+            if (hasLocalMp4) {
+                // Native MP4 is available (works on localhost, and on GitHub Pages via relative path)
+                const cleanUrl = resolveVideoUrl(videoUrl);
                 if (driveFrame) {
                     driveFrame.src = '';
                     driveFrame.classList.add('hidden');
                 }
-                backVideo.classList.remove('hidden');
-                backVideo.src = targetSrc;
-                backVideo.load();
+                if (backVideo) {
+                    backVideo.classList.remove('hidden');
+                    backVideo.src = cleanUrl;
+                    backVideo.load();
 
-                if (driveId) {
                     backVideo.onerror = function() {
-                        console.warn('Direct stream error, falling back to Drive iframe preview');
+                        console.warn('Native MP4 failed, falling back to Drive preview or diagram');
+                        backVideo.classList.add('hidden');
+                        if (driveId && driveFrame) {
+                            driveFrame.src = 'https://drive.google.com/file/d/' + driveId + '/preview';
+                            driveFrame.classList.remove('hidden');
+                        }
+                    };
+
+                    if (typeof playBackVideo === 'function') {
+                        playBackVideo();
+                    } else {
+                        backVideo.muted = typeof userAudioMuted !== 'undefined' ? userAudioMuted : true;
+                        backVideo.play().catch(() => {
+                            backVideo.muted = true;
+                            backVideo.play().catch(() => {});
+                        });
+                    }
+                }
+            } else if (driveId) {
+                // Video is not yet on GitHub Pages, or pure Drive:
+                if (isLocalHost && backVideo) {
+                    // Local Node server supports /api/drive-stream/
+                    if (driveFrame) {
+                        driveFrame.src = '';
+                        driveFrame.classList.add('hidden');
+                    }
+                    backVideo.classList.remove('hidden');
+                    backVideo.src = '/api/drive-stream/' + driveId;
+                    backVideo.load();
+                    backVideo.onerror = function() {
                         backVideo.classList.add('hidden');
                         if (driveFrame) {
                             driveFrame.src = 'https://drive.google.com/file/d/' + driveId + '/preview';
                             driveFrame.classList.remove('hidden');
                         }
                     };
-                } else {
-                    backVideo.onerror = null;
-                }
-
-                if (typeof playBackVideo === 'function') {
-                    playBackVideo();
-                } else {
-                    backVideo.muted = typeof userAudioMuted !== 'undefined' ? userAudioMuted : true;
-                    backVideo.play().catch(() => {
-                        backVideo.muted = true;
-                        backVideo.play().catch(() => {});
-                    });
+                    if (typeof playBackVideo === 'function') playBackVideo();
+                } else if (driveFrame) {
+                    // Live static host (GitHub Pages): proxy does not exist, use Drive iframe preview directly!
+                    if (backVideo) {
+                        backVideo.pause();
+                        backVideo.removeAttribute('src');
+                        backVideo.load();
+                        backVideo.classList.add('hidden');
+                    }
+                    driveFrame.src = 'https://drive.google.com/file/d/' + driveId + '/preview';
+                    driveFrame.classList.remove('hidden');
                 }
             }
         }

@@ -193,19 +193,22 @@
         if (!url) return '';
         if (url.startsWith('assets/videos/') || url.includes('raw.githubusercontent.com')) {
             const filename = url.split('/').pop();
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-                return `assets/videos/${filename}`;
-            }
-            return `https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/${encodeURIComponent(filename)}`;
+            const decoded = decodeURIComponent(filename);
+            return `assets/videos/${encodeURI(decoded)}`;
         }
         return url;
     }
 
     function createCardElement(video, index) {
-        const rawUrl = video.videoUrl || '';
-        const isDrive = rawUrl.includes('drive.google.com') || rawUrl.includes('/api/drive-stream/');
-        const driveId = isDrive ? getDriveId(rawUrl) : null;
-        const resolvedVideoUrl = resolveVideoUrl(rawUrl);
+        const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+        
+        // On live GitHub Pages, only files uploaded to the repository physically exist
+        const hasNativeMp4 = isLocalHost 
+            ? (video.videoUrl && video.videoUrl.startsWith('assets/videos/')) 
+            : Boolean(video.isUploadedToGithub);
+
+        const driveId = getDriveId(video.driveUrl || video.videoUrl);
+        const resolvedVideoUrl = hasNativeMp4 ? resolveVideoUrl(video.videoUrl) : '';
 
         const style = getSubjectColor(video.subject);
         const hasSolved = Boolean(video.solvedExample);
@@ -217,48 +220,56 @@
             .slice(0, 55);
 
         let mediaHtml = '';
-        if (isDrive && driveId) {
-            const thumbUrl = `https://drive.google.com/thumbnail?id=${driveId}&sz=w640`;
-            mediaHtml = `
-                <img src="${thumbUrl}" 
-                     alt="${safeTitle}" 
-                     loading="lazy" 
-                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                     onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
-            `;
-        } else if (resolvedVideoUrl) {
+        if (resolvedVideoUrl) {
             mediaHtml = `
                 <video src="${resolvedVideoUrl}#t=0.5" 
                        preload="metadata" 
                        muted 
                        playsinline 
-                       class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 pointer-events-none"
-                       onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                       class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0 group-hover:scale-105 pointer-events-none z-10"
+                       onloadeddata="this.classList.remove('opacity-0')"
+                       onseeked="this.classList.remove('opacity-0')"
+                       onerror="this.remove()">
                 </video>
             `;
-        } else {
-            mediaHtml = `<div class="w-full h-full"></div>`;
+        } else if (video.imageUrl) {
+            mediaHtml = `
+                <img src="${video.imageUrl}" 
+                     alt="${safeTitle}" 
+                     loading="lazy" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-10"
+                     onerror="this.remove()">
+            `;
+        } else if (driveId) {
+            const thumbUrl = `https://drive.google.com/thumbnail?id=${driveId}&sz=w640`;
+            mediaHtml = `
+                <img src="${thumbUrl}" 
+                     alt="${safeTitle}" 
+                     loading="lazy" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-10"
+                     onerror="this.remove()">
+            `;
         }
 
         return `
             <div onclick="window.playTvVideo('${safeTitle}')" class="group flex flex-col cursor-pointer transition-all duration-200 hover:-translate-y-1">
                 <!-- Thumbnail Container (16:9 aspect ratio, YouTube style) -->
                 <div class="relative aspect-video w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/80 dark:border-slate-800/90 shadow-sm group-hover:shadow-xl group-hover:border-[#FF006E]/60 transition-all duration-300">
-                    <!-- Real Thumbnail Media (HTML5 video frame or Drive image) -->
-                    ${mediaHtml}
-                    
-                    <!-- Fallback Poster if thumbnail fails -->
-                    <div class="hidden absolute inset-0 w-full h-full bg-gradient-to-br ${style.bg} p-4 flex flex-col justify-between text-white">
+                    <!-- Base Styled Poster (Always visible underneath so thumbnail is NEVER blank or black) -->
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-br ${style.bg} p-4 flex flex-col justify-between text-white select-none">
                         <div class="flex items-center justify-between">
                             <span class="text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md bg-black/40 backdrop-blur-md">${video.subject}</span>
                             <span class="material-symbols-outlined text-sm">play_circle</span>
                         </div>
                         <div class="my-auto text-center px-2">
-                            <span class="material-symbols-outlined text-3xl opacity-80 mb-1">ondemand_video</span>
-                            <p class="text-xs font-bold line-clamp-2">${safeTitle}</p>
+                            <span class="material-symbols-outlined text-3xl opacity-85 mb-1">ondemand_video</span>
+                            <p class="text-xs font-bold line-clamp-2 leading-snug">${safeTitle}</p>
                         </div>
                         <div class="text-[9px] opacity-75 font-mono truncate">${formulaSnippet}</div>
                     </div>
+
+                    <!-- Real Thumbnail Media Layer (Smoothly fades in over base poster once frame decodes) -->
+                    ${mediaHtml}
 
                     <!-- Ambient Dark Gradient on Hover -->
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
