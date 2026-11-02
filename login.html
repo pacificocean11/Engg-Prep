@@ -857,14 +857,221 @@
             }
         });
 
+        
+        // =========================================================================
+        // NCEES FE Discipline Sketch Library
+        // =========================================================================
+        const SKETCHES_DATA = [
+            {
+                id: "ball-bearings",
+                title: "Deep Groove Ball Bearings",
+                file: "Ball Bearings.png",
+                topic: "Machine Elements & Tribology",
+                formula: "L_{10} = (C / P)^p",
+                description: "Supports combined radial and axial thrust loads with minimal friction in rotating machinery shafts.",
+                disciplines: ["Mechanical", "Industrial", "Other"]
+            },
+            {
+                id: "bourdon-tube",
+                title: "Bourdon Tube Pressure Gage",
+                file: "Bourdon tube Pressure Gage.png",
+                topic: "Fluid Statics & Pressure Measurement",
+                formula: "P_{abs} = P_{atm} + P_{gage}",
+                description: "C-shaped elastic tube straightens under internal fluid pressure to rotate the pointer over a calibrated scale.",
+                disciplines: ["Mechanical", "Civil", "Chemical", "Environmental", "Industrial", "Other"]
+            },
+            {
+                id: "centrifugal-pump",
+                title: "Centrifugal Pump Impeller & Volute",
+                file: "Centrifugal Pump.png",
+                topic: "Turbomachinery & Fluid Power",
+                formula: "H = \frac{P}{\gamma} + \frac{v^2}{2g} + z",
+                description: "Converts rotational mechanical energy into hydrodynamic energy to transport fluids through piping networks.",
+                disciplines: ["Mechanical", "Civil", "Chemical", "Environmental", "Other"]
+            },
+            {
+                id: "construction-crane",
+                title: "Construction Tower Crane",
+                file: "Construction Crane.png",
+                topic: "Structural Statics & Equilibrium",
+                formula: "\sum F_x = 0, \; \sum F_y = 0, \; \sum M_o = 0",
+                description: "Counterweighted truss lattice structure engineered for heavy vertical lifting and rotational equilibrium.",
+                disciplines: ["Civil", "Mechanical", "Other"]
+            },
+            {
+                id: "flanged-couplings",
+                title: "Flanged Shaft Coupling",
+                file: "Flanged Couplings.png",
+                topic: "Mechanical Design & Bolt Shear",
+                formula: "\tau = \frac{T \cdot r}{J}, \; \tau_{bolt} = \frac{2T}{n \cdot \pi d^2 R}",
+                description: "Rigid flange coupling connecting co-axial rotating shafts to transmit continuous torsional power.",
+                disciplines: ["Mechanical", "Industrial", "Other"]
+            },
+            {
+                id: "heat-exchangers",
+                title: "Counter-Flow Heat Exchanger",
+                file: "Heat Exchangers.png",
+                topic: "Heat Transfer & Thermal Systems",
+                formula: "\dot{Q} = U A \Delta T_{lm}",
+                description: "Facilitates rapid thermal energy exchange between two fluid streams without direct contact or intermixing.",
+                disciplines: ["Mechanical", "Chemical", "Environmental", "Other"]
+            },
+            {
+                id: "lvdt",
+                title: "LVDT Displacement Transducer",
+                file: "LVDT.png",
+                topic: "Measurements, Transducers & Control",
+                formula: "V_{out} = k \cdot x \cdot \sin(\omega t)",
+                description: "Linear variable differential transformer converting micro-displacement into a linear AC electrical signal.",
+                disciplines: ["Electrical and Computer", "Mechanical", "Industrial", "Other"]
+            },
+            {
+                id: "piston-cylinder",
+                title: "Piston-Cylinder Assembly",
+                file: "Piston-Cyclinder Assembly.png",
+                topic: "Thermodynamics & Boundary Work",
+                formula: "W = \int P \, dV, \; \Delta U = Q - W",
+                description: "Fundamental thermodynamic control mass demonstrating expansion work, compression, and thermodynamic power cycles.",
+                disciplines: ["Mechanical", "Chemical", "Other"]
+            },
+            {
+                id: "rivetted-joints",
+                title: "Riveted Structural Lap Joint",
+                file: "Rivetted Joints.png",
+                topic: "Mechanics of Materials & Structural Design",
+                formula: "\tau = \frac{P}{A_{shear}}, \; \sigma_b = \frac{P}{t \cdot d}",
+                description: "Permanent mechanical fastening transferring shear, tensile, and bearing loads between structural plates.",
+                disciplines: ["Civil", "Mechanical", "Other"]
+            },
+            {
+                id: "strain-gage",
+                title: "Electrical Resistance Strain Gage",
+                file: "Strain Gage.png",
+                topic: "Experimental Stress Analysis & Circuits",
+                formula: "\frac{\Delta R}{R} = S_g \cdot \epsilon, \; V_o = V_s \left(\frac{R_1}{R_1+R_2} - \frac{R_4}{R_3+R_4}\right)",
+                description: "Metallic foil grid transducer measuring minute mechanical surface strain via proportional resistance changes.",
+                disciplines: ["Electrical and Computer", "Mechanical", "Civil", "Industrial", "Other"]
+            },
+            {
+                id: "transformers",
+                title: "Electrical Power Transformer",
+                file: "Transformers.png",
+                topic: "Electromagnetics & AC Power Systems",
+                formula: "\frac{V_p}{V_s} = \frac{N_p}{N_s} = \frac{I_s}{I_p}",
+                description: "Passive magnetic core device transferring electrical energy between circuits through mutual induction.",
+                disciplines: ["Electrical and Computer", "Other"]
+            },
+            {
+                id: "u-tube-manometer",
+                title: "Differential U-Tube Manometer",
+                file: "U-tube Manometer.png",
+                topic: "Fluid Statics & Hydrostatics",
+                formula: "P_1 - P_2 = (\rho_m - \rho_f) g h",
+                description: "Measures fluid pressure differentials by balancing column heights against a known reference fluid density.",
+                disciplines: ["Mechanical", "Civil", "Chemical", "Environmental", "Other"]
+            }
+        ];
+
+        function normalizeDiscipline(disc) {
+            if (!disc) return 'Mechanical';
+            const d = disc.toLowerCase();
+            if (d.includes('mech')) return 'Mechanical';
+            if (d.includes('civil')) return 'Civil';
+            if (d.includes('elect') || d.includes('comp')) return 'Electrical and Computer';
+            if (d.includes('chem')) return 'Chemical';
+            if (d.includes('indus')) return 'Industrial';
+            if (d.includes('env')) return 'Environmental';
+            return 'Other';
+        }
+
+        function showSketchLoginSplash(userData) {
+            const rawDiscipline = (userData && userData.discipline && userData.discipline !== 'undefined') ? userData.discipline : (localStorage.getItem('enggtv_discipline') || 'Mechanical');
+            const discipline = normalizeDiscipline(rawDiscipline);
+
+            const matching = SKETCHES_DATA.filter(s => s.disciplines.includes(discipline));
+            const pool = matching.length > 0 ? matching : SKETCHES_DATA;
+            const sketch = pool[Math.floor(Math.random() * pool.length)];
+
+            try {
+                localStorage.setItem('enggtv_session_sketch', JSON.stringify({
+                    title: sketch.title,
+                    file: sketch.file,
+                    topic: sketch.topic,
+                    formula: sketch.formula,
+                    discipline: discipline,
+                    timestamp: Date.now()
+                }));
+            } catch(e) {}
+
+            let splash = document.getElementById('login-sketch-splash');
+            if (!splash) {
+                splash = document.createElement('div');
+                splash.id = 'login-sketch-splash';
+                document.body.appendChild(splash);
+            }
+
+            let redirected = false;
+            window.enterStudyHub = function() {
+                if (redirected) return;
+                redirected = true;
+                window.location.href = 'index.html';
+            };
+
+            splash.className = 'fixed inset-0 z-[999999] w-screen h-screen bg-white flex items-center justify-center p-0 m-0 overflow-hidden cursor-pointer select-none';
+            splash.style.position = 'fixed';
+            splash.style.top = '0';
+            splash.style.left = '0';
+            splash.style.width = '100vw';
+            splash.style.height = '100vh';
+            splash.style.zIndex = '9999999';
+            splash.style.backgroundColor = '#ffffff';
+            splash.onclick = window.enterStudyHub;
+            splash.innerHTML = `
+                <img src="Sketches/${encodeURI(sketch.file)}" 
+                     alt="${sketch.title}" 
+                     class="w-full h-full max-w-full max-h-full object-contain block m-auto p-0 pointer-events-none select-none"
+                     onerror="this.onerror=null; this.src='www/Sketches/${encodeURI(sketch.file)}';">
+                
+                <div id="splash-engg-logo" 
+                     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none opacity-0 scale-50"
+                     style="transition: all 0.75s cubic-bezier(0.34, 1.56, 0.64, 1);">
+                    <img src="engg_tv_logo.png" 
+                         alt="ENGG.tv" 
+                         class="h-16 sm:h-24 md:h-32 w-auto object-contain filter drop-shadow-[0_0_25px_rgba(255,255,255,0.95)] drop-shadow-[0_15px_30px_rgba(0,0,0,0.25)]"
+                         onerror="this.onerror=null; this.src='www/engg_tv_logo.png';">
+                </div>
+            `;
+
+            // Animate ENGG.tv logo entry for the last 2 seconds
+            setTimeout(() => {
+                const logo = document.getElementById('splash-engg-logo');
+                if (logo) {
+                    logo.classList.remove('opacity-0', 'scale-50');
+                    logo.classList.add('opacity-100', 'scale-100');
+                }
+            }, 2200);
+
+            setTimeout(window.enterStudyHub, 4200);
+        }
+
+
         function loginSuccess(userData) {
-            // localStorage.setItem('enggtv_show_intro', 'true');
             localStorage.setItem('enggtv_authenticated', 'true');
             localStorage.setItem('enggtv_user', JSON.stringify(userData));
-            // Default to 'Mechanical' if discipline is missing/undefined in the Firestore doc
             const discipline = (userData.discipline && userData.discipline !== 'undefined') ? userData.discipline : 'Mechanical';
             localStorage.setItem('enggtv_discipline', discipline);
-            window.location.href = 'index.html';
+            if (userData.username) {
+                if (userData.userPoints !== undefined && userData.userPoints !== null) {
+                    localStorage.setItem(`enggtv_points_${userData.username}`, userData.userPoints.toString());
+                }
+                if (userData.userProgress) {
+                    localStorage.setItem(`enggtv_progress_${userData.username}`, JSON.stringify(userData.userProgress));
+                }
+                if (userData.recentActivity) {
+                    localStorage.setItem(`enggtv_recent_activity_${userData.username}`, JSON.stringify(userData.recentActivity));
+                }
+            }
+            showSketchLoginSplash(userData);
         }
 
         function showError(msg) {

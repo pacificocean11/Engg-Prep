@@ -93,15 +93,25 @@ function startApp() {
         userProgress: (() => {
             try {
                 const key = `enggtv_progress_${loggedInUser.username}`;
-                return JSON.parse(localStorage.getItem(key)) || {};
+                const stored = JSON.parse(localStorage.getItem(key));
+                if (stored && Object.keys(stored).length > 0) return stored;
+                if (loggedInUser.userProgress) return loggedInUser.userProgress;
+                return {};
             } catch (e) {
                 console.error("Failed to parse user progress", e);
-                return {};
+                return loggedInUser.userProgress || {};
             }
         })(),
         userPoints: (() => {
             const key = `enggtv_points_${loggedInUser.username}`;
-            return parseInt(localStorage.getItem(key)) || 0;
+            const stored = parseInt(localStorage.getItem(key));
+            if (!isNaN(stored)) return stored;
+            if (loggedInUser.userPoints !== undefined && !isNaN(parseInt(loggedInUser.userPoints))) {
+                const pts = parseInt(loggedInUser.userPoints);
+                try { localStorage.setItem(key, pts.toString()); } catch(e) {}
+                return pts;
+            }
+            return 0;
         })(),
         isFinished: false,
         isMockExam: false,
@@ -2881,6 +2891,37 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             });
             
             
+            
+            // Attach Solved Practice Problems Card if available for this topic
+            try {
+                const topicKey = topicName.trim().toLowerCase();
+                let topicProblems = [];
+                const explicitExamples = topics[topicName].flatMap(s => s.solved_examples || []);
+                if (explicitExamples.length > 0) {
+                    topicProblems = explicitExamples;
+                } else if (typeof window.solvedProblemsData !== 'undefined' && window.solvedProblemsData && window.solvedProblemsData[topicKey]) {
+                    topicProblems = window.solvedProblemsData[topicKey];
+                }
+
+                if (topicProblems && topicProblems.length > 0) {
+                    const cardId = 'solved-problems-' + encodeURIComponent(topicKey).replace(/[^a-zA-Z0-9_-]/g, '_');
+                    const solvedProblemsCard = document.createElement('div');
+                    solvedProblemsCard.id = cardId;
+                    solvedProblemsCard.className = 'mt-4 rounded-2xl border border-pink-500/30 dark:border-pink-500/40 bg-gradient-to-br from-pink-500/5 via-slate-50/80 to-indigo-500/5 dark:from-pink-950/20 dark:via-slate-900/60 dark:to-indigo-950/20 p-5 shadow-sm';
+                    
+                    window.solvedProblemsState = window.solvedProblemsState || {};
+                    window.solvedProblemsState[cardId] = {
+                        problems: topicProblems,
+                        currentIndex: 0
+                    };
+                    
+                    solvedProblemsCard.innerHTML = window.getSolvedProblemsCardHtml(cardId, window.solvedProblemsState[cardId]);
+                    topicDiv.appendChild(solvedProblemsCard);
+                }
+            } catch (err) {
+                console.error('Error attaching solved problems to topic:', err);
+            }
+
             container.appendChild(topicDiv);
         }
 
@@ -4319,9 +4360,14 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
     function setupQuizListeners() {
         if (finishBtn) {
             finishBtn.addEventListener('click', () => {
-                if (confirm("Are you sure you want to finish the quiz and see your results?")) {
-                    finishQuiz();
+                const total = (state.quizQuestions && state.quizQuestions.length) || 0;
+                const answered = (state.answers || []).filter(a => a !== null && a !== undefined).length;
+                if (total > 0 && answered < total) {
+                    if (!confirm(`You have answered ${answered} of ${total} questions. Are you sure you want to finish and see your results?`)) {
+                        return;
+                    }
                 }
+                finishQuiz();
             });
         }
 
@@ -4391,7 +4437,11 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     }, 300);
                 } else {
                     loadQuestion();
-                    alert("Last question answered! Click 'Finish Session' to see results.");
+                    if (typeof window.showToast === 'function') {
+                        window.showToast('Quiz Completed!', 'All questions answered. Click Finish to view results.', 'task_alt');
+                    } else {
+                        alert("Last question answered! Click 'Finish' to see results.");
+                    }
                 }
             });
         }
@@ -4576,11 +4626,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         startTimer();
     }
 
-    function showToast(title, subtitle, icon = 'stars') {
-        const container = document.getElementById('toast-container');
-        container.appendChild(toast);
-        setTimeout(() => toast.remove(), 5000);
-    }
+    // Broken hoisted showToast removed; delegates to window.showToast
 
     function formatQuestionHeaderForReview(text, maxLength = 100) {
         if (!text) return '';
@@ -4609,267 +4655,288 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             return;
         }
 
-        // Record accumulated time for the active question
-        recordTimeOnActiveQuestion();
-        state.isFinished = true;
+        try {
+            // Record accumulated time for the active question
+            recordTimeOnActiveQuestion();
 
-        // Auto-finalize and evaluate all questions where the user selected an answer
-        state.quizQuestions.forEach((q, idx) => {
-            const selectedIdx = state.answers[idx];
-            if (selectedIdx !== null && selectedIdx !== undefined) {
-                const isCorrect = !!(q.options[selectedIdx] && q.options[selectedIdx].is_correct);
-                
-                // If it wasn't submitted via the submit button during drill, finalize now and process rewards
-                if (!state.submitted[idx]) {
-                    state.submitted[idx] = true;
-                    if (isCorrect) {
-                        addPoints(1);
+            // Auto-finalize and evaluate all questions where the user selected an answer
+            (state.quizQuestions || []).forEach((q, idx) => {
+                const selectedIdx = state.answers[idx];
+                if (selectedIdx !== null && selectedIdx !== undefined) {
+                    const isCorrect = !!(q.options && q.options[selectedIdx] && q.options[selectedIdx].is_correct);
+                    
+                    // If it wasn't submitted via the submit button during drill, finalize now and process rewards
+                    if (!state.submitted[idx]) {
+                        state.submitted[idx] = true;
+                        if (isCorrect) {
+                            addPoints(1);
+                        }
+                        if (window.recordSRS) window.recordSRS(q, isCorrect);
+                        if (window.incrementQuestProgress) window.incrementQuestProgress('questions_answered', 1);
                     }
-                    if (window.recordSRS) window.recordSRS(q, isCorrect);
-                    if (window.incrementQuestProgress) window.incrementQuestProgress('questions_answered', 1);
                 }
-            }
-        });
-
-        const prevPoints = state.userPoints;
-        let attempted = 0;
-        let correct = 0;
-
-        state.quizQuestions.forEach((q, idx) => {
-            if (state.submitted[idx] || (state.answers[idx] !== null && state.answers[idx] !== undefined)) {
-                attempted++;
-                const selectedIndex = state.answers[idx];
-                if (selectedIndex !== null && selectedIndex !== undefined && q.options[selectedIndex] && q.options[selectedIndex].is_correct) {
-                    correct++;
-                }
-            }
-        });
-        
-        // Save points (User specific)
-        const pointsKey = `enggtv_points_${state.user.username}`;
-        localStorage.setItem(pointsKey, state.userPoints.toString());
-        
-        state.score = correct;
-        const newPoints = state.userPoints;
-
-        // Check for achievements
-        ACHIEVEMENTS.forEach(ach => {
-            if (prevPoints < ach.points && newPoints >= ach.points) {
-                setTimeout(() => {
-                    window.showToast('Milestone Unlocked! ��', ach.name, ach.icon);
-                }, 1000);
-            }
-        });
-
-        const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
-        
-        // Prevent exploit: Only award "Flawless Victory" if the user actually finished the entire quiz
-        const isQuizCompleted = attempted === state.quizQuestions.length && attempted > 0;
-        if (accuracy >= 80 && isQuizCompleted && window.incrementQuestProgress) {
-            window.incrementQuestProgress('perfect_quiz', 1);
-        }
-        if (state.currentSubject && state.currentSubject.id === 'srs-review' && window.incrementQuestProgress) {
-            window.incrementQuestProgress('srs_review', 1);
-        }
-
-        // Save to recent activity
-        const activityTitle = state.isMockExam ? 'Mock Exam' : (state.currentTopic || (state.currentSubject ? state.currentSubject.name : 'Practice Drill'));
-        const isActivityAdvanced = !state.isMockExam && localStorage.getItem('enggtv_advanced_mode') === 'true';
-
-        // Broadcast to Live Peer Milestone Ticker
-        if (attempted > 0 && typeof window.publishPeerMilestone === 'function') {
-            const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
-            let milestoneTitle = `Completed ${attempted}-Question Drill in ${activityTitle}`;
-            if (accuracy >= 90) milestoneTitle = `Aced ${activityTitle} Drill (${accuracy}%) 🏆`;
-            else if (accuracy >= 70) milestoneTitle = `Passed ${activityTitle} Drill (${accuracy}%)`;
-
-            window.publishPeerMilestone({
-                type: 'quiz_finish',
-                title: milestoneTitle,
-                detail: `${correct}/${attempted} correct questions in FE ${disc} practice`,
-                discipline: disc
             });
-        }
-        const newActivity = {
-            id: Date.now().toString(),
-            title: activityTitle,
-            subjectId: state.currentSubject ? state.currentSubject.id : (state.quizQuestions && state.quizQuestions[0] ? state.quizQuestions[0].subjectId : null),
-            score: correct,
-            accuracy: accuracy,
-            attempted: attempted,
-            isMockExam: state.isMockExam,
-            isAdvanced: isActivityAdvanced,
-            timestamp: Date.now(),
-            stateSnapshot: {
-                quizQuestions: JSON.parse(JSON.stringify(state.quizQuestions)),
-                answers: [...state.answers],
-                submitted: [...state.submitted],
-                flagged: [...state.flagged],
-                confidence: [...state.confidence],
-                questionTimes: [...state.questionTimes],
-                currentSubject: JSON.parse(JSON.stringify(state.currentSubject)),
-                currentTopic: state.currentTopic
-            },
-            minimalSnapshot: {
+
+            const prevPoints = state.userPoints;
+            let attempted = 0;
+            let correct = 0;
+
+            (state.quizQuestions || []).forEach((q, idx) => {
+                if (state.submitted[idx] || (state.answers[idx] !== null && state.answers[idx] !== undefined)) {
+                    attempted++;
+                    const selectedIndex = state.answers[idx];
+                    if (selectedIndex !== null && selectedIndex !== undefined && q.options && q.options[selectedIndex] && q.options[selectedIndex].is_correct) {
+                        correct++;
+                    }
+                }
+            });
+            
+            // Save points (User specific)
+            if (state.user && state.user.username) {
+                const pointsKey = `enggtv_points_${state.user.username}`;
+                localStorage.setItem(pointsKey, state.userPoints.toString());
+            }
+            
+            state.score = correct;
+            const newPoints = state.userPoints;
+
+            // Check for achievements
+            if (Array.isArray(ACHIEVEMENTS)) {
+                ACHIEVEMENTS.forEach(ach => {
+                    if (prevPoints < ach.points && newPoints >= ach.points) {
+                        setTimeout(() => {
+                            if (typeof window.showToast === 'function') {
+                                window.showToast('Milestone Unlocked! 🎉', ach.name, ach.icon);
+                            }
+                        }, 1000);
+                    }
+                });
+            }
+
+            const accuracy = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+            
+            // Prevent exploit: Only award "Flawless Victory" if the user actually finished the entire quiz
+            const isQuizCompleted = attempted === state.quizQuestions.length && attempted > 0;
+            if (accuracy >= 80 && isQuizCompleted && window.incrementQuestProgress) {
+                window.incrementQuestProgress('perfect_quiz', 1);
+            }
+            if (state.currentSubject && state.currentSubject.id === 'srs-review' && window.incrementQuestProgress) {
+                window.incrementQuestProgress('srs_review', 1);
+            }
+
+            // Save to recent activity
+            const activityTitle = state.isMockExam ? 'Mock Exam' : (state.currentTopic || (state.currentSubject ? state.currentSubject.name : 'Practice Drill'));
+            const isActivityAdvanced = !state.isMockExam && localStorage.getItem('enggtv_advanced_mode') === 'true';
+            const safeSubjectId = (state.currentSubject && state.currentSubject.id) ? state.currentSubject.id : ((state.quizQuestions && state.quizQuestions[0]) ? state.quizQuestions[0].subjectId : 'general');
+
+            // Broadcast to Live Peer Milestone Ticker
+            if (attempted > 0 && typeof window.publishPeerMilestone === 'function') {
+                const disc = localStorage.getItem('enggtv_discipline') || 'Mechanical';
+                let milestoneTitle = `Completed ${attempted}-Question Drill in ${activityTitle}`;
+                if (accuracy >= 90) milestoneTitle = `Aced ${activityTitle} Drill (${accuracy}%) 🏆`;
+                else if (accuracy >= 70) milestoneTitle = `Passed ${activityTitle} Drill (${accuracy}%)`;
+
+                window.publishPeerMilestone({
+                    type: 'quiz_finish',
+                    title: milestoneTitle,
+                    detail: `${correct}/${attempted} correct questions in FE ${disc} practice`,
+                    discipline: disc
+                });
+            }
+
+            const newActivity = {
+                id: Date.now().toString(),
+                title: activityTitle,
+                subjectId: safeSubjectId,
+                score: correct,
+                accuracy: accuracy,
+                attempted: attempted,
+                isMockExam: state.isMockExam,
                 isAdvanced: isActivityAdvanced,
-                subjectId: state.currentSubject.id,
-                topic: state.currentTopic,
-                questions: state.quizQuestions.map(q => {
-                    const sId = q.subjectId || state.currentSubject.id;
-                    const masterList = (isActivityAdvanced ? ADVANCED_QUESTIONS : QUESTIONS)[sId] || [];
-                    return {
-                        sid: sId,
-                        idx: masterList.findIndex(item => item.title === q.title)
-                    };
-                }),
-                // Store answer indices relative to the MASTER list (stable), not the shuffled list
-                answers: state.answers.map((ansIdx, qIdx) => {
-                    if (ansIdx === null) return null;
-                    return state.quizQuestions[qIdx].options[ansIdx].originalIndex;
-                }),
-                submitted: [...state.submitted],
-                flagged: [...state.flagged],
-                confidence: [...state.confidence],
-                questionTimes: [...state.questionTimes]
-            }
-        };
-        state.recentActivity.unshift(newActivity);
-        
-        // Strip huge stateSnapshot from older activities to save space
-        state.recentActivity.forEach((act, idx) => {
-            if (idx >= 5 && act.stateSnapshot) {
-                delete act.stateSnapshot;
-            }
-        });
-
-        if (state.recentActivity.length > 100) {
-            state.recentActivity.pop();
-        }
-        const activityKey = `enggtv_recent_activity_${state.user.username}`;
-        localStorage.setItem(activityKey, JSON.stringify(state.recentActivity));
-
-        // Final Cloud Sync
-        
-        updateGamificationUI();
-        if (typeof window.renderStudyCalendar === 'function') {
-            window.renderStudyCalendar();
-        }
-        if (typeof window.renderDiagnosticReport === 'function') {
-            window.renderDiagnosticReport();
-        }
-        if (typeof window.renderDiagnosticReport === 'function') {
-            window.renderDiagnosticReport();
-        }
-
-        resTotal.textContent = state.quizQuestions.length;
-        resAttempted.textContent = attempted;
-        resCorrect.textContent = state.score;
-        resAccuracy.textContent = `${accuracy}%`;
-        resultsSubjectName.textContent = state.currentTopic || state.currentSubject.name;
-
-        resultsQuestionMap.innerHTML = state.quizQuestions.map((q, idx) => {
-            let statusClass = '';
-            if (state.submitted[idx]) {
-                const selectedIndex = state.answers[idx];
-                if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
-                    statusClass = 'correct-res';
-                } else {
-                    statusClass = 'wrong-res';
+                timestamp: Date.now(),
+                stateSnapshot: {
+                    quizQuestions: JSON.parse(JSON.stringify(state.quizQuestions || [])),
+                    answers: [...(state.answers || [])],
+                    submitted: [...(state.submitted || [])],
+                    flagged: [...(state.flagged || [])],
+                    confidence: [...(state.confidence || [])],
+                    questionTimes: [...(state.questionTimes || [])],
+                    currentSubject: state.currentSubject ? JSON.parse(JSON.stringify(state.currentSubject)) : null,
+                    currentTopic: state.currentTopic || ''
+                },
+                minimalSnapshot: {
+                    isAdvanced: isActivityAdvanced,
+                    subjectId: safeSubjectId,
+                    topic: state.currentTopic || '',
+                    questions: (state.quizQuestions || []).map(q => {
+                        const sId = q.subjectId || safeSubjectId;
+                        const masterList = (isActivityAdvanced ? (typeof ADVANCED_QUESTIONS !== 'undefined' ? ADVANCED_QUESTIONS : {}) : (typeof QUESTIONS !== 'undefined' ? QUESTIONS : {}))[sId] || [];
+                        return {
+                            sid: sId,
+                            idx: masterList.findIndex(item => item.title === q.title)
+                        };
+                    }),
+                    // Store answer indices relative to the MASTER list (stable), not the shuffled list
+                    answers: (state.answers || []).map((ansIdx, qIdx) => {
+                        if (ansIdx === null || ansIdx === undefined) return null;
+                        const opt = state.quizQuestions[qIdx]?.options?.[ansIdx];
+                        return (opt && opt.originalIndex !== undefined) ? opt.originalIndex : ansIdx;
+                    }),
+                    submitted: [...(state.submitted || [])],
+                    flagged: [...(state.flagged || [])],
+                    confidence: [...(state.confidence || [])],
+                    questionTimes: [...(state.questionTimes || [])]
                 }
+            };
+            
+            if (!Array.isArray(state.recentActivity)) {
+                state.recentActivity = [];
             }
-            return `<button class="map-btn ${statusClass}" data-index="${idx}">${idx + 1}</button>`;
-        }).join('');
-
-        document.querySelectorAll('.results-map .map-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                state.currentQuestionIndex = parseInt(btn.getAttribute('data-index'));
-                state.isFinished = true;
-                navigateTo('quiz-view');
-                loadQuestion();
-            });
-        });
-
-        // Populate Detailed List
-        resultsDetailedList.innerHTML = state.quizQuestions.map((q, idx) => {
-            let status = 'unanswered';
-            let icon = '○';
-            if (state.submitted[idx]) {
-                const selectedIndex = state.answers[idx];
-                if (selectedIndex !== null && q.options[selectedIndex].is_correct) {
-                    status = 'correct';
-                    icon = '✓';
-                } else {
-                    status = 'wrong';
-                    icon = '✗';
+            state.recentActivity.unshift(newActivity);
+            
+            // Strip huge stateSnapshot from older activities to save space
+            state.recentActivity.forEach((act, idx) => {
+                if (idx >= 5 && act.stateSnapshot) {
+                    delete act.stateSnapshot;
                 }
-            }
-            
-            // Keep LaTeX markers and truncate carefully without cutting math formulas in half
-            let displayHeader = formatQuestionHeaderForReview(q.question, 100);
-            
-            // --- Performance Benchmarking ---
-            const qStr = q.question.substring(0, 50);
-            let hash = 0;
-            for(let i=0; i<qStr.length; i++) hash = ((hash << 5) - hash) + qStr.charCodeAt(i);
-            const peerTime = 40 + Math.abs(hash % 120); 
-            const peerSuccess = 35 + Math.abs(hash % 50); 
-            
-            const userTime = state.questionTimes[idx] || 0;
-            const timeDiff = userTime - peerTime;
-            let timeColor = timeDiff > 10 ? 'text-amber-500' : (timeDiff < -10 ? 'text-green-500' : 'text-slate-400');
-            
-            return `
-                <div class="result-item" data-index="${idx}" style="flex-direction: column; align-items: stretch; gap: 12px; padding-bottom: 16px;">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <div class="result-status-icon ${status} shrink-0">${icon}</div>
-                        <div class="result-text">${idx + 1}. ${displayHeader}</div>
-                    </div>
-                    <div class="flex items-center gap-6 ml-[55px] text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                        <div class="flex items-center gap-1.5" title="Time Spent vs Average">
-                            <span class="material-symbols-outlined text-[14px]">timer</span>
-                            <span class="${timeColor}">${userTime}s</span> <span class="opacity-60">(Avg: ${peerTime}s)</span>
-                        </div>
-                        <div class="flex items-center gap-1.5" title="Global Success Rate">
-                            <span class="material-symbols-outlined text-[14px]">public</span>
-                            <span>${peerSuccess}% Success</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
-
-        window.safeTypesetMath(resultsDetailedList ? [resultsDetailedList] : null);
-
-        if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0) {
-            triggerConfetti();
-        }
-
-        document.querySelectorAll('.result-item').forEach(item => {
-            item.addEventListener('click', () => {
-                state.currentQuestionIndex = parseInt(item.getAttribute('data-index'));
-                state.isFinished = true;
-                navigateTo('quiz-view');
-                loadQuestion();
             });
-        });
 
-        // ================================================================
-        // SESSION AUTOPSY — Post-Quiz Performance Breakdown
-        // ================================================================
-        renderSessionAutopsy(attempted, correct, accuracy);
+            if (state.recentActivity.length > 100) {
+                state.recentActivity.pop();
+            }
+            if (state.user && state.user.username) {
+                const activityKey = `enggtv_recent_activity_${state.user.username}`;
+                localStorage.setItem(activityKey, JSON.stringify(state.recentActivity));
+            }
 
-        // Save Progress
-        if (!state.isMockExam) {
-            updateProgress(state.currentSubject.id, attempted);
+            // Final Cloud Sync
+            updateGamificationUI();
+            if (typeof window.renderStudyCalendar === 'function') {
+                window.renderStudyCalendar();
+            }
+            if (typeof window.renderDiagnosticReport === 'function') {
+                window.renderDiagnosticReport();
+            }
+
+            if (resTotal) resTotal.textContent = state.quizQuestions.length;
+            if (resAttempted) resAttempted.textContent = attempted;
+            if (resCorrect) resCorrect.textContent = state.score;
+            if (resAccuracy) resAccuracy.textContent = `${accuracy}%`;
+            if (resultsSubjectName) resultsSubjectName.textContent = state.currentTopic || (state.currentSubject ? state.currentSubject.name : 'Practice Session');
+
+            if (resultsQuestionMap) {
+                resultsQuestionMap.innerHTML = state.quizQuestions.map((q, idx) => {
+                    let statusClass = '';
+                    if (state.submitted[idx]) {
+                        const selectedIndex = state.answers[idx];
+                        if (selectedIndex !== null && selectedIndex !== undefined && q.options && q.options[selectedIndex] && q.options[selectedIndex].is_correct) {
+                            statusClass = 'correct-res';
+                        } else {
+                            statusClass = 'wrong-res';
+                        }
+                    }
+                    return `<button class="map-btn ${statusClass}" data-index="${idx}">${idx + 1}</button>`;
+                }).join('');
+
+                document.querySelectorAll('.results-map .map-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        state.currentQuestionIndex = parseInt(btn.getAttribute('data-index'));
+                        state.isFinished = true;
+                        navigateTo('quiz-view');
+                        loadQuestion();
+                    });
+                });
+            }
+
+            // Populate Detailed List
+            if (resultsDetailedList) {
+                resultsDetailedList.innerHTML = state.quizQuestions.map((q, idx) => {
+                    let status = 'unanswered';
+                    let icon = '○';
+                    if (state.submitted[idx]) {
+                        const selectedIndex = state.answers[idx];
+                        if (selectedIndex !== null && selectedIndex !== undefined && q.options && q.options[selectedIndex] && q.options[selectedIndex].is_correct) {
+                            status = 'correct';
+                            icon = '✓';
+                        } else {
+                            status = 'wrong';
+                            icon = '✗';
+                        }
+                    }
+                    
+                    // Keep LaTeX markers and truncate carefully without cutting math formulas in half
+                    let displayHeader = formatQuestionHeaderForReview(q.question, 100);
+                    
+                    // --- Performance Benchmarking ---
+                    const qStr = (q.question || '').substring(0, 50);
+                    let hash = 0;
+                    for(let i=0; i<qStr.length; i++) hash = ((hash << 5) - hash) + qStr.charCodeAt(i);
+                    const peerTime = 40 + Math.abs(hash % 120); 
+                    const peerSuccess = 35 + Math.abs(hash % 50); 
+                    
+                    const userTime = (state.questionTimes && state.questionTimes[idx]) || 0;
+                    const timeDiff = userTime - peerTime;
+                    let timeColor = timeDiff > 10 ? 'text-amber-500' : (timeDiff < -10 ? 'text-green-500' : 'text-slate-400');
+                    
+                    return `
+                        <div class="result-item" data-index="${idx}" style="flex-direction: column; align-items: stretch; gap: 12px; padding-bottom: 16px;">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div class="result-status-icon ${status} shrink-0">${icon}</div>
+                                <div class="result-text">${idx + 1}. ${displayHeader}</div>
+                            </div>
+                            <div class="flex items-center gap-6 ml-[55px] text-[10px] font-bold uppercase tracking-widest text-slate-400">
+                                <div class="flex items-center gap-1.5" title="Time Spent vs Average">
+                                    <span class="material-symbols-outlined text-[14px]">timer</span>
+                                    <span class="${timeColor}">${userTime}s</span> <span class="opacity-60">(Avg: ${peerTime}s)</span>
+                                </div>
+                                <div class="flex items-center gap-1.5" title="Global Success Rate">
+                                    <span class="material-symbols-outlined text-[14px]">public</span>
+                                    <span>${peerSuccess}% Success</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                window.safeTypesetMath(resultsDetailedList ? [resultsDetailedList] : null);
+
+                document.querySelectorAll('.result-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        state.currentQuestionIndex = parseInt(item.getAttribute('data-index'));
+                        state.isFinished = true;
+                        navigateTo('quiz-view');
+                        loadQuestion();
+                    });
+                });
+            }
+
+            if (state.score === state.quizQuestions.length && state.quizQuestions.length > 0 && typeof triggerConfetti === 'function') {
+                triggerConfetti();
+            }
+
+            // ================================================================
+            // SESSION AUTOPSY — Post-Quiz Performance Breakdown
+            // ================================================================
+            if (typeof renderSessionAutopsy === 'function') {
+                renderSessionAutopsy(attempted, correct, accuracy);
+            }
+
+            // Save Progress
+            if (!state.isMockExam && state.currentSubject && state.currentSubject.id && typeof updateProgress === 'function') {
+                updateProgress(state.currentSubject.id, attempted);
+            }
+        } catch (err) {
+            console.error("Critical error in finishQuiz, recovering gracefully:", err);
         }
+
         state.isFinished = true;
         navigateTo('results-view');
 
         // Show summary toast for points gained - Triggered AFTER navigation for visibility
         setTimeout(() => {
-            const pointText = correct === 1 ? 'point' : 'points';
+            const pointText = state.score === 1 ? 'point' : 'points';
             if (typeof window.showToast === 'function') {
-                window.showToast(`+${correct} ${pointText} gained!`, `Total: ${newPoints} points`, 'stars');
+                window.showToast(`+${state.score} ${pointText} gained!`, `Total: ${state.userPoints} points`, 'stars');
             }
         }, 1000);
     }
@@ -4901,7 +4968,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         state.quizQuestions.forEach((q, idx) => {
             if (!state.submitted[idx]) return;
             const selectedIndex = state.answers[idx];
-            const isCorrect = selectedIndex !== null && q.options[selectedIndex].is_correct;
+            const isCorrect = selectedIndex !== null && selectedIndex !== undefined && q.options && q.options[selectedIndex] && q.options[selectedIndex].is_correct;
             const conf = state.confidence[idx] || 3;
             const isConfident = conf >= 4;
             if (isConfident && isCorrect) matrix.confRight.push(idx);

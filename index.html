@@ -194,29 +194,50 @@
             </div>
 
         
-        <!-- Tab Set 4: TV (ENGG.tv Rapid Flashcards Controls) -->
-        <div id="header-tabs-tv" class="header-tab-bar hidden items-center gap-1 sm:gap-2 max-w-full overflow-x-auto no-scrollbar">
-            <div class="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-pink-500/10 text-[#FF006E] dark:text-pink-400 font-bold text-xs uppercase tracking-wider shrink-0 border border-pink-500/20">
-                <span class="material-symbols-outlined text-[16px]">live_tv</span>
-                <span>ENGG.tv</span>
-            </div>
-            <div id="header-fc-controls" class="flex items-center gap-1 sm:gap-1.5 shrink-0">
-                <select id="fc-discipline-select" class="hidden"><option value="current">Current Discipline</option></select>
-                <div id="fc-megamenu-container" class="relative inline-flex items-center">
-                    <button id="fc-megamenu-trigger" type="button" class="hidden items-center gap-1.5 px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-bold rounded-xl border border-pink-500/40 bg-white dark:bg-slate-800/90 text-pink-600 dark:text-pink-300 hover:border-pink-500 hover:bg-pink-50 dark:hover:bg-pink-950/30 transition-all cursor-pointer shadow-sm max-w-[170px] sm:max-w-[270px] truncate group" title="Browse by Subject & Chapter (FE Syllabus)">
-                        <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-[#be0055] dark:text-pink-400 shrink-0 group-hover:scale-110 transition-transform">category</span>
-                        <span id="fc-megamenu-label" class="truncate font-semibold text-slate-800 dark:text-slate-100">All Subjects (421)</span>
-                        <span class="material-symbols-outlined text-[14px] sm:text-[15px] text-slate-400 shrink-0 ml-auto group-hover:translate-y-0.5 transition-transform">expand_more</span>
-                    </button>
-                    <select id="fc-subject-select" class="hidden"><option value="all">All Subjects</option></select>
+        <!-- Tab Set 4: TV (ENGG.tv Persistent Header Controls) -->
+        <div id="header-tabs-tv" class="header-tab-bar hidden items-center justify-between w-full gap-2 sm:gap-3 max-w-full">
+            <!-- Left: ENGG.tv Video Hub Title + Live Badge -->
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-tr from-rose-600 via-[#FF006E] to-amber-500 flex items-center justify-center text-white shadow-sm shrink-0">
+                    <span class="material-symbols-outlined text-sm sm:text-base" style="font-variation-settings:'FILL' 1;">live_tv</span>
                 </div>
-                <span id="fc-progress-text" class="text-[10px] sm:text-[11px] font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 px-2 sm:px-2.5 py-1 rounded-xl whitespace-nowrap shadow-sm">Card 1 of 419</span>
-                <button id="fc-shuffle-btn" onclick="window.shuffleFlashcards && window.shuffleFlashcards()" class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-purple-600/30 text-slate-600 dark:text-slate-400 hover:text-purple-700 dark:hover:text-purple-300 flex items-center justify-center transition-colors cursor-pointer shrink-0 border border-slate-200 dark:border-slate-700/80 shadow-sm" title="Shuffle Cards">
-                    <span class="material-symbols-outlined text-[15px] sm:text-[17px]">shuffle</span>
-                </button>
-                <select id="fc-mode-select" class="hidden"><option value="recall">Formula Recall</option><option value="identify">Formula Identifier</option></select>
+                <div class="flex items-center gap-1.5 flex-nowrap">
+                    <span class="font-black text-xs sm:text-sm text-slate-900 dark:text-white whitespace-nowrap tracking-tight">ENGG.tv Video Hub</span>
+                    <span id="tv-video-count-badge" class="hidden sm:inline-flex px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-[10px] tracking-wide border border-slate-200 dark:border-slate-700">
+                        Videos
+                    </span>
+                </div>
             </div>
-        
+
+            <!-- Center: Search Bar -->
+            <div class="relative flex-1 max-w-xs sm:max-w-md md:max-w-lg min-w-0">
+                <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm pointer-events-none">search</span>
+                <input type="text" id="tv-search-input" oninput="window.onTvSearchInput(this.value)" placeholder="Search 400+ videos, formulas, topics..." class="w-full pl-8 pr-7 py-1 sm:py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-100 placeholder-slate-400 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-[#FF006E] transition-all">
+                <button id="tv-search-clear-btn" onclick="window.clearTvSearch()" class="hidden absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" title="Clear search">
+                    <span class="material-symbols-outlined text-xs">close</span>
+                </button>
+            </div>
+
+            <!-- Right: Actions (Fresh Feed & Shuffle) -->
+            <div class="flex items-center gap-1 sm:gap-1.5 shrink-0">
+                <button onclick="window.refreshTvFeed && window.refreshTvFeed()" class="px-2.5 py-1 sm:py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold flex items-center gap-1 transition-all active:scale-95 border border-slate-200 dark:border-slate-700 cursor-pointer" title="Re-shuffle and randomize video order">
+                    <span class="material-symbols-outlined text-[15px] text-[#FF006E]">refresh</span>
+                    <span class="hidden md:inline">Fresh Feed</span>
+                </button>
+                <button onclick="window.shuffleTvPlay()" class="px-2.5 py-1 sm:py-1.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1 shadow-sm active:scale-95 transition-all cursor-pointer" title="Play a random concept video">
+                    <span class="material-symbols-outlined text-[15px]">shuffle</span>
+                    <span class="hidden sm:inline">Shuffle</span>
+                </button>
+            </div>
+
+            <!-- Backward-compatibility container -->
+            <div id="header-fc-controls" class="hidden">
+                <select id="fc-discipline-select" class="hidden"><option value="current">Current Discipline</option></select>
+                <div id="fc-megamenu-container" class="hidden"></div>
+                <span id="fc-progress-text" class="hidden"></span>
+                <button id="fc-shuffle-btn" class="hidden"></button>
+                <select id="fc-mode-select" class="hidden"></select>
+            </div>
         </div>
         <!-- Tab Set 3: Test (Topic Quiz vs Full Simulator vs Mini Exam) -->
         <div id="header-tabs-test" class="header-tab-bar hidden items-center p-1 rounded-2xl glass-card border border-slate-200/80 dark:border-slate-800 shadow-sm gap-0.5 sm:gap-1 bg-slate-100/80 dark:bg-slate-800/80 backdrop-blur-md max-w-full overflow-x-auto no-scrollbar">
@@ -1193,45 +1214,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
         <!-- ========================================== -->
         <section id="tv" class="page">
             <!-- 1. YOUTUBE-STYLE VIDEO BROWSER -->
-            <div id="tv-video-browser" class="w-full flex flex-col gap-6 pb-24">
-                <!-- Header Banner -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-white/95 via-rose-50/40 to-amber-50/30 dark:from-slate-900/95 dark:via-rose-950/20 dark:to-slate-900/90 border border-rose-200/60 dark:border-rose-500/30 shadow-[0_10px_35px_rgba(244,63,94,0.06)] relative overflow-hidden">
-                    <div class="absolute -top-24 -right-24 w-60 h-60 bg-gradient-to-br from-rose-500/15 via-orange-500/10 to-transparent blur-[80px] pointer-events-none"></div>
-                    <div class="relative z-10 flex items-center gap-4">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-tr from-rose-600 via-[#FF006E] to-amber-500 flex items-center justify-center text-white shadow-lg shadow-rose-600/30 shrink-0">
-                            <span class="material-symbols-outlined text-2xl sm:text-3xl" style="font-variation-settings:'FILL' 1;">live_tv</span>
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2 flex-wrap">
-                                <h1 class="text-xl sm:text-2xl font-black font-display-lg text-slate-900 dark:text-white leading-tight">
-                                    ENGG.tv Video Hub
-                                </h1>
-                                <span class="px-2.5 py-0.5 rounded-full bg-rose-500/10 dark:bg-rose-500/20 text-[#FF006E] dark:text-pink-400 font-extrabold text-[10px] uppercase tracking-wider border border-rose-500/20">
-                                    YouTube Style
-                                </span>
-                                <span id="tv-video-count-badge" class="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold text-[10px] tracking-wide border border-slate-200 dark:border-slate-700">
-                                    Loading videos...
-                                </span>
-                            </div>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 max-w-xl">
-                                High-yield concept explainers, governing NCEES equations & step-by-step solved engineering exam problems.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative z-10 flex items-center gap-2.5 flex-wrap sm:flex-nowrap">
-                        <!-- Search Bar -->
-                        <div class="relative w-full sm:w-64">
-                            <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none">search</span>
-                            <input type="text" id="tv-search-input" oninput="window.onTvSearchInput(this.value)" placeholder="Search videos or formulas..." class="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#FF006E] shadow-inner transition-all">
-                        </div>
-                        <button onclick="window.shuffleTvPlay()" class="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-rose-600 to-amber-600 hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md shadow-rose-600/25 active:scale-95 transition-all cursor-pointer shrink-0" title="Play a random concept video">
-                            <span class="material-symbols-outlined text-[17px]">shuffle</span>
-                            <span>Shuffle</span>
-                        </button>
-                    </div>
-                </div>
-
+            <div id="tv-video-browser" class="w-full flex flex-col gap-3 sm:gap-4 pb-24">
                 <!-- Horizontal Category Filter Pills (YouTube style) -->
                 <div class="w-full overflow-x-auto no-scrollbar py-1">
                     <div id="tv-filter-chips-container" class="flex items-center gap-2 min-w-max pb-1">
@@ -3472,7 +3455,7 @@ window.switchDashboardTab = window.switchDashboardTab || function(tabId) {
     </script>
 
     <script src="js/fe-simulator.js?v=5"></script>
-    <script src="js/tv-hub.js?v=6"></script>
+    <script src="js/tv-hub.js?v=7"></script>
     <script src="js/ai-evaluator.js?v=2"></script>
 </body>
 
