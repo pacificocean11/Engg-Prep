@@ -1950,7 +1950,149 @@
     "chapter": "Three-phase Power",
     "topic": "Balanced Loads",
     "subtopic": "Overview",
-    "content_html": "<p class=\"text-slate-500 italic\">Content for Balanced Loads is coming soon.</p>"
+    "content_html": "<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-8\">\n<h5><span><b>Star (Wye) Connection:</b></span></h5>\n<ul>\n<li>In a star (Wye) connection, three corresponding ends of each phase winding or load are connected together to a common junction called the <b>neutral point</b> or <b>star point</b> ($N$).</li>\n<li>The line voltage $V_L$ (voltage between any two lines) is related to the phase voltage $V_{ph}$ (voltage between any line and neutral) by:</li>\n</ul>\n\n<div class=\"text-center my-3\">\n<button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$V_L = \\sqrt{3} V_P = \\sqrt{3} V_{LN}, \\quad I_L = I_P$ <span class=\"text-muted ml-4\">&emsp; Page 364</span></button>\n</div>\n\n<ul>\n<li>Star connection is generally used for distribution networks and lower voltage levels because it provides two voltage levels ($V_L$ and $V_{ph}$) and a safe neutral path for single-phase loads.</li>\n</ul>\n\n<h5><span><b>Delta Connection:</b></span></h5>\n<ul>\n<li>In a delta ($Delta$) connection, the three phases are connected in series to form a closed triangle loop. There is no neutral point.</li>\n<li>The line voltage equals the phase voltage, while line current is $\\sqrt{3}$ times the phase current:</li>\n</ul>\n\n<div class=\"text-center my-3\">\n<button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$V_L = V_P, \\quad I_L = \\sqrt{3} I_P$ <span class=\"text-muted ml-4\">&emsp; Page 364</span></button>\n</div>\n\n<ul>\n<li>Delta connection is standard for high-power industrial machinery, heavy motors, and long-distance transmission where a fourth neutral conductor is unnecessary.</li>\n</ul>\n\t\t</div>\n    \t\t<div class=\"col col-lg-4 text-center\">\n     <center><img src=\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Wye_Delta_01.png\" alt=\"Wye and Delta Connections\" width=\"340\" style=\"max-width: 100%; height: auto; border-radius: 12px;\"><br/>\n<small class=\"text-muted block mt-1\"><a href=\"https://commons.wikimedia.org/wiki/File:Wye_Delta_01.png\" target=\"_blank\" rel=\"noopener\">C J Cowie</a>, CC BY-SA 3.0, via Wikimedia Commons</small></center>\n    \t\t</div>\n  \t</div>\n</div>",
+    "important": "\\[\\mathbf{\\text{Star (Wye) Connection:}}\\]\r\n\\[V_L = \\sqrt{3} V_P = \\sqrt{3} V_{LN}, \\quad I_L = I_P\\]\r\n\r\n\\[\\mathbf{\\text{Delta (}\\Delta\\text{) Connection:}}\\]\r\n\\[V_L = V_P, \\quad I_L = \\sqrt{3} I_P\\]",
+    "resources": "",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/cb/Wye_Delta_01.png"
+    ],
+    "local_images": [],
+    "video": "assets/videos/Balanced_Three_Phase_Voltage_Relations.mp4",
+    "videoTitle": "Balanced Three-Phase Voltage Relations",
+    "solved_examples": [
+      {
+        "id": 1864,
+        "qnum": "9934-03",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Balanced Loads",
+        "question": "The total number of possible phase sequences for a three-phase AC system is _____.",
+        "options": [
+          {
+            "label": "A",
+            "text": "2"
+          },
+          {
+            "label": "B",
+            "text": "3"
+          },
+          {
+            "label": "C",
+            "text": "0"
+          },
+          {
+            "label": "D",
+            "text": "1"
+          }
+        ],
+        "ans": "A",
+        "solution": "<p>A three-phase electrical supply consists of three sinusoidal voltages of equal magnitude and frequency, separated from each other by a phase angle of $120^\\circ$.</p>\n<p>The <b>phase sequence</b> refers to the time order in which the three phase voltages attain their respective peak positive values. For three phases (commonly designated as $A-B-C$ or $R-Y-B$):</p>\n<ul>\n  <li><b>Positive sequence:</b> $A-B-C$ (or $R-Y-B$) where phase $B$ lags phase $A$ by $120^\\circ$, and phase $C$ lags phase $B$ by $120^\\circ$.</li>\n  <li><b>Negative sequence:</b> $A-C-B$ (or $R-B-Y$) where phase $C$ lags phase $A$ by $120^\\circ$.</li>\n</ul>\n<p>Reversing any two leads reverses the sequence. Consequently, there are only <b>two possible phase sequences</b> in any three-phase system.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(A) 2</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "SSC JE EE Exam Practice",
+        "difficulty": "Theory",
+        "handbook_pg": 364
+      },
+      {
+        "id": 1865,
+        "qnum": "9934-01",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Balanced Loads",
+        "question": "In a delta connection, line current lags behind phase current by:",
+        "options": [
+          {
+            "label": "A",
+            "text": "$30^\\circ$"
+          },
+          {
+            "label": "B",
+            "text": "$60^\\circ$"
+          },
+          {
+            "label": "C",
+            "text": "$90^\\circ$"
+          },
+          {
+            "label": "D",
+            "text": "$120^\\circ$"
+          }
+        ],
+        "ans": "A",
+        "solution": "<p>In a balanced delta ($\\Delta$) connection, each line current is the phasor difference between two adjacent phase currents:</p>\n\\[I_L = I_{AB} - I_{CA}\\]\n<p>From the phasor diagram of a balanced three-phase delta system:</p>\n\\[|I_L| = \\sqrt{3} |I_{\\phi}|\\]\n<p>The line current $I_L$ lags its corresponding phase current $I_{\\phi}$ by an angle of <b>$30^\\circ$</b> (or $\\frac{\\pi}{6}\\text{ radians}$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(A) $30^\\circ$</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "UPPCL JE Engineering Exam",
+        "difficulty": "Theory",
+        "handbook_pg": 364
+      },
+      {
+        "id": 1867,
+        "qnum": "9934-02",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Balanced Loads",
+        "question": "A balanced RYB-sequence, Y-connected (star connected) source with $V_{RN} = 100\\text{ V}$ is connected to a $\\Delta$-connected (delta connected) balanced load of $(8 + j6)\\ \\Omega$ per phase. Then the phase current and line current values respectively, are:",
+        "options": [
+          {
+            "label": "A",
+            "text": "$10\\text{ A},\\ 30\\text{ A}$"
+          },
+          {
+            "label": "B",
+            "text": "$10\\sqrt{3}\\text{ A},\\ 30\\text{ A}$"
+          },
+          {
+            "label": "C",
+            "text": "$10\\text{ A},\\ 10\\text{ A}$"
+          },
+          {
+            "label": "D",
+            "text": "$10\\sqrt{3}\\text{ A},\\ 10\\sqrt{3}\\text{ A}$"
+          }
+        ],
+        "ans": "B",
+        "solution": "<p><b>Step 1: Calculate the Line Voltage ($V_L$) from the Y-connected source</b></p>\n<p>For a star (Y) source, the phase voltage is $V_{ph} = V_{RN} = 100\\text{ V}$.</p>\n\\[V_L = \\sqrt{3} V_{ph} = 100\\sqrt{3}\\text{ V}\\]\n<p><b>Step 2: Determine Phase Voltage at the $\\Delta$ Load</b></p>\n<p>In a delta ($\\Delta$) connected load, the voltage across each phase branch equals the line voltage:</p>\n\\[V_{\\Delta, ph} = V_L = 100\\sqrt{3}\\text{ V}\\]\n<p><b>Step 3: Calculate Load Impedance Magnitude ($|Z_{ph}|$)</b></p>\n\\[|Z_{ph}| = |8 + j6| = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = 10\\ \\Omega\\]\n<p><b>Step 4: Compute Phase Current ($I_{ph}$)</b></p>\n\\[I_{ph} = \\dfrac{V_{\\Delta, ph}}{|Z_{ph}|} = \\dfrac{100\\sqrt{3}\\text{ V}}{10\\ \\Omega} = 10\\sqrt{3}\\text{ A}\\]\n<p><b>Step 5: Compute Line Current ($I_L$)</b></p>\n<p>For a balanced delta load:</p>\n\\[I_L = \\sqrt{3} I_{ph} = \\sqrt{3} \\times (10\\sqrt{3}\\text{ A}) = 10 \\times 3 = 30\\text{ A}\\]\n<p>Hence, $I_{ph} = 10\\sqrt{3}\\text{ A}$ and $I_L = 30\\text{ A}$.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(B) $10\\sqrt{3}\\text{ A},\\ 30\\text{ A}$</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "FE Electrical & Mechanical Exam Practice",
+        "difficulty": "Numerical",
+        "handbook_pg": 364
+      },
+      {
+        "id": 1869,
+        "qnum": "9934-04",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Balanced Loads",
+        "question": "For a 400 V, 3 phase 3 wire star-connected unbalanced load, the neutral point voltage can be:",
+        "options": [
+          {
+            "label": "A",
+            "text": "400 V"
+          },
+          {
+            "label": "B",
+            "text": "0 V"
+          },
+          {
+            "label": "C",
+            "text": "20 V"
+          },
+          {
+            "label": "D",
+            "text": "800 V"
+          }
+        ],
+        "ans": "C",
+        "solution": "<p>In a balanced star system, the vector sum of line currents is zero, meaning the star point (neutral point) remains strictly at zero potential ($0\\text{ V}$).</p>\n<p>However, for an <b>unbalanced load</b> without a neutral return wire (3-wire system), the star point potential shifts away from source ground. This is known as <i>neutral point displacement</i> ($V_N$).</p>\n<p>The neutral shift $V_N$ must be a finite non-zero value strictly below the line voltage (typically a few volts to tens of volts, e.g. $20\\text{ V}$). It cannot be $0\\text{ V}$ (which requires a perfectly balanced load), nor can it exceed system voltage bounds.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(C) 20 V</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "LMRC Assistant Manager Elect Exam",
+        "difficulty": "Theory",
+        "handbook_pg": 364
+      }
+    ]
   },
   {
     "discipline": "Mechanical",
@@ -1958,7 +2100,114 @@
     "chapter": "Three-phase Power",
     "topic": "Motor Efficiency",
     "subtopic": "Overview",
-    "content_html": "<p class=\"text-slate-500 italic\">Content for Motor Efficiency is coming soon.</p>"
+    "content_html": "<div class=\"container-fluid\">\n\t<div class=\"row align-items-start\">\n\t\t<div class=\"col col-lg-12\">\n<h5><span><b>Mechanical Power and Torque of a Motor:</b></span></h5>\n<p>The mechanical power developed at the rotor shaft of an electric motor is given by:</p>\n\n<div class=\"text-center my-3\">\n<button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$P_{\\text{mech}} = T \\cdot \\omega$ <span class=\"text-muted ml-4\">&emsp; Page 368</span></button>\n</div>\n\n<p>where $T$ is the shaft torque ($\\mathrm{N\\cdot m}$) and $\\omega$ is the angular velocity ($\\mathrm{rad/s}$), related to mechanical speed $n$ ($\\mathrm{rpm}$) by:</p>\n\\[\\omega = \\dfrac{2\\pi}{60} n\\]\n\n<h5><span><b>Synchronous Speed in AC Machines:</b></span></h5>\n<p>In three-phase induction and synchronous machines, the stator windings create a magnetic field that rotates at <b>synchronous speed</b> ($n_s$):</p>\n\n<div class=\"text-center my-3\">\n<button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$n_s = \\dfrac{120 f}{p}$ <span class=\"text-muted ml-4\">&emsp; Page 368</span></button>\n</div>\n\n<p>where $f$ is the supply frequency ($\\mathrm{Hz}$) and $p$ is the number of poles.</p>\n\n<h5><span><b>Rotor Slip ($s$):</b></span></h5>\n<p>Induction motors must operate at a rotor speed $n$ slightly less than synchronous speed $n_s$ in order to induce rotor currents and produce torque. The fractional slip $s$ is:</p>\n\n<div class=\"text-center my-3\">\n<button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$s = \\dfrac{n_s - n}{n_s} = \\dfrac{\\omega_s - \\omega_m}{\\omega_s}$ <span class=\"text-muted ml-4\">&emsp; Page 368</span></button>\n</div>\n\n<h5><span><b>Motor Efficiency ($\\eta$):</b></span></h5>\n<p>Overall efficiency is the ratio of mechanical shaft power output to total electrical active power input:</p>\n\\[\\eta = \\dfrac{P_{\\text{out}}}{P_{\\text{in}}} \\times 100\\% = \\dfrac{T \\omega}{\\sqrt{3} V_L I_L \\cos\\theta} \\times 100\\%\\]\n\t\t</div>\n\t</div>\n</div>",
+    "important": "\\[P_{\\text{mech}} = T \\omega = T \\left(\\dfrac{2\\pi n}{60}\\right)\\]\r\n\r\n\\[n_s = \\dfrac{120 f}{p}\\]\r\n\r\n\\[s = \\dfrac{n_s - n}{n_s}\\]\r\n\r\n\\[\\eta = \\dfrac{P_{\\text{out}}}{P_{\\text{in}}} = \\dfrac{T\\omega}{\\sqrt{3}V_L I_L \\cos\\theta}\\]",
+    "resources": "",
+    "images": [],
+    "local_images": [],
+    "video": "assets/videos/Three_Phase_Induction_Motor_Slip_and_Synchronous_Speed.mp4",
+    "videoTitle": "Three-Phase Induction Motor Slip and Synchronous Speed",
+    "solved_examples": [
+      {
+        "id": 1870,
+        "qnum": "9933-01",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Motor Efficiency",
+        "question": "A 4 pole induction machine is working as an induction generator. The generator supply frequency is 60 Hz. The rotor current frequency is 5 Hz. The mechanical speed of the rotor in RPM is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "1350"
+          },
+          {
+            "label": "B",
+            "text": "1650"
+          },
+          {
+            "label": "C",
+            "text": "1950"
+          },
+          {
+            "label": "D",
+            "text": "2250"
+          }
+        ],
+        "ans": "C",
+        "solution": "<p><b>Step 1: Calculate the Synchronous Speed ($n_s$)</b></p>\n\\[n_s = \\dfrac{120 f}{p} = \\dfrac{120 \\times 60}{4} = 1800\\text{ rpm}\\]\n<p><b>Step 2: Understand Induction Generator Operating Condition</b></p>\n<p>For an induction machine operating as a <b>generator</b>, the rotor must be driven by an external prime mover at a speed <i>above</i> synchronous speed ($n > n_s$). Hence slip is negative:</p>\n\\[s = -\\dfrac{f_r}{f} = -\\dfrac{5\\text{ Hz}}{60\\text{ Hz}} = -\\dfrac{1}{12}\\]\n<p><b>Step 3: Calculate Rotor Mechanical Speed ($n$)</b></p>\n\\[n = n_s (1 - s) = 1800 \\times \\left(1 - \\left(-\\dfrac{1}{12}\\right)\\right) = 1800 \\times \\left(1 + \\dfrac{1}{12}\\right) = 1800 + 150 = 1950\\text{ rpm}\\]\n<p>Equivalently:</p>\n\\[n = \\dfrac{120(f + f_r)}{p} = \\dfrac{120(60 + 5)}{4} = \\dfrac{120 \\times 65}{4} = 1950\\text{ rpm}\\]\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(C) 1950</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "GATE EE 2017 Exam",
+        "difficulty": "Numerical",
+        "handbook_pg": 368
+      },
+      {
+        "id": 1871,
+        "qnum": "9933-02",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Motor Efficiency",
+        "question": "In order to ______ semi-closed slots or totally closed slots are used in induction motors.",
+        "options": [
+          {
+            "label": "A",
+            "text": "Improve starting torque"
+          },
+          {
+            "label": "B",
+            "text": "Improve power factor"
+          },
+          {
+            "label": "C",
+            "text": "Increase efficiency"
+          },
+          {
+            "label": "D",
+            "text": "Increase pull-out torque"
+          }
+        ],
+        "ans": "B",
+        "solution": "<p>In induction motors, the stator and rotor slots can be open, semi-closed, or totally closed.</p>\n<p>Semi-closed and totally closed slots reduce the reluctance of the air gap, thereby reducing the required magnetizing current ($I_m$) drawn by the motor. Since magnetizing current represents reactive power lagging behind voltage by $90^\\circ$, lowering $I_m$ significantly <b>improves the operational power factor</b> ($cos\\theta$) of the motor.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(B) Improve power factor</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "PSTCL JE EE Exam",
+        "difficulty": "Theory",
+        "handbook_pg": 368
+      },
+      {
+        "id": 1872,
+        "qnum": "9933-03",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Motor Efficiency",
+        "question": "Power supply to a 10 pole induction motor is supplied by 4 pole alternator which is driven at 1500 RPM. If the motor runs with slip of 4%, what is the speed?",
+        "options": [
+          {
+            "label": "A",
+            "text": "750 RPM"
+          },
+          {
+            "label": "B",
+            "text": "576 RPM"
+          },
+          {
+            "label": "C",
+            "text": "600 RPM"
+          },
+          {
+            "label": "D",
+            "text": "240 RPM"
+          }
+        ],
+        "ans": "B",
+        "solution": "<p><b>Step 1: Calculate Frequency ($f$) Generated by the Alternator</b></p>\n\\[f = \\dfrac{P_{\\text{alt}} \\times N_{\\text{alt}}}{120} = \\dfrac{4 \\times 1500}{120} = 50\\text{ Hz}\\]\n<p><b>Step 2: Calculate Synchronous Speed ($n_s$) of the 10-Pole Induction Motor</b></p>\n\\[n_s = \\dfrac{120 f}{P_{\\text{motor}}} = \\dfrac{120 \\times 50}{10} = 600\\text{ rpm}\\]\n<p><b>Step 3: Calculate Rotor Operating Speed ($n$) at 4% Slip</b></p>\n\\[s = 0.04\\]\n\\[n = n_s (1 - s) = 600 \\times (1 - 0.04) = 600 \\times 0.96 = 576\\text{ rpm}\\]\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(B) 576 RPM</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "ISRO Scientist Elect Exam",
+        "difficulty": "Numerical",
+        "handbook_pg": 368
+      }
+    ]
   },
   {
     "discipline": "Mechanical",
@@ -1966,7 +2215,117 @@
     "chapter": "Three-phase Power",
     "topic": "Power Equation",
     "subtopic": "Overview",
-    "content_html": "<p class=\"text-slate-500 italic\">Content for Power Equation is coming soon.</p>"
+    "content_html": "<div class=\"container-fluid\">\n  <div class=\"row align-items-start\">\n    <div class=\"col col-lg-8\">\n      <h5><span><b>Star (Wye) Connection Equations:</b></span></h5>\n      <div class=\"text-center my-3\">\n        <button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$\\begin{align*}\nV_L &= \\sqrt{3}V_P = \\sqrt{3}V_{LN}\\\\\nI_L &= I_P\n\\end{align*}$ <span class=\"text-muted ml-4\">&emsp; Page 364</span></button>\n      </div>\n      <p>In star configuration, each load impedance experiences line-to-neutral voltage. Total power is distributed equally across all 3 phases.</p>\n    </div>\n    <div class=\"col col-lg-4 text-center\">\n      <center><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/6/66/AC_star_connection.svg\" alt=\"Star Connection Diagram\" style=\"max-width: 100%; height: auto; border-radius: 12px;\"></p>\n      <small class=\"text-muted block mt-1\"><a href=\"https://commons.wikimedia.org/wiki/File:AC_star_connection.svg\" target=\"_blank\" rel=\"noopener\">Me (Intgr)</a>, Public domain, via Wikimedia Commons</small></center>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt-4\">\n  <div class=\"row align-items-start\">\n    <div class=\"col col-lg-8\">\n      <h5><span><b>Delta Connection Equations:</b></span></h5>\n      <div class=\"text-center my-3\">\n        <button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$\\begin{align*}\nV_L &= V_P\\\\\nI_L &= \\sqrt{3}I_P\n\\end{align*}$ <span class=\"text-muted ml-4\">&emsp; Page 364</span></button>\n      </div>\n      <p>In delta configuration, each branch impedance is directly connected across two lines. Thus phase voltage equals line voltage, and line current equals $\\sqrt{3}$ times phase current.</p>\n    </div>\n    <div class=\"col col-lg-4 text-center\">\n      <center><p><img src=\"https://upload.wikimedia.org/wikipedia/commons/c/c5/3-Phase_AC_Delta_Conection_01.svg\" alt=\"Delta Connection Diagram\" style=\"max-width: 100%; height: auto; border-radius: 12px;\"></p>\n      <small class=\"text-muted block mt-1\"><a href=\"https://commons.wikimedia.org/wiki/File:3-Phase_AC_Delta_Conection_01.svg\" target=\"_blank\" rel=\"noopener\">Σ64</a>, Public domain, via Wikimedia Commons</small></center>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt-4\">\n  <div class=\"row align-items-start\">\n    <div class=\"col col-lg-12\">\n      <h5><span><b>Unified Three-Phase Power Formulas:</b></span></h5>\n      <p>Regardless of whether the balanced load is connected in star or delta, the total active (real), reactive, and apparent power formulas expressed in line quantities ($V_L, I_L$) are <b>identical</b>:</p>\n\n      <div class=\"text-center my-3\">\n        <button type=\"button\" class=\"btn btn-light shadow-lg px-4 py-2 border rounded-xl font-mono text-sm\">$\\begin{align*}\nP &= \\sqrt{3} V_L I_L \\cos \\theta = 3 V_P I_P \\cos \\theta \\quad &(\\text{Active Power, } \\mathrm{W})\\\\\nQ &= \\sqrt{3} V_L I_L \\sin \\theta = 3 V_P I_P \\sin \\theta \\quad &(\\text{Reactive Power, } \\mathrm{var})\\\\\nS &= \\sqrt{3} V_L I_L = 3 V_P I_P \\quad &(\\text{Apparent Power, } \\mathrm{VA})\n\\end{align*}$ <span class=\"text-muted ml-4\">&emsp; Page 364</span></button>\n      </div>\n\n      <p>where $\\theta$ is the phase angle of the load impedance ($\\theta = \\angle Z$), and $\\cos\\theta$ is the operating power factor ($pf$).</p>\n    </div>\n  </div>\n</div>",
+    "important": "Star (Wye) Connection:\r\n\\[V_L = \\sqrt{3}V_P = \\sqrt{3}V_{LN}\\]\r\n\\[I_L = I_P\\]\r\n\r\nDelta Connections:\r\n\\[V_L = V_P\\]\r\n\\[I_L = \\sqrt{3}I_P\\]\r\n\r\nThree-Phase Power Formulas:\r\n\\[P = \\sqrt{3} V_L I_L \\cos \\theta = 3 V_P I_P \\cos \\theta\\]\r\n\\[Q = \\sqrt{3} V_L I_L \\sin \\theta = 3 V_P I_P \\sin \\theta\\]\r\n\\[S = \\sqrt{3} V_L I_L = 3 V_P I_P = \\sqrt{P^2 + Q^2}\\]",
+    "resources": "",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/66/AC_star_connection.svg",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c5/3-Phase_AC_Delta_Conection_01.svg"
+    ],
+    "local_images": [],
+    "video": "",
+    "videoTitle": "",
+    "solved_examples": [
+      {
+        "id": 1863,
+        "qnum": "9935-01",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Power Equation",
+        "question": "At a particular instant, the R- phase voltage of a balanced 3-phase system is +30 V, and the Y- phase voltage is -90V. The voltage of B- phase at that instant is:",
+        "options": [
+          {
+            "label": "A",
+            "text": "+ 120 V"
+          },
+          {
+            "label": "B",
+            "text": "- 120 V"
+          },
+          {
+            "label": "C",
+            "text": "- 60 V"
+          },
+          {
+            "label": "D",
+            "text": "+ 60 V"
+          }
+        ],
+        "ans": "D",
+        "solution": "<p>In any balanced three-phase system, the algebraic sum of the instantaneous phase voltages across all three phases is identically zero at every instant of time:</p>\n\\[v_R(t) + v_Y(t) + v_B(t) = 0\\]\n<p>Substituting the given instantaneous values:</p>\n\\[(+30\\text{ V}) + (-90\\text{ V}) + v_B(t) = 0\\]\n\\[-60\\text{ V} + v_B(t) = 0 \\implies v_B(t) = +60\\text{ V}\\]\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(D) + 60 V</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "FE Electrical & Mechanical Practice",
+        "difficulty": "Numerical",
+        "handbook_pg": 364
+      },
+      {
+        "id": 1866,
+        "qnum": "9935-02",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Power Equation",
+        "question": "Three identical resistors connected in star consume 4000 W when connected across balanced 3-$\\phi$ supply. What is the power consumed, if the three resistors are connected in delta across the same supply?",
+        "options": [
+          {
+            "label": "A",
+            "text": "20000 W"
+          },
+          {
+            "label": "B",
+            "text": "16000 W"
+          },
+          {
+            "label": "C",
+            "text": "4000 W"
+          },
+          {
+            "label": "D",
+            "text": "12000 W"
+          }
+        ],
+        "ans": "D",
+        "solution": "<p><b>Step 1: Express Star (Wye) Connection Power</b></p>\n<p>In a star connection, the voltage across each resistor of resistance $R$ is $V_{ph} = \\dfrac{V_L}{\\sqrt{3}}$.</p>\n\\[P_Y = 3 \\times \\dfrac{V_{ph}^2}{R} = 3 \\times \\dfrac{(V_L/\\sqrt{3})^2}{R} = \\dfrac{V_L^2}{R} = 4000\\text{ W}\\]\n<p><b>Step 2: Express Delta Connection Power</b></p>\n<p>When the same resistors $R$ are connected in delta across the identical line voltage $V_L$, the voltage across each resistor is equal to the full line voltage $V_{ph,\\Delta} = V_L$:</p>\n\\[P_\\Delta = 3 \\times \\dfrac{V_L^2}{R} = 3 \\times P_Y\\]\n\\[P_\\Delta = 3 \\times 4000\\text{ W} = 12000\\text{ W}\\]\n<p><b>Key Takeaway for FE Exam:</b> For the same line voltage, a delta-connected resistive load consumes <b>3 times</b> as much power as a star-connected load ($P_\\Delta = 3 P_Y$).</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(D) 12000 W</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "DMRC AM Electrical Exam",
+        "difficulty": "Numerical",
+        "handbook_pg": 364
+      },
+      {
+        "id": 1868,
+        "qnum": "9935-03",
+        "subject": "Electricity and Magnetism",
+        "chapter": "Three-phase Power",
+        "topic": "Power Equation",
+        "question": "A balanced delta connected load is connected to a 415 V, 50 Hz supply. If the per phase impedance of the load is (8 + j12) ohm, then calculate the phase current of the load. Also, find out the line current and the power consumed by each phase.",
+        "options": [
+          {
+            "label": "A",
+            "text": "28.78 A, 49.85 A, 6629 W"
+          },
+          {
+            "label": "B",
+            "text": "24.45 A, 42.25 A, 5562.35 W"
+          },
+          {
+            "label": "C",
+            "text": "21 A, 40.24 A, 4885 W"
+          },
+          {
+            "label": "D",
+            "text": "30 A, 56 A, 6024 W"
+          }
+        ],
+        "ans": "A",
+        "solution": "<p><b>Step 1: Calculate Load Phase Impedance ($Z_{ph}$)</b></p>\n\\[Z_{ph} = 8 + j12\\ \\Omega\\]\n\\[|Z_{ph}| = \\sqrt{8^2 + 12^2} = \\sqrt{64 + 144} = \\sqrt{208} \\approx 14.422\\ \\Omega\\]\n\\[\\theta = \\tan^{-1}\\left(\\dfrac{12}{8}\\right) = 56.31^\\circ \\implies \\cos\\theta = 0.5547\\]\n<p><b>Step 2: Calculate Phase Current ($I_{ph}$)</b></p>\n<p>For delta connection, phase voltage equals line voltage ($V_{ph} = V_L = 415\\text{ V}$):</p>\n\\[I_{ph} = \\dfrac{V_L}{|Z_{ph}|} = \\dfrac{415\\text{ V}}{14.422\\ \\Omega} \\approx 28.78\\text{ A}\\]\n<p><b>Step 3: Calculate Line Current ($I_L$)</b></p>\n\\[I_L = \\sqrt{3} I_{ph} = \\sqrt{3} \\times 28.775\\text{ A} \\approx 49.85\\text{ A}\\]\n<p><b>Step 4: Calculate Total Power and Power Per Phase</b></p>\n\\[P_{\\text{total}} = \\sqrt{3} V_L I_L \\cos\\theta = \\sqrt{3} \\times 415 \\times 49.85 \\times 0.5547 \\approx 19887\\text{ W}\\]\n\\[P_{\\text{phase}} = \\dfrac{P_{\\text{total}}}{3} = \\dfrac{19887\\text{ W}}{3} \\approx 6629\\text{ W}\\]\n<p>Equivalently: $P_{\\text{phase}} = I_{ph}^2 R = (28.775)^2 \\times 8 \\approx 6624\\text{ W} \\approx 6629\\text{ W}$.</p>\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-400 font-bold\">(A) 28.78 A, 49.85 A, 6629 W</span></p>",
+        "has_video": false,
+        "vidurl": "",
+        "source": "UPSSSC JE Elect Exam",
+        "difficulty": "Numerical",
+        "handbook_pg": 364
+      }
+    ]
   },
   {
     "discipline": "Mechanical",
