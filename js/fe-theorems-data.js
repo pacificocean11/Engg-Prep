@@ -9115,6 +9115,35 @@ window.THEOREMS_BY_DISCIPLINE = {
             "mp4File": "Cyclic_Process.mp4",
             "githubUrl": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cyclic_Process.mp4",
             "isUploadedToGithub": true
+        },
+        {
+            "title": "Balanced Three-Phase Voltage Relations",
+            "formula": "$$V_{LL} = \\sqrt{3} V_{LN} \\angle +30^\\circ \\quad (\\text{positive ABC sequence})$$",
+            "description": "In a balanced Wye system, line-to-line voltage magnitude is $\\sqrt{3} \\approx 1.732$ times line-to-neutral phase voltage magnitude and leads it by $30^\\circ$.",
+            "examTip": "Found in Power Systems. In standard US commercial distribution: $V_{LN} = 120\\text{ V} \\implies V_{LL} = 120\\sqrt{3} = 208\\text{ V}$; and $277\\text{ V} \\implies 480\\text{ V}$.",
+            "videoUrl": "assets/videos/Balanced_Three_Phase_Voltage_Relations.mp4",
+            "videoTitle": "Balanced Three-Phase Voltage Relations Explainer",
+            "videoDuration": "10s",
+            "videoUrlGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Balanced%20Three-Phase%20Voltage%20Relations.mp4",
+            "isVideoGithub": true,
+            "driveUrl": "https://drive.google.com/file/d/1gcWUdpuEM5QVu9X7c8HnEJqmZGZk0gD7/preview",
+            "mp4File": "Balanced_Three_Phase_Voltage_Relations.mp4",
+            "githubUrl": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Balanced_Three_Phase_Voltage_Relations.mp4",
+            "isUploadedToGithub": true,
+            "solvedExample": {
+                "question": "<p>A balanced, positive-sequence, $Y$-connected (star-connected) three-phase source has phase voltage $V_{RN} = 100\\text{ V}$. It feeds a balanced $\\Delta$-connected load with impedance $Z_\\Delta = (8 + j6)\\ \\Omega$ per phase.</p><p>The magnitude of the load phase current $I_{ph}$ and line current $I_L$ are:</p><div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\"><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $I_{ph} = 10\\text{ A},\\ I_L = 30\\text{ A}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $I_{ph} = 10\\sqrt{3}\\text{ A},\\ I_L = 30\\text{ A}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $I_{ph} = 10\\text{ A},\\ I_L = 10\\text{ A}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $I_{ph} = 10\\sqrt{3}\\text{ A},\\ I_L = 10\\sqrt{3}\\text{ A}$</div></div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Line Voltage ($V_L$)</strong></p>$$V_L = \\sqrt{3} V_{ph} = 100\\sqrt{3}\\text{ V}$$\n<p>For a delta ($\\Delta$) load, the voltage across each phase impedance is the line voltage: $V_{\\Delta, ph} = V_L = 100\\sqrt{3}\\text{ V}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Load Impedance Magnitude ($|Z_{ph}|$)</strong></p>$$|Z_{ph}| = \\sqrt{8^2 + 6^2} = 10\\ \\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Phase Current ($I_{ph}$) and Line Current ($I_L$)</strong></p>$$I_{ph} = \\frac{V_{\\Delta, ph}}{|Z_{ph}|} = \\frac{100\\sqrt{3}\\text{ V}}{10\\ \\Omega} = 10\\sqrt{3}\\text{ A}$$$$I_L = \\sqrt{3} I_{ph} = \\sqrt{3} \\times (10\\sqrt{3}) = 30\\text{ A}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $I_{ph} = 10\\sqrt{3}\\text{ A},\\ I_L = 30\\text{ A}$</span></p>"
+            }
+        },
+        {
+            "title": "Balanced Three-Phase Complex Power Equations",
+            "formula": "$$P_{3\\phi} = \\sqrt{3} V_L I_L \\cos\\theta, \\quad Q_{3\\phi} = \\sqrt{3} V_L I_L \\sin\\theta, \\quad |S_{3\\phi}| = \\sqrt{3} V_L I_L$$",
+            "description": "Total three-phase real, reactive, and apparent power expressed in terms of line-to-line voltage $V_L$ and line current $I_L$, valid for both Wye- and Delta-connected balanced systems.",
+            "examTip": "Found in Power Systems. Note: if using per-phase values, total power is $P_{3\\phi} = 3 V_p I_p \\cos\\theta$.",
+            "solvedExample": {
+                "question": "<p>Three identical resistors connected in a balanced star (Wye) configuration consume $4,000\\text{ W}$ across a balanced 3-phase AC supply.</p><p>If the identical three resistors are reconnected in delta ($\\Delta$) across the exact same 3-phase supply line voltage, the total power consumed is:</p><div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\"><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $4,000\\text{ W}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $8,000\\text{ W}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $16,000\\text{ W}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $12,000\\text{ W}$</div></div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Star (Wye) Power</strong></p>$$P_Y = 3 \\times \\frac{(V_L/\\sqrt{3})^2}{R} = \\frac{V_L^2}{R} = 4,000\\text{ W}$$\n<p><strong class=\"text-emerald-400\">Step 2: Delta Power</strong></p>$$P_\\Delta = 3 \\times \\frac{V_L^2}{R} = 3 \\times P_Y = 3 \\times 4,000\\text{ W} = 12,000\\text{ W}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(D) $12,000\\text{ W}$</span></p>"
+            }
         }
     ],
     "Civil": [
@@ -48130,6 +48159,35 @@ window.THEOREMS_BY_DISCIPLINE = {
             "mp4File": "Cyclic_Process.mp4",
             "githubUrl": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Cyclic_Process.mp4",
             "isUploadedToGithub": true
+        },
+        {
+            "title": "Balanced Three-Phase Voltage Relations",
+            "formula": "$$V_{LL} = \\sqrt{3} V_{LN} \\angle +30^\\circ \\quad (\\text{positive ABC sequence})$$",
+            "description": "In a balanced Wye system, line-to-line voltage magnitude is $\\sqrt{3} \\approx 1.732$ times line-to-neutral phase voltage magnitude and leads it by $30^\\circ$.",
+            "examTip": "Found in Power Systems. In standard US commercial distribution: $V_{LN} = 120\\text{ V} \\implies V_{LL} = 120\\sqrt{3} = 208\\text{ V}$; and $277\\text{ V} \\implies 480\\text{ V}$.",
+            "videoUrl": "assets/videos/Balanced_Three_Phase_Voltage_Relations.mp4",
+            "videoTitle": "Balanced Three-Phase Voltage Relations Explainer",
+            "videoDuration": "10s",
+            "videoUrlGithub": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Balanced%20Three-Phase%20Voltage%20Relations.mp4",
+            "isVideoGithub": true,
+            "driveUrl": "https://drive.google.com/file/d/1gcWUdpuEM5QVu9X7c8HnEJqmZGZk0gD7/preview",
+            "mp4File": "Balanced_Three_Phase_Voltage_Relations.mp4",
+            "githubUrl": "https://raw.githubusercontent.com/pacificocean11/Engg-Prep/main/assets/videos/Balanced_Three_Phase_Voltage_Relations.mp4",
+            "isUploadedToGithub": true,
+            "solvedExample": {
+                "question": "<p>A balanced, positive-sequence, $Y$-connected (star-connected) three-phase source has phase voltage $V_{RN} = 100\\text{ V}$. It feeds a balanced $\\Delta$-connected load with impedance $Z_\\Delta = (8 + j6)\\ \\Omega$ per phase.</p><p>The magnitude of the load phase current $I_{ph}$ and line current $I_L$ are:</p><div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\"><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $I_{ph} = 10\\text{ A},\\ I_L = 30\\text{ A}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $I_{ph} = 10\\sqrt{3}\\text{ A},\\ I_L = 30\\text{ A}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $I_{ph} = 10\\text{ A},\\ I_L = 10\\text{ A}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $I_{ph} = 10\\sqrt{3}\\text{ A},\\ I_L = 10\\sqrt{3}\\text{ A}$</div></div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Calculate Line Voltage ($V_L$)</strong></p>$$V_L = \\sqrt{3} V_{ph} = 100\\sqrt{3}\\text{ V}$$\n<p>For a delta ($\\Delta$) load, the voltage across each phase impedance is the line voltage: $V_{\\Delta, ph} = V_L = 100\\sqrt{3}\\text{ V}$.</p>\n<p><strong class=\"text-emerald-400\">Step 2: Calculate Load Impedance Magnitude ($|Z_{ph}|$)</strong></p>$$|Z_{ph}| = \\sqrt{8^2 + 6^2} = 10\\ \\Omega$$\n<p><strong class=\"text-emerald-400\">Step 3: Calculate Phase Current ($I_{ph}$) and Line Current ($I_L$)</strong></p>$$I_{ph} = \\frac{V_{\\Delta, ph}}{|Z_{ph}|} = \\frac{100\\sqrt{3}\\text{ V}}{10\\ \\Omega} = 10\\sqrt{3}\\text{ A}$$$$I_L = \\sqrt{3} I_{ph} = \\sqrt{3} \\times (10\\sqrt{3}) = 30\\text{ A}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(B) $I_{ph} = 10\\sqrt{3}\\text{ A},\\ I_L = 30\\text{ A}$</span></p>"
+            }
+        },
+        {
+            "title": "Balanced Three-Phase Complex Power Equations",
+            "formula": "$$P_{3\\phi} = \\sqrt{3} V_L I_L \\cos\\theta, \\quad Q_{3\\phi} = \\sqrt{3} V_L I_L \\sin\\theta, \\quad |S_{3\\phi}| = \\sqrt{3} V_L I_L$$",
+            "description": "Total three-phase real, reactive, and apparent power expressed in terms of line-to-line voltage $V_L$ and line current $I_L$, valid for both Wye- and Delta-connected balanced systems.",
+            "examTip": "Found in Power Systems. Note: if using per-phase values, total power is $P_{3\\phi} = 3 V_p I_p \\cos\\theta$.",
+            "solvedExample": {
+                "question": "<p>Three identical resistors connected in a balanced star (Wye) configuration consume $4,000\\text{ W}$ across a balanced 3-phase AC supply.</p><p>If the identical three resistors are reconnected in delta ($\\Delta$) across the exact same 3-phase supply line voltage, the total power consumed is:</p><div class=\"grid grid-cols-2 gap-2 my-2 font-mono text-xs\"><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(A) $4,000\\text{ W}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(B) $8,000\\text{ W}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(C) $16,000\\text{ W}$</div><div class=\"p-2 bg-slate-900/80 rounded border border-slate-700/60\">(D) $12,000\\text{ W}$</div></div>",
+                "solution": "<p><strong class=\"text-emerald-400\">Step 1: Star (Wye) Power</strong></p>$$P_Y = 3 \\times \\frac{(V_L/\\sqrt{3})^2}{R} = \\frac{V_L^2}{R} = 4,000\\text{ W}$$\n<p><strong class=\"text-emerald-400\">Step 2: Delta Power</strong></p>$$P_\\Delta = 3 \\times \\frac{V_L^2}{R} = 3 \\times P_Y = 3 \\times 4,000\\text{ W} = 12,000\\text{ W}$$\n<p class=\"mt-2 pt-2 border-t border-emerald-500/20\"><strong class=\"text-cyan-300\">Correct Answer:</strong> <span class=\"text-emerald-300 font-bold\">(D) $12,000\\text{ W}$</span></p>"
+            }
         }
     ]
 };

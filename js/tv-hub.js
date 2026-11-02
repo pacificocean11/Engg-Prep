@@ -5,6 +5,8 @@
 (function() {
     'use strict';
 
+    let fullPoolVideos = [];
+    let feedVideos = [];
     let allVideos = [];
     let filteredVideos = [];
     let currentDiscipline = 'Mechanical';
@@ -12,6 +14,15 @@
     let searchQuery = '';
     let renderedCount = 0;
     const PAGE_SIZE = 24;
+
+    function shuffleArray(arr) {
+        const copy = [...arr];
+        for (let i = copy.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        return copy;
+    }
 
     function getDriveId(url) {
         if (!url) return null;
@@ -85,7 +96,7 @@
         return map[subj] || { bg: 'from-pink-600 to-rose-600', icon: 'smart_display', badge: 'text-pink-500 bg-pink-500/10' };
     }
 
-    function loadVideosForDiscipline() {
+    function loadVideosForDiscipline(forceNewShuffle = true) {
         currentDiscipline = getActiveDiscipline();
         const datasets = window.THEOREMS_BY_DISCIPLINE || {};
         
@@ -106,17 +117,27 @@
             }
         }
 
-        allVideos = videoCards.map((card, idx) => ({
+        fullPoolVideos = videoCards.map((card, idx) => ({
             ...card,
             originalIndex: idx,
             subject: getSubjectName(card, currentDiscipline)
         }));
+
+        // Random display of all discipline videos
+        if (forceNewShuffle || !feedVideos.length) {
+            feedVideos = shuffleArray(fullPoolVideos);
+        }
+
+        // Both browsing and searching operate on all discipline videos
+        allVideos = searchQuery ? fullPoolVideos : feedVideos;
 
         applyFilters();
     }
 
     function applyFilters() {
         const query = (searchQuery || '').toLowerCase().trim();
+        allVideos = query ? fullPoolVideos : feedVideos;
+
         filteredVideos = allVideos.filter(card => {
             if (activeSubjectFilter === 'solved') {
                 if (!card.solvedExample) return false;
@@ -145,7 +166,13 @@
     function updateCounter() {
         const counterEl = document.getElementById('tv-video-count-badge');
         if (counterEl) {
-            counterEl.textContent = `${filteredVideos.length} ${filteredVideos.length === 1 ? 'Video' : 'Videos'}`;
+            if (searchQuery) {
+                counterEl.textContent = `${filteredVideos.length} ${filteredVideos.length === 1 ? 'Found' : 'Found'}`;
+            } else if (activeSubjectFilter !== 'all') {
+                counterEl.textContent = `${filteredVideos.length} ${filteredVideos.length === 1 ? 'Video' : 'Videos'}`;
+            } else {
+                counterEl.textContent = `${filteredVideos.length} Videos`;
+            }
         }
     }
 
@@ -153,17 +180,20 @@
         const container = document.getElementById('tv-filter-chips-container');
         if (!container) return;
 
+        // Base chips on the full pool so all categories are accessible
+        const baseList = fullPoolVideos.length ? fullPoolVideos : allVideos;
         const subjectCounts = {};
         let solvedCount = 0;
-        allVideos.forEach(v => {
+        baseList.forEach(v => {
             subjectCounts[v.subject] = (subjectCounts[v.subject] || 0) + 1;
             if (v.solvedExample) solvedCount++;
         });
 
         const sortedSubjects = Object.keys(subjectCounts).sort((a, b) => subjectCounts[b] - subjectCounts[a]);
 
+        const totalDisplayCount = searchQuery ? filteredVideos.length : feedVideos.length;
         const chips = [
-            { id: 'all', label: 'All', count: allVideos.length }
+            { id: 'all', label: 'All', count: totalDisplayCount }
         ];
 
         if (solvedCount > 0) {
@@ -375,6 +405,14 @@
         }
     }
 
+    function syncSearchInputs(val) {
+        const input = document.getElementById('tv-search-input');
+        if (input && input.value !== val) input.value = val;
+
+        const clearBtn = document.getElementById('tv-search-clear-btn');
+        if (clearBtn) clearBtn.classList.toggle('hidden', !val);
+    }
+
     window.setTvSubjectFilter = function(filterId) {
         activeSubjectFilter = filterId;
         renderFilterChips();
@@ -382,17 +420,37 @@
     };
 
     window.onTvSearchInput = function(val) {
-        searchQuery = val || '';
+        searchQuery = (val || '').trim();
+        syncSearchInputs(searchQuery);
         applyFilters();
+    };
+
+    window.onHeaderTvSearch = function(val) {
+        window.onTvSearchInput(val);
     };
 
     window.clearTvSearch = function() {
         searchQuery = '';
         activeSubjectFilter = 'all';
-        const input = document.getElementById('tv-search-input');
-        if (input) input.value = '';
+        syncSearchInputs('');
         renderFilterChips();
         applyFilters();
+    };
+
+    window.refreshTvFeed = function() {
+        // Re-randomize all discipline videos in a new shuffle
+        feedVideos = shuffleArray(fullPoolVideos);
+        searchQuery = '';
+        activeSubjectFilter = 'all';
+        syncSearchInputs('');
+        renderFilterChips();
+        applyFilters();
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (typeof window.showToast === 'function') {
+            window.showToast('Fresh Feed', `Re-shuffled all ${feedVideos.length} ${currentDiscipline} videos`, 'refresh');
+        }
     };
 
     window.loadMoreTvVideos = function() {
