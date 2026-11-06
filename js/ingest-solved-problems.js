@@ -148,7 +148,8 @@
             },
             difficulty: p.difficulty || 'Numerical',
             source: p.source ? `FE Solved Problem • ${p.source}` : 'FE Solved Practice Problem',
-            isSolvedProblem: true
+            isSolvedProblem: true,
+            excludedDisciplines: p.excludedDisciplines || []
         };
     }
 
@@ -157,12 +158,18 @@
 
         let addedCount = 0;
         const data = window.solvedProblemsData;
+        const activeDiscipline = localStorage.getItem('enggtv_discipline') || 'Mechanical';
 
         for (const topicKey in data) {
             const problems = data[topicKey];
             if (!Array.isArray(problems)) continue;
 
             problems.forEach(p => {
+                // If question is excluded for current active discipline, skip ingestion
+                if (p.excludedDisciplines && Array.isArray(p.excludedDisciplines) && p.excludedDisciplines.includes(activeDiscipline)) {
+                    return;
+                }
+
                 const rawSub = p.subject ? p.subject.trim() : '';
                 const subjectId = SUBJECT_MAP[rawSub] || SUBJECT_MAP[p.subject];
                 if (!subjectId) return;
