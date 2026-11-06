@@ -75,7 +75,7 @@
 <body class="flex flex-col min-h-screen">
     
     <!-- Top Navigation / Brand Header -->
-    <header class="w-full px-6 py-5 max-w-7xl mx-auto flex items-center justify-between">
+    <header class="w-full px-6 pt-3 pb-2 sm:py-3.5 max-w-7xl mx-auto flex items-center justify-between">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-accent-yellow rounded-xl flex items-center justify-center shadow-md transform rotate-6">
                 <span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">engineering</span>
@@ -89,48 +89,98 @@
     </header>
 
     <!-- Main Container -->
-    <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-6 md:py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+    <main class="flex-1 max-w-7xl w-full mx-auto px-6 pt-1 sm:pt-2 md:pt-3 pb-8 md:pb-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
         
         <!-- Left Side: Engaging Marketing Landing Page (7 Columns) -->
-        <section class="lg:col-span-7 flex flex-col justify-center space-y-8 lg:pr-8">
+        <section class="lg:col-span-7 flex flex-col justify-center space-y-5 sm:space-y-6 lg:pr-8">
             
             <!-- Hero Heading -->
             <div class="space-y-3">
                 <span class="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 text-accent-yellow text-xs font-bold uppercase tracking-wider rounded-full border border-amber-100">
                     <span class="material-symbols-outlined text-sm">stars</span>
-                    Ultimate Engineering Prep Platform
+                    Strictly as per the syllabus of FE/EIT Exam
                 </span>
                 <h2 class="font-space text-3xl sm:text-4xl font-bold text-dark-slate leading-tight tracking-tight">
-                    Pass the FE Exam with confidence
+                    Engineering...Simplified
                 </h2>
             </div>
 
-            <!-- Interactive Random Concept Video Player -->
-            <div class="relative w-full max-w-xl rounded-[2rem] overflow-hidden shadow-2xl shadow-pink-500/10 border-[6px] border-white/80 bg-slate-950 my-2 aspect-video flex items-center justify-center group">
-                <!-- Video Element -->
-                <video id="hero-preview-video" class="w-full h-full object-cover" autoplay muted playsinline preload="metadata">
-                    <source src="assets/videos/Basic_rules_of_derivatives.mp4" type="video/mp4">
-                </video>
+            <!-- Interactive Random Concept Video Player with Flanked Previews -->
+            <div class="w-full max-w-xl space-y-2.5 my-2">
+                <!-- Main Active Video Player -->
+                <div class="relative w-full rounded-[2rem] overflow-hidden shadow-2xl shadow-pink-500/10 border-[6px] border-white/80 bg-slate-950 aspect-video flex items-center justify-center group">
+                    <!-- Video Element -->
+                    <video id="hero-preview-video" class="w-full h-full object-cover" autoplay muted playsinline preload="metadata">
+                        <source src="assets/videos/Basic_rules_of_derivatives.mp4" type="video/mp4">
+                    </video>
 
-                <!-- Subject Category Pill (Top Left) -->
-                <div class="hidden sm:flex absolute top-3 left-3 z-20 items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wide shadow-lg">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span id="hero-video-subject-tag" class="text-amber-300 font-mono">Mathematics</span>
+                    <!-- Subject Category Pill (Top Left) -->
+                    <div class="hidden sm:flex absolute top-3 left-3 z-20 items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wide shadow-lg">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span id="hero-video-subject-tag" class="text-amber-300 font-mono">Mathematics</span>
+                    </div>
+
+                    <!-- Gradient Overlay & Bottom Info Bar -->
+                    <div class="absolute bottom-0 inset-x-0 z-20 p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between text-white">
+                        <div class="min-w-0 pr-3">
+                            <p class="text-[10px] uppercase font-bold text-pink-400 tracking-wider flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping"></span>
+                                Now Playing
+                            </p>
+                            <h4 id="hero-video-title" class="text-xs sm:text-sm font-bold text-white truncate drop-shadow-md">Basic Rules of Derivatives</h4>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            <button id="hero-video-sound-btn" onclick="window.toggleHeroVideoSound()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Toggle Sound">
+                                <span id="hero-sound-icon" class="material-symbols-outlined text-[18px]">volume_off</span>
+                            </button>
+                            <button onclick="window.pickRandomHeroVideo()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Next Random Video">
+                                <span class="material-symbols-outlined text-[18px]">shuffle</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Gradient Overlay & Bottom Info Bar -->
-                <div class="absolute bottom-0 inset-x-0 z-20 p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between text-white">
-                    <div class="min-w-0 pr-3">
-                        <p class="text-[10px] uppercase font-bold text-slate-300 tracking-wider">FE Rapid Lesson</p>
-                        <h4 id="hero-video-title" class="text-xs sm:text-sm font-bold text-white truncate drop-shadow-md">Basic Rules of Derivatives</h4>
+                <!-- Flanked Upcoming Static Thumbnail Previews -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between px-1">
+                        <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[14px] text-pink-500">queue_music</span>
+                            Up Next (Click to play)
+                        </span>
+                        <span class="text-[10px] font-semibold text-slate-400">Interactive Previews</span>
                     </div>
-                    <div class="flex items-center gap-2 shrink-0">
-                        <button id="hero-video-sound-btn" onclick="window.toggleHeroVideoSound()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Toggle Sound">
-                            <span id="hero-sound-icon" class="material-symbols-outlined text-[18px]">volume_off</span>
-                        </button>
-                        <button onclick="window.pickRandomHeroVideo()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Next Random Video">
-                            <span class="material-symbols-outlined text-[18px]">shuffle</span>
-                        </button>
+                    <div class="grid grid-cols-2 gap-2.5" id="hero-flanked-previews">
+                        <!-- Flanked Thumbnail Card 1 -->
+                        <div id="flanked-card-0" onclick="window.playFlankedHeroVideo(0)" class="relative h-20 sm:h-24 rounded-2xl overflow-hidden border-2 border-white/80 bg-slate-900 shadow-md hover:shadow-xl hover:border-pink-500/70 transition-all duration-200 cursor-pointer group flex items-end">
+                            <img id="flanked-img-0" src="assets/thumbnails/Product_and_Quotient_Rules_for_Derivatives.jpg" alt="Upcoming Lesson" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+                            
+                            <!-- Play Icon Badge -->
+                            <div class="absolute top-2 right-2 w-6 h-6 rounded-full bg-black/60 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white group-hover:bg-pink-500 transition-colors shadow">
+                                <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+                            </div>
+
+                            <div class="relative z-10 p-2 sm:p-2.5 w-full min-w-0">
+                                <span id="flanked-subject-0" class="text-[9px] font-bold text-amber-300 uppercase tracking-wider block truncate">Mathematics</span>
+                                <h5 id="flanked-title-0" class="text-[11px] sm:text-xs font-bold text-white truncate drop-shadow-sm leading-tight">Product & Quotient Rules</h5>
+                            </div>
+                        </div>
+
+                        <!-- Flanked Thumbnail Card 2 -->
+                        <div id="flanked-card-1" onclick="window.playFlankedHeroVideo(1)" class="relative h-20 sm:h-24 rounded-2xl overflow-hidden border-2 border-white/80 bg-slate-900 shadow-md hover:shadow-xl hover:border-pink-500/70 transition-all duration-200 cursor-pointer group flex items-end">
+                            <img id="flanked-img-1" src="assets/thumbnails/Trigonometric_identities.jpg" alt="Upcoming Lesson" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+                            
+                            <!-- Play Icon Badge -->
+                            <div class="absolute top-2 right-2 w-6 h-6 rounded-full bg-black/60 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white group-hover:bg-pink-500 transition-colors shadow">
+                                <span class="material-symbols-outlined text-[14px]">play_arrow</span>
+                            </div>
+
+                            <div class="relative z-10 p-2 sm:p-2.5 w-full min-w-0">
+                                <span id="flanked-subject-1" class="text-[9px] font-bold text-amber-300 uppercase tracking-wider block truncate">Mathematics</span>
+                                <h5 id="flanked-title-1" class="text-[11px] sm:text-xs font-bold text-white truncate drop-shadow-sm leading-tight">Trigonometric Identities</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,7 +200,7 @@
                     <p class="text-xs sm:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider">Disciplines</p>
                 </div>
                 <div class="text-center pt-4 sm:pt-0 sm:pl-4">
-                    <h3 class="font-space text-3xl sm:text-4xl font-black text-dark-slate">200+</h3>
+                    <h3 class="font-space text-3xl sm:text-4xl font-black text-dark-slate">1,350+</h3>
                     <p class="text-xs sm:text-sm font-bold text-slate-500 mt-1 uppercase tracking-wider">Short Videos</p>
                 </div>
             </div>
@@ -865,7 +915,7 @@
             {
                 id: "ball-bearings",
                 title: "Deep Groove Ball Bearings",
-                file: "Ball Bearings.png",
+                file: "Ball Bearings.webp",
                 topic: "Machine Elements & Tribology",
                 formula: "L_{10} = (C / P)^p",
                 description: "Supports combined radial and axial thrust loads with minimal friction in rotating machinery shafts.",
@@ -874,7 +924,7 @@
             {
                 id: "bourdon-tube",
                 title: "Bourdon Tube Pressure Gage",
-                file: "Bourdon tube Pressure Gage.png",
+                file: "Bourdon tube Pressure Gage.webp",
                 topic: "Fluid Statics & Pressure Measurement",
                 formula: "P_{abs} = P_{atm} + P_{gage}",
                 description: "C-shaped elastic tube straightens under internal fluid pressure to rotate the pointer over a calibrated scale.",
@@ -883,90 +933,90 @@
             {
                 id: "centrifugal-pump",
                 title: "Centrifugal Pump Impeller & Volute",
-                file: "Centrifugal Pump.png",
+                file: "Centrifugal Pump.webp",
                 topic: "Turbomachinery & Fluid Power",
-                formula: "H = \frac{P}{\gamma} + \frac{v^2}{2g} + z",
+                formula: "H = \\frac{P}{\\gamma} + \\frac{v^2}{2g} + z",
                 description: "Converts rotational mechanical energy into hydrodynamic energy to transport fluids through piping networks.",
                 disciplines: ["Mechanical", "Civil", "Chemical", "Environmental", "Other"]
             },
             {
                 id: "construction-crane",
                 title: "Construction Tower Crane",
-                file: "Construction Crane.png",
+                file: "Construction Crane.webp",
                 topic: "Structural Statics & Equilibrium",
-                formula: "\sum F_x = 0, \; \sum F_y = 0, \; \sum M_o = 0",
+                formula: "\\sum F_x = 0, \\; \\sum F_y = 0, \\; \\sum M_o = 0",
                 description: "Counterweighted truss lattice structure engineered for heavy vertical lifting and rotational equilibrium.",
                 disciplines: ["Civil", "Mechanical", "Other"]
             },
             {
                 id: "flanged-couplings",
                 title: "Flanged Shaft Coupling",
-                file: "Flanged Couplings.png",
+                file: "Flanged Couplings.webp",
                 topic: "Mechanical Design & Bolt Shear",
-                formula: "\tau = \frac{T \cdot r}{J}, \; \tau_{bolt} = \frac{2T}{n \cdot \pi d^2 R}",
+                formula: "\\tau = \\frac{T \\cdot r}{J}, \\; \\tau_{bolt} = \\frac{2T}{n \\cdot \\pi d^2 R}",
                 description: "Rigid flange coupling connecting co-axial rotating shafts to transmit continuous torsional power.",
                 disciplines: ["Mechanical", "Industrial", "Other"]
             },
             {
                 id: "heat-exchangers",
                 title: "Counter-Flow Heat Exchanger",
-                file: "Heat Exchangers.png",
+                file: "Heat Exchangers.webp",
                 topic: "Heat Transfer & Thermal Systems",
-                formula: "\dot{Q} = U A \Delta T_{lm}",
+                formula: "\\dot{Q} = U A \\Delta T_{lm}",
                 description: "Facilitates rapid thermal energy exchange between two fluid streams without direct contact or intermixing.",
                 disciplines: ["Mechanical", "Chemical", "Environmental", "Other"]
             },
             {
                 id: "lvdt",
                 title: "LVDT Displacement Transducer",
-                file: "LVDT.png",
+                file: "LVDT.webp",
                 topic: "Measurements, Transducers & Control",
-                formula: "V_{out} = k \cdot x \cdot \sin(\omega t)",
+                formula: "V_{out} = k \\cdot x \\cdot \\sin(\\omega t)",
                 description: "Linear variable differential transformer converting micro-displacement into a linear AC electrical signal.",
                 disciplines: ["Electrical and Computer", "Mechanical", "Industrial", "Other"]
             },
             {
                 id: "piston-cylinder",
                 title: "Piston-Cylinder Assembly",
-                file: "Piston-Cyclinder Assembly.png",
+                file: "Piston-Cyclinder Assembly.webp",
                 topic: "Thermodynamics & Boundary Work",
-                formula: "W = \int P \, dV, \; \Delta U = Q - W",
+                formula: "W = \\int P \\, dV, \\; \\Delta U = Q - W",
                 description: "Fundamental thermodynamic control mass demonstrating expansion work, compression, and thermodynamic power cycles.",
                 disciplines: ["Mechanical", "Chemical", "Other"]
             },
             {
                 id: "rivetted-joints",
                 title: "Riveted Structural Lap Joint",
-                file: "Rivetted Joints.png",
+                file: "Rivetted Joints.webp",
                 topic: "Mechanics of Materials & Structural Design",
-                formula: "\tau = \frac{P}{A_{shear}}, \; \sigma_b = \frac{P}{t \cdot d}",
+                formula: "\\tau = \\frac{P}{A_{shear}}, \\; \\sigma_b = \\frac{P}{t \\cdot d}",
                 description: "Permanent mechanical fastening transferring shear, tensile, and bearing loads between structural plates.",
                 disciplines: ["Civil", "Mechanical", "Other"]
             },
             {
                 id: "strain-gage",
                 title: "Electrical Resistance Strain Gage",
-                file: "Strain Gage.png",
+                file: "Strain Gage.webp",
                 topic: "Experimental Stress Analysis & Circuits",
-                formula: "\frac{\Delta R}{R} = S_g \cdot \epsilon, \; V_o = V_s \left(\frac{R_1}{R_1+R_2} - \frac{R_4}{R_3+R_4}\right)",
+                formula: "\\frac{\\Delta R}{R} = S_g \\cdot \\epsilon, \\; V_o = V_s \\left(\\frac{R_1}{R_1+R_2} - \\frac{R_4}{R_3+R_4}\\right)",
                 description: "Metallic foil grid transducer measuring minute mechanical surface strain via proportional resistance changes.",
                 disciplines: ["Electrical and Computer", "Mechanical", "Civil", "Industrial", "Other"]
             },
             {
                 id: "transformers",
                 title: "Electrical Power Transformer",
-                file: "Transformers.png",
+                file: "Transformers.webp",
                 topic: "Electromagnetics & AC Power Systems",
-                formula: "\frac{V_p}{V_s} = \frac{N_p}{N_s} = \frac{I_s}{I_p}",
+                formula: "\\frac{V_p}{V_s} = \\frac{N_p}{N_s} = \\frac{I_s}{I_p}",
                 description: "Passive magnetic core device transferring electrical energy between circuits through mutual induction.",
                 disciplines: ["Electrical and Computer", "Other"]
             },
             {
                 id: "u-tube-manometer",
                 title: "Differential U-Tube Manometer",
-                file: "U-tube Manometer.png",
+                file: "U-tube Manometer.webp",
                 topic: "Fluid Statics & Hydrostatics",
-                formula: "P_1 - P_2 = (\rho_m - \rho_f) g h",
+                formula: "P_1 - P_2 = (\\rho_m - \\rho_f) g h",
                 description: "Measures fluid pressure differentials by balancing column heights against a known reference fluid density.",
                 disciplines: ["Mechanical", "Civil", "Chemical", "Environmental", "Other"]
             }
@@ -1119,69 +1169,183 @@
         }
 
         // =========================================================================
-        // RANDOM FEATURED CONCEPT VIDEO (MATH, PROBABILITY, ECONOMICS, ETHICS)
+        // UNRESTRICTED MULTI-DISCIPLINARY FE CONCEPT VIDEOS (ALL DISCIPLINES & SUBJECTS)
+        // WITH INTERACTIVE STATIC THUMBNAIL PREVIEWS
         // =========================================================================
         const HERO_VIDEOS = [
-            { subject: "Mathematics", title: "Basic Rules of Derivatives", url: "assets/videos/Basic_rules_of_derivatives.mp4" },
-            { subject: "Mathematics", title: "Product & Quotient Rules for Derivatives", url: "assets/videos/Product_and_Quotient_Rules_for_Derivatives.mp4" },
-            { subject: "Mathematics", title: "Fundamental Trigonometric Identities", url: "assets/videos/Trigonometric_identities.mp4" },
-            { subject: "Mathematics", title: "Radius of Curvature Formula", url: "assets/videos/Radius_of_Curvature_Formula_in_Terms_of_First_and_Second_Derivatives.mp4" },
-            { subject: "Mathematics", title: "Gradient Vector & Directional Derivative", url: "assets/videos/Gradient_Vector_and_Directional_Derivative.mp4" },
-            { subject: "Mathematics", title: "Newton's Method for Root Extraction", url: "assets/videos/Newton_s_Method_for_Root_Extraction.mp4" },
-            { subject: "Mathematics", title: "Matrix Multiplication & Compatibility", url: "assets/videos/Matrix_Multiplication_and_Dimension_Compatibility.mp4" },
-            { subject: "Mathematics", title: "Properties and Geometry of an Ellipse", url: "assets/videos/Important_Points_of_an_Ellipse.mp4" },
-            { subject: "Probability & Statistics", title: "Normal Distribution vs. t-Distribution", url: "assets/videos/When_to_Use_Normal_Distribution_vs_t_Distribution.mp4" },
-            { subject: "Probability & Statistics", title: "Variance and Standard Deviation", url: "assets/videos/Variance_and_Standard_Deviation.mp4" },
-            { subject: "Probability & Statistics", title: "Properties of Normal Distribution", url: "assets/videos/Properties_of_Normal_Distribution.mp4" },
-            { subject: "Probability & Statistics", title: "Probability Density Function", url: "assets/videos/Probability_Density_Function.mp4" },
-            { subject: "Probability & Statistics", title: "Binomial Distribution", url: "assets/videos/Binomial_Distribution.mp4" },
-            { subject: "Probability & Statistics", title: "Linear Combinations of Random Variables", url: "assets/videos/Expected_Value_and_Variance_of_a_Linear_Combination_of_Variables.mp4" },
-            { subject: "Engineering Economics", title: "Compound Interest Formula", url: "assets/videos/Compound_Interest_Formula.mp4" },
-            { subject: "Engineering Economics", title: "Nominal vs. Effective Annual Interest Rate", url: "assets/videos/Nominal_vs_Effective_Annual_Interest_Rate.mp4" },
-            { subject: "Engineering Economics", title: "Capitalized Cost for Infinite Project Life", url: "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4" },
-            { subject: "Engineering Economics", title: "Benefit-Cost Ratio Decision Criterion", url: "assets/videos/Benefit_Cost_Ratio_Decision_Criterion_BC.mp4" },
-            { subject: "Engineering Economics", title: "Straight Line Depreciation Method", url: "assets/videos/Straight_Line_Depreciation_Method.mp4" },
-            { subject: "Ethics & Practice", title: "Whistleblowing & Safety Escalation Protocol", url: "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4" },
-            { subject: "Ethics & Practice", title: "Patents vs. Trade Secrets vs. Copyrights", url: "assets/videos/Intellectual_Property_Patents_vs_Trade_Secrets_vs_Copyrights.mp4" },
-            { subject: "Ethics & Practice", title: "Conflicts of Interest & Mandatory Disclosure", url: "assets/videos/Conflicts_of_Interest_and_Mandatory_Disclosure.mp4" }
+            { subject: "Fluid Mechanics", title: "Orifice", url: "assets/videos/Orifice.mp4", thumb: "assets/thumbnails/Orifice.jpg" },
+            { subject: "Fluid Mechanics", title: "Orifice", url: "assets/videos/Orifice.mp4", thumb: "assets/thumbnails/Orifice.jpg" },
+            { subject: "Fluid Mechanics", title: "Pitot Tube", url: "assets/videos/Pitot_Tube.mp4", thumb: "assets/thumbnails/Pitot_Tube.jpg" },
+            { subject: "Fluid Mechanics", title: "Venturi Meter", url: "assets/videos/Venturi_Meter.mp4", thumb: "assets/thumbnails/Venturi_Meter.jpg" },
+            { subject: "Fluid Mechanics", title: "Specific Gravity", url: "assets/videos/Specific_Gravity.mp4", thumb: "assets/thumbnails/Specific_Gravity.jpg" },
+            { subject: "Thermodynamics", title: "Le Chateliers Principle", url: "assets/videos/Le_Chateliers_Principle_and_Standard_Free_Energy.mp4", thumb: "assets/thumbnails/Le_Chateliers_Principle_and_Standard_Free_Energy.jpg" },
+            { subject: "Thermodynamics", title: "Mayer's Formula for Specific Heats (cp - cv = R)", url: "assets/videos/Meyers_formula_for_specific_heats.mp4", thumb: "assets/thumbnails/Meyers_formula_for_specific_heats.jpg" },
+            { subject: "Thermodynamics", title: "Cyclic Process", url: "assets/videos/Cyclic_Process.mp4", thumb: "assets/thumbnails/Cyclic_Process.jpg" },
+            { subject: "Thermodynamics", title: "First Law of Thermodynamics", url: "assets/videos/First_Law_of_Thermodynamics.mp4", thumb: "assets/thumbnails/First_Law_of_Thermodynamics.jpg" },
+            { subject: "Thermodynamics", title: "Carnot Cycle", url: "assets/videos/Carnot_Cycle.mp4", thumb: "assets/thumbnails/Carnot_Cycle.jpg" },
+            { subject: "Heat Transfer", title: "Heat Transfer Through Composite Plane Wall", url: "assets/videos/Heat_transfer_through_Composite_Plane_Wall.mp4", thumb: "assets/thumbnails/Heat_transfer_through_Composite_Plane_Wall.jpg" },
+            { subject: "Heat Transfer", title: "Conduction through a Cylindrical Wall", url: "assets/videos/Conduction_Through_a_Cylindrical_Wall.mp4", thumb: "assets/thumbnails/Conduction_Through_a_Cylindrical_Wall.jpg" },
+            { subject: "Heat Transfer", title: "Heat Transfer Through Fins (Extended Surfaces)", url: "assets/videos/Heat_transfer_through_Fins.mp4", thumb: "assets/thumbnails/Heat_transfer_through_Fins.jpg" },
+            { subject: "Heat Transfer", title: "Biot Number for Transient Conduction", url: "assets/videos/Biot_Number_for_Transient_Conduction.mp4", thumb: "assets/thumbnails/Biot_Number_for_Transient_Conduction.jpg" },
+            { subject: "Heat Transfer", title: "Thermal Resistance of an Object", url: "assets/videos/Thermal_Resistance_of_an_Object.mp4", thumb: "assets/thumbnails/Thermal_Resistance_of_an_Object.jpg" },
+            { subject: "Statics", title: "First Angle vs. Third Angle Orthographic Projection", url: "assets/videos/First_Angle_vs_Third_Angle_Projection.mp4", thumb: "assets/thumbnails/First_Angle_vs_Third_Angle_Projection.jpg" },
+            { subject: "Statics", title: "Belt Friction", url: "assets/videos/Flat_Belt_Friction_Equation_Capstan_Formula.mp4", thumb: "assets/thumbnails/Flat_Belt_Friction_Equation_Capstan_Formula.jpg" },
+            { subject: "Statics", title: "Centroid of Composite Planar Areas", url: "assets/videos/Centroid_of_Composite_Planar_Areas.mp4", thumb: "assets/thumbnails/Centroid_of_Composite_Planar_Areas.jpg" },
+            { subject: "Statics", title: "Concurrent Forces", url: "assets/videos/Lami's Theorem for Concurrent Forces.mp4", thumb: "assets/thumbnails/Lami's Theorem for Concurrent Forces.jpg" },
+            { subject: "Statics", title: "Two-Force and Three-Force Members", url: "assets/videos/2 to 1 Stress Distribution Method for Deep Loads.mp4", thumb: "assets/thumbnails/2 to 1 Stress Distribution Method for Deep Loads.jpg" },
+            { subject: "Dynamics & Vibrations", title: "Elastic vs. Inelastic Collisions", url: "assets/videos/Elastic_vs_inelastic_collision.mp4", thumb: "assets/thumbnails/Elastic_vs_inelastic_collision.jpg" },
+            { subject: "Dynamics & Vibrations", title: "Principle of Angular Impulse and Momentum", url: "assets/videos/Angular_Impulse_and_Momentum_Principle.mp4", thumb: "assets/thumbnails/Angular_Impulse_and_Momentum_Principle.jpg" },
+            { subject: "Dynamics & Vibrations", title: "Constant Acceleration Motion", url: "assets/videos/Constant_Acceleration_Motion.mp4", thumb: "assets/thumbnails/Constant_Acceleration_Motion.jpg" },
+            { subject: "Dynamics & Vibrations", title: "Instantaneous Velocity and Acceleration", url: "assets/videos/Instantaneous_Velocity_and_Acceleration.mp4", thumb: "assets/thumbnails/Instantaneous_Velocity_and_Acceleration.jpg" },
+            { subject: "Dynamics & Vibrations", title: "Projectile Motion", url: "assets/videos/Projectile_Motion.mp4", thumb: "assets/thumbnails/Projectile_Motion.jpg" },
+            { subject: "Mechanics of Materials", title: "Generalized Hooke’s Law", url: "assets/videos/Generalized_Hookes_Law_3D_Elastic_Stress_Strain.mp4", thumb: "assets/thumbnails/Generalized_Hookes_Law_3D_Elastic_Stress_Strain.jpg" },
+            { subject: "Mechanics of Materials", title: "Poisson's Ratio and Lateral Strain Contraction", url: "assets/videos/Poisson’s Ratio and Lateral Strain Contraction.mp4", thumb: "assets/thumbnails/Poisson’s Ratio and Lateral Strain Contraction.jpg" },
+            { subject: "Mechanics of Materials", title: "Bending Formula", url: "assets/videos/Bending_Formula.mp4", thumb: "assets/thumbnails/Bending_Formula.jpg" },
+            { subject: "Mechanics of Materials", title: "Torsion Formula", url: "assets/videos/Torsion_Formula.mp4", thumb: "assets/thumbnails/Torsion_Formula.jpg" },
+            { subject: "Mechanics of Materials", title: "Euler’s Critical Buckling Load", url: "assets/videos/Eulers_Critical_Buckling_Load.mp4", thumb: "assets/thumbnails/Eulers_Critical_Buckling_Load.jpg" },
+            { subject: "Materials Science", title: "Ceramics (Structure, Properties, and Processing)", url: "assets/videos/Ceramics.mp4", thumb: "assets/thumbnails/Ceramics.jpg" },
+            { subject: "Materials Science", title: "Electrical Properties of Material", url: "assets/videos/Electrical_Properties_of_Material.mp4", thumb: "assets/thumbnails/Electrical_Properties_of_Material.jpg" },
+            { subject: "Materials Science", title: "Hardness of a Material", url: "assets/videos/Hardness_of_a_Material.mp4", thumb: "assets/thumbnails/Hardness_of_a_Material.jpg" },
+            { subject: "Materials Science", title: "Malleability and Ductility", url: "assets/videos/Malleability_and_Ductility.mp4", thumb: "assets/thumbnails/Malleability_and_Ductility.jpg" },
+            { subject: "Materials Science", title: "Stainless Steel", url: "assets/videos/Stainless_Steel.mp4", thumb: "assets/thumbnails/Stainless_Steel.jpg" },
+            { subject: "Machine Design", title: "Equivalent Spring Constant", url: "assets/videos/Springs_in_series_and_springs_in_parallel.mp4", thumb: "assets/thumbnails/Springs_in_series_and_springs_in_parallel.jpg" },
+            { subject: "Machine Design", title: "Types of Springs", url: "assets/videos/Types_of_Springs.mp4", thumb: "assets/thumbnails/Types_of_Springs.jpg" },
+            { subject: "Machine Design", title: "Types of Bearings", url: "assets/videos/Types_of_bearings.mp4", thumb: "assets/thumbnails/Types_of_bearings.jpg" },
+            { subject: "Machine Design", title: "Rolling Element Bearing Rated Life L10", url: "assets/videos/Rolling_Element_Bearing_Rated_Life_L10.mp4", thumb: "assets/thumbnails/Rolling_Element_Bearing_Rated_Life_L10.jpg" },
+            { subject: "Machine Design", title: "Power Screws Lifting Torque and Efficiency", url: "assets/videos/Power_Screws_Lifting_Torque_and_Efficiency.mp4", thumb: "assets/thumbnails/Power_Screws_Lifting_Torque_and_Efficiency.jpg" },
+            { subject: "Electrical & Circuits", title: "Thevenin Theorem", url: "assets/videos/Thevenin_Theorem.mp4", thumb: "assets/thumbnails/Thevenin_Theorem.jpg" },
+            { subject: "Electrical & Circuits", title: "Coulomb’s Law of Electrostatic Force and Field Intensity", url: "assets/videos/Coulombs_Law_in_electrostatics.mp4", thumb: "assets/thumbnails/Coulombs_Law_in_electrostatics.jpg" },
+            { subject: "Electrical & Circuits", title: "Biot-Savart Law for Magnetic Fields", url: "assets/videos/Biot_Savart_Law_for_Magnetic_Fields.mp4", thumb: "assets/thumbnails/Biot_Savart_Law_for_Magnetic_Fields.jpg" },
+            { subject: "Electrical & Circuits", title: "Ohm's Law", url: "assets/videos/Ohms_Law.mp4", thumb: "assets/thumbnails/Ohms_Law.jpg" },
+            { subject: "Electrical & Circuits", title: "Specific Resistance of a Conductor (Resistivity)", url: "assets/videos/Specific_Resistance_of_a_Conductor.mp4", thumb: "assets/thumbnails/Specific_Resistance_of_a_Conductor.jpg" },
+            { subject: "Instrumentation & Controls", title: "Fourier series", url: "assets/videos/Fourier_Series.mp4", thumb: "assets/thumbnails/Fourier_Series.jpg" },
+            { subject: "Instrumentation & Controls", title: "Control Systems", url: "assets/videos/Control_Systems.mp4", thumb: "assets/thumbnails/Control_Systems.jpg" },
+            { subject: "Instrumentation & Controls", title: "Nyquist Theorem", url: "assets/videos/Nyquist_Theorem.mp4", thumb: "assets/thumbnails/Nyquist_Theorem.jpg" },
+            { subject: "Instrumentation & Controls", title: "LVDT", url: "assets/videos/LVDT.mp4", thumb: "assets/thumbnails/LVDT.jpg" },
+            { subject: "Instrumentation & Controls", title: "Piezoelectric Effect", url: "assets/videos/Piezoelectric_effect.mp4", thumb: "assets/thumbnails/Piezoelectric_effect.jpg" },
+            { subject: "Chemical Engineering", title: "Components of a Pneumatic System", url: "assets/videos/Components_of_a_Pneumatic_System.mp4", thumb: "assets/thumbnails/Components_of_a_Pneumatic_System.jpg" },
+            { subject: "Civil & Geotechnical", title: "Volumes of Basic Shapes", url: "assets/videos/Volumes of basic shapes Cylinder cube cone sphere.mp4", thumb: "assets/thumbnails/Volumes of basic shapes Cylinder cube cone sphere.jpg" },
+            { subject: "Civil & Geotechnical", title: "Compass Rule for Closed Traverse Balancing", url: "assets/videos/Compass_Rule_for_Closed_Traverse_Balancing.mp4", thumb: "assets/thumbnails/Compass_Rule_for_Closed_Traverse_Balancing.jpg" },
+            { subject: "Civil & Geotechnical", title: "Stopping Sight Distance (SSD)", url: "assets/videos/Stopping_Sight_Distance.mp4", thumb: "assets/thumbnails/Stopping_Sight_Distance.jpg" },
+            { subject: "Industrial & Operations", title: "Little's Law for Queueing and Work-in-Progress", url: "assets/videos/Littles_Law_for_Queueing_and_Work_in_Progress.mp4", thumb: "assets/thumbnails/Littles_Law_for_Queueing_and_Work_in_Progress.jpg" },
+            { subject: "Industrial & Operations", title: "Work Sampling", url: "assets/videos/Work Sampling Required Observations Sample Size.mp4", thumb: "assets/thumbnails/Work Sampling Required Observations Sample Size.jpg" },
+            { subject: "Environmental Engineering", title: "Carcinogens", url: "assets/videos/Carcinogens.mp4", thumb: "assets/thumbnails/Carcinogens.jpg" },
+            { subject: "Environmental Engineering", title: "Industrial Hygiene Exposure Limits (PEL/TLV)", url: "assets/videos/Exposure_Limits.mp4", thumb: "assets/thumbnails/Exposure_Limits.jpg" },
+            { subject: "Engineering Economics", title: "Capitalized Cost for Infinite Project Life", url: "assets/videos/Capitalized_Cost_for_Infinite_Project_Life.mp4", thumb: "assets/thumbnails/Capitalized_Cost_for_Infinite_Project_Life.jpg" },
+            { subject: "Engineering Economics", title: "Sunk Costs", url: "assets/videos/Sunk_Costs.mp4", thumb: "assets/thumbnails/Sunk_Costs.jpg" },
+            { subject: "Engineering Economics", title: "Benefit-Cost Ratio (B/C) Decision Criterion", url: "assets/videos/Benefit_Cost_Ratio_Decision_Criterion_BC.mp4", thumb: "assets/thumbnails/Benefit_Cost_Ratio_Decision_Criterion_BC.jpg" },
+            { subject: "Engineering Economics", title: "Overhead Analysis", url: "assets/videos/Overhead_Analysis.mp4", thumb: "assets/thumbnails/Overhead_Analysis.jpg" },
+            { subject: "Engineering Economics", title: "Simple Payback Period", url: "assets/videos/Simple_Payback_Period.mp4", thumb: "assets/thumbnails/Simple_Payback_Period.jpg" },
+            { subject: "Ethics & Practice", title: "Ethical and Legal Considerations in Engineering Practice", url: "assets/videos/Ethical_and_Legal_Considerations.mp4", thumb: "assets/thumbnails/Ethical_and_Legal_Considerations.jpg" },
+            { subject: "Ethics & Practice", title: "NCEES Model Rules of Professional Conduct", url: "assets/videos/NCEES_Model_Rules_of_Professional_Conduct.mp4", thumb: "assets/thumbnails/NCEES_Model_Rules_of_Professional_Conduct.jpg" },
+            { subject: "Ethics & Practice", title: "Professional and Technical Societies", url: "assets/videos/Professional_and_Technical_Societies.mp4", thumb: "assets/thumbnails/Professional_and_Technical_Societies.jpg" },
+            { subject: "Ethics & Practice", title: "Whistleblowing and Public Safety Escalation Protocol", url: "assets/videos/Whistleblowing_and_Public_Safety_Escalation_Protocol.mp4", thumb: "assets/thumbnails/Whistleblowing_and_Public_Safety_Escalation_Protocol.jpg" },
+            { subject: "Ethics & Practice", title: "Design Patent vs. Utility Patent", url: "assets/videos/Design_patent_vs_utility_patent.mp4", thumb: "assets/thumbnails/Design_patent_vs_utility_patent.jpg" },
+            { subject: "Mathematics", title: "Straight Lines Slope-Point Form", url: "assets/videos/Straight_Lines_Slope_Point_Form.mp4", thumb: "assets/thumbnails/Straight_Lines_Slope_Point_Form.jpg" },
+            { subject: "Mathematics", title: "Slope Intercept Form", url: "assets/videos/Slope_Intercept_Form.mp4", thumb: "assets/thumbnails/Slope_Intercept_Form.jpg" },
+            { subject: "Mathematics", title: "Parallel and Perpendicular Lines", url: "assets/videos/Parallel_and_Perpendicular_Lines.mp4", thumb: "assets/thumbnails/Parallel_and_Perpendicular_Lines.jpg" },
+            { subject: "Mathematics", title: "Angle Between Lines with Slopes m1 and m2", url: "assets/videos/The_Angle_Between_Lines_with_Slopes_m1_and_m2.mp4", thumb: "assets/thumbnails/The_Angle_Between_Lines_with_Slopes_m1_and_m2.jpg" },
+            { subject: "Mathematics", title: "Distance Formula", url: "assets/videos/Distance_Formula.mp4", thumb: "assets/thumbnails/Distance_Formula.jpg" },
+            { subject: "Probability & Statistics", title: "Surface Areas of Basic Shapes: Cylinder, Cube, Cone, Sphere", url: "assets/videos/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.mp4", thumb: "assets/thumbnails/Surface_Areas_of_Basic_Shapes_Cylinder_Cube_Cone_Sphere.jpg" },
+            { subject: "Probability & Statistics", title: "Logarithmic Identities", url: "assets/videos/Logarithmic_Identities.mp4", thumb: "assets/thumbnails/Logarithmic_Identities.jpg" },
+            { subject: "Probability & Statistics", title: "Concept of Complex Numbers Explainer", url: "assets/videos/Concept_of_Complex_Numbers.mp4", thumb: "assets/thumbnails/Concept_of_Complex_Numbers.jpg" },
+            { subject: "Probability & Statistics", title: "Trigonometric Addition and Subtraction Formulas", url: "assets/videos/Trigonometric_Addition_Formulas.mp4", thumb: "assets/thumbnails/Trigonometric_Addition_Formulas.jpg" },
+            { subject: "Probability & Statistics", title: "Law of Sines", url: "assets/videos/Law_of_Sines.mp4", thumb: "assets/thumbnails/Law_of_Sines.jpg" },
+            { subject: "Chemical Engineering", title: "Kremser Equation & Absorption Factor", url: "assets/videos/Absorption_and_Stripping_Factors_and_Kremser_Equation.mp4", thumb: "assets/thumbnails/Absorption_and_Stripping_Factors_and_Kremser_Equation.jpg" },
+            { subject: "Chemical Engineering", title: "Arrhenius Reaction Kinetics & Rate Constants", url: "assets/videos/Arrhenius_Temperature_Dependency_of_Rate_Constants.mp4", thumb: "assets/thumbnails/Arrhenius_Temperature_Dependency_of_Rate_Constants.jpg" },
+            { subject: "Chemical Engineering", title: "Batch Chemical Reactor Reaction Time", url: "assets/videos/Batch_Chemical_Reactor_Reaction_Time_Integral.mp4", thumb: "assets/thumbnails/Batch_Chemical_Reactor_Reaction_Time_Integral.jpg" },
+            { subject: "Chemical Engineering", title: "Binary Phase Diagram & Lever Rule", url: "assets/videos/Binary_Phase_Diagram_Lever_Rule.mp4", thumb: "assets/thumbnails/Binary_Phase_Diagram_Lever_Rule.jpg" },
+            { subject: "Chemical Engineering", title: "Van der Waals Equation for Real Gases", url: "assets/videos/Van_der_Waals_Equation_of_State_for_Real_Gases.mp4", thumb: "assets/thumbnails/Van_der_Waals_Equation_of_State_for_Real_Gases.jpg" },
+            { subject: "Civil & Geotechnical", title: "Atterberg Limits & Plasticity Index", url: "assets/videos/Atterberg_Limits_and_Plasticity_Index.mp4", thumb: "assets/thumbnails/Atterberg_Limits_and_Plasticity_Index.jpg" },
+            { subject: "Civil & Geotechnical", title: "USCS Soil Classification Criteria", url: "assets/videos/Unified_Soil_Classification_System_USCS_Grain_Size_Criteria.mp4", thumb: "assets/thumbnails/Unified_Soil_Classification_System_USCS_Grain_Size_Criteria.jpg" },
+            { subject: "Civil & Geotechnical", title: "Flow Nets & 2D Seepage Analysis", url: "assets/videos/Two_Dimensional_Seepage_through_Flow_Nets.mp4", thumb: "assets/thumbnails/Two_Dimensional_Seepage_through_Flow_Nets.jpg" },
+            { subject: "Civil & Geotechnical", title: "Triaxial Shear Tests (CD vs. CU vs. UU)", url: "assets/videos/Triaxial_Shear_Tests_CD_vs_CU_vs_UU_Test_Distinctions.mp4", thumb: "assets/thumbnails/Triaxial_Shear_Tests_CD_vs_CU_vs_UU_Test_Distinctions.jpg" },
+            { subject: "Civil & Geotechnical", title: "AASHTO Flexible Pavement Structural Number", url: "assets/videos/AASHTO_Flexible_Pavement_Structural_Number_SN_Equation.mp4", thumb: "assets/thumbnails/AASHTO_Flexible_Pavement_Structural_Number_SN_Equation.jpg" },
+            { subject: "Environmental Engineering", title: "Activated Sludge Mean Cell Residence Time", url: "assets/videos/Activated_Sludge_Mean_Cell_Residence_Time.mp4", thumb: "assets/thumbnails/Activated_Sludge_Mean_Cell_Residence_Time.jpg" },
+            { subject: "Environmental Engineering", title: "Breakpoint Chlorination Curve & Residuals", url: "assets/videos/Water_Chlorination_Breakpoint_Curve_and_Free_vs_Combined_Residuals.mp4", thumb: "assets/thumbnails/Water_Chlorination_Breakpoint_Curve_and_Free_vs_Combined_Residuals.jpg" },
+            { subject: "Environmental Engineering", title: "Atmospheric Lapse Rates & Plume Behavior", url: "assets/videos/Atmospheric_Lapse_Rates_and_Plume_Behavior.mp4", thumb: "assets/thumbnails/Atmospheric_Lapse_Rates_and_Plume_Behavior.jpg" },
+            { subject: "Environmental Engineering", title: "Aquifer Transmissivity & Storage Coefficient", url: "assets/videos/Aquifer_Transmissivity_and_Storage_Coefficient.mp4", thumb: "assets/thumbnails/Aquifer_Transmissivity_and_Storage_Coefficient.jpg" },
+            { subject: "Environmental Engineering", title: "Air Pollutant Unit Conversion (ppm to ug/m3)", url: "assets/videos/Air_Pollutant_Concentration_Conversion_ppm_to_ug_m3.mp4", thumb: "assets/thumbnails/Air_Pollutant_Concentration_Conversion_ppm_to_ug_m3.jpg" },
+            { subject: "Industrial Engineering", title: "Assembly Line Balancing & Balance Delay", url: "assets/videos/Assembly_Line_Balancing_Efficiency_Balance_Delay.mp4", thumb: "assets/thumbnails/Assembly_Line_Balancing_Efficiency_Balance_Delay.jpg" },
+            { subject: "Industrial Engineering", title: "Anthropometric Principles for Ergonomics", url: "assets/videos/Anthropometric_Design_Principles_for_Ergonomics.mp4", thumb: "assets/thumbnails/Anthropometric_Design_Principles_for_Ergonomics.jpg" },
+            { subject: "Industrial Engineering", title: "5S Lean Workplace Methodology", url: "assets/videos/5S_Lean_Methodology_Sort_Set_in_Order_Shine_Standardize_Sustain.mp4", thumb: "assets/thumbnails/5S_Lean_Methodology_Sort_Set_in_Order_Shine_Standardize_Sustain.jpg" },
+            { subject: "Industrial Engineering", title: "Wright's Learning Curve Model", url: "assets/videos/Wrights_Learning_Curve_Model.mp4", thumb: "assets/thumbnails/Wrights_Learning_Curve_Model.jpg" },
+            { subject: "Industrial Engineering", title: "Work Sampling Required Observations", url: "assets/videos/Work_Sampling_Required_Observations_Sample_Size.mp4", thumb: "assets/thumbnails/Work_Sampling_Required_Observations_Sample_Size.jpg" }
         ];
 
-        let lastHeroVideoIdx = -1;
+        let currentHeroVideoIdx = -1;
+        let currentFlankedIndices = [1, 2];
         let isHeroVideoListenerAttached = false;
 
-        window.pickRandomHeroVideo = function() {
+        function updateFlankedPreviews(activeIdx) {
+            currentFlankedIndices = [
+                (activeIdx + 1) % HERO_VIDEOS.length,
+                (activeIdx + 2) % HERO_VIDEOS.length
+            ];
+
+            currentFlankedIndices.forEach((fIdx, slot) => {
+                const item = HERO_VIDEOS[fIdx];
+                const imgEl = document.getElementById(`flanked-img-${slot}`);
+                const titleEl = document.getElementById(`flanked-title-${slot}`);
+                const subjectEl = document.getElementById(`flanked-subject-${slot}`);
+
+                if (imgEl && item.thumb) {
+                    imgEl.src = item.thumb;
+                    imgEl.alt = item.title;
+                }
+                if (titleEl) titleEl.innerText = item.title;
+                if (subjectEl) subjectEl.innerText = item.subject;
+            });
+        }
+
+        window.playHeroVideoByIndex = function(idx) {
             const videoEl = document.getElementById('hero-preview-video');
             const titleEl = document.getElementById('hero-video-title');
             const subjectEl = document.getElementById('hero-video-subject-tag');
             if (!videoEl || HERO_VIDEOS.length === 0) return;
 
-            // Automatically advance to another video when current video finishes
+            // Automatically advance to next lesson when current video finishes
             if (!isHeroVideoListenerAttached) {
                 videoEl.addEventListener('ended', () => {
-                    window.pickRandomHeroVideo();
+                    const nextIdx = (currentHeroVideoIdx + 1) % HERO_VIDEOS.length;
+                    window.playHeroVideoByIndex(nextIdx);
                 });
                 isHeroVideoListenerAttached = true;
             }
 
-            // Pick a different random video from the common subjects pool
-            let randIdx = Math.floor(Math.random() * HERO_VIDEOS.length);
-            if (HERO_VIDEOS.length > 1 && randIdx === lastHeroVideoIdx) {
-                randIdx = (randIdx + 1) % HERO_VIDEOS.length;
-            }
-            lastHeroVideoIdx = randIdx;
-            const rand = HERO_VIDEOS[randIdx];
+            currentHeroVideoIdx = (idx + HERO_VIDEOS.length) % HERO_VIDEOS.length;
+            const current = HERO_VIDEOS[currentHeroVideoIdx];
 
             // Retain user's chosen sound preference (muted or unmuted)
             const wasMuted = videoEl.muted !== undefined ? videoEl.muted : true;
-            videoEl.src = rand.url;
+            videoEl.src = current.url;
             videoEl.muted = wasMuted;
             videoEl.load();
             const playPromise = videoEl.play();
             if (playPromise !== undefined) {
                 playPromise.catch(() => {});
             }
-            if (titleEl) titleEl.innerText = rand.title;
-            if (subjectEl) subjectEl.innerText = rand.subject;
+
+            if (titleEl) titleEl.innerText = current.title;
+            if (subjectEl) subjectEl.innerText = current.subject;
+
+            // Dynamically refresh upcoming static thumbnail previews
+            updateFlankedPreviews(currentHeroVideoIdx);
+        };
+
+        window.playFlankedHeroVideo = function(slot) {
+            const targetIdx = currentFlankedIndices[slot];
+            if (targetIdx !== undefined) {
+                window.playHeroVideoByIndex(targetIdx);
+            }
+        };
+
+        window.pickRandomHeroVideo = function() {
+            let randIdx = Math.floor(Math.random() * HERO_VIDEOS.length);
+            if (HERO_VIDEOS.length > 1 && randIdx === currentHeroVideoIdx) {
+                randIdx = (randIdx + 1) % HERO_VIDEOS.length;
+            }
+            window.playHeroVideoByIndex(randIdx);
         };
 
         window.toggleHeroVideoSound = function() {

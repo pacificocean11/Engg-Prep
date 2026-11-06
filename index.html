@@ -273,9 +273,68 @@
         </div>
 
         <!-- Total Points Badge -->
-        <div id="header-points-badge" onclick="navigateTo && navigateTo('achievements-view')" class="flex items-center gap-1 px-1.5 sm:px-2.5 py-1 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-[10px] sm:text-xs font-bold cursor-pointer hover:bg-amber-500/20 active:scale-95 transition-all shadow-sm shrink-0" title="Total Points - Click to view Achievements & Leaderboard">
+        <div id="header-points-badge" onclick="window.leaderboardPreviousPage = (window.state && window.state.currentPage) || 'dashboard'; if (window.navigateTo) window.navigateTo('leaderboard');" class="flex items-center gap-1 px-1.5 sm:px-2.5 py-1 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-[10px] sm:text-xs font-bold cursor-pointer hover:bg-amber-500/20 active:scale-95 transition-all shadow-sm shrink-0" title="Total Points - Click to view Global Standings">
             <span class="material-symbols-outlined text-[14px] sm:text-[16px] text-amber-500" style="font-variation-settings:'FILL' 1;">stars</span>
             <span id="header-points-count" class="font-bold">0</span><span class="hidden sm:inline font-bold text-[10px] sm:text-xs">&nbsp;pts</span>
+        </div>
+
+        <!-- Interactive Labs Dropdown Menu -->
+        <div class="relative inline-block text-left" id="header-interactive-labs-container">
+            <button id="btn-labs-dropdown" onclick="document.getElementById('labs-dropdown-menu').classList.toggle('hidden')" class="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-xl bg-gradient-to-r from-pink-500/10 via-amber-500/10 to-cyan-500/10 hover:from-pink-500/20 hover:to-cyan-500/20 text-slate-800 dark:text-slate-100 border border-slate-300/80 dark:border-slate-700/80 text-[10px] sm:text-xs font-bold transition-all shadow-sm shrink-0 active:scale-95 cursor-pointer" title="Open Interactive Tactile Visualizers">
+                <span class="material-symbols-outlined text-[15px] sm:text-[17px] text-[#FF006E]">science</span>
+                <span class="hidden md:inline font-mono">Interactive Labs</span>
+                <span class="material-symbols-outlined text-[12px] opacity-70">expand_more</span>
+            </button>
+            <div id="labs-dropdown-menu" class="hidden absolute right-0 mt-2 w-64 rounded-2xl glass-card bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200 dark:border-slate-800 shadow-2xl p-2 z-[10080] space-y-1 font-sans text-xs">
+                <div class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400 font-mono">
+                    FE Interactive Labs (60 FPS)
+                </div>
+                <a href="mohr-circle.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-primary transition-all">
+                    <span class="w-7 h-7 rounded-lg bg-pink-500/10 text-primary flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-base">change_circle</span>
+                    </span>
+                    <div>
+                        <span class="block font-bold">Mohr's Circle of Stress</span>
+                        <span class="text-[10px] text-slate-400 block">Stress transformation & principal planes</span>
+                    </div>
+                </a>
+                <a href="beam-diagram.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-secondary transition-all">
+                    <span class="w-7 h-7 rounded-lg bg-amber-500/10 text-secondary flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-base">horizontal_rule</span>
+                    </span>
+                    <div>
+                        <span class="block font-bold">Beam Shear & Moment</span>
+                        <span class="text-[10px] text-slate-400 block">V(x) & M(x) with live load dragging</span>
+                    </div>
+                </a>
+                <a href="psychrometric-chart.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-cyan-500 transition-all">
+                    <span class="w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-500 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-base">thermostat</span>
+                    </span>
+                    <div>
+                        <span class="block font-bold">Psychrometric Chart</span>
+                        <span class="text-[10px] text-slate-400 block">HVAC & 6 moist-air property isolines</span>
+                    </div>
+                </a>
+                <a href="truss-inspector.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-emerald-500 transition-all">
+                    <span class="w-7 h-7 rounded-lg bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-base">account_tree</span>
+                    </span>
+                    <div>
+                        <span class="block font-bold">Truss Zero-Force Inspector</span>
+                        <span class="text-[10px] text-slate-400 block">Click-to-test Method of Joints</span>
+                    </div>
+                </a>
+                <a href="rlc-circuit.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-pink-500 transition-all">
+                    <span class="w-7 h-7 rounded-lg bg-pink-500/10 text-pink-500 flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-base">graphic_eq</span>
+                    </span>
+                    <div>
+                        <span class="block font-bold">RLC Resonance & Bode</span>
+                        <span class="text-[10px] text-slate-400 block">Bode plot & dual-trace oscilloscope</span>
+                    </div>
+                </a>
+            </div>
         </div>
 
         <!-- Dark Mode Toggle -->
