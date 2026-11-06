@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beam Shear & Moment Diagram Visualizer | ENGG.tv</title>
+    <meta name="description" content="Tactile interactive Shear Force & Bending Moment diagram generator for FE Civil, Mechanical, and Statics exam prep.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF006E",
+                        secondary: "#FDA60A",
+                        "dark-slate": "#0f172a"
+                    },
+                    fontFamily: {
+                        sans: ["Lexend", "sans-serif"],
+                        space: ["Space Grotesk", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.6);
+        }
+        .hud-border {
+            box-shadow: 0 0 25px -5px rgba(253, 166, 10, 0.15);
+        }
+        input[type=range] {
+            accent-color: #FDA60A;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-[#070b14] text-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200">
+
+    <!-- Top Navigation Header -->
+    <header class="w-full px-4 sm:px-8 py-3.5 border-b border-slate-200/80 dark:border-slate-800/80 glass-panel sticky top-0 z-50 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-600 flex items-center justify-center text-white shadow-md hover:scale-105 active:scale-95 transition-transform" title="Back to ENGG.tv">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+            </a>
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-secondary font-mono">FE Interactive Laboratory</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">Statics & Mechanics</span>
+                </div>
+                <h1 class="font-space text-lg sm:text-xl font-bold tracking-tight leading-none text-slate-900 dark:text-white">
+                    Beam Shear & Bending Moment Visualizer
+                </h1>
+            </div>
+        </div>
+
+        <!-- Center Lab Switcher Pills -->
+        <nav class="hidden md:flex items-center bg-slate-200/70 dark:bg-slate-800/80 p-1 rounded-2xl text-xs font-bold font-mono">
+            <a href="mohr-circle.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Mohr's Circle</a>
+            <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-700 text-secondary shadow-sm">Beam V & M</span>
+            <a href="psychrometric-chart.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Psychrometric</a>
+            <a href="truss-inspector.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Truss Inspector</a>
+            <a href="rlc-circuit.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">RLC & Bode</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Unit Selector -->
+            <div class="flex items-center bg-slate-200/70 dark:bg-slate-800 rounded-xl p-1 text-xs font-bold font-mono">
+                <button id="unit-si" onclick="setUnit('SI')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-secondary transition-all">SI (kN, m)</button>
+                <button id="unit-us" onclick="setUnit('US')" class="px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all">US (kips, ft)</button>
+            </div>
+
+            <!-- Theme Toggle Button -->
+            <button onclick="toggleTheme()" class="w-9 h-9 rounded-xl bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-secondary transition-colors cursor-pointer" title="Toggle Dark/Light Mode">
+                <span id="theme-icon" class="material-symbols-outlined text-lg">dark_mode</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Beam & Load Controls (4 Cols) -->
+        <section class="lg:col-span-4 space-y-5">
+            
+            <!-- Exam Presets -->
+            <div class="glass-panel rounded-2xl p-4 sm:p-5 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm text-secondary">tune</span>
+                        Standard FE Loading Presets
+                    </span>
+                    <button onclick="resetDefaults()" class="text-[11px] font-semibold text-secondary hover:underline">Reset</button>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                    <button onclick="applyPreset('center-point')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Center Point Load</span>
+                        <span class="text-[10px] text-slate-400 font-mono">P = 20 kN at L/2</span>
+                    </button>
+                    <button onclick="applyPreset('udl')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Full Uniform Load</span>
+                        <span class="text-[10px] text-slate-400 font-mono">w = 5 kN/m</span>
+                    </button>
+                    <button onclick="applyPreset('combined')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Combined Load</span>
+                        <span class="text-[10px] text-slate-400 font-mono">P + Distributed w</span>
+                    </button>
+                    <button onclick="applyPreset('cantilever')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Cantilever Tip Load</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Fixed at Left End</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Beam Configuration -->
+            <div class="glass-panel rounded-2xl p-5 shadow-sm space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono block">
+                    Beam Geometry & Supports
+                </span>
+
+                <!-- Support Type -->
+                <div class="flex items-center gap-2">
+                    <button id="support-simply" onclick="setSupportType('simply')" class="flex-1 py-1.5 px-3 rounded-xl bg-secondary/10 border border-secondary/40 text-secondary font-bold text-xs transition-all">
+                        Simply Supported
+                    </button>
+                    <button id="support-cantilever" onclick="setSupportType('cantilever')" class="flex-1 py-1.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold text-xs border border-slate-200 dark:border-slate-700 transition-all">
+                        Cantilever (Fixed Left)
+                    </button>
+                </div>
+
+                <!-- Span Length L -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="slider-len" class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                            Span Length (L)
+                        </label>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-len" class="text-secondary">8.0</span>
+                            <span class="text-slate-400 unit-len">m</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-len" min="2" max="16" value="8" step="0.5" class="w-full cursor-pointer" oninput="onBeamParamChange('length', this.value)">
+                </div>
+            </div>
+
+            <!-- Loads Configuration -->
+            <div class="glass-panel rounded-2xl p-5 shadow-sm space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono block">
+                    Applied Loads
+                </span>
+
+                <!-- Point Load P -->
+                <div class="space-y-2 p-3 rounded-xl bg-slate-100/60 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-cyan-500 flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                            Point Load (P)
+                        </span>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-load-p" class="text-cyan-400">20</span>
+                            <span class="text-slate-400 unit-force">kN</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-load-p" min="0" max="60" value="20" step="1" class="w-full cursor-pointer" oninput="onBeamParamChange('loadP', this.value)">
+
+                    <div class="flex items-center justify-between text-xs pt-1">
+                        <span class="text-slate-500 text-[11px]">Position (a):</span>
+                        <span class="font-mono font-bold text-cyan-400"><span id="val-pos-p">4.0</span> <span class="unit-len">m</span></span>
+                    </div>
+                    <input type="range" id="slider-pos-p" min="0" max="8" value="4" step="0.25" class="w-full cursor-pointer" oninput="onBeamParamChange('posP', this.value)">
+                </div>
+
+                <!-- Uniform Distributed Load w -->
+                <div class="space-y-2 p-3 rounded-xl bg-slate-100/60 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-emerald-500 flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            Distributed Load (w)
+                        </span>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-load-w" class="text-emerald-400">5.0</span>
+                            <span class="text-slate-400 unit-dist-force">kN/m</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-load-w" min="0" max="25" value="5" step="0.5" class="w-full cursor-pointer" oninput="onBeamParamChange('loadW', this.value)">
+                </div>
+            </div>
+
+            <!-- NCEES Handbook Citation -->
+            <div class="glass-panel rounded-2xl p-4 shadow-sm text-xs space-y-1.5 border-l-4 border-l-secondary">
+                <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm text-secondary">menu_book</span>
+                    NCEES Reference Handbook v10.4
+                </span>
+                <p class="text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed">
+                    Statics &bull; Section: <em>Beams &bull; Shear & Moment Differential Relations</em> &bull; Page 108
+                </p>
+                <div class="font-mono text-[10px] bg-slate-100 dark:bg-slate-800/80 p-2 rounded-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                    dV / dx = -w(x) &bull; dM / dx = V(x)<br>
+                    &Delta;M = &int; V(x) dx (Area under Shear Diagram)
+                </div>
+            </div>
+        </section>
+
+        <!-- Right: Multi-Stage Diagrams & Telemetry (8 Cols) -->
+        <section class="lg:col-span-8 space-y-5">
+            
+            <!-- Stage 1: Beam Physical Free-Body Diagram Canvas -->
+            <div class="glass-panel rounded-3xl p-4 sm:p-5 shadow-lg hud-border relative space-y-2">
+                <div class="flex items-center justify-between pb-1 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm text-secondary">horizontal_rule</span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200">
+                            Beam Free Body Diagram (FBD)
+                        </h3>
+                    </div>
+                    <div class="flex items-center gap-3 text-[11px] font-mono text-slate-400">
+                        <span>R<sub>A</sub> = <b id="readout-ra" class="text-secondary font-bold">30.0 kN</b></span>
+                        <span id="readout-rb-container">R<sub>B</sub> = <b id="readout-rb" class="text-secondary font-bold">30.0 kN</b></span>
+                    </div>
+                </div>
+                <div class="relative w-full h-44 bg-slate-900/5 dark:bg-slate-950/60 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-800/80">
+                    <canvas id="canvas-beam" width="700" height="176" class="w-full h-full object-contain"></canvas>
+                </div>
+            </div>
+
+            <!-- Stage 2: Shear Force Diagram V(x) Canvas -->
+            <div class="glass-panel rounded-3xl p-4 sm:p-5 shadow-lg relative space-y-2">
+                <div class="flex items-center justify-between pb-1 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200">
+                            Shear Force Diagram V(x)
+                        </h3>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-400">V<sub>max</sub> = <b id="readout-vmax" class="text-cyan-400 font-bold">30.0 kN</b></span>
+                </div>
+                <div class="relative w-full h-48 bg-slate-900/5 dark:bg-slate-950/60 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-800/80">
+                    <canvas id="canvas-shear" width="700" height="192" class="w-full h-full object-contain"></canvas>
+                </div>
+            </div>
+
+            <!-- Stage 3: Bending Moment Diagram M(x) Canvas -->
+            <div class="glass-panel rounded-3xl p-4 sm:p-5 shadow-lg relative space-y-2">
+                <div class="flex items-center justify-between pb-1 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200">
+                            Bending Moment Diagram M(x)
+                        </h3>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-400">M<sub>max</sub> = <b id="readout-mmax" class="text-primary font-bold">80.0 kN&bull;m</b></span>
+                </div>
+                <div class="relative w-full h-52 bg-slate-900/5 dark:bg-slate-950/60 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-800/80">
+                    <canvas id="canvas-moment" width="700" height="208" class="w-full h-full object-contain"></canvas>
+                </div>
+            </div>
+
+            <!-- Real-time Exam Telemetry Summary -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Zero Shear Point (V=0)</span>
+                    <div class="text-base font-black font-mono text-slate-900 dark:text-white truncate">
+                        x = <span id="readout-zero-shear-x" class="text-secondary">4.0</span> <span class="unit-len">m</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 block font-mono">Governs peak moment</span>
+                </div>
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1 border-t-2 border-t-primary">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Peak Moment (M<sub>max</sub>)</span>
+                    <div class="text-base font-black font-mono text-primary truncate">
+                        <span id="readout-card-mmax">80.0</span> <span class="unit-moment">kN&bull;m</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 block font-mono">Critical section</span>
+                </div>
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1 border-t-2 border-t-cyan-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Left Reaction (R<sub>A</sub>)</span>
+                    <div class="text-base font-black font-mono text-cyan-400 truncate">
+                        <span id="readout-card-ra">30.0</span> <span class="unit-force">kN</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 block font-mono">&Sigma;M<sub>B</sub> = 0 equilibrium</span>
+                </div>
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1 border-t-2 border-t-emerald-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Total Applied Load</span>
+                    <div class="text-base font-black font-mono text-emerald-400 truncate">
+                        <span id="readout-card-total-load">60.0</span> <span class="unit-force">kN</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 block font-mono">&Sigma;F<sub>y</sub> equilibrium</span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Visualizer Engine Script -->
+    <script>
+        let state = {
+            support: 'simply', // 'simply' or 'cantilever'
+            length: 8.0,
+            loadP: 20.0,
+            posP: 4.0,
+            loadW: 5.0,
+            unit: 'SI', // 'SI' (kN, m) or 'US' (kips, ft)
+            isDark: document.documentElement.classList.contains('dark')
+        };
+
+        // Initialize Theme from localStorage
+        const savedTheme = localStorage.getItem('enggtv_theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            state.isDark = true;
+        } else {
+            document.documentElement.classList.remove('dark');
+            state.isDark = false;
+        }
+        updateThemeIcon();
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            state.isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('enggtv_theme', state.isDark ? 'dark' : 'light');
+            updateThemeIcon();
+            renderAll();
+        }
+
+        function updateThemeIcon() {
+            const icon = document.getElementById('theme-icon');
+            if (icon) icon.innerText = state.isDark ? 'light_mode' : 'dark_mode';
+        }
+
+        function setUnit(newUnit) {
+            state.unit = newUnit;
+            const isSI = newUnit === 'SI';
+            document.getElementById('unit-si').className = isSI ? "px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-secondary transition-all" : "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all";
+            document.getElementById('unit-us').className = !isSI ? "px-2.5 py-1 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-secondary transition-all" : "px-2.5 py-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all";
+
+            document.querySelectorAll('.unit-len').forEach(el => el.innerText = isSI ? 'm' : 'ft');
+            document.querySelectorAll('.unit-force').forEach(el => el.innerText = isSI ? 'kN' : 'kips');
+            document.querySelectorAll('.unit-dist-force').forEach(el => el.innerText = isSI ? 'kN/m' : 'kips/ft');
+            document.querySelectorAll('.unit-moment').forEach(el => el.innerText = isSI ? 'kN•m' : 'kip•ft');
+
+            renderAll();
+        }
+
+        function setSupportType(type) {
+            state.support = type;
+            const simplyBtn = document.getElementById('support-simply');
+            const cantBtn = document.getElementById('support-cantilever');
+            const rbContainer = document.getElementById('readout-rb-container');
+
+            if (type === 'simply') {
+                simplyBtn.className = "flex-1 py-1.5 px-3 rounded-xl bg-secondary/10 border border-secondary/40 text-secondary font-bold text-xs transition-all";
+                cantBtn.className = "flex-1 py-1.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold text-xs border border-slate-200 dark:border-slate-700 transition-all";
+                if (rbContainer) rbContainer.classList.remove('hidden');
+            } else {
+                cantBtn.className = "flex-1 py-1.5 px-3 rounded-xl bg-secondary/10 border border-secondary/40 text-secondary font-bold text-xs transition-all";
+                simplyBtn.className = "flex-1 py-1.5 px-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold text-xs border border-slate-200 dark:border-slate-700 transition-all";
+                if (rbContainer) rbContainer.classList.add('hidden');
+            }
+            renderAll();
+        }
+
+        function onBeamParamChange(param, val) {
+            const num = parseFloat(val);
+            if (param === 'length') {
+                state.length = num;
+                document.getElementById('val-len').innerText = num.toFixed(1);
+                // Clamp position of P
+                const posSlider = document.getElementById('slider-pos-p');
+                posSlider.max = num;
+                if (state.posP > num) {
+                    state.posP = num;
+                    posSlider.value = num;
+                    document.getElementById('val-pos-p').innerText = num.toFixed(1);
+                }
+            } else if (param === 'loadP') {
+                state.loadP = num;
+                document.getElementById('val-load-p').innerText = num.toFixed(0);
+            } else if (param === 'posP') {
+                state.posP = num;
+                document.getElementById('val-pos-p').innerText = num.toFixed(1);
+            } else if (param === 'loadW') {
+                state.loadW = num;
+                document.getElementById('val-load-w').innerText = num.toFixed(1);
+            }
+            renderAll();
+        }
+
+        function applyPreset(preset) {
+            if (preset === 'center-point') {
+                setSupportType('simply');
+                state.length = 8;
+                state.loadP = 20;
+                state.posP = 4;
+                state.loadW = 0;
+            } else if (preset === 'udl') {
+                setSupportType('simply');
+                state.length = 8;
+                state.loadP = 0;
+                state.posP = 4;
+                state.loadW = 5;
+            } else if (preset === 'combined') {
+                setSupportType('simply');
+                state.length = 8;
+                state.loadP = 20;
+                state.posP = 4;
+                state.loadW = 5;
+            } else if (preset === 'cantilever') {
+                setSupportType('cantilever');
+                state.length = 6;
+                state.loadP = 15;
+                state.posP = 6;
+                state.loadW = 0;
+            }
+
+            document.getElementById('slider-len').value = state.length;
+            document.getElementById('val-len').innerText = state.length.toFixed(1);
+            document.getElementById('slider-load-p').value = state.loadP;
+            document.getElementById('val-load-p').innerText = state.loadP.toFixed(0);
+            document.getElementById('slider-pos-p').max = state.length;
+            document.getElementById('slider-pos-p').value = state.posP;
+            document.getElementById('val-pos-p').innerText = state.posP.toFixed(1);
+            document.getElementById('slider-load-w').value = state.loadW;
+            document.getElementById('val-load-w').innerText = state.loadW.toFixed(1);
+
+            renderAll();
+        }
+
+        function resetDefaults() {
+            applyPreset('combined');
+        }
+
+        // Calculations
+        function computeBeam() {
+            const L = state.length;
+            const P = state.loadP;
+            const a = state.posP;
+            const w = state.loadW;
+            const isCantilever = state.support === 'cantilever';
+
+            let RA = 0, RB = 0, MA = 0;
+
+            if (isCantilever) {
+                // Fixed at x = 0 (Left)
+                // Downward loads: P + w * L
+                RA = P + w * L;
+                // Counterclockwise wall reaction moment: MA = P * a + w * L * (L/2)
+                MA = P * a + (w * L * L) / 2;
+                RB = 0;
+            } else {
+                // Simply supported: Pin at x = 0, Roller at x = L
+                // Sum M_A = 0 => RB * L - P * a - w * L * (L/2) = 0
+                RB = (P * a + (w * L * L) / 2) / L;
+                RA = (P + w * L) - RB;
+            }
+
+            // Sample points for diagrams
+            const steps = 300;
+            const points = [];
+            let maxShear = 0;
+            let maxMoment = 0;
+            let zeroShearX = a;
+
+            for (let i = 0; i <= steps; i++) {
+                const x = (i / steps) * L;
+                let V = 0;
+                let M = 0;
+
+                if (isCantilever) {
+                    // Shear: V(x) = RA - w * x - (x >= a ? P : 0)
+                    V = RA - w * x - (x >= a ? P : 0);
+                    // Moment: M(x) = -MA + RA * x - (w * x * x)/2 - (x >= a ? P * (x - a) : 0)
+                    M = -MA + RA * x - (w * x * x) / 2 - (x >= a ? P * (x - a) : 0);
+                } else {
+                    // Simply Supported:
+                    V = RA - w * x - (x >= a ? P : 0);
+                    M = RA * x - (w * x * x) / 2 - (x >= a ? P * (x - a) : 0);
+                }
+
+                if (Math.abs(V) > maxShear) maxShear = Math.abs(V);
+                if (Math.abs(M) > maxMoment) maxMoment = Math.abs(M);
+
+                points.push({ x, V, M });
+            }
+
+            // Find where shear crosses zero
+            if (isCantilever) {
+                zeroShearX = L;
+            } else {
+                // Check if V crosses zero in the span
+                for (let i = 1; i < points.length; i++) {
+                    if ((points[i - 1].V >= 0 && points[i].V <= 0) || (points[i - 1].V <= 0 && points[i].V >= 0)) {
+                        zeroShearX = points[i].x;
+                        break;
+                    }
+                }
+            }
+
+            return {
+                L, P, a, w, RA, RB, MA,
+                maxShear, maxMoment, zeroShearX,
+                points, isCantilever
+            };
+        }
+
+        function updateTelemetry() {
+            const data = computeBeam();
+            const uF = state.unit === 'SI' ? 'kN' : 'kips';
+            const uM = state.unit === 'SI' ? 'kN•m' : 'kip•ft';
+            const uL = state.unit === 'SI' ? 'm' : 'ft';
+
+            document.getElementById('readout-ra').innerText = `${data.RA.toFixed(1)} ${uF}`;
+            document.getElementById('readout-rb').innerText = `${data.RB.toFixed(1)} ${uF}`;
+            document.getElementById('readout-vmax').innerText = `${data.maxShear.toFixed(1)} ${uF}`;
+            document.getElementById('readout-mmax').innerText = `${data.maxMoment.toFixed(1)} ${uM}`;
+
+            document.getElementById('readout-card-ra').innerText = data.RA.toFixed(1);
+            document.getElementById('readout-card-mmax').innerText = data.maxMoment.toFixed(1);
+            document.getElementById('readout-card-total-load').innerText = (data.P + data.w * data.L).toFixed(1);
+            document.getElementById('readout-zero-shear-x').innerText = data.zeroShearX.toFixed(2);
+        }
+
+        // Draw Canvas 1: Beam FBD
+        function drawBeamFBD() {
+            const canvas = document.getElementById('canvas-beam');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            const data = computeBeam();
+            const isDark = state.isDark;
+
+            const padX = 65;
+            const beamY = h * 0.65;
+            const beamW = w - 2 * padX;
+            const scaleX = beamW / data.L;
+
+            // Draw Beam Solid Bar
+            ctx.fillStyle = isDark ? '#334155' : '#cbd5e1';
+            ctx.strokeStyle = isDark ? '#94a3b8' : '#475569';
+            ctx.lineWidth = 2;
+            ctx.fillRect(padX, beamY - 8, beamW, 16);
+            ctx.strokeRect(padX, beamY - 8, beamW, 16);
+
+            // Supports
+            if (data.isCantilever) {
+                // Fixed support at Left
+                ctx.fillStyle = isDark ? '#64748b' : '#94a3b8';
+                ctx.fillRect(padX - 12, beamY - 30, 12, 60);
+                // Hatching
+                ctx.strokeStyle = isDark ? '#475569' : '#cbd5e1';
+                ctx.lineWidth = 1.5;
+                for (let y = beamY - 25; y <= beamY + 25; y += 8) {
+                    ctx.beginPath();
+                    ctx.moveTo(padX - 12, y);
+                    ctx.lineTo(padX - 22, y + 8);
+                    ctx.stroke();
+                }
+            } else {
+                // Left Pin Support (Triangle)
+                ctx.fillStyle = '#f59e0b';
+                ctx.beginPath();
+                ctx.moveTo(padX, beamY + 8);
+                ctx.lineTo(padX - 12, beamY + 28);
+                ctx.lineTo(padX + 12, beamY + 28);
+                ctx.closePath();
+                ctx.fill();
+
+                // Right Roller Support (Circles)
+                const rx = padX + beamW;
+                ctx.fillStyle = '#f59e0b';
+                ctx.beginPath();
+                ctx.arc(rx - 6, beamY + 16, 5, 0, 2 * Math.PI);
+                ctx.arc(rx + 6, beamY + 16, 5, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+
+            // Draw Distributed Load (w)
+            if (data.w > 0) {
+                const uY = beamY - 8;
+                const arrowH = 26;
+                ctx.strokeStyle = '#10b981';
+                ctx.fillStyle = '#10b981';
+                ctx.lineWidth = 1.5;
+
+                for (let x = padX; x <= padX + beamW; x += 28) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, uY - arrowH);
+                    ctx.lineTo(x, uY);
+                    ctx.stroke();
+                    // Arrowhead
+                    ctx.beginPath();
+                    ctx.moveTo(x, uY);
+                    ctx.lineTo(x - 3, uY - 6);
+                    ctx.lineTo(x + 3, uY - 6);
+                    ctx.fill();
+                }
+                // Top tie line
+                ctx.beginPath();
+                ctx.moveTo(padX, uY - arrowH);
+                ctx.lineTo(padX + beamW, uY - arrowH);
+                ctx.stroke();
+
+                ctx.font = 'bold 11px JetBrains Mono, monospace';
+                ctx.fillText(`w = ${data.w.toFixed(1)} ${state.unit === 'SI' ? 'kN/m' : 'kips/ft'}`, padX + beamW / 2 - 40, uY - arrowH - 6);
+            }
+
+            // Draw Point Load (P)
+            if (data.P > 0) {
+                const px = padX + data.a * scaleX;
+                const py = beamY - 8;
+                ctx.strokeStyle = '#06b6d4';
+                ctx.fillStyle = '#06b6d4';
+                ctx.lineWidth = 2.5;
+
+                ctx.beginPath();
+                ctx.moveTo(px, py - 42);
+                ctx.lineTo(px, py);
+                ctx.stroke();
+
+                // Arrowhead
+                ctx.beginPath();
+                ctx.moveTo(px, py);
+                ctx.lineTo(px - 5, py - 10);
+                ctx.lineTo(px + 5, py - 10);
+                ctx.fill();
+
+                ctx.font = 'bold 12px JetBrains Mono, monospace';
+                ctx.fillText(`P = ${data.P.toFixed(0)}`, px + 8, py - 25);
+            }
+
+            // Dimension line
+            ctx.strokeStyle = isDark ? '#64748b' : '#94a3b8';
+            ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+            ctx.lineWidth = 1;
+            const dimY = h - 14;
+            ctx.beginPath();
+            ctx.moveTo(padX, dimY);
+            ctx.lineTo(padX + beamW, dimY);
+            ctx.stroke();
+
+            ctx.font = '10px JetBrains Mono, monospace';
+            ctx.textAlign = 'center';
+            ctx.fillText(`L = ${data.L.toFixed(1)} ${state.unit === 'SI' ? 'm' : 'ft'}`, padX + beamW / 2, dimY - 4);
+        }
+
+        // Draw Canvas 2: Shear Diagram V(x)
+        function drawShearDiagram() {
+            const canvas = document.getElementById('canvas-shear');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            const data = computeBeam();
+            const isDark = state.isDark;
+
+            const padX = 65;
+            const zeroY = h / 2;
+            const beamW = w - 2 * padX;
+            const scaleX = beamW / data.L;
+            const maxV = Math.max(data.maxShear, 10);
+            const scaleY = (h * 0.38) / maxV;
+
+            // Baseline (V = 0)
+            ctx.strokeStyle = isDark ? '#475569' : '#94a3b8';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(padX, zeroY);
+            ctx.lineTo(padX + beamW, zeroY);
+            ctx.stroke();
+
+            // Label V=0
+            ctx.font = '10px JetBrains Mono, monospace';
+            ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+            ctx.textAlign = 'right';
+            ctx.fillText('0', padX - 8, zeroY + 3);
+            ctx.fillText(`+V`, padX - 8, 20);
+            ctx.fillText(`-V`, padX - 8, h - 15);
+
+            // Plot V(x)
+            ctx.beginPath();
+            ctx.moveTo(padX, zeroY);
+
+            data.points.forEach((pt, i) => {
+                const sx = padX + pt.x * scaleX;
+                const sy = zeroY - pt.V * scaleY;
+                ctx.lineTo(sx, sy);
+            });
+
+            ctx.lineTo(padX + beamW, zeroY);
+            ctx.closePath();
+
+            // Fill gradient
+            ctx.fillStyle = isDark ? 'rgba(6, 182, 212, 0.15)' : 'rgba(6, 182, 212, 0.12)';
+            ctx.fill();
+
+            // Outline stroke
+            ctx.strokeStyle = '#06b6d4';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            data.points.forEach((pt, i) => {
+                const sx = padX + pt.x * scaleX;
+                const sy = zeroY - pt.V * scaleY;
+                if (i === 0) ctx.moveTo(sx, sy);
+                else ctx.lineTo(sx, sy);
+            });
+            ctx.stroke();
+
+            // Highlight V=0 crossing
+            if (data.zeroShearX > 0 && data.zeroShearX < data.L) {
+                const zx = padX + data.zeroShearX * scaleX;
+                ctx.strokeStyle = '#f59e0b';
+                ctx.setLineDash([3, 3]);
+                ctx.beginPath();
+                ctx.moveTo(zx, 10);
+                ctx.lineTo(zx, h - 10);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                ctx.font = 'bold 10px JetBrains Mono, monospace';
+                ctx.fillStyle = '#f59e0b';
+                ctx.textAlign = 'center';
+                ctx.fillText(`V=0 (x=${data.zeroShearX.toFixed(2)})`, zx, zeroY - 10);
+            }
+        }
+
+        // Draw Canvas 3: Moment Diagram M(x)
+        function drawMomentDiagram() {
+            const canvas = document.getElementById('canvas-moment');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            const data = computeBeam();
+            const isDark = state.isDark;
+
+            const padX = 65;
+            const zeroY = data.isCantilever ? 35 : h * 0.75;
+            const beamW = w - 2 * padX;
+            const scaleX = beamW / data.L;
+            const maxM = Math.max(data.maxMoment, 20);
+            const scaleY = (h * 0.6) / maxM;
+
+            // Baseline (M = 0)
+            ctx.strokeStyle = isDark ? '#475569' : '#94a3b8';
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(padX, zeroY);
+            ctx.lineTo(padX + beamW, zeroY);
+            ctx.stroke();
+
+            // Label
+            ctx.font = '10px JetBrains Mono, monospace';
+            ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+            ctx.textAlign = 'right';
+            ctx.fillText('0', padX - 8, zeroY + 3);
+
+            // Plot M(x)
+            ctx.beginPath();
+            ctx.moveTo(padX, zeroY);
+
+            data.points.forEach(pt => {
+                const sx = padX + pt.x * scaleX;
+                const sy = zeroY - pt.M * scaleY;
+                ctx.lineTo(sx, sy);
+            });
+
+            ctx.lineTo(padX + beamW, zeroY);
+            ctx.closePath();
+
+            // Fill gradient
+            ctx.fillStyle = isDark ? 'rgba(255, 0, 110, 0.15)' : 'rgba(255, 0, 110, 0.1)';
+            ctx.fill();
+
+            // Outline stroke
+            ctx.strokeStyle = '#FF006E';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            data.points.forEach((pt, i) => {
+                const sx = padX + pt.x * scaleX;
+                const sy = zeroY - pt.M * scaleY;
+                if (i === 0) ctx.moveTo(sx, sy);
+                else ctx.lineTo(sx, sy);
+            });
+            ctx.stroke();
+
+            // Draw Peak Moment Tag
+            if (data.maxMoment > 0.5) {
+                // Find index of max
+                let peakPt = data.points[0];
+                data.points.forEach(p => {
+                    if (Math.abs(p.M) > Math.abs(peakPt.M)) peakPt = p;
+                });
+
+                const px = padX + peakPt.x * scaleX;
+                const py = zeroY - peakPt.M * scaleY;
+
+                ctx.fillStyle = '#FF006E';
+                ctx.beginPath();
+                ctx.arc(px, py, 5, 0, 2 * Math.PI);
+                ctx.fill();
+
+                ctx.font = 'bold 11px JetBrains Mono, monospace';
+                ctx.fillStyle = '#FF006E';
+                ctx.textAlign = 'center';
+                ctx.fillText(`M_max = ${peakPt.M.toFixed(1)}`, px, py - 10);
+            }
+        }
+
+        function renderAll() {
+            updateTelemetry();
+            drawBeamFBD();
+            drawShearDiagram();
+            drawMomentDiagram();
+        }
+
+        window.addEventListener('resize', renderAll);
+        window.addEventListener('DOMContentLoaded', renderAll);
+    </script>
+</body>
+</html>
+

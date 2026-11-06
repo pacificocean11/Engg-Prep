@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RLC Circuit & Bode Plot Visualizer | ENGG.tv</title>
+    <meta name="description" content="Tactile interactive RLC Resonance and Bode Plot frequency response visualizer for FE Electrical and Computer Engineering.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF006E",
+                        secondary: "#FDA60A",
+                        "dark-slate": "#0f172a"
+                    },
+                    fontFamily: {
+                        sans: ["Lexend", "sans-serif"],
+                        space: ["Space Grotesk", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.6);
+        }
+        .hud-border {
+            box-shadow: 0 0 25px -5px rgba(236, 72, 153, 0.15);
+        }
+        input[type=range] {
+            accent-color: #ec4899;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-[#070b14] text-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200">
+
+    <!-- Top Navigation Header -->
+    <header class="w-full px-4 sm:px-8 py-3.5 border-b border-slate-200/80 dark:border-slate-800/80 glass-panel sticky top-0 z-50 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-500 to-pink-600 flex items-center justify-center text-white shadow-md hover:scale-105 active:scale-95 transition-transform" title="Back to ENGG.tv">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+            </a>
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-pink-500 font-mono">FE Interactive Laboratory</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20">Electrical & Signals</span>
+                </div>
+                <h1 class="font-space text-lg sm:text-xl font-bold tracking-tight leading-none text-slate-900 dark:text-white">
+                    RLC Resonance & Bode Plot Simulator
+                </h1>
+            </div>
+        </div>
+
+        <!-- Center Lab Switcher Pills -->
+        <nav class="hidden md:flex items-center bg-slate-200/70 dark:bg-slate-800/80 p-1 rounded-2xl text-xs font-bold font-mono">
+            <a href="mohr-circle.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Mohr's Circle</a>
+            <a href="beam-diagram.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Beam V & M</a>
+            <a href="psychrometric-chart.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Psychrometric</a>
+            <a href="truss-inspector.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Truss Inspector</a>
+            <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-700 text-pink-500 shadow-sm">RLC & Bode</span>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+            <button onclick="toggleTheme()" class="w-9 h-9 rounded-xl bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-pink-500 transition-colors cursor-pointer" title="Toggle Dark/Light Mode">
+                <span id="theme-icon" class="material-symbols-outlined text-lg">dark_mode</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Circuit Components HUD (4 Cols) -->
+        <section class="lg:col-span-4 space-y-5">
+            
+            <!-- Quick FE RLC Presets -->
+            <div class="glass-panel rounded-2xl p-4 sm:p-5 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm text-pink-500">tune</span>
+                        Circuit Presets
+                    </span>
+                    <button onclick="resetDefaults()" class="text-[11px] font-semibold text-pink-500 hover:underline">Reset</button>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                    <button onclick="applyPreset(10, 10, 10)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">High-Q Bandpass</span>
+                        <span class="text-[10px] text-slate-400 font-mono">R=10&Omega;, Q=3.16</span>
+                    </button>
+                    <button onclick="applyPreset(63.2, 10, 10)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Critically Damped</span>
+                        <span class="text-[10px] text-slate-400 font-mono">&zeta; = 1.0, Q=0.5</span>
+                    </button>
+                    <button onclick="applyPreset(5, 10, 10)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Sharp Resonance</span>
+                        <span class="text-[10px] text-slate-400 font-mono">R=5&Omega;, Q=6.32</span>
+                    </button>
+                    <button onclick="applyPreset(120, 10, 10)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Overdamped Sluggish</span>
+                        <span class="text-[10px] text-slate-400 font-mono">&zeta; = 1.9, Q=0.26</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Passive Component Values -->
+            <div class="glass-panel rounded-2xl p-5 shadow-sm space-y-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono block">
+                    Series RLC Components
+                </span>
+
+                <!-- Resistance R -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="slider-r" class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                            Resistance (R)
+                        </label>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-r" class="text-amber-400">10.0</span>
+                            <span class="text-slate-400">&Omega;</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-r" min="1" max="150" value="10" step="1" class="w-full cursor-pointer" oninput="onParamChange('r', this.value)">
+                </div>
+
+                <!-- Inductance L -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="slider-l" class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                            Inductance (L)
+                        </label>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-l" class="text-cyan-400">10.0</span>
+                            <span class="text-slate-400">mH</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-l" min="1" max="50" value="10" step="0.5" class="w-full cursor-pointer" oninput="onParamChange('l', this.value)">
+                </div>
+
+                <!-- Capacitance C -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="slider-c" class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                            Capacitance (C)
+                        </label>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-c" class="text-pink-500">10.0</span>
+                            <span class="text-slate-400">&mu;F</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-c" min="0.5" max="50" value="10" step="0.5" class="w-full cursor-pointer" oninput="onParamChange('c', this.value)">
+                </div>
+
+                <!-- Test Probe Frequency (w) -->
+                <div class="pt-3 border-t border-slate-200/80 dark:border-slate-800 space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="slider-freq" class="text-xs font-bold text-primary flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-sm">graphic_eq</span>
+                            Signal Probe Freq (f)
+                        </label>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-freq" class="text-primary">503</span>
+                            <span class="text-slate-400">Hz</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-freq" min="50" max="3000" value="503" step="5" class="w-full cursor-pointer" oninput="onParamChange('freq', this.value)">
+                    <div class="flex justify-between text-[10px] font-mono text-slate-400">
+                        <span>50 Hz</span>
+                        <button onclick="snapToResonance()" class="hover:text-primary font-bold">Snap to f₀</button>
+                        <span>3 kHz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NCEES Handbook Citation -->
+            <div class="glass-panel rounded-2xl p-4 shadow-sm text-xs space-y-1.5 border-l-4 border-l-pink-500">
+                <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm text-pink-500">menu_book</span>
+                    NCEES Reference Handbook v10.4
+                </span>
+                <p class="text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed">
+                    Electrical & Computer &bull; Section: <em>Resonance & Transfer Functions</em> &bull; Page 206
+                </p>
+                <div class="font-mono text-[10px] bg-slate-100 dark:bg-slate-800/80 p-2 rounded-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                    &omega;<sub>0</sub> = 1 / &radic;(LC) &bull; Q = &omega;<sub>0</sub>L / R<br>
+                    BW = &omega;<sub>0</sub> / Q = R / L (rad/s)
+                </div>
+            </div>
+        </section>
+
+        <!-- Right: Bode Plot & Live Oscilloscope (8 Cols) -->
+        <section class="lg:col-span-8 space-y-5">
+            
+            <!-- Bode Magnitude & Phase Plot Canvas -->
+            <div class="glass-panel rounded-3xl p-4 sm:p-5 shadow-lg hud-border relative space-y-2">
+                <div class="flex items-center justify-between pb-1 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-pink-500 animate-pulse"></span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200">
+                            Bode Frequency Response (Magnitude &bull; Phase)
+                        </h3>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-400">Peak Gain: <b id="readout-peak-gain" class="text-emerald-400">0 dB</b> at &omega;<sub>0</sub></span>
+                </div>
+                <div class="relative w-full aspect-[16/9] bg-slate-900/5 dark:bg-slate-950/70 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-800/80">
+                    <canvas id="canvas-bode" width="800" height="450" class="w-full h-full object-contain"></canvas>
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 flex-wrap gap-2 pt-1">
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-1 bg-pink-500 inline-block"></span> Magnitude |H(j&omega;)| (dB)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-1 bg-cyan-400 inline-block"></span> Phase &ang;H(j&omega;) (deg)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400 inline-block"></span> Probe Freq (f)</span>
+                </div>
+            </div>
+
+            <!-- Live Oscilloscope Output Canvas -->
+            <div class="glass-panel rounded-3xl p-4 sm:p-5 shadow-lg relative space-y-2">
+                <div class="flex items-center justify-between pb-1 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm text-cyan-400">oscilloscope</span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200">
+                            Real-Time Dual-Trace Oscilloscope
+                        </h3>
+                    </div>
+                    <span class="text-[11px] font-mono text-slate-400">Phase Shift: <b id="readout-phase-shift" class="text-cyan-400">0.0°</b></span>
+                </div>
+                <div class="relative w-full h-36 bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center">
+                    <canvas id="canvas-scope" width="800" height="150" class="w-full h-full object-contain"></canvas>
+                </div>
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                    <span class="text-slate-400 flex items-center gap-1"><span class="w-2.5 h-0.5 bg-slate-400 inline-block"></span> Input v_in(t) (1.0 V)</span>
+                    <span class="text-pink-400 flex items-center gap-1 font-bold"><span class="w-2.5 h-0.5 bg-pink-500 inline-block"></span> Output v_out(t) across R</span>
+                </div>
+            </div>
+
+            <!-- Telemetry Metrics HUD -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Resonant Freq (f₀)</span>
+                    <div class="text-base font-black font-mono text-pink-500 truncate">
+                        <span id="readout-f0">503.3</span> <span class="text-xs text-slate-400 font-normal">Hz</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 block font-mono">&omega;₀ = <span id="readout-w0">3162</span> rad/s</span>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1 border-t-2 border-t-emerald-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Quality Factor (Q)</span>
+                    <div class="text-base font-black font-mono text-emerald-400 truncate">
+                        <span id="readout-q">3.16</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 block font-mono">&omega;₀L / R</span>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1 border-t-2 border-t-cyan-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Bandwidth (BW)</span>
+                    <div class="text-base font-black font-mono text-cyan-400 truncate">
+                        <span id="readout-bw">159.2</span> <span class="text-xs text-slate-400 font-normal">Hz</span>
+                    </div>
+                    <span class="text-[10px] text-slate-400 block font-mono">&Delta;&omega; = 1000 rad/s</span>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-3.5 shadow-sm space-y-1 border-t-2 border-t-amber-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Damping Ratio (&zeta;)</span>
+                    <div class="text-base font-black font-mono text-amber-500 truncate">
+                        <span id="readout-zeta">0.158</span>
+                    </div>
+                    <span id="readout-regime" class="text-[10px] text-emerald-400 block font-mono font-bold">Underdamped</span>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Simulation Script -->
+    <script>
+        let state = {
+            r: 10.0,    // Ohms
+            l: 10.0,    // mH
+            c: 10.0,    // uF
+            freq: 503.0,// Hz
+            animTime: 0,
+            isDark: document.documentElement.classList.contains('dark')
+        };
+
+        const savedTheme = localStorage.getItem('enggtv_theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            state.isDark = true;
+        } else {
+            document.documentElement.classList.remove('dark');
+            state.isDark = false;
+        }
+        updateThemeIcon();
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            state.isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('enggtv_theme', state.isDark ? 'dark' : 'light');
+            updateThemeIcon();
+            drawBodePlot();
+        }
+
+        function updateThemeIcon() {
+            const icon = document.getElementById('theme-icon');
+            if (icon) icon.innerText = state.isDark ? 'light_mode' : 'dark_mode';
+        }
+
+        function onParamChange(param, val) {
+            const num = parseFloat(val);
+            if (param === 'r') {
+                state.r = num;
+                document.getElementById('val-r').innerText = num.toFixed(1);
+            } else if (param === 'l') {
+                state.l = num;
+                document.getElementById('val-l').innerText = num.toFixed(1);
+            } else if (param === 'c') {
+                state.c = num;
+                document.getElementById('val-c').innerText = num.toFixed(1);
+            } else if (param === 'freq') {
+                state.freq = num;
+                document.getElementById('val-freq').innerText = num.toFixed(0);
+            }
+            renderAll();
+        }
+
+        function applyPreset(r, l, c) {
+            state.r = r;
+            state.l = l;
+            state.c = c;
+            const w0 = 1 / Math.sqrt((l * 1e-3) * (c * 1e-6));
+            state.freq = Math.round(w0 / (2 * Math.PI));
+
+            document.getElementById('slider-r').value = r;
+            document.getElementById('val-r').innerText = r.toFixed(1);
+            document.getElementById('slider-l').value = l;
+            document.getElementById('val-l').innerText = l.toFixed(1);
+            document.getElementById('slider-c').value = c;
+            document.getElementById('val-c').innerText = c.toFixed(1);
+            document.getElementById('slider-freq').value = state.freq;
+            document.getElementById('val-freq').innerText = state.freq.toFixed(0);
+
+            renderAll();
+        }
+
+        function resetDefaults() {
+            applyPreset(10, 10, 10);
+        }
+
+        function snapToResonance() {
+            const L_H = state.l * 1e-3;
+            const C_F = state.c * 1e-6;
+            const w0 = 1 / Math.sqrt(L_H * C_F);
+            const f0 = Math.round(w0 / (2 * Math.PI));
+            state.freq = f0;
+            document.getElementById('slider-freq').value = f0;
+            document.getElementById('val-freq').innerText = f0;
+            renderAll();
+        }
+
+        function calcCircuit() {
+            const R = state.r;
+            const L = state.l * 1e-3; // H
+            const C = state.c * 1e-6; // F
+
+            const w0 = 1 / Math.sqrt(L * C);
+            const f0 = w0 / (2 * Math.PI);
+            const Q = (w0 * L) / R;
+            const zeta = 1 / (2 * Q);
+            const bwRad = w0 / Q;
+            const bwHz = bwRad / (2 * Math.PI);
+
+            // Response at probe frequency
+            const wProbe = 2 * Math.PI * state.freq;
+            const XL = wProbe * L;
+            const XC = 1 / (wProbe * C);
+            const X_total = XL - XC;
+            const Z_mag = Math.sqrt(R * R + X_total * X_total);
+
+            // Series RLC output across R (Bandpass)
+            // H(jw) = R / (R + j(wL - 1/wC))
+            const gainMag = R / Z_mag;
+            const gainDB = 20 * Math.log10(Math.max(gainMag, 1e-4));
+            const phaseRad = -Math.atan2(X_total, R);
+            const phaseDeg = (phaseRad * 180) / Math.PI;
+
+            return {
+                w0, f0, Q, zeta, bwRad, bwHz,
+                gainMag, gainDB, phaseDeg, phaseRad
+            };
+        }
+
+        function updateTelemetry() {
+            const data = calcCircuit();
+            document.getElementById('readout-f0').innerText = data.f0.toFixed(1);
+            document.getElementById('readout-w0').innerText = data.w0.toFixed(0);
+            document.getElementById('readout-q').innerText = data.Q.toFixed(2);
+            document.getElementById('readout-bw').innerText = data.bwHz.toFixed(1);
+            document.getElementById('readout-zeta').innerText = data.zeta.toFixed(3);
+            document.getElementById('readout-phase-shift').innerText = `${data.phaseDeg.toFixed(1)}°`;
+
+            const regimeEl = document.getElementById('readout-regime');
+            if (data.zeta < 0.95) {
+                regimeEl.innerText = "Underdamped";
+                regimeEl.className = "text-[10px] text-emerald-400 block font-mono font-bold";
+            } else if (data.zeta <= 1.05) {
+                regimeEl.innerText = "Critically Damped";
+                regimeEl.className = "text-[10px] text-cyan-400 block font-mono font-bold";
+            } else {
+                regimeEl.innerText = "Overdamped";
+                regimeEl.className = "text-[10px] text-amber-500 block font-mono font-bold";
+            }
+        }
+
+        // Draw Canvas 1: Bode Plot
+        function drawBodePlot() {
+            const canvas = document.getElementById('canvas-bode');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            const isDark = state.isDark;
+            const data = calcCircuit();
+            const R = state.r;
+            const L = state.l * 1e-3;
+            const C = state.c * 1e-6;
+
+            const padL = 70;
+            const padR = 60;
+            const padT = 30;
+            const padB = 40;
+            const plotW = w - padL - padR;
+            const plotH = h - padT - padB;
+
+            // Frequencies on log scale: 20 Hz to 10,000 Hz
+            const fMin = 20;
+            const fMax = 10000;
+            const logMin = Math.log10(fMin);
+            const logMax = Math.log10(fMax);
+
+            function toScreenX(f) {
+                return padL + ((Math.log10(f) - logMin) / (logMax - logMin)) * plotW;
+            }
+
+            // Magnitude Y: 0 dB to -40 dB
+            const dbMax = 0;
+            const dbMin = -40;
+            function toScreenY(db) {
+                return padT + ((dbMax - db) / (dbMax - dbMin)) * plotH;
+            }
+
+            // Draw Decibel Grid Lines
+            ctx.strokeStyle = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(226, 232, 240, 0.9)';
+            ctx.lineWidth = 1;
+
+            const dbTicks = [0, -6, -12, -20, -30, -40];
+            dbTicks.forEach(db => {
+                const y = toScreenY(db);
+                ctx.beginPath();
+                ctx.moveTo(padL, y);
+                ctx.lineTo(padL + plotW, y);
+                ctx.stroke();
+
+                ctx.font = '10px JetBrains Mono, monospace';
+                ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+                ctx.textAlign = 'right';
+                ctx.fillText(`${db} dB`, padL - 8, y + 3);
+            });
+
+            // Log frequency decade lines: 100, 1k, 10k
+            const decades = [100, 1000, 10000];
+            decades.forEach(f => {
+                const x = toScreenX(f);
+                ctx.beginPath();
+                ctx.moveTo(x, padT);
+                ctx.lineTo(x, padT + plotH);
+                ctx.stroke();
+
+                ctx.font = '10px JetBrains Mono, monospace';
+                ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+                ctx.textAlign = 'center';
+                ctx.fillText(f >= 1000 ? `${f/1000} kHz` : `${f} Hz`, x, padT + plotH + 18);
+            });
+
+            // 1. Draw Magnitude Curve |H(jw)|
+            ctx.strokeStyle = '#ec4899';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+
+            const steps = 300;
+            for (let i = 0; i <= steps; i++) {
+                const f = Math.pow(10, logMin + (i / steps) * (logMax - logMin));
+                const omega = 2 * Math.PI * f;
+                const XL = omega * L;
+                const XC = 1 / (omega * C);
+                const Z = Math.sqrt(R * R + (XL - XC) * (XL - XC));
+                const gain = R / Z;
+                const db = Math.max(-40, 20 * Math.log10(Math.max(gain, 1e-4)));
+
+                const sx = toScreenX(f);
+                const sy = toScreenY(db);
+                if (i === 0) ctx.moveTo(sx, sy);
+                else ctx.lineTo(sx, sy);
+            }
+            ctx.stroke();
+
+            // 2. Draw -3dB Cutoff Line
+            const y3db = toScreenY(-3);
+            ctx.strokeStyle = isDark ? '#64748b' : '#94a3b8';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(padL, y3db);
+            ctx.lineTo(padL + plotW, y3db);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillText('-3 dB (Half Power)', padL + plotW - 8, y3db - 4);
+
+            // 3. Mark Resonant Peak (f0)
+            const x0 = toScreenX(data.f0);
+            if (x0 >= padL && x0 <= padL + plotW) {
+                ctx.strokeStyle = '#10b981';
+                ctx.setLineDash([3, 3]);
+                ctx.beginPath();
+                ctx.moveTo(x0, padT);
+                ctx.lineTo(x0, padT + plotH);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                ctx.fillStyle = '#10b981';
+                ctx.beginPath();
+                ctx.arc(x0, toScreenY(0), 5, 0, 2 * Math.PI);
+                ctx.fill();
+
+                ctx.font = 'bold 11px JetBrains Mono, monospace';
+                ctx.textAlign = 'center';
+                ctx.fillText(`f₀ = ${data.f0.toFixed(0)} Hz`, x0, padT - 8);
+            }
+
+            // 4. Mark Current Signal Probe Frequency
+            const xProbe = toScreenX(state.freq);
+            if (xProbe >= padL && xProbe <= padL + plotW) {
+                const yProbe = toScreenY(data.gainDB);
+                ctx.fillStyle = '#f59e0b';
+                ctx.beginPath();
+                ctx.arc(xProbe, yProbe, 6, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.strokeStyle = '#ffffff';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                ctx.font = 'bold 10px JetBrains Mono, monospace';
+                ctx.fillStyle = '#f59e0b';
+                ctx.fillText(`Probe (${state.freq} Hz, ${data.gainDB.toFixed(1)} dB)`, xProbe, yProbe - 10);
+            }
+        }
+
+        // Draw Canvas 2: Live Oscilloscope
+        function drawOscilloscope() {
+            const canvas = document.getElementById('canvas-scope');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            const data = calcCircuit();
+            const cy = h / 2;
+            const amp = h * 0.38;
+
+            // Grid lines
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, cy);
+            ctx.lineTo(w, cy);
+            ctx.stroke();
+
+            for (let x = 0; x <= w; x += 50) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, h);
+                ctx.stroke();
+            }
+
+            // 1. Trace 1: Input Sine Wave (1.0 V amplitude in slate-400)
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 1.5;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+
+            const cycles = 3;
+            for (let x = 0; x <= w; x++) {
+                const t = (x / w) * cycles * 2 * Math.PI;
+                const y = cy - Math.sin(t - state.animTime) * amp;
+                if (x === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // 2. Trace 2: Output Voltage Wave across Resistor (Attenuated and Phase Shifted)
+            ctx.strokeStyle = '#ec4899';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+
+            const outAmp = amp * data.gainMag;
+            for (let x = 0; x <= w; x++) {
+                const t = (x / w) * cycles * 2 * Math.PI;
+                // Include phaseRad shift
+                const y = cy - Math.sin(t - state.animTime + data.phaseRad) * outAmp;
+                if (x === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            // Scope Tag
+            ctx.font = '10px JetBrains Mono, monospace';
+            ctx.fillStyle = '#ec4899';
+            ctx.textAlign = 'right';
+            ctx.fillText(`v_out: ${(data.gainMag).toFixed(2)} V_pk`, w - 15, 20);
+        }
+
+        function renderAll() {
+            updateTelemetry();
+            drawBodePlot();
+            drawOscilloscope();
+        }
+
+        // Animation loop for oscilloscope
+        function animate() {
+            state.animTime += 0.08;
+            drawOscilloscope();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', renderAll);
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAll();
+            animate();
+        });
+    </script>
+</body>
+</html>
+

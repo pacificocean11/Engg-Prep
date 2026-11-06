@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Psychrometric Chart | ENGG.tv</title>
+    <meta name="description" content="Tactile interactive Psychrometric Chart visualizer for FE Mechanical, Environmental, and Thermodynamics exam prep.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF006E",
+                        secondary: "#FDA60A",
+                        "dark-slate": "#0f172a"
+                    },
+                    fontFamily: {
+                        sans: ["Lexend", "sans-serif"],
+                        space: ["Space Grotesk", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.6);
+        }
+        .hud-border {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.15);
+        }
+        input[type=range] {
+            accent-color: #06b6d4;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-[#070b14] text-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200">
+
+    <!-- Top Navigation Header -->
+    <header class="w-full px-4 sm:px-8 py-3.5 border-b border-slate-200/80 dark:border-slate-800/80 glass-panel sticky top-0 z-50 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-md hover:scale-105 active:scale-95 transition-transform" title="Back to ENGG.tv">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+            </a>
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-cyan-500 font-mono">FE Interactive Laboratory</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">Thermodynamics & HVAC</span>
+                </div>
+                <h1 class="font-space text-lg sm:text-xl font-bold tracking-tight leading-none text-slate-900 dark:text-white">
+                    Interactive Psychrometric Chart
+                </h1>
+            </div>
+        </div>
+
+        <!-- Center Lab Switcher Pills -->
+        <nav class="hidden md:flex items-center bg-slate-200/70 dark:bg-slate-800/80 p-1 rounded-2xl text-xs font-bold font-mono">
+            <a href="mohr-circle.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Mohr's Circle</a>
+            <a href="beam-diagram.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Beam V & M</a>
+            <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-700 text-cyan-500 shadow-sm">Psychrometric</span>
+            <a href="truss-inspector.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Truss Inspector</a>
+            <a href="rlc-circuit.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">RLC & Bode</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Pressure Switcher -->
+            <div class="flex items-center bg-slate-200/70 dark:bg-slate-800 rounded-xl p-1 text-xs font-bold font-mono">
+                <button id="p-sea" onclick="setPressure(101.325)" class="px-2 py-1 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-cyan-500 transition-all">101.3 kPa</button>
+                <button id="p-alt" onclick="setPressure(84.0)" class="px-2 py-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all">84.0 kPa</button>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button onclick="toggleTheme()" class="w-9 h-9 rounded-xl bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-cyan-500 transition-colors cursor-pointer" title="Toggle Dark/Light Mode">
+                <span id="theme-icon" class="material-symbols-outlined text-lg">dark_mode</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Controls & Presets (4 Cols) -->
+        <section class="lg:col-span-4 space-y-5">
+            
+            <!-- Quick FE HVAC Presets -->
+            <div class="glass-panel rounded-2xl p-4 sm:p-5 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm text-cyan-500">tune</span>
+                        HVAC State Presets
+                    </span>
+                    <button onclick="resetDefaults()" class="text-[11px] font-semibold text-cyan-500 hover:underline">Reset</button>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                    <button onclick="applyPreset(24, 50)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Summer Comfort</span>
+                        <span class="text-[10px] text-slate-400 font-mono">24°C, 50% RH</span>
+                    </button>
+                    <button onclick="applyPreset(35, 20)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Hot & Dry Air</span>
+                        <span class="text-[10px] text-slate-400 font-mono">35°C, 20% RH</span>
+                    </button>
+                    <button onclick="applyPreset(15, 85)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Cool & Humid</span>
+                        <span class="text-[10px] text-slate-400 font-mono">15°C, 85% RH</span>
+                    </button>
+                    <button onclick="applyPreset(30, 70)" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Tropical / Sauna</span>
+                        <span class="text-[10px] text-slate-400 font-mono">30°C, 70% RH</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- State Point Sliders HUD -->
+            <div class="glass-panel rounded-2xl p-5 shadow-sm space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono block">
+                    Moist Air State Inputs
+                </span>
+
+                <!-- Dry Bulb Temperature T_db -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="slider-tdb" class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                            Dry Bulb Temp (T<sub>db</sub>)
+                        </label>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-tdb" class="text-rose-500">25.0</span>
+                            <span class="text-slate-400">°C</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-tdb" min="0" max="50" value="25" step="0.5" class="w-full cursor-pointer" oninput="onStateParamChange('tdb', this.value)">
+                    <div class="flex justify-between text-[10px] font-mono text-slate-400">
+                        <span>0°C</span>
+                        <span>25°C</span>
+                        <span>50°C</span>
+                    </div>
+                </div>
+
+                <!-- Relative Humidity RH -->
+                <div class="space-y-1.5">
+                    <div class="flex items-center justify-between">
+                        <label for="slider-rh" class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                            Relative Humidity (&phi;)
+                        </label>
+                        <div class="flex items-center gap-1 font-mono text-xs font-bold">
+                            <span id="val-rh" class="text-cyan-400">50.0</span>
+                            <span class="text-slate-400">%</span>
+                        </div>
+                    </div>
+                    <input type="range" id="slider-rh" min="2" max="100" value="50" step="1" class="w-full cursor-pointer" oninput="onStateParamChange('rh', this.value)">
+                    <div class="flex justify-between text-[10px] font-mono text-slate-400">
+                        <span>0%</span>
+                        <span>Saturation (100%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NCEES Handbook Citation -->
+            <div class="glass-panel rounded-2xl p-4 shadow-sm text-xs space-y-1.5 border-l-4 border-l-cyan-500">
+                <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm text-cyan-500">menu_book</span>
+                    NCEES Reference Handbook v10.4
+                </span>
+                <p class="text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed">
+                    Thermodynamics &bull; Section: <em>Psychrometrics</em> &bull; Page 116
+                </p>
+                <div class="font-mono text-[10px] bg-slate-100 dark:bg-slate-800/80 p-2 rounded-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                    &omega; = 0.622 &bull; P<sub>v</sub> / (P<sub>atm</sub> - P<sub>v</sub>)<br>
+                    h = 1.006 T<sub>db</sub> + &omega;(2501 + 1.86 T<sub>db</sub>) kJ/kg
+                </div>
+            </div>
+        </section>
+
+        <!-- Right: Interactive Psychrometric Chart Canvas & Telemetry (8 Cols) -->
+        <section class="lg:col-span-8 space-y-5">
+            
+            <!-- Chart Stage Canvas -->
+            <div class="glass-panel rounded-3xl p-4 sm:p-5 shadow-lg hud-border relative space-y-3">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200">
+                            Interactive Psychrometric Chart (Click or Drag Crosshair)
+                        </h3>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-400">P<sub>atm</sub> = <b id="readout-patm" class="text-cyan-400">101.325 kPa</b></span>
+                </div>
+
+                <!-- Canvas Container -->
+                <div class="relative w-full aspect-[4/3] bg-slate-900/5 dark:bg-slate-950/70 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-800/80 cursor-crosshair">
+                    <canvas id="psychro-canvas" width="800" height="600" class="w-full h-full object-contain"></canvas>
+                </div>
+
+                <!-- Legend of Active Isolines -->
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 flex-wrap gap-2 pt-1">
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> T<sub>db</sub> Vertical</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block"></span> &omega; Horizontal</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block"></span> RH &phi; Curve</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-purple-400 inline-block"></span> Enthalpy (h) Diagonal</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span> Dew Point (T<sub>dp</sub>)</span>
+                </div>
+            </div>
+
+            <!-- 6 Moist Air Properties Telemetry HUD -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                
+                <!-- 1. Enthalpy (h) -->
+                <div class="glass-panel rounded-2xl p-3 shadow-sm space-y-0.5 border-t-2 border-t-purple-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Enthalpy (h)</span>
+                    <div class="text-base font-black font-mono text-purple-400 truncate">
+                        <span id="readout-h">50.5</span> <span class="text-[10px] text-slate-400 font-normal">kJ/kg</span>
+                    </div>
+                </div>
+
+                <!-- 2. Humidity Ratio (w) -->
+                <div class="glass-panel rounded-2xl p-3 shadow-sm space-y-0.5 border-t-2 border-t-emerald-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Ratio (&omega;)</span>
+                    <div class="text-base font-black font-mono text-emerald-400 truncate">
+                        <span id="readout-w">9.9</span> <span class="text-[10px] text-slate-400 font-normal">g/kg</span>
+                    </div>
+                </div>
+
+                <!-- 3. Wet Bulb (T_wb) -->
+                <div class="glass-panel rounded-2xl p-3 shadow-sm space-y-0.5 border-t-2 border-t-cyan-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Wet Bulb (T<sub>wb</sub>)</span>
+                    <div class="text-base font-black font-mono text-cyan-400 truncate">
+                        <span id="readout-twb">17.8</span> <span class="text-[10px] text-slate-400 font-normal">°C</span>
+                    </div>
+                </div>
+
+                <!-- 4. Dew Point (T_dp) -->
+                <div class="glass-panel rounded-2xl p-3 shadow-sm space-y-0.5 border-t-2 border-t-amber-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Dew Point (T<sub>dp</sub>)</span>
+                    <div class="text-base font-black font-mono text-amber-500 truncate">
+                        <span id="readout-tdp">13.9</span> <span class="text-[10px] text-slate-400 font-normal">°C</span>
+                    </div>
+                </div>
+
+                <!-- 5. Vapor Pressure (P_v) -->
+                <div class="glass-panel rounded-2xl p-3 shadow-sm space-y-0.5 border-t-2 border-t-blue-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Vapor (P<sub>v</sub>)</span>
+                    <div class="text-base font-black font-mono text-blue-400 truncate">
+                        <span id="readout-pv">1.58</span> <span class="text-[10px] text-slate-400 font-normal">kPa</span>
+                    </div>
+                </div>
+
+                <!-- 6. Specific Volume (v) -->
+                <div class="glass-panel rounded-2xl p-3 shadow-sm space-y-0.5 border-t-2 border-t-rose-500">
+                    <span class="text-[10px] font-bold uppercase font-mono text-slate-400 block truncate">Volume (v)</span>
+                    <div class="text-base font-black font-mono text-rose-400 truncate">
+                        <span id="readout-vol">0.857</span> <span class="text-[10px] text-slate-400 font-normal">m³/kg</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Psychrometric Calculator & Canvas Engine -->
+    <script>
+        let state = {
+            tdb: 25.0, // °C
+            rh: 50.0,  // %
+            patm: 101.325, // kPa
+            isDark: document.documentElement.classList.contains('dark')
+        };
+
+        const savedTheme = localStorage.getItem('enggtv_theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            state.isDark = true;
+        } else {
+            document.documentElement.classList.remove('dark');
+            state.isDark = false;
+        }
+        updateThemeIcon();
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            state.isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('enggtv_theme', state.isDark ? 'dark' : 'light');
+            updateThemeIcon();
+            renderAll();
+        }
+
+        function updateThemeIcon() {
+            const icon = document.getElementById('theme-icon');
+            if (icon) icon.innerText = state.isDark ? 'light_mode' : 'dark_mode';
+        }
+
+        function setPressure(p) {
+            state.patm = p;
+            document.getElementById('p-sea').className = p > 95 ? "px-2 py-1 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-cyan-500 transition-all" : "px-2 py-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all";
+            document.getElementById('p-alt').className = p <= 95 ? "px-2 py-1 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-cyan-500 transition-all" : "px-2 py-1 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition-all";
+            document.getElementById('readout-patm').innerText = `${p.toFixed(3)} kPa`;
+            renderAll();
+        }
+
+        function onStateParamChange(param, val) {
+            const num = parseFloat(val);
+            if (param === 'tdb') {
+                state.tdb = num;
+                document.getElementById('val-tdb').innerText = num.toFixed(1);
+            } else if (param === 'rh') {
+                state.rh = num;
+                document.getElementById('val-rh').innerText = num.toFixed(1);
+            }
+            renderAll();
+        }
+
+        function applyPreset(tdb, rh) {
+            state.tdb = tdb;
+            state.rh = rh;
+            document.getElementById('slider-tdb').value = tdb;
+            document.getElementById('val-tdb').innerText = tdb.toFixed(1);
+            document.getElementById('slider-rh').value = rh;
+            document.getElementById('val-rh').innerText = rh.toFixed(1);
+            renderAll();
+        }
+
+        function resetDefaults() {
+            applyPreset(24, 50);
+        }
+
+        // Thermodynamic Psychrometric Calculations (Magnus formula)
+        function calcPsychrometrics(tdb, rh, patm) {
+            // Saturation Pressure Psat in kPa
+            const psat = 0.61078 * Math.exp((17.27 * tdb) / (tdb + 237.3));
+            // Actual Vapor Pressure Pv in kPa
+            const pv = (rh / 100) * psat;
+            // Humidity Ratio w (kg water / kg dry air)
+            const w = 0.622 * (pv / (patm - pv));
+            // Enthalpy h (kJ/kg dry air)
+            const h = 1.006 * tdb + w * (2501 + 1.86 * tdb);
+            // Dew Point Tdp in °C
+            const alpha = Math.log(pv / 0.61078);
+            const tdp = (237.3 * alpha) / (17.27 - alpha);
+            // Specific Volume v (m3 / kg dry air)
+            const Ra = 0.287042; // kJ / (kg*K)
+            const v = (Ra * (tdb + 273.15) * (1 + 1.6078 * w)) / patm;
+            // Wet bulb estimate via Stull formula
+            const twb = tdb * Math.atan(0.151977 * Math.pow(rh + 8.313659, 0.5)) +
+                        Math.atan(tdb + rh) - Math.atan(rh - 1.676331) +
+                        0.00391838 * Math.pow(rh, 1.5) * Math.atan(0.023101 * rh) - 4.686035;
+
+            return { psat, pv, w, h, tdp, twb, v };
+        }
+
+        function updateTelemetry() {
+            const data = calcPsychrometrics(state.tdb, state.rh, state.patm);
+            document.getElementById('readout-h').innerText = data.h.toFixed(1);
+            document.getElementById('readout-w').innerText = (data.w * 1000).toFixed(1); // in g/kg
+            document.getElementById('readout-twb').innerText = data.twb.toFixed(1);
+            document.getElementById('readout-tdp').innerText = data.tdp.toFixed(1);
+            document.getElementById('readout-pv').innerText = data.pv.toFixed(2);
+            document.getElementById('readout-vol').innerText = data.v.toFixed(3);
+        }
+
+        // Canvas Rendering
+        function drawPsychrometricChart() {
+            const canvas = document.getElementById('psychro-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            const isDark = state.isDark;
+            const padL = 70;
+            const padR = 80;
+            const padT = 40;
+            const padB = 60;
+            const chartW = w - padL - padR;
+            const chartH = h - padT - padB;
+
+            const tMin = 0;
+            const tMax = 50;
+            const wMax = 0.030; // 30 g/kg
+
+            function toScreenX(t) { return padL + ((t - tMin) / (tMax - tMin)) * chartW; }
+            function toScreenY(humW) { return (padT + chartH) - (humW / wMax) * chartH; }
+            function fromScreenX(sx) { return tMin + ((sx - padL) / chartW) * (tMax - tMin); }
+            function fromScreenY(sy) { return ((padT + chartH - sy) / chartH) * wMax; }
+
+            // 1. Draw Grid Lines
+            ctx.strokeStyle = isDark ? 'rgba(51, 65, 85, 0.4)' : 'rgba(226, 232, 240, 0.9)';
+            ctx.lineWidth = 1;
+
+            // Vertical Dry Bulb Grid Lines (every 5°C)
+            for (let t = tMin; t <= tMax; t += 5) {
+                const sx = toScreenX(t);
+                ctx.beginPath();
+                ctx.moveTo(sx, padT);
+                ctx.lineTo(sx, padT + chartH);
+                ctx.stroke();
+
+                ctx.font = '10px JetBrains Mono, monospace';
+                ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+                ctx.textAlign = 'center';
+                ctx.fillText(`${t}°`, sx, padT + chartH + 16);
+            }
+
+            // Horizontal Humidity Ratio Grid Lines (every 5 g/kg)
+            for (let wVal = 0; wVal <= wMax; wVal += 0.005) {
+                const sy = toScreenY(wVal);
+                ctx.beginPath();
+                ctx.moveTo(padL, sy);
+                ctx.lineTo(padL + chartW, sy);
+                ctx.stroke();
+
+                ctx.font = '10px JetBrains Mono, monospace';
+                ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+                ctx.textAlign = 'left';
+                ctx.fillText(`${(wVal * 1000).toFixed(0)}`, padL + chartW + 8, sy + 3);
+            }
+
+            // 2. Relative Humidity Curves (10%, 20%, ... 100% Saturation Curve)
+            const rhLevels = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+            rhLevels.forEach(rh => {
+                const isSaturation = (rh === 100);
+                ctx.beginPath();
+                ctx.lineWidth = isSaturation ? 2.5 : 1.2;
+                ctx.strokeStyle = isSaturation ? '#06b6d4' : (isDark ? 'rgba(6, 182, 212, 0.25)' : 'rgba(6, 182, 212, 0.3)');
+
+                for (let t = tMin; t <= tMax; t += 0.5) {
+                    const data = calcPsychrometrics(t, rh, state.patm);
+                    const sx = toScreenX(t);
+                    const sy = toScreenY(data.w);
+                    if (data.w <= wMax * 1.1) {
+                        if (t === tMin) ctx.moveTo(sx, sy);
+                        else ctx.lineTo(sx, sy);
+                    }
+                }
+                ctx.stroke();
+            });
+
+            // 3. Highlighted Active Property Lines for current state
+            const currentData = calcPsychrometrics(state.tdb, state.rh, state.patm);
+            const curX = toScreenX(state.tdb);
+            const curY = toScreenY(currentData.w);
+
+            // Active Dry Bulb Line (Vertical in Red)
+            ctx.strokeStyle = '#f43f5e';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(curX, curY);
+            ctx.lineTo(curX, padT + chartH);
+            ctx.stroke();
+
+            // Active Humidity Ratio Line (Horizontal in Emerald)
+            ctx.strokeStyle = '#10b981';
+            ctx.beginPath();
+            ctx.moveTo(curX, curY);
+            ctx.lineTo(padL + chartW, curY);
+            ctx.stroke();
+
+            // Active Enthalpy Line (Diagonal in Purple)
+            ctx.strokeStyle = '#c084fc';
+            ctx.lineWidth = 1.8;
+            ctx.beginPath();
+            ctx.moveTo(curX - 80, curY - 50);
+            ctx.lineTo(curX + 80, curY + 50);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // 4. Current State Point Marker (Cyan glowing circle)
+            ctx.beginPath();
+            ctx.arc(curX, curY, 7, 0, 2 * Math.PI);
+            ctx.fillStyle = '#06b6d4';
+            ctx.fill();
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // State Badge Tag
+            ctx.font = 'bold 11px JetBrains Mono, monospace';
+            ctx.fillStyle = isDark ? '#ffffff' : '#0f172a';
+            ctx.textAlign = 'left';
+            ctx.fillText(`State (${state.tdb}°C, ${state.rh}% RH)`, curX + 12, curY - 10);
+
+            // Axis Titles
+            ctx.font = 'bold 12px JetBrains Mono, monospace';
+            ctx.fillStyle = isDark ? '#cbd5e1' : '#334155';
+            ctx.textAlign = 'center';
+            ctx.fillText('Dry-Bulb Temperature T_db (°C)', padL + chartW / 2, padT + chartH + 38);
+
+            ctx.save();
+            ctx.translate(w - 18, padT + chartH / 2);
+            ctx.rotate(Math.PI / 2);
+            ctx.fillText('Humidity Ratio ω (g/kg dry air)', 0, 0);
+            ctx.restore();
+        }
+
+        function renderAll() {
+            updateTelemetry();
+            drawPsychrometricChart();
+        }
+
+        // Click/Drag Interaction on Canvas
+        const canvas = document.getElementById('psychro-canvas');
+        let isDragging = false;
+
+        function updateFromPointer(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const x = (e.clientX - rect.left) * scaleX;
+            const y = (e.clientY - rect.top) * scaleY;
+
+            const padL = 70;
+            const padR = 80;
+            const padT = 40;
+            const padB = 60;
+            const chartW = canvas.width - padL - padR;
+            const chartH = canvas.height - padT - padB;
+
+            if (x >= padL && x <= padL + chartW && y >= padT && y <= padT + chartH) {
+                const tdb = Math.max(0, Math.min(50, 0 + ((x - padL) / chartW) * 50));
+                const targetW = Math.max(0.0005, Math.min(0.030, ((padT + chartH - y) / chartH) * 0.030));
+
+                // Back-calculate RH from targetW and tdb:
+                const psat = 0.61078 * Math.exp((17.27 * tdb) / (tdb + 237.3));
+                const pv = (targetW * state.patm) / (0.622 + targetW);
+                const calcRH = Math.max(2, Math.min(100, (pv / psat) * 100));
+
+                state.tdb = Math.round(tdb * 2) / 2;
+                state.rh = Math.round(calcRH);
+
+                document.getElementById('slider-tdb').value = state.tdb;
+                document.getElementById('val-tdb').innerText = state.tdb.toFixed(1);
+                document.getElementById('slider-rh').value = state.rh;
+                document.getElementById('val-rh').innerText = state.rh.toFixed(1);
+
+                renderAll();
+            }
+        }
+
+        canvas.addEventListener('mousedown', (e) => { isDragging = true; updateFromPointer(e); });
+        window.addEventListener('mousemove', (e) => { if (isDragging) updateFromPointer(e); });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
+        canvas.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            if (e.touches.length > 0) updateFromPointer(e.touches[0]);
+        }, { passive: true });
+        window.addEventListener('touchmove', (e) => {
+            if (isDragging && e.touches.length > 0) updateFromPointer(e.touches[0]);
+        }, { passive: true });
+        window.addEventListener('touchend', () => { isDragging = false; });
+
+        window.addEventListener('resize', renderAll);
+        window.addEventListener('DOMContentLoaded', renderAll);
+    </script>
+</body>
+</html>
+

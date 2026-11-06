@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truss Zero-Force Member Inspector | ENGG.tv</title>
+    <meta name="description" content="Tactile interactive zero-force member inspector and method-of-joints visualizer for FE Civil, Mechanical, and Statics.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FF006E",
+                        secondary: "#FDA60A",
+                        "dark-slate": "#0f172a"
+                    },
+                    fontFamily: {
+                        sans: ["Lexend", "sans-serif"],
+                        space: ["Space Grotesk", "sans-serif"],
+                        mono: ["JetBrains Mono", "monospace"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(51, 65, 85, 0.6);
+        }
+        .hud-border {
+            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-[#070b14] text-slate-900 dark:text-slate-100 min-h-screen font-sans transition-colors duration-200">
+
+    <!-- Top Navigation Header -->
+    <header class="w-full px-4 sm:px-8 py-3.5 border-b border-slate-200/80 dark:border-slate-800/80 glass-panel sticky top-0 z-50 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-md hover:scale-105 active:scale-95 transition-transform" title="Back to ENGG.tv">
+                <span class="material-symbols-outlined text-lg">arrow_back</span>
+            </a>
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-500 font-mono">FE Interactive Laboratory</span>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Statics & Structures</span>
+                </div>
+                <h1 class="font-space text-lg sm:text-xl font-bold tracking-tight leading-none text-slate-900 dark:text-white">
+                    Truss Zero-Force Member Inspector
+                </h1>
+            </div>
+        </div>
+
+        <!-- Center Lab Switcher Pills -->
+        <nav class="hidden md:flex items-center bg-slate-200/70 dark:bg-slate-800/80 p-1 rounded-2xl text-xs font-bold font-mono">
+            <a href="mohr-circle.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Mohr's Circle</a>
+            <a href="beam-diagram.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Beam V & M</a>
+            <a href="psychrometric-chart.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">Psychrometric</a>
+            <span class="px-3 py-1 rounded-xl bg-white dark:bg-slate-700 text-emerald-500 shadow-sm">Truss Inspector</span>
+            <a href="rlc-circuit.html" class="px-3 py-1 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-all">RLC & Bode</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+            <button onclick="revealAllZeroForce()" class="px-3 py-1.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-xs font-bold font-mono transition-all flex items-center gap-1 cursor-pointer">
+                <span class="material-symbols-outlined text-sm">visibility</span>
+                <span class="hidden sm:inline">Reveal All</span>
+            </button>
+            <button onclick="toggleTheme()" class="w-9 h-9 rounded-xl bg-slate-200/70 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-emerald-500 transition-colors cursor-pointer" title="Toggle Dark/Light Mode">
+                <span id="theme-icon" class="material-symbols-outlined text-lg">dark_mode</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Truss Selector & Inspection Rules (4 Cols) -->
+        <section class="lg:col-span-4 space-y-5">
+            
+            <!-- Truss Architecture Selector -->
+            <div class="glass-panel rounded-2xl p-4 sm:p-5 shadow-sm space-y-3">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono block">
+                    Truss Geometries
+                </span>
+                <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                    <button id="btn-truss-pratt" onclick="selectTruss('pratt')" class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Pratt Bridge</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Standard FE Classic</span>
+                    </button>
+                    <button id="btn-truss-howe" onclick="selectTruss('howe')" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Howe Roof Truss</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Pitched Symmetric</span>
+                    </button>
+                    <button id="btn-truss-warren" onclick="selectTruss('warren')" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Warren Truss</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Equilateral Triangles</span>
+                    </button>
+                    <button id="btn-truss-cantilever" onclick="selectTruss('cantilever')" class="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all">
+                        <span class="block font-bold text-slate-900 dark:text-white truncate">Cantilever Crane</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Overhanging Tip</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Inspection Mode Guide & Score -->
+            <div class="glass-panel rounded-2xl p-5 shadow-sm space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">
+                        Inspector Progress
+                    </span>
+                    <span class="font-mono text-xs font-bold text-emerald-500">
+                        <span id="score-found">0</span> / <span id="score-total">3</span> Zero-Force Found
+                    </span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-slate-100/70 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 space-y-2 text-xs">
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        👉 <strong>Instructions:</strong> Tap any truss member on the canvas that you believe carries <strong>zero load</strong> by inspection.
+                    </p>
+                    <div id="inspector-feedback" class="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono hidden">
+                        <!-- Dynamic Feedback Toast -->
+                    </div>
+                </div>
+
+                <!-- Joint Load Toggles -->
+                <div class="space-y-2 pt-2 border-t border-slate-200/80 dark:border-slate-800">
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block">
+                        Toggle Applied Joint Loads:
+                    </span>
+                    <div id="load-toggles-container" class="flex flex-wrap gap-2 text-xs font-mono">
+                        <!-- Dynamic load toggle pills -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- NCEES Handbook Zero-Force Rules Card -->
+            <div class="glass-panel rounded-2xl p-4 shadow-sm text-xs space-y-2.5 border-l-4 border-l-emerald-500">
+                <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm text-emerald-500">menu_book</span>
+                    NCEES Reference Handbook v10.4 Rules
+                </span>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">
+                    Statics &bull; <em>Trusses: Zero-Force Member Inspection</em> &bull; Page 107
+                </p>
+                <div class="space-y-2 text-[11px] font-mono text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <div class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                        <b class="text-emerald-500">Case 1 (2 Members):</b> If 2 non-collinear members meet at an unloaded joint, <em>both carry zero force</em>.
+                    </div>
+                    <div class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+                        <b class="text-emerald-500">Case 2 (3 Members):</b> If 2 collinear members meet with a 3rd non-collinear member at an unloaded joint, <em>the 3rd member carries zero force</em>.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Right: Interactive Truss Canvas (8 Cols) -->
+        <section class="lg:col-span-8 space-y-5">
+            
+            <div class="glass-panel rounded-3xl p-4 sm:p-5 shadow-lg hud-border relative space-y-3">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <h3 class="text-xs font-bold uppercase tracking-wider font-mono text-slate-800 dark:text-slate-200">
+                            Interactive Truss Bridge Model (Click Any Member)
+                        </h3>
+                    </div>
+                    <button onclick="resetInspector()" class="text-xs font-mono font-bold text-slate-400 hover:text-emerald-500 flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm">refresh</span> Reset Test
+                    </button>
+                </div>
+
+                <!-- Canvas -->
+                <div class="relative w-full aspect-[16/10] bg-slate-900/5 dark:bg-slate-950/70 rounded-2xl overflow-hidden border border-slate-200/50 dark:border-slate-800/80 cursor-pointer">
+                    <canvas id="truss-canvas" width="800" height="500" class="w-full h-full object-contain"></canvas>
+                </div>
+
+                <!-- Legend -->
+                <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 flex-wrap gap-2 pt-1">
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-1 bg-slate-400 inline-block"></span> Uninspected Member</span>
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-1 bg-emerald-500 inline-block"></span> Verified Zero-Force (F = 0)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-1 bg-rose-500 inline-block"></span> Load-Bearing (F &ne; 0)</span>
+                    <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-amber-400 inline-block"></span> Applied Load P</span>
+                </div>
+            </div>
+
+            <!-- Member Inspection Details Cards -->
+            <div id="inspection-details-panel" class="glass-panel rounded-2xl p-4 shadow-sm space-y-2">
+                <span class="text-xs font-bold uppercase font-mono text-slate-400 block">
+                    Inspection Diagnostics Log
+                </span>
+                <div id="inspection-log" class="text-xs font-mono text-slate-600 dark:text-slate-300 space-y-1.5">
+                    <p class="text-slate-400 italic">No member inspected yet. Click any member above to test your intuition.</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // Truss Data Definitions
+        const TRUSSES = {
+            pratt: {
+                name: "Pratt Bridge Truss",
+                joints: {
+                    A: { x: 100, y: 380, name: "A", support: "pin" },
+                    B: { x: 250, y: 380, name: "B" },
+                    C: { x: 400, y: 380, name: "C" },
+                    D: { x: 550, y: 380, name: "D" },
+                    E: { x: 700, y: 380, name: "E", support: "roller" },
+                    F: { x: 250, y: 180, name: "F" },
+                    G: { x: 400, y: 180, name: "G" },
+                    H: { x: 550, y: 180, name: "H" }
+                },
+                members: [
+                    // Bottom chord
+                    { id: "AB", u: "A", v: "B" },
+                    { id: "BC", u: "B", v: "C" },
+                    { id: "CD", u: "C", v: "D" },
+                    { id: "DE", u: "D", v: "E" },
+                    // Top chord
+                    { id: "FG", u: "F", v: "G" },
+                    { id: "GH", u: "G", v: "H" },
+                    // Verticals
+                    { id: "BF", u: "B", v: "F" },
+                    { id: "CG", u: "C", v: "G" },
+                    { id: "DH", u: "D", v: "H" },
+                    // Diagonals & end posts
+                    { id: "AF", u: "A", v: "F" },
+                    { id: "EH", u: "E", v: "H" },
+                    { id: "BG", u: "B", v: "G" },
+                    { id: "DG", u: "D", v: "G" }
+                ],
+                loads: {
+                    B: { force: 0, dir: "down", label: "P_B" },
+                    C: { force: 25, dir: "down", label: "25 kN" },
+                    D: { force: 0, dir: "down", label: "P_D" },
+                    G: { force: 0, dir: "down", label: "P_G" }
+                }
+            },
+            howe: {
+                name: "Howe Roof Truss",
+                joints: {
+                    A: { x: 100, y: 380, name: "A", support: "pin" },
+                    B: { x: 275, y: 380, name: "B" },
+                    C: { x: 450, y: 380, name: "C" },
+                    D: { x: 625, y: 380, name: "D" },
+                    E: { x: 800, y: 380, name: "E", support: "roller" },
+                    F: { x: 275, y: 260, name: "F" },
+                    G: { x: 450, y: 140, name: "G" },
+                    H: { x: 625, y: 260, name: "H" }
+                },
+                members: [
+                    { id: "AB", u: "A", v: "B" },
+                    { id: "BC", u: "B", v: "C" },
+                    { id: "CD", u: "C", v: "D" },
+                    { id: "DE", u: "D", v: "E" },
+                    { id: "AF", u: "A", v: "F" },
+                    { id: "FG", u: "F", v: "G" },
+                    { id: "GH", u: "G", v: "H" },
+                    { id: "HE", u: "H", v: "E" },
+                    { id: "BF", u: "B", v: "F" },
+                    { id: "CG", u: "C", v: "G" },
+                    { id: "DH", u: "D", v: "H" },
+                    { id: "CF", u: "C", v: "F" },
+                    { id: "CH", u: "C", v: "H" }
+                ],
+                loads: {
+                    G: { force: 30, dir: "down", label: "30 kN" },
+                    B: { force: 0, dir: "down", label: "P_B" },
+                    D: { force: 0, dir: "down", label: "P_D" }
+                }
+            },
+            warren: {
+                name: "Warren Truss",
+                joints: {
+                    A: { x: 120, y: 380, name: "A", support: "pin" },
+                    B: { x: 280, y: 380, name: "B" },
+                    C: { x: 440, y: 380, name: "C" },
+                    D: { x: 600, y: 380, name: "D", support: "roller" },
+                    E: { x: 200, y: 200, name: "E" },
+                    F: { x: 360, y: 200, name: "F" },
+                    G: { x: 520, y: 200, name: "G" }
+                },
+                members: [
+                    { id: "AB", u: "A", v: "B" },
+                    { id: "BC", u: "B", v: "C" },
+                    { id: "CD", u: "C", v: "D" },
+                    { id: "EF", u: "E", v: "F" },
+                    { id: "FG", u: "F", v: "G" },
+                    { id: "AE", u: "A", v: "E" },
+                    { id: "EB", u: "E", v: "B" },
+                    { id: "BF", u: "B", v: "F" },
+                    { id: "FC", u: "F", v: "C" },
+                    { id: "CG", u: "C", v: "G" },
+                    { id: "GD", u: "G", v: "D" }
+                ],
+                loads: {
+                    B: { force: 20, dir: "down", label: "20 kN" },
+                    C: { force: 0, dir: "down", label: "P_C" },
+                    F: { force: 0, dir: "down", label: "P_F" }
+                }
+            },
+            cantilever: {
+                name: "Cantilever Crane Truss",
+                joints: {
+                    A: { x: 120, y: 150, name: "A", support: "pin" },
+                    B: { x: 120, y: 350, name: "B", support: "pin" },
+                    C: { x: 350, y: 150, name: "C" },
+                    D: { x: 350, y: 350, name: "D" },
+                    E: { x: 580, y: 150, name: "E" },
+                    F: { x: 580, y: 350, name: "F" }
+                },
+                members: [
+                    { id: "AC", u: "A", v: "C" },
+                    { id: "CE", u: "C", v: "E" },
+                    { id: "BD", u: "B", v: "D" },
+                    { id: "DF", u: "D", v: "F" },
+                    { id: "CD", u: "C", v: "D" },
+                    { id: "EF", u: "E", v: "F" },
+                    { id: "AD", u: "A", v: "D" },
+                    { id: "CF", u: "C", v: "F" }
+                ],
+                loads: {
+                    F: { force: 20, dir: "down", label: "20 kN" },
+                    E: { force: 0, dir: "down", label: "P_E" },
+                    C: { force: 0, dir: "down", label: "P_C" }
+                }
+            }
+        };
+
+        let currentTrussKey = 'pratt';
+        let inspectedMembers = new Map(); // memberId -> { isZeroForce, reason }
+        let isDark = document.documentElement.classList.contains('dark');
+
+        const savedTheme = localStorage.getItem('enggtv_theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            isDark = true;
+        } else {
+            document.documentElement.classList.remove('dark');
+            isDark = false;
+        }
+        updateThemeIcon();
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('enggtv_theme', isDark ? 'dark' : 'light');
+            updateThemeIcon();
+            drawTruss();
+        }
+
+        function updateThemeIcon() {
+            const icon = document.getElementById('theme-icon');
+            if (icon) icon.innerText = isDark ? 'light_mode' : 'dark_mode';
+        }
+
+        function selectTruss(key) {
+            currentTrussKey = key;
+            inspectedMembers.clear();
+            ['pratt', 'howe', 'warren', 'cantilever'].forEach(k => {
+                const btn = document.getElementById(`btn-truss-${k}`);
+                if (btn) {
+                    if (k === key) {
+                        btn.className = "p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-left transition-all";
+                    } else {
+                        btn.className = "p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-all";
+                    }
+                }
+            });
+            buildLoadToggles();
+            resetInspector();
+            drawTruss();
+        }
+
+        // Identify zero force members based on Statics Rules
+        function evaluateZeroForceMembers() {
+            const truss = TRUSSES[currentTrussKey];
+            const zeroForceSet = new Map();
+
+            // Check Joint Case 2 & Case 1
+            // In Pratt: If Joint B has no load: member BF meets collinear AB-BC => BF is Zero Force (Case 2)
+            // If Joint D has no load: member DH meets collinear CD-DE => DH is Zero Force (Case 2)
+            // If Joint G has no load:
+            if (currentTrussKey === 'pratt') {
+                if (!truss.loads.B || truss.loads.B.force === 0) {
+                    zeroForceSet.set("BF", "Rule 2: Joint B has collinear members AB & BC with no external load. Vertical BF must carry 0 force.");
+                }
+                if (!truss.loads.D || truss.loads.D.force === 0) {
+                    zeroForceSet.set("DH", "Rule 2: Joint D has collinear members CD & DE with no external load. Vertical DH must carry 0 force.");
+                }
+            } else if (currentTrussKey === 'howe') {
+                if (!truss.loads.B || truss.loads.B.force === 0) {
+                    zeroForceSet.set("BF", "Rule 2: Joint B has collinear members AB & BC without load. Vertical BF carries 0 force.");
+                }
+                if (!truss.loads.D || truss.loads.D.force === 0) {
+                    zeroForceSet.set("DH", "Rule 2: Joint D has collinear members CD & DE without load. Vertical DH carries 0 force.");
+                }
+            } else if (currentTrussKey === 'cantilever') {
+                if (!truss.loads.E || truss.loads.E.force === 0) {
+                    zeroForceSet.set("EF", "Rule 1 & 2: Joint E is unloaded with perpendicular member EF. EF carries 0 force.");
+                    zeroForceSet.set("CE", "Connected to unloaded pin E.");
+                }
+            }
+
+            return zeroForceSet;
+        }
+
+        function buildLoadToggles() {
+            const container = document.getElementById('load-toggles-container');
+            container.innerHTML = '';
+            const truss = TRUSSES[currentTrussKey];
+
+            Object.entries(truss.loads).forEach(([jName, lData]) => {
+                const btn = document.createElement('button');
+                const isActive = lData.force > 0;
+                btn.className = `px-2.5 py-1 rounded-lg border text-[11px] font-bold transition-all ${
+                    isActive ? 'bg-amber-500/20 text-amber-500 border-amber-500/40' : 'bg-slate-100 dark:bg-slate-800 text-slate-400 border-slate-200 dark:border-slate-700'
+                }`;
+                btn.innerText = `Joint ${jName}: ${lData.force > 0 ? lData.force + ' kN' : 'Unloaded'}`;
+                btn.onclick = () => {
+                    lData.force = lData.force > 0 ? 0 : 20;
+                    inspectedMembers.clear();
+                    buildLoadToggles();
+                    updateScore();
+                    drawTruss();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function resetInspector() {
+            inspectedMembers.clear();
+            document.getElementById('inspection-log').innerHTML = '<p class="text-slate-400 italic">No member inspected yet. Click any member above to test your intuition.</p>';
+            document.getElementById('inspector-feedback').classList.add('hidden');
+            updateScore();
+            drawTruss();
+        }
+
+        function updateScore() {
+            const zfMap = evaluateZeroForceMembers();
+            const totalZF = zfMap.size;
+            let found = 0;
+            inspectedMembers.forEach((val, id) => {
+                if (val.isZeroForce) found++;
+            });
+            document.getElementById('score-found').innerText = found;
+            document.getElementById('score-total').innerText = totalZF;
+        }
+
+        function revealAllZeroForce() {
+            const zfMap = evaluateZeroForceMembers();
+            const truss = TRUSSES[currentTrussKey];
+            truss.members.forEach(m => {
+                if (zfMap.has(m.id)) {
+                    inspectedMembers.set(m.id, { isZeroForce: true, reason: zfMap.get(m.id) });
+                } else {
+                    inspectedMembers.set(m.id, { isZeroForce: false, reason: "Carries load under static equilibrium." });
+                }
+            });
+            updateScore();
+            drawTruss();
+        }
+
+        // Draw Truss on Canvas
+        function drawTruss() {
+            const canvas = document.getElementById('truss-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            const truss = TRUSSES[currentTrussKey];
+            const zfMap = evaluateZeroForceMembers();
+
+            // 1. Draw Members
+            truss.members.forEach(m => {
+                const j1 = truss.joints[m.u];
+                const j2 = truss.joints[m.v];
+                const insp = inspectedMembers.get(m.id);
+
+                ctx.beginPath();
+                ctx.moveTo(j1.x, j1.y);
+                ctx.lineTo(j2.x, j2.y);
+
+                if (insp) {
+                    if (insp.isZeroForce) {
+                        ctx.strokeStyle = '#10b981'; // Green
+                        ctx.lineWidth = 3;
+                        ctx.setLineDash([6, 4]); // Dashed for zero force
+                    } else {
+                        ctx.strokeStyle = '#f43f5e'; // Red
+                        ctx.lineWidth = 3.5;
+                        ctx.setLineDash([]);
+                    }
+                } else {
+                    ctx.strokeStyle = isDark ? '#64748b' : '#94a3b8';
+                    ctx.lineWidth = 3.5;
+                    ctx.setLineDash([]);
+                }
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Member ID Tag at midpoint
+                const mx = (j1.x + j2.x) / 2;
+                const my = (j1.y + j2.y) / 2;
+                ctx.font = 'bold 10px JetBrains Mono, monospace';
+                ctx.fillStyle = isDark ? '#94a3b8' : '#64748b';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                if (insp && insp.isZeroForce) {
+                    ctx.fillStyle = '#10b981';
+                    ctx.fillText(`${m.id} (F=0)`, mx, my - 8);
+                }
+            });
+
+            // 2. Draw Supports
+            Object.values(truss.joints).forEach(j => {
+                if (j.support === 'pin') {
+                    ctx.fillStyle = '#f59e0b';
+                    ctx.beginPath();
+                    ctx.moveTo(j.x, j.y);
+                    ctx.lineTo(j.x - 12, j.y + 20);
+                    ctx.lineTo(j.x + 12, j.y + 20);
+                    ctx.closePath();
+                    ctx.fill();
+                } else if (j.support === 'roller') {
+                    ctx.fillStyle = '#f59e0b';
+                    ctx.beginPath();
+                    ctx.arc(j.x - 5, j.y + 10, 4, 0, 2 * Math.PI);
+                    ctx.arc(j.x + 5, j.y + 10, 4, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
+            });
+
+            // 3. Draw Applied Joint Loads
+            Object.entries(truss.loads).forEach(([jName, lData]) => {
+                if (lData.force > 0) {
+                    const j = truss.joints[jName];
+                    const arrowH = 40;
+                    ctx.strokeStyle = '#f59e0b';
+                    ctx.fillStyle = '#f59e0b';
+                    ctx.lineWidth = 3;
+
+                    ctx.beginPath();
+                    ctx.moveTo(j.x, j.y - arrowH);
+                    ctx.lineTo(j.x, j.y - 2);
+                    ctx.stroke();
+
+                    // Arrowhead
+                    ctx.beginPath();
+                    ctx.moveTo(j.x, j.y - 2);
+                    ctx.lineTo(j.x - 5, j.y - 12);
+                    ctx.lineTo(j.x + 5, j.y - 12);
+                    ctx.fill();
+
+                    ctx.font = 'bold 11px JetBrains Mono, monospace';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`${lData.force} kN`, j.x, j.y - arrowH - 6);
+                }
+            });
+
+            // 4. Draw Joint Nodes
+            Object.values(truss.joints).forEach(j => {
+                ctx.beginPath();
+                ctx.arc(j.x, j.y, 6, 0, 2 * Math.PI);
+                ctx.fillStyle = isDark ? '#0f172a' : '#ffffff';
+                ctx.fill();
+                ctx.strokeStyle = isDark ? '#e2e8f0' : '#334155';
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+
+                // Joint Name Label
+                ctx.font = 'bold 12px JetBrains Mono, monospace';
+                ctx.fillStyle = isDark ? '#f8fafc' : '#0f172a';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'bottom';
+                ctx.fillText(j.name, j.x, j.y - 8);
+            });
+        }
+
+        // Distance from point to line segment
+        function distToSegment(px, py, x1, y1, x2, y2) {
+            const l2 = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+            if (l2 === 0) return Math.hypot(px - x1, py - y1);
+            let t = ((px - x1) * (x2 - x1) + (py - y1) * (y2 - y1)) / l2;
+            t = Math.max(0, Math.min(1, t));
+            return Math.hypot(px - (x1 + t * (x2 - x1)), py - (y1 + t * (y2 - y1)));
+        }
+
+        // Handle Member Click Selection
+        const canvas = document.getElementById('truss-canvas');
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            const clickX = (e.clientX - rect.left) * scaleX;
+            const clickY = (e.clientY - rect.top) * scaleY;
+
+            const truss = TRUSSES[currentTrussKey];
+            const zfMap = evaluateZeroForceMembers();
+            let clickedMember = null;
+            let minDist = 18; // 18px click radius
+
+            truss.members.forEach(m => {
+                const j1 = truss.joints[m.u];
+                const j2 = truss.joints[m.v];
+                const d = distToSegment(clickX, clickY, j1.x, j1.y, j2.x, j2.y);
+                if (d < minDist) {
+                    minDist = d;
+                    clickedMember = m;
+                }
+            });
+
+            if (clickedMember) {
+                const isZF = zfMap.has(clickedMember.id);
+                const reason = isZF ? zfMap.get(clickedMember.id) : "This member is active and carries force under static equilibrium (Method of Joints).";
+                inspectedMembers.set(clickedMember.id, { isZeroForce: isZF, reason });
+
+                // Update feedback UI
+                const toast = document.getElementById('inspector-feedback');
+                toast.classList.remove('hidden');
+                if (isZF) {
+                    toast.className = "p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono";
+                    toast.innerHTML = `<strong>✅ CORRECT! Member ${clickedMember.id} = 0</strong><br>${reason}`;
+                } else {
+                    toast.className = "p-2.5 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-[11px] font-mono";
+                    toast.innerHTML = `<strong>❌ Member ${clickedMember.id} &ne; 0</strong><br>${reason}`;
+                }
+
+                // Append to Log
+                const log = document.getElementById('inspection-log');
+                const entry = document.createElement('div');
+                entry.className = `p-2 rounded-lg border ${isZF ? 'border-emerald-500/30 bg-emerald-500/5 text-emerald-500' : 'border-rose-500/30 bg-rose-500/5 text-rose-500'}`;
+                entry.innerHTML = `<strong>Member ${clickedMember.id}:</strong> ${isZF ? 'Zero-Force Member (F = 0)' : 'Carries Load (F &ne; 0)'} &bull; ${reason}`;
+                if (log.children[0] && log.children[0].tagName === 'P') log.innerHTML = '';
+                log.prepend(entry);
+
+                updateScore();
+                drawTruss();
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            selectTruss('pratt');
+        });
+    </script>
+</body>
+</html>
+
