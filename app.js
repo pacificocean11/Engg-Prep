@@ -93,13 +93,10 @@ function startApp() {
         userProgress: (() => {
             try {
                 const key = `enggtv_progress_${loggedInUser.username}`;
-                const stored = JSON.parse(localStorage.getItem(key));
-                if (stored && Object.keys(stored).length > 0) return stored;
-                if (loggedInUser.userProgress) return loggedInUser.userProgress;
-                return {};
+                return JSON.parse(localStorage.getItem(key)) || {};
             } catch (e) {
                 console.error("Failed to parse user progress", e);
-                return loggedInUser.userProgress || {};
+                return {};
             }
         })(),
         userPoints: (() => {
@@ -2903,6 +2900,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     topicProblems = window.solvedProblemsData[topicKey];
                 }
 
+                const activeDiscipline = localStorage.getItem('enggtv_discipline') || (state.user && state.user.discipline) || 'Mechanical';
+                topicProblems = (topicProblems || []).filter(p => !p.excludedDisciplines || !p.excludedDisciplines.includes(activeDiscipline));
+
                 if (topicProblems && topicProblems.length > 0) {
                     const cardId = 'solved-problems-' + encodeURIComponent(topicKey).replace(/[^a-zA-Z0-9_-]/g, '_');
                     const solvedProblemsCard = document.createElement('div');
@@ -3765,6 +3765,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         const subject = state.subjects.find(s => s.id === subjectId);
         let questions = getQuestionsSource()[subjectId] || [];
         
+        // Filter out any questions excluded for the active discipline
+        const activeDiscipline = localStorage.getItem('enggtv_discipline') || (state.user && state.user.discipline) || 'Mechanical';
+        questions = questions.filter(q => !q.excludedDisciplines || !q.excludedDisciplines.includes(activeDiscipline));
+
         if (topicName) {
             questions = questions.filter(q => q.topic === topicName);
         }
@@ -4571,8 +4575,10 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         let selectedQuestions = [];
         let availablePools = [];
 
+        const activeDiscipline = localStorage.getItem('enggtv_discipline') || (state.user && state.user.discipline) || 'Mechanical';
         state.subjects.forEach(subject => {
-            const subjectQuestions = QUESTIONS[subject.id] || [];
+            const rawQuestions = QUESTIONS[subject.id] || [];
+            const subjectQuestions = rawQuestions.filter(q => !q.excludedDisciplines || !q.excludedDisciplines.includes(activeDiscipline));
             if (subjectQuestions.length > 0) {
                 // Tag each question with its subjectId
                 const taggedPool = [...subjectQuestions].map(q => ({ ...q, subjectId: subject.id }));

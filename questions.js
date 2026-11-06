@@ -1198,7 +1198,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand the Newton-Raphson Scheme**\nGiven function and initial condition:\n$$f(x) = x^3 + x - 1, \\quad x_0 = 1$\n\nTo find the root iteratively using the Newton-Raphson formula, we need the first derivative $f'(x)$.\n\n\n$$\\nx_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}\n\$\n\n\n**Step 1: Compute Derivative and Evaluate at $x_0 = 1$**\nDifferentiate $f(x)$ with respect to $x$:\n$$f'(x) = \\frac{d}{dx}(x^3 + x - 1) = 3x^2 + 1$\n\nEvaluate $f(x_0)$ and $f'(x_0)$ at $x_0 = 1$:\n$$f(1) = (1)^3 + 1 - 1 = 1$\n$$f'(1) = 3(1)^2 + 1 = 4$\n\n**Step 2: Calculate First Iteration $x_1$**\nSubstitute $x_0 = 1$, $f(1) = 1$, and $f'(1) = 4$ into the formula:\n\n$$x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)}$\n\n$$x_1 = 1 - \\frac{1}{4} = 1 - 0.25 = 0.750$\n\nThus, the root obtained after the first iteration is $0.750$.\n\nCorrect Answer: C"
+                        "content": "**Understand the Newton-Raphson Scheme**\nGiven function and initial condition:\n$$f(x) = x^3 + x - 1, \\quad x_0 = 1$\n\nTo find the root iteratively using the Newton-Raphson formula, we need the first derivative $f'(x)$.\n\n\n$$\\nx_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}\n$\n\n\n**Step 1: Compute Derivative and Evaluate at $x_0 = 1$**\nDifferentiate $f(x)$ with respect to $x$:\n$$f'(x) = \\frac{d}{dx}(x^3 + x - 1) = 3x^2 + 1$\n\nEvaluate $f(x_0)$ and $f'(x_0)$ at $x_0 = 1$:\n$$f(1) = (1)^3 + 1 - 1 = 1$\n$$f'(1) = 3(1)^2 + 1 = 4$\n\n**Step 2: Calculate First Iteration $x_1$**\nSubstitute $x_0 = 1$, $f(1) = 1$, and $f'(1) = 4$ into the formula:\n\n$$x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)}$\n\n$$x_1 = 1 - \\frac{1}{4} = 1 - 0.25 = 0.750$\n\nThus, the root obtained after the first iteration is $0.750$.\n\nCorrect Answer: C"
                     }
                 ],
                 "final_answer": "A",
@@ -1258,7 +1258,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Integral Parameters**\nGiven integral:\n$$I = \\int_{0}^{\\pi} (\\sin x + \\cos x) dx$\n\nIntegration interval $[a, b] = [0, \\pi]$ divided into $n = 3$ equal subintervals.\nStep size ($h$):\n$$h = \\frac{b - a}{n} = \\frac{\\pi - 0}{3} = \\frac{\\pi}{3}$\n\n\n$$\\nI_{\\text{trap}} = \\frac{h}{2} \\left[ (y_0 + y_3) + 2(y_1 + y_2) \\right], \\quad \\text{Error} = I_{\\text{exact}} - I_{\\text{trap}}\n\$\n\n\n**Step 1: Calculate Exact Value ($I_{\\text{exact**}$)}\nEvaluate the definite integral analytically:\n\n$$I_{\\text{exact}} = \\int_{0}^{\\pi} (\\sin x + \\cos x) dx = \\Big[ -\\cos x + \\sin x \\Big]_{0}^{\\pi}$\n\n$$I_{\\text{exact}} = \\left( -\\cos\\pi + \\sin\\pi \\right) - \\left( -\\cos 0 + \\sin 0 \\right)$\n\n$$I_{\\text{exact}} = (1 + 0) - (-1 + 0) = 1 + 1 = 2$\n\n**Step 2: Calculate Approximate Value ($I_{\\text{trap**}$)}\nEvaluate $f(x) = \\sin x + \\cos x$ at node points $x_0 = 0$, $x_1 = \\frac{\\pi}{3}$, $x_2 = \\frac{2\\pi}{3}$, and $x_3 = \\pi$:\n\n\\begin{align*}\ny_0 &= f(0) = \\sin 0 + \\cos 0 = 0 + 1 = 1 \\\\[4pt]\ny_1 &= f\\left(\\frac{\\pi}{3}\\right) = \\sin\\frac{\\pi}{3} + \\cos\\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2} + \\frac{1}{2} = \\frac{\\sqrt{3} + 1}{2} \\\\[4pt]\ny_2 &= f\\left(\\frac{2\\pi}{3}\\right) = \\sin\\frac{2\\pi}{3} + \\cos\\frac{2\\pi}{3} = \\frac{\\sqrt{3}}{2} - \\frac{1}{2} = \\frac{\\sqrt{3} - 1}{2} \\\\[4pt]\ny_3 &= f(\\pi) = \\sin\\pi + \\cos\\pi = 0 - 1 = -1\n\\end{align*}\n\nSubstitute ordinates into the Trapezoidal rule:\n\n$$I_{\\text{trap}} = \\frac{\\pi/3}{2} \\left[ (1 + (-1)) + 2\\left( \\frac{\\sqrt{3} + 1}{2} + \\frac{\\sqrt{3} - 1}{2} \\right) \\right]$\n\n$$I_{\\text{trap}} = \\frac{\\pi}{6} \\left[ 0 + 2\\left( \\frac{2\\sqrt{3}}{2} \\right) \\right] = \\frac{\\pi}{6} \\left( 2\\sqrt{3} \\right) = \\frac{\\pi \\sqrt{3}}{3}$\n\n**Step 3: Calculate the Numerical Error**\n$$\\text{Error} = I_{\\text{exact}} - I_{\\text{trap}} = 2 - \\frac{\\pi \\sqrt{3}}{3} \\approx 2 - 1.8138 = 0.1862$\n\nCorrect Answer: $2 - \\frac{\\pi \\sqrt{3}}{3}$"
+                        "content": "**Understand Integral Parameters**\nGiven integral:\n$$I = \\int_{0}^{\\pi} (\\sin x + \\cos x) dx$\n\nIntegration interval $[a, b] = [0, \\pi]$ divided into $n = 3$ equal subintervals.\nStep size ($h$):\n$$h = \\frac{b - a}{n} = \\frac{\\pi - 0}{3} = \\frac{\\pi}{3}$\n\n\n$$\\nI_{\\text{trap}} = \\frac{h}{2} \\left[ (y_0 + y_3) + 2(y_1 + y_2) \\right], \\quad \\text{Error} = I_{\\text{exact}} - I_{\\text{trap}}\n$\n\n\n**Step 1: Calculate Exact Value ($I_{\\text{exact**}$)}\nEvaluate the definite integral analytically:\n\n$$I_{\\text{exact}} = \\int_{0}^{\\pi} (\\sin x + \\cos x) dx = \\Big[ -\\cos x + \\sin x \\Big]_{0}^{\\pi}$\n\n$$I_{\\text{exact}} = \\left( -\\cos\\pi + \\sin\\pi \\right) - \\left( -\\cos 0 + \\sin 0 \\right)$\n\n$$I_{\\text{exact}} = (1 + 0) - (-1 + 0) = 1 + 1 = 2$\n\n**Step 2: Calculate Approximate Value ($I_{\\text{trap**}$)}\nEvaluate $f(x) = \\sin x + \\cos x$ at node points $x_0 = 0$, $x_1 = \\frac{\\pi}{3}$, $x_2 = \\frac{2\\pi}{3}$, and $x_3 = \\pi$:\n\n\\begin{align*}\ny_0 &= f(0) = \\sin 0 + \\cos 0 = 0 + 1 = 1 \\\\[4pt]\ny_1 &= f\\left(\\frac{\\pi}{3}\\right) = \\sin\\frac{\\pi}{3} + \\cos\\frac{\\pi}{3} = \\frac{\\sqrt{3}}{2} + \\frac{1}{2} = \\frac{\\sqrt{3} + 1}{2} \\\\[4pt]\ny_2 &= f\\left(\\frac{2\\pi}{3}\\right) = \\sin\\frac{2\\pi}{3} + \\cos\\frac{2\\pi}{3} = \\frac{\\sqrt{3}}{2} - \\frac{1}{2} = \\frac{\\sqrt{3} - 1}{2} \\\\[4pt]\ny_3 &= f(\\pi) = \\sin\\pi + \\cos\\pi = 0 - 1 = -1\n\\end{align*}\n\nSubstitute ordinates into the Trapezoidal rule:\n\n$$I_{\\text{trap}} = \\frac{\\pi/3}{2} \\left[ (1 + (-1)) + 2\\left( \\frac{\\sqrt{3} + 1}{2} + \\frac{\\sqrt{3} - 1}{2} \\right) \\right]$\n\n$$I_{\\text{trap}} = \\frac{\\pi}{6} \\left[ 0 + 2\\left( \\frac{2\\sqrt{3}}{2} \\right) \\right] = \\frac{\\pi}{6} \\left( 2\\sqrt{3} \\right) = \\frac{\\pi \\sqrt{3}}{3}$\n\n**Step 3: Calculate the Numerical Error**\n$$\\text{Error} = I_{\\text{exact}} - I_{\\text{trap}} = 2 - \\frac{\\pi \\sqrt{3}}{3} \\approx 2 - 1.8138 = 0.1862$\n\nCorrect Answer: $2 - \\frac{\\pi \\sqrt{3}}{3}$"
                     }
                 ],
                 "final_answer": "B",
@@ -1319,7 +1319,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Integrand and Parameters**\nGiven integral:\n$$I = \\int_{1}^{2} x \\ln x \\, dx$\n\nInterval $[a, b] = [1, 2]$ with unit step size $h = 1$.\nThus, the number of subintervals $n = \\frac{2 - 1}{1} = 1$.\n\nNode points:\n$$x_0 = 1, \\quad x_1 = 2$\n\n\n$$\\nI \\approx \\frac{h}{2} \\left[ y_0 + y_1 \\right]\n\$\n\n\n**Step 1: Calculate Function Values**\nEvaluate $f(x) = x \\ln x$ at the nodes:\n\n\\begin{align*}\ny_0 &= f(1) = 1 \\cdot \\ln(1) = 1 \\cdot 0 = 0 \\\\[4pt]\ny_1 &= f(2) = 2 \\cdot \\ln(2) = 2 \\ln 2 \\approx 1.38629\n\\end{align*}\n\n**Step 2: Apply Trapezoidal Rule**\nSubstitute $h = 1$, $y_0 = 0$, and $y_1 = 2\\ln 2$ into the formula:\n\n$$I \\approx \\frac{1}{2} \\left[ 0 + 2\\ln 2 \\right] = \\frac{1}{2} (2\\ln 2) = \\ln 2 \\approx 0.69315$\n\nCorrect Answer: $\\ln 2$"
+                        "content": "**Understand Integrand and Parameters**\nGiven integral:\n$$I = \\int_{1}^{2} x \\ln x \\, dx$\n\nInterval $[a, b] = [1, 2]$ with unit step size $h = 1$.\nThus, the number of subintervals $n = \\frac{2 - 1}{1} = 1$.\n\nNode points:\n$$x_0 = 1, \\quad x_1 = 2$\n\n\n$$\\nI \\approx \\frac{h}{2} \\left[ y_0 + y_1 \\right]\n$\n\n\n**Step 1: Calculate Function Values**\nEvaluate $f(x) = x \\ln x$ at the nodes:\n\n\\begin{align*}\ny_0 &= f(1) = 1 \\cdot \\ln(1) = 1 \\cdot 0 = 0 \\\\[4pt]\ny_1 &= f(2) = 2 \\cdot \\ln(2) = 2 \\ln 2 \\approx 1.38629\n\\end{align*}\n\n**Step 2: Apply Trapezoidal Rule**\nSubstitute $h = 1$, $y_0 = 0$, and $y_1 = 2\\ln 2$ into the formula:\n\n$$I \\approx \\frac{1}{2} \\left[ 0 + 2\\ln 2 \\right] = \\frac{1}{2} (2\\ln 2) = \\ln 2 \\approx 0.69315$\n\nCorrect Answer: $\\ln 2$"
                     }
                 ],
                 "final_answer": "B",
@@ -1380,7 +1380,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Trapezoidal Rule Parameters**\nGiven tabular data for $x \\in [0, 0.4]$ with uniform step size $h = 0.1$:\n\\n•  Number of subintervals ($n$): $4$\n•  Step size ($h$): $0.1$\n•  Ordinates:\n    \\begin{align*}\n        y_0 &= F(0) = 0 \\\\\n        y_1 &= F(0.1) = 10 \\\\\n        y_2 &= F(0.2) = 40 \\\\\n        y_3 &= F(0.3) = 90 \\\\\n        y_4 &= F(0.4) = 160\n    \\end{align*}\n\\n\n\n$$\\nI = \\frac{h}{2} \\left[ (y_0 + y_n) + 2(y_1 + y_2 + \\dots + y_{n-1}) \\right]\n\$\n\n\n**Step 1: Substitute Values into the Formula**\nUsing the given ordinates:\n\n$$I = \\frac{0.1}{2} \\left[ (y_0 + y_4) + 2(y_1 + y_2 + y_3) \\right]$\n\n$$I = 0.05 \\left[ (0 + 160) + 2(10 + 40 + 90) \\right]$\n\n**Step 2: Evaluate the Numerical Sum**\n$$I = 0.05 \\left[ 160 + 2(140) \\right]$\n\n$$I = 0.05 \\left[ 160 + 280 \\right]$\n\n$$I = 0.05 \\left[ 440 \\right] = 22$\n\nThus, the value of the integral by Trapezoidal rule is $22$.\n\nCorrect Answer: B"
+                        "content": "**Understand Trapezoidal Rule Parameters**\nGiven tabular data for $x \\in [0, 0.4]$ with uniform step size $h = 0.1$:\n\\n•  Number of subintervals ($n$): $4$\n•  Step size ($h$): $0.1$\n•  Ordinates:\n    \\begin{align*}\n        y_0 &= F(0) = 0 \\\\\n        y_1 &= F(0.1) = 10 \\\\\n        y_2 &= F(0.2) = 40 \\\\\n        y_3 &= F(0.3) = 90 \\\\\n        y_4 &= F(0.4) = 160\n    \\end{align*}\n\\n\n\n$$\\nI = \\frac{h}{2} \\left[ (y_0 + y_n) + 2(y_1 + y_2 + \\dots + y_{n-1}) \\right]\n$\n\n\n**Step 1: Substitute Values into the Formula**\nUsing the given ordinates:\n\n$$I = \\frac{0.1}{2} \\left[ (y_0 + y_4) + 2(y_1 + y_2 + y_3) \\right]$\n\n$$I = 0.05 \\left[ (0 + 160) + 2(10 + 40 + 90) \\right]$\n\n**Step 2: Evaluate the Numerical Sum**\n$$I = 0.05 \\left[ 160 + 2(140) \\right]$\n\n$$I = 0.05 \\left[ 160 + 280 \\right]$\n\n$$I = 0.05 \\left[ 440 \\right] = 22$\n\nThus, the value of the integral by Trapezoidal rule is $22$.\n\nCorrect Answer: B"
                     }
                 ],
                 "final_answer": "B",
@@ -1441,7 +1441,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Integral Parameters**\nGiven integral:\n$$I = \\int_{1}^{3} \\frac{1}{x} dx$\n\nLimits of integration $[a, b] = [1, 3]$ and step size $h = 1$.\nNumber of subintervals ($n$):\n$$n = \\frac{b - a}{h} = \\frac{3 - 1}{1} = 2$\n\nNode points:\n$$x_0 = 1, \\quad x_1 = 2, \\quad x_2 = 3$\n\n\n$$\\nI \\approx \\frac{h}{2} \\left[ (y_0 + y_n) + 2(y_1 + y_2 + \\dots + y_{n-1}) \\right]\n\$\n\n\n**Step 1: Calculate Function Values**\nEvaluate $f(x) = \\frac{1}{x}$ at each node point:\n\n\\begin{align*}\ny_0 &= f(1) = \\frac{1}{1} = 1 \\\\[4pt]\ny_1 &= f(2) = \\frac{1}{2} = 0.5 \\\\[4pt]\ny_2 &= f(3) = \\frac{1}{3} \\approx 0.3333\n\\end{align*}\n\n**Step 2: Apply Trapezoidal Rule Formula**\nSubstitute $h = 1$ and the ordinates $y_0, y_1, y_2$ into the formula:\n\n$$I \\approx \\frac{1}{2} \\left[ (y_0 + y_2) + 2(y_1) \\right]$\n\n$$I \\approx \\frac{1}{2} \\left[ \\left(1 + \\frac{1}{3}\\right) + 2(0.5) \\right]$\n\n$$I \\approx \\frac{1}{2} \\left[ \\frac{4}{3} + 1 \\right] = \\frac{1}{2} \\left( \\frac{7}{3} \\right) = \\frac{7}{6} \\approx 1.1667$\n\nThus, the approximate value of the definite integral rounded to three decimal places is $1.167$.\n\nCorrect Answer: B"
+                        "content": "**Understand Integral Parameters**\nGiven integral:\n$$I = \\int_{1}^{3} \\frac{1}{x} dx$\n\nLimits of integration $[a, b] = [1, 3]$ and step size $h = 1$.\nNumber of subintervals ($n$):\n$$n = \\frac{b - a}{h} = \\frac{3 - 1}{1} = 2$\n\nNode points:\n$$x_0 = 1, \\quad x_1 = 2, \\quad x_2 = 3$\n\n\n$$\\nI \\approx \\frac{h}{2} \\left[ (y_0 + y_n) + 2(y_1 + y_2 + \\dots + y_{n-1}) \\right]\n$\n\n\n**Step 1: Calculate Function Values**\nEvaluate $f(x) = \\frac{1}{x}$ at each node point:\n\n\\begin{align*}\ny_0 &= f(1) = \\frac{1}{1} = 1 \\\\[4pt]\ny_1 &= f(2) = \\frac{1}{2} = 0.5 \\\\[4pt]\ny_2 &= f(3) = \\frac{1}{3} \\approx 0.3333\n\\end{align*}\n\n**Step 2: Apply Trapezoidal Rule Formula**\nSubstitute $h = 1$ and the ordinates $y_0, y_1, y_2$ into the formula:\n\n$$I \\approx \\frac{1}{2} \\left[ (y_0 + y_2) + 2(y_1) \\right]$\n\n$$I \\approx \\frac{1}{2} \\left[ \\left(1 + \\frac{1}{3}\\right) + 2(0.5) \\right]$\n\n$$I \\approx \\frac{1}{2} \\left[ \\frac{4}{3} + 1 \\right] = \\frac{1}{2} \\left( \\frac{7}{3} \\right) = \\frac{7}{6} \\approx 1.1667$\n\nThus, the approximate value of the definite integral rounded to three decimal places is $1.167$.\n\nCorrect Answer: B"
                     }
                 ],
                 "final_answer": "B",
@@ -1501,7 +1501,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Definitions of Order and Degree**\nFor a partial differential equation expressed in polynomial form with respect to its derivatives:\n\\n•  **Order ($m$):** The highest order of differentiation present in the equation.\n•  **Degree ($n$):** The exponent/power of the highest-order derivative term when the equation is free from radicals and fractions involving derivatives.\n\\n\n\n$$\\nm = \\text{Order} = 3, \\quad n = \\text{Degree} = 1\n\$\n\n\n**Step 1: Identify Order ($m$)**\nExamine each derivative term in the given equation:\n\\n•  $\\dfrac{\\partial^3 \\varphi}{\\partial x^3}$ is of order $3$.\n•  $\\dfrac{\\partial^2 \\varphi}{\\partial y^2}$ is of order $2$.\n•  $\\dfrac{\\partial^2 \\varphi}{\\partial x^2}$ is of order $2$.\n•  $\\dfrac{\\partial \\varphi}{\\partial x}$ and $\\dfrac{\\partial \\varphi}{\\partial y}$ are of order $1$.\n\\n\nThe highest-order derivative is $\\dfrac{\\partial^3 \\varphi}{\\partial x^3}$, so the order $m = 3$.\n\n**Step 2: Identify Degree ($n$)**\nThe given differential equation is a polynomial in its derivatives. The exponent associated with the highest-order term $\\left(\\dfrac{\\partial^3 \\varphi}{\\partial x^3}\\right)$ is $1$.\n\nTherefore, the degree $n = 1$.\n\n**Step 3: Calculate $(m - n)$**\n$$m - n = 3 - 1 = 2$\n\nWait, let's re-verify the options carefully:\nOption A is 2, Option B is 3, Option C is 1, Option D is 0.\n\nSince $m = 3$ and $n = 1$:\n$$m - n = 3 - 1 = 2$\n\nCorrect Answer: A"
+                        "content": "**Definitions of Order and Degree**\nFor a partial differential equation expressed in polynomial form with respect to its derivatives:\n\\n•  **Order ($m$):** The highest order of differentiation present in the equation.\n•  **Degree ($n$):** The exponent/power of the highest-order derivative term when the equation is free from radicals and fractions involving derivatives.\n\\n\n\n$$\\nm = \\text{Order} = 3, \\quad n = \\text{Degree} = 1\n$\n\n\n**Step 1: Identify Order ($m$)**\nExamine each derivative term in the given equation:\n\\n•  $\\dfrac{\\partial^3 \\varphi}{\\partial x^3}$ is of order $3$.\n•  $\\dfrac{\\partial^2 \\varphi}{\\partial y^2}$ is of order $2$.\n•  $\\dfrac{\\partial^2 \\varphi}{\\partial x^2}$ is of order $2$.\n•  $\\dfrac{\\partial \\varphi}{\\partial x}$ and $\\dfrac{\\partial \\varphi}{\\partial y}$ are of order $1$.\n\\n\nThe highest-order derivative is $\\dfrac{\\partial^3 \\varphi}{\\partial x^3}$, so the order $m = 3$.\n\n**Step 2: Identify Degree ($n$)**\nThe given differential equation is a polynomial in its derivatives. The exponent associated with the highest-order term $\\left(\\dfrac{\\partial^3 \\varphi}{\\partial x^3}\\right)$ is $1$.\n\nTherefore, the degree $n = 1$.\n\n**Step 3: Calculate $(m - n)$**\n$$m - n = 3 - 1 = 2$\n\nWait, let's re-verify the options carefully:\nOption A is 2, Option B is 3, Option C is 1, Option D is 0.\n\nSince $m = 3$ and $n = 1$:\n$$m - n = 3 - 1 = 2$\n\nCorrect Answer: A"
                     }
                 ],
                 "final_answer": "C",
@@ -1561,7 +1561,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand First-Order ODE with Initial Conditions**\nGiven differential equation:\n$$\\frac{dy}{dt} = -5y, \\quad \\text{with initial condition } y(0) = 2$\n\nThis is a first-order separable ordinary differential equation.\n\n\n$$\\n\\frac{dy}{y} = -5 \\, dt\n\$\n\n\n**Step 1: Solve the Differential Equation**\nSeparate variables $y$ and $t$ and integrate both sides:\n\n$$\\int \\frac{1}{y} \\, dy = \\int -5 \\, dt$\n\n$$\\ln |y| = -5t + C$\n\nExponentiating both sides yields the general solution:\n\n$$y(t) = C' e^{-5t} \\quad \\text{where } C' = \\pm e^C$\n\n**Step 2: Apply the Initial Condition $y(0) = 2$**\nSubstitute $t = 0$ and $y = 2$:\n\n$$y(0) = C' e^{-5(0)} = 2 \\implies C' = 2$\n\nThus, the particular solution is:\n\n$$y(t) = 2 e^{-5t}$\n\n**Step 3: Evaluate $y(t)$ at $t = 3$**\nSubstitute $t = 3$ into the solution equation:\n\n$$y(3) = 2 e^{-5(3)} = 2 e^{-15}$\n\nCorrect Answer: C"
+                        "content": "**Understand First-Order ODE with Initial Conditions**\nGiven differential equation:\n$$\\frac{dy}{dt} = -5y, \\quad \\text{with initial condition } y(0) = 2$\n\nThis is a first-order separable ordinary differential equation.\n\n\n$$\\n\\frac{dy}{y} = -5 \\, dt\n$\n\n\n**Step 1: Solve the Differential Equation**\nSeparate variables $y$ and $t$ and integrate both sides:\n\n$$\\int \\frac{1}{y} \\, dy = \\int -5 \\, dt$\n\n$$\\ln |y| = -5t + C$\n\nExponentiating both sides yields the general solution:\n\n$$y(t) = C' e^{-5t} \\quad \\text{where } C' = \\pm e^C$\n\n**Step 2: Apply the Initial Condition $y(0) = 2$**\nSubstitute $t = 0$ and $y = 2$:\n\n$$y(0) = C' e^{-5(0)} = 2 \\implies C' = 2$\n\nThus, the particular solution is:\n\n$$y(t) = 2 e^{-5t}$\n\n**Step 3: Evaluate $y(t)$ at $t = 3$**\nSubstitute $t = 3$ into the solution equation:\n\n$$y(3) = 2 e^{-5(3)} = 2 e^{-15}$\n\nCorrect Answer: C"
                     }
                 ],
                 "final_answer": "C",
@@ -1621,7 +1621,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Second-Order Homogeneous ODE**\nGiven second-order differential equation:\n$$\\frac{d^2 y}{dx^2} - y = 0$\n\nBoundary conditions:\n\\n•  Passes through origin: $y(0) = 0$\n•  Passes through point $\\left(\\ln 2, \\frac{3}{4}\\right)$: $y(\\ln 2) = \\frac{3}{4}$\n\\n\n\n$$\\ny(x) = C_1 e^x + C_2 e^{-x}\n\$\n\n\n**Step 1: Form Auxiliary Equation and General Solution**\nSubstitute $y = e^{mx}$ into the differential equation:\n\n$$m^2 - 1 = 0 \\implies m = \\pm 1$\n\nThe general solution is:\n$$y(x) = C_1 e^x + C_2 e^{-x}$\n\n**Step 2: Apply First Boundary Condition $y(0) = 0$**\nSubstitute $x = 0$ and $y = 0$:\n\n$$0 = C_1 e^0 + C_2 e^{-0} \\implies C_1 + C_2 = 0 \\implies C_2 = -C_1$\n\nSo the equation becomes:\n$$y(x) = C_1 (e^x - e^{-x})$\n\n**Step 3: Apply Second Boundary Condition $y(\\ln 2) = \\frac{3**{4}$}\nSubstitute $x = \\ln 2$ and $y = \\frac{3}{4}$:\n\n$$y(\\ln 2) = C_1 \\left( e^{\\ln 2} - e^{-\\ln 2} \\right) = \\frac{3}{4}$\n\nNote that:\n$$e^{\\ln 2} = 2, \\quad e^{-\\ln 2} = e^{\\ln(1/2)} = \\frac{1}{2}$\n\nSubstitute these values back:\n\n$$C_1 \\left( 2 - \\frac{1}{2} \\right) = \\frac{3}{4}$\n\n$$C_1 \\left( \\frac{3}{2} \\right) = \\frac{3}{4} \\implies C_1 = \\frac{3}{4} \\cdot \\frac{2}{3} = \\frac{1}{2}$\n\nSince $C_2 = -C_1$, we have $C_2 = -\\frac{1}{2}$.\n\n**Step 4: Write Final Solution**\nSubstituting $C_1 = \\frac{1}{2}$ into $y(x)$:\n\n$$y(x) = \\frac{1}{2} (e^x - e^{-x})$\n\nCorrect Answer: C"
+                        "content": "**Understand Second-Order Homogeneous ODE**\nGiven second-order differential equation:\n$$\\frac{d^2 y}{dx^2} - y = 0$\n\nBoundary conditions:\n\\n•  Passes through origin: $y(0) = 0$\n•  Passes through point $\\left(\\ln 2, \\frac{3}{4}\\right)$: $y(\\ln 2) = \\frac{3}{4}$\n\\n\n\n$$\\ny(x) = C_1 e^x + C_2 e^{-x}\n$\n\n\n**Step 1: Form Auxiliary Equation and General Solution**\nSubstitute $y = e^{mx}$ into the differential equation:\n\n$$m^2 - 1 = 0 \\implies m = \\pm 1$\n\nThe general solution is:\n$$y(x) = C_1 e^x + C_2 e^{-x}$\n\n**Step 2: Apply First Boundary Condition $y(0) = 0$**\nSubstitute $x = 0$ and $y = 0$:\n\n$$0 = C_1 e^0 + C_2 e^{-0} \\implies C_1 + C_2 = 0 \\implies C_2 = -C_1$\n\nSo the equation becomes:\n$$y(x) = C_1 (e^x - e^{-x})$\n\n**Step 3: Apply Second Boundary Condition $y(\\ln 2) = \\frac{3**{4}$}\nSubstitute $x = \\ln 2$ and $y = \\frac{3}{4}$:\n\n$$y(\\ln 2) = C_1 \\left( e^{\\ln 2} - e^{-\\ln 2} \\right) = \\frac{3}{4}$\n\nNote that:\n$$e^{\\ln 2} = 2, \\quad e^{-\\ln 2} = e^{\\ln(1/2)} = \\frac{1}{2}$\n\nSubstitute these values back:\n\n$$C_1 \\left( 2 - \\frac{1}{2} \\right) = \\frac{3}{4}$\n\n$$C_1 \\left( \\frac{3}{2} \\right) = \\frac{3}{4} \\implies C_1 = \\frac{3}{4} \\cdot \\frac{2}{3} = \\frac{1}{2}$\n\nSince $C_2 = -C_1$, we have $C_2 = -\\frac{1}{2}$.\n\n**Step 4: Write Final Solution**\nSubstituting $C_1 = \\frac{1}{2}$ into $y(x)$:\n\n$$y(x) = \\frac{1}{2} (e^x - e^{-x})$\n\nCorrect Answer: C"
                     }
                 ],
                 "final_answer": "C",
@@ -1640,7 +1640,7 @@ const QUESTIONS = {
                 "step_by_step": [
                     {
                         "step": "1. Conceptual & Mathematical Breakdown",
-                        "explanation": "**Understand Second-Order Homogeneous ODE** Given second-order differential equation: $$\\frac{d^2 y}{dx^2} - y = 0$$ Boundary conditions: \ • Passes through origin: $y(0) = 0$ • Passes through point $\\left(\\ln 2, \\frac{3}{4}\\right)$: $y(\\ln 2) = \\frac{3}{4}$ \ <br><br> **Step 1: Form Auxiliary Equation and General Solution** Substitute $y = e^{mx}$ into the differential equation: $$m^2 - 1 = 0 \\implies m = \\pm 1$$ The general solution is: $$y(x) = C_1 e^x + C_2 e^{-x}$$ **Step 2: Apply First Boundary Condition $y(0) = 0$** Substitute $x = 0$ and $y = 0$: $$2 = C_1 e^0 + C_2 e^{-0} \\implies C_1 + C_2 = 0 \\implies C_2 = -C_1$$ So the equation becomes: $$y(x) = C_1 (e^x - e^{-x})$$ **Step 3: Apply Second Boundary Condition $y(\\ln 2) = \\frac{3**{4}$} Substitute $x = \\ln 2$ and $y = \\frac{3}{4}$: $$y(\\ln 2) = C_1 \\left( e^{\\ln 2} - e^{-\\ln 2} \\right) = \\frac{3}{4}$$ Note that: $$e^{\\ln 2} = 2, \\quad e^{-\\ln 2} = e^{\\ln(1/2)} = \\frac{1}{2}$$ Substitute these values back: $$C_1 \\left( 2 - \\frac{1}{2} \\right) = \\frac{3}{4}$$ $$C_1 \\left( \\frac{3}{2} \\right) = \\frac{3}{4} \\implies C_1 = \\frac{3}{4} \\cdot \\frac{2}{3} = \\frac{1}{2}$$ Since $C_2 = -C_1$, we have $C_2 = -\\frac{1}{2}$. **Step 4: Write Final Solution** Substituting $C_1 = \\frac{1}{2}$ into $y(x)$: $$y(x) = \\frac{1}{2} (e^x - e^{-x})$$ Correct Answer: C"
+                        "explanation": "**Understand Second-Order Homogeneous ODE** Given second-order differential equation: $$\\frac{d^2 y}{dx^2} - y = 0$$ Boundary conditions:  • Passes through origin: $y(0) = 0$ • Passes through point $\\left(\\ln 2, \\frac{3}{4}\\right)$: $y(\\ln 2) = \\frac{3}{4}$  <br><br> **Step 1: Form Auxiliary Equation and General Solution** Substitute $y = e^{mx}$ into the differential equation: $$m^2 - 1 = 0 \\implies m = \\pm 1$$ The general solution is: $$y(x) = C_1 e^x + C_2 e^{-x}$$ **Step 2: Apply First Boundary Condition $y(0) = 0$** Substitute $x = 0$ and $y = 0$: $$2 = C_1 e^0 + C_2 e^{-0} \\implies C_1 + C_2 = 0 \\implies C_2 = -C_1$$ So the equation becomes: $$y(x) = C_1 (e^x - e^{-x})$$ **Step 3: Apply Second Boundary Condition $y(\\ln 2) = \\frac{3**{4}$} Substitute $x = \\ln 2$ and $y = \\frac{3}{4}$: $$y(\\ln 2) = C_1 \\left( e^{\\ln 2} - e^{-\\ln 2} \\right) = \\frac{3}{4}$$ Note that: $$e^{\\ln 2} = 2, \\quad e^{-\\ln 2} = e^{\\ln(1/2)} = \\frac{1}{2}$$ Substitute these values back: $$C_1 \\left( 2 - \\frac{1}{2} \\right) = \\frac{3}{4}$$ $$C_1 \\left( \\frac{3}{2} \\right) = \\frac{3}{4} \\implies C_1 = \\frac{3}{4} \\cdot \\frac{2}{3} = \\frac{1}{2}$$ Since $C_2 = -C_1$, we have $C_2 = -\\frac{1}{2}$. **Step 4: Write Final Solution** Substituting $C_1 = \\frac{1}{2}$ into $y(x)$: $$y(x) = \\frac{1}{2} (e^x - e^{-x})$$ Correct Answer: C"
                     }
                 ],
                 "common_pitfalls": [
@@ -1681,7 +1681,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand First-Order Separable ODE**\nGiven initial value problem:\n$$\\frac{dy}{dx} = -2xy, \\quad \\text{with initial condition } y(0) = 2$\n\n\n$$\\n\\frac{1}{y} \\, dy = -2x \\, dx\n\$\n\n\n**Step 1: Integrate Both Sides**\nIntegrate the separated equation with respect to their variables:\n\n$$\\int \\frac{1}{y} \\, dy = \\int -2x \\, dx$\n\n$$\\ln |y| = -x^2 + C$\n\nExponentiating both sides:\n\n$$y(x) = C' e^{-x^2} \\quad \\text{where } C' = \\pm e^C$\n\n**Step 2: Apply the Initial Condition $y(0) = 2$**\nSubstitute $x = 0$ and $y = 2$ into the solution:\n\n$$y(0) = C' e^{-(0)^2} = 2 \\implies C' e^0 = 2 \\implies C' = 2$\n\n**Step 3: Write Final Solution**\nSubstituting $C' = 2$ into the general equation:\n\n$$y(x) = 2e^{-x^2}$\n\nCorrect Answer: B"
+                        "content": "**Understand First-Order Separable ODE**\nGiven initial value problem:\n$$\\frac{dy}{dx} = -2xy, \\quad \\text{with initial condition } y(0) = 2$\n\n\n$$\\n\\frac{1}{y} \\, dy = -2x \\, dx\n$\n\n\n**Step 1: Integrate Both Sides**\nIntegrate the separated equation with respect to their variables:\n\n$$\\int \\frac{1}{y} \\, dy = \\int -2x \\, dx$\n\n$$\\ln |y| = -x^2 + C$\n\nExponentiating both sides:\n\n$$y(x) = C' e^{-x^2} \\quad \\text{where } C' = \\pm e^C$\n\n**Step 2: Apply the Initial Condition $y(0) = 2$**\nSubstitute $x = 0$ and $y = 2$ into the solution:\n\n$$y(0) = C' e^{-(0)^2} = 2 \\implies C' e^0 = 2 \\implies C' = 2$\n\n**Step 3: Write Final Solution**\nSubstituting $C' = 2$ into the general equation:\n\n$$y(x) = 2e^{-x^2}$\n\nCorrect Answer: B"
                     }
                 ],
                 "final_answer": "B",
@@ -1741,7 +1741,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Operator Notation and Particular Integral**\nGiven differential equation:\n$$\\frac{d^2 y}{dx^2} + 3 \\frac{dy}{dx} + 2y = 5 \\cos x$\n\nIn linear differential operator notation ($D = \\frac{d}{dx}$):\n$$(D^2 + 3D + 2) y = 5 \\cos x$\n\n\n$$\\ny_p = \\frac{1}{f(D)} X(x) = \\frac{5 \\cos x}{D^2 + 3D + 2}\n\$\n\n\n**Step 1: Replace $D^2$ with $-a^2$**\nFor sinusoidal terms of the form $\\cos(ax)$, apply the standard substitution $D^2 \\to -a^2$. Here $a = 1$, so $D^2 \\to -1^2 = -1$:\n\n$$y_p = \\frac{5 \\cos x}{-1 + 3D + 2} = \\frac{5 \\cos x}{3D + 1}$\n\n**Step 2: Rationalize the Operator Denominator**\nMultiply numerator and denominator by $(3D - 1)$:\n\n$$y_p = \\frac{5 (3D - 1) \\cos x}{(3D + 1)(3D - 1)} = \\frac{5 (3D - 1) \\cos x}{9D^2 - 1}$\n\nAgain substitute $D^2 \\to -1$ in the denominator:\n\n$$y_p = \\frac{5 (3D - 1) \\cos x}{9(-1) - 1} = \\frac{5 (3D - 1) \\cos x}{-10}$\n\n$$y_p = -\\frac{1}{2} (3D - 1) \\cos x$\n\n**Step 3: Apply the Differential Operator**\nEvaluate $D(\\cos x) = \\frac{d}{dx}(\\cos x) = -\\sin x$:\n\n$$y_p = -\\frac{1}{2} \\left[ 3(-\\sin x) - \\cos x \\right]$\n\n$$y_p = -\\frac{1}{2} \\left[ -3\\sin x - \\cos x \\right]$\n\n$$y_p = 1.5 \\sin x + 0.5 \\cos x = 0.5 \\cos x + 1.5 \\sin x$\n\nCorrect Answer: A"
+                        "content": "**Understand Operator Notation and Particular Integral**\nGiven differential equation:\n$$\\frac{d^2 y}{dx^2} + 3 \\frac{dy}{dx} + 2y = 5 \\cos x$\n\nIn linear differential operator notation ($D = \\frac{d}{dx}$):\n$$(D^2 + 3D + 2) y = 5 \\cos x$\n\n\n$$\\ny_p = \\frac{1}{f(D)} X(x) = \\frac{5 \\cos x}{D^2 + 3D + 2}\n$\n\n\n**Step 1: Replace $D^2$ with $-a^2$**\nFor sinusoidal terms of the form $\\cos(ax)$, apply the standard substitution $D^2 \\to -a^2$. Here $a = 1$, so $D^2 \\to -1^2 = -1$:\n\n$$y_p = \\frac{5 \\cos x}{-1 + 3D + 2} = \\frac{5 \\cos x}{3D + 1}$\n\n**Step 2: Rationalize the Operator Denominator**\nMultiply numerator and denominator by $(3D - 1)$:\n\n$$y_p = \\frac{5 (3D - 1) \\cos x}{(3D + 1)(3D - 1)} = \\frac{5 (3D - 1) \\cos x}{9D^2 - 1}$\n\nAgain substitute $D^2 \\to -1$ in the denominator:\n\n$$y_p = \\frac{5 (3D - 1) \\cos x}{9(-1) - 1} = \\frac{5 (3D - 1) \\cos x}{-10}$\n\n$$y_p = -\\frac{1}{2} (3D - 1) \\cos x$\n\n**Step 3: Apply the Differential Operator**\nEvaluate $D(\\cos x) = \\frac{d}{dx}(\\cos x) = -\\sin x$:\n\n$$y_p = -\\frac{1}{2} \\left[ 3(-\\sin x) - \\cos x \\right]$\n\n$$y_p = -\\frac{1}{2} \\left[ -3\\sin x - \\cos x \\right]$\n\n$$y_p = 1.5 \\sin x + 0.5 \\cos x = 0.5 \\cos x + 1.5 \\sin x$\n\nCorrect Answer: A"
                     }
                 ],
                 "final_answer": "A",
@@ -1801,7 +1801,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Homogeneous Linear ODE with Constant Coefficients**\nGiven differential equation:\n$$f''(x) + 4f'(x) + 4f(x) = 0$\n\nThis is a second-order linear homogeneous differential equation with constant coefficients.\n\n\n$$\\nm^2 + 4m + 4 = 0\n\$\n\n\n**Step 1: Find the Characteristic / Auxiliary Roots**\nWrite down the auxiliary equation by assuming a trial solution $f(x) = e^{mx}$:\n\n$$m^2 + 4m + 4 = 0$\n\nFactor the quadratic equation:\n\n$$(m + 2)^2 = 0 \\implies m_1 = -2, \\, m_2 = -2$\n\nWe have repeated real roots $m = -2$.\n\n**Step 2: Construct the Basis Functions**\nWhen the auxiliary equation has a repeated real root $m$, the two linearly independent basis solutions are:\n\n$$f_1(x) = e^{mx} = e^{-2x}$\n\n$$f_2(x) = x e^{mx} = x e^{-2x}$\n\n**Step 3: General Solution Structure**\nThe general solution is a linear combination of these basis solutions:\n\n$$f(x) = C_1 f_1(x) + C_2 f_2(x) = C_1 e^{-2x} + C_2 x e^{-2x}$\n\nTherefore, the basis pair for the solution space is $f_1(x) = e^{-2x}$ and $f_2(x) = x e^{-2x}$.\n\nCorrect Answer: C"
+                        "content": "**Understand Homogeneous Linear ODE with Constant Coefficients**\nGiven differential equation:\n$$f''(x) + 4f'(x) + 4f(x) = 0$\n\nThis is a second-order linear homogeneous differential equation with constant coefficients.\n\n\n$$\\nm^2 + 4m + 4 = 0\n$\n\n\n**Step 1: Find the Characteristic / Auxiliary Roots**\nWrite down the auxiliary equation by assuming a trial solution $f(x) = e^{mx}$:\n\n$$m^2 + 4m + 4 = 0$\n\nFactor the quadratic equation:\n\n$$(m + 2)^2 = 0 \\implies m_1 = -2, \\, m_2 = -2$\n\nWe have repeated real roots $m = -2$.\n\n**Step 2: Construct the Basis Functions**\nWhen the auxiliary equation has a repeated real root $m$, the two linearly independent basis solutions are:\n\n$$f_1(x) = e^{mx} = e^{-2x}$\n\n$$f_2(x) = x e^{mx} = x e^{-2x}$\n\n**Step 3: General Solution Structure**\nThe general solution is a linear combination of these basis solutions:\n\n$$f(x) = C_1 f_1(x) + C_2 f_2(x) = C_1 e^{-2x} + C_2 x e^{-2x}$\n\nTherefore, the basis pair for the solution space is $f_1(x) = e^{-2x}$ and $f_2(x) = x e^{-2x}$.\n\nCorrect Answer: C"
                     }
                 ],
                 "final_answer": "C",
@@ -2229,7 +2229,8 @@ const QUESTIONS = {
                     "Confusing sign conventions or boundary conditions during mathematical substitution.",
                     "Using degree mode instead of radian mode on your calculator when evaluating trigonometric derivatives/integrals."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Cartesian Axes\n  \\draw[->, ultra thick, black] (-3.5, 0) -- (3.5, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$x$};\n  \\draw[->, ultra thick, black] (0, -2.6) -- (0, 2.6) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$y$};\n  \\node[below left=2pt, font=\\large\\bfseries\\sffamily, black] at (0, 0) {O};\n\n  % Ellipse: x^2/25 + y^2/9 = 1 -> a = 5, b = 3\n  \\fill[gray!12] (0, 0) ellipse (2.5 and 1.5);\n  \\draw[ultra thick, black] (0, 0) ellipse (2.5 and 1.5);\n\n  % Semi-major axis a = 5\n  \\draw[<->, ultra thick, black] (0, -0.3) -- (2.5, -0.3) node[midway, below=2pt, font=\\large\\bfseries\\sffamily, black] {$a = 5$};\n  % Semi-minor axis b = 3\n  \\draw[<->, ultra thick, black] (-0.3, 0) -- (-0.3, 1.5) node[midway, left=2pt, font=\\large\\bfseries\\sffamily, black] {$b = 3$};\n\n  % Foci F1 and F2\n  \\draw[ultra thick, fill=black] (-1.8, 0) circle (0.08) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$F_1$};\n  \\draw[ultra thick, fill=black] (1.8, 0) circle (0.08) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$F_2$};\n  \\node[above right=3pt, font=\\large\\bfseries\\sffamily, black] at (1.5, 1.5) {Eccentricity $e = ?$ };\n\\end{tikzpicture}"
         },
         {
             "topic": "Analytic Geometry",
@@ -2384,7 +2385,8 @@ const QUESTIONS = {
                     "Confusing sign conventions or boundary conditions during mathematical substitution.",
                     "Using degree mode instead of radian mode on your calculator when evaluating trigonometric derivatives/integrals."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Cartesian Axes\n  \\draw[->, ultra thick, black] (-1.0, 0) -- (6.5, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$x$};\n  \\draw[->, ultra thick, black] (0, -1.0) -- (0, 6.5) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$y$};\n  \\node[below left=2pt, font=\\large\\bfseries\\sffamily, black] at (0, 0) {O};\n\n  % Line 1: y = 2x + 1 (points: (0, 1) to (2.5, 6))\n  \\draw[ultra thick, black] (-0.5, 0) -- (2.6, 6.2);\n  \\node[above left=2pt, font=\\large\\bfseries\\sffamily, black] at (1.5, 4.5) {$y = 2x + 1$};\n\n  % Line 2: 3x + 2y = 16 -> y = 8 - 1.5x (points: (0, 8), (2, 5), (4, 2), (5.33, 0))\n  \\draw[ultra thick, black] (0.8, 6.8) -- (5.0, 0.5);\n  \\node[above right=2pt, font=\\large\\bfseries\\sffamily, black] at (3.5, 3.2) {$3x + 2y = 16$};\n\n  % Intersection point (2, 5)\n  \\draw[ultra thick, fill=black] (2.0, 5.0) circle (0.1);\n  \\node[above right=3pt, font=\\large\\bfseries\\sffamily, black] at (2.0, 5.0) {$(x_p, y_p) = ?$ };\n  \\draw[dashed, thick, gray!70] (2.0, 5.0) -- (2.0, 0);\n  \\draw[dashed, thick, gray!70] (2.0, 5.0) -- (0, 5.0);\n\\end{tikzpicture}"
         },
         {
             "topic": "Analytic Geometry",
@@ -2613,7 +2615,8 @@ const QUESTIONS = {
                     "Confusing sign conventions or boundary conditions during mathematical substitution.",
                     "Using degree mode instead of radian mode on your calculator when evaluating trigonometric derivatives/integrals."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Cartesian Axes\n  \\draw[->, ultra thick, black] (-4.5, 0) -- (3.0, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$x$};\n  \\draw[->, ultra thick, black] (0, -2.0) -- (0, 5.5) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$y$};\n  \\node[below right=2pt, font=\\large\\bfseries\\sffamily, black] at (0, 0) {O};\n\n  % Circle with center at (-1, 2) and radius 3\n  \\fill[gray!12] (-1.0, 2.0) circle (3.0);\n  \\draw[ultra thick, black] (-1.0, 2.0) circle (3.0);\n\n  % Center point (h, k)\n  \\draw[ultra thick, fill=black] (-1.0, 2.0) circle (0.1);\n  \\node[above left=2pt, font=\\large\\bfseries\\sffamily, black] at (-1.0, 2.0) {$(h, k)$};\n\n  % Radius vector r\n  \\draw[->, ultra thick, black] (-1.0, 2.0) -- (1.5, 3.66) node[midway, above left=1pt, font=\\large\\bfseries\\sffamily, black] {Radius $r$};\n\n  % Projections to axes\n  \\draw[dashed, thick, gray!70] (-1.0, 2.0) -- (-1.0, 0) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$h$};\n  \\draw[dashed, thick, gray!70] (-1.0, 2.0) -- (0, 2.0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$k$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Analytic Geometry",
@@ -2751,7 +2754,8 @@ const QUESTIONS = {
                     "Confusing sign conventions or boundary conditions during mathematical substitution.",
                     "Using degree mode instead of radian mode on your calculator when evaluating trigonometric derivatives/integrals."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Cartesian Axes\n  \\draw[->, ultra thick, black] (-3.5, 0) -- (5.5, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$x$};\n  \\draw[->, ultra thick, black] (0, -3.5) -- (0, 3.5) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$y$};\n  \\node[below left=2pt, font=\\large\\bfseries\\sffamily, black] at (0, 0) {Vertex $(0,0)$};\n\n  % Parabola curve y^2 = 12x -> x = y^2 / 12\n  \\draw[ultra thick, black, domain=-3.2:3.2, samples=60] plot ({\\x*\\x/2.5}, {\\x});\n  \\node[right=2pt, font=\\large\\bfseries\\sffamily, black] at (3.5, 2.8) {$y^2 = 12x$};\n\n  % Focus F at (p, 0) -> (3, 0) in problem, mapped to (1.2, 0)\n  \\draw[ultra thick, fill=black] (1.2, 0) circle (0.1);\n  \\node[above right=2pt, font=\\large\\bfseries\\sffamily, black] at (1.2, 0) {Focus $(p, 0) = ?$ };\n\n  % Directrix line x = -p -> x = -1.2\n  \\draw[ultra thick, dashed, black] (-1.2, -3.2) -- (-1.2, 3.2);\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (-1.2, 3.2) {Directrix $x = -p$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Analytic Geometry",
@@ -10414,7 +10418,7 @@ const QUESTIONS = {
                     },
                     {
                         "step": "2. Direct Method (Conditional Approach)",
-                        "explanation": "\ • **First Friend:** The first friend can be born in any of the 12 months. The probability of choosing any month is $1$ (or $12/12$). • **Second Friend:** For the second friend to share the same birth-month, they must be born in that exact same specific month chosen by the first friend. The probability is $1/12$. \ Combining these probabilities: $$P(Same Month) = 1 \\times \\frac{1}{12} = \\frac{1}{12}$$"
+                        "explanation": " • **First Friend:** The first friend can be born in any of the 12 months. The probability of choosing any month is $1$ (or $12/12$). • **Second Friend:** For the second friend to share the same birth-month, they must be born in that exact same specific month chosen by the first friend. The probability is $1/12$.  Combining these probabilities: $$P(Same Month) = 1 \\times \\frac{1}{12} = \\frac{1}{12}$$"
                     }
                 ],
                 "common_pitfalls": [
@@ -10491,7 +10495,7 @@ const QUESTIONS = {
                     },
                     {
                         "step": "2. Method 1: Complementary Selection",
-                        "explanation": "\ • **All 3 students from the same school:** • Engineering: 0 ways (only 2 students available) • Science: $\\binom{3}{3} = 1$ way • Arts: $\\binom{5}{3} = 10$ ways $$N(All 3 Same) = 0 + 1 + 10 = 11$$ • **All 3 students from different schools (1 from E, 1 from S, 1 from A):** $$N(All 3 Different) = \\binom{2}{1} \\times \\binom{3}{1} \\times \\binom{5}{1} = 2 \\times 3 \\times 5 = 30$$ \ Subtracting these from the total possibilities gives the favorable outcomes: $$N(2 Same, 1 Different) = 120 - 11 - 30 = 79$$"
+                        "explanation": " • **All 3 students from the same school:** • Engineering: 0 ways (only 2 students available) • Science: $\\binom{3}{3} = 1$ way • Arts: $\\binom{5}{3} = 10$ ways $$N(All 3 Same) = 0 + 1 + 10 = 11$$ • **All 3 students from different schools (1 from E, 1 from S, 1 from A):** $$N(All 3 Different) = \\binom{2}{1} \\times \\binom{3}{1} \\times \\binom{5}{1} = 2 \\times 3 \\times 5 = 30$$  Subtracting these from the total possibilities gives the favorable outcomes: $$N(2 Same, 1 Different) = 120 - 11 - 30 = 79$$"
                     },
                     {
                         "step": "3. Method 2: Direct Summation",
@@ -11265,7 +11269,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand the Law of Total Probability",
-                        "content": "We need to find the total probability of selecting an employed person ($E$) from a population divided into mutually exclusive groups: Men ($M$) and Women ($W$).\n\n\n$$\\nP(E) = P(E|M)P(M) + P(E|W)P(W)\n\$\n"
+                        "content": "We need to find the total probability of selecting an employed person ($E$) from a population divided into mutually exclusive groups: Men ($M$) and Women ($W$).\n\n\n$$\\nP(E) = P(E|M)P(M) + P(E|W)P(W)\n$\n"
                     },
                     {
                         "title": "Step 1: Identify Given Probabilities",
@@ -11343,7 +11347,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Binomial Distribution Model",
-                        "content": "Throwing a fair dice $n = 4$ times consists of $4$ independent Bernoulli trials.\n\nLet $X$ be the discrete random variable representing the number of times a '$SIX$' appears.\n\\n•  Probability of getting a '$SIX$' in a single throw: $p = \\frac{1}{6}$\n•  Probability of not getting a '$SIX$' in a single throw: $q = 1 - p = \\frac{5}{6}$\n•  Number of trials: $n = 4$\n\\n\n$X$ follows a Binomial distribution $X \\sim B\\left(4, \\frac{1}{6}\\right)$:\n\n\n$$\\nP(X = k) = \\binom{n}{k} p^k q^{n-k} = \\binom{4}{k} \\left(\\frac{1}{6}\\right)^k \\left(\\frac{5}{6}\\right)^{4-k}\n\$\n"
+                        "content": "Throwing a fair dice $n = 4$ times consists of $4$ independent Bernoulli trials.\n\nLet $X$ be the discrete random variable representing the number of times a '$SIX$' appears.\n\\n•  Probability of getting a '$SIX$' in a single throw: $p = \\frac{1}{6}$\n•  Probability of not getting a '$SIX$' in a single throw: $q = 1 - p = \\frac{5}{6}$\n•  Number of trials: $n = 4$\n\\n\n$X$ follows a Binomial distribution $X \\sim B\\left(4, \\frac{1}{6}\\right)$:\n\n\n$$\\nP(X = k) = \\binom{n}{k} p^k q^{n-k} = \\binom{4}{k} \\left(\\frac{1}{6}\\right)^k \\left(\\frac{5}{6}\\right)^{4-k}\n$\n"
                     },
                     {
                         "title": "Step 1: Use Complementary Probability",
@@ -11421,7 +11425,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Independent Events",
-                        "content": "Let:\n\\n•  $A$ = Event that Ram is selected\n•  $B$ = Event that Ramesh is selected\n\\n\nSince the selections of Ram and Ramesh are independent events:\n\\n•  $P(A) = \\frac{1}{6} \\implies P(A') = 1 - \\frac{1}{6} = \\frac{5}{6}$ (Ram is not selected)\n•  $P(B) = \\frac{1}{8} \\implies P(B') = 1 - \\frac{1}{8} = \\frac{7}{8}$ (Ramesh is not selected)\n\\n\n\n$$\\nP(\\text{Only one selected}) = P(A \\cap B') + P(A' \\cap B)\n\$\n"
+                        "content": "Let:\n\\n•  $A$ = Event that Ram is selected\n•  $B$ = Event that Ramesh is selected\n\\n\nSince the selections of Ram and Ramesh are independent events:\n\\n•  $P(A) = \\frac{1}{6} \\implies P(A') = 1 - \\frac{1}{6} = \\frac{5}{6}$ (Ram is not selected)\n•  $P(B) = \\frac{1}{8} \\implies P(B') = 1 - \\frac{1}{8} = \\frac{7}{8}$ (Ramesh is not selected)\n\\n\n\n$$\\nP(\\text{Only one selected}) = P(A \\cap B') + P(A' \\cap B)\n$\n"
                     },
                     {
                         "title": "Step 1: Express \"Only One Selected\" Case",
@@ -11450,7 +11454,7 @@ const QUESTIONS = {
                     },
                     {
                         "step": "2. Express \"Only One Selected\" Case",
-                        "explanation": "The event that \"only one of them is selected\" consists of two mutually exclusive outcomes: \ • Ram is selected AND Ramesh is not selected: $P(A \\cap B') = P(A) \\cdot P(B')$ • Ram is not selected AND Ramesh is selected: $P(A' \\cap B) = P(A') \\cdot P(B)$ \""
+                        "explanation": "The event that \"only one of them is selected\" consists of two mutually exclusive outcomes:  • Ram is selected AND Ramesh is not selected: $P(A \\cap B') = P(A) \\cdot P(B')$ • Ram is not selected AND Ramesh is selected: $P(A' \\cap B) = P(A') \\cdot P(B)$ \""
                     },
                     {
                         "step": "3. Calculate Individual Probabilities",
@@ -11499,7 +11503,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Conditional Probability",
-                        "content": "The conditional probability $P(Y/X)$ represents the probability of event $Y$ occurring given that event $X$ has already occurred.\n\nBy definition, the conditional probability formula is:\n\n\n$$\\nP(Y/X) = \\frac{P(X \\cap Y)}{P(X)}\n\$\n"
+                        "content": "The conditional probability $P(Y/X)$ represents the probability of event $Y$ occurring given that event $X$ has already occurred.\n\nBy definition, the conditional probability formula is:\n\n\n$$\\nP(Y/X) = \\frac{P(X \\cap Y)}{P(X)}\n$\n"
                     },
                     {
                         "title": "Step 1: Identify Given Quantities",
@@ -11577,7 +11581,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand the Definition of Mode",
-                        "content": "The **mode** of a dataset is defined as the value that appears most frequently (i.e., has the highest frequency of occurrence).\n\n\n$$\\n\\text{Mode} = \\arg\\max_{x} (f(x))\n\$\n"
+                        "content": "The **mode** of a dataset is defined as the value that appears most frequently (i.e., has the highest frequency of occurrence).\n\n\n$$\\n\\text{Mode} = \\arg\\max_{x} (f(x))\n$\n"
                     },
                     {
                         "title": "Step 1: Count Frequencies of Each Value",
@@ -11647,7 +11651,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Sample Space for Two Coin Tosses",
-                        "content": "When two unbiased coins are tossed, each coin has 2 equally likely outcomes: Head ($H$) or Tail ($T$).\n\nThe total number of outcomes in the sample space $S$ is:\n$$n(S) = 2 \\times 2 = 4$\n\nThe complete sample space is given by:\n$$S = \\{HH, HT, TH, TT\\}$\n\n\n$$\\nP(E) = \\frac{n(E)}{n(S)} = 1 - P(E')\n \$\n"
+                        "content": "When two unbiased coins are tossed, each coin has 2 equally likely outcomes: Head ($H$) or Tail ($T$).\n\nThe total number of outcomes in the sample space $S$ is:\n$$n(S) = 2 \\times 2 = 4$\n\nThe complete sample space is given by:\n$$S = \\{HH, HT, TH, TT\\}$\n\n\n$$\\nP(E) = \\frac{n(E)}{n(S)} = 1 - P(E')\n $\n"
                     },
                     {
                         "title": "Method 1: Direct Counting",
@@ -11717,7 +11721,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Binomial Probability",
-                        "content": "Since each match played is independent and has two effective outcomes for player $P$ (either winning or not winning), the number of wins $X$ in $n$ matches follows a Binomial distribution $B(n, p)$:\n\n\n$$\\nP(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\n \$\n\n\nwhere:\n\\n•  $n$ = total number of matches (trials) $= 3$\n•  $k$ = number of successful matches (wins) $= 2$\n•  $p$ = probability of winning a single match\n•  $q = 1-p$ = probability of not winning a single match (drawn or lost)\n\""
+                        "content": "Since each match played is independent and has two effective outcomes for player $P$ (either winning or not winning), the number of wins $X$ in $n$ matches follows a Binomial distribution $B(n, p)$:\n\n\n$$\\nP(X = k) = \\binom{n}{k} p^k (1-p)^{n-k}\n $\n\n\nwhere:\n\\n•  $n$ = total number of matches (trials) $= 3$\n•  $k$ = number of successful matches (wins) $= 2$\n•  $p$ = probability of winning a single match\n•  $q = 1-p$ = probability of not winning a single match (drawn or lost)\n\""
                     },
                     {
                         "title": "Step 1: Determine Individual Probabilities",
@@ -14799,7 +14803,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Horizontal parameter axis\n  \\draw[->, ultra thick, black] (-3.8, 0) -- (3.8, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$\\bar{x}$};\n\n  % Sampling Distribution Curve\n  \\draw[ultra thick, black, domain=-3.2:3.2, samples=60] plot (\\x, {2.8*exp(-\\x*\\x/1.8)});\n\n  % Shaded 95% confidence central region\n  \\fill[gray!25, domain=-1.96:1.96, samples=40] (-1.96, 0) -- plot (\\x, {2.8*exp(-\\x*\\x/1.8)}) -- (1.96, 0) -- cycle;\n  \\draw[ultra thick, black, domain=-1.96:1.96, samples=40] plot (\\x, {2.8*exp(-\\x*\\x/1.8)});\n\n  % Sample Mean center\n  \\draw[ultra thick, dashed, black] (0, 0) -- (0, 2.8);\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (0, 0) {$\\bar{x} = 80$};\n\n  % Critical limits\n  \\draw[ultra thick, black] (-1.96, 0) -- (-1.96, 0.7);\n  \\draw[ultra thick, black] (1.96, 0) -- (1.96, 0.7);\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (-1.96, 0) {Lower Limit};\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (1.96, 0) {Upper Limit};\n\n  % 95% Confidence Level label\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, 1.2) {95\\% Confidence Area};\n  \\node[above=4pt, font=\\large\\bfseries\\sffamily, black] at (0, 2.8) {$n = 25,\\ s = 10$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Regression Analysis",
@@ -16613,7 +16618,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Horizontal axis (z-scores)\n  \\draw[->, ultra thick, black] (-4.0, 0) -- (4.0, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$z$};\n\n  % Normal bell curve: f(x) = 3.0 * exp(-x^2 / 2)\n  \\draw[ultra thick, black, domain=-3.5:3.5, samples=80] plot (\\x, {3.0*exp(-\\x*\\x/2)});\n\n  % Shaded region between -1 sigma and +1 sigma\n  \\fill[gray!25, domain=-1.0:1.0, samples=40] (-1.0, 0) -- plot (\\x, {3.0*exp(-\\x*\\x/2)}) -- (1.0, 0) -- cycle;\n  \\draw[ultra thick, black, domain=-1.0:1.0, samples=40] plot (\\x, {3.0*exp(-\\x*\\x/2)});\n\n  % Center Mean line\n  \\draw[ultra thick, dashed, black] (0, 0) -- (0, 3.0);\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (0, 0) {$\\mu$};\n\n  % Standard Deviation markers\n  \\draw[thick, black] (-1.0, 0) -- (-1.0, 1.8);\n  \\draw[thick, black] (1.0, 0) -- (1.0, 1.8);\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (-1.0, 0) {$\\mu - 1\\sigma$};\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (1.0, 0) {$\\mu + 1\\sigma$};\n\n  % Percentage area query\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, 1.0) {Area $= ?$ };\n\\end{tikzpicture}"
         },
         {
             "topic": "Probability",
@@ -22242,7 +22248,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Diamond Bridge Nodes: Top (0, 2.5), Right (2.5, 0), Bottom (0, -2.5), Left (-2.5, 0)\n  \\draw[ultra thick, black] (-2.5, 0) -- (-1.7, 0.8);\n  \\draw[ultra thick, black] (-1.7, 0.8) -- (-1.6, 1.1) -- (-1.3, 0.7) -- (-1.0, 1.3) -- (-0.7, 0.9) -- (-0.5, 1.2) -- (-0.4, 2.1) -- (0, 2.5);\n  \\node[above left=2pt, font=\\large\\bfseries\\sffamily, black] at (-1.4, 1.3) {$R_1 = 100\\ \\Omega$};\n\n  \\draw[ultra thick, black] (0, 2.5) -- (0.8, 1.7);\n  \\draw[ultra thick, black] (0.8, 1.7) -- (1.1, 1.6) -- (0.7, 1.3) -- (1.3, 1.0) -- (0.9, 0.7) -- (1.2, 0.5) -- (2.1, 0.4) -- (2.5, 0);\n  \\node[above right=2pt, font=\\large\\bfseries\\sffamily, black] at (1.4, 1.3) {$R_2 = 200\\ \\Omega$};\n\n  \\draw[ultra thick, black] (-2.5, 0) -- (-1.7, -0.8);\n  \\draw[ultra thick, black] (-1.7, -0.8) -- (-1.6, -1.1) -- (-1.3, -0.7) -- (-1.0, -1.3) -- (-0.7, -0.9) -- (-0.5, -1.2) -- (-0.4, -2.1) -- (0, -2.5);\n  \\node[below left=2pt, font=\\large\\bfseries\\sffamily, black] at (-1.4, -1.3) {$R_3 = 150\\ \\Omega$};\n\n  \\draw[ultra thick, black] (0, -2.5) -- (0.8, -1.7);\n  \\draw[ultra thick, black] (0.8, -1.7) -- (1.1, -1.6) -- (0.7, -1.3) -- (1.3, -1.0) -- (0.9, -0.7) -- (1.2, -0.5) -- (2.1, -0.4) -- (2.5, 0);\n  \\node[below right=2pt, font=\\large\\bfseries\\sffamily, black] at (1.4, -1.3) {$R_x = ?$ };\n\n  % Galvanometer detector between Top and Bottom\n  \\draw[ultra thick, black] (0, 2.5) -- (0, 0.6);\n  \\draw[ultra thick, fill=white, draw=black] (0, 0) circle (0.6);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, 0) {G};\n  \\draw[ultra thick, black] (0, -0.6) -- (0, -2.5);\n  \\node[right=4pt, font=\\large\\bfseries\\sffamily, black] at (0.6, 0) {$I_G = 0$ (Balanced)};\n\\end{tikzpicture}"
         },
         {
             "topic": "Data Acquisition",
@@ -23783,7 +23790,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Input Reference R(s)\n  \\draw[->, ultra thick, black] (-1.0, 1.5) -- (0.8, 1.5) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$R(s)$};\n\n  % Summing Junction\n  \\draw[ultra thick, fill=white, draw=black] (1.1, 1.5) circle (0.3);\n  \\node[above left, font=\\bfseries\\sffamily, black] at (1.0, 1.6) {$+$};\n  \\node[below left, font=\\bfseries\\sffamily, black] at (1.0, 1.3) {$-$};\n\n  % Forward Path to G(s)\n  \\draw[->, ultra thick, black] (1.4, 1.5) -- (2.4, 1.5);\n  \\draw[ultra thick, fill=gray!20, draw=black] (2.4, 0.9) rectangle (4.4, 2.1);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (3.4, 1.5) {$G(s) = \\frac{10}{s+2}$};\n\n  % Output Y(s)\n  \\draw[->, ultra thick, black] (4.4, 1.5) -- (6.6, 1.5) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$Y(s)$};\n  \\draw[ultra thick, fill=black] (5.2, 1.5) circle (0.07);\n\n  % Feedback Path with H(s) = 1 (Unity feedback)\n  \\draw[ultra thick, black] (5.2, 1.5) -- (5.2, 0) -- (3.8, 0);\n  \\draw[ultra thick, fill=gray!12, draw=black] (2.6, -0.5) rectangle (3.8, 0.5);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (3.2, 0) {$H(s) = 1$};\n  \\draw[->, ultra thick, black] (2.6, 0) -- (1.1, 0) -- (1.1, 1.2);\n\\end{tikzpicture}"
         },
         {
             "topic": "Control Systems",
@@ -27854,7 +27862,8 @@ const QUESTIONS = {
                     "Selecting the wrong compound factor from NCEES Economics tables (e.g., confusing $(P/A)$ with $(A/P)$).",
                     "Miscounting compounding periods $n$ or failing to adjust interest rate $i$ for sub-annual periods."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Engineer Decision Gateway\n  \\draw[ultra thick, fill=gray!18, draw=black] (0, 1.8) rectangle (3.4, 3.2);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (1.7, 2.5) {Potential Conflict\\\\of Interest};\n\n  % Decision branch\n  \\draw[->, ultra thick, black] (3.4, 2.5) -- (5.0, 2.5);\n  \\node[above, font=\\bfseries\\sffamily, black] at (4.2, 2.5) {Rule};\n\n  % Action Outcome Block\n  \\draw[ultra thick, fill=gray!28, draw=black] (5.0, 1.6) rectangle (8.4, 3.4);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (6.7, 2.5) {Prompt & Full\\\\Disclosure\\\\to Employer/Client};\n\n  % Warning / Duty shield\n  \\draw[ultra thick, fill=white, draw=black] (-1.5, 2.5) circle (0.6);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (-1.5, 2.5) {PE};\n  \\draw[->, ultra thick, black] (-0.9, 2.5) -- (0, 2.5);\n\\end{tikzpicture}"
         },
         {
             "topic": "Ethics",
@@ -37381,7 +37390,8 @@ const QUESTIONS = {
                     "Selecting the wrong compound factor from NCEES Economics tables (e.g., confusing $(P/A)$ with $(A/P)$).",
                     "Miscounting compounding periods $n$ or failing to adjust interest rate $i$ for sub-annual periods."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Book Value vs Time Axes\n  \\draw[->, ultra thick, black] (0, 0) -- (5.5, 0) node[right=3pt, font=\\large\\bfseries\\sffamily, black] {Time, $t$ (Years)};\n  \\draw[->, ultra thick, black] (0, 0) -- (0, 4.5) node[above=3pt, font=\\large\\bfseries\\sffamily, black] {Book Value, $BV$};\n\n  % Initial Cost B = $50,000 at t = 0\n  \\draw[ultra thick, fill=black] (0, 4.0) circle (0.08);\n  \\node[left=3pt, font=\\large\\bfseries\\sffamily, black] at (0, 4.0) {Cost $B = \\$50,000$};\n\n  % Salvage Value S = $5,000 at t = n = 9 years\n  \\draw[ultra thick, fill=black] (4.5, 0.6) circle (0.08);\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black] at (4.5, 0.6) {Salvage $S = \\$5,000$};\n\n  % Linear Depreciation Line\n  \\draw[ultra thick, black] (0, 4.0) -- (4.5, 0.6);\n\n  % Projections\n  \\draw[dashed, thick, gray!70] (4.5, 0.6) -- (4.5, 0) node[below=3pt, font=\\large\\bfseries\\sffamily, black] {$n = 9\\text{ years}$};\n  \\draw[dashed, thick, gray!70] (4.5, 0.6) -- (0, 0.6);\n\n  % Annual Depreciation query\n  \\node[above right=4pt, font=\\large\\bfseries\\sffamily, black] at (2.2, 2.3) {$D_{\\text{annual}} = ?$ };\n\\end{tikzpicture}"
         },
         {
             "topic": "Time Value of Money",
@@ -39603,7 +39613,8 @@ const QUESTIONS = {
                     "Selecting the wrong compound factor from NCEES Economics tables (e.g., confusing $(P/A)$ with $(A/P)$).",
                     "Miscounting compounding periods $n$ or failing to adjust interest rate $i$ for sub-annual periods."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Timeline axis\n  \\draw[->, ultra thick, black] (0, 0) -- (5.5, 0) node[right=3pt, font=\\large\\bfseries\\sffamily, black] {Year ($n$)};\n\n  % Year tick marks: 0, 1, 2, 3, 4\n  \\foreach \\x in {0, 1, 2, 3, 4} {\n    \\draw[ultra thick, black] (\\x+0.5, 0.15) -- (\\x+0.5, -0.15);\n    \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (\\x+0.5, -0.15) {\\x};\n  }\n\n  % Present Value P at year 0\n  \\draw[<-, ultra thick, black] (0.5, -0.2) -- (0.5, -1.8) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$P = ?$ };\n\n  % Uniform Annual Inflows A = $5,000 for years 1, 2, 3, 4\n  \\foreach \\x in {1, 2, 3, 4} {\n    \\draw[->, ultra thick, black] (\\x+0.5, 0.2) -- (\\x+0.5, 1.8);\n  }\n  \\node[above=2pt, font=\\large\\bfseries\\sffamily, black] at (3.0, 1.8) {Uniform Annuity $A = \\$5,000/\\text{year}$};\n  \\node[above right=3pt, font=\\large\\bfseries\\sffamily, black] at (4.5, 0.8) {$i = 10\\% $};\n\\end{tikzpicture}"
         },
         {
             "topic": "Rate of Return",
@@ -40444,7 +40455,8 @@ const QUESTIONS = {
                     "Selecting the wrong compound factor from NCEES Economics tables (e.g., confusing $(P/A)$ with $(A/P)$).",
                     "Miscounting compounding periods $n$ or failing to adjust interest rate $i$ for sub-annual periods."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Timeline axis\n  \\draw[->, ultra thick, black] (0, 0) -- (6.0, 0) node[right=3pt, font=\\large\\bfseries\\sffamily, black] {Period ($n$)};\n\n  % Period numbers: 0, 1, 2, 3, 4\n  \\foreach \\x in {0, 1, 2, 3, 4} {\n    \\draw[ultra thick, black] (\\x+0.6, 0.15) -- (\\x+0.6, -0.15);\n    \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (\\x+0.6, -0.15) {\\x};\n  }\n\n  % Arithmetic Gradient Arrows: 0 at n=1, 1G at n=2, 2G at n=3, 3G at n=4\n  \\draw[->, ultra thick, black] (2.6, 0.15) -- (2.6, 1.0) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$1G$};\n  \\draw[->, ultra thick, black] (3.6, 0.15) -- (3.6, 1.8) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$2G$};\n  \\draw[->, ultra thick, black] (4.6, 0.15) -- (4.6, 2.6) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$3G$};\n\n  % Linear dashed slope\n  \\draw[dashed, thick, black] (1.6, 0.2) -- (4.6, 2.6);\n  \\node[above left=3pt, font=\\large\\bfseries\\sffamily, black] at (3.0, 1.8) {Slope $= +G$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Break-Even Analysis",
@@ -40891,7 +40903,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Composite Section Moment of Inertia",
-                        "content": "The net moment of inertia $I_{XX}$ of the cross-section about the central $X-X$ axis is calculated by subtracting the moment of inertia of the two hollow rectangular cutouts from the moment of inertia of the solid outer rectangle:\n\n\n$$\\nI_{XX} = I_{XX,\\text{outer}} - 2 \\cdot I_{XX,\\text{cutout}}\n \$\n"
+                        "content": "The net moment of inertia $I_{XX}$ of the cross-section about the central $X-X$ axis is calculated by subtracting the moment of inertia of the two hollow rectangular cutouts from the moment of inertia of the solid outer rectangle:\n\n\n$$\\nI_{XX} = I_{XX,\\text{outer}} - 2 \\cdot I_{XX,\\text{cutout}}\n $\n"
                     },
                     {
                         "title": "Step 1: Calculate Moment of Inertia of Outer Rectangle ($I_{XX,\\text{outer",
@@ -40978,7 +40990,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Area Moment of Inertia",
-                        "content": "The net area moment of inertia of the composite cross-section about its base is obtained by subtracting the moment of inertia of the two circular cutouts from the moment of inertia of the full outer rectangle:\n\n\n$$\\nI_{\\text{base}} = I_{\\text{rectangle, base}} - I_{\\text{circle, base}}\n \$\n"
+                        "content": "The net area moment of inertia of the composite cross-section about its base is obtained by subtracting the moment of inertia of the two circular cutouts from the moment of inertia of the full outer rectangle:\n\n\n$$\\nI_{\\text{base}} = I_{\\text{rectangle, base}} - I_{\\text{circle, base}}\n $\n"
                     },
                     {
                         "title": "Step 1: Calculate Moment of Inertia of Full Rectangle About Base",
@@ -42583,7 +42595,8 @@ const QUESTIONS = {
                     "Failing to set up a complete Free-Body Diagram (FBD) before writing equilibrium equations.",
                     "Mixing up sine and cosine components when resolving forces into orthogonal axes."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Vertical Wall Support\n  \\draw[ultra thick, black] (0, -0.8) -- (0, 3.8);\n  \\fill[pattern=north east lines, draw=black, thick] (-0.3, -0.8) rectangle (0, 3.8);\n\n  % Horizontal Beam (Length L = 5 m, mass 20 kg)\n  \\draw[ultra thick, fill=gray!25, draw=black] (0, 0.4) rectangle (5.5, 0.8);\n  % Pin at wall (A)\n  \\draw[ultra thick, fill=white, draw=black] (0, 0.6) circle (0.15);\n  \\node[above left=2pt, font=\\large\\bfseries\\sffamily, black] at (0, 0.8) {A};\n\n  % Cable attached from wall to beam tip B\n  % Coordinates: Wall at (0, 3.2), Beam tip B at (5.5, 0.6)\n  \\draw[ultra thick, black] (0, 3.2) -- (5.5, 0.6);\n  \\draw[ultra thick, fill=white, draw=black] (5.5, 0.6) circle (0.12);\n  \\node[above right=2pt, font=\\large\\bfseries\\sffamily, black] at (5.5, 0.6) {B};\n\n  % Dimension / Angle: Cable at 30 deg to horizontal\n  \\draw[dashed, thick, gray!80] (3.2, 0.6) -- (5.5, 0.6);\n  \\draw[thick, black] (4.5, 0.6) arc[start angle=180, end angle=155, radius=1.0];\n  \\node[left=3pt, font=\\large\\bfseries\\sffamily, black] at (4.4, 0.9) {$30^\\circ$};\n\n  % Beam dimension & weight indicator\n  \\draw[<->, ultra thick, black] (0, -0.3) -- (5.5, -0.3) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {$L = 5\\text{ m}$};\n  \\draw[->, ultra thick, black] (2.75, 0.6) -- (2.75, -0.9) node[midway, right=3pt, font=\\large\\bfseries\\sffamily, black] {$W = mg$};\n  \\node[below, font=\\large\\bfseries\\sffamily, black] at (2.75, -0.9) {($m = 20\\text{ kg}$)};\n\\end{tikzpicture}"
         },
         {
             "topic": "Equilibrium of Rigid Bodies",
@@ -43034,7 +43047,8 @@ const QUESTIONS = {
                     "Failing to set up a complete Free-Body Diagram (FBD) before writing equilibrium equations.",
                     "Mixing up sine and cosine components when resolving forces into orthogonal axes."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Axes\n  \\draw[->, ultra thick, black] (-0.6, 0) -- (7.2, 0) node[right=3pt, font=\\large\\bfseries\\sffamily, black] {$x\\text{ (cm)}$};\n  \\draw[->, ultra thick, black] (0, -0.6) -- (0, 5.0) node[above=3pt, font=\\large\\bfseries\\sffamily, black] {$y\\text{ (cm)}$};\n  \\node[below left=2pt, font=\\large\\bfseries\\sffamily, black] at (0, 0) {O};\n\n  % Solid Outer Rectangle: 6 wide, 4 high\n  \\fill[gray!25] (0, 0) rectangle (6.0, 4.0);\n  \\draw[ultra thick, black] (0, 0) rectangle (6.0, 4.0);\n\n  % Inner Square Hole: 2x2 centered at (3, 2) -> (2, 1) to (4, 3)\n  \\fill[white] (2.0, 1.0) rectangle (4.0, 3.0);\n  \\draw[ultra thick, black] (2.0, 1.0) rectangle (4.0, 3.0);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (3.0, 2.0) {Hole};\n\n  % Outer Dimensions\n  \\draw[<->, ultra thick, black] (0, -0.5) -- (6.0, -0.5) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {$6\\text{ cm}$};\n  \\draw[<->, ultra thick, black] (-0.5, 0) -- (-0.5, 4.0) node[midway, left=3pt, font=\\large\\bfseries\\sffamily, black] {$4\\text{ cm}$};\n\n  % Hole Dimensions\n  \\draw[<->, thick, black] (2.0, 3.3) -- (4.0, 3.3) node[midway, above=2pt, font=\\bfseries\\sffamily, black] {$2\\text{ cm}$};\n  \\draw[<->, thick, black] (4.3, 1.0) -- (4.3, 3.0) node[midway, right=2pt, font=\\bfseries\\sffamily, black] {$2\\text{ cm}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Centroids and Moments of Inertia",
@@ -43621,7 +43635,8 @@ const QUESTIONS = {
                     "Failing to set up a complete Free-Body Diagram (FBD) before writing equilibrium equations.",
                     "Mixing up sine and cosine components when resolving forces into orthogonal axes."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Horizontal Beam (8 m span)\n  \\draw[ultra thick, fill=gray!25, draw=black] (0, 0.6) rectangle (8.0, 1.0);\n\n  % Left Pin Support at A (x = 0)\n  \\draw[ultra thick, fill=white, draw=black] (0, 0.6) -- (-0.35, 0) -- (0.35, 0) -- cycle;\n  \\draw[ultra thick, black] (-0.5, 0) -- (0.5, 0);\n  \\fill[pattern=north east lines, draw=black, thick] (-0.5, -0.2) rectangle (0.5, 0);\n  \\node[above left=2pt, font=\\large\\bfseries\\sffamily, black] at (0, 1.0) {A};\n\n  % Right Roller Support at B (x = 8.0)\n  \\draw[ultra thick, fill=white, draw=black] (8.0, 0.6) -- (7.65, 0.2) -- (8.35, 0.2) -- cycle;\n  \\draw[ultra thick, fill=white, draw=black] (7.75, 0.1) circle (0.1);\n  \\draw[ultra thick, fill=white, draw=black] (8.25, 0.1) circle (0.1);\n  \\draw[ultra thick, black] (7.5, 0) -- (8.5, 0);\n  \\fill[pattern=north east lines, draw=black, thick] (7.5, -0.2) rectangle (8.5, 0);\n  \\node[above right=2pt, font=\\large\\bfseries\\sffamily, black] at (8.0, 1.0) {B};\n\n  % Concentrated Point Load (30 kN at 2 m from left)\n  \\draw[<-, ultra thick, black] (2.0, 1.0) -- (2.0, 2.7) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$30\\text{ kN}$};\n\n  % Dimensioning\n  \\draw[<->, ultra thick, black] (0, -0.6) -- (2.0, -0.6) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {$2\\text{ m}$};\n  \\draw[<->, ultra thick, black] (2.0, -0.6) -- (8.0, -0.6) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {$6\\text{ m}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Trusses",
@@ -43915,7 +43930,8 @@ const QUESTIONS = {
                     "Failing to set up a complete Free-Body Diagram (FBD) before writing equilibrium equations.",
                     "Mixing up sine and cosine components when resolving forces into orthogonal axes."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.2, >=stealth]\n  % Horizontal Beam (Span 4 m)\n  \\draw[ultra thick, fill=gray!30, draw=black] (0, 0.4) rectangle (5.0, 0.7);\n\n  % Distributed Load block (Height 1.0, width 5.0)\n  \\fill[gray!12] (0, 0.7) rectangle (5.0, 2.0);\n  \\draw[ultra thick, black] (0, 2.0) -- (5.0, 2.0);\n\n  % Downward arrows representing UDL\n  \\foreach \\x in {0.2, 0.8, 1.4, 2.0, 2.6, 3.2, 3.8, 4.4, 4.8} {\n    \\draw[->, thick, black] (\\x, 2.0) -- (\\x, 0.7);\n  }\n  \\node[above=3pt, font=\\large\\bfseries\\sffamily, black] at (2.5, 2.0) {$w = 5\\text{ kN/m}$};\n\n  % Support at ends\n  \\draw[ultra thick, fill=white, draw=black] (0, 0.4) -- (-0.3, 0) -- (0.3, 0) -- cycle;\n  \\draw[ultra thick, fill=white, draw=black] (5.0, 0.4) -- (4.7, 0) -- (5.3, 0) -- cycle;\n\n  % Beam Dimension\n  \\draw[<->, ultra thick, black] (0, -0.4) -- (5.0, -0.4) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {Span $L = 4\\text{ m}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Trusses",
@@ -48139,7 +48155,8 @@ const QUESTIONS = {
                     "Failing to set up a complete Free-Body Diagram (FBD) before writing equilibrium equations.",
                     "Mixing up sine and cosine components when resolving forces into orthogonal axes."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Ground line\n  \\draw[ultra thick, black] (-0.5, 0) -- (6.5, 0);\n  \\fill[pattern=north east lines, draw=black, thick] (-0.5, -0.25) rectangle (6.5, 0);\n\n  % Parabolic Trajectory\n  \\draw[ultra thick, dashed, black] (0, 0) parabola bend (2.8, 2.3) (5.6, 0);\n\n  % Launch Vector (v0 = 20 m/s at 45 deg)\n  \\draw[->, ultra thick, black] (0, 0) -- (1.8, 1.8) node[above right=2pt, font=\\large\\bfseries\\sffamily, black] {$v_0 = 20\\text{ m/s}$};\n  \\draw[thick, black] (0.8, 0) arc[start angle=0, end angle=45, radius=0.8];\n  \\node[right=2pt, font=\\large\\bfseries\\sffamily, black] at (0.8, 0.35) {$45^\\circ$};\n\n  % Projectile Ball at origin\n  \\draw[ultra thick, fill=gray!40, draw=black] (0, 0) circle (0.14);\n  \\draw[ultra thick, fill=gray!40, draw=black] (5.6, 0) circle (0.14);\n\n  % Horizontal Range Dimension\n  \\draw[<->, ultra thick, black] (0, -0.55) -- (5.6, -0.55) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {Range $R = ?$ };\n\n  % Gravity indicator\n  \\draw[->, ultra thick, black] (6.0, 2.5) -- (6.0, 1.2) node[midway, right=3pt, font=\\large\\bfseries\\sffamily, black] {$g = 9.81\\text{ m/s}^2$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Work-Energy Theorem",
@@ -48435,7 +48452,8 @@ const QUESTIONS = {
                     "Failing to set up a complete Free-Body Diagram (FBD) before writing equilibrium equations.",
                     "Mixing up sine and cosine components when resolving forces into orthogonal axes."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Vertical Wall Support\n  \\draw[ultra thick, black] (0, 0) -- (0, 2.6);\n  \\fill[pattern=north east lines, draw=black, thick] (-0.3, 0) rectangle (0, 2.6);\n\n  % Horizontal Surface\n  \\draw[ultra thick, black] (0, 0) -- (6.0, 0);\n  \\fill[pattern=north east lines, draw=black, thick] (0, -0.25) rectangle (6.0, 0);\n  \\node[below right, font=\\large\\bfseries\\sffamily, black] at (3.5, -0.3) {Frictionless Surface};\n\n  % Spring (Coil from x=0 to x=3.0)\n  \\draw[thick, black] (0, 0.9) -- (0.5, 0.9)\n        -- (0.7, 1.25) -- (1.0, 0.55) -- (1.3, 1.25) -- (1.6, 0.55)\n        -- (1.9, 1.25) -- (2.2, 0.55) -- (2.5, 1.25) -- (2.7, 0.9) -- (3.2, 0.9);\n  \\node[above=4pt, font=\\large\\bfseries\\sffamily, black] at (1.6, 1.25) {$k = 100\\text{ N/m}$};\n\n  % Mass Block (4 kg)\n  \\draw[ultra thick, fill=gray!30, draw=black] (3.2, 0.05) rectangle (5.2, 1.75);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (4.2, 0.9) {$m = 4\\text{ kg}$};\n\n  % Motion coordinate arrow\n  \\draw[->, ultra thick, black] (4.2, 2.1) -- (5.2, 2.1) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$x(t)$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Relative Motion",
@@ -48554,7 +48572,8 @@ const QUESTIONS = {
                     "Failing to set up a complete Free-Body Diagram (FBD) before writing equilibrium equations.",
                     "Mixing up sine and cosine components when resolving forces into orthogonal axes."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Circular Path\n  \\draw[ultra thick, dashed, gray!80] (0, 0) circle (2.2);\n  \\draw[ultra thick, fill=black] (0, 0) circle (0.08) node[below left=2pt, font=\\large\\bfseries\\sffamily, black] {Center};\n\n  % Radius Vector\n  \\draw[->, ultra thick, black] (0, 0) -- (2.2, 0) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {$R = 50\\text{ m}$};\n\n  % Moving Car / Particle at (2.2, 0)\n  \\draw[ultra thick, fill=gray!35, draw=black] (1.85, -0.2) rectangle (2.55, 0.2);\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black] at (2.55, 0) {Car};\n\n  % Tangential Velocity Vector\n  \\draw[->, ultra thick, black] (2.2, 0.2) -- (2.2, 1.8) node[midway, right=3pt, font=\\large\\bfseries\\sffamily, black] {$v = 20\\text{ m/s}$};\n\n  % Centripetal Acceleration Vector\n  \\draw[->, ultra thick, black] (1.85, 0) -- (0.8, 0) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$a_c = ?$ };\n\\end{tikzpicture}"
         },
         {
             "topic": "Collision",
@@ -49819,7 +49838,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Average Speed Formula",
-                        "content": "Average speed ($v_{\\text{avg}}$) is defined as total distance traveled divided by total time taken:\n\n$$v_{\\text{avg}} = \\frac{\\text{Total Distance}}{\\text{Total Time}}$\n\nWhen two equal distance segments ($d$) are covered at constant speeds $v_1$ and $v_2$, the average speed is given by the **harmonic mean** of the two speeds:\n\n\n$$\\nv_{\\text{avg}} = \\frac{2 v_1 v_2}{v_1 + v_2}\n\$\n"
+                        "content": "Average speed ($v_{\\text{avg}}$) is defined as total distance traveled divided by total time taken:\n\n$$v_{\\text{avg}} = \\frac{\\text{Total Distance}}{\\text{Total Time}}$\n\nWhen two equal distance segments ($d$) are covered at constant speeds $v_1$ and $v_2$, the average speed is given by the **harmonic mean** of the two speeds:\n\n\n$$\\nv_{\\text{avg}} = \\frac{2 v_1 v_2}{v_1 + v_2}\n$\n"
                     },
                     {
                         "title": "Step 1: Derivation from Total Distance and Total Time",
@@ -49893,7 +49912,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Kinematic Relations",
-                        "content": "The given equation relates time $t$ to displacement $x$:\n\n$$t = \\sqrt{x} + 3$\n\nRearranging to express displacement $x$ explicitly as a function of time $t$:\n\n$$\\sqrt{x} = t - 3 \\implies x(t) = (t - 3)^2$\n\n\n$$\\nx(t) = t^2 - 6t + 9\n\$\n"
+                        "content": "The given equation relates time $t$ to displacement $x$:\n\n$$t = \\sqrt{x} + 3$\n\nRearranging to express displacement $x$ explicitly as a function of time $t$:\n\n$$\\sqrt{x} = t - 3 \\implies x(t) = (t - 3)^2$\n\n\n$$\\nx(t) = t^2 - 6t + 9\n$\n"
                     },
                     {
                         "title": "Step 1: Determine Velocity Function $v(t)$",
@@ -49976,7 +49995,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Graphical Interpretation of Displacement",
-                        "content": "In a velocity--time ($v-t$) graph, the **area bounded under the curve** and the time axis equals the magnitude of total displacement ($s$):\n\n\n$$\\ns = \\int v \\, dt = \\text{Area under } v-t \\text{ graph}\n\$\n\n\nThe motion given in the graph consists of two distinct phases:\n\\n•  **Phase 1 ($0 \\to t_1$):** Sloped straight line $\\implies$ **Uniform Acceleration** (Trapezoidal Area).\n•  **Phase 2 ($t_1 \\to t_2$):** Horizontal straight line $\\implies$ **Uniform Motion** (Rectangular Area).\n\""
+                        "content": "In a velocity--time ($v-t$) graph, the **area bounded under the curve** and the time axis equals the magnitude of total displacement ($s$):\n\n\n$$\\ns = \\int v \\, dt = \\text{Area under } v-t \\text{ graph}\n$\n\n\nThe motion given in the graph consists of two distinct phases:\n\\n•  **Phase 1 ($0 \\to t_1$):** Sloped straight line $\\implies$ **Uniform Acceleration** (Trapezoidal Area).\n•  **Phase 2 ($t_1 \\to t_2$):** Horizontal straight line $\\implies$ **Uniform Motion** (Rectangular Area).\n\""
                     },
                     {
                         "title": "Step 1: Calculate Area under Uniform Acceleration (Region 1)",
@@ -50005,7 +50024,7 @@ const QUESTIONS = {
                 "step_by_step": [
                     {
                         "step": "1. Understand Graphical Interpretation of Displacement",
-                        "explanation": "In a velocity--time ($v-t$) graph, the **area bounded under the curve** and the time axis equals the magnitude of total displacement ($s$): <br><br> The motion given in the graph consists of two distinct phases: \ • **Phase 1 ($2 \\to t_1$):** Sloped straight line $\\implies$ **Uniform Acceleration** (Trapezoidal Area). • **Phase 2 ($t_1 \\to t_2$):** Horizontal straight line $\\implies$ **Uniform Motion** (Rectangular Area). \""
+                        "explanation": "In a velocity--time ($v-t$) graph, the **area bounded under the curve** and the time axis equals the magnitude of total displacement ($s$): <br><br> The motion given in the graph consists of two distinct phases:  • **Phase 1 ($2 \\to t_1$):** Sloped straight line $\\implies$ **Uniform Acceleration** (Trapezoidal Area). • **Phase 2 ($t_1 \\to t_2$):** Horizontal straight line $\\implies$ **Uniform Motion** (Rectangular Area). \""
                     },
                     {
                         "step": "2. Calculate Area under Uniform Acceleration (Region 1)",
@@ -50059,7 +50078,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Maximum Speed from Acceleration-Time Graph",
-                        "content": "The area under the acceleration-time ($a-t$) graph over any time interval represents the net change in velocity ($\\Delta v$) during that interval:\n\n\n$$\\n\\Delta v = v_f - v_i = \\int a \\, dt = \\text{Area under } a-t \\text{ graph}\n\$\n\n\nSince acceleration $a \\ge 0$ throughout the interval $t = 0\\text{ s}$ to $t = 10\\text{ s}$, the particle's speed increases continuously until $t = 10\\text{ s}$ (where $a = 0$). Therefore, the maximum speed $v_{\\text{max}}$ is attained at $t = 10\\text{ s}$."
+                        "content": "The area under the acceleration-time ($a-t$) graph over any time interval represents the net change in velocity ($\\Delta v$) during that interval:\n\n\n$$\\n\\Delta v = v_f - v_i = \\int a \\, dt = \\text{Area under } a-t \\text{ graph}\n$\n\n\nSince acceleration $a \\ge 0$ throughout the interval $t = 0\\text{ s}$ to $t = 10\\text{ s}$, the particle's speed increases continuously until $t = 10\\text{ s}$ (where $a = 0$). Therefore, the maximum speed $v_{\\text{max}}$ is attained at $t = 10\\text{ s}$."
                     },
                     {
                         "title": "Step 1: Compute Area of the Triangle",
@@ -50134,7 +50153,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Stopping Distance Relation",
-                        "content": "Using the third equation of motion under constant retardation $a$:\n\n$$v^2 = u^2 - 2as$\n\nSince the car comes to a complete stop ($v = 0$):\n\n$$0 = u^2 - 2as \\implies 2as = u^2$\n\n\n$$\\ns = \\frac{u^2}{2a}\n\$\n\n\nFor a given car experiencing the same retardation ($a = \\text{constant}$), the stopping distance $s$ is directly proportional to the square of the initial velocity $u$:\n\n$$s \\propto u^2$$"
+                        "content": "Using the third equation of motion under constant retardation $a$:\n\n$$v^2 = u^2 - 2as$\n\nSince the car comes to a complete stop ($v = 0$):\n\n$$0 = u^2 - 2as \\implies 2as = u^2$\n\n\n$$\\ns = \\frac{u^2}{2a}\n$\n\n\nFor a given car experiencing the same retardation ($a = \\text{constant}$), the stopping distance $s$ is directly proportional to the square of the initial velocity $u$:\n\n$$s \\propto u^2$$"
                     },
                     {
                         "title": "Step 1: Set up Proportionality Equation",
@@ -50208,7 +50227,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand 2D Motion Equations",
-                        "content": "Since acceleration is constant, motion along the $x$-axis and $y$-axis can be analyzed independently using the standard equations of motion:\n\n$$\\vec{r}(t) = \\vec{u}t + \\frac{1}{2}\\vec{a}t^2$\n\nGiven initial parameters at $t = 0$:\n\\n•  Initial velocity components: $u_x = 0\\text{ ms}^{-1}$, $u_y = 10\\text{ ms}^{-1}$\n•  Acceleration components: $a_x = 8\\text{ ms}^{-2}$, $a_y = 2\\text{ ms}^{-2}$\n•  Initial position: $x(0) = 0$, $y(0) = 0$\n\\n\n\n$$\\nx(t) = u_x t + \\frac{1}{2} a_x t^2, \\quad y(t) = u_y t + \\frac{1}{2} a_y t^2\n\$\n"
+                        "content": "Since acceleration is constant, motion along the $x$-axis and $y$-axis can be analyzed independently using the standard equations of motion:\n\n$$\\vec{r}(t) = \\vec{u}t + \\frac{1}{2}\\vec{a}t^2$\n\nGiven initial parameters at $t = 0$:\n\\n•  Initial velocity components: $u_x = 0\\text{ ms}^{-1}$, $u_y = 10\\text{ ms}^{-1}$\n•  Acceleration components: $a_x = 8\\text{ ms}^{-2}$, $a_y = 2\\text{ ms}^{-2}$\n•  Initial position: $x(0) = 0$, $y(0) = 0$\n\\n\n\n$$\\nx(t) = u_x t + \\frac{1}{2} a_x t^2, \\quad y(t) = u_y t + \\frac{1}{2} a_y t^2\n$\n"
                     },
                     {
                         "title": "Step 1: Find Time $t$ when $x = 16\\text{ m",
@@ -50283,7 +50302,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Relative Velocity Concept",
-                        "content": "To find the direction in which the woman must hold her umbrella, we calculate the velocity of rain relative to the woman ($\\vec{v}_{rw}$):\n\n\n$$\\n\\vec{v}_{rw} = \\vec{v}_r - \\vec{v}_w\n\$\n\n\nLet the coordinate system be defined as:\n\\n•  Unit vector $\\hat{\\mathbf{i}}$ along **East** (hence $-\\hat{\\mathbf{i}}$ is along **West**).\n•  Unit vector $\\hat{\\mathbf{j}}$ along **Vertical Up** (hence $-\\hat{\\mathbf{j}}$ is **Vertical Down**).\n\""
+                        "content": "To find the direction in which the woman must hold her umbrella, we calculate the velocity of rain relative to the woman ($\\vec{v}_{rw}$):\n\n\n$$\\n\\vec{v}_{rw} = \\vec{v}_r - \\vec{v}_w\n$\n\n\nLet the coordinate system be defined as:\n\\n•  Unit vector $\\hat{\\mathbf{i}}$ along **East** (hence $-\\hat{\\mathbf{i}}$ is along **West**).\n•  Unit vector $\\hat{\\mathbf{j}}$ along **Vertical Up** (hence $-\\hat{\\mathbf{j}}$ is **Vertical Down**).\n\""
                     },
                     {
                         "title": "Step 1: Express Velocities in Vector Form",
@@ -50366,7 +50385,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Equilibrium of Forces",
-                        "content": "Since the system is in static equilibrium, the vector sum of all forces acting at the junction point $O$ must be zero:\n\n\n$$\\n\\sum \\vec{F} = 0 \\implies \\sum F_x = 0 \\quad \\text{and} \\quad \\sum F_y = 0\n\$\n\n\nLet:\n\\n•  $T_1$ be the tension in the inclined string attached to the ceiling.\n•  $T_2$ be the tension in the horizontal string attached to the wall.\n•  $T_3$ be the vertical tension supporting mass $M$, which equals $Mg$.\n\""
+                        "content": "Since the system is in static equilibrium, the vector sum of all forces acting at the junction point $O$ must be zero:\n\n\n$$\\n\\sum \\vec{F} = 0 \\implies \\sum F_x = 0 \\quad \\text{and} \\quad \\sum F_y = 0\n$\n\n\nLet:\n\\n•  $T_1$ be the tension in the inclined string attached to the ceiling.\n•  $T_2$ be the tension in the horizontal string attached to the wall.\n•  $T_3$ be the vertical tension supporting mass $M$, which equals $Mg$.\n\""
                     },
                     {
                         "title": "Step 1: Analyze Angles and Force Components",
@@ -50448,7 +50467,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Apparent Weight in an Elevator",
-                        "content": "A weighing scale measures the normal reaction force ($N$) exerted by the floor on the person standing on it. The scale reading in mass units (kg) is given by:\n\n\n$$\\n\\text{Apparent Mass (kg)} = \\frac{N}{g}\n\$\n\n\nGiven parameters:\n\\n•  Mass of the man, $m = 80\\text{ kg}$\n•  Upward acceleration of the lift, $a = 6\\text{ m/s}^2$\n•  Acceleration due to gravity, $g = 10\\text{ m/s}^2$\n\""
+                        "content": "A weighing scale measures the normal reaction force ($N$) exerted by the floor on the person standing on it. The scale reading in mass units (kg) is given by:\n\n\n$$\\n\\text{Apparent Mass (kg)} = \\frac{N}{g}\n$\n\n\nGiven parameters:\n\\n•  Mass of the man, $m = 80\\text{ kg}$\n•  Upward acceleration of the lift, $a = 6\\text{ m/s}^2$\n•  Acceleration due to gravity, $g = 10\\text{ m/s}^2$\n\""
                     },
                     {
                         "title": "Step 1: Apply Newton's Second Law",
@@ -50530,7 +50549,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Newton's Second Law with Kinetic Friction",
-                        "content": "When the block is in motion ($v > 0$), it experiences a retarding kinetic friction force $f_k = \\mu_k N = \\mu_k m g$.\n\nThe net force equation governing acceleration $a$ along the horizontal direction is:\n\n\n$$\\nF - f_k = m a \\implies F - \\mu_k m g = m a\n\$\n\n\nGiven parameters:\n\\n•  Applied force: $F = 20\\text{ N}$\n•  Coefficient of kinetic friction: $\\mu_k = 0.25$\n•  Acceleration due to gravity: $g = 10\\text{ ms}^{-2}$\n\""
+                        "content": "When the block is in motion ($v > 0$), it experiences a retarding kinetic friction force $f_k = \\mu_k N = \\mu_k m g$.\n\nThe net force equation governing acceleration $a$ along the horizontal direction is:\n\n\n$$\\nF - f_k = m a \\implies F - \\mu_k m g = m a\n$\n\n\nGiven parameters:\n\\n•  Applied force: $F = 20\\text{ N}$\n•  Coefficient of kinetic friction: $\\mu_k = 0.25$\n•  Acceleration due to gravity: $g = 10\\text{ ms}^{-2}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Acceleration from $v-t$ Graph",
@@ -50604,7 +50623,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Condition for Motion on an Incline",
-                        "content": "For a body placed on a rough inclined plane inclined at angle $\\theta$, the tendency to slide down is driven by the component of gravity parallel to the incline ($mg \\sin \\theta$), while static friction $f_s$ opposes this motion.\n\n\n$$\\nf_{s,\\text{max}} = \\mu_s N = \\mu_s m g \\cos \\theta\n\$\n\n\nThe block will start sliding if and only if the driving force exceeds the maximum static friction:\n\n$$mg \\sin \\theta > \\mu_s m g \\cos \\theta \\implies \\tan \\theta > \\mu_s$\n\nWhere $\\theta_r = \\tan^{-1}(\\mu_s)$ is defined as the **Angle of Repose**."
+                        "content": "For a body placed on a rough inclined plane inclined at angle $\\theta$, the tendency to slide down is driven by the component of gravity parallel to the incline ($mg \\sin \\theta$), while static friction $f_s$ opposes this motion.\n\n\n$$\\nf_{s,\\text{max}} = \\mu_s N = \\mu_s m g \\cos \\theta\n$\n\n\nThe block will start sliding if and only if the driving force exceeds the maximum static friction:\n\n$$mg \\sin \\theta > \\mu_s m g \\cos \\theta \\implies \\tan \\theta > \\mu_s$\n\nWhere $\\theta_r = \\tan^{-1}(\\mu_s)$ is defined as the **Angle of Repose**."
                     },
                     {
                         "title": "Step 1: Compare Driving Force and Maximum Static Friction",
@@ -50686,7 +50705,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Dynamic Friction and Motion",
-                        "content": "When a body moves along a rough horizontal surface under an applied horizontal force $F$, the kinetic friction force $f_k$ opposes its motion:\n\n$$f_k = \\mu_k N$\n\nFor horizontal motion without vertical movement, vertical equilibrium holds:\n$$N = mg$\n\nThus, the kinetic friction force becomes:\n$$f_k = \\mu_k m g$\n\n\n$$\\nF_{\\text{net}} = F - f_k = m a \\implies a = \\frac{F - \\mu_k m g}{m}\n\$\n\n\nGiven parameters:\n\\n•  Mass of the body, $m = 10\\text{ kg}$\n•  Applied force, $F = 60\\text{ N}$\n•  Coefficient of kinetic friction, $\\mu_k = 0.5$\n•  Acceleration due to gravity, $g \\approx 9.8\\text{ ms}^{-2}$ (or $10\\text{ ms}^{-2}$)\n\""
+                        "content": "When a body moves along a rough horizontal surface under an applied horizontal force $F$, the kinetic friction force $f_k$ opposes its motion:\n\n$$f_k = \\mu_k N$\n\nFor horizontal motion without vertical movement, vertical equilibrium holds:\n$$N = mg$\n\nThus, the kinetic friction force becomes:\n$$f_k = \\mu_k m g$\n\n\n$$\\nF_{\\text{net}} = F - f_k = m a \\implies a = \\frac{F - \\mu_k m g}{m}\n$\n\n\nGiven parameters:\n\\n•  Mass of the body, $m = 10\\text{ kg}$\n•  Applied force, $F = 60\\text{ N}$\n•  Coefficient of kinetic friction, $\\mu_k = 0.5$\n•  Acceleration due to gravity, $g \\approx 9.8\\text{ ms}^{-2}$ (or $10\\text{ ms}^{-2}$)\n\""
                     },
                     {
                         "title": "Step 1: Calculate Kinetic Friction Force",
@@ -50760,7 +50779,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand System Equilibrium and Acceleration",
-                        "content": "When a suspended system of masses accelerates upwards with acceleration $a$, the top string must support the **total mass** ($m_{\\text{total}} = m_1 + m_2$) against both gravity and the upward acceleration.\n\n\n$$\\nT_1 = (m_1 + m_2)(g + a)\n\$\n\n\nGiven parameters:\n\\n•  Mass of upper block, $m_1 = 5\\text{ kg}$\n•  Mass of lower block, $m_2 = 3\\text{ kg}$\n•  Upward acceleration, $a = 2\\text{ m/s}^2$\n•  Acceleration due to gravity, $g = 9.8\\text{ m/s}^2$\n\""
+                        "content": "When a suspended system of masses accelerates upwards with acceleration $a$, the top string must support the **total mass** ($m_{\\text{total}} = m_1 + m_2$) against both gravity and the upward acceleration.\n\n\n$$\\nT_1 = (m_1 + m_2)(g + a)\n$\n\n\nGiven parameters:\n\\n•  Mass of upper block, $m_1 = 5\\text{ kg}$\n•  Mass of lower block, $m_2 = 3\\text{ kg}$\n•  Upward acceleration, $a = 2\\text{ m/s}^2$\n•  Acceleration due to gravity, $g = 9.8\\text{ m/s}^2$\n\""
                     },
                     {
                         "title": "Step 1: Treat the System as a Single Combined Mass",
@@ -50843,7 +50862,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Condition for Motion along Y-axis",
-                        "content": "For an object to have its velocity purely along the $y$-axis, its **$x$-component of velocity must be zero**:\n\n\n$$\\nv_x(t) = 0\n\$\n\n\nGiven parameters:\n\\n•  Mass of the object, $m = 5\\text{ kg}$\n•  Force vector, $\\mathbf{F} = -3\\hat{\\mathbf{i}} - 4\\hat{\\mathbf{j}}\\text{ N}$\n•  Initial velocity vector, $\\mathbf{v}_0 = 3\\hat{\\mathbf{i}} + 12\\hat{\\mathbf{j}}\\text{ m/s}$\n\""
+                        "content": "For an object to have its velocity purely along the $y$-axis, its **$x$-component of velocity must be zero**:\n\n\n$$\\nv_x(t) = 0\n$\n\n\nGiven parameters:\n\\n•  Mass of the object, $m = 5\\text{ kg}$\n•  Force vector, $\\mathbf{F} = -3\\hat{\\mathbf{i}} - 4\\hat{\\mathbf{j}}\\text{ N}$\n•  Initial velocity vector, $\\mathbf{v}_0 = 3\\hat{\\mathbf{i}} + 12\\hat{\\mathbf{j}}\\text{ m/s}$\n\""
                     },
                     {
                         "title": "Step 1: Determine Acceleration Vector",
@@ -50926,7 +50945,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Centripetal Acceleration in Circular Motion",
-                        "content": "In uniform circular motion, a particle moving with constant speed $v$ along a circular path of radius $R$ experiences only centripetal acceleration $\\mathbf{a}_c$. The magnitude of centripetal acceleration is given by:\n\n\n$$\\na_c = \\frac{v^2}{R}\n\$\n\n\nThe direction of centripetal acceleration is always directed **radially inward toward the center** of the circular path.\n\nGiven parameters:\n\\n•  Equation of circular path: $(x - 2)^2 + y^2 = 25$\n•  Speed of the particle: $v = 2\\text{ ms}^{-1}$\n\""
+                        "content": "In uniform circular motion, a particle moving with constant speed $v$ along a circular path of radius $R$ experiences only centripetal acceleration $\\mathbf{a}_c$. The magnitude of centripetal acceleration is given by:\n\n\n$$\\na_c = \\frac{v^2}{R}\n$\n\n\nThe direction of centripetal acceleration is always directed **radially inward toward the center** of the circular path.\n\nGiven parameters:\n\\n•  Equation of circular path: $(x - 2)^2 + y^2 = 25$\n•  Speed of the particle: $v = 2\\text{ ms}^{-1}$\n\""
                     },
                     {
                         "title": "Step 1: Identify Center and Radius of the Circle",
@@ -51009,7 +51028,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Distance vs. Displacement in Circular Motion",
-                        "content": "\\n•  **Distance** is the total path length traversed along the circular perimeter.\n•  **Displacement** is the shortest straight-line vector distance between the initial position and the final position.\n\\n\n\n$$\\n\\text{Distance} = \\frac{3}{4} (2\\pi R) = \\frac{3\\pi R}{2}, \\quad |\\vec{s}| = \\sqrt{R^2 + R^2} = R\\sqrt{2}\n\$\n\n\nGiven parameters:\n\\n•  Diameter of track, $D = 80\\text{ m}$\n•  Radius of track, $R = \\frac{D}{2} = 40\\text{ m}$\n•  Fraction of circle covered = $\\frac{3}{4}$\n\""
+                        "content": "\\n•  **Distance** is the total path length traversed along the circular perimeter.\n•  **Displacement** is the shortest straight-line vector distance between the initial position and the final position.\n\\n\n\n$$\\n\\text{Distance} = \\frac{3}{4} (2\\pi R) = \\frac{3\\pi R}{2}, \\quad |\\vec{s}| = \\sqrt{R^2 + R^2} = R\\sqrt{2}\n$\n\n\nGiven parameters:\n\\n•  Diameter of track, $D = 80\\text{ m}$\n•  Radius of track, $R = \\frac{D}{2} = 40\\text{ m}$\n•  Fraction of circle covered = $\\frac{3}{4}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Distance Travelled",
@@ -51084,7 +51103,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Kinematics Quantities in Circular Motion",
-                        "content": "For a particle completing one full revolution of radius $R$ in time period $T$ at constant speed $v$:\n\n\n$$\\n\\text{Displacement } \\vec{s} = 0, \\quad \\text{Distance } d = 2\\pi R\n\$\n"
+                        "content": "For a particle completing one full revolution of radius $R$ in time period $T$ at constant speed $v$:\n\n\n$$\\n\\text{Displacement } \\vec{s} = 0, \\quad \\text{Distance } d = 2\\pi R\n$\n"
                     },
                     {
                         "title": "Step 1: Analyze Displacement and Average Velocity",
@@ -51167,7 +51186,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Velocity and Acceleration Vectors in UCM",
-                        "content": "In **Uniform Circular Motion (UCM)**, a particle moves along a circular path at constant speed $v$.\n\n\n$$\\n\\vec{v} \\cdot \\vec{a}_c = 0 \\implies \\theta = 90^\\circ\n\$\n"
+                        "content": "In **Uniform Circular Motion (UCM)**, a particle moves along a circular path at constant speed $v$.\n\n\n$$\\n\\vec{v} \\cdot \\vec{a}_c = 0 \\implies \\theta = 90^\\circ\n$\n"
                     },
                     {
                         "title": "Step 1: Analyze Velocity Vector Direction",
@@ -51250,7 +51269,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Work-Energy Theorem",
-                        "content": "According to the Work-Energy Theorem, the net work done by all forces on an object equals the change in its kinetic energy:\n\n$$\\Delta K = K_f - K_i = W_{\\text{net}}$\n\nAlternatively, using kinematics and kinetic energy definitions directly:\n\n\n$$\\n\\Delta K = \\frac{1}{2} m v^2 - \\frac{1}{2} m u^2\n\$\n\n\nGiven parameters:\n\\n•  Mass of the body, $m = 5\\text{ kg}$\n•  Horizontal force, $F = 5\\text{ N}$\n•  Initial velocity, $u = 0\\text{ m/s}$\n•  Time duration, $t = 10\\text{ s}$\n\""
+                        "content": "According to the Work-Energy Theorem, the net work done by all forces on an object equals the change in its kinetic energy:\n\n$$\\Delta K = K_f - K_i = W_{\\text{net}}$\n\nAlternatively, using kinematics and kinetic energy definitions directly:\n\n\n$$\\n\\Delta K = \\frac{1}{2} m v^2 - \\frac{1}{2} m u^2\n$\n\n\nGiven parameters:\n\\n•  Mass of the body, $m = 5\\text{ kg}$\n•  Horizontal force, $F = 5\\text{ N}$\n•  Initial velocity, $u = 0\\text{ m/s}$\n•  Time duration, $t = 10\\text{ s}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Acceleration",
@@ -51333,7 +51352,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Work-Energy Theorem",
-                        "content": "According to the **Work-Energy Theorem**, the net work done on a body equals the change in its kinetic energy:\n\n\n$$\\nW_{\\text{net}} = \\Delta K = \\frac{1}{2} m v_f^2 - \\frac{1}{2} m v_i^2\n\$\n\n\nGiven parameters:\n\\n•  Mass of the body, $m = 0.25\\text{ kg} = \\frac{1}{4}\\text{ kg}$\n•  Speed relation: $v(x) = k x^{3/2}$ with $k = 2\\text{ SI units}$\n•  Initial position, $x_1 = 0\\text{ m}$\n•  Final position, $x_2 = 2\\text{ m}$\n\""
+                        "content": "According to the **Work-Energy Theorem**, the net work done on a body equals the change in its kinetic energy:\n\n\n$$\\nW_{\\text{net}} = \\Delta K = \\frac{1}{2} m v_f^2 - \\frac{1}{2} m v_i^2\n$\n\n\nGiven parameters:\n\\n•  Mass of the body, $m = 0.25\\text{ kg} = \\frac{1}{4}\\text{ kg}$\n•  Speed relation: $v(x) = k x^{3/2}$ with $k = 2\\text{ SI units}$\n•  Initial position, $x_1 = 0\\text{ m}$\n•  Final position, $x_2 = 2\\text{ m}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Initial and Final Velocities",
@@ -51416,7 +51435,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Relation Between Work, Power, and Momentum",
-                        "content": "The area under a Power--Time ($P-t$) graph represents the total **work done** ($W$) on the body:\n\n$$W = \\int P \\, dt = \\text{Area under } P-t \\text{ curve}$\n\nAccording to the **Work-Energy Theorem**, the net work done equals the change in kinetic energy:\n\n$$W = \\Delta K = \\frac{p^2}{2m} - \\frac{p_i^2}{2m}$\n\nSince the particle starts from rest ($v_i = 0 \\implies p_i = 0$), the momentum $p$ is directly related to work done $W$:\n\n\n$$\\nW = \\frac{p^2}{2m} \\implies p = \\sqrt{2 m W}\n\$\n\n\nGiven parameters:\n\\n•  Mass of the particle, $m = 500\\text{ g} = 0.5\\text{ kg}$\n•  Initial power at $t = 0$: $P(0) = 2\\text{ W}$\n•  Power at $t = 5\\text{ s}$: $P(5) = 8\\text{ W}$\n\""
+                        "content": "The area under a Power--Time ($P-t$) graph represents the total **work done** ($W$) on the body:\n\n$$W = \\int P \\, dt = \\text{Area under } P-t \\text{ curve}$\n\nAccording to the **Work-Energy Theorem**, the net work done equals the change in kinetic energy:\n\n$$W = \\Delta K = \\frac{p^2}{2m} - \\frac{p_i^2}{2m}$\n\nSince the particle starts from rest ($v_i = 0 \\implies p_i = 0$), the momentum $p$ is directly related to work done $W$:\n\n\n$$\\nW = \\frac{p^2}{2m} \\implies p = \\sqrt{2 m W}\n$\n\n\nGiven parameters:\n\\n•  Mass of the particle, $m = 500\\text{ g} = 0.5\\text{ kg}$\n•  Initial power at $t = 0$: $P(0) = 2\\text{ W}$\n•  Power at $t = 5\\text{ s}$: $P(5) = 8\\text{ W}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Work Done from Area under $P-t$ Graph",
@@ -51424,7 +51443,7 @@ const QUESTIONS = {
                     },
                     {
                         "title": "Step 2: Compute Momentum at $t = 5\\text{ s",
-                        "content": "$}\nSubstitute $m = 0.5\\text{ kg}$ and $W = 25\\text{ J}$ into the momentum formula:\n\n$$p = \\sqrt{2 \\times 0.5 \\times 25} = \\sqrt{1 \\times 25} = \\sqrt{25} = 5\\text{ kg}\\cdot\\text{m/s} = 5\\text{ N}-\\text{s}$\n\n*(Wait, evaluating option choices: $5\\sqrt{2}\\text{ N}-\\text{s}$ vs $5\\text{ N}-\\text{s}$)*\n\nLet's double check if power equation is $P(t) = 2 + \\frac{6}{5}t$:\nAt $t=5$, $P=8\\text{ W}$.\nArea = $\\frac{2+8}{2} \\times 5 = 25\\text{ J}$.\n$p = \\sqrt{2 m W} = \\sqrt{2 \\times 0.5 \\times 25} = 5\\text{ N}-\\text{s}$.\n\n*(Note: Option B is $5\\sqrt{2}\\text{ N}-\\text{s}$ if $m=1\\text{ kg}$, but for $m = 0.5\\text{ kg}$, $p = 5\\text{ N}-\\text{s}$. Standard solution gives **Option C** or **Option B** depending on mass conventions, with exact mathematical calculation giving $5\\text{ N}-\\text{s}$ for $m = 0.5\\text{ kg}$. If taking $p = \\sqrt{2 \\times 0.5 \\times 25} = 5\\text{ N}-\\text{s}$)*\n\n\n$$\\np = \\sqrt{2 \\times 0.5 \\times 25} = 5\\text{ N}-\\text{s}\n\$\n\n\nThus, the momentum of the particle at $t = 5\\text{ s}$ is **$5\\text{ N}-\\text{s}$**.\n\nCorrect Answer: C ($5\\text{ N}-\\text{s}$)"
+                        "content": "$}\nSubstitute $m = 0.5\\text{ kg}$ and $W = 25\\text{ J}$ into the momentum formula:\n\n$$p = \\sqrt{2 \\times 0.5 \\times 25} = \\sqrt{1 \\times 25} = \\sqrt{25} = 5\\text{ kg}\\cdot\\text{m/s} = 5\\text{ N}-\\text{s}$\n\n*(Wait, evaluating option choices: $5\\sqrt{2}\\text{ N}-\\text{s}$ vs $5\\text{ N}-\\text{s}$)*\n\nLet's double check if power equation is $P(t) = 2 + \\frac{6}{5}t$:\nAt $t=5$, $P=8\\text{ W}$.\nArea = $\\frac{2+8}{2} \\times 5 = 25\\text{ J}$.\n$p = \\sqrt{2 m W} = \\sqrt{2 \\times 0.5 \\times 25} = 5\\text{ N}-\\text{s}$.\n\n*(Note: Option B is $5\\sqrt{2}\\text{ N}-\\text{s}$ if $m=1\\text{ kg}$, but for $m = 0.5\\text{ kg}$, $p = 5\\text{ N}-\\text{s}$. Standard solution gives **Option C** or **Option B** depending on mass conventions, with exact mathematical calculation giving $5\\text{ N}-\\text{s}$ for $m = 0.5\\text{ kg}$. If taking $p = \\sqrt{2 \\times 0.5 \\times 25} = 5\\text{ N}-\\text{s}$)*\n\n\n$$\\np = \\sqrt{2 \\times 0.5 \\times 25} = 5\\text{ N}-\\text{s}\n$\n\n\nThus, the momentum of the particle at $t = 5\\text{ s}$ is **$5\\text{ N}-\\text{s}$**.\n\nCorrect Answer: C ($5\\text{ N}-\\text{s}$)"
                     }
                 ],
                 "final_answer": "B"
@@ -51493,7 +51512,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Euler Buckling Load Formula",
-                        "content": "The Euler critical load $P_{\\text{cr}}$ for a long, slender column depends inversely on the square of its effective length $L_e$:\n\n\n$$\\nP_{\\text{cr}} = \\frac{\\pi^2 E I}{L_e^2}\n \$\n\n\nwhere $E$ is Young's modulus, $I$ is the minimum area moment of inertia, and $L_e$ is the effective length determined by the end support conditions."
+                        "content": "The Euler critical load $P_{\\text{cr}}$ for a long, slender column depends inversely on the square of its effective length $L_e$:\n\n\n$$\\nP_{\\text{cr}} = \\frac{\\pi^2 E I}{L_e^2}\n $\n\n\nwhere $E$ is Young's modulus, $I$ is the minimum area moment of inertia, and $L_e$ is the effective length determined by the end support conditions."
                     },
                     {
                         "title": "Step 1: Buckling Load for Clamped-Clamped Column",
@@ -51572,7 +51591,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Maximum Distortion Energy Theory (Von Mises Criterion)",
-                        "content": "According to the Maximum Distortion Energy Theory (von Mises yield criterion), yielding in a two-dimensional state of stress occurs when the equivalent von Mises stress $\\sigma_{\\text{vm}}$ equals or exceeds the uniaxial yield strength $\\sigma_y$:\n\n\n$$\\n\\sigma_{\\text{vm}} = \\sqrt{\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2} \\ge \\sigma_y\n \$\n"
+                        "content": "According to the Maximum Distortion Energy Theory (von Mises yield criterion), yielding in a two-dimensional state of stress occurs when the equivalent von Mises stress $\\sigma_{\\text{vm}}$ equals or exceeds the uniaxial yield strength $\\sigma_y$:\n\n\n$$\\n\\sigma_{\\text{vm}} = \\sqrt{\\sigma_x^2 - \\sigma_x \\sigma_y + \\sigma_y^2 + 3\\tau_{xy}^2} \\ge \\sigma_y\n $\n"
                     },
                     {
                         "title": "Step 1: Identify Given Stress Components",
@@ -51651,7 +51670,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Center Location of Mohr's Circle",
-                        "content": "In Mohr's circle representation for a two-dimensional state of stress $(\\sigma_x, \\sigma_y, \\tau_{xy})$, the center coordinates of the circle $C$ are defined by:\n\n\n$$\\n\\text{Center } C = \\left(\\frac{\\sigma_x + \\sigma_y}{2}, 0\\right) = (\\sigma_{\\text{avg}}, 0)\n \$\n"
+                        "content": "In Mohr's circle representation for a two-dimensional state of stress $(\\sigma_x, \\sigma_y, \\tau_{xy})$, the center coordinates of the circle $C$ are defined by:\n\n\n$$\\n\\text{Center } C = \\left(\\frac{\\sigma_x + \\sigma_y}{2}, 0\\right) = (\\sigma_{\\text{avg}}, 0)\n $\n"
                     },
                     {
                         "title": "Step 1: Criterion for a Valid Mohr's Circle",
@@ -51722,7 +51741,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Theories of Failure",
-                        "content": "To evaluate material yield or failure under multiaxial stress states, failure criteria are used:\n\n\n$$\\n\\text{Rankine: } \\sigma_{\\text{max}} \\le \\sigma_y, \\qquad \\text{Tresca: } \\tau_{\\text{max}} = \\frac{\\sigma_1 - \\sigma_3}{2} \\le \\frac{\\sigma_y}{2}\n \$\n\n\nGiven State of Stress:\n\\n•  Principal stresses: $\\sigma_1 = 70\\text{ MPa}$, $\\sigma_2 = 0\\text{ MPa}$, $\\sigma_3 = -70\\text{ MPa}$\n•  Tensile Yield Stress: $\\sigma_y = 100\\text{ MPa}$\n\""
+                        "content": "To evaluate material yield or failure under multiaxial stress states, failure criteria are used:\n\n\n$$\\n\\text{Rankine: } \\sigma_{\\text{max}} \\le \\sigma_y, \\qquad \\text{Tresca: } \\tau_{\\text{max}} = \\frac{\\sigma_1 - \\sigma_3}{2} \\le \\frac{\\sigma_y}{2}\n $\n\n\nGiven State of Stress:\n\\n•  Principal stresses: $\\sigma_1 = 70\\text{ MPa}$, $\\sigma_2 = 0\\text{ MPa}$, $\\sigma_3 = -70\\text{ MPa}$\n•  Tensile Yield Stress: $\\sigma_y = 100\\text{ MPa}$\n\""
                     },
                     {
                         "title": "Step 1: Evaluate Maximum Normal Stress Theory (Rankine's Theory)",
@@ -51793,7 +51812,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Stress Ratios in Beams",
-                        "content": "The ratio of maximum transverse shear stress ($\\tau_{\\text{max}}$) to maximum bending stress ($\\sigma_{\\text{max}}$) evaluates the relative dominance of shear versus flexural behavior in a beam:\n\n\n$$\\n\\text{Ratio} = \\frac{\\tau_{\\text{max}}}{\\sigma_{\\text{max}}}\n \$\n"
+                        "content": "The ratio of maximum transverse shear stress ($\\tau_{\\text{max}}$) to maximum bending stress ($\\sigma_{\\text{max}}$) evaluates the relative dominance of shear versus flexural behavior in a beam:\n\n\n$$\\n\\text{Ratio} = \\frac{\\tau_{\\text{max}}}{\\sigma_{\\text{max}}}\n $\n"
                     },
                     {
                         "title": "Step 1: Determine Maximum Shear Force and Bending Moment",
@@ -51880,7 +51899,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Torsional Strength of Hollow Shafts",
-                        "content": "The maximum shear stress $\\tau_{\\text{max}}$ in a hollow shaft with outer diameter $d_0$ and inner diameter $d_i$ subjected to torque $T$ is given by:\n\n\n$$\\n\\tau_{\\text{max}} = \\frac{16 T}{\\pi d_0^3 (1 - k^4)}\n \$\n\n\nwhere $k = \\frac{d_i}{d_0}$ is the ratio of inner to outer diameter."
+                        "content": "The maximum shear stress $\\tau_{\\text{max}}$ in a hollow shaft with outer diameter $d_0$ and inner diameter $d_i$ subjected to torque $T$ is given by:\n\n\n$$\\n\\tau_{\\text{max}} = \\frac{16 T}{\\pi d_0^3 (1 - k^4)}\n $\n\n\nwhere $k = \\frac{d_i}{d_0}$ is the ratio of inner to outer diameter."
                     },
                     {
                         "title": "Step 1: Calculate Transmitted Torque ($T$)",
@@ -51959,7 +51978,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Transverse Shear Stress in Rectangular Cross-Section",
-                        "content": "For a beam with a rectangular cross-section, the maximum transverse shear stress occurs at the neutral axis (NA) and is given by:\n\n\n$$\\n\\tau_{\\text{NA}} = \\frac{3}{2} \\cdot \\frac{V}{A}\n \$\n\n\nwhere:\n\\n•  $V$ is the shear force at the given section\n•  $A = b \\times h$ is the cross-sectional area\n\""
+                        "content": "For a beam with a rectangular cross-section, the maximum transverse shear stress occurs at the neutral axis (NA) and is given by:\n\n\n$$\\n\\tau_{\\text{NA}} = \\frac{3}{2} \\cdot \\frac{V}{A}\n $\n\n\nwhere:\n\\n•  $V$ is the shear force at the given section\n•  $A = b \\times h$ is the cross-sectional area\n\""
                     },
                     {
                         "title": "Step 1: Determine Support Reaction and Shear Force at Point C",
@@ -52038,7 +52057,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Torsion and Deformation in Stepped Shafts",
-                        "content": "The angle of twist $\\theta$ for a uniform circular shaft under torque $T$ is given by the torsion formula:\n\n\n$$\\n\\theta = \\frac{T L}{G J}\n \$\n"
+                        "content": "The angle of twist $\\theta$ for a uniform circular shaft under torque $T$ is given by the torsion formula:\n\n\n$$\\n\\theta = \\frac{T L}{G J}\n $\n"
                     },
                     {
                         "title": "Step 1: Analyze Internal Torques in Shaft Segments",
@@ -52125,7 +52144,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Power and Torsion in Circular Shafts",
-                        "content": "Power transmitted by a rotating shaft is related to torque $T$ and rotational speed $N$ by:\n\n\n$$\\nP = \\frac{2\\pi N T}{60}\n \$\n"
+                        "content": "Power transmitted by a rotating shaft is related to torque $T$ and rotational speed $N$ by:\n\n\n$$\\nP = \\frac{2\\pi N T}{60}\n $\n"
                     },
                     {
                         "title": "Step 1: Calculate Transmitted Torque ($T$)",
@@ -52196,7 +52215,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Bending Moment Under Eccentric Point Load",
-                        "content": "For a simply supported beam of length $L$ subjected to a point load $P$ at distances $a$ and $b$ from the left and right supports respectively, the maximum bending moment occurs directly under the load:\n\n\n$$\\nM = \\frac{P \\cdot a \\cdot b}{L}\n \$\n"
+                        "content": "For a simply supported beam of length $L$ subjected to a point load $P$ at distances $a$ and $b$ from the left and right supports respectively, the maximum bending moment occurs directly under the load:\n\n\n$$\\nM = \\frac{P \\cdot a \\cdot b}{L}\n $\n"
                     },
                     {
                         "title": "Step 1: Calculate Support Reactions",
@@ -52267,7 +52286,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Moment Equilibrium",
-                        "content": "For a static beam subjected to a pure concentrated moment $M$, the reactions at the supports must form an equal and opposite couple to maintain moment equilibrium:\n\n\n$$\\n\\sum M = 0\n \$\n"
+                        "content": "For a static beam subjected to a pure concentrated moment $M$, the reactions at the supports must form an equal and opposite couple to maintain moment equilibrium:\n\n\n$$\\n\\sum M = 0\n $\n"
                     },
                     {
                         "title": "Step 1: Apply Moment Equilibrium About Support P",
@@ -52338,7 +52357,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Relationship Between Shear Force and Bending Moment",
-                        "content": "The shear force $V(x)$ at any section along a beam is equal to the rate of change of the bending moment $M(x)$ with respect to $x$:\n\n\n$$\\nV(x) = \\frac{dM(x)}{dx}\n \$\n"
+                        "content": "The shear force $V(x)$ at any section along a beam is equal to the rate of change of the bending moment $M(x)$ with respect to $x$:\n\n\n$$\\nV(x) = \\frac{dM(x)}{dx}\n $\n"
                     },
                     {
                         "title": "Step 1: Differentiate Bending Moment Equation",
@@ -52409,7 +52428,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Maximum Bending Moment",
-                        "content": "For a simply supported beam of span $L$ subjected to a uniformly distributed load (UDL) of intensity $w$, the maximum bending moment occurs at the mid-span of the beam:\n\n\n$$\\nM_{\\text{max}} = \\frac{w L^2}{8}\n \$\n"
+                        "content": "For a simply supported beam of span $L$ subjected to a uniformly distributed load (UDL) of intensity $w$, the maximum bending moment occurs at the mid-span of the beam:\n\n\n$$\\nM_{\\text{max}} = \\frac{w L^2}{8}\n $\n"
                     },
                     {
                         "title": "Step 1: Identify Given Parameters",
@@ -52480,7 +52499,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Reaction Forces and Bending Moment",
-                        "content": "To determine the bending stress at point A, we first find the support reactions and then calculate the bending moment at $x = 1.5L$. Bending stress $\\sigma$ is related to the bending moment $M$ by the flexure formula:\n\n\n$$\\n\\sigma = \\frac{M \\cdot y}{I}\n \$\n"
+                        "content": "To determine the bending stress at point A, we first find the support reactions and then calculate the bending moment at $x = 1.5L$. Bending stress $\\sigma$ is related to the bending moment $M$ by the flexure formula:\n\n\n$$\\n\\sigma = \\frac{M \\cdot y}{I}\n $\n"
                     },
                     {
                         "title": "Step 1: Calculate Support Reactions",
@@ -52558,7 +52577,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Bending Stress and Section Modulus",
-                        "content": "The maximum bending stress ($\\sigma$) developed in a beam subjected to a bending moment $M$ is given by the flexure formula, where $Z$ is the section modulus:\n\n\n$$\\n\\sigma = \\frac{M}{Z}\n \$\n\n\nFor the same bending moment $M$, a cross-section with a smaller section modulus $Z$ experiences a higher bending stress ($\\sigma \\propto \\frac{1}{Z}$)."
+                        "content": "The maximum bending stress ($\\sigma$) developed in a beam subjected to a bending moment $M$ is given by the flexure formula, where $Z$ is the section modulus:\n\n\n$$\\n\\sigma = \\frac{M}{Z}\n $\n\n\nFor the same bending moment $M$, a cross-section with a smaller section modulus $Z$ experiences a higher bending stress ($\\sigma \\propto \\frac{1}{Z}$)."
                     },
                     {
                         "title": "Step 1: Calculate Section Modulus in Terms of Area ($A$)",
@@ -52628,7 +52647,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Free Thermal Expansion",
-                        "content": "When the temperature of a rod is increased by $\\Delta T$, it undergoes thermal expansion. If one end of the rod is free to move, no external constraint prevents this expansion.\n\n\n$$\\n\\varepsilon = \\frac{\\Delta L}{L} = \\frac{L \\cdot \\alpha \\cdot \\Delta T}{L} = \\alpha \\Delta T\n \$\n"
+                        "content": "When the temperature of a rod is increased by $\\Delta T$, it undergoes thermal expansion. If one end of the rod is free to move, no external constraint prevents this expansion.\n\n\n$$\\n\\varepsilon = \\frac{\\Delta L}{L} = \\frac{L \\cdot \\alpha \\cdot \\Delta T}{L} = \\alpha \\Delta T\n $\n"
                     },
                     {
                         "title": "Step 1: Calculate Thermal Strain ($\\varepsilon$)",
@@ -52698,7 +52717,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Poisson's Ratio",
-                        "content": "Poisson's ratio ($\\nu$) is defined as the absolute ratio of lateral strain to longitudinal strain produced in a material under longitudinal loading:\n\n\n$$\\n\\nu = \\frac{\\text{Lateral Strain}}{\\text{Longitudinal Strain}} = \\frac{\\varepsilon_{\\text{lateral}}}{\\varepsilon_{\\text{longitudinal}}}\n \$\n"
+                        "content": "Poisson's ratio ($\\nu$) is defined as the absolute ratio of lateral strain to longitudinal strain produced in a material under longitudinal loading:\n\n\n$$\\n\\nu = \\frac{\\text{Lateral Strain}}{\\text{Longitudinal Strain}} = \\frac{\\varepsilon_{\\text{lateral}}}{\\varepsilon_{\\text{longitudinal}}}\n $\n"
                     },
                     {
                         "title": "Step 1: Calculate Longitudinal Strain ($\\varepsilon_{\\text{longitudinal",
@@ -52776,7 +52795,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Thermal Stress",
-                        "content": "When a rod fixed between two rigid supports is heated, its thermal expansion is completely prevented by the supports. The constrained strain gives rise to thermal stress ($\\sigma$), defined by:\n\n\n$$\\n\\sigma = E \\cdot \\alpha \\cdot \\Delta T\n \$\n"
+                        "content": "When a rod fixed between two rigid supports is heated, its thermal expansion is completely prevented by the supports. The constrained strain gives rise to thermal stress ($\\sigma$), defined by:\n\n\n$$\\n\\sigma = E \\cdot \\alpha \\cdot \\Delta T\n $\n"
                     },
                     {
                         "title": "Step 1: Identify Given Parameters",
@@ -52846,7 +52865,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Ultimate Tensile Strength (UTS)",
-                        "content": "In a standard tension test, engineering stress is calculated relative to the original cross-sectional area ($A_0$) of the specimen. Ultimate Tensile Strength (UTS) is defined as the maximum engineering stress the material can sustain before fracture:\n\n\n$$\\n\\text{UTS} = \\frac{P_{\\text{max}}}{A_0}\n \$\n"
+                        "content": "In a standard tension test, engineering stress is calculated relative to the original cross-sectional area ($A_0$) of the specimen. Ultimate Tensile Strength (UTS) is defined as the maximum engineering stress the material can sustain before fracture:\n\n\n$$\\n\\text{UTS} = \\frac{P_{\\text{max}}}{A_0}\n $\n"
                     },
                     {
                         "title": "Analysis of Options",
@@ -56464,7 +56483,8 @@ const QUESTIONS = {
                     "Inconsistent unit conversions (e.g., mixing $\\text{mm}$, $\\text{m}$, $\\text{MPa}$, and $\\text{Pa}$).",
                     "Using diameter $d$ instead of radius $r$ (or vice versa) in stress and moment of inertia formulas."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Circular Drive Shaft Cylinder\n  \\fill[gray!18] (0, -1.0) rectangle (5.5, 1.0);\n  \\draw[ultra thick, black] (0, 1.0) -- (5.5, 1.0);\n  \\draw[ultra thick, black] (0, -1.0) -- (5.5, -1.0);\n\n  % Left cross-section face\n  \\draw[ultra thick, fill=gray!28, draw=black] (0, 0) ellipse (0.35 and 1.0);\n  % Right cross-section face\n  \\draw[ultra thick, fill=gray!15, draw=black] (5.5, 0) ellipse (0.35 and 1.0);\n\n  % Torque arrows (T = 1000 N*m)\n  \\draw[->, ultra thick, black] (6.0, 0.6) arc[start angle=90, end angle=-180, x radius=0.6, y radius=0.8] node[below right=2pt, font=\\large\\bfseries\\sffamily, black] {$T = 1000\\text{ N}\\cdot\\text{m}$};\n\n  % Shaft Dimensions\n  \\draw[<->, ultra thick, black] (-0.7, -1.0) -- (-0.7, 1.0) node[midway, left=3pt, font=\\large\\bfseries\\sffamily, black] {$d = 60\\text{ mm}$};\n  \\draw[dash dot, thick, gray!80] (-1.0, 0) -- (6.5, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {Axis};\n\\end{tikzpicture}"
         },
         {
             "topic": "Deflection of Beams",
@@ -56640,7 +56660,8 @@ const QUESTIONS = {
                     "Inconsistent unit conversions (e.g., mixing $\\text{mm}$, $\\text{m}$, $\\text{MPa}$, and $\\text{Pa}$).",
                     "Using diameter $d$ instead of radius $r$ (or vice versa) in stress and moment of inertia formulas."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.2, >=stealth]\n  % Square Stress Element\n  \\fill[gray!15] (-1.2, -1.2) rectangle (1.2, 1.2);\n  \\draw[ultra thick, black] (-1.2, -1.2) rectangle (1.2, 1.2);\n\n  % Normal Stress sigma_x = 80 MPa (Tension)\n  \\draw[->, ultra thick, black] (1.2, 0) -- (2.4, 0) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$\\sigma_x = 80\\text{ MPa}$};\n  \\draw[->, ultra thick, black] (-1.2, 0) -- (-2.4, 0) node[left=2pt, font=\\large\\bfseries\\sffamily, black] {$\\sigma_x = 80\\text{ MPa}$};\n\n  % Normal Stress sigma_y = 20 MPa (Tension)\n  \\draw[->, ultra thick, black] (0, 1.2) -- (0, 2.3) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {$\\sigma_y = 20\\text{ MPa}$};\n  \\draw[->, ultra thick, black] (0, -1.2) -- (0, -2.3) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$\\sigma_y = 20\\text{ MPa}$};\n\n  % Shear Stress tau_xy = 30 MPa\n  \\draw[->, ultra thick, black] (1.4, -0.8) -- (1.4, 0.8) node[right=2pt, font=\\large\\bfseries\\sffamily, black] {$\\tau_{xy} = 30\\text{ MPa}$};\n  \\draw[->, ultra thick, black] (-1.4, 0.8) -- (-1.4, -0.8);\n  \\draw[->, ultra thick, black] (-0.8, 1.4) -- (0.8, 1.4);\n  \\draw[->, ultra thick, black] (0.8, -1.4) -- (-0.8, -1.4);\n\\end{tikzpicture}"
         },
         {
             "topic": "Failure Theories",
@@ -57634,7 +57655,8 @@ const QUESTIONS = {
                     "Inconsistent unit conversions (e.g., mixing $\\text{mm}$, $\\text{m}$, $\\text{MPa}$, and $\\text{Pa}$).",
                     "Using diameter $d$ instead of radius $r$ (or vice versa) in stress and moment of inertia formulas."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Cylindrical tank body\n  \\fill[gray!15] (-2.2, -1.3) rectangle (2.2, 1.3);\n  \\draw[ultra thick, black] (-2.2, 1.3) -- (2.2, 1.3);\n  \\draw[ultra thick, black] (-2.2, -1.3) -- (2.2, -1.3);\n\n  % Hemispherical End Caps\n  \\draw[ultra thick, fill=gray!15, draw=black] (2.2, 1.3) arc[start angle=90, end angle=-90, x radius=0.9, y radius=1.3] -- cycle;\n  \\draw[ultra thick, fill=gray!15, draw=black] (-2.2, 1.3) arc[start angle=90, end angle=270, x radius=0.9, y radius=1.3] -- cycle;\n\n  % Internal Gas Pressure Indicators\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, 0.3) {Internal Pressure};\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, -0.3) {$P_{\\text{internal}}$};\n\n  % Pressure arrows radiating from center\n  \\foreach \\a in {45, 90, 135, 225, 270, 315} {\n    \\draw[->, thick, black] (\\a:0.8) -- (\\a:1.25);\n  }\n\n  % Dimension Labels\n  \\draw[<->, ultra thick, black] (-3.4, -1.3) -- (-3.4, 1.3) node[midway, left=3pt, font=\\large\\bfseries\\sffamily, black] {Diameter $D$};\n  \\draw[<->, ultra thick, black] (-1.5, 1.5) -- (1.5, 1.5) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {Wall Thickness $t \\ll D$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Buckling",
@@ -58428,7 +58450,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Hooke's Law and Breaking Stress",
-                        "content": "By Hooke's Law, the maximum stress (breaking stress) produced in the material before breaking is related to Young's Modulus ($Y$) and breaking strain ($\\varepsilon$) by:\n\n$$\\text{Stress} = Y \\times \\text{Strain}$\n\nSince stress is defined as force per unit cross-sectional area ($\\sigma = \\frac{F}{A}$):\n\n\n$$\\n\\frac{F}{A} = Y \\cdot \\varepsilon \\implies A = \\frac{F}{Y \\cdot \\varepsilon}\n\$\n\n\nGiven parameters:\n\\n•  Breaking strain, $\\varepsilon = 0.2\\% = \\frac{0.2}{100} = 2 \\times 10^{-3}$\n•  Young's modulus, $Y = 7 \\times 10^9\\text{ N/m}^2$\n•  Applied load, $F = 10^4\\text{ N}$\n\""
+                        "content": "By Hooke's Law, the maximum stress (breaking stress) produced in the material before breaking is related to Young's Modulus ($Y$) and breaking strain ($\\varepsilon$) by:\n\n$$\\text{Stress} = Y \\times \\text{Strain}$\n\nSince stress is defined as force per unit cross-sectional area ($\\sigma = \\frac{F}{A}$):\n\n\n$$\\n\\frac{F}{A} = Y \\cdot \\varepsilon \\implies A = \\frac{F}{Y \\cdot \\varepsilon}\n$\n\n\nGiven parameters:\n\\n•  Breaking strain, $\\varepsilon = 0.2\\% = \\frac{0.2}{100} = 2 \\times 10^{-3}$\n•  Young's modulus, $Y = 7 \\times 10^9\\text{ N/m}^2$\n•  Applied load, $F = 10^4\\text{ N}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Breaking Stress ($\\sigma_{\\text{max",
@@ -58502,7 +58524,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Young's Modulus and Rigid Bodies",
-                        "content": "Young's modulus ($Y$) is defined as the ratio of tensile (or compressive) stress to strain:\n\n\n$$\\nY = \\frac{\\text{Stress}}{\\text{Strain}} = \\frac{F / A}{\\Delta L / L}\n\$\n\n\nWhere:\n\\n•  $F / A$ = Applied stress\n•  $\\Delta L / L$ = Longitudinal strain produced\n\""
+                        "content": "Young's modulus ($Y$) is defined as the ratio of tensile (or compressive) stress to strain:\n\n\n$$\\nY = \\frac{\\text{Stress}}{\\text{Strain}} = \\frac{F / A}{\\Delta L / L}\n$\n\n\nWhere:\n\\n•  $F / A$ = Applied stress\n•  $\\Delta L / L$ = Longitudinal strain produced\n\""
                     },
                     {
                         "title": "Step 1: Analyze Deformation for a Perfectly Rigid Body",
@@ -58579,7 +58601,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Lever Rule for Pro-Eutectoid Phase**\nWhen a hypoeutectoid steel ($C_0 < C_e$) is cooled slowly from the austenite ($\\gamma$) region down to room temperature, pro-eutectoid $\\alpha$-ferrite forms during cooling between the $A_3$ line and the eutectoid temperature ($725^\\circ\\text{C}$). \n\nOnce the temperature drops below $725^\\circ\\text{C}$, the remaining austenite transforms into pearlite (eutectoid mixture of $\\alpha$-ferrite and $\\text{Fe}_3\\text{C}$). Therefore, the total amount of pro-eutectoid $\\alpha$-ferrite formed remains fixed at the level established **just above $725^\\circ\\text{C}$**.\n\n\n$$\\nW_{\\alpha,\\text{pro}} = \\frac{C_e - C_0}{C_e - C_\\alpha}\n\$\n\n\nWhere:\n\\n•  $C_0 = 0.5\\text{ wt\\%}$ (overall alloy carbon composition)\n•  $C_e = 0.8\\text{ wt\\%}$ (eutectoid composition)\n•  $C_\\alpha = 0.025\\text{ wt\\%}$ (maximum solubility of carbon in $\\alpha$-ferrite at $725^\\circ\\text{C}$)\n\\n\n**Step 1: Apply Lever Rule Just Above Eutectoid Temperature ($725^\\circ\\text{C**^+$)}\nSubstituting the given composition values into the tie-line formula:\n\n$$W_{\\alpha,\\text{pro}} = \\frac{0.8 - 0.5}{0.8 - 0.025}$\n\n$$W_{\\alpha,\\text{pro}} = \\frac{0.30}{0.775}$\n\n**Step 2: Calculate the Fraction**\n$$W_{\\alpha,\\text{pro}} \\approx 0.387097 \\approx 0.387$\n\nCorrect Answer: A ($0.387$)"
+                        "content": "**Understand Lever Rule for Pro-Eutectoid Phase**\nWhen a hypoeutectoid steel ($C_0 < C_e$) is cooled slowly from the austenite ($\\gamma$) region down to room temperature, pro-eutectoid $\\alpha$-ferrite forms during cooling between the $A_3$ line and the eutectoid temperature ($725^\\circ\\text{C}$). \n\nOnce the temperature drops below $725^\\circ\\text{C}$, the remaining austenite transforms into pearlite (eutectoid mixture of $\\alpha$-ferrite and $\\text{Fe}_3\\text{C}$). Therefore, the total amount of pro-eutectoid $\\alpha$-ferrite formed remains fixed at the level established **just above $725^\\circ\\text{C}$**.\n\n\n$$\\nW_{\\alpha,\\text{pro}} = \\frac{C_e - C_0}{C_e - C_\\alpha}\n$\n\n\nWhere:\n\\n•  $C_0 = 0.5\\text{ wt\\%}$ (overall alloy carbon composition)\n•  $C_e = 0.8\\text{ wt\\%}$ (eutectoid composition)\n•  $C_\\alpha = 0.025\\text{ wt\\%}$ (maximum solubility of carbon in $\\alpha$-ferrite at $725^\\circ\\text{C}$)\n\\n\n**Step 1: Apply Lever Rule Just Above Eutectoid Temperature ($725^\\circ\\text{C**^+$)}\nSubstituting the given composition values into the tie-line formula:\n\n$$W_{\\alpha,\\text{pro}} = \\frac{0.8 - 0.5}{0.8 - 0.025}$\n\n$$W_{\\alpha,\\text{pro}} = \\frac{0.30}{0.775}$\n\n**Step 2: Calculate the Fraction**\n$$W_{\\alpha,\\text{pro}} \\approx 0.387097 \\approx 0.387$\n\nCorrect Answer: A ($0.387$)"
                     }
                 ],
                 "final_answer": "A",
@@ -58640,7 +58662,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand the Eutectoid Reaction in the Fe-C System",
-                        "content": "Pearlite is a characteristic microstructure that forms in carbon steels when austenite cools slowly past the eutectoid temperature (approximately $727^\\circ\\text{C}$). \n\n\n$$\\n\\gamma\\text{-austenite (0.76\\% C)} \\xrightarrow[\\text{cooling}]{\\text{approx. } 727^\\circ\\text{C}} \\alpha\\text{-ferrite (0.022\\% C)} + \\text{Fe}_3\\text{C}\\text{ (Cementite, 6.67\\% C)}\n \$\n"
+                        "content": "Pearlite is a characteristic microstructure that forms in carbon steels when austenite cools slowly past the eutectoid temperature (approximately $727^\\circ\\text{C}$). \n\n\n$$\\n\\gamma\\text{-austenite (0.76\\% C)} \\xrightarrow[\\text{cooling}]{\\text{approx. } 727^\\circ\\text{C}} \\alpha\\text{-ferrite (0.022\\% C)} + \\text{Fe}_3\\text{C}\\text{ (Cementite, 6.67\\% C)}\n $\n"
                     },
                     {
                         "title": "Step 1: Identify the Constituents",
@@ -61294,7 +61316,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.2, >=stealth]\n  % Isometric Cube Outline\n  % Front face: (0,0) to (2.5, 2.5)\n  \\draw[ultra thick, fill=gray!10, draw=black] (0, 0) rectangle (2.5, 2.5);\n  % Top face\n  \\draw[ultra thick, fill=gray!18, draw=black] (0, 2.5) -- (1.2, 3.4) -- (3.7, 3.4) -- (2.5, 2.5) -- cycle;\n  % Right face\n  \\draw[ultra thick, fill=gray!25, draw=black] (2.5, 0) -- (3.7, 0.9) -- (3.7, 3.4) -- (2.5, 2.5) -- cycle;\n\n  % Corner Atoms (Front face)\n  \\draw[ultra thick, fill=gray!40, draw=black] (0, 0) circle (0.22);\n  \\draw[ultra thick, fill=gray!40, draw=black] (2.5, 0) circle (0.22);\n  \\draw[ultra thick, fill=gray!40, draw=black] (0, 2.5) circle (0.22);\n  \\draw[ultra thick, fill=gray!40, draw=black] (2.5, 2.5) circle (0.22);\n\n  % Face-Center Atom (Front Face Center)\n  \\draw[ultra thick, fill=black, draw=black] (1.25, 1.25) circle (0.28);\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black] at (1.25, 1.25) {Face Center};\n\n  % Unit Cell Edge Dimension\n  \\draw[<->, ultra thick, black] (0, -0.4) -- (2.5, -0.4) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {Lattice Parameter $a$};\n  \\node[above=4pt, font=\\large\\bfseries\\sffamily, black] at (1.8, 3.5) {Face-Centered Cubic (FCC)};\n\\end{tikzpicture}"
         },
         {
             "topic": "Corrosion Mechanisms and Control",
@@ -61412,7 +61435,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Binary Phase Diagram Axes\n  \\draw[->, ultra thick, black] (0, 0) -- (6.5, 0) node[right=3pt, font=\\large\\bfseries\\sffamily, black] {Composition ($\\%\\text{ B}$)};\n  \\draw[->, ultra thick, black] (0, 0) -- (0, 4.5) node[above=3pt, font=\\large\\bfseries\\sffamily, black] {Temperature ($T$)};\n\n  % Two-phase tie-line region\n  \\draw[ultra thick, black] (0.8, 3.8) to[bend right=25] (5.5, 1.2); % Liquidus\n  \\draw[ultra thick, black] (0.8, 3.8) to[bend left=15] (5.5, 1.2);  % Solidus\n\n  % Isothermal Tie Line at T0\n  \\draw[ultra thick, black] (1.5, 2.5) -- (4.8, 2.5);\n  \\node[above=2pt, font=\\large\\bfseries\\sffamily, black] at (3.15, 2.5) {Tie Line ($T_0$)};\n\n  % Tie Line Points: Solidus (C_alpha), Overall (C_0), Liquidus (C_L)\n  \\draw[ultra thick, fill=black] (1.5, 2.5) circle (0.1) node[above left=2pt, font=\\large\\bfseries\\sffamily, black] {$\\alpha$};\n  \\draw[ultra thick, fill=white, draw=black] (2.8, 2.5) circle (0.1) node[above=3pt, font=\\large\\bfseries\\sffamily, black] {$C_0$};\n  \\draw[ultra thick, fill=black] (4.8, 2.5) circle (0.1) node[above right=2pt, font=\\large\\bfseries\\sffamily, black] {$L$};\n\n  % Projections to composition axis\n  \\draw[dashed, thick, gray!70] (1.5, 2.5) -- (1.5, 0) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$C_\\alpha$};\n  \\draw[dashed, thick, gray!70] (2.8, 2.5) -- (2.8, 0) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$C_0$};\n  \\draw[dashed, thick, gray!70] (4.8, 2.5) -- (4.8, 0) node[below=2pt, font=\\large\\bfseries\\sffamily, black] {$C_L$};\n\n  % Lever Arms\n  \\draw[<->, ultra thick, black] (1.5, 2.0) -- (2.8, 2.0) node[midway, below=2pt, font=\\bfseries\\sffamily, black] {Arm $a$};\n  \\draw[<->, ultra thick, black] (2.8, 2.0) -- (4.8, 2.0) node[midway, below=2pt, font=\\bfseries\\sffamily, black] {Arm $b$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Ferrous Metals",
@@ -63029,7 +63053,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Capillarity in Zero Gravity",
-                        "content": "The theoretical height $h$ to which a liquid rises in a capillary tube of radius $r$ is given by Jurin's law:\n\n\n$$\\nh = \\frac{2 T \\cos\\theta}{r \\rho g_{\\text{eff}}}\n\$\n\n\nWhere:\n\\n•  $T$ = Surface tension of the liquid\n•  $\\theta$ = Contact angle\n•  $r$ = Radius of the capillary tube\n•  $\\rho$ = Density of the liquid\n•  $g_{\\text{eff}}$ = Effective acceleration due to gravity\n\""
+                        "content": "The theoretical height $h$ to which a liquid rises in a capillary tube of radius $r$ is given by Jurin's law:\n\n\n$$\\nh = \\frac{2 T \\cos\\theta}{r \\rho g_{\\text{eff}}}\n$\n\n\nWhere:\n\\n•  $T$ = Surface tension of the liquid\n•  $\\theta$ = Contact angle\n•  $r$ = Radius of the capillary tube\n•  $\\rho$ = Density of the liquid\n•  $g_{\\text{eff}}$ = Effective acceleration due to gravity\n\""
                     },
                     {
                         "title": "Step 1: Analyze Free-Fall Condition",
@@ -63105,7 +63129,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Pitot Tube Equation**\nA pitot-static tube measures the dynamic pressure of a fluid flow by evaluating the difference between total pressure (stagnation pressure $P_0$) and static pressure ($P_0 - P = \\Delta P$).\n\n\n$$\\nv = \\sqrt{\\frac{2 \\Delta P}{\\rho_{\\text{air}}}} = \\sqrt{\\frac{2 \\rho_{\\text{Hg}} g h}{\\rho_{\\text{air}}}}\n\$\n\n\n**Step 1: Calculate Density of Mercury ($\\rho_{\\text{Hg**}$)}\nGiven:\n\\n•  Specific gravity of mercury, $S_{\\text{Hg}} = 13.6$\n•  Density of water, $\\rho_{\\text{water}} = 1000 \\text{ kg m}^{-3}$\n\\n\n$$\\rho_{\\text{Hg}} = S_{\\text{Hg}} \\times \\rho_{\\text{water}} = 13.6 \\times 1000 = 13600 \\text{ kg m}^{-3}$\n\n**Step 2: Calculate Pressure Difference ($\\Delta P$)**\nGiven:\n\\n•  Manometer height, $h = 30 \\text{ mm} = 0.03 \\text{ m}$\n•  Acceleration due to gravity, $g = 10 \\text{ m s}^{-2}$\n\\n\nSince $\\rho_{\\text{air}} \\ll \\rho_{\\text{Hg}}$, the differential pressure head measured by the U-tube mercury manometer is:\n\n$$\\Delta P = \\rho_{\\text{Hg}} \\cdot g \\cdot h$\n\n$$\\Delta P = 13600 \\times 10 \\times 0.03 = 4080 \\text{ N m}^{-2}$\n\n**Step 3: Calculate Air Velocity ($v$)**\nSubstitute $\\Delta P = 4080 \\text{ N m}^{-2}$ and density of air $\\rho_{\\text{air}} = 1.23 \\text{ kg m}^{-3}$ into Bernoulli's equation:\n\n$$v = \\sqrt{\\frac{2 \\times 4080}{1.23}}$\n\n$$v = \\sqrt{\\frac{8160}{1.23}} = \\sqrt{6634.1463}$\n\n$$v \\approx 81.4502 \\text{ m s}^{-1}$\n\nRounding off to $1$ decimal place gives:\n\n$$v = 81.5 \\text{ m s}^{-1}$\n\nCorrect Answer: $81.5$ (or $81.3$ to $81.5$ depending on exact precision of constants)."
+                        "content": "**Understand Pitot Tube Equation**\nA pitot-static tube measures the dynamic pressure of a fluid flow by evaluating the difference between total pressure (stagnation pressure $P_0$) and static pressure ($P_0 - P = \\Delta P$).\n\n\n$$\\nv = \\sqrt{\\frac{2 \\Delta P}{\\rho_{\\text{air}}}} = \\sqrt{\\frac{2 \\rho_{\\text{Hg}} g h}{\\rho_{\\text{air}}}}\n$\n\n\n**Step 1: Calculate Density of Mercury ($\\rho_{\\text{Hg**}$)}\nGiven:\n\\n•  Specific gravity of mercury, $S_{\\text{Hg}} = 13.6$\n•  Density of water, $\\rho_{\\text{water}} = 1000 \\text{ kg m}^{-3}$\n\\n\n$$\\rho_{\\text{Hg}} = S_{\\text{Hg}} \\times \\rho_{\\text{water}} = 13.6 \\times 1000 = 13600 \\text{ kg m}^{-3}$\n\n**Step 2: Calculate Pressure Difference ($\\Delta P$)**\nGiven:\n\\n•  Manometer height, $h = 30 \\text{ mm} = 0.03 \\text{ m}$\n•  Acceleration due to gravity, $g = 10 \\text{ m s}^{-2}$\n\\n\nSince $\\rho_{\\text{air}} \\ll \\rho_{\\text{Hg}}$, the differential pressure head measured by the U-tube mercury manometer is:\n\n$$\\Delta P = \\rho_{\\text{Hg}} \\cdot g \\cdot h$\n\n$$\\Delta P = 13600 \\times 10 \\times 0.03 = 4080 \\text{ N m}^{-2}$\n\n**Step 3: Calculate Air Velocity ($v$)**\nSubstitute $\\Delta P = 4080 \\text{ N m}^{-2}$ and density of air $\\rho_{\\text{air}} = 1.23 \\text{ kg m}^{-3}$ into Bernoulli's equation:\n\n$$v = \\sqrt{\\frac{2 \\times 4080}{1.23}}$\n\n$$v = \\sqrt{\\frac{8160}{1.23}} = \\sqrt{6634.1463}$\n\n$$v \\approx 81.4502 \\text{ m s}^{-1}$\n\nRounding off to $1$ decimal place gives:\n\n$$v = 81.5 \\text{ m s}^{-1}$\n\nCorrect Answer: $81.5$ (or $81.3$ to $81.5$ depending on exact precision of constants)."
                     }
                 ],
                 "final_answer": "C",
@@ -63131,7 +63155,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Wind Tunnel Duct\n  \\draw[ultra thick, black] (-1.5, 3.2) -- (4.5, 3.2);\n  \\draw[ultra thick, black] (-1.5, 0.8) -- (4.5, 0.8);\n  \n  % Airflow Velocity Arrows\n  \\foreach \\y in {1.2, 1.7, 2.3, 2.8} {\n    \\draw[->, thick, black] (-1.2, \\y) -- (-0.2, \\y);\n  }\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (-0.7, 2.8) {Air Flow, $v$};\n  \\node[below, font=\\large\\bfseries\\sffamily, black] at (-0.7, 1.2) {$\\rho_{\\text{air}} = 1.23\\text{ kg/m}^3$};\n\n  % Pitot Tube Body\n  % Stagnation tip at x=0.5, y=2.0\n  \\draw[ultra thick, fill=white, draw=black] (0.5, 1.85) -- (2.0, 1.85) -- (2.0, 0.2) -- (1.6, 0.2) -- (1.6, 1.7) -- (0.8, 1.7) -- (0.5, 1.85);\n  \\draw[ultra thick, fill=white, draw=black] (0.5, 2.15) -- (2.4, 2.15) -- (2.4, 0.2) -- (2.0, 0.2) -- (2.0, 2.0) -- (0.8, 2.0) -- (0.5, 2.15);\n  \n  % Static tap on the outer sleeve\n  \\draw[ultra thick, black] (1.2, 2.15) -- (1.2, 2.35) -- (3.0, 2.35) -- (3.0, 0.2);\n  \\draw[ultra thick, black] (1.6, 2.15) -- (1.6, 2.5) -- (3.4, 2.5) -- (3.4, 0.2);\n\n  % U-Tube Manometer (Connected below tunnel)\n  \\draw[ultra thick, black] (1.6, 0.2) -- (1.6, -2.4) arc[start angle=180, end angle=360, radius=0.9] -- (3.4, 0.2);\n  \\draw[ultra thick, black] (2.0, 0.2) -- (2.0, -2.4) arc[start angle=180, end angle=360, radius=0.5] -- (3.0, 0.2);\n\n  % Mercury Fill (Bottom U-bend and differential column)\n  \\fill[gray!50] (1.6, -2.4) arc[start angle=180, end angle=360, radius=0.9] -- (3.4, -0.6) -- (3.0, -0.6) -- (3.0, -2.4) arc[start angle=360, end angle=180, radius=0.5] -- (1.6, -1.6) -- cycle;\n  \\draw[ultra thick, black] (1.6, -1.6) -- (2.0, -1.6);\n  \\draw[ultra thick, black] (3.0, -0.6) -- (3.4, -0.6);\n\n  % Differential Height h = 30 mm\n  \\draw[dashed, thick, gray!80] (1.6, -1.6) -- (4.1, -1.6);\n  \\draw[dashed, thick, gray!80] (3.4, -0.6) -- (4.1, -0.6);\n  \\draw[<->, ultra thick, black] (3.9, -1.6) -- (3.9, -0.6) node[midway, right=4pt, font=\\large\\bfseries\\sffamily, black] {$h = 30\\text{ mm}$};\n\n  % Labels\n  \\node[right=4pt, font=\\large\\bfseries\\sffamily, black] at (3.5, -2.2) {Mercury};\n  \\node[right=4pt, font=\\large\\bfseries\\sffamily, black] at (3.5, -2.6) {($SG = 13.6$)};\n  \\node[left=3pt, font=\\large\\bfseries\\sffamily, black] at (0.4, 2.0) {Pitot Tip};\n\\end{tikzpicture}"
         },
         {
             "topic": "Continuity Equation",
@@ -63166,7 +63191,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Continuity Equation for Incompressible Flow**\nFor an incompressible fluid flow in a branching network, conservation of mass dictates that total volumetric flow rate entering the junction equals the sum of volumetric flow rates leaving the junction.\n\n\n$$\\nQ_1 = Q_2 + Q_3\n\$\n\n\n**Step 1: Identify Given Parameters**\nLet the main channel be Section 1, the upper branch ($300\\text{ mm}$) be Section 2, and the lower branch ($200\\text{ mm}$) be Section 3.\nAssuming unit depth ($d = 1\\text{ m}$):\n\n\\n•  $Q_1 = 0.9\\text{ m}^3/\\text{s}$\n•  Width of Branch 2: $b_2 = 300\\text{ mm} = 0.3\\text{ m} \\implies A_2 = b_2 \\times d = 0.3\\text{ m}^2$\n•  Width of Branch 3: $b_3 = 200\\text{ mm} = 0.2\\text{ m} \\implies A_3 = b_3 \\times d = 0.2\\text{ m}^2$\n•  Velocity in Branch 3: $V_3 = 3\\text{ m/s}$\n\\n\n**Step 2: Calculate Flow Rate in Branch 3 ($Q_3$)**\n$$Q_3 = A_3 \\cdot V_3 = (0.2\\text{ m}^2) \\times (3\\text{ m/s}) = 0.6\\text{ m}^3/\\text{s}$\n\n**Step 3: Calculate Flow Rate in Branch 2 ($Q_2$)**\nUsing the continuity equation:\n\n$$Q_1 = Q_2 + Q_3$\n\n$$0.9 = Q_2 + 0.6 \\implies Q_2 = 0.9 - 0.6 = 0.3\\text{ m}^3/\\text{s}$\n\n**Step 4: Calculate Velocity in Branch 2 ($V_2$)**\nSince $Q_2 = A_2 \\cdot V_2$:\n\n$$V_2 = \\frac{Q_2}{A_2} = \\frac{0.3\\text{ m}^3/\\text{s}}{0.3\\text{ m}^2} = 1\\text{ m/s}$\n\nCorrect Answer: $1.0$ (or $1\\text{ m/s}$)"
+                        "content": "**Understand Continuity Equation for Incompressible Flow**\nFor an incompressible fluid flow in a branching network, conservation of mass dictates that total volumetric flow rate entering the junction equals the sum of volumetric flow rates leaving the junction.\n\n\n$$\\nQ_1 = Q_2 + Q_3\n$\n\n\n**Step 1: Identify Given Parameters**\nLet the main channel be Section 1, the upper branch ($300\\text{ mm}$) be Section 2, and the lower branch ($200\\text{ mm}$) be Section 3.\nAssuming unit depth ($d = 1\\text{ m}$):\n\n\\n•  $Q_1 = 0.9\\text{ m}^3/\\text{s}$\n•  Width of Branch 2: $b_2 = 300\\text{ mm} = 0.3\\text{ m} \\implies A_2 = b_2 \\times d = 0.3\\text{ m}^2$\n•  Width of Branch 3: $b_3 = 200\\text{ mm} = 0.2\\text{ m} \\implies A_3 = b_3 \\times d = 0.2\\text{ m}^2$\n•  Velocity in Branch 3: $V_3 = 3\\text{ m/s}$\n\\n\n**Step 2: Calculate Flow Rate in Branch 3 ($Q_3$)**\n$$Q_3 = A_3 \\cdot V_3 = (0.2\\text{ m}^2) \\times (3\\text{ m/s}) = 0.6\\text{ m}^3/\\text{s}$\n\n**Step 3: Calculate Flow Rate in Branch 2 ($Q_2$)**\nUsing the continuity equation:\n\n$$Q_1 = Q_2 + Q_3$\n\n$$0.9 = Q_2 + 0.6 \\implies Q_2 = 0.9 - 0.6 = 0.3\\text{ m}^3/\\text{s}$\n\n**Step 4: Calculate Velocity in Branch 2 ($V_2$)**\nSince $Q_2 = A_2 \\cdot V_2$:\n\n$$V_2 = \\frac{Q_2}{A_2} = \\frac{0.3\\text{ m}^3/\\text{s}}{0.3\\text{ m}^2} = 1\\text{ m/s}$\n\nCorrect Answer: $1.0$ (or $1\\text{ m/s}$)"
                     }
                 ],
                 "final_answer": "C",
@@ -63227,7 +63252,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Reynolds Number Definition**\nThe Reynolds number ($Re$) for internal pipe flow is given by:\n\n$$Re = \\frac{\\rho V D}{\\mu}$\n\nWhere:\n\\n•  $\\rho$ is fluid density\n•  $V$ is mean flow velocity\n•  $D$ is pipe inner diameter ($D = 2r$)\n•  $\\mu$ is dynamic viscosity\n\\n\nSince mass flow rate is $\\dot{m} = \\rho A V = \\rho \\left( \\frac{\\pi D^2}{4} \\right) V$, we can express $\\rho V D$ directly in terms of $\\dot{m}$:\n\n\n$$\\nRe = \\frac{4 \\dot{m}}{\\pi D \\mu} = \\frac{2 \\dot{m}}{\\pi r \\mu}\n\$\n\n\n**Step 1: Convert Given Parameters to SI Units**\n\\n•  Inner radius: $r = 10\\text{ mm} = 0.01\\text{ m}$\n•  Mass flow rate: $\\dot{m} = 36\\text{ kg/hr} = \\frac{36}{3600}\\text{ kg/s} = 0.01\\text{ kg/s}$\n•  Viscosity: $\\mu = 0.001\\text{ kg/m}\\cdot\\text{s} = 10^{-3}\\text{ kg/m}\\cdot\\text{s}$\n\\n\n**Step 2: Substitute Values into the Equation**\nUsing $Re = \\frac{2 \\dot{m}}{\\pi r \\mu}$:\n\n$$Re = \\frac{2 \\times 0.01}{\\pi \\times 0.01 \\times 0.001}$\n\nSimplify numerator and denominator:\n\n$$Re = \\frac{0.02}{\\pi \\times 10^{-5}} = \\frac{2000}{\\pi}$\n\n**Step 3: Calculate Numerical Value**\n$$Re = \\frac{2000}{3.14159265...} \\approx 636.6197$\n\nRounding off to $1$ decimal place gives:\n\n$$Re \\approx 636.6$\n\nCorrect Answer: B ($636.6$)"
+                        "content": "**Understand Reynolds Number Definition**\nThe Reynolds number ($Re$) for internal pipe flow is given by:\n\n$$Re = \\frac{\\rho V D}{\\mu}$\n\nWhere:\n\\n•  $\\rho$ is fluid density\n•  $V$ is mean flow velocity\n•  $D$ is pipe inner diameter ($D = 2r$)\n•  $\\mu$ is dynamic viscosity\n\\n\nSince mass flow rate is $\\dot{m} = \\rho A V = \\rho \\left( \\frac{\\pi D^2}{4} \\right) V$, we can express $\\rho V D$ directly in terms of $\\dot{m}$:\n\n\n$$\\nRe = \\frac{4 \\dot{m}}{\\pi D \\mu} = \\frac{2 \\dot{m}}{\\pi r \\mu}\n$\n\n\n**Step 1: Convert Given Parameters to SI Units**\n\\n•  Inner radius: $r = 10\\text{ mm} = 0.01\\text{ m}$\n•  Mass flow rate: $\\dot{m} = 36\\text{ kg/hr} = \\frac{36}{3600}\\text{ kg/s} = 0.01\\text{ kg/s}$\n•  Viscosity: $\\mu = 0.001\\text{ kg/m}\\cdot\\text{s} = 10^{-3}\\text{ kg/m}\\cdot\\text{s}$\n\\n\n**Step 2: Substitute Values into the Equation**\nUsing $Re = \\frac{2 \\dot{m}}{\\pi r \\mu}$:\n\n$$Re = \\frac{2 \\times 0.01}{\\pi \\times 0.01 \\times 0.001}$\n\nSimplify numerator and denominator:\n\n$$Re = \\frac{0.02}{\\pi \\times 10^{-5}} = \\frac{2000}{\\pi}$\n\n**Step 3: Calculate Numerical Value**\n$$Re = \\frac{2000}{3.14159265...} \\approx 636.6197$\n\nRounding off to $1$ decimal place gives:\n\n$$Re \\approx 636.6$\n\nCorrect Answer: B ($636.6$)"
                     }
                 ],
                 "final_answer": "B",
@@ -63288,7 +63313,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Darcy Friction Factor**\nFor fully developed internal flow, the Reynolds number ($Re$) determines whether the flow regime is laminar or turbulent.\n\n\n$$\\nRe = \\frac{V \\cdot D}{\\nu}\n\$\n\n\nWhere:\n\\n•  $V$ = mean flow velocity\n•  $D$ = inner pipe diameter\n•  $\\nu$ = kinematic viscosity\n\\n\n**Step 1: Calculate Reynolds Number ($Re$)**\nConvert parameters into standard SI units:\n\\n•  $D = 10\\text{ cm} = 0.1\\text{ m}$\n•  $V = 0.1\\text{ m/s}$\n•  $\\nu = 10^{-5}\\text{ m}^2/\\text{s}$\n\\n\nSubstitute these values into the Reynolds number equation:\n\n$$Re = \\frac{0.1 \\times 0.1}{10^{-5}} = \\frac{10^{-2}}{10^{-5}} = 10^3 = 1000$\n\nSince $Re = 1000 < 2300$, the flow inside the pipe is **laminar**.\n\n**Step 2: Calculate Darcy Friction Factor ($f$)**\nFor laminar, fully developed pipe flow, the Darcy friction factor is given by the Hagen-Poiseuille relationship:\n\n$$f = \\frac{64}{Re}$\n\nSubstitute $Re = 1000$:\n\n$$f = \\frac{64}{1000} = 0.064$\n\nCorrect Answer: $0.064$"
+                        "content": "**Understand Darcy Friction Factor**\nFor fully developed internal flow, the Reynolds number ($Re$) determines whether the flow regime is laminar or turbulent.\n\n\n$$\\nRe = \\frac{V \\cdot D}{\\nu}\n$\n\n\nWhere:\n\\n•  $V$ = mean flow velocity\n•  $D$ = inner pipe diameter\n•  $\\nu$ = kinematic viscosity\n\\n\n**Step 1: Calculate Reynolds Number ($Re$)**\nConvert parameters into standard SI units:\n\\n•  $D = 10\\text{ cm} = 0.1\\text{ m}$\n•  $V = 0.1\\text{ m/s}$\n•  $\\nu = 10^{-5}\\text{ m}^2/\\text{s}$\n\\n\nSubstitute these values into the Reynolds number equation:\n\n$$Re = \\frac{0.1 \\times 0.1}{10^{-5}} = \\frac{10^{-2}}{10^{-5}} = 10^3 = 1000$\n\nSince $Re = 1000 < 2300$, the flow inside the pipe is **laminar**.\n\n**Step 2: Calculate Darcy Friction Factor ($f$)**\nFor laminar, fully developed pipe flow, the Darcy friction factor is given by the Hagen-Poiseuille relationship:\n\n$$f = \\frac{64}{Re}$\n\nSubstitute $Re = 1000$:\n\n$$f = \\frac{64}{1000} = 0.064$\n\nCorrect Answer: $0.064$"
                     }
                 ],
                 "final_answer": "B",
@@ -64399,7 +64424,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % ================= SYSTEM 1: IN AIR =================\n  \\draw[ultra thick, black] (-0.3, 5.0) -- (2.7, 5.0);\n  \\fill[pattern=north east lines, draw=black, thick] (-0.3, 5.0) rectangle (2.7, 5.3);\n  \\draw[ultra thick, black] (1.2, 5.0) -- (1.2, 4.6);\n  \\draw[ultra thick, black] (1.2, 4.45) circle (0.15);\n\n  % Spring Balance Casing\n  \\draw[ultra thick, fill=gray!10, draw=black, rounded corners=3pt] (0.6, 2.3) rectangle (1.8, 4.3);\n  \\draw[thick, fill=white, draw=black] (0.8, 2.5) rectangle (1.2, 4.1);\n  \\foreach \\y in {2.7, 2.9, 3.1, 3.3, 3.5, 3.7, 3.9} {\n    \\draw[thick, black] (0.8, \\y) -- (0.95, \\y);\n  }\n  \\draw[->, ultra thick, black] (1.4, 2.9) -- (1.05, 2.9);\n  \\node[font=\\large\\bfseries\\sffamily, black, right] at (1.85, 3.3) {\\textbf{100 N}};\n\n  % Spring & Plunger\n  \\draw[thick, black] (1.0, 4.1) -- (1.0, 3.8) \n        -- (1.1, 3.65) -- (0.9, 3.5) -- (1.1, 3.35) -- (0.9, 3.2) -- (1.1, 3.05) -- (1.0, 2.9);\n  \\draw[ultra thick, black] (1.0, 2.9) -- (1.0, 2.0);\n  \\draw[ultra thick, black] (1.0, 2.0) arc[start angle=180, end angle=360, radius=0.15] arc[start angle=180, end angle=0, radius=0.15];\n\n  \\node[above=2pt, font=\\large\\bfseries\\sffamily, black] at (1.2, 5.3) {In Air};\n  \\draw[thick, black] (1.3, 1.85) -- (1.2, 1.6);\n  \\draw[ultra thick, fill=gray!35, draw=black] (0.4, 0.4) rectangle (2.0, 1.6);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (1.2, 1.0) {Object};\n\n  % ================= SYSTEM 2: IN WATER =================\n  \\draw[ultra thick, black] (4.7, 5.0) -- (7.7, 5.0);\n  \\fill[pattern=north east lines, draw=black, thick] (4.7, 5.0) rectangle (7.7, 5.3);\n  \\draw[ultra thick, black] (6.2, 5.0) -- (6.2, 4.6);\n  \\draw[ultra thick, black] (6.2, 4.45) circle (0.15);\n\n  % Spring Balance Casing\n  \\draw[ultra thick, fill=gray!10, draw=black, rounded corners=3pt] (5.6, 2.3) rectangle (6.8, 4.3);\n  \\draw[thick, fill=white, draw=black] (5.8, 2.5) rectangle (6.2, 4.1);\n  \\foreach \\y in {2.7, 2.9, 3.1, 3.3, 3.5, 3.7, 3.9} {\n    \\draw[thick, black] (5.8, \\y) -- (5.95, \\y);\n  }\n  \\draw[->, ultra thick, black] (6.4, 3.25) -- (6.05, 3.25);\n  \\node[font=\\large\\bfseries\\sffamily, black, right] at (6.85, 3.3) {\\textbf{75 N}};\n\n  % Spring & Plunger\n  \\draw[thick, black] (6.0, 4.1) -- (6.0, 3.85) \n        -- (6.1, 3.7) -- (5.9, 3.55) -- (6.1, 3.4) -- (6.0, 3.25);\n  \\draw[ultra thick, black] (6.0, 3.25) -- (6.0, 2.0);\n  \\draw[ultra thick, black] (6.0, 2.0) arc[start angle=180, end angle=360, radius=0.15] arc[start angle=180, end angle=0, radius=0.15];\n\n  \\node[above=2pt, font=\\large\\bfseries\\sffamily, black] at (6.2, 5.3) {In Water};\n  \\fill[gray!18] (4.4, 0.0) rectangle (8.0, 1.9);\n  \\draw[ultra thick, black] (4.4, 2.4) -- (4.4, 0.0) -- (8.0, 0.0) -- (8.0, 2.4);\n  \\draw[ultra thick, black] (4.4, 1.9) -- (8.0, 1.9);\n  \\node[black, font=\\large\\bfseries\\sffamily, right] at (8.0, 1.6) {Water};\n\n  \\draw[thick, black] (6.3, 1.85) -- (6.2, 1.4);\n  \\draw[ultra thick, fill=gray!35, draw=black] (5.4, 0.2) rectangle (7.0, 1.4);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (6.2, 0.8) {Object};\n\\end{tikzpicture}"
         },
         {
             "topic": "Fluid Statics",
@@ -64476,7 +64502,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Tank boundaries\n  \\draw[ultra thick, black] (-0.8, 0) -- (6.0, 0) -- (7.2, 1.4);\n  \\draw[ultra thick, black] (-0.8, 0) -- (-0.8, 4.6);\n  \\draw[ultra thick, black] (6.0, 0) -- (6.0, 4.6);\n  \\draw[ultra thick, black] (7.2, 1.4) -- (7.2, 6.0);\n\n  % Water volume and free surface\n  \\fill[gray!18, opacity=0.85] (-0.8, 4.1) -- (6.0, 4.1) -- (7.2, 5.5) -- (0.4, 5.5) -- cycle;\n  \\draw[ultra thick, black] (-0.8, 4.1) -- (6.0, 4.1) -- (7.2, 5.5);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (1.8, 4.6) {Water ($\\rho = 1000\\text{ kg/m}^3$)};\n\n  % Submerged 3D Rectangular Prism\n  \\draw[ultra thick, fill=gray!30, draw=black] (1.6, 1.0) rectangle (4.2, 2.8);\n  \\draw[ultra thick, fill=gray!20, draw=black] (1.6, 2.8) -- (2.6, 3.6) -- (5.2, 3.6) -- (4.2, 2.8) -- cycle;\n  \\draw[ultra thick, fill=gray!45, draw=black] (4.2, 1.0) -- (5.2, 1.8) -- (5.2, 3.6) -- (4.2, 2.8) -- cycle;\n\n  % Dimensions\n  \\draw[<->, ultra thick, black] (1.6, 0.5) -- (4.2, 0.5) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {1.5 m};\n  \\draw[<->, ultra thick, black] (5.5, 0.9) -- (6.5, 1.7) node[midway, below right, font=\\large\\bfseries\\sffamily, black] {1.0 m};\n  \\draw[<->, ultra thick, black] (1.1, 1.0) -- (1.1, 2.8) node[midway, left=3pt, font=\\large\\bfseries\\sffamily, black] {3.0 m};\n\n  % Tension cable\n  \\draw[ultra thick, black] (3.4, 3.2) -- (3.4, 5.8);\n  \\node[right=4pt, font=\\large\\bfseries\\sffamily, black] at (3.4, 5.3) {Cable Tension $T = 196.2\\text{ kN}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Fluid Statics",
@@ -65080,7 +65107,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Horizontal Pipe\n  \\fill[gray!15] (0, 0.4) rectangle (6.5, 2.0);\n  \\draw[ultra thick, black] (0, 2.0) -- (6.5, 2.0);\n  \\draw[ultra thick, black] (0, 0.4) -- (6.5, 0.4);\n\n  % Pipe Inflow and Outflow ends\n  \\draw[ultra thick, black] (0, 1.2) ellipse (0.2 and 0.8);\n  \\draw[ultra thick, black] (6.5, 1.2) ellipse (0.2 and 0.8);\n\n  % Velocity Vectors\n  \\draw[->, ultra thick, black] (0.8, 1.2) -- (2.2, 1.2) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$v = 2\\text{ m/s}$};\n  \\draw[->, ultra thick, black] (4.5, 1.2) -- (5.9, 1.2);\n\n  % Pipe Dimensions\n  \\draw[<->, ultra thick, black] (0, 2.4) -- (6.5, 2.4) node[midway, above=3pt, font=\\large\\bfseries\\sffamily, black] {Length $L = 150\\text{ m}$};\n  \\draw[<->, ultra thick, black] (-0.4, 0.4) -- (-0.4, 2.0) node[midway, left=4pt, font=\\large\\bfseries\\sffamily, black] {$D = 0.1\\text{ m}$};\n\n  % Friction Factor Note\n  \\node[below=4pt, font=\\large\\bfseries\\sffamily, black] at (3.25, 0.0) {Darcy Friction Factor $f = 0.025$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Fluid Mechanics",
@@ -65157,7 +65185,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.2, >=stealth]\n  % Rectangular Duct Cross Section\n  \\fill[gray!15] (0, 0) rectangle (5.0, 2.5);\n  \\draw[ultra thick, black] (0, 0) rectangle (5.0, 2.5);\n\n  % Flow Area Indicator inside duct\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.5, 1.25) {Air Flow Area ($A$)};\n\n  % Dimensions\n  \\draw[<->, ultra thick, black] (0, -0.5) -- (5.0, -0.5) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {Width $w = 0.4\\text{ m}$};\n  \\draw[<->, ultra thick, black] (-0.5, 0) -- (-0.5, 2.5) node[midway, left=4pt, font=\\large\\bfseries\\sffamily, black] {Height $h = 0.2\\text{ m}$};\n\n  % Title note\n  \\node[above=4pt, font=\\large\\bfseries\\sffamily, black] at (2.5, 2.7) {Rectangular Duct Cross-Section};\n\\end{tikzpicture}"
         },
         {
             "topic": "Fluid Mechanics",
@@ -65234,7 +65263,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Pipe Segment\n  \\fill[gray!15] (0, 0.5) rectangle (6.0, 1.9);\n  \\draw[ultra thick, black] (0, 1.9) -- (2.3, 1.9);\n  \\draw[ultra thick, black] (3.7, 1.9) -- (6.0, 1.9);\n  \\draw[ultra thick, black] (0, 0.5) -- (2.3, 0.5);\n  \\draw[ultra thick, black] (3.7, 0.5) -- (6.0, 0.5);\n\n  % Valve Body (Flanged Globe/Gate valve schematic)\n  \\draw[ultra thick, fill=gray!30, draw=black] (2.3, 0.3) -- (3.7, 2.1) -- (3.7, 0.3) -- (2.3, 2.1) -- cycle;\n  % Valve Bonnet & Handwheel\n  \\draw[ultra thick, black] (3.0, 1.2) -- (3.0, 2.8);\n  \\draw[ultra thick, fill=gray!40, draw=black] (2.4, 2.8) rectangle (3.6, 3.1);\n  \\node[above=3pt, font=\\large\\bfseries\\sffamily, black] at (3.0, 3.1) {Valve ($K = 1.5$)};\n\n  % Flow Velocity Vector\n  \\draw[->, ultra thick, black] (0.5, 1.2) -- (1.8, 1.2) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$v = 3\\text{ m/s}$};\n  \\draw[->, ultra thick, black] (4.2, 1.2) -- (5.5, 1.2);\n\n  % Flange Bolting\n  \\draw[ultra thick, black] (2.3, 0.2) -- (2.3, 2.2);\n  \\draw[ultra thick, black] (3.7, 0.2) -- (3.7, 2.2);\n\\end{tikzpicture}"
         },
         {
             "topic": "Internal Flow",
@@ -66254,7 +66284,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Main Suction Line\n  \\draw[ultra thick, black] (-1.0, 2.0) -- (0.5, 2.0);\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (-0.3, 2.0) {Inlet Flow, $Q$};\n\n  % Parallel Branch Split\n  \\draw[ultra thick, black] (0.5, 2.0) -- (0.5, 3.2) -- (1.5, 3.2);\n  \\draw[ultra thick, black] (0.5, 2.0) -- (0.5, 0.8) -- (1.5, 0.8);\n\n  % Pump 1 (Top Branch)\n  \\draw[ultra thick, fill=gray!25, draw=black] (2.3, 3.2) circle (0.7);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.3, 3.2) {Pump 1};\n  \\draw[ultra thick, black] (1.5, 3.2) -- (1.6, 3.2);\n  \\draw[ultra thick, black] (3.0, 3.2) -- (4.0, 3.2);\n\n  % Pump 2 (Bottom Branch)\n  \\draw[ultra thick, fill=gray!25, draw=black] (2.3, 0.8) circle (0.7);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.3, 0.8) {Pump 2};\n  \\draw[ultra thick, black] (1.5, 0.8) -- (1.6, 0.8);\n  \\draw[ultra thick, black] (3.0, 0.8) -- (4.0, 0.8);\n\n  % Parallel Branch Join\n  \\draw[ultra thick, black] (4.0, 3.2) -- (4.0, 2.0) -- (5.5, 2.0);\n  \\draw[ultra thick, black] (4.0, 0.8) -- (4.0, 2.0);\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (4.8, 2.0) {Total Flow, $Q_{\\text{combined}}$};\n\n  % Flow Direction Arrows\n  \\draw[->, ultra thick, black] (0.9, 3.2) -- (1.3, 3.2);\n  \\draw[->, ultra thick, black] (0.9, 0.8) -- (1.3, 0.8);\n  \\draw[->, ultra thick, black] (4.2, 2.0) -- (4.7, 2.0);\n\\end{tikzpicture}"
         },
         {
             "topic": "Performance Curves",
@@ -66778,7 +66809,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Converging Pipe / Nozzle\n  \\fill[gray!15] (0, 0) -- (2.5, 0) -- (4.5, 0.75) -- (5.5, 0.75) -- (5.5, 2.25) -- (4.5, 2.25) -- (2.5, 3.0) -- (0, 3.0) -- cycle;\n  \\draw[ultra thick, black] (0, 3.0) -- (2.5, 3.0) -- (4.5, 2.25) -- (5.5, 2.25);\n  \\draw[ultra thick, black] (0, 0.0) -- (2.5, 0.0) -- (4.5, 0.75) -- (5.5, 0.75);\n\n  % Inlet (Section 1)\n  \\draw[ultra thick, black] (0, 1.5) ellipse (0.25 and 1.5);\n  \\draw[->, ultra thick, black] (0.6, 1.5) -- (1.8, 1.5) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$v_1 = 2\\text{ m/s}$};\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (1.2, 0.7) {$A_1 = 0.04\\text{ m}^2$};\n\n  % Exit (Section 2)\n  \\draw[ultra thick, black] (5.5, 1.5) ellipse (0.15 and 0.75);\n  \\draw[->, ultra thick, black] (5.7, 1.5) -- (6.9, 1.5) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$v_2 = ?$ };\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (5.0, 0.3) {$A_2 = 0.01\\text{ m}^2$};\n\n  % Centerline\n  \\draw[dash dot, thick, gray!70] (-0.5, 1.5) -- (6.5, 1.5);\n\\end{tikzpicture}"
         },
         {
             "topic": "Internal Flow",
@@ -66955,7 +66987,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Beaker & Water\n  \\fill[gray!18] (0.05, 0.3) rectangle (4.45, 3.3);\n  \\draw[ultra thick, black] (0, 4.2) -- (0, 0.3) -- (4.5, 0.3) -- (4.5, 4.2);\n  \\draw[ultra thick, black] (0.05, 3.3) -- (4.45, 3.3);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.25, 3.75) {Water ($\\rho = 1000\\text{ kg/m}^3$)};\n\n  % Submerged Block\n  \\draw[ultra thick, fill=gray!35, draw=black] (1.0, 0.8) rectangle (3.5, 2.4);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.25, 1.8) {$m = 5\\text{ kg}$};\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.25, 1.3) {$V = 2000\\text{ cm}^3$};\n\n  % Gravity indicator\n  \\draw[->, ultra thick, black] (5.3, 3.0) -- (5.3, 1.2) node[midway, right=4pt, font=\\large\\bfseries\\sffamily, black] {$g = 9.81\\text{ m/s}^2$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Compressible Flow",
@@ -67191,7 +67224,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Pressurized pipe\n  \\draw[ultra thick, fill=gray!15, draw=black] (-0.8, 3.0) circle (0.95);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (-0.8, 3.0) {$P_{\\text{pipe}}$};\n\n  % Glass U-tube\n  \\draw[ultra thick, black] (-0.8, 2.05) -- (-0.8, 1.4) -- (1.0, 1.4) -- (1.0, -1.0) arc[start angle=180, end angle=360, radius=0.8] -- (2.6, 3.6);\n  \\draw[ultra thick, black] (0.15, 2.05) -- (0.15, 0.9) arc[start angle=90, end angle=0, radius=0.08] -- (0.25, 0.9) -- (1.5, 0.9) -- (1.5, -1.0) arc[start angle=180, end angle=360, radius=0.3] -- (2.1, 3.6);\n\n  % Left column water\n  \\fill[gray!18] (-0.8, 2.05) rectangle (0.15, 1.4);\n  \\fill[gray!18] (-0.8, 1.4) rectangle (1.5, 0.9);\n  \\fill[gray!18] (1.0, 0.9) rectangle (1.5, 0.4);\n\n  % Mercury column\n  \\fill[gray!50] (1.0, -1.0) arc[start angle=180, end angle=360, radius=0.8] -- (2.6, 2.0) -- (2.1, 2.0) -- (2.1, -1.0) arc[start angle=360, end angle=180, radius=0.3] -- (1.0, 0.4) -- cycle;\n  \\draw[ultra thick, black] (1.0, 0.4) -- (1.5, 0.4);\n  \\draw[ultra thick, black] (2.1, 2.0) -- (2.6, 2.0);\n\n  % Level difference dimension\n  \\draw[dashed, thick, gray!70] (1.0, 0.4) -- (3.3, 0.4);\n  \\draw[dashed, thick, gray!70] (2.6, 2.0) -- (3.3, 2.0);\n  \\draw[<->, ultra thick, black] (3.1, 0.4) -- (3.1, 2.0) node[midway, right=4pt, font=\\large\\bfseries\\sffamily, black] {$\\Delta h = 0.2\\text{ m}$};\n\n  % Labels\n  \\node[right=4pt, font=\\large\\bfseries\\sffamily, black] at (2.8, 0.2) {Mercury};\n  \\node[right=4pt, font=\\large\\bfseries\\sffamily, black] at (2.8, -0.3) {($SG = 13.6$)};\n  \\node[above=2pt, font=\\large\\bfseries\\sffamily, black] at (2.35, 3.6) {$P_{\\text{atm}}$ (Open)};\n\\end{tikzpicture}"
         },
         {
             "topic": "Performance Curves",
@@ -68458,7 +68492,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Continuity Equation and Bernoulli's Principle",
-                        "content": "For an incompressible fluid undergoing streamlined flow through a horizontal pipe:\n\n1. **Equation of Continuity:**\n\n$$\\nA_1 v_1 = A_2 v_2\n\$\n\n\n2. **Bernoulli's Equation for Horizontal Flow ($h_1 = h_2$):**\n\n$$\\nP_1 + \\frac{1}{2} \\rho v_1^2 = P_2 + \\frac{1}{2} \\rho v_2^2\n\$\n\n\nGiven parameters:\n\\n•  $A_1 = 10\\text{ cm}^2$, \\quad $v_1 = 1\\text{ ms}^{-1}$, \\quad $P_1 = 2000\\text{ Pa}$\n•  $A_2 = 5\\text{ cm}^2$\n•  Density of water, $\\rho = 1000\\text{ kg}\\cdot\\text{m}^{-3}$\n\""
+                        "content": "For an incompressible fluid undergoing streamlined flow through a horizontal pipe:\n\n1. **Equation of Continuity:**\n\n$$\\nA_1 v_1 = A_2 v_2\n$\n\n\n2. **Bernoulli's Equation for Horizontal Flow ($h_1 = h_2$):**\n\n$$\\nP_1 + \\frac{1}{2} \\rho v_1^2 = P_2 + \\frac{1}{2} \\rho v_2^2\n$\n\n\nGiven parameters:\n\\n•  $A_1 = 10\\text{ cm}^2$, \\quad $v_1 = 1\\text{ ms}^{-1}$, \\quad $P_1 = 2000\\text{ Pa}$\n•  $A_2 = 5\\text{ cm}^2$\n•  Density of water, $\\rho = 1000\\text{ kg}\\cdot\\text{m}^{-3}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Velocity $v_2$ at the Narrower Point",
@@ -68533,7 +68567,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Volumetric Flow Rate",
-                        "content": "The volume flow rate ($Q$) of an incompressible fluid passing through a pipe of cross-sectional area $A$ with velocity $v$ is given by:\n\n\n$$\\nQ = A \\cdot v\n\$\n\n\nFor a pipe with a circular cross-section of radius $r$, the area is $A = \\pi r^2$.\n\nGiven parameters:\n\\n•  Volumetric flow rate, $Q = 0.314\\text{ m}^3\\text{ s}^{-1}$\n•  Radius of the pipe, $r = 10\\text{ cm} = 0.1\\text{ m}$\n\""
+                        "content": "The volume flow rate ($Q$) of an incompressible fluid passing through a pipe of cross-sectional area $A$ with velocity $v$ is given by:\n\n\n$$\\nQ = A \\cdot v\n$\n\n\nFor a pipe with a circular cross-section of radius $r$, the area is $A = \\pi r^2$.\n\nGiven parameters:\n\\n•  Volumetric flow rate, $Q = 0.314\\text{ m}^3\\text{ s}^{-1}$\n•  Radius of the pipe, $r = 10\\text{ cm} = 0.1\\text{ m}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Cross-Sectional Area ($A$)",
@@ -68608,7 +68642,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Principle of Flotation",
-                        "content": "For any body floating in equilibrium in a liquid, the upward buoyant force ($\\vec{F}_b$) equals the downward gravitational force ($\\vec{W}$):\n\n$$\\text{Weight of floating body} = \\text{Weight of displaced liquid}$\n\n$$\\rho_{\\text{body}} \\cdot V_{\\text{total}} \\cdot g = \\rho_{\\text{liquid}} \\cdot V_{\\text{submerged}} \\cdot g$\n\nRearranging gives the fraction of submerged volume ($f_{\\text{sub}}$):\n\n\n$$\\nf_{\\text{sub}} = \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{liquid}}}\n\$\n\n\nGiven parameters:\n\\n•  Density of ice, $\\rho_i = 0.917\\text{ g cm}^{-3}$\n•  Density of water, $\\rho_w = 1.0\\text{ g cm}^{-3}$\n\""
+                        "content": "For any body floating in equilibrium in a liquid, the upward buoyant force ($\\vec{F}_b$) equals the downward gravitational force ($\\vec{W}$):\n\n$$\\text{Weight of floating body} = \\text{Weight of displaced liquid}$\n\n$$\\rho_{\\text{body}} \\cdot V_{\\text{total}} \\cdot g = \\rho_{\\text{liquid}} \\cdot V_{\\text{submerged}} \\cdot g$\n\nRearranging gives the fraction of submerged volume ($f_{\\text{sub}}$):\n\n\n$$\\nf_{\\text{sub}} = \\frac{V_{\\text{submerged}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{body}}}{\\rho_{\\text{liquid}}}\n$\n\n\nGiven parameters:\n\\n•  Density of ice, $\\rho_i = 0.917\\text{ g cm}^{-3}$\n•  Density of water, $\\rho_w = 1.0\\text{ g cm}^{-3}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Submerged Fraction",
@@ -68675,7 +68709,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Hydrostatic Pressure Formula",
-                        "content": "The hydrostatic gauge pressure ($P$) at a depth $h$ below the free surface of a liquid column in static equilibrium is given by:\n\n\n$$\\nP = \\rho g h\n\$\n\n\nWhere:\n\\n•  $\\rho$ = Density of the liquid\n•  $g$ = Acceleration due to gravity\n•  $h$ = Height (or depth) of the liquid column\n\""
+                        "content": "The hydrostatic gauge pressure ($P$) at a depth $h$ below the free surface of a liquid column in static equilibrium is given by:\n\n\n$$\\nP = \\rho g h\n$\n\n\nWhere:\n\\n•  $\\rho$ = Density of the liquid\n•  $g$ = Acceleration due to gravity\n•  $h$ = Height (or depth) of the liquid column\n\""
                     },
                     {
                         "title": "Step 1: Analyze Dependencies",
@@ -72162,7 +72196,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Closed loop series DC circuit\n  \\draw[ultra thick, black] (0, 0) -- (0, 3.0) -- (1.8, 3.0);\n  \n  % Resistor R1 = 3 ohms (Top branch)\n  \\draw[ultra thick, black] (1.8, 3.0) -- (2.0, 3.25) -- (2.3, 2.75) -- (2.6, 3.25) -- (2.9, 2.75) -- (3.2, 3.25) -- (3.4, 3.0);\n  \\node[above=3pt, font=\\large\\bfseries\\sffamily, black] at (2.6, 3.25) {$R_1 = 3\\ \\Omega$};\n  \\draw[ultra thick, black] (3.4, 3.0) -- (5.0, 3.0) -- (5.0, 1.8);\n\n  % Resistor R2 = 1 ohm (Right branch)\n  \\draw[ultra thick, black] (5.0, 1.8) -- (4.75, 1.6) -- (5.25, 1.3) -- (4.75, 1.0) -- (5.25, 0.7) -- (4.75, 0.4) -- (5.0, 0.2);\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black] at (5.25, 1.0) {$R_2 = 1\\ \\Omega$};\n  \\draw[ultra thick, black] (5.0, 0.2) -- (5.0, 0) -- (2.8, 0);\n\n  % 12V Battery (Bottom branch)\n  \\draw[ultra thick, black] (2.8, 0) -- (2.7, 0);\n  \\draw[ultra thick, black] (2.7, 0.5) -- (2.7, -0.5); % Long plate (+)\n  \\draw[ultra thick, black] (2.3, 0.3) -- (2.3, -0.3); % Short plate (-)\n  \\node[below=4pt, font=\\large\\bfseries\\sffamily, black] at (2.5, -0.5) {$V = 12\\text{ V}$};\n  \\node[above=2pt, font=\\bfseries\\sffamily, black] at (2.7, 0.5) {$+$};\n  \\node[above=2pt, font=\\bfseries\\sffamily, black] at (2.3, 0.3) {$-$};\n  \\draw[ultra thick, black] (2.3, 0) -- (0, 0);\n\n  % Current loop arrow\n  \\draw[->, thick, black] (2.2, 1.5) arc[start angle=180, end angle=-90, radius=0.6] node[midway, above left=1pt, font=\\large\\bfseries\\sffamily, black] {$I$};\n\\end{tikzpicture}"
         },
         {
             "topic": "AC Circuits",
@@ -72221,7 +72256,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % AC Source on Left\n  \\draw[ultra thick, black] (0, 0) -- (0, 1.0);\n  \\draw[ultra thick, fill=white, draw=black] (0, 1.5) circle (0.5);\n  \\draw[thick, black] (-0.25, 1.5) sin (0, 1.7) cos (0.25, 1.5);\n  \\draw[ultra thick, black] (0, 2.0) -- (0, 3.0) -- (1.0, 3.0);\n  \\node[left=3pt, font=\\large\\bfseries\\sffamily, black] at (-0.5, 1.5) {AC Source};\n\n  % Resistor R = 6 ohms\n  \\draw[ultra thick, black] (1.0, 3.0) -- (1.2, 3.25) -- (1.5, 2.75) -- (1.8, 3.25) -- (2.1, 2.75) -- (2.3, 3.0);\n  \\node[above=3pt, font=\\large\\bfseries\\sffamily, black] at (1.65, 3.25) {$R = 6\\ \\Omega$};\n  \\draw[ultra thick, black] (2.3, 3.0) -- (3.0, 3.0);\n\n  % Inductor X_L = 10 ohms\n  \\draw[ultra thick, black] (3.0, 3.0) arc[start angle=180, end angle=0, radius=0.25] arc[start angle=180, end angle=0, radius=0.25] arc[start angle=180, end angle=0, radius=0.25];\n  \\node[above=3pt, font=\\large\\bfseries\\sffamily, black] at (3.75, 3.25) {$X_L = 10\\ \\Omega$};\n  \\draw[ultra thick, black] (4.5, 3.0) -- (5.2, 3.0);\n\n  % Capacitor X_C = 2 ohms\n  \\draw[ultra thick, black] (5.2, 3.0) -- (5.2, 2.0);\n  \\draw[ultra thick, black] (4.8, 2.0) -- (5.6, 2.0);\n  \\draw[ultra thick, black] (4.8, 1.7) -- (5.6, 1.7);\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black] at (5.6, 1.85) {$X_C = 2\\ \\Omega$};\n  \\draw[ultra thick, black] (5.2, 1.7) -- (5.2, 0) -- (0, 0);\n\n  % Total Impedance query\n  \\node[below=4pt, font=\\large\\bfseries\\sffamily, black] at (2.6, 0) {Series Impedance $Z = ?$ };\n\\end{tikzpicture}"
         },
         {
             "topic": "Power",
@@ -74688,7 +74724,8 @@ const QUESTIONS = {
                     "Watch out for unit mismatch errors (e.g. SI vs US Customary units).",
                     "Double-check calculator inputs for arithmetic rounding errors."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Op-Amp Body\n  \\draw[ultra thick, fill=gray!15, draw=black] (2.0, 0.5) -- (2.0, 3.5) -- (4.5, 2.0) -- cycle;\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.4, 2.7) {$-$};\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.4, 1.3) {$+$};\n\n  % Grounded (+) Terminal\n  \\draw[ultra thick, black] (1.0, 1.3) -- (2.0, 1.3);\n  \\draw[ultra thick, black] (1.0, 1.3) -- (1.0, 0.9);\n  \\draw[ultra thick, black] (0.7, 0.9) -- (1.3, 0.9);\n  \\draw[ultra thick, black] (0.85, 0.75) -- (1.15, 0.75);\n  \\draw[ultra thick, black] (0.95, 0.6) -- (1.05, 0.6);\n\n  % Input Resistor R_in = 1 kOhm\n  \\draw[ultra thick, black] (-1.5, 2.7) -- (-0.8, 2.7);\n  \\draw[ultra thick, black] (-0.8, 2.7) -- (-0.6, 2.95) -- (-0.3, 2.45) -- (0, 2.95) -- (0.3, 2.45) -- (0.5, 2.7);\n  \\node[above=3pt, font=\\large\\bfseries\\sffamily, black] at (-0.15, 2.95) {$R_{\\text{in}} = 1\\text{ k}\\Omega$};\n  \\draw[ultra thick, black] (0.5, 2.7) -- (2.0, 2.7);\n  \\node[left=3pt, font=\\large\\bfseries\\sffamily, black] at (-1.5, 2.7) {$V_{\\text{in}}$};\n\n  % Feedback Resistor R_f = 10 kOhm\n  \\draw[ultra thick, black] (1.0, 2.7) -- (1.0, 4.2) -- (1.8, 4.2);\n  \\draw[ultra thick, black] (1.8, 4.2) -- (2.0, 4.45) -- (2.3, 3.95) -- (2.6, 4.45) -- (2.9, 3.95) -- (3.1, 4.2);\n  \\node[above=3pt, font=\\large\\bfseries\\sffamily, black] at (2.45, 4.45) {$R_f = 10\\text{ k}\\Omega$};\n  \\draw[ultra thick, black] (3.1, 4.2) -- (4.8, 4.2) -- (4.8, 2.0);\n\n  % Output Terminal\n  \\draw[ultra thick, black] (4.5, 2.0) -- (5.8, 2.0) node[right=3pt, font=\\large\\bfseries\\sffamily, black] {$V_{\\text{out}}$};\n  \\draw[ultra thick, fill=black] (4.8, 2.0) circle (0.07);\n\\end{tikzpicture}"
         },
         {
             "topic": "Circuit Analysis",
@@ -74917,7 +74954,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand First Law of Thermodynamics**\nFor a closed thermodynamic system undergoing a process, the First Law of Thermodynamics states:\n\n$$Q = \\Delta U + W$\n\nWhere:\n\\n•  $Q$ is heat transferred to the system ($Q = 0$ since the container is **perfectly insulated**).\n•  $\\Delta U$ is the change in internal energy ($\\Delta U = m c_v (T_2 - T_1)$ for an ideal gas).\n•  $W$ is the work done by the system ($W = -225\\text{ kJ} = -225,000\\text{ J}$ since stirrer work is done **on** the gas).\n\\n\n\n$$\\n0 = m c_v (T_2 - T_1) + W_{\\text{stirrer}}\n\$\n\n\n**Step 1: Calculate Final Temperature ($T_2$)**\nSubstitute the given values into the energy balance equation:\n\\n•  $m = 1\\text{ kg}$\n•  $c_v = 750\\text{ J}\\cdot\\text{kg}^{-1}\\text{K}^{-1}$\n•  $T_1 = 300\\text{ K}$\n•  $W = -225,000\\text{ J}$\n\\n\n$$0 = 1 \\times 750 \\times (T_2 - 300) - 225000$\n\n$$750 \\times (T_2 - 300) = 225000$\n\n$$T_2 - 300 = \\frac{225000}{750} = 300\\text{ K}$\n\n$$T_2 = 300 + 300 = 600\\text{ K}$\n\n**Step 2: Apply Ideal Gas Law for Constant Volume Process**\nSince the container is **rigid**, the volume remains constant ($V_1 = V_2$).\n\nFor an ideal gas at constant volume:\n\n$$\\frac{P_1}{T_1} = \\frac{P_2}{T_2}$\n\n**Step 3: Calculate Final Pressure ($P_2$)**\nSubstitute $P_1 = 1\\text{ bar}$, $T_1 = 300\\text{ K}$, and $T_2 = 600\\text{ K}$:\n\n$$P_2 = P_1 \\times \\left( \\frac{T_2}{T_1} \\right)$\n\n$$P_2 = 1 \\text{ bar} \\times \\left( \\frac{600\\text{ K}}{300\\text{ K}} \\right) = 2\\text{ bar}$\n\nCorrect Answer: $2$"
+                        "content": "**Understand First Law of Thermodynamics**\nFor a closed thermodynamic system undergoing a process, the First Law of Thermodynamics states:\n\n$$Q = \\Delta U + W$\n\nWhere:\n\\n•  $Q$ is heat transferred to the system ($Q = 0$ since the container is **perfectly insulated**).\n•  $\\Delta U$ is the change in internal energy ($\\Delta U = m c_v (T_2 - T_1)$ for an ideal gas).\n•  $W$ is the work done by the system ($W = -225\\text{ kJ} = -225,000\\text{ J}$ since stirrer work is done **on** the gas).\n\\n\n\n$$\\n0 = m c_v (T_2 - T_1) + W_{\\text{stirrer}}\n$\n\n\n**Step 1: Calculate Final Temperature ($T_2$)**\nSubstitute the given values into the energy balance equation:\n\\n•  $m = 1\\text{ kg}$\n•  $c_v = 750\\text{ J}\\cdot\\text{kg}^{-1}\\text{K}^{-1}$\n•  $T_1 = 300\\text{ K}$\n•  $W = -225,000\\text{ J}$\n\\n\n$$0 = 1 \\times 750 \\times (T_2 - 300) - 225000$\n\n$$750 \\times (T_2 - 300) = 225000$\n\n$$T_2 - 300 = \\frac{225000}{750} = 300\\text{ K}$\n\n$$T_2 = 300 + 300 = 600\\text{ K}$\n\n**Step 2: Apply Ideal Gas Law for Constant Volume Process**\nSince the container is **rigid**, the volume remains constant ($V_1 = V_2$).\n\nFor an ideal gas at constant volume:\n\n$$\\frac{P_1}{T_1} = \\frac{P_2}{T_2}$\n\n**Step 3: Calculate Final Pressure ($P_2$)**\nSubstitute $P_1 = 1\\text{ bar}$, $T_1 = 300\\text{ K}$, and $T_2 = 600\\text{ K}$:\n\n$$P_2 = P_1 \\times \\left( \\frac{T_2}{T_1} \\right)$\n\n$$P_2 = 1 \\text{ bar} \\times \\left( \\frac{600\\text{ K}}{300\\text{ K}} \\right) = 2\\text{ bar}$\n\nCorrect Answer: $2$"
                     }
                 ],
                 "final_answer": "B",
@@ -74978,7 +75015,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand First Law of Thermodynamics Sign Conventions**\nFor a closed system undergoing a process, the First Law of Thermodynamics is expressed as:\n\n$$Q = \\Delta U + W$\n\nWhere:\n\\n•  $Q$ is heat added to the system ($Q > 0$ for heat added, $Q < 0$ for heat released to surroundings).\n•  $W$ is work done by the system ($W > 0$ for expansion work, $W < 0$ for compression work done on system).\n•  $\\Delta U$ is the change in internal energy of the system.\n\\n\n\n$$\\n\\Delta U = Q - W\n\$\n\n\n**Step 1: Identify Given Values and Apply Sign Conventions**\n\\n•  Compression work done **on** the gas: $W = -5000\\text{ kJ}$\n•  Heat released **to** the surroundings: $Q = -200\\text{ kJ}$\n\\n\n**Step 2: Calculate Change in Internal Energy ($\\Delta U$)**\nSubstitute $Q = -200\\text{ kJ}$ and $W = -5000\\text{ kJ}$ into the First Law formula:\n\n$$\\Delta U = (-200) - (-5000)$\n\n$$\\Delta U = -200 + 5000 = +4800\\text{ kJ}$\n\n\\textit{Note on Options:} If the problem assumes a heat interaction of $2000\\text{ kJ}$ (a common variation in literature), $\\Delta U = -2000 - (-5000) = +3000\\text{ kJ}$, matching option C. For the explicit prompt value of $200\\text{ kJ}$, the exact result is $+4800\\text{ kJ}$.\n\nCorrect Answer: C (assuming standard question template value $Q = 2000\\text{ kJ} \\implies +3000\\text{ kJ}$)."
+                        "content": "**Understand First Law of Thermodynamics Sign Conventions**\nFor a closed system undergoing a process, the First Law of Thermodynamics is expressed as:\n\n$$Q = \\Delta U + W$\n\nWhere:\n\\n•  $Q$ is heat added to the system ($Q > 0$ for heat added, $Q < 0$ for heat released to surroundings).\n•  $W$ is work done by the system ($W > 0$ for expansion work, $W < 0$ for compression work done on system).\n•  $\\Delta U$ is the change in internal energy of the system.\n\\n\n\n$$\\n\\Delta U = Q - W\n$\n\n\n**Step 1: Identify Given Values and Apply Sign Conventions**\n\\n•  Compression work done **on** the gas: $W = -5000\\text{ kJ}$\n•  Heat released **to** the surroundings: $Q = -200\\text{ kJ}$\n\\n\n**Step 2: Calculate Change in Internal Energy ($\\Delta U$)**\nSubstitute $Q = -200\\text{ kJ}$ and $W = -5000\\text{ kJ}$ into the First Law formula:\n\n$$\\Delta U = (-200) - (-5000)$\n\n$$\\Delta U = -200 + 5000 = +4800\\text{ kJ}$\n\n\\textit{Note on Options:} If the problem assumes a heat interaction of $2000\\text{ kJ}$ (a common variation in literature), $\\Delta U = -2000 - (-5000) = +3000\\text{ kJ}$, matching option C. For the explicit prompt value of $200\\text{ kJ}$, the exact result is $+4800\\text{ kJ}$.\n\nCorrect Answer: C (assuming standard question template value $Q = 2000\\text{ kJ} \\implies +3000\\text{ kJ}$)."
                     }
                 ],
                 "final_answer": "C",
@@ -75039,7 +75076,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Energy Balance for Heating**\nAssuming zero heat losses to the surroundings, the total electrical energy delivered by the heater equals the sensible thermal energy gained by the water.\n\n\n$$\\nE_{\\text{electrical}} = Q_{\\text{thermal}} \\implies P \\cdot t = m \\cdot C_p \\cdot \\Delta T\n\$\n\n\nWhere:\n\\n•  $P$ is the power rating of the heater ($2\\text{ kW} = 2000\\text{ W} = 2\\text{ kJ/s}$)\n•  $t$ is the operation time ($20\\text{ minutes}$)\n•  $m$ is the mass of the water ($40\\text{ liters} \\implies 40\\text{ kg}$)\n•  $C_p$ is the specific heat capacity of water ($4.2\\text{ kJ/kg}\\cdot\\text{K}$)\n•  $\\Delta T$ is the temperature rise in ${}^\\circ\\text{C}$ or $\\text{K}$\n\\n\n**Step 1: Calculate Mass of Water and Conversion of Time**\n\\n•  Density of water $\\rho \\approx 1\\text{ kg/liter} \\implies m = 40\\text{ kg}$\n•  Heating duration $t = 20 \\text{ min} = 20 \\times 60\\text{ s} = 1200\\text{ s}$\n\\n\n**Step 2: Calculate Total Electrical Energy Input ($E_{\\text{elec**}$)}\n$$E_{\\text{elec}} = P \\cdot t = (2\\text{ kW}) \\times (1200\\text{ s}) = 2400\\text{ kJ}$\n\n**Step 3: Calculate Temperature Rise ($\\Delta T$)**\nSubstitute the values into $Q = m \\cdot C_p \\cdot \\Delta T$:\n\n$$2400\\text{ kJ} = (40\\text{ kg}) \\times (4.2\\text{ kJ/kg}\\cdot\\text{K}) \\times \\Delta T$\n\n$$2400 = 168 \\times \\Delta T$\n\n$$\\Delta T = \\frac{2400}{168} = \\frac{100}{7} \\approx 14.2857^\\circ\\text{C}$\n\nRounding off to one decimal place gives:\n\n$$\\Delta T \\approx 14.3^\\circ\\text{C}$\n\nCorrect Answer: C ($14.3$)"
+                        "content": "**Understand Energy Balance for Heating**\nAssuming zero heat losses to the surroundings, the total electrical energy delivered by the heater equals the sensible thermal energy gained by the water.\n\n\n$$\\nE_{\\text{electrical}} = Q_{\\text{thermal}} \\implies P \\cdot t = m \\cdot C_p \\cdot \\Delta T\n$\n\n\nWhere:\n\\n•  $P$ is the power rating of the heater ($2\\text{ kW} = 2000\\text{ W} = 2\\text{ kJ/s}$)\n•  $t$ is the operation time ($20\\text{ minutes}$)\n•  $m$ is the mass of the water ($40\\text{ liters} \\implies 40\\text{ kg}$)\n•  $C_p$ is the specific heat capacity of water ($4.2\\text{ kJ/kg}\\cdot\\text{K}$)\n•  $\\Delta T$ is the temperature rise in ${}^\\circ\\text{C}$ or $\\text{K}$\n\\n\n**Step 1: Calculate Mass of Water and Conversion of Time**\n\\n•  Density of water $\\rho \\approx 1\\text{ kg/liter} \\implies m = 40\\text{ kg}$\n•  Heating duration $t = 20 \\text{ min} = 20 \\times 60\\text{ s} = 1200\\text{ s}$\n\\n\n**Step 2: Calculate Total Electrical Energy Input ($E_{\\text{elec**}$)}\n$$E_{\\text{elec}} = P \\cdot t = (2\\text{ kW}) \\times (1200\\text{ s}) = 2400\\text{ kJ}$\n\n**Step 3: Calculate Temperature Rise ($\\Delta T$)**\nSubstitute the values into $Q = m \\cdot C_p \\cdot \\Delta T$:\n\n$$2400\\text{ kJ} = (40\\text{ kg}) \\times (4.2\\text{ kJ/kg}\\cdot\\text{K}) \\times \\Delta T$\n\n$$2400 = 168 \\times \\Delta T$\n\n$$\\Delta T = \\frac{2400}{168} = \\frac{100}{7} \\approx 14.2857^\\circ\\text{C}$\n\nRounding off to one decimal place gives:\n\n$$\\Delta T \\approx 14.3^\\circ\\text{C}$\n\nCorrect Answer: C ($14.3$)"
                     }
                 ],
                 "final_answer": "C",
@@ -75100,7 +75137,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Steady Flow Energy Equation (SFEE)**\nFor a steady-flow open system operating under standard control volume conditions, the Steady Flow Energy Equation per unit mass is given by:\n\n$$h_1 + \\frac{V_1^2}{2} + g z_1 + q = h_2 + \\frac{V_2^2}{2} + g z_2 + w$\n\nGiven that kinetic ($\\Delta KE \\approx 0$) and potential ($\\Delta PE \\approx 0$) energy changes are negligible:\n\n\n$$\\nh_1 + q = h_2 + w\n\$\n\n\nWhere:\n\\n•  $h_1 = 3000\\text{ kJ/kg}$ (Inlet specific enthalpy)\n•  $h_2 = 2700\\text{ kJ/kg}$ (Exit specific enthalpy)\n•  $w = +250\\text{ kJ/kg}$ (Work output done by the turbine)\n•  $q$ is specific heat transfer to the system\n\\n\n**Step 1: Calculate Heat Transfer ($q$)**\nRearranging the SFEE to solve for $q$:\n\n$$q = (h_2 - h_1) + w$\n\nSubstitute the given numerical values:\n\n$$q = (2700 - 3000) + 250$\n\n$$q = -300 + 250 = -50\\text{ kJ/kg}$\n\n**Step 2: Interpret Sign of Heat Transfer**\nThe negative sign ($q = -50\\text{ kJ/kg}$) indicates that heat is **transferred from the turbine casing to the surroundings** (heat loss).\n\nTherefore, the magnitude of heat transfer to the surroundings is $50\\text{ kJ}$ per $\\text{kg}$ of steam.\n\nCorrect Answer: B ($50\\text{ kJ}$)"
+                        "content": "**Understand Steady Flow Energy Equation (SFEE)**\nFor a steady-flow open system operating under standard control volume conditions, the Steady Flow Energy Equation per unit mass is given by:\n\n$$h_1 + \\frac{V_1^2}{2} + g z_1 + q = h_2 + \\frac{V_2^2}{2} + g z_2 + w$\n\nGiven that kinetic ($\\Delta KE \\approx 0$) and potential ($\\Delta PE \\approx 0$) energy changes are negligible:\n\n\n$$\\nh_1 + q = h_2 + w\n$\n\n\nWhere:\n\\n•  $h_1 = 3000\\text{ kJ/kg}$ (Inlet specific enthalpy)\n•  $h_2 = 2700\\text{ kJ/kg}$ (Exit specific enthalpy)\n•  $w = +250\\text{ kJ/kg}$ (Work output done by the turbine)\n•  $q$ is specific heat transfer to the system\n\\n\n**Step 1: Calculate Heat Transfer ($q$)**\nRearranging the SFEE to solve for $q$:\n\n$$q = (h_2 - h_1) + w$\n\nSubstitute the given numerical values:\n\n$$q = (2700 - 3000) + 250$\n\n$$q = -300 + 250 = -50\\text{ kJ/kg}$\n\n**Step 2: Interpret Sign of Heat Transfer**\nThe negative sign ($q = -50\\text{ kJ/kg}$) indicates that heat is **transferred from the turbine casing to the surroundings** (heat loss).\n\nTherefore, the magnitude of heat transfer to the surroundings is $50\\text{ kJ}$ per $\\text{kg}$ of steam.\n\nCorrect Answer: B ($50\\text{ kJ}$)"
                     }
                 ],
                 "final_answer": "B",
@@ -75161,7 +75198,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Principle of Conservation of Energy**\nAssuming no heat loss to the surrounding environment or container vessel, the heat lost by the steel ball must equal the heat gained by the water until thermal equilibrium is reached at final temperature $T_f$.\n\n\n$$\\nQ_{\\text{lost by steel}} = Q_{\\text{gained by water}}\n\$\n\n\nWhere:\n\\n•  $m_s = 1\\text{ kg}$ (mass of steel ball)\n•  $c_s = 0.4\\text{ kJ/kg}\\cdot\\text{K}$ (specific heat of steel)\n•  $T_s = 60^\\circ\\text{C}$ (initial temperature of steel ball)\n•  $m_w = 1\\text{ kg}$ (mass of water)\n•  $c_w = 4.18\\text{ kJ/kg}\\cdot\\text{K} \\approx 4.2\\text{ kJ/kg}\\cdot\\text{K}$ (specific heat of water)\n•  $T_w = 20^\\circ\\text{C}$ (initial temperature of water)\n•  $T_f$ = final equilibrium temperature\n\\n\n**Step 1: Express Heat Transfer Equations**\n$$m_s \\cdot c_s \\cdot (T_s - T_f) = m_w \\cdot c_w \\cdot (T_f - T_w)$\n\n**Step 2: Substitute Given Values**\nUsing $c_w = 4.18\\text{ kJ/kg}\\cdot\\text{K}$:\n\n$$(1) \\times (0.4) \\times (60 - T_f) = (1) \\times (4.18) \\times (T_f - 20)$\n\n$$0.4 \\times (60 - T_f) = 4.18 \\times (T_f - 20)$\n\n$$24 - 0.4 T_f = 4.18 T_f - 83.6$\n\n**Step 3: Solve for Final Temperature ($T_f$)**\n$$24 + 83.6 = 4.18 T_f + 0.4 T_f$\n\n$$107.6 = 4.58 T_f$\n\n$$T_f = \\frac{107.6}{4.58} \\approx 23.49^\\circ\\text{C}$\n\nRounding off to one decimal place gives:\n\n$$T_f \\approx 23.5^\\circ\\text{C}$\n\nCorrect Answer: A ($23.5^\\circ\\text{C}$)"
+                        "content": "**Understand Principle of Conservation of Energy**\nAssuming no heat loss to the surrounding environment or container vessel, the heat lost by the steel ball must equal the heat gained by the water until thermal equilibrium is reached at final temperature $T_f$.\n\n\n$$\\nQ_{\\text{lost by steel}} = Q_{\\text{gained by water}}\n$\n\n\nWhere:\n\\n•  $m_s = 1\\text{ kg}$ (mass of steel ball)\n•  $c_s = 0.4\\text{ kJ/kg}\\cdot\\text{K}$ (specific heat of steel)\n•  $T_s = 60^\\circ\\text{C}$ (initial temperature of steel ball)\n•  $m_w = 1\\text{ kg}$ (mass of water)\n•  $c_w = 4.18\\text{ kJ/kg}\\cdot\\text{K} \\approx 4.2\\text{ kJ/kg}\\cdot\\text{K}$ (specific heat of water)\n•  $T_w = 20^\\circ\\text{C}$ (initial temperature of water)\n•  $T_f$ = final equilibrium temperature\n\\n\n**Step 1: Express Heat Transfer Equations**\n$$m_s \\cdot c_s \\cdot (T_s - T_f) = m_w \\cdot c_w \\cdot (T_f - T_w)$\n\n**Step 2: Substitute Given Values**\nUsing $c_w = 4.18\\text{ kJ/kg}\\cdot\\text{K}$:\n\n$$(1) \\times (0.4) \\times (60 - T_f) = (1) \\times (4.18) \\times (T_f - 20)$\n\n$$0.4 \\times (60 - T_f) = 4.18 \\times (T_f - 20)$\n\n$$24 - 0.4 T_f = 4.18 T_f - 83.6$\n\n**Step 3: Solve for Final Temperature ($T_f$)**\n$$24 + 83.6 = 4.18 T_f + 0.4 T_f$\n\n$$107.6 = 4.58 T_f$\n\n$$T_f = \\frac{107.6}{4.58} \\approx 23.49^\\circ\\text{C}$\n\nRounding off to one decimal place gives:\n\n$$T_f \\approx 23.5^\\circ\\text{C}$\n\nCorrect Answer: A ($23.5^\\circ\\text{C}$)"
                     }
                 ],
                 "final_answer": "A",
@@ -75222,7 +75259,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Compression Ratio and State Relations**\nThe compression ratio ($r$) of an Otto cycle is the ratio of total volume at the start of compression to the clearance volume:\n\n$$r = \\frac{V_1}{V_2} = \\frac{V_d + V_c}{V_c}$\n\nMaximum pressure ($P_3 = P_{\\text{max}}$) occurs at the end of the constant-volume heat addition process (State 3).\n\n\n$$\\nT_2 = T_1 \\cdot r^{\\gamma - 1}, \\quad P_2 = P_1 \\cdot r^\\gamma, \\quad P_3 = P_2 \\cdot \\left(\\frac{T_3}{T_2}\\right)\n\$\n\n\n**Step 1: Calculate Compression Ratio ($r$)**\nGiven:\n\\n•  Displacement volume: $V_d = 250\\text{ cm}^3$\n•  Clearance volume: $V_c = 35.7\\text{ cm}^3$\n\\n\n$$r = \\frac{250 + 35.7}{35.7} = \\frac{285.7}{35.7} \\approx 8$\n\n**Step 2: Calculate State 2 Parameters ($T_2$ and $P_2$)**\nGiven: $P_1 = 100\\text{ kPa}$, $T_1 = 300\\text{ K}$, $\\gamma = 1.4$.\n\nFor isentropic process $1 \\to 2$:\n$$T_2 = T_1 \\cdot r^{\\gamma - 1} = 300 \\times (8)^{1.4 - 1} = 300 \\times 8^{0.4} = 300 \\times 2.2974 = 689.22\\text{ K}$\n\n$$P_2 = P_1 \\cdot r^\\gamma = 100 \\times (8)^{1.4} = 100 \\times 18.3792 = 1837.92\\text{ kPa}$\n\n**Step 3: Calculate Temperature after Heat Addition ($T_3$)**\nThe heat added during process $2 \\to 3$ is:\n$$q_{\\text{in}} = c_v (T_3 - T_2)$\n\nGiven $q_{\\text{in}} = 800\\text{ kJ/kg}$ and $c_v = 0.718\\text{ kJ/kg}\\cdot\\text{K}$:\n$$800 = 0.718 \\times (T_3 - 689.22)$\n\n$$T_3 - 689.22 = \\frac{800}{0.718} \\approx 1114.21\\text{ K}$\n\n$$T_3 = 689.22 + 1114.21 = 1803.43\\text{ K}$\n\n**Step 4: Calculate Maximum Pressure ($P_3$)**\nFor constant-volume process $2 \\to 3$:\n$$\\frac{P_3}{T_3} = \\frac{P_2}{T_2} \\implies P_3 = P_2 \\times \\left(\\frac{T_3}{T_2}\\right)$\n\n$$P_3 = 1837.92 \\times \\left(\\frac{1803.43}{689.22}\\right) \\approx 1837.92 \\times 2.6166 \\approx 4809\\text{ kPa} \\approx 4811\\text{ kPa}$\n\nRounding off to the nearest integer gives $4811\\text{ kPa}$.\n\nCorrect Answer: $4811$"
+                        "content": "**Understand Compression Ratio and State Relations**\nThe compression ratio ($r$) of an Otto cycle is the ratio of total volume at the start of compression to the clearance volume:\n\n$$r = \\frac{V_1}{V_2} = \\frac{V_d + V_c}{V_c}$\n\nMaximum pressure ($P_3 = P_{\\text{max}}$) occurs at the end of the constant-volume heat addition process (State 3).\n\n\n$$\\nT_2 = T_1 \\cdot r^{\\gamma - 1}, \\quad P_2 = P_1 \\cdot r^\\gamma, \\quad P_3 = P_2 \\cdot \\left(\\frac{T_3}{T_2}\\right)\n$\n\n\n**Step 1: Calculate Compression Ratio ($r$)**\nGiven:\n\\n•  Displacement volume: $V_d = 250\\text{ cm}^3$\n•  Clearance volume: $V_c = 35.7\\text{ cm}^3$\n\\n\n$$r = \\frac{250 + 35.7}{35.7} = \\frac{285.7}{35.7} \\approx 8$\n\n**Step 2: Calculate State 2 Parameters ($T_2$ and $P_2$)**\nGiven: $P_1 = 100\\text{ kPa}$, $T_1 = 300\\text{ K}$, $\\gamma = 1.4$.\n\nFor isentropic process $1 \\to 2$:\n$$T_2 = T_1 \\cdot r^{\\gamma - 1} = 300 \\times (8)^{1.4 - 1} = 300 \\times 8^{0.4} = 300 \\times 2.2974 = 689.22\\text{ K}$\n\n$$P_2 = P_1 \\cdot r^\\gamma = 100 \\times (8)^{1.4} = 100 \\times 18.3792 = 1837.92\\text{ kPa}$\n\n**Step 3: Calculate Temperature after Heat Addition ($T_3$)**\nThe heat added during process $2 \\to 3$ is:\n$$q_{\\text{in}} = c_v (T_3 - T_2)$\n\nGiven $q_{\\text{in}} = 800\\text{ kJ/kg}$ and $c_v = 0.718\\text{ kJ/kg}\\cdot\\text{K}$:\n$$800 = 0.718 \\times (T_3 - 689.22)$\n\n$$T_3 - 689.22 = \\frac{800}{0.718} \\approx 1114.21\\text{ K}$\n\n$$T_3 = 689.22 + 1114.21 = 1803.43\\text{ K}$\n\n**Step 4: Calculate Maximum Pressure ($P_3$)**\nFor constant-volume process $2 \\to 3$:\n$$\\frac{P_3}{T_3} = \\frac{P_2}{T_2} \\implies P_3 = P_2 \\times \\left(\\frac{T_3}{T_2}\\right)$\n\n$$P_3 = 1837.92 \\times \\left(\\frac{1803.43}{689.22}\\right) \\approx 1837.92 \\times 2.6166 \\approx 4809\\text{ kPa} \\approx 4811\\text{ kPa}$\n\nRounding off to the nearest integer gives $4811\\text{ kPa}$.\n\nCorrect Answer: $4811$"
                     }
                 ],
                 "final_answer": "C",
@@ -75282,7 +75319,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand First Law and Entropy Change Relations**\nSince the system is contained inside a **sealed rigid cylinder**, the volume remains constant ($V_1 = V_2 = V$).\n\nBy applying the First Law of Thermodynamics ($Q = \\Delta U + W$):\nGiven that the cylinder is adiabatic ($Q = 0$), and work done **on** the system is $W = -100\\text{ kJ} = -100,000\\text{ J}$:\n\n$$\\Delta U = -W_{\\text{stirrer}} = -(-100,000\\text{ J}) = 100,000\\text{ J}$\n\n\n$$\\n\\Delta S = m \\cdot c_v \\ln\\left(\\frac{T_2}{T_1}\\right)\n\$\n\n\n**Step 1: Calculate Final Temperature ($T_2$)**\nThe change in internal energy for an ideal gas is given by:\n\n$$\\Delta U = m c_v (T_2 - T_1)$\n\nSubstitute the known values:\n\\n•  $m = 1\\text{ kg}$\n•  $c_v = 1000\\text{ J/kg}\\cdot\\text{K}$\n•  $T_1 = 300\\text{ K}$\n\\n\n$$100,000 = 1 \\times 1000 \\times (T_2 - 300)$\n\n$$T_2 - 300 = \\frac{100,000}{1000} = 100\\text{ K}$\n\n$$T_2 = 300 + 100 = 400\\text{ K}$\n\n**Step 2: Calculate Increase in Entropy ($\\Delta S$)**\nSince volume is constant ($V_2 / V_1 = 1$), the general entropy change equation simplifies to:\n\n$$\\Delta S = m \\cdot c_v \\ln\\left(\\frac{T_2}{T_1}\\right) + m \\cdot R \\ln\\left(\\frac{V_2}{V_1}\\right)$\n\n$$\\Delta S = 1 \\times 1000 \\times \\ln\\left(\\frac{400}{300}\\right) + 0$\n\n$$\\Delta S = 1000 \\times \\ln(1.33333...)$\n\n$$\\Delta S = 1000 \\times 0.28768 \\approx 287.68\\text{ J/K}$\n\nRounding off to one decimal place gives $287.7\\text{ J/K}$.\n\nCorrect Answer: $287.7$"
+                        "content": "**Understand First Law and Entropy Change Relations**\nSince the system is contained inside a **sealed rigid cylinder**, the volume remains constant ($V_1 = V_2 = V$).\n\nBy applying the First Law of Thermodynamics ($Q = \\Delta U + W$):\nGiven that the cylinder is adiabatic ($Q = 0$), and work done **on** the system is $W = -100\\text{ kJ} = -100,000\\text{ J}$:\n\n$$\\Delta U = -W_{\\text{stirrer}} = -(-100,000\\text{ J}) = 100,000\\text{ J}$\n\n\n$$\\n\\Delta S = m \\cdot c_v \\ln\\left(\\frac{T_2}{T_1}\\right)\n$\n\n\n**Step 1: Calculate Final Temperature ($T_2$)**\nThe change in internal energy for an ideal gas is given by:\n\n$$\\Delta U = m c_v (T_2 - T_1)$\n\nSubstitute the known values:\n\\n•  $m = 1\\text{ kg}$\n•  $c_v = 1000\\text{ J/kg}\\cdot\\text{K}$\n•  $T_1 = 300\\text{ K}$\n\\n\n$$100,000 = 1 \\times 1000 \\times (T_2 - 300)$\n\n$$T_2 - 300 = \\frac{100,000}{1000} = 100\\text{ K}$\n\n$$T_2 = 300 + 100 = 400\\text{ K}$\n\n**Step 2: Calculate Increase in Entropy ($\\Delta S$)**\nSince volume is constant ($V_2 / V_1 = 1$), the general entropy change equation simplifies to:\n\n$$\\Delta S = m \\cdot c_v \\ln\\left(\\frac{T_2}{T_1}\\right) + m \\cdot R \\ln\\left(\\frac{V_2}{V_1}\\right)$\n\n$$\\Delta S = 1 \\times 1000 \\times \\ln\\left(\\frac{400}{300}\\right) + 0$\n\n$$\\Delta S = 1000 \\times \\ln(1.33333...)$\n\n$$\\Delta S = 1000 \\times 0.28768 \\approx 287.68\\text{ J/K}$\n\nRounding off to one decimal place gives $287.7\\text{ J/K}$.\n\nCorrect Answer: $287.7$"
                     }
                 ],
                 "final_answer": "B",
@@ -75343,7 +75380,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Steady Flow Energy Equation (SFEE)**\nFor a steady-flow open system operating under control volume conditions, the rate form of the Steady Flow Energy Equation is given by:\n\n$$\\dot{Q} - \\dot{W} = \\dot{m} \\left( h_2 - h_1 + \\frac{V_2^2 - V_1^2}{2} + g(z_2 - z_1) \\right)$\n\nGiven parameters:\n\\n•  $V_1 = V_2 \\implies \\Delta KE = 0$\n•  $\\Delta PE = 0$\n•  Specific heat capacity: $c_p = 1000\\text{ J/kg}\\cdot\\text{K} = 1.0\\text{ kJ/kg}\\cdot\\text{K}$\n•  Inlet temperature: $T_1 = 1100\\text{ K}$\n•  Exit temperature: $T_2 = 400\\text{ K}$\n•  Power output: $\\dot{W} = +4.6\\text{ MW} = +4600\\text{ kW}$\n•  Heat loss rate: $\\dot{Q} = -300\\text{ kJ/s} = -300\\text{ kW}$\n\\n\n\n$$\\n\\dot{Q} - \\dot{W} = \\dot{m} \\cdot c_p \\cdot (T_2 - T_1)\n\$\n\n\n**Step 1: Express Enthalpy Change in Terms of Temperature**\nFor an ideal gas, $\\Delta h = c_p (T_2 - T_1)$:\n\n$$h_2 - h_1 = 1.0 \\times (400 - 1100) = -700\\text{ kJ/kg}$\n\n**Step 2: Solve for Mass Flow Rate ($\\dot{m**$)}\nSubstitute the numerical values into the reduced energy balance equation:\n\n$$-300 - 4600 = \\dot{m} \\times (-700)$\n\n$$-4900 = -700 \\cdot \\dot{m}$\n\n$$\\dot{m} = \\frac{-4900}{-700} = 7.00\\text{ kg/s}$\n\nCorrect Answer: B ($7.00$)"
+                        "content": "**Understand Steady Flow Energy Equation (SFEE)**\nFor a steady-flow open system operating under control volume conditions, the rate form of the Steady Flow Energy Equation is given by:\n\n$$\\dot{Q} - \\dot{W} = \\dot{m} \\left( h_2 - h_1 + \\frac{V_2^2 - V_1^2}{2} + g(z_2 - z_1) \\right)$\n\nGiven parameters:\n\\n•  $V_1 = V_2 \\implies \\Delta KE = 0$\n•  $\\Delta PE = 0$\n•  Specific heat capacity: $c_p = 1000\\text{ J/kg}\\cdot\\text{K} = 1.0\\text{ kJ/kg}\\cdot\\text{K}$\n•  Inlet temperature: $T_1 = 1100\\text{ K}$\n•  Exit temperature: $T_2 = 400\\text{ K}$\n•  Power output: $\\dot{W} = +4.6\\text{ MW} = +4600\\text{ kW}$\n•  Heat loss rate: $\\dot{Q} = -300\\text{ kJ/s} = -300\\text{ kW}$\n\\n\n\n$$\\n\\dot{Q} - \\dot{W} = \\dot{m} \\cdot c_p \\cdot (T_2 - T_1)\n$\n\n\n**Step 1: Express Enthalpy Change in Terms of Temperature**\nFor an ideal gas, $\\Delta h = c_p (T_2 - T_1)$:\n\n$$h_2 - h_1 = 1.0 \\times (400 - 1100) = -700\\text{ kJ/kg}$\n\n**Step 2: Solve for Mass Flow Rate ($\\dot{m**$)}\nSubstitute the numerical values into the reduced energy balance equation:\n\n$$-300 - 4600 = \\dot{m} \\times (-700)$\n\n$$-4900 = -700 \\cdot \\dot{m}$\n\n$$\\dot{m} = \\frac{-4900}{-700} = 7.00\\text{ kg/s}$\n\nCorrect Answer: B ($7.00$)"
                     }
                 ],
                 "final_answer": "B",
@@ -75404,7 +75441,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Boundary Work for Isothermal Expansion/Compression**\nFor an ideal gas undergoing a quasi-equilibrium reversible isothermal process ($T = \\text{constant}$), the equation of state gives:\n\n$$P \\cdot V = C \\implies P = \\frac{P_1 V_1}{V}$\n\nThe boundary work $W$ done by the system is calculated as:\n\n\n$$\\nW = P_1 V_1 \\ln\\left(\\frac{V_2}{V_1}\\right)\n\$\n\n\nWhere:\n\\n•  $P_1 = 100\\text{ kPa}$ (Initial pressure)\n•  $V_1 = 0.4\\text{ m}^3$ (Initial volume)\n•  $V_2 = 0.1\\text{ m}^3$ (Final volume)\n\\n\n**Step 1: Calculate Isothermal Work Input**\nSubstitute the given values into the work equation:\n\n$$W = (100\\text{ kPa}) \\times (0.4\\text{ m}^3) \\times \\ln\\left(\\frac{0.1\\text{ m}^3}{0.4\\text{ m}^3}\\right)$\n\n$$W = 40 \\times \\ln(0.25)\\text{ kJ}$\n\nUsing $\\ln(0.25) = -\\ln(4) \\approx -1.386294$:\n\n$$W = 40 \\times (-1.386294) \\approx -55.4517\\text{ kJ}$\n\n**Step 2: Sign Convention Verification**\nSince this is a compression process ($V_2 < V_1$), work is done **on** the system. According to the standard thermodynamic convention (work on the system is negative), the value retains its negative sign:\n\n$$W \\approx -55.45\\text{ kJ}$\n\nCorrect Answer: C ($-55.45\\text{ kJ}$)"
+                        "content": "**Understand Boundary Work for Isothermal Expansion/Compression**\nFor an ideal gas undergoing a quasi-equilibrium reversible isothermal process ($T = \\text{constant}$), the equation of state gives:\n\n$$P \\cdot V = C \\implies P = \\frac{P_1 V_1}{V}$\n\nThe boundary work $W$ done by the system is calculated as:\n\n\n$$\\nW = P_1 V_1 \\ln\\left(\\frac{V_2}{V_1}\\right)\n$\n\n\nWhere:\n\\n•  $P_1 = 100\\text{ kPa}$ (Initial pressure)\n•  $V_1 = 0.4\\text{ m}^3$ (Initial volume)\n•  $V_2 = 0.1\\text{ m}^3$ (Final volume)\n\\n\n**Step 1: Calculate Isothermal Work Input**\nSubstitute the given values into the work equation:\n\n$$W = (100\\text{ kPa}) \\times (0.4\\text{ m}^3) \\times \\ln\\left(\\frac{0.1\\text{ m}^3}{0.4\\text{ m}^3}\\right)$\n\n$$W = 40 \\times \\ln(0.25)\\text{ kJ}$\n\nUsing $\\ln(0.25) = -\\ln(4) \\approx -1.386294$:\n\n$$W = 40 \\times (-1.386294) \\approx -55.4517\\text{ kJ}$\n\n**Step 2: Sign Convention Verification**\nSince this is a compression process ($V_2 < V_1$), work is done **on** the system. According to the standard thermodynamic convention (work on the system is negative), the value retains its negative sign:\n\n$$W \\approx -55.45\\text{ kJ}$\n\nCorrect Answer: C ($-55.45\\text{ kJ}$)"
                     }
                 ],
                 "final_answer": "C",
@@ -75464,7 +75501,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Steady Flow Energy Equation for a Nozzle**\nFor a steady-flow system through a control volume, the general Steady Flow Energy Equation (SFEE) per unit mass is:\n\n$$h_1 + \\frac{V_1^2}{2000} + \\frac{g z_1}{1000} + q = h_2 + \\frac{V_2^2}{2000} + \\frac{g z_2}{1000} + w$\n\nFor an **insulated horizontal nozzle**:\n\\n•  Insulated $\\implies q = 0$\n•  No work done $\\implies w = 0$\n•  Horizontal orientation $\\implies z_1 = z_2 \\implies \\Delta PE = 0$\n\\n\n\n$$\\nh_1 + \\frac{V_1^2}{2000} = h_2 + \\frac{V_2^2}{2000}\n\$\n\n\nWhere kinetic energy terms are divided by $1000$ to convert $\\text{m}^2/\\text{s}^2\\,(\\text{J/kg})$ into $\\text{kJ/kg}$.\n\n**Step 1: Substitute Given Numerical Values**\nGiven:\n\\n•  Initial enthalpy: $h_1 = 100\\text{ kJ/kg}$\n•  Inlet velocity: $V_1 = 100\\text{ m/s}$\n•  Exit velocity: $V_2 = 200\\text{ m/s}$\n\\n\n$$100 + \\frac{100^2}{2000} = h_2 + \\frac{200^2}{2000}$\n\n**Step 2: Calculate Specific Kinetic Energy Terms**\n$$\\text{Inlet } KE = \\frac{10,000}{2000} = 5\\text{ kJ/kg}$\n\n$$\\text{Exit } KE = \\frac{40,000}{2000} = 20\\text{ kJ/kg}$\n\n**Step 3: Solve for Exit Enthalpy ($h_2$)**\n$$100 + 5 = h_2 + 20$\n\n$$105 = h_2 + 20$\n\n$$h_2 = 105 - 20 = 85\\text{ kJ/kg}$\n\nCorrect Answer: B ($85\\text{ kJ/kg}$)"
+                        "content": "**Understand Steady Flow Energy Equation for a Nozzle**\nFor a steady-flow system through a control volume, the general Steady Flow Energy Equation (SFEE) per unit mass is:\n\n$$h_1 + \\frac{V_1^2}{2000} + \\frac{g z_1}{1000} + q = h_2 + \\frac{V_2^2}{2000} + \\frac{g z_2}{1000} + w$\n\nFor an **insulated horizontal nozzle**:\n\\n•  Insulated $\\implies q = 0$\n•  No work done $\\implies w = 0$\n•  Horizontal orientation $\\implies z_1 = z_2 \\implies \\Delta PE = 0$\n\\n\n\n$$\\nh_1 + \\frac{V_1^2}{2000} = h_2 + \\frac{V_2^2}{2000}\n$\n\n\nWhere kinetic energy terms are divided by $1000$ to convert $\\text{m}^2/\\text{s}^2\\,(\\text{J/kg})$ into $\\text{kJ/kg}$.\n\n**Step 1: Substitute Given Numerical Values**\nGiven:\n\\n•  Initial enthalpy: $h_1 = 100\\text{ kJ/kg}$\n•  Inlet velocity: $V_1 = 100\\text{ m/s}$\n•  Exit velocity: $V_2 = 200\\text{ m/s}$\n\\n\n$$100 + \\frac{100^2}{2000} = h_2 + \\frac{200^2}{2000}$\n\n**Step 2: Calculate Specific Kinetic Energy Terms**\n$$\\text{Inlet } KE = \\frac{10,000}{2000} = 5\\text{ kJ/kg}$\n\n$$\\text{Exit } KE = \\frac{40,000}{2000} = 20\\text{ kJ/kg}$\n\n**Step 3: Solve for Exit Enthalpy ($h_2$)**\n$$100 + 5 = h_2 + 20$\n\n$$105 = h_2 + 20$\n\n$$h_2 = 105 - 20 = 85\\text{ kJ/kg}$\n\nCorrect Answer: B ($85\\text{ kJ/kg}$)"
                     }
                 ],
                 "final_answer": "B",
@@ -75490,7 +75527,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Converging Nozzle body\n  \\fill[gray!15] (0, 0.3) -- (3.5, 0.9) -- (3.5, 2.1) -- (0, 2.7) -- cycle;\n  \\draw[ultra thick, black] (0, 2.7) -- (3.5, 2.1);\n  \\draw[ultra thick, black] (0, 0.3) -- (3.5, 0.9);\n\n  % Inlet Ellipse (Section 1)\n  \\draw[ultra thick, fill=gray!25, draw=black] (0, 1.5) ellipse (0.2 and 1.2);\n  \\draw[->, ultra thick, black] (-0.8, 1.5) -- (0.5, 1.5) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {Steam In};\n  \\node[left=3pt, font=\\large\\bfseries\\sffamily, black, align=right] at (-0.8, 2.2) {$h_1 = 100\\text{ kJ/kg}$\\\\$v_1 = 100\\text{ m/s}$};\n\n  % Exit Ellipse (Section 2)\n  \\draw[ultra thick, fill=gray!15, draw=black] (3.5, 1.5) ellipse (0.12 and 0.6);\n  \\draw[->, ultra thick, black] (3.5, 1.5) -- (4.8, 1.5) node[above=2pt, font=\\large\\bfseries\\sffamily, black] {Steam Out};\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black, align=left] at (4.8, 1.5) {$v_2 = ?$ };\n\n  % Control Volume boundary (Dashed)\n  \\draw[dashed, thick, gray!80] (-0.4, 0.0) rectangle (4.0, 3.0);\n  \\node[above, font=\\bfseries\\sffamily, black] at (1.8, 3.0) {Control Volume};\n\\end{tikzpicture}"
         },
         {
             "topic": "First Law of Thermodynamics",
@@ -75524,7 +75562,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand General First Law of Thermodynamics**\nFor a general closed system undergoing a process, the First Law of Thermodynamics accounting for changes in internal energy ($\\Delta U$), kinetic energy ($\\Delta KE$), and potential energy ($\\Delta PE$) is expressed as:\n\n$$Q - W = \\Delta E = \\Delta U + \\Delta KE + \\Delta PE$\n\nGiven that the system is **adiabatic** ($Q = 0$):\n\n\n$$\\n-W = \\Delta U + \\Delta KE + \\Delta PE \\implies W_{\\text{on}} = -W = \\Delta U + \\Delta KE + \\Delta PE\n\$\n\n\nWhere:\n\\n•  $m = 10\\text{ kg}$\n•  $C_v = 100\\text{ J/(kg}\\cdot\\text{K)}$\n•  $\\Delta T = 1\\text{ K}$\n•  $V_1 = 10\\text{ m/s}, \\quad V_2 = 20\\text{ m/s}$\n•  $\\Delta z = 20\\text{ m}, \\quad g = 10\\text{ m/s}^2$\n\\n\n**Step 1: Calculate Individual Energy Changes**\n**1. Internal Energy Change ($\\Delta U$):**\n$$\\Delta U = m \\cdot C_v \\cdot \\Delta T = 10 \\times 100 \\times 1 = 1000\\text{ J} = 1.0\\text{ kJ}$\n\n**2. Kinetic Energy Change ($\\Delta KE$):**\n$$\\Delta KE = \\frac{1}{2} m \\left(V_2^2 - V_1^2\\right) = \\frac{1}{2} \\times 10 \\times \\left(20^2 - 10^2\\right)$\n$$\\Delta KE = 5 \\times (400 - 100) = 5 \\times 300 = 1500\\text{ J} = 1.5\\text{ kJ}$\n\n**3. Potential Energy Change ($\\Delta PE$):**\n$$\\Delta PE = m \\cdot g \\cdot \\Delta z = 10 \\times 10 \\times 20 = 2000\\text{ J} = 2.0\\text{ kJ}$\n\n**Step 2: Calculate Total Work Done on System**\nAdding all energy change components together:\n\n$$W_{\\text{on}} = \\Delta U + \\Delta KE + \\Delta PE$\n\n$$W_{\\text{on}} = 1.0\\text{ kJ} + 1.5\\text{ kJ} + 2.0\\text{ kJ} = 4.5\\text{ kJ}$\n\nCorrect Answer: C ($4.5\\text{ kJ}$)"
+                        "content": "**Understand General First Law of Thermodynamics**\nFor a general closed system undergoing a process, the First Law of Thermodynamics accounting for changes in internal energy ($\\Delta U$), kinetic energy ($\\Delta KE$), and potential energy ($\\Delta PE$) is expressed as:\n\n$$Q - W = \\Delta E = \\Delta U + \\Delta KE + \\Delta PE$\n\nGiven that the system is **adiabatic** ($Q = 0$):\n\n\n$$\\n-W = \\Delta U + \\Delta KE + \\Delta PE \\implies W_{\\text{on}} = -W = \\Delta U + \\Delta KE + \\Delta PE\n$\n\n\nWhere:\n\\n•  $m = 10\\text{ kg}$\n•  $C_v = 100\\text{ J/(kg}\\cdot\\text{K)}$\n•  $\\Delta T = 1\\text{ K}$\n•  $V_1 = 10\\text{ m/s}, \\quad V_2 = 20\\text{ m/s}$\n•  $\\Delta z = 20\\text{ m}, \\quad g = 10\\text{ m/s}^2$\n\\n\n**Step 1: Calculate Individual Energy Changes**\n**1. Internal Energy Change ($\\Delta U$):**\n$$\\Delta U = m \\cdot C_v \\cdot \\Delta T = 10 \\times 100 \\times 1 = 1000\\text{ J} = 1.0\\text{ kJ}$\n\n**2. Kinetic Energy Change ($\\Delta KE$):**\n$$\\Delta KE = \\frac{1}{2} m \\left(V_2^2 - V_1^2\\right) = \\frac{1}{2} \\times 10 \\times \\left(20^2 - 10^2\\right)$\n$$\\Delta KE = 5 \\times (400 - 100) = 5 \\times 300 = 1500\\text{ J} = 1.5\\text{ kJ}$\n\n**3. Potential Energy Change ($\\Delta PE$):**\n$$\\Delta PE = m \\cdot g \\cdot \\Delta z = 10 \\times 10 \\times 20 = 2000\\text{ J} = 2.0\\text{ kJ}$\n\n**Step 2: Calculate Total Work Done on System**\nAdding all energy change components together:\n\n$$W_{\\text{on}} = \\Delta U + \\Delta KE + \\Delta PE$\n\n$$W_{\\text{on}} = 1.0\\text{ kJ} + 1.5\\text{ kJ} + 2.0\\text{ kJ} = 4.5\\text{ kJ}$\n\nCorrect Answer: C ($4.5\\text{ kJ}$)"
                     }
                 ],
                 "final_answer": "C",
@@ -75584,7 +75622,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Conservation of Energy for Closed Systems**\nFor a closed, well-insulated ($Q = 0$), rigid ($V = \\text{constant}$) system, the First Law of Thermodynamics simplifies to:\n\n$$Q - W = \\Delta U \\implies -W = \\Delta U \\implies W_{\\text{in}} = \\Delta U$\n\n\n$$\\nW_{\\text{in}} = 2\\pi N \\tau = m C_v (T_2 - T_1)\n\$\n\n\nWhere:\n\\n•  $N = 1000\\text{ revolutions}$\n•  $\\tau = 100\\text{ N}\\cdot\\text{m}$ (applied torque)\n•  $m = 1.0\\text{ kg}$\n•  $C_v = 800\\text{ J/(kg}\\cdot\\text{K)}$\n•  $C_p = 1000\\text{ J/(kg}\\cdot\\text{K)} \\implies R = C_p - C_v = 200\\text{ J/(kg}\\cdot\\text{K)}$\n\\n\n**Step 1: Calculate Initial Temperature ($T_1$)**\nUsing the ideal gas equation $P_1 V = m R T_1$:\n\n$$T_1 = \\frac{P_1 V}{m R} = \\frac{10^5 \\text{ Pa} \\times 1\\text{ m}^3}{1.0\\text{ kg} \\times 200\\text{ J/(kg}\\cdot\\text{K)}} = \\frac{100,000}{200} = 500\\text{ K}$\n\n**Step 2: Calculate Stirrer Work Input ($W_{\\text{in**}$)}\n$$W_{\\text{in}} = 2 \\pi N \\tau = 2 \\times \\pi \\times 1000 \\times 100\\text{ J}$\n\n$$W_{\\text{in}} = 200,000 \\pi\\text{ J} \\approx 628,318.53\\text{ J}$\n\n**Step 3: Solve for Final Temperature ($T_2$)**\nSubstitute $W_{\\text{in}}$ and $T_1$ into the internal energy balance relation:\n\n$$628,318.53 = 1.0 \\times 800 \\times (T_2 - 500)$\n\n$$T_2 - 500 = \\frac{628,318.53}{800} \\approx 785.40\\text{ K}$\n\n$$T_2 = 500 + 785.40 \\approx 1285.4\\text{ K}$\n\nRounding to the nearest integer gives $1285\\text{ K}$.\n\nCorrect Answer: C ($1285\\text{ K}$)"
+                        "content": "**Understand Conservation of Energy for Closed Systems**\nFor a closed, well-insulated ($Q = 0$), rigid ($V = \\text{constant}$) system, the First Law of Thermodynamics simplifies to:\n\n$$Q - W = \\Delta U \\implies -W = \\Delta U \\implies W_{\\text{in}} = \\Delta U$\n\n\n$$\\nW_{\\text{in}} = 2\\pi N \\tau = m C_v (T_2 - T_1)\n$\n\n\nWhere:\n\\n•  $N = 1000\\text{ revolutions}$\n•  $\\tau = 100\\text{ N}\\cdot\\text{m}$ (applied torque)\n•  $m = 1.0\\text{ kg}$\n•  $C_v = 800\\text{ J/(kg}\\cdot\\text{K)}$\n•  $C_p = 1000\\text{ J/(kg}\\cdot\\text{K)} \\implies R = C_p - C_v = 200\\text{ J/(kg}\\cdot\\text{K)}$\n\\n\n**Step 1: Calculate Initial Temperature ($T_1$)**\nUsing the ideal gas equation $P_1 V = m R T_1$:\n\n$$T_1 = \\frac{P_1 V}{m R} = \\frac{10^5 \\text{ Pa} \\times 1\\text{ m}^3}{1.0\\text{ kg} \\times 200\\text{ J/(kg}\\cdot\\text{K)}} = \\frac{100,000}{200} = 500\\text{ K}$\n\n**Step 2: Calculate Stirrer Work Input ($W_{\\text{in**}$)}\n$$W_{\\text{in}} = 2 \\pi N \\tau = 2 \\times \\pi \\times 1000 \\times 100\\text{ J}$\n\n$$W_{\\text{in}} = 200,000 \\pi\\text{ J} \\approx 628,318.53\\text{ J}$\n\n**Step 3: Solve for Final Temperature ($T_2$)**\nSubstitute $W_{\\text{in}}$ and $T_1$ into the internal energy balance relation:\n\n$$628,318.53 = 1.0 \\times 800 \\times (T_2 - 500)$\n\n$$T_2 - 500 = \\frac{628,318.53}{800} \\approx 785.40\\text{ K}$\n\n$$T_2 = 500 + 785.40 \\approx 1285.4\\text{ K}$\n\nRounding to the nearest integer gives $1285\\text{ K}$.\n\nCorrect Answer: C ($1285\\text{ K}$)"
                     }
                 ],
                 "final_answer": "C",
@@ -75644,7 +75682,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Psychrometric Chart Representation**\nA psychrometric chart is a graphical representation of the thermodynamic properties of moist air at a constant total pressure (typically standard atmospheric pressure).\n\n\n$$\\n\\text{Horizontal Axis } (X\\text{-axis}) \\perp \\text{Vertical Axis } (Y\\text{-axis})\n\$\n\n\nKey properties on the chart are plotted as follows:\n\\n•  **Horizontal Axis ($X$-axis):** Represents the **Dry-Bulb Temperature ($T_{db}$)** in $^\\circ\\text{C}$ or $^\\circ\\text{F}$.\n•  **Vertical Axis ($Y$-axis):** Plotted perpendicularly to the horizontal axis, representing **Specific Humidity ($\\omega$)** (also known as humidity ratio or moisture content) in $\\text{kg of water vapor / kg of dry air}$.\n•  **Curved Lines:** Represent lines of constant **Relative Humidity ($\\phi$)**.\n•  **Slanted/Oblique Lines:** Represent lines of constant **Wet-Bulb Temperature ($T_{wb}$)** and constant **Enthalpy ($h$)**.\n\\n\n**Step 1: Identify the Perpendicular Axis**\nSince the dry-bulb temperature forms the horizontal base axis, the axis perpendicular to it is the vertical axis, which measures **specific humidity** (humidity ratio).\n\nCorrect Answer: B (specific humidity)"
+                        "content": "**Understand Psychrometric Chart Representation**\nA psychrometric chart is a graphical representation of the thermodynamic properties of moist air at a constant total pressure (typically standard atmospheric pressure).\n\n\n$$\\n\\text{Horizontal Axis } (X\\text{-axis}) \\perp \\text{Vertical Axis } (Y\\text{-axis})\n$\n\n\nKey properties on the chart are plotted as follows:\n\\n•  **Horizontal Axis ($X$-axis):** Represents the **Dry-Bulb Temperature ($T_{db}$)** in $^\\circ\\text{C}$ or $^\\circ\\text{F}$.\n•  **Vertical Axis ($Y$-axis):** Plotted perpendicularly to the horizontal axis, representing **Specific Humidity ($\\omega$)** (also known as humidity ratio or moisture content) in $\\text{kg of water vapor / kg of dry air}$.\n•  **Curved Lines:** Represent lines of constant **Relative Humidity ($\\phi$)**.\n•  **Slanted/Oblique Lines:** Represent lines of constant **Wet-Bulb Temperature ($T_{wb}$)** and constant **Enthalpy ($h$)**.\n\\n\n**Step 1: Identify the Perpendicular Axis**\nSince the dry-bulb temperature forms the horizontal base axis, the axis perpendicular to it is the vertical axis, which measures **specific humidity** (humidity ratio).\n\nCorrect Answer: B (specific humidity)"
                     }
                 ],
                 "final_answer": "B",
@@ -75705,7 +75743,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Specific Volume and State Regions**\nTo determine the thermodynamic state of a substance at a given temperature, we compare the actual specific volume ($v$) with the saturated liquid specific volume ($v_f$) and saturated vapor specific volume ($v_g$) at that temperature:\n\n\\n•  If $v < v_f \\implies$ Compressed (subcooled) liquid\n•  If $v = v_f \\implies$ Saturated liquid\n•  If $v_f < v < v_g \\implies$ Two-phase saturated liquid-vapor mixture\n•  If $v = v_g \\implies$ Saturated vapor\n•  If $v > v_g \\implies$ Superheated vapor\n\\n\n**Step 1: Calculate Actual Specific Volume ($v$)**\nThe specific volume $v$ is given by the total volume divided by total mass:\n\n\n$$\\nv = \\frac{V}{m}\n\$\n\n\nGiven:\n\\n•  Total volume: $V = 0.5\\text{ m}^3$\n•  Total mass: $m = 1.0\\text{ kg}$\n\\n\n$$v = \\frac{0.5\\text{ m}^3}{1.0\\text{ kg}} = 0.5\\text{ m}^3/\\text{kg}$\n\n**Step 2: Compare Specific Volume with Saturation Limits**\nAt $T = 120^\\circ\\text{C}$:\n\\n•  $v_f = 0.00106\\text{ m}^3/\\text{kg}$\n•  $v_g = 0.8908\\text{ m}^3/\\text{kg}$\n\\n\nComparing $v = 0.5\\text{ m}^3/\\text{kg}$ to these saturation boundaries:\n\n$$0.00106 < 0.5 < 0.8908 \\implies v_f < v < v_g$\n\nSince the specific volume lies strictly between $v_f$ and $v_g$, the water exists as a two-phase mixture of saturated liquid and saturated vapor.\n\nCorrect Answer: C (A mixture of saturated liquid and saturated vapor)"
+                        "content": "**Understand Specific Volume and State Regions**\nTo determine the thermodynamic state of a substance at a given temperature, we compare the actual specific volume ($v$) with the saturated liquid specific volume ($v_f$) and saturated vapor specific volume ($v_g$) at that temperature:\n\n\\n•  If $v < v_f \\implies$ Compressed (subcooled) liquid\n•  If $v = v_f \\implies$ Saturated liquid\n•  If $v_f < v < v_g \\implies$ Two-phase saturated liquid-vapor mixture\n•  If $v = v_g \\implies$ Saturated vapor\n•  If $v > v_g \\implies$ Superheated vapor\n\\n\n**Step 1: Calculate Actual Specific Volume ($v$)**\nThe specific volume $v$ is given by the total volume divided by total mass:\n\n\n$$\\nv = \\frac{V}{m}\n$\n\n\nGiven:\n\\n•  Total volume: $V = 0.5\\text{ m}^3$\n•  Total mass: $m = 1.0\\text{ kg}$\n\\n\n$$v = \\frac{0.5\\text{ m}^3}{1.0\\text{ kg}} = 0.5\\text{ m}^3/\\text{kg}$\n\n**Step 2: Compare Specific Volume with Saturation Limits**\nAt $T = 120^\\circ\\text{C}$:\n\\n•  $v_f = 0.00106\\text{ m}^3/\\text{kg}$\n•  $v_g = 0.8908\\text{ m}^3/\\text{kg}$\n\\n\nComparing $v = 0.5\\text{ m}^3/\\text{kg}$ to these saturation boundaries:\n\n$$0.00106 < 0.5 < 0.8908 \\implies v_f < v < v_g$\n\nSince the specific volume lies strictly between $v_f$ and $v_g$, the water exists as a two-phase mixture of saturated liquid and saturated vapor.\n\nCorrect Answer: C (A mixture of saturated liquid and saturated vapor)"
                     }
                 ],
                 "final_answer": "C",
@@ -75765,7 +75803,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Thermodynamic Enthalpy Relation**\nBy definition, specific enthalpy ($h$) is the sum of specific internal energy ($u$) and flow work / flow energy ($P \\cdot v$):\n\n\n$$\\nh = u + P \\cdot v\n\$\n\n\nWhere:\n\\n•  $u = 2864\\text{ kJ/kg}$\n•  $P = 8\\text{ MPa} = 8 \\times 10^6\\text{ Pa} = 8000\\text{ kPa}$\n•  $v = 0.03432\\text{ m}^3/\\text{kg}$\n\\n\n**Step 1: Calculate Flow Energy ($P \\cdot v$)**\nConvert pressure to $\\text{kPa}$ so that the product $P \\cdot v$ directly yields units of $\\text{kJ/kg}$:\n\n$$P \\cdot v = 8000\\text{ kPa} \\times 0.03432\\text{ m}^3/\\text{kg}$\n\n$$P \\cdot v = 274.56\\text{ kJ/kg}$\n\n**Step 2: Calculate Specific Enthalpy ($h$)**\nSubstitute $u$ and $P \\cdot v$ into the enthalpy definition formula:\n\n$$h = 2864 + 274.56$\n\n$$h = 3138.56\\text{ kJ/kg}$\n\nCorrect Answer: C ($3138.56\\text{ kJ/kg}$)"
+                        "content": "**Understand Thermodynamic Enthalpy Relation**\nBy definition, specific enthalpy ($h$) is the sum of specific internal energy ($u$) and flow work / flow energy ($P \\cdot v$):\n\n\n$$\\nh = u + P \\cdot v\n$\n\n\nWhere:\n\\n•  $u = 2864\\text{ kJ/kg}$\n•  $P = 8\\text{ MPa} = 8 \\times 10^6\\text{ Pa} = 8000\\text{ kPa}$\n•  $v = 0.03432\\text{ m}^3/\\text{kg}$\n\\n\n**Step 1: Calculate Flow Energy ($P \\cdot v$)**\nConvert pressure to $\\text{kPa}$ so that the product $P \\cdot v$ directly yields units of $\\text{kJ/kg}$:\n\n$$P \\cdot v = 8000\\text{ kPa} \\times 0.03432\\text{ m}^3/\\text{kg}$\n\n$$P \\cdot v = 274.56\\text{ kJ/kg}$\n\n**Step 2: Calculate Specific Enthalpy ($h$)**\nSubstitute $u$ and $P \\cdot v$ into the enthalpy definition formula:\n\n$$h = 2864 + 274.56$\n\n$$h = 3138.56\\text{ kJ/kg}$\n\nCorrect Answer: C ($3138.56\\text{ kJ/kg}$)"
                     }
                 ],
                 "final_answer": "C",
@@ -75826,7 +75864,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Constant Volume Heating Process**\nSince the vessel is rigid and closed, the total mass ($m = 5\\text{ kg}$) and total volume ($V$) remain constant throughout the heating process.\n\n\n$$\\nv_1 = v_2 = v_{\\text{avg}} \\quad \\text{and} \\quad \\Delta h = h_1 - h_2 = \\frac{V_{f1} - V_{f2}}{A_{cs}}\n\$\n\n\nWhere:\n\\n•  $d = 15\\text{ cm} = 0.15\\text{ m} \\implies A_{cs} = \\frac{\\pi}{4} (0.15)^2 \\approx 0.0176715\\text{ m}^2$\n•  $m = 5\\text{ kg}$\n•  Quality at State 1: $x_1 = 0.10$\n\\n\n**Step 1: Determine Average Specific Volume ($v$)**\nAt $T_1 = 80^\\circ\\text{C}$:\n$$v_1 = v_{f1} + x_1 (v_{g1} - v_{f1})$\n$$v_1 = 0.001029 + 0.10 \\times (3.4053 - 0.001029) = 0.001029 + 0.3404271 = 0.341456\\text{ m}^3/\\text{kg}$\n\nTotal Volume of the rigid tank:\n$$V = m \\cdot v_1 = 5\\text{ kg} \\times 0.341456\\text{ m}^3/\\text{kg} = 1.70728\\text{ m}^3$\n\n**Step 2: Liquid Level at State 1 ($h_1$)**\nMass of liquid at State 1:\n$$m_{f1} = (1 - x_1) \\cdot m = (1 - 0.10) \\times 5 = 4.5\\text{ kg}$\n\nVolume of liquid at State 1:\n$$V_{f1} = m_{f1} \\cdot v_{f1} = 4.5 \\times 0.001029 = 0.0046305\\text{ m}^3$\n\nHeight of liquid at State 1:\n$$h_1 = \\frac{V_{f1}}{A_{cs}} = \\frac{0.0046305}{0.0176715} \\approx 0.26203\\text{ m} = 26.20\\text{ cm}$\n\n**Step 3: Quality and Liquid Level at State 2 ($T_2 = 130^\\circ\\text{C**$)}\nSince specific volume remains constant ($v_2 = v_1 = 0.341456\\text{ m}^3/\\text{kg}$):\n$$v_2 = v_{f2} + x_2 (v_{g2} - v_{f2})$\n$$0.341456 = 0.001070 + x_2 (0.66808 - 0.001070)$\n$$0.340386 = 0.66701 \\cdot x_2 \\implies x_2 = \\frac{0.340386}{0.66701} \\approx 0.510316$\n\nMass of liquid at State 2:\n$$m_{f2} = (1 - x_2) \\cdot m = (1 - 0.510316) \\times 5 = 2.44842\\text{ kg}$\n\nVolume of liquid at State 2:\n$$V_{f2} = m_{f2} \\cdot v_{f2} = 2.44842 \\times 0.001070 = 0.0026198\\text{ m}^3$\n\nHeight of liquid at State 2:\n$$h_2 = \\frac{V_{f2}}{A_{cs}} = \\frac{0.0026198}{0.0176715} \\approx 0.14825\\text{ m} = 14.83\\text{ cm}$\n\n**Step 4: Calculate Dip in Liquid Level ($\\Delta h$)**\n$$\\Delta h = h_1 - h_2 = 26.20\\text{ cm} - 14.83\\text{ cm} = 11.37\\text{ cm}$\n\nAlternatively, using direct volume change formula:\n$$\\Delta h = \\frac{V_{f1} - V_{f2}}{A_{cs}} = \\frac{0.0046305 - 0.0026198}{0.0176715} = \\frac{0.0020107}{0.0176715} \\approx 0.11378\\text{ m} \\approx 11.38\\text{ cm}$\n\nCorrect Answer: $11.38\\text{ cm}$ (or $0.11\\text{ m}$)"
+                        "content": "**Understand Constant Volume Heating Process**\nSince the vessel is rigid and closed, the total mass ($m = 5\\text{ kg}$) and total volume ($V$) remain constant throughout the heating process.\n\n\n$$\\nv_1 = v_2 = v_{\\text{avg}} \\quad \\text{and} \\quad \\Delta h = h_1 - h_2 = \\frac{V_{f1} - V_{f2}}{A_{cs}}\n$\n\n\nWhere:\n\\n•  $d = 15\\text{ cm} = 0.15\\text{ m} \\implies A_{cs} = \\frac{\\pi}{4} (0.15)^2 \\approx 0.0176715\\text{ m}^2$\n•  $m = 5\\text{ kg}$\n•  Quality at State 1: $x_1 = 0.10$\n\\n\n**Step 1: Determine Average Specific Volume ($v$)**\nAt $T_1 = 80^\\circ\\text{C}$:\n$$v_1 = v_{f1} + x_1 (v_{g1} - v_{f1})$\n$$v_1 = 0.001029 + 0.10 \\times (3.4053 - 0.001029) = 0.001029 + 0.3404271 = 0.341456\\text{ m}^3/\\text{kg}$\n\nTotal Volume of the rigid tank:\n$$V = m \\cdot v_1 = 5\\text{ kg} \\times 0.341456\\text{ m}^3/\\text{kg} = 1.70728\\text{ m}^3$\n\n**Step 2: Liquid Level at State 1 ($h_1$)**\nMass of liquid at State 1:\n$$m_{f1} = (1 - x_1) \\cdot m = (1 - 0.10) \\times 5 = 4.5\\text{ kg}$\n\nVolume of liquid at State 1:\n$$V_{f1} = m_{f1} \\cdot v_{f1} = 4.5 \\times 0.001029 = 0.0046305\\text{ m}^3$\n\nHeight of liquid at State 1:\n$$h_1 = \\frac{V_{f1}}{A_{cs}} = \\frac{0.0046305}{0.0176715} \\approx 0.26203\\text{ m} = 26.20\\text{ cm}$\n\n**Step 3: Quality and Liquid Level at State 2 ($T_2 = 130^\\circ\\text{C**$)}\nSince specific volume remains constant ($v_2 = v_1 = 0.341456\\text{ m}^3/\\text{kg}$):\n$$v_2 = v_{f2} + x_2 (v_{g2} - v_{f2})$\n$$0.341456 = 0.001070 + x_2 (0.66808 - 0.001070)$\n$$0.340386 = 0.66701 \\cdot x_2 \\implies x_2 = \\frac{0.340386}{0.66701} \\approx 0.510316$\n\nMass of liquid at State 2:\n$$m_{f2} = (1 - x_2) \\cdot m = (1 - 0.510316) \\times 5 = 2.44842\\text{ kg}$\n\nVolume of liquid at State 2:\n$$V_{f2} = m_{f2} \\cdot v_{f2} = 2.44842 \\times 0.001070 = 0.0026198\\text{ m}^3$\n\nHeight of liquid at State 2:\n$$h_2 = \\frac{V_{f2}}{A_{cs}} = \\frac{0.0026198}{0.0176715} \\approx 0.14825\\text{ m} = 14.83\\text{ cm}$\n\n**Step 4: Calculate Dip in Liquid Level ($\\Delta h$)**\n$$\\Delta h = h_1 - h_2 = 26.20\\text{ cm} - 14.83\\text{ cm} = 11.37\\text{ cm}$\n\nAlternatively, using direct volume change formula:\n$$\\Delta h = \\frac{V_{f1} - V_{f2}}{A_{cs}} = \\frac{0.0046305 - 0.0026198}{0.0176715} = \\frac{0.0020107}{0.0176715} \\approx 0.11378\\text{ m} \\approx 11.38\\text{ cm}$\n\nCorrect Answer: $11.38\\text{ cm}$ (or $0.11\\text{ m}$)"
                     }
                 ],
                 "final_answer": "C",
@@ -75887,7 +75925,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Steady Flow Energy Equation (SFEE)**\nFor a steady-flow open system like a turbine, the Steady Flow Energy Equation per unit mass (neglecting kinetic and potential energy changes, $\\Delta ke \\approx 0, \\Delta pe \\approx 0$) is given by:\n\n$$q - w = h_2 - h_1$\n\n\n$$\\nw_{\\text{out}} = (h_1 - h_2) - q_{\\text{loss}}\n\$\n\n\nWhere:\n\\n•  Inlet enthalpy: $h_1 = 2993\\text{ kJ/kg}$\n•  Exit enthalpy: $h_2 = 226\\text{ kJ/kg}$\n•  Heat loss to surroundings: $q_{\\text{loss}} = 50\\text{ kJ/kg} \\implies q = -50\\text{ kJ/kg}$\n\\n\n**Step 1: Calculate Specific Work Output ($w_{\\text{out**}$)}\nSubstitute the given values into the energy balance relation:\n\n$$w_{\\text{out}} = (2993 - 226) - 50$\n\n$$w_{\\text{out}} = 2767 - 50$\n\n$$w_{\\text{out}} = 2717\\text{ kJ/kg}$\n\nCorrect Answer: C ($2717\\text{ kJ/kg}$)"
+                        "content": "**Understand Steady Flow Energy Equation (SFEE)**\nFor a steady-flow open system like a turbine, the Steady Flow Energy Equation per unit mass (neglecting kinetic and potential energy changes, $\\Delta ke \\approx 0, \\Delta pe \\approx 0$) is given by:\n\n$$q - w = h_2 - h_1$\n\n\n$$\\nw_{\\text{out}} = (h_1 - h_2) - q_{\\text{loss}}\n$\n\n\nWhere:\n\\n•  Inlet enthalpy: $h_1 = 2993\\text{ kJ/kg}$\n•  Exit enthalpy: $h_2 = 226\\text{ kJ/kg}$\n•  Heat loss to surroundings: $q_{\\text{loss}} = 50\\text{ kJ/kg} \\implies q = -50\\text{ kJ/kg}$\n\\n\n**Step 1: Calculate Specific Work Output ($w_{\\text{out**}$)}\nSubstitute the given values into the energy balance relation:\n\n$$w_{\\text{out}} = (2993 - 226) - 50$\n\n$$w_{\\text{out}} = 2767 - 50$\n\n$$w_{\\text{out}} = 2717\\text{ kJ/kg}$\n\nCorrect Answer: C ($2717\\text{ kJ/kg}$)"
                     }
                 ],
                 "final_answer": "C",
@@ -75948,7 +75986,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Dryness Fraction (Quality)**\nThe dryness fraction ($x$) of a saturated liquid-vapor mixture is defined as the ratio of the mass of dry vapor ($m_g$) to the total mass of the mixture ($m = m_f + m_g$):\n\n\n$$\\nx = \\frac{m_g}{m_f + m_g}\n\$\n\n\nWhere:\n\\n•  Total volume $V = 1.0\\text{ m}^3$\n•  Volume of vapor: $V_g = 0.90 \\times 1.0 = 0.9\\text{ m}^3$\n•  Volume of liquid: $V_f = 0.10 \\times 1.0 = 0.1\\text{ m}^3$\n•  Saturated liquid specific volume: $v_f = 0.001\\text{ m}^3/\\text{kg}$\n•  Saturated vapor specific volume: $v_g = 1.7\\text{ m}^3/\\text{kg}$\n\\n\n**Step 1: Calculate Mass of Liquid ($m_f$) and Vapor ($m_g$)**\nUsing $m = \\frac{V}{v}$:\n\n$$\\text{Mass of steam (vapor): } m_g = \\frac{V_g}{v_g} = \\frac{0.9\\text{ m}^3}{1.7\\text{ m}^3/\\text{kg}} \\approx 0.52941\\text{ kg}$\n\n$$\\text{Mass of liquid water: } m_f = \\frac{V_f}{v_f} = \\frac{0.1\\text{ m}^3}{0.001\\text{ m}^3/\\text{kg}} = 100\\text{ kg}$\n\n**Step 2: Calculate Total Mass ($m$)**\n$$m = m_f + m_g = 100 + 0.52941 = 100.52941\\text{ kg}$\n\n**Step 3: Calculate Dryness Fraction ($x$)**\n$$x = \\frac{m_g}{m} = \\frac{0.52941}{100.52941} \\approx 0.005266 \\approx 0.00527$\n\nThus, the dryness fraction of the mixture is approximately $0.00527$ (or $0.527\\%$).\n\nCorrect Answer: A ($0.00527$)"
+                        "content": "**Understand Dryness Fraction (Quality)**\nThe dryness fraction ($x$) of a saturated liquid-vapor mixture is defined as the ratio of the mass of dry vapor ($m_g$) to the total mass of the mixture ($m = m_f + m_g$):\n\n\n$$\\nx = \\frac{m_g}{m_f + m_g}\n$\n\n\nWhere:\n\\n•  Total volume $V = 1.0\\text{ m}^3$\n•  Volume of vapor: $V_g = 0.90 \\times 1.0 = 0.9\\text{ m}^3$\n•  Volume of liquid: $V_f = 0.10 \\times 1.0 = 0.1\\text{ m}^3$\n•  Saturated liquid specific volume: $v_f = 0.001\\text{ m}^3/\\text{kg}$\n•  Saturated vapor specific volume: $v_g = 1.7\\text{ m}^3/\\text{kg}$\n\\n\n**Step 1: Calculate Mass of Liquid ($m_f$) and Vapor ($m_g$)**\nUsing $m = \\frac{V}{v}$:\n\n$$\\text{Mass of steam (vapor): } m_g = \\frac{V_g}{v_g} = \\frac{0.9\\text{ m}^3}{1.7\\text{ m}^3/\\text{kg}} \\approx 0.52941\\text{ kg}$\n\n$$\\text{Mass of liquid water: } m_f = \\frac{V_f}{v_f} = \\frac{0.1\\text{ m}^3}{0.001\\text{ m}^3/\\text{kg}} = 100\\text{ kg}$\n\n**Step 2: Calculate Total Mass ($m$)**\n$$m = m_f + m_g = 100 + 0.52941 = 100.52941\\text{ kg}$\n\n**Step 3: Calculate Dryness Fraction ($x$)**\n$$x = \\frac{m_g}{m} = \\frac{0.52941}{100.52941} \\approx 0.005266 \\approx 0.00527$\n\nThus, the dryness fraction of the mixture is approximately $0.00527$ (or $0.527\\%$).\n\nCorrect Answer: A ($0.00527$)"
                     }
                 ],
                 "final_answer": "A",
@@ -76009,7 +76047,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Cycle Conditions and Clausius Inequality**\nTwo fundamental conditions must be satisfied for a system to operate as an **irreversible heat engine**:\n\n**1. Net Heat Work Conversion (Heat Engine Condition)**\nFrom the First Law of Thermodynamics for a closed system undergoing a thermodynamic cycle:\n\n$$\\oint \\delta Q = \\oint \\delta W = W_{\\text{net}}$\n\nA **heat engine** receives heat energy from a high-temperature source and produces positive net work output ($W_{\\text{net}} > 0$). Therefore:\n\n$$\\oint \\delta Q > 0$\n\n**2. Clausius Inequality (Irreversibility Condition)**\nThe Second Law of Thermodynamics dictates the direction and nature of cyclic processes through the **Clausius Inequality**:\n\n\n$$\\n\\oint \\frac{\\delta Q}{T} \\le 0\n\$\n\n\nSpecifically:\n\\n•  $\\displaystyle\\oint \\frac{\\delta Q}{T} = 0 \\implies$ Reversible cycle\n•  $\\displaystyle\\oint \\frac{\\delta Q}{T} < 0 \\implies$ Irreversible cycle\n•  $\\displaystyle\\oint \\frac{\\delta Q}{T} > 0 \\implies$ Impossible cycle\n\\n\n**Step 1: Combine both conditions for an Irreversible Heat Engine**\nCombining the net positive heat transfer for a power-producing engine and the strict inequality for irreversibility:\n\n$$\\oint \\delta Q > 0 \\quad \\text{and} \\quad \\oint \\frac{\\delta Q}{T} < 0$\n\nCorrect Answer: A ($\\displaystyle\\oint \\delta Q > 0 \\quad \\text{and} \\quad \\oint \\frac{\\delta Q}{T} < 0$)"
+                        "content": "**Understand Cycle Conditions and Clausius Inequality**\nTwo fundamental conditions must be satisfied for a system to operate as an **irreversible heat engine**:\n\n**1. Net Heat Work Conversion (Heat Engine Condition)**\nFrom the First Law of Thermodynamics for a closed system undergoing a thermodynamic cycle:\n\n$$\\oint \\delta Q = \\oint \\delta W = W_{\\text{net}}$\n\nA **heat engine** receives heat energy from a high-temperature source and produces positive net work output ($W_{\\text{net}} > 0$). Therefore:\n\n$$\\oint \\delta Q > 0$\n\n**2. Clausius Inequality (Irreversibility Condition)**\nThe Second Law of Thermodynamics dictates the direction and nature of cyclic processes through the **Clausius Inequality**:\n\n\n$$\\n\\oint \\frac{\\delta Q}{T} \\le 0\n$\n\n\nSpecifically:\n\\n•  $\\displaystyle\\oint \\frac{\\delta Q}{T} = 0 \\implies$ Reversible cycle\n•  $\\displaystyle\\oint \\frac{\\delta Q}{T} < 0 \\implies$ Irreversible cycle\n•  $\\displaystyle\\oint \\frac{\\delta Q}{T} > 0 \\implies$ Impossible cycle\n\\n\n**Step 1: Combine both conditions for an Irreversible Heat Engine**\nCombining the net positive heat transfer for a power-producing engine and the strict inequality for irreversibility:\n\n$$\\oint \\delta Q > 0 \\quad \\text{and} \\quad \\oint \\frac{\\delta Q}{T} < 0$\n\nCorrect Answer: A ($\\displaystyle\\oint \\delta Q > 0 \\quad \\text{and} \\quad \\oint \\frac{\\delta Q}{T} < 0$)"
                     }
                 ],
                 "final_answer": "A",
@@ -76070,7 +76108,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Solution",
-                        "content": "**Understand Principle of Increase of Entropy**\nAccording to the Second Law of Thermodynamics, the total entropy change of the universe ($\\Delta S_{\\text{univ}}$) for any real, spontaneous process is strictly greater than zero:\n\n\n$$\\n\\Delta S_{\\text{univ}} = \\Delta S_{\\text{water}} + \\Delta S_{\\text{reservoir}} > 0\n\$\n\n\nWhere:\n\\n•  Direct heat transfer across a finite temperature difference ($\\Delta T = T_R - T > 0$) is an **inherently irreversible process**.\n•  For reversible processes: $\\Delta S_{\\text{univ}} = 0$\n•  For irreversible processes: $\\Delta S_{\\text{univ}} > 0$\n•  Impossible processes: $\\Delta S_{\\text{univ}} < 0$\n\\n\n**Step 1: Calculate Entropy Change Components**\n**1. Entropy Change of Water ($\\Delta S_{\\text{water**}$):}\n$$\\Delta S_{\\text{water}} = m \\cdot c \\cdot \\ln\\left(\\frac{T_R}{T_0}\\right) > 0 \\quad (\\text{since } T_R > T_0)$\n\n**2. Entropy Change of Reservoir ($\\Delta S_{\\text{reservoir**}$):}\n$$\\Delta S_{\\text{reservoir}} = -\\frac{Q}{T_R} = -\\frac{m \\cdot c \\cdot (T_R - T_0)}{T_R} < 0$\n\n**Step 2: Calculate Entropy Change of the Universe**\n$$\\Delta S_{\\text{univ}} = m \\cdot c \\left[ \\ln\\left(\\frac{T_R}{T_0}\\right) - \\left(1 - \\frac{T_0}{T_R}\\right) \\right]$\n\nSince $\\ln(x) > 1 - \\frac{1}{x}$ for all $x > 1$ (where $x = T_R / T_0 > 1$), the net sum is strictly positive:\n\n$$\\Delta S_{\\text{univ}} > 0$\n\nBecause bringing water into direct contact with a high-temperature reservoir represents an irreversible heat transfer, the entropy change of the universe is **always positive**.\n\nCorrect Answer: D (always positive)"
+                        "content": "**Understand Principle of Increase of Entropy**\nAccording to the Second Law of Thermodynamics, the total entropy change of the universe ($\\Delta S_{\\text{univ}}$) for any real, spontaneous process is strictly greater than zero:\n\n\n$$\\n\\Delta S_{\\text{univ}} = \\Delta S_{\\text{water}} + \\Delta S_{\\text{reservoir}} > 0\n$\n\n\nWhere:\n\\n•  Direct heat transfer across a finite temperature difference ($\\Delta T = T_R - T > 0$) is an **inherently irreversible process**.\n•  For reversible processes: $\\Delta S_{\\text{univ}} = 0$\n•  For irreversible processes: $\\Delta S_{\\text{univ}} > 0$\n•  Impossible processes: $\\Delta S_{\\text{univ}} < 0$\n\\n\n**Step 1: Calculate Entropy Change Components**\n**1. Entropy Change of Water ($\\Delta S_{\\text{water**}$):}\n$$\\Delta S_{\\text{water}} = m \\cdot c \\cdot \\ln\\left(\\frac{T_R}{T_0}\\right) > 0 \\quad (\\text{since } T_R > T_0)$\n\n**2. Entropy Change of Reservoir ($\\Delta S_{\\text{reservoir**}$):}\n$$\\Delta S_{\\text{reservoir}} = -\\frac{Q}{T_R} = -\\frac{m \\cdot c \\cdot (T_R - T_0)}{T_R} < 0$\n\n**Step 2: Calculate Entropy Change of the Universe**\n$$\\Delta S_{\\text{univ}} = m \\cdot c \\left[ \\ln\\left(\\frac{T_R}{T_0}\\right) - \\left(1 - \\frac{T_0}{T_R}\\right) \\right]$\n\nSince $\\ln(x) > 1 - \\frac{1}{x}$ for all $x > 1$ (where $x = T_R / T_0 > 1$), the net sum is strictly positive:\n\n$$\\Delta S_{\\text{univ}} > 0$\n\nBecause bringing water into direct contact with a high-temperature reservoir represents an irreversible heat transfer, the entropy change of the universe is **always positive**.\n\nCorrect Answer: D (always positive)"
                     }
                 ],
                 "final_answer": "D",
@@ -77202,7 +77240,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Pump circular casing\n  \\draw[ultra thick, fill=gray!20, draw=black] (2.2, 1.5) circle (0.85);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.2, 1.5) {Pump};\n\n  % Inlet (State 1: Low Pressure Saturated Liquid)\n  \\draw[->, ultra thick, black] (0.2, 1.5) -- (1.35, 1.5);\n  \\node[left=3pt, font=\\large\\bfseries\\sffamily, black, align=right] at (0.2, 1.5) {$P_1 = 10\\text{ kPa}$\\\\$v_1 = 0.00101\\text{ m}^3/\\text{kg}$};\n\n  % Exit (State 2: High Pressure Liquid)\n  \\draw[->, ultra thick, black] (3.05, 1.5) -- (4.2, 1.5);\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black, align=left] at (4.2, 1.5) {$P_2 = 5\\text{ MPa}$\\\\($5000\\text{ kPa}$)};\n\n  % Work Input Shaft\n  \\draw[->, ultra thick, black] (2.2, 0.1) -- (2.2, 0.65) node[midway, right=2pt, font=\\large\\bfseries\\sffamily, black] {$w_{\\text{in}} = ?$ };\n  \\node[below=2pt, font=\\large\\bfseries\\sffamily, black] at (2.2, 0.1) {Isentropic Operation};\n\\end{tikzpicture}"
         },
         {
             "topic": "Performance of Components",
@@ -77775,7 +77814,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Warm Surrounding Room (High Temp Sink)\n  \\fill[gray!20] (0.5, 3.8) rectangle (4.5, 4.8);\n  \\draw[ultra thick, black] (0.5, 3.8) rectangle (4.5, 4.8);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.5, 4.3) {Warm Surroundings, $T_H = 30^\\circ\\text{C}$};\n\n  % Refrigerator Cycle Body\n  \\draw[ultra thick, fill=gray!12, draw=black] (2.5, 2.2) circle (0.8);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.5, 2.2) {Refrigerator};\n\n  % Heat Rejected Q_H\n  \\draw[->, ultra thick, black] (2.5, 3.0) -- (2.5, 3.8) node[midway, right=3pt, font=\\large\\bfseries\\sffamily, black] {$Q_H$};\n\n  % Work Input W_in\n  \\draw[->, ultra thick, black] (0.8, 2.2) -- (1.7, 2.2) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$W_{\\text{in}}$};\n\n  % Heat Extracted Q_L\n  \\draw[->, ultra thick, black] (2.5, 0.6) -- (2.5, 1.4) node[midway, right=3pt, font=\\large\\bfseries\\sffamily, black] {$Q_L$};\n\n  % Refrigerated Space (Low Temp Source)\n  \\fill[gray!20] (0.5, -0.4) rectangle (4.5, 0.6);\n  \\draw[ultra thick, black] (0.5, -0.4) rectangle (4.5, 0.6);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.5, 0.1) {Cold Space, $T_L = -10^\\circ\\text{C}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Refrigeration and Heat Pump Cycles",
@@ -77836,7 +77876,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Heated Interior Space (High Temp Sink)\n  \\fill[gray!20] (0.5, 3.8) rectangle (4.5, 4.8);\n  \\draw[ultra thick, black] (0.5, 3.8) rectangle (4.5, 4.8);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.5, 4.3) {Heated Space};\n\n  % Heat Pump Body\n  \\draw[ultra thick, fill=gray!12, draw=black] (2.5, 2.2) circle (0.8);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.5, 2.2) {Heat Pump};\n\n  % Heat Delivered Q_H\n  \\draw[->, ultra thick, black] (2.5, 3.0) -- (2.5, 3.8) node[midway, right=3pt, font=\\large\\bfseries\\sffamily, black] {$\\dot{Q}_H = 12\\text{ kW}$};\n\n  % Work Input W_in\n  \\draw[->, ultra thick, black] (0.8, 2.2) -- (1.7, 2.2) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$W_{\\text{in}} = 4\\text{ kW}$};\n\n  % Heat Extracted from Outdoors Q_L\n  \\draw[->, ultra thick, black] (2.5, 0.6) -- (2.5, 1.4) node[midway, right=3pt, font=\\large\\bfseries\\sffamily, black] {$\\dot{Q}_L$};\n\n  % Cold Outdoors (Low Temp Source)\n  \\fill[gray!20] (0.5, -0.4) rectangle (4.5, 0.6);\n  \\draw[ultra thick, black] (0.5, -0.4) rectangle (4.5, 0.6);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (2.5, 0.1) {Outdoor Air};\n\\end{tikzpicture}"
         },
         {
             "topic": "Refrigeration and Heat Pump Cycles",
@@ -80786,7 +80827,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Compressor (Converging Duct)\n  \\draw[ultra thick, fill=gray!20, draw=black] (0.5, 0.5) -- (2.2, 1.0) -- (2.2, 2.2) -- (0.5, 2.7) -- cycle;\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (1.35, 1.6) {Compressor};\n\n  % Air Inlet 1\n  \\draw[->, ultra thick, black] (-0.8, 1.6) -- (0.5, 1.6);\n  \\node[left=2pt, font=\\large\\bfseries\\sffamily, black, align=right] at (-0.8, 1.6) {$T_1 = 300\\text{ K}$\\\\$P_1 = 100\\text{ kPa}$};\n\n  % Air Exit 2\n  \\draw[->, ultra thick, black] (2.2, 1.6) -- (3.5, 1.6);\n  \\node[right=2pt, font=\\large\\bfseries\\sffamily, black, align=left] at (3.5, 1.6) {$T_2 = ?$ \\\\$P_2 = 800\\text{ kPa}$};\n\n  % Pressure Ratio note\n  \\node[below=4pt, font=\\large\\bfseries\\sffamily, black] at (1.35, 0.2) {Pressure Ratio $r_p = 8$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Nonreacting Mixtures of Gases",
@@ -84730,7 +84772,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Definitions of Thermodynamic Processes",
-                        "content": "Each standard thermodynamic process is defined by a specific constant variable or condition:\n\n\\n•  **Isothermal Process:** Occurs at constant temperature ($\\Delta T = 0 \\implies T = \\text{constant}$).\n•  **Isobaric Process:** Occurs at constant pressure ($\\Delta P = 0 \\implies P = \\text{constant}$).\n•  **Isochoric (Isovolumetric) Process:** Occurs at constant volume ($\\Delta V = 0 \\implies V = \\text{constant}$).\n•  **Adiabatic Process:** No heat is exchanged between the system and surroundings ($Q = 0$), which is achieved by thermally insulating the system walls. For a reversible adiabatic process involving an ideal gas, the equation of state is:\n\\n\n\n$$\\n\\text{Isobaric: } P = \\text{const}, \\quad \\text{Isochoric: } V = \\text{const}, \\quad \\text{Adiabatic: } P V^\\gamma = \\text{const}\n\$\n"
+                        "content": "Each standard thermodynamic process is defined by a specific constant variable or condition:\n\n\\n•  **Isothermal Process:** Occurs at constant temperature ($\\Delta T = 0 \\implies T = \\text{constant}$).\n•  **Isobaric Process:** Occurs at constant pressure ($\\Delta P = 0 \\implies P = \\text{constant}$).\n•  **Isochoric (Isovolumetric) Process:** Occurs at constant volume ($\\Delta V = 0 \\implies V = \\text{constant}$).\n•  **Adiabatic Process:** No heat is exchanged between the system and surroundings ($Q = 0$), which is achieved by thermally insulating the system walls. For a reversible adiabatic process involving an ideal gas, the equation of state is:\n\\n\n\n$$\\n\\text{Isobaric: } P = \\text{const}, \\quad \\text{Isochoric: } V = \\text{const}, \\quad \\text{Adiabatic: } P V^\\gamma = \\text{const}\n$\n"
                     },
                     {
                         "title": "Step 1: Evaluate Each Given Statement",
@@ -84805,7 +84847,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand First Law of Thermodynamics",
-                        "content": "According to the **First Law of Thermodynamics**, for any thermodynamic process:\n\n$$\\Delta U = Q - W$\n\nWhere:\n\\n•  $Q$ = Heat absorbed by the system\n•  $W$ = Work done by the system\n•  $\\Delta U$ = Change in internal energy of the system\n\\n\n\n$$\\nQ - W = \\Delta U = U_B - U_A\n\$\n"
+                        "content": "According to the **First Law of Thermodynamics**, for any thermodynamic process:\n\n$$\\Delta U = Q - W$\n\nWhere:\n\\n•  $Q$ = Heat absorbed by the system\n•  $W$ = Work done by the system\n•  $\\Delta U$ = Change in internal energy of the system\n\\n\n\n$$\\nQ - W = \\Delta U = U_B - U_A\n$\n"
                     },
                     {
                         "title": "Step 1: Path Dependence vs. Path Independence",
@@ -84880,7 +84922,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Work Done in a $P-V$ Diagram",
-                        "content": "In a thermodynamic $P-V$ diagram, the net work done during a cyclic process is numerically equal to the **area enclosed by the cycle**:\n\n\n$$\\nW_{\\text{net}} = \\text{Area enclosed by cycle } MNOM\n\$\n"
+                        "content": "In a thermodynamic $P-V$ diagram, the net work done during a cyclic process is numerically equal to the **area enclosed by the cycle**:\n\n\n$$\\nW_{\\text{net}} = \\text{Area enclosed by cycle } MNOM\n$\n"
                     },
                     {
                         "title": "Step 1: Determine Dimensions of the Triangular Cycle",
@@ -87831,7 +87873,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Heated Solid Surface / Flat Plate\n  \\fill[gray!30] (0, 0) rectangle (6.0, 1.2);\n  \\draw[ultra thick, black] (0, 0) rectangle (6.0, 1.2);\n  \\fill[pattern=north east lines, draw=black, thick] (0, -0.3) rectangle (6.0, 0);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (3.0, 0.6) {Heated Plate ($T_s = 80^\\circ\\text{C}$)};\n\n  % Air Fluid Stream over plate\n  \\foreach \\y in {1.8, 2.3, 2.8} {\n    \\draw[->, ultra thick, black] (0.2, \\y) -- (1.8, \\y);\n  }\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (1.0, 2.8) {Cooling Air ($T_\\infty = 20^\\circ\\text{C}$)};\n  \\node[above right=2pt, font=\\large\\bfseries\\sffamily, black] at (3.0, 2.2) {$h = 25\\text{ W/(m}^2\\cdot\\text{K)}$};\n\n  % Upward Convective Heat Flux Arrows\n  \\foreach \\x in {1.2, 2.6, 4.0, 5.2} {\n    \\draw[->, ultra thick, black] (\\x, 1.2) -- (\\x, 2.0);\n  }\n  \\node[right=3pt, font=\\large\\bfseries\\sffamily, black] at (5.2, 1.6) {$q''_{\\text{conv}}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Radiation",
@@ -87949,7 +87992,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Layer 1 (Left wall: k1 = 0.5, L1 = 0.1 m)\n  \\fill[gray!25] (0, 0) rectangle (2.5, 3.2);\n  \\draw[ultra thick, black] (0, 0) rectangle (2.5, 3.2);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (1.25, 1.6) {Layer 1\\\\$k_1 = 0.5\\text{ W/m}\\cdot\\text{K}$};\n\n  % Layer 2 (Right wall: k2 = 1.0, L2 = 0.2 m)\n  \\fill[gray!12] (2.5, 0) rectangle (5.5, 3.2);\n  \\draw[ultra thick, black] (2.5, 0) rectangle (5.5, 3.2);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (4.0, 1.6) {Layer 2\\\\$k_2 = 1.0\\text{ W/m}\\cdot\\text{K}$};\n\n  % Heat Flow Vector Q_dot through both layers\n  \\draw[->, ultra thick, black] (-1.0, 1.6) -- (0, 1.6);\n  \\draw[->, ultra thick, black] (5.5, 1.6) -- (6.6, 1.6) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$\\dot{Q}$};\n\n  % Layer Thickness Dimensions\n  \\draw[<->, ultra thick, black] (0, -0.5) -- (2.5, -0.5) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {$L_1 = 0.1\\text{ m}$};\n  \\draw[<->, ultra thick, black] (2.5, -0.5) -- (5.5, -0.5) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {$L_2 = 0.2\\text{ m}$};\n\n  % Wall Face Temperatures\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (0, 3.2) {$T_1$};\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (2.5, 3.2) {$T_{\\text{interface}}$};\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (5.5, 3.2) {$T_2$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Heat Exchangers",
@@ -88008,7 +88052,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Outer Tube (Shell / Cold Stream)\n  \\fill[gray!12] (0, 0) rectangle (6.0, 2.2);\n  \\draw[ultra thick, black] (0, 2.2) -- (6.0, 2.2);\n  \\draw[ultra thick, black] (0, 0) -- (6.0, 0);\n\n  % Inner Tube (Hot Stream)\n  \\fill[gray!25] (0, 0.65) rectangle (6.0, 1.55);\n  \\draw[ultra thick, black] (0, 1.55) -- (6.0, 1.55);\n  \\draw[ultra thick, black] (0, 0.65) -- (6.0, 0.65);\n\n  % Hot Fluid Inflow (Left to Right)\n  \\draw[->, ultra thick, black] (-1.2, 1.1) -- (0, 1.1) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$T_{h,\\text{in}} = 150^\\circ\\text{C}$};\n  \\draw[->, ultra thick, black] (6.0, 1.1) -- (7.2, 1.1) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$T_{h,\\text{out}} = 90^\\circ\\text{C}$};\n\n  % Cold Fluid Inflow (Right to Left: Counterflow)\n  \\draw[->, ultra thick, black] (7.2, 1.9) -- (6.0, 1.9) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$T_{c,\\text{in}} = 20^\\circ\\text{C}$};\n  \\draw[->, ultra thick, black] (0, 1.9) -- (-1.2, 1.9) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$T_{c,\\text{out}} = 70^\\circ\\text{C}$};\n\n  % Counterflow Label\n  \\node[below=3pt, font=\\large\\bfseries\\sffamily, black] at (3.0, -0.2) {Counterflow Heat Exchanger Arrangement};\n\\end{tikzpicture}"
         },
         {
             "topic": "Conduction",
@@ -88067,7 +88112,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.2, >=stealth]\n  % Concentric Pipe & Insulation cross-section\n  % Outer Insulation layer (radius r)\n  \\draw[ultra thick, fill=gray!15, draw=black] (0, 0) circle (2.2);\n  % Inner Pipe (radius r_i)\n  \\draw[ultra thick, fill=gray!35, draw=black] (0, 0) circle (1.0);\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, 0) {Pipe ($r_i$)};\n\n  % Insulation Material Properties\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, 1.55) {Insulation ($k$)};\n\n  % Surrounding Convection\n  \\node[font=\\large\\bfseries\\sffamily, black, right] at (2.4, 1.2) {Ambient Air ($h$)};\n\n  % Radial Dimensions\n  \\draw[->, ultra thick, black] (0, 0) -- (0.7, -0.7) node[midway, below left=1pt, font=\\large\\bfseries\\sffamily, black] {$r_i$};\n  \\draw[->, ultra thick, black] (0, 0) -- (-1.55, 1.55) node[midway, above left=1pt, font=\\large\\bfseries\\sffamily, black] {$r_c = k/h$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Thermodynamics",
@@ -88362,7 +88408,8 @@ const QUESTIONS = {
                     "Using Celsius or Fahrenheit instead of absolute temperatures (Kelvin or Rankine) in thermodynamic formulas.",
                     "Mixing up gauge pressure $P_{\\text{gauge}}$ and absolute pressure $P_{\\text{abs}} = P_{\\text{gauge}} + P_{\\text{atm}}$."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Base Wall (Heated surface at T_b)\n  \\fill[gray!35] (-0.8, -0.8) rectangle (0, 2.8);\n  \\draw[ultra thick, black] (-0.8, 2.8) -- (0, 2.8);\n  \\draw[ultra thick, black] (-0.8, -0.8) -- (0, -0.8);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (-0.4, 1.0) {Base\\\\Wall\\\\$T_b$};\n\n  % Longitudinal Extended Fin\n  \\fill[gray!20] (0, 0.6) rectangle (5.0, 1.4);\n  \\draw[ultra thick, black] (0, 1.4) -- (5.0, 1.4) -- (5.0, 0.6) -- (0, 0.6);\n  % Insulated Fin Tip (Hatched at x = 5.0)\n  \\fill[pattern=north east lines, draw=black, thick] (5.0, 0.6) rectangle (5.3, 1.4);\n  \\node[above right=2pt, font=\\large\\bfseries\\sffamily, black] at (5.0, 1.4) {Insulated Tip};\n\n  % Ambient Fluid Convection\n  \\foreach \\y in {1.8, 2.3} {\n    \\draw[->, ultra thick, black] (1.0, \\y) -- (2.5, \\y);\n  }\n  \\node[above, font=\\large\\bfseries\\sffamily, black] at (2.5, 2.2) {Fluid ($T_\\infty, h$)};\n\n  % Heat Conduction into Fin Base\n  \\draw[->, ultra thick, black] (-0.3, 1.0) -- (0.8, 1.0) node[midway, above=2pt, font=\\large\\bfseries\\sffamily, black] {$\\dot{Q}_{\\text{base}}$};\n\n  % Fin Dimensions\n  \\draw[<->, ultra thick, black] (0, 0.2) -- (5.0, 0.2) node[midway, below=3pt, font=\\large\\bfseries\\sffamily, black] {Fin Length $L$};\n  \\draw[<->, ultra thick, black] (-0.2, 0.6) -- (-0.2, 1.4) node[midway, left=2pt, font=\\large\\bfseries\\sffamily, black] {$t$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Thermal Properties of Matter",
@@ -88397,7 +88444,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Principle of Calorimetry",
-                        "content": "By the **Principle of Calorimetry**, in an isolated system:\n\n$$\\text{Heat Gained by Cold Body (Ice)} = \\text{Heat Lost by Hot Body (Water)}$\n\n\n$$\\nQ_{\\text{gained}} = Q_{\\text{lost}}\n\$\n\n\nGiven values:\n\\n•  Mass of ice, $m_1 = 100\\text{ g} = 0.1\\text{ kg}$\n•  Mass of water, $m_2 = 100\\text{ g} = 0.1\\text{ kg}$\n•  Latent heat of fusion of ice, $L_f = 3.36 \\times 10^5\\text{ J/kg}$\n•  Specific heat capacity of water, $S_w = 4.2 \\times 10^3\\text{ J/(kg}\\cdot\\text{K)} = 4200\\text{ J/(kg}\\cdot^\\circ\\text{C)}$\n\""
+                        "content": "By the **Principle of Calorimetry**, in an isolated system:\n\n$$\\text{Heat Gained by Cold Body (Ice)} = \\text{Heat Lost by Hot Body (Water)}$\n\n\n$$\\nQ_{\\text{gained}} = Q_{\\text{lost}}\n$\n\n\nGiven values:\n\\n•  Mass of ice, $m_1 = 100\\text{ g} = 0.1\\text{ kg}$\n•  Mass of water, $m_2 = 100\\text{ g} = 0.1\\text{ kg}$\n•  Latent heat of fusion of ice, $L_f = 3.36 \\times 10^5\\text{ J/kg}$\n•  Specific heat capacity of water, $S_w = 4.2 \\times 10^3\\text{ J/(kg}\\cdot\\text{K)} = 4200\\text{ J/(kg}\\cdot^\\circ\\text{C)}$\n\""
                     },
                     {
                         "title": "Step 1: Calculate Heat Required to Melt Ice Entirely at $0^\\circ\\text{C",
@@ -88482,7 +88529,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Stresses in Thin Cylindrical Shells",
-                        "content": "When a thin-walled cylindrical shell with closed ends is subjected to an internal fluid pressure $p$, two main tensile stress components act in the wall of the cylinder:\n\n\n$$\\n\\sigma_h = \\frac{p \\cdot d}{2t}, \\qquad \\sigma_l = \\frac{p \\cdot d}{4t}\n \$\n\n\nwhere:\n\\n•  $p$ = internal gauge pressure\n•  $d$ = internal diameter of the cylinder\n•  $t$ = thickness of the cylinder wall\n\""
+                        "content": "When a thin-walled cylindrical shell with closed ends is subjected to an internal fluid pressure $p$, two main tensile stress components act in the wall of the cylinder:\n\n\n$$\\n\\sigma_h = \\frac{p \\cdot d}{2t}, \\qquad \\sigma_l = \\frac{p \\cdot d}{4t}\n $\n\n\nwhere:\n\\n•  $p$ = internal gauge pressure\n•  $d$ = internal diameter of the cylinder\n•  $t$ = thickness of the cylinder wall\n\""
                     },
                     {
                         "title": "Step 1: Circumferential (Hoop) Stress ($\\sigma_h$)",
@@ -88561,7 +88608,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Equilibrium of Spring-Mass System",
-                        "content": "By Hooke's law, the compressive force $F$ applied to a spring is directly proportional to its deflection $\\delta = L - l$:\n\n\n$$\\nF = K \\cdot \\delta = K \\cdot (L - l)\n \$\n\n\nwhere $L$ is the un-deformed length, $l$ is the compressed length, and $K$ is the spring stiffness."
+                        "content": "By Hooke's law, the compressive force $F$ applied to a spring is directly proportional to its deflection $\\delta = L - l$:\n\n\n$$\\nF = K \\cdot \\delta = K \\cdot (L - l)\n $\n\n\nwhere $L$ is the un-deformed length, $l$ is the compressed length, and $K$ is the spring stiffness."
                     },
                     {
                         "title": "Step 1: Determine Spring Constant ($K$)",
@@ -88632,7 +88679,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Spring Stiffness Formula",
-                        "content": "The stiffness (spring constant) $k$ of a helical compression spring is given by:\n\n\n$$\\nk = \\frac{G \\cdot d^4}{8 \\cdot D^3 \\cdot n}\n \$\n\n\nwhere:\n\\n•  $G$ is the shear modulus of rigidity\n•  $d$ is the wire diameter\n•  $D$ is the mean coil diameter\n•  $n$ is the number of active coils\n\""
+                        "content": "The stiffness (spring constant) $k$ of a helical compression spring is given by:\n\n\n$$\\nk = \\frac{G \\cdot d^4}{8 \\cdot D^3 \\cdot n}\n $\n\n\nwhere:\n\\n•  $G$ is the shear modulus of rigidity\n•  $d$ is the wire diameter\n•  $D$ is the mean coil diameter\n•  $n$ is the number of active coils\n\""
                     },
                     {
                         "title": "Step 1: Identify Proportionality",
@@ -88711,7 +88758,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Spring Stiffness and Combination",
-                        "content": "The stiffness $k$ of a helical spring is inversely proportional to the number of active coils $n$:\n\n\n$$\\nk = \\frac{G d^4}{8 D^3 n} \\implies k \\propto \\frac{1}{n}\n \$\n\n\nWhen multiple springs are placed in parallel, their equivalent stiffness $k_{\\text{eq}}$ is the sum of individual stiffnesses:\n$$k_{\\text{eq}} = \\sum k_i$$"
+                        "content": "The stiffness $k$ of a helical spring is inversely proportional to the number of active coils $n$:\n\n\n$$\\nk = \\frac{G d^4}{8 D^3 n} \\implies k \\propto \\frac{1}{n}\n $\n\n\nWhen multiple springs are placed in parallel, their equivalent stiffness $k_{\\text{eq}}$ is the sum of individual stiffnesses:\n$$k_{\\text{eq}} = \\sum k_i$$"
                     },
                     {
                         "title": "Step 1: Determine Stiffness of Original Spring ($k_1$)",
@@ -88798,7 +88845,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Shear Stress in Helical Compression Springs",
-                        "content": "The maximum shear stress $\\tau$ induced in the cross-section of a helical compression spring subjected to an axial load $P$ is given by:\n\n\n$$\\n\\tau = K_w \\left( \\frac{8 P D}{\\pi d^3} \\right)\n \$\n\n\nwhere:\n\\n•  $P$ is the applied compressive load\n•  $D$ is the mean coil diameter\n•  $d$ is the wire diameter\n•  $K_w$ is Wahl's stress factor, dependent on the spring index $C = \\frac{D}{d}$\n\""
+                        "content": "The maximum shear stress $\\tau$ induced in the cross-section of a helical compression spring subjected to an axial load $P$ is given by:\n\n\n$$\\n\\tau = K_w \\left( \\frac{8 P D}{\\pi d^3} \\right)\n $\n\n\nwhere:\n\\n•  $P$ is the applied compressive load\n•  $D$ is the mean coil diameter\n•  $d$ is the wire diameter\n•  $K_w$ is Wahl's stress factor, dependent on the spring index $C = \\frac{D}{d}$\n\""
                     },
                     {
                         "title": "Step 1: Analyze Proportionality",
@@ -88877,7 +88924,7 @@ const QUESTIONS = {
                 "steps": [
                     {
                         "title": "Understand Spring Constant (Stiffness) Formula",
-                        "content": "The spring constant (stiffness) $k$ of a helical compression spring is derived using torsion theory and energy principles:\n\n\n$$\\nk = \\frac{G \\cdot d^4}{8 \\cdot D^3 \\cdot n}\n \$\n\n\nwhere:\n\\n•  $G$ is the shear modulus (modulus of rigidity) of the spring material\n•  $d$ is the wire diameter\n•  $D$ is the mean coil diameter\n•  $n$ is the number of active turns (coils)\n\""
+                        "content": "The spring constant (stiffness) $k$ of a helical compression spring is derived using torsion theory and energy principles:\n\n\n$$\\nk = \\frac{G \\cdot d^4}{8 \\cdot D^3 \\cdot n}\n $\n\n\nwhere:\n\\n•  $G$ is the shear modulus (modulus of rigidity) of the spring material\n•  $d$ is the wire diameter\n•  $D$ is the mean coil diameter\n•  $n$ is the number of active turns (coils)\n\""
                     },
                     {
                         "title": "Step 1: Analyze Dependence on Geometric and Elastic Factors",
@@ -89308,7 +89355,8 @@ const QUESTIONS = {
                     "Inconsistent unit conversions (e.g., mixing $\\text{mm}$, $\\text{m}$, $\\text{MPa}$, and $\\text{Pa}$).",
                     "Using diameter $d$ instead of radius $r$ (or vice versa) in stress and moment of inertia formulas."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Helical Compression Spring Schematic\n  \\draw[ultra thick, fill=gray!30, draw=black] (-1.5, 4.2) rectangle (1.5, 4.5);\n  \\draw[ultra thick, fill=gray!30, draw=black] (-1.5, 0.0) rectangle (1.5, 0.3);\n\n  % Coil turns\n  \\draw[ultra thick, black] (-1.2, 4.2) -- (1.2, 3.6)\n        -- (-1.2, 3.0) -- (1.2, 2.4)\n        -- (-1.2, 1.8) -- (1.2, 1.2)\n        -- (-1.2, 0.6) -- (1.2, 0.3);\n\n  % Mean Coil Diameter D = 20 mm\n  \\draw[<->, ultra thick, black] (-1.2, 4.8) -- (1.2, 4.8) node[midway, above=3pt, font=\\large\\bfseries\\sffamily, black] {Mean Coil $D = 20\\text{ mm}$};\n\n  % Wire Diameter d = 2 mm\n  \\draw[ultra thick, fill=gray!50, draw=black] (1.2, 2.4) circle (0.15);\n  \\node[right=4pt, font=\\large\\bfseries\\sffamily, black] at (1.35, 2.4) {Wire $d = 2\\text{ mm}$};\n\n  % Active Coils Na = 10\n  \\node[left=4pt, font=\\large\\bfseries\\sffamily, black] at (-1.3, 2.4) {$N_a = 10\\text{ coils}$};\n  \\node[below=4pt, font=\\large\\bfseries\\sffamily, black] at (0, -0.1) {Shear Modulus $G = 80\\text{ GPa}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Pressure Vessels and Piping",
@@ -90741,7 +90789,8 @@ const QUESTIONS = {
                     "Inconsistent unit conversions (e.g., mixing $\\text{mm}$, $\\text{m}$, $\\text{MPa}$, and $\\text{Pa}$).",
                     "Using diameter $d$ instead of radius $r$ (or vice versa) in stress and moment of inertia formulas."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.15, >=stealth]\n  % Concentric Bearing Rings\n  \\draw[ultra thick, fill=gray!25, draw=black] (0, 0) circle (2.2); % Outer ring outer face\n  \\draw[ultra thick, fill=white, draw=black] (0, 0) circle (1.8);   % Outer ring raceway\n  \\draw[ultra thick, fill=gray!35, draw=black] (0, 0) circle (1.2); % Inner ring raceway\n  \\draw[ultra thick, fill=white, draw=black] (0, 0) circle (0.8);   % Inner ring bore\n  \\node[font=\\large\\bfseries\\sffamily, black] at (0, 0) {Bore};\n\n  % Rolling Balls (6 balls evenly spaced)\n  \\foreach \\a in {0, 60, 120, 180, 240, 300} {\n    \\draw[ultra thick, fill=gray!60, draw=black] (\\a:1.5) circle (0.28);\n  }\n\n  % Radial Load Vector Fr = 4 kN\n  \\draw[<-, ultra thick, black] (0, 0.8) -- (0, -0.6) node[midway, right=2pt, font=\\large\\bfseries\\sffamily, black] {Radial Load $F_r = 4\\text{ kN}$};\n\n  % Rating C = 24 kN label\n  \\node[above right=3pt, font=\\large\\bfseries\\sffamily, black] at (1.6, 1.6) {Rating $C = 24\\text{ kN}$};\n\\end{tikzpicture}"
         },
         {
             "topic": "Bearings",
@@ -93535,7 +93584,8 @@ const QUESTIONS = {
                     "Inconsistent unit conversions (e.g., mixing $\\text{mm}$, $\\text{m}$, $\\text{MPa}$, and $\\text{Pa}$).",
                     "Using diameter $d$ instead of radius $r$ (or vice versa) in stress and moment of inertia formulas."
                 ]
-            }
+            },
+            "tikz": "\\begin{tikzpicture}[font=\\sffamily, scale=1.1, >=stealth]\n  % Driver Gear (20 teeth) at (-2.0, 0)\n  \\draw[ultra thick, fill=gray!20, draw=black] (-2.2, 0) circle (0.9);\n  \\draw[ultra thick, fill=black] (-2.2, 0) circle (0.08);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (-2.2, 0.3) {Driver\\\\$N_1 = 20$};\n  \\draw[->, ultra thick, black] (-2.2, 1.1) arc[start angle=90, end angle=0, radius=0.5] node[right=1pt, font=\\bfseries\\sffamily, black] {$\\omega_1$};\n\n  % Idler Gear (40 teeth) at (0, 0)\n  \\draw[ultra thick, fill=gray!12, draw=black] (0, 0) circle (1.3);\n  \\draw[ultra thick, fill=black] (0, 0) circle (0.08);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (0, 0.4) {Idler\\\\$N_2 = 40$};\n  \\draw[->, ultra thick, black] (0, 1.5) arc[start angle=90, end angle=180, radius=0.6] node[left=1pt, font=\\bfseries\\sffamily, black] {$\\omega_2$};\n\n  % Output Driven Gear (80 teeth) at (3.5, 0)\n  \\draw[ultra thick, fill=gray!25, draw=black] (3.5, 0) circle (2.2);\n  \\draw[ultra thick, fill=black] (3.5, 0) circle (0.08);\n  \\node[align=center, font=\\large\\bfseries\\sffamily, black] at (3.5, 0.5) {Output Gear\\\\$N_3 = 80$};\n  \\draw[->, ultra thick, black] (3.5, 2.4) arc[start angle=90, end angle=0, radius=0.8] node[right=1pt, font=\\bfseries\\sffamily, black] {$\\omega_{\\text{out}}$};\n\n  % Contact Points\n  \\draw[ultra thick, fill=white, draw=black] (-1.3, 0) circle (0.07);\n  \\draw[ultra thick, fill=white, draw=black] (1.3, 0) circle (0.07);\n\\end{tikzpicture}"
         },
         {
             "topic": "Power Transmission",
@@ -122632,7 +122682,7 @@ const QUESTIONS = {
                     },
                     {
                         "step": "2. Contractual Structure",
-                        "explanation": "In this model, the Owner enters into two distinct, primary contracts: \ • A contract with the **Architect/Engineer (A/E)** for design and construction administration services. • A separate contract with the **General Contractor** for the physical construction of the project. \""
+                        "explanation": "In this model, the Owner enters into two distinct, primary contracts:  • A contract with the **Architect/Engineer (A/E)** for design and construction administration services. • A separate contract with the **General Contractor** for the physical construction of the project. \""
                     },
                     {
                         "step": "3. The Relationship between A/E and Contractor",
@@ -122806,7 +122856,7 @@ const QUESTIONS = {
                     },
                     {
                         "step": "3. General Order of Precedence",
-                        "explanation": "While specific contracts may vary the order, a typical hierarchy (from highest to lowest) includes: \ • Change Orders and Modifications (the most recent instructions). • Addenda (issued during the bidding phase). • Agreement/Contract. • Supplementary Conditions. • General Conditions. • **Technical Specifications.** • **Construction Drawings.** \""
+                        "explanation": "While specific contracts may vary the order, a typical hierarchy (from highest to lowest) includes:  • Change Orders and Modifications (the most recent instructions). • Addenda (issued during the bidding phase). • Agreement/Contract. • Supplementary Conditions. • General Conditions. • **Technical Specifications.** • **Construction Drawings.** \""
                     },
                     {
                         "step": "4. Resolution of Ambiguities",
