@@ -1383,7 +1383,7 @@
         // Register & proactively update Service Worker on login page for mobile/tablet instant sync
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js?v=294').then(registration => {
+                navigator.serviceWorker.register('./sw.js?v=312').then(registration => {
                     registration.update();
                 }).catch(err => {
                     console.warn('SW registration on login:', err);
