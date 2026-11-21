@@ -3,7 +3,7 @@
 [![Platform](https://img.shields.io/badge/platform-Web%20%7C%20PWA%20%7C%20Android-blue.svg)](https://github.com)
 [![Firebase](https://img.shields.io/badge/backend-Firebase%20Firestore-orange.svg)](https://firebase.google.com/)
 [![Capacitor](https://img.shields.io/badge/mobile-Capacitor-119EFF.svg)](https://capacitorjs.com/)
-[![License](https://img.shields.io/badge/license-ISC-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red.svg)](LICENSE)
 
 **Engg.tv Prep** is a comprehensive, interactive preparation platform for the **NCEES Fundamentals of Engineering (FE)** exam. It delivers high-yield questions, timed mock exams, formula reference sheets, theorem visualizers, and cloud progress tracking across all primary FE engineering disciplines.
 
@@ -125,4 +125,6 @@ npx cap open android
 
 ## 📄 License
 
-This project is licensed under the [ISC License](LICENSE).
+Copyright © 2026 **Engg.tv**. All rights reserved.
+
+This project and its question databases, video explainer assets, and source code are proprietary and confidential. No part of this software may be copied, modified, or distributed without express prior written permission from Engg.tv.
