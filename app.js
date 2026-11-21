@@ -146,6 +146,7 @@ window.getSubjectProgressKey = getSubjectProgressKey;
 if (typeof loadQuestion === 'function') window.loadQuestion = loadQuestion;
 if (typeof updateQuestionMap === 'function') window.updateQuestionMap = updateQuestionMap;
 if (typeof startTimer === 'function') window.startTimer = startTimer;
+if (typeof stopTimer === 'function') window.stopTimer = stopTimer;
 if (typeof prepareQuestions === 'function') window.prepareQuestions = prepareQuestions;
 if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
