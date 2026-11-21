@@ -115,6 +115,40 @@
             ((q.question && q.question.trim().length > 0) || (q.question_text && q.question_text.trim().length > 0)) && 
             Array.isArray(q.options) && q.options.length >= 2;
 
+        const isTheory = (typeof window !== 'undefined' && typeof window.isTheoryQuestion === 'function')
+            ? window.isTheoryQuestion
+            : function(q) {
+                if (!q) return false;
+                if (q.type === 'theory' || q.difficulty === 'Theory' || q.is_theory === true || q.category === 'theory') return true;
+                if (q.type === 'numerical' || q.difficulty === 'Numerical' || q.is_theory === false || q.category === 'numerical') return false;
+                if (q.subjectId === 'ethics') return true;
+
+                const optTexts = (q.options || []).map(o => (o.text || '').trim());
+                if (optTexts.length === 0) return false;
+
+                const hasMath = optTexts.some(t => {
+                    const clean = t.replace(/^\([A-D]\)\s*/i, '').trim();
+                    return /\$|\\text|\\frac|[0-9]+\.?[0-9]*\s*(kPa|MPa|Pa|kJ|J|W|kW|MW|K|°C|deg|kg|m|cm|mm|s|hr|min|rad|N|kN|lb|psi|ft|in|%|ohm|V|A|Hz|rpm)/i.test(clean) ||
+                           /^[+-]?[0-9]+(\.[0-9]+)?$/.test(clean) ||
+                           /\d+\.?\d*/.test(clean);
+                });
+
+                if (!hasMath) return true;
+
+                const numMath = optTexts.filter(t => {
+                    const clean = t.replace(/^\([A-D]\)\s*/i, '').trim();
+                    return /\$|\\text|\\frac|[0-9]+\.?[0-9]*/.test(clean) && !/[a-zA-Z]{15,}/.test(clean);
+                }).length;
+
+                if (numMath >= 2) return false;
+
+                const qLower = (q.question || q.question_text || '').toLowerCase();
+                if (/(calculate|compute|determine the magnitude|find the value|evaluate|what is the value)/i.test(qLower)) return false;
+                if (/(which of the following|the principle of|is defined as|is known as|the term|the purpose of|the unit of|according to)/i.test(qLower) && !hasMath) return true;
+
+                return false;
+            };
+
         let subjectGroups = [];
         
         for (const [subjectId, count] of Object.entries(blueprint)) {
@@ -142,9 +176,27 @@
                 pool = pool.concat(fallbackPool);
             }
             
-            // Now shuffle the combined pool and take exactly `count`
+            // Enforce <= 40% theory questions per blueprint subject
             pool.sort(() => Math.random() - 0.5);
-            let group = pool.slice(0, count);
+            const numPool = pool.filter(q => !isTheory(q));
+            const thPool = pool.filter(q => isTheory(q));
+            const subjectMaxTheory = Math.floor(count * 0.40);
+
+            let group = [];
+            if (numPool.length >= count - subjectMaxTheory) {
+                const numNeeded = count - Math.min(subjectMaxTheory, thPool.length);
+                group.push(...numPool.slice(0, numNeeded));
+                const theoryNeeded = count - group.length;
+                group.push(...thPool.slice(0, theoryNeeded));
+                if (group.length < count && numPool.length > numNeeded) {
+                    group.push(...numPool.slice(numNeeded, numNeeded + (count - group.length)));
+                }
+            } else {
+                // Limited numerical questions in this subject (e.g. ethics)
+                group.push(...numPool);
+                const remaining = count - group.length;
+                group.push(...thPool.slice(0, remaining));
+            }
             
             // If still not enough (extremely rare), allow duplicates from the pool
             while (group.length < count && pool.length > 0) {
@@ -159,6 +211,24 @@
         
         // Flatten the array so subjects are presented together
         let selectedQuestions = subjectGroups.flat();
+
+        // Global safety check: ensure total theory questions across 110Q exam <= 44 (40%)
+        const maxGlobalTheory = 44;
+        let globalTheoryCount = selectedQuestions.filter(isTheory).length;
+        if (globalTheoryCount > maxGlobalTheory) {
+            for (let i = 0; i < selectedQuestions.length && globalTheoryCount > maxGlobalTheory; i++) {
+                const q = selectedQuestions[i];
+                if (isTheory(q) && q.subjectId !== 'ethics') {
+                    const anyDB = fallbackDB || primaryDB;
+                    const subPool = (anyDB && anyDB[q.subjectId]) ? anyDB[q.subjectId].filter(isValidQuestion).map(x => ({ ...x, subjectId: q.subjectId })) : [];
+                    const availableNum = subPool.filter(x => !isTheory(x) && !selectedQuestions.some(existing => (existing.title && existing.title === x.title) || (existing.question && existing.question === x.question)));
+                    if (availableNum.length > 0) {
+                        selectedQuestions[i] = availableNum[0];
+                        globalTheoryCount--;
+                    }
+                }
+            }
+        }
         
         // Final fallback padding if somehow we are still short (e.g., both DBs missing subject)
         while (selectedQuestions.length < 110) {
