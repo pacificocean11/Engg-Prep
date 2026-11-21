@@ -255,7 +255,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
         // 3. Convert literal \n in prose (outside math)
         res = res.replace(/\\n\s*•/g, '<br>&bull; ');
-        res = res.replace(/\\n/g, '<br>');
+        res = res.replace(/\\n(?![a-zA-Z])/g, '<br>');
 
         // 4. Sanitize currency dollar signs
         res = sanitizeMathDelimiters(res);
@@ -1148,6 +1148,9 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
     window.navigateTo = function(pageId) {
         if (pageId === 'settings') pageId = 'dashboard';
+        if (state.currentPage === 'quiz-view' && pageId !== 'quiz-view') {
+            stopTimer();
+        }
         state.currentPage = pageId;
         
         // Reset theme to default when navigating between main pages
@@ -2638,7 +2641,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             <div id="${cardId}-body">
                 <!-- Question Prompt -->
                 <div class="mb-4 text-slate-800 dark:text-slate-200 text-sm font-medium leading-relaxed math-content">
-                    ${prob.question}
+                    ${injectFormulaTriggers(prob.question)}
                 </div>
 
                 <!-- Options Grid -->
@@ -2659,7 +2662,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                                 return `
                                     <button type="button" disabled data-label="${opt.label}" class="${optClass}">
                                         <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border border-slate-300 dark:border-slate-700 shrink-0">${opt.label}</span>
-                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${opt.text}</span>
+                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${injectFormulaTriggers(opt.text)}</span>
                                     </button>
                                 `;
                             } else {
@@ -2669,7 +2672,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                                         data-label="${opt.label}" 
                                         class="solved-ex-opt-btn flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 hover:border-pink-500/50 hover:bg-pink-50/50 dark:hover:bg-pink-950/30 transition-all text-left cursor-pointer group shadow-2xs">
                                         <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold border border-slate-300 dark:border-slate-700 group-hover:border-pink-500 group-hover:text-pink-600 dark:group-hover:text-pink-400 shrink-0">${opt.label}</span>
-                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${opt.text}</span>
+                                        <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium min-w-0">${injectFormulaTriggers(opt.text)}</span>
                                     </button>
                                 `;
                             }
@@ -2717,7 +2720,7 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                             <span>Correct Answer: Option (${prob.ans})</span>
                         </div>
                         <div class="solution-body leading-relaxed">
-                            ${prob.solution && prob.solution.trim().length > 0 ? prob.solution : '<p class="text-slate-500 italic">Conceptual/Numerical FE practice problem. Key answer verified as Option (' + prob.ans + ').</p>'}
+                            ${prob.solution && prob.solution.trim().length > 0 ? injectFormulaTriggers(prob.solution) : '<p class="text-slate-500 italic">Conceptual/Numerical FE practice problem. Key answer verified as Option (' + prob.ans + ').</p>'}
                         </div>
                     </div>
                 </div>
@@ -2820,39 +2823,117 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                 const subDiv = document.createElement('div');
                 subDiv.className = 'mb-6 last:mb-0 ml-2';
                 
+                // Helper function to resolve thumbnail for video
+                function resolveNoteVideoThumbnail(item, title) {
+                    if (item && item.thumbnail) return item.thumbnail;
+                    
+                    const rawUrl = (item && (item.video || item.videoUrl)) || '';
+                    let driveId = '';
+                    const driveMatch = rawUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
+                    if (driveMatch) driveId = driveMatch[1];
+                    
+                    let baseName = '';
+                    if (rawUrl.includes('/videos/')) {
+                        const parts = rawUrl.split('/videos/');
+                        if (parts[1]) {
+                            baseName = decodeURIComponent(parts[1]).replace(/\.mp4$/i, '').trim();
+                        }
+                    } else if (item && item.mp4File) {
+                        baseName = item.mp4File.replace(/\.mp4$/i, '').trim();
+                    } else if (title) {
+                        baseName = title.trim();
+                    } else if (item && item.subtopic && item.subtopic !== 'Overview') {
+                        baseName = item.subtopic.trim();
+                    } else if (item && item.topic) {
+                        baseName = item.topic.trim();
+                    }
+
+                    if (baseName) {
+                        const clean = baseName.replace(/[^a-zA-Z0-9_\- ]/g, '').trim();
+                        return 'assets/thumbnails/' + encodeURIComponent(clean.replace(/\s+/g, '_')) + '.jpg';
+                    }
+                    if (driveId) {
+                        return 'https://lh3.googleusercontent.com/d/' + driveId + '=w640';
+                    }
+                    return 'assets/thumbnails/Distance_Formula.jpg';
+                }
+
+                // Helper to create small video thumbnail button
+                function createNotesVideoThumbnail(videoUrl, videoTitle, contextDesc, item) {
+                    const thumbUrl = resolveNoteVideoThumbnail(item, videoTitle);
+                    const rawUrl = (item && (item.video || item.videoUrl)) || videoUrl || '';
+                    let driveId = '';
+                    const driveMatch = rawUrl.match(/(?:\/file\/d\/|[?&]id=|\/api\/drive-stream\/)([a-zA-Z0-9_-]+)/);
+                    if (driveMatch) driveId = driveMatch[1];
+                    const fallbackDriveThumb = driveId ? `https://lh3.googleusercontent.com/d/${driveId}=w640` : '';
+
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'notes-video-trigger group relative flex-shrink-0 w-48 sm:w-56 md:w-64 h-28 sm:h-32 md:h-36 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700/80 shadow-md hover:shadow-xl hover:border-pink-500/80 transition-all cursor-pointer bg-slate-900 ml-auto flex items-center justify-center text-left focus:outline-none focus:ring-2 focus:ring-pink-500/50';
+                    btn.title = 'Watch concept: ' + (videoTitle || 'Animated Concept Video');
+                    
+                    const displayTitle = (videoTitle || 'Concept Video').replace(/"/g, '&quot;');
+                    btn.innerHTML = `
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-950 to-pink-950 flex flex-col justify-end p-2 overflow-hidden">
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:10px_10px]"></div>
+                        </div>
+                        <img src="${thumbUrl}" alt="${displayTitle}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10 group-hover:from-black/60 transition-all pointer-events-none"></div>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pink-600/90 text-white flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-pink-500 transition-transform duration-200">
+                                <span class="material-symbols-outlined text-[24px] sm:text-[28px] ml-0.5 leading-none" style="font-variation-settings:'FILL' 1;">play_arrow</span>
+                            </div>
+                        </div>
+                        <span class="absolute bottom-1.5 right-2 px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold tracking-wider uppercase bg-black/75 text-pink-300 backdrop-blur-xs flex items-center gap-1 pointer-events-none">
+                            <span class="material-symbols-outlined text-[12px] sm:text-[14px]" style="font-variation-settings:'FILL' 1;">videocam</span> Video
+                        </span>
+                    `;
+
+                    const imgEl = btn.querySelector('img');
+                    if (imgEl) {
+                        imgEl.onerror = function() {
+                            if (fallbackDriveThumb && this.src !== fallbackDriveThumb) {
+                                this.src = fallbackDriveThumb;
+                            } else {
+                                this.style.opacity = '0';
+                            }
+                        };
+                    }
+
+                    btn.onclick = (e) => {
+                        e.stopPropagation();
+                        window.openNotesVideoDrawer(videoUrl, videoTitle, contextDesc);
+                    };
+                    return btn;
+                }
+
                 if (sub.subtopic && sub.subtopic !== 'Overview') {
                     const subHeader = document.createElement('div');
-                    subHeader.className = 'flex items-center justify-between gap-3 mb-3 pb-1 border-b border-slate-100 dark:border-slate-800/60';
+                    subHeader.className = 'flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 mb-3 pb-2 border-b border-slate-100 dark:border-slate-800/60';
                     
                     const subTitle = document.createElement('h5');
-                    subTitle.className = 'font-bold text-sm text-on-surface dark:text-slate-200';
+                    subTitle.className = 'font-bold text-sm text-on-surface dark:text-slate-200 flex-1';
                     subTitle.textContent = sub.subtopic;
                     subHeader.appendChild(subTitle);
 
                     if (sub.video || sub.videoUrl) {
-                        const vBtn = document.createElement('button');
-                        vBtn.type = 'button';
-                        vBtn.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF006E]/10 hover:bg-[#FF006E]/20 text-[#be0055] dark:text-pink-400 border border-[#FF006E]/30 text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer ml-auto';
-                        vBtn.title = 'Watch animated concept video';
-                        vBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]" style="font-variation-settings:\'FILL\' 1;">videocam</span><span>Watch Concept</span>';
-                        vBtn.onclick = (e) => {
-                            e.stopPropagation();
-                            window.openNotesVideoDrawer(sub.video || sub.videoUrl, sub.videoTitle || sub.subtopic, sub.subtopic + ' (' + chapterTitle + ')');
-                        };
+                        const vBtn = createNotesVideoThumbnail(
+                            sub.video || sub.videoUrl, 
+                            sub.videoTitle || sub.subtopic, 
+                            sub.subtopic + ' (' + chapterTitle + ')',
+                            sub
+                        );
                         subHeader.appendChild(vBtn);
                     }
                     subDiv.appendChild(subHeader);
                 } else if (sub.video || sub.videoUrl) {
                     if (!topicHeader.querySelector('.notes-video-trigger')) {
-                        const vBtn = document.createElement('button');
-                        vBtn.type = 'button';
-                        vBtn.className = 'notes-video-trigger inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF006E]/10 hover:bg-[#FF006E]/20 text-[#be0055] dark:text-pink-400 border border-[#FF006E]/30 text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer';
-                        vBtn.title = 'Watch animated concept video';
-                        vBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]" style="font-variation-settings:\'FILL\' 1;">videocam</span><span>Watch Concept</span>';
-                        vBtn.onclick = (e) => {
-                            e.stopPropagation();
-                            window.openNotesVideoDrawer(sub.video || sub.videoUrl, sub.videoTitle || topicName, topicName + ' (' + chapterTitle + ')');
-                        };
+                        const vBtn = createNotesVideoThumbnail(
+                            sub.video || sub.videoUrl, 
+                            sub.videoTitle || topicName, 
+                            topicName + ' (' + chapterTitle + ')',
+                            sub
+                        );
                         topicHeader.appendChild(vBtn);
                     }
                 }
@@ -2868,6 +2949,27 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     html += sub.resources;
                 }
                 contentDiv.innerHTML = html;
+
+                // Transform any inline concept video buttons inside content to thumbnails
+                const inlineConceptBtns = contentDiv.querySelectorAll('button');
+                inlineConceptBtns.forEach(b => {
+                    if (b.textContent && b.textContent.includes('Watch Concept')) {
+                        const onclickAttr = b.getAttribute('onclick') || '';
+                        let videoUrl = sub.video || sub.videoUrl;
+                        let videoTitle = sub.videoTitle || sub.subtopic || topicName;
+                        let contextDesc = (sub.subtopic || topicName) + ' (' + chapterTitle + ')';
+                        
+                        const m = onclickAttr.match(/openNotesVideoDrawer\((?:'|")([^'"]+)(?:'|"),\s*(?:'|")([^'"]+)(?:'|"),\s*(?:'|")([^'"]+)(?:'|")\)/);
+                        if (m) {
+                            videoUrl = m[1];
+                            videoTitle = m[2];
+                            contextDesc = m[3];
+                        }
+                        
+                        const thumbBtn = createNotesVideoThumbnail(videoUrl, videoTitle, contextDesc, { ...sub, videoTitle, video: videoUrl });
+                        b.replaceWith(thumbBtn);
+                    }
+                });
                 
                 const imgs = contentDiv.querySelectorAll('img');
                 imgs.forEach(img => {
@@ -3754,6 +3856,39 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         return array;
     }
 
+    function isTheoryQuestion(q) {
+        if (!q) return false;
+        if (q.type === 'theory' || q.difficulty === 'Theory' || q.is_theory === true || q.category === 'theory') return true;
+        if (q.type === 'numerical' || q.difficulty === 'Numerical' || q.is_theory === false || q.category === 'numerical') return false;
+        if (q.subjectId === 'ethics') return true;
+
+        const optTexts = (q.options || []).map(o => (o.text || '').trim());
+        if (optTexts.length === 0) return false;
+
+        const hasMathInOptions = optTexts.some(t => {
+            const clean = t.replace(/^\([A-D]\)\s*/i, '').trim();
+            return /\$|\\text|\\frac|[0-9]+\.?[0-9]*\s*(kPa|MPa|Pa|kJ|J|W|kW|MW|K|°C|deg|kg|m|cm|mm|s|hr|min|rad|N|kN|lb|psi|ft|in|%|ohm|V|A|Hz|rpm)/i.test(clean) ||
+                   /^[+-]?[0-9]+(\.[0-9]+)?$/.test(clean) ||
+                   /\d+\.?\d*/.test(clean);
+        });
+
+        if (!hasMathInOptions) return true;
+
+        const numMathOpts = optTexts.filter(t => {
+            const clean = t.replace(/^\([A-D]\)\s*/i, '').trim();
+            return /\$|\\text|\\frac|[0-9]+\.?[0-9]*/.test(clean) && !/[a-zA-Z]{15,}/.test(clean);
+        }).length;
+
+        if (numMathOpts >= 2) return false;
+
+        const qLower = (q.question || q.question_text || '').toLowerCase();
+        if (/(calculate|compute|determine the magnitude|find the value|evaluate|what is the value)/i.test(qLower)) return false;
+        if (/(which of the following|the principle of|is defined as|is known as|the term|the purpose of|the unit of|according to)/i.test(qLower) && !hasMathInOptions) return true;
+
+        return false;
+    }
+    window.isTheoryQuestion = isTheoryQuestion;
+
     async function startQuiz(subjectId, topicName) {
         // Update background theme for the subject (A-1)
         if (window.updateBackgroundTheme) window.updateBackgroundTheme(subjectId);
@@ -3781,14 +3916,49 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
         state.currentSubject = subject;
         state.currentTopic = topicName;
         
-        let shuffledQuestions = shuffleArray([...questions]);
-        shuffledQuestions.sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
-        let selectedRaw = shuffledQuestions.slice(0, 10);
+        // Enforce not more than 40% theory questions (max 4 theory out of 10)
+        const targetQuizCount = Math.min(10, questions.length);
+        const maxTheoryAllowed = Math.floor(targetQuizCount * 0.40);
+
+        let theoryPool = [];
+        let numericalPool = [];
+        questions.forEach(q => {
+            const tagged = { ...q, subjectId: subjectId };
+            if (isTheoryQuestion(tagged)) {
+                theoryPool.push(tagged);
+            } else {
+                numericalPool.push(tagged);
+            }
+        });
+
+        theoryPool = shuffleArray(theoryPool).sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
+        numericalPool = shuffleArray(numericalPool).sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
+
+        let selectedRaw = [];
+        const minNumericalNeeded = targetQuizCount - maxTheoryAllowed;
+
+        if (numericalPool.length >= minNumericalNeeded) {
+            const numToTake = Math.min(numericalPool.length, targetQuizCount - Math.min(maxTheoryAllowed, theoryPool.length));
+            selectedRaw.push(...numericalPool.slice(0, numToTake));
+            
+            const remainingNeeded = targetQuizCount - selectedRaw.length;
+            const theoryToTake = Math.min(remainingNeeded, maxTheoryAllowed, theoryPool.length);
+            selectedRaw.push(...theoryPool.slice(0, theoryToTake));
+
+            if (selectedRaw.length < targetQuizCount && numericalPool.length > numToTake) {
+                const moreNum = numericalPool.slice(numToTake, numToTake + (targetQuizCount - selectedRaw.length));
+                selectedRaw.push(...moreNum);
+            }
+        } else {
+            // Limited numerical questions in this topic/subject (e.g. Ethics)
+            selectedRaw.push(...numericalPool);
+            const remaining = targetQuizCount - selectedRaw.length;
+            selectedRaw.push(...theoryPool.slice(0, remaining));
+        }
+
+        selectedRaw = shuffleArray(selectedRaw);
         incrementQuestionStats(selectedRaw);
-        
-        // Tag each question with its subjectId for persistence
-        const taggedQuestions = selectedRaw.map(q => ({ ...q, subjectId: subjectId }));
-        state.quizQuestions = prepareQuestions(taggedQuestions);
+        state.quizQuestions = prepareQuestions(selectedRaw);
         
         state.currentQuestionIndex = 0;
         state.answers = new Array(state.quizQuestions.length).fill(null);
@@ -4572,42 +4742,72 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
             await window.currentDisciplinePromise;
         }
         const totalExamQuestions = 20;
-        let selectedQuestions = [];
-        let availablePools = [];
+        const maxTheoryAllowed = Math.floor(totalExamQuestions * 0.40); // 8 theory max (<= 40%)
+        const targetTheory = Math.min(maxTheoryAllowed, Math.round(totalExamQuestions * 0.30)); // 6 target theory (~30%)
+        const targetNumerical = totalExamQuestions - targetTheory; // 14 target numerical (~70%)
+
+        let numericalPools = [];
+        let theoryPools = [];
 
         const activeDiscipline = localStorage.getItem('enggtv_discipline') || (state.user && state.user.discipline) || 'Mechanical';
         state.subjects.forEach(subject => {
-            const rawQuestions = QUESTIONS[subject.id] || [];
+            const rawQuestions = (typeof QUESTIONS !== 'undefined' ? QUESTIONS[subject.id] : []) || [];
             const subjectQuestions = rawQuestions.filter(q => !q.excludedDisciplines || !q.excludedDisciplines.includes(activeDiscipline));
             if (subjectQuestions.length > 0) {
-                // Tag each question with its subjectId
-                const taggedPool = [...subjectQuestions].map(q => ({ ...q, subjectId: subject.id }));
-                let shuffledPool = shuffleArray([...taggedPool]);
-                shuffledPool.sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
-                availablePools.push(shuffledPool);
+                const taggedPool = subjectQuestions.map(q => ({ ...q, subjectId: subject.id }));
+                const num = shuffleArray(taggedPool.filter(q => !isTheoryQuestion(q))).sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
+                const th = shuffleArray(taggedPool.filter(q => isTheoryQuestion(q))).sort((a, b) => (a.times_presented || 0) - (b.times_presented || 0));
+                if (num.length > 0) numericalPools.push(num);
+                if (th.length > 0) theoryPools.push(th);
             }
         });
 
-        if (availablePools.length === 0) {
+        if (numericalPools.length === 0 && theoryPools.length === 0) {
             alert("No questions available.");
             return;
         }
 
-        let poolIndex = 0;
-        while (selectedQuestions.length < totalExamQuestions && availablePools.length > 0) {
-            const question = availablePools[poolIndex].pop();
-            selectedQuestions.push(question);
-            
-            if (availablePools[poolIndex].length === 0) {
-                availablePools.splice(poolIndex, 1);
+        let selectedQuestions = [];
+
+        // 1. Pick targetNumerical from numericalPools round-robin across subjects
+        let pIdx = 0;
+        while (selectedQuestions.length < targetNumerical && numericalPools.length > 0) {
+            const q = numericalPools[pIdx].pop();
+            selectedQuestions.push(q);
+            if (numericalPools[pIdx].length === 0) numericalPools.splice(pIdx, 1);
+            else pIdx++;
+            if (pIdx >= numericalPools.length) pIdx = 0;
+        }
+
+        // 2. Pick targetTheory from theoryPools round-robin across subjects
+        let thSelected = [];
+        pIdx = 0;
+        while (thSelected.length < targetTheory && theoryPools.length > 0) {
+            const q = theoryPools[pIdx].pop();
+            thSelected.push(q);
+            if (theoryPools[pIdx].length === 0) theoryPools.splice(pIdx, 1);
+            else pIdx++;
+            if (pIdx >= theoryPools.length) pIdx = 0;
+        }
+        selectedQuestions.push(...thSelected);
+
+        // 3. Fill any shortfall to reach 20 questions, ensuring theory <= maxTheoryAllowed
+        while (selectedQuestions.length < totalExamQuestions) {
+            const currentTheory = selectedQuestions.filter(isTheoryQuestion).length;
+            if (currentTheory < maxTheoryAllowed && theoryPools.length > 0) {
+                const q = theoryPools[0].pop();
+                selectedQuestions.push(q);
+                if (theoryPools[0].length === 0) theoryPools.shift();
+            } else if (numericalPools.length > 0) {
+                const q = numericalPools[0].pop();
+                selectedQuestions.push(q);
+                if (numericalPools[0].length === 0) numericalPools.shift();
             } else {
-                poolIndex++;
-            }
-            
-            if (poolIndex >= availablePools.length) {
-                poolIndex = 0;
+                break;
             }
         }
+
+        selectedQuestions = shuffleArray(selectedQuestions);
 
 
         state.currentSubject = { name: "Full Mock Exam", id: "mock" };
@@ -5169,28 +5369,37 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
 
     // Timer Utilities
     function startTimer() {
+        // Clear any existing timer to prevent compounding intervals
+        if (state.timer) {
+            clearInterval(state.timer);
+            state.timer = null;
+        }
         state.secondsElapsed = 0;
+        state.quizStartTime = Date.now();
         if (state.isMockExam) {
             if (state.isFullFEExam) {
-                state.secondsRemaining = 160 * 60; // 160 minutes (Half of 5hr 20m)
+                state.totalDuration = 160 * 60; // 160 minutes (Half of 5hr 20m)
             } else {
-                state.secondsRemaining = 60 * 60; // 60 minutes for standard mock
+                state.totalDuration = 60 * 60; // 60 minutes for standard mock
             }
-            quizTimer.classList.remove('blinking-timer');
+            state.secondsRemaining = state.totalDuration;
+            if (quizTimer) quizTimer.classList.remove('blinking-timer');
             updateTimerDisplay();
         } else {
+            if (quizTimer) quizTimer.classList.remove('blinking-timer');
             updateTimerDisplay();
         }
         
         state.timer = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - state.quizStartTime) / 1000);
             if (state.isMockExam) {
-                state.secondsRemaining--;
+                state.secondsRemaining = Math.max(0, state.totalDuration - elapsed);
                 updateTimerDisplay();
                 
                 if (state.secondsRemaining <= 300 && state.secondsRemaining > 0) {
-                    quizTimer.classList.add('blinking-timer');
+                    if (quizTimer) quizTimer.classList.add('blinking-timer');
                 } else {
-                    quizTimer.classList.remove('blinking-timer');
+                    if (quizTimer) quizTimer.classList.remove('blinking-timer');
                 }
                 
                 if (state.secondsRemaining <= 0) {
@@ -5202,15 +5411,18 @@ if (typeof toDriveImgUrl === 'function') window.toDriveImgUrl = toDriveImgUrl;
                     finishQuiz();
                 }
             } else {
-                state.secondsElapsed++;
+                state.secondsElapsed = elapsed;
                 updateTimerDisplay();
             }
         }, 1000);
     }
 
     function stopTimer() {
-        clearInterval(state.timer);
-        quizTimer.classList.remove('blinking-timer');
+        if (state.timer) {
+            clearInterval(state.timer);
+            state.timer = null;
+        }
+        if (quizTimer) quizTimer.classList.remove('blinking-timer');
     }
 
     function updateTimerDisplay() {

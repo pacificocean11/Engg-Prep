@@ -153,6 +153,7 @@
                         <!-- Flanked Thumbnail Card 1 -->
                         <div id="flanked-card-0" onclick="window.playFlankedHeroVideo(0)" class="relative h-20 sm:h-24 rounded-2xl overflow-hidden border-2 border-white/80 bg-slate-900 shadow-md hover:shadow-xl hover:border-pink-500/70 transition-all duration-200 cursor-pointer group flex items-end">
                             <img id="flanked-img-0" src="assets/thumbnails/Product_and_Quotient_Rules_for_Derivatives.jpg" alt="Upcoming Lesson" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100">
+                            <video id="flanked-vid-0" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 pointer-events-none hidden" muted playsinline preload="metadata"></video>
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
                             
                             <!-- Play Icon Badge -->
@@ -169,6 +170,7 @@
                         <!-- Flanked Thumbnail Card 2 -->
                         <div id="flanked-card-1" onclick="window.playFlankedHeroVideo(1)" class="relative h-20 sm:h-24 rounded-2xl overflow-hidden border-2 border-white/80 bg-slate-900 shadow-md hover:shadow-xl hover:border-pink-500/70 transition-all duration-200 cursor-pointer group flex items-end">
                             <img id="flanked-img-1" src="assets/thumbnails/Trigonometric_identities.jpg" alt="Upcoming Lesson" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100">
+                            <video id="flanked-vid-1" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 pointer-events-none hidden" muted playsinline preload="metadata"></video>
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
                             
                             <!-- Play Icon Badge -->
@@ -1286,12 +1288,26 @@
             currentFlankedIndices.forEach((fIdx, slot) => {
                 const item = HERO_VIDEOS[fIdx];
                 const imgEl = document.getElementById(`flanked-img-${slot}`);
+                const vidEl = document.getElementById(`flanked-vid-${slot}`);
                 const titleEl = document.getElementById(`flanked-title-${slot}`);
                 const subjectEl = document.getElementById(`flanked-subject-${slot}`);
 
-                if (imgEl && item.thumb) {
-                    imgEl.src = item.thumb;
-                    imgEl.alt = item.title;
+                if (imgEl) {
+                    imgEl.style.display = 'block';
+                    imgEl.onerror = function() {
+                        this.style.display = 'none';
+                        if (vidEl && item.url) {
+                            vidEl.src = item.url + '#t=1.0';
+                            vidEl.classList.remove('hidden');
+                        }
+                    };
+                    if (vidEl) {
+                        vidEl.classList.add('hidden');
+                    }
+                    if (item.thumb) {
+                        imgEl.src = item.thumb;
+                        imgEl.alt = item.title;
+                    }
                 }
                 if (titleEl) titleEl.innerText = item.title;
                 if (subjectEl) subjectEl.innerText = item.subject;
@@ -1367,7 +1383,7 @@
         // Register & proactively update Service Worker on login page for mobile/tablet instant sync
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js?v=262').then(registration => {
+                navigator.serviceWorker.register('./sw.js?v=294').then(registration => {
                     registration.update();
                 }).catch(err => {
                     console.warn('SW registration on login:', err);
