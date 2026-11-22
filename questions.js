@@ -80777,7 +80777,8 @@ const QUESTIONS = {
             "topic": "Refrigeration and Heat Pump Cycles",
             "title": "Brayton Cycle Compressor Exit Temperature",
             "question": "In an ideal Brayton cycle, air enters the compressor at $300$ K and $100$ kPa. The compressor has a pressure ratio of $10$. Assuming $\\gamma = 1.4$, what is the temperature of the air at the compressor exit?",
-            "question_image": "",
+            "question_image": "assets/quiz-images/brayton_cycle_compressor_exit_temperature.png",
+            "local_question_image": "assets/quiz-images/brayton_cycle_compressor_exit_temperature.png",
             "times_presented": 0,
             "options": [
                 {
