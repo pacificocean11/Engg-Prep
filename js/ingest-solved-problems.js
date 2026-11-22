@@ -166,8 +166,11 @@
 
             problems.forEach(p => {
                 // If question is excluded for current active discipline, skip ingestion
-                if (p.excludedDisciplines && Array.isArray(p.excludedDisciplines) && p.excludedDisciplines.includes(activeDiscipline)) {
-                    return;
+                if (p.excludedDisciplines && Array.isArray(p.excludedDisciplines)) {
+                    const normActive = String(activeDiscipline || '').toLowerCase().trim();
+                    if (p.excludedDisciplines.some(d => String(d).toLowerCase().trim() === normActive || normActive.includes(String(d).toLowerCase().trim()))) {
+                        return;
+                    }
                 }
 
                 const rawSub = p.subject ? p.subject.trim() : '';
@@ -178,11 +181,11 @@
                 const targetList = window.QUESTIONS[subjectId];
 
                 const pId = p.id ? `solved_${p.id}` : null;
-                const normSnippet = (p.question || '').trim().toLowerCase().slice(0, 60);
+                const normSnippet = (p.question || '').trim().toLowerCase().slice(0, 120);
 
                 const exists = targetList.some(q => 
                     (pId && q.id === pId) || 
-                    (q.question && q.question.trim().toLowerCase().slice(0, 60) === normSnippet)
+                    (q.question && q.question.trim().toLowerCase().slice(0, 120) === normSnippet)
                 );
 
                 if (!exists) {
