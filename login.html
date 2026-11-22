@@ -108,11 +108,18 @@
             <!-- Interactive Random Concept Video Player with Flanked Previews -->
             <div class="w-full max-w-xl space-y-2.5 my-2">
                 <!-- Main Active Video Player -->
-                <div class="relative w-full rounded-[2rem] overflow-hidden shadow-2xl shadow-pink-500/10 border-[6px] border-white/80 bg-slate-950 aspect-video flex items-center justify-center group">
+                <div class="relative w-full rounded-[2rem] overflow-hidden shadow-2xl shadow-pink-500/10 border-[6px] border-white/80 bg-slate-950 aspect-video flex items-center justify-center group cursor-pointer" onclick="window.handleVideoClick(event)">
                     <!-- Video Element -->
                     <video id="hero-preview-video" class="w-full h-full object-cover" autoplay muted playsinline preload="metadata">
                         <source src="assets/videos/Basic_rules_of_derivatives.mp4" type="video/mp4">
                     </video>
+
+                    <!-- Center Play Overlay (Visible when Paused) -->
+                    <div id="hero-center-play-overlay" class="absolute inset-0 z-10 flex items-center justify-center transition-all duration-300 opacity-0 pointer-events-none">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-slate-950/70 backdrop-blur-md border border-white/30 flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all">
+                            <span class="material-symbols-outlined text-3xl sm:text-4xl ml-1 text-pink-400">play_arrow</span>
+                        </div>
+                    </div>
 
                     <!-- Subject Category Pill (Top Left) -->
                     <div class="hidden sm:flex absolute top-3 left-3 z-20 items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold tracking-wide shadow-lg">
@@ -121,19 +128,22 @@
                     </div>
 
                     <!-- Gradient Overlay & Bottom Info Bar -->
-                    <div class="absolute bottom-0 inset-x-0 z-20 p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between text-white">
+                    <div class="absolute bottom-0 inset-x-0 z-20 p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between text-white pointer-events-auto">
                         <div class="min-w-0 pr-3">
-                            <p class="text-[10px] uppercase font-bold text-pink-400 tracking-wider flex items-center gap-1.5">
+                            <p id="hero-video-status-tag" class="text-[10px] uppercase font-bold text-pink-400 tracking-wider flex items-center gap-1.5">
                                 <span class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping"></span>
-                                Now Playing
+                                <span>Now Playing</span>
                             </p>
                             <h4 id="hero-video-title" class="text-xs sm:text-sm font-bold text-white truncate drop-shadow-md">Basic Rules of Derivatives</h4>
                         </div>
                         <div class="flex items-center gap-2 shrink-0">
-                            <button id="hero-video-sound-btn" onclick="window.toggleHeroVideoSound()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Toggle Sound">
+                            <button id="hero-video-play-btn" onclick="event.stopPropagation(); window.toggleHeroVideoPlay()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Pause / Play Video">
+                                <span id="hero-play-icon" class="material-symbols-outlined text-[18px]">pause</span>
+                            </button>
+                            <button id="hero-video-sound-btn" onclick="event.stopPropagation(); window.toggleHeroVideoSound()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Toggle Sound">
                                 <span id="hero-sound-icon" class="material-symbols-outlined text-[18px]">volume_off</span>
                             </button>
-                            <button onclick="window.pickRandomHeroVideo()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Next Random Video">
+                            <button onclick="event.stopPropagation(); window.pickRandomHeroVideo()" type="button" class="w-8 h-8 rounded-full bg-white/20 hover:bg-white/35 backdrop-blur-md flex items-center justify-center text-white transition-all cursor-pointer" title="Next Random Video">
                                 <span class="material-symbols-outlined text-[18px]">shuffle</span>
                             </button>
                         </div>
@@ -1314,6 +1324,56 @@
             });
         }
 
+        window.updateHeroPlayUi = function(isPaused) {
+            const playIcon = document.getElementById('hero-play-icon');
+            const centerOverlay = document.getElementById('hero-center-play-overlay');
+            const statusTag = document.getElementById('hero-video-status-tag');
+            
+            if (playIcon) {
+                playIcon.innerText = isPaused ? 'play_arrow' : 'pause';
+            }
+            if (centerOverlay) {
+                if (isPaused) {
+                    centerOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                    centerOverlay.classList.add('opacity-100');
+                } else {
+                    centerOverlay.classList.remove('opacity-100');
+                    centerOverlay.classList.add('opacity-0', 'pointer-events-none');
+                }
+            }
+            if (statusTag) {
+                if (isPaused) {
+                    statusTag.innerHTML = `
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                        <span class="text-amber-300">Paused</span>
+                    `;
+                } else {
+                    statusTag.innerHTML = `
+                        <span class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping"></span>
+                        <span>Now Playing</span>
+                    `;
+                }
+            }
+        };
+
+        window.toggleHeroVideoPlay = function() {
+            const videoEl = document.getElementById('hero-preview-video');
+            if (!videoEl) return;
+            if (videoEl.paused) {
+                videoEl.play().then(() => {
+                    window.updateHeroPlayUi(false);
+                }).catch(() => {});
+            } else {
+                videoEl.pause();
+                window.updateHeroPlayUi(true);
+            }
+        };
+
+        window.handleVideoClick = function(event) {
+            if (event.target.closest('button')) return;
+            window.toggleHeroVideoPlay();
+        };
+
         window.playHeroVideoByIndex = function(idx) {
             const videoEl = document.getElementById('hero-preview-video');
             const titleEl = document.getElementById('hero-video-title');
@@ -1326,6 +1386,8 @@
                     const nextIdx = (currentHeroVideoIdx + 1) % HERO_VIDEOS.length;
                     window.playHeroVideoByIndex(nextIdx);
                 });
+                videoEl.addEventListener('play', () => window.updateHeroPlayUi(false));
+                videoEl.addEventListener('pause', () => window.updateHeroPlayUi(true));
                 isHeroVideoListenerAttached = true;
             }
 
@@ -1336,10 +1398,30 @@
             const wasMuted = videoEl.muted !== undefined ? videoEl.muted : true;
             videoEl.src = current.url;
             videoEl.muted = wasMuted;
+            
+            // Gracefully handle missing/broken video files (e.g. 404 on remote host)
+            videoEl.onerror = function() {
+                console.warn(`Video failed to load: ${current.url}. Auto-advancing to next video...`);
+                setTimeout(() => {
+                    const nextIdx = (currentHeroVideoIdx + 1) % HERO_VIDEOS.length;
+                    window.playHeroVideoByIndex(nextIdx);
+                }, 800);
+            };
+
             videoEl.load();
             const playPromise = videoEl.play();
             if (playPromise !== undefined) {
-                playPromise.catch(() => {});
+                playPromise.then(() => {
+                    window.updateHeroPlayUi(false);
+                }).catch((err) => {
+                    console.warn('Autoplay prevented or interrupted, retrying muted:', err);
+                    videoEl.muted = true;
+                    videoEl.play().then(() => {
+                        window.updateHeroPlayUi(false);
+                    }).catch(() => {
+                        window.updateHeroPlayUi(true);
+                    });
+                });
             }
 
             if (titleEl) titleEl.innerText = current.title;
